@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Questionário: Monopólio e Discriminação de Preços</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .question-container {
+      display: none;
+    }
+    .question-container.active {
+      display: block;
+    }
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Questionário: Monopólio e Discriminação de Preços</h1>
+
+  <div id="quiz"></div>
+  <button onclick="nextQuestion()" id="nextBtn" disabled>Próxima</button>
+
+  <script>
+    const questions = [
+      {
+        question: "O que caracteriza um monopólio?",
+        options: [
+          "Múltiplos vendedores e compradores",
+          "Entrada livre no mercado",
+          "Um único vendedor sem substitutos próximos",
+          "Concorrência perfeita"
+        ],
+        correct: 2,
+        feedback: "Um monopólio é caracterizado por um único vendedor e ausência de substitutos próximos."
+      },
+      {
+        question: "Qual é a condição de maximização de lucro para um monopolista?",
+        options: [
+          "Preço = Custo Marginal",
+          "Receita Marginal = Custo Marginal",
+          "Custo Total = Receita Total",
+          "Preço = Receita Marginal"
+        ],
+        correct: 1,
+        feedback: "O lucro é maximizado quando a Receita Marginal é igual ao Custo Marginal."
+      },
+      {
+        question: "Numa estrutura de monopólio, o excedente do consumidor é geralmente:",
+        options: [
+          "Maior do que na concorrência perfeita",
+          "Igual ao da concorrência perfeita",
+          "Nulo",
+          "Menor do que na concorrência perfeita"
+        ],
+        correct: 3,
+        feedback: "O monopólio reduz o excedente do consumidor em comparação com a concorrência perfeita."
+      },
+      {
+        question: "O que é um monopólio natural?",
+        options: [
+          "Uma firma que obtém lucros extraordinários",
+          "Um monopólio criado por patente",
+          "Um monopólio onde os custos médios são decrescentes em toda a escala de produção",
+          "Uma firma estatal"
+        ],
+        correct: 2,
+        feedback: "Um monopólio natural ocorre quando há economias de escala em toda a faixa de produção."
+      },
+      // [...]
+      // Continue adicionando perguntas até atingir 30
+    ];
+
+    let currentQuestion = 0;
+
+    function loadQuestion(index) {
+      const quizDiv = document.getElementById('quiz');
+      const q = questions[index];
+
+      const container = document.createElement('div');
+      container.className = 'question-container active';
+
+      const question = document.createElement('h2');
+      question.innerText = `Pergunta ${index + 1}: ${q.question}`;
+
+      container.appendChild(question);
+
+      q.options.forEach((opt, i) => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'option';
+        input.value = i;
+        input.onclick = () => enableNext(i);
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(opt));
+        container.appendChild(document.createElement('br'));
+        container.appendChild(label);
+      });
+
+      const feedback = document.createElement('div');
+      feedback.className = 'feedback';
+      feedback.id = 'feedback';
+      container.appendChild(feedback);
+
+      quizDiv.innerHTML = '';
+      quizDiv.appendChild(container);
+
+      document.getElementById('nextBtn').disabled = true;
+    }
+
+    function enableNext(selected) {
+      const correct = questions[currentQuestion].correct;
+      const feedbackDiv = document.getElementById('feedback');
+      if (parseInt(selected) === correct) {
+        feedbackDiv.innerHTML = `✔️ Correto! ${questions[currentQuestion].feedback}`;
+        feedbackDiv.style.color = 'green';
+      } else {
+        feedbackDiv.innerHTML = `❌ Incorreto. ${questions[currentQuestion].feedback}`;
+        feedbackDiv.style.color = 'red';
+      }
+      document.getElementById('nextBtn').disabled = false;
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        loadQuestion(currentQuestion);
+      } else {
+        document.getElementById('quiz').innerHTML = '<h2>Fim do questionário. Obrigado!</h2>';
+        document.getElementById('nextBtn').style.display = 'none';
+      }
+    }
+
+    window.onload = () => loadQuestion(currentQuestion);
+  </script>
+</body>
+</html>
