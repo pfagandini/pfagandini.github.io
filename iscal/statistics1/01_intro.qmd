@@ -1,42 +1,50 @@
 ---
 title: "Introduction and Growth Rates"
 author: "Paulo Fagandini, PhD"
-institute: "Lisbon Accounting and Business School - Polytechnic University of Lisbon"
+institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
 format:
   revealjs:
+    theme: default
     slide-number: false
     incremental: true
-    math-method: katex # Explicitly use KaTeX
+    math: katex
     transition: slide
-    footer: Statistics I
+    footer: "Statistics I"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+jupyter: python3
 ---
 
 # Core Information
 
 ---
 
-Instructor: Paulo Fagandini
+**Instructor:** Paulo Fagandini
+
 :email: pfagandini@iscal.ipl.pt
 
-Main source for course material: Moodle@ISCAL
+\
 
-Alternative source (EN): https://pfagandini.github.io/statistics1.html
+**Main source for course material:** Moodle@ISCAL
 
-Official communication channel: :email: Institutional Email
+**Alternative source (EN):** [My personal website](https://pfagandini.github.io/statistics1.html)
 
----
+\
+
+**Official communication channel:** :email: Institutional Email
 
 ## Bibliography
 
-### Topic I:
+### Topic 1:
 :book: Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo
 
-### Topics II and III:
-:book: Statistics for Business and Economics Global Edition. $10^{th}$ 2022. Paul Newbold, William Carlson, and Betty Thorne.
+### Topics 2 and 3:
+:book: Statistics for Business and Economics Global Edition. 10^th^ 2022. Paul Newbold, William Carlson, and Betty Thorne.
 
-<small>This last book is expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% discount with the code **MISLIBROS2025**. This code is valid for the whole site until December $31^{st}$, 2025.</small>
+\
 
----
+<small>This last book is expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% discount with the code **MISLIBROS2025**. This code is valid for the whole site until December 31^st^ , 2025.</small>
 
 ## Assessment
 
@@ -47,25 +55,86 @@ Official communication channel: :email: Institutional Email
 | Midterm | 60% | 80 minutes| Topics 1 and 2 | Week Nov 11-15  |
 | Partial Exam | 40% | 80 minutes | Topic 3| Regular Exam Date |
 
-Each test has a minimum grade of 7.00 (out of 20), not 6.9, not 6.95.
+<small>Each test has a minimum grade of 7.00 (out of 20), not 6.9, not 6.95.</small>
 
----
+<br>
 
 ### Comprehensive Exam
 
 Students may opt, on the day of the Exam, to take an Exam worth 100% of the grade. This Exam will cover Topics 1, 2, and 3.
 
+\
+
+If you score less than 7.00 in the Midterm, you **will** have to do the Comprehensive Exam.
+
 # Growth Rates
 
-Italy's GDP per capita (current US$)
+## Example
 
-|year | GDP (per capita, US$)|
-|-----|----------------------|
-|2023 | $39,003 |
-|2022 | $35,635 |
-|2021 | $36,852 |
-|2020 | $32,091 |
-|2019 | $33,812 |
-|2018 | $34,746 |
+```{python}
+#| echo: false
+#| fig-width: 16
+#| fig-height: 8
 
-Source Macrotrends
+import pandas_datareader.data as web
+import matplotlib.pyplot as plt
+import pandas as pd
+from datetime import datetime, timedelta
+from IPython.display import Markdown
+
+# Set up date range for last 10 years
+end_date = datetime.now()
+start_date = end_date - timedelta(days=365*6)
+
+# Get Italian GDP data from FRED
+italy_gdp = web.DataReader('CLVMNACSCAB1GQIT', 'fred', start_date, end_date)
+
+# Convert to annual data
+annual_gdp = italy_gdp.resample('Y').last()
+annual_gdp.index = annual_gdp.index.year
+```
+
+:::columns
+:::{.column width="50%"}
+
+Italian Real GDP (base = 2010)
+
+```{python}
+#| echo: false
+# Create DataFrame for table
+gdp_table = pd.DataFrame({
+    'Year': annual_gdp.index,
+    'GDP (Millions €)': annual_gdp.iloc[:, 0].round(0).astype(int)
+})
+
+gdp_table['GDP (Millions €)'] = gdp_table['GDP (Millions €)'].apply(lambda x: f"{x:,.0f} €")
+markdown_table = gdp_table.to_markdown(index=False, stralign="left", numalign="right")
+Markdown(markdown_table)
+```
+
+Source: FRED
+
+:::
+
+:::{.column width="50%"}
+```{python}
+#| echo: false
+# Create the dual-panel figure
+fig, (ax2) = plt.subplots(1, 1, figsize=(16, 9))
+
+# Right panel: Plot
+ax2.plot(annual_gdp.index, annual_gdp.iloc[:, 0], 
+         marker='o', linewidth=3, markersize=8, color='#4472C4')
+
+ax2.set_title('GDP Trend', fontsize=16, fontweight='bold')
+ax2.set_xlabel('Year', fontsize=12)
+ax2.set_ylabel('GDP (Millions of Euros)', fontsize=12)
+ax2.grid(True, alpha=0.3)
+ax2.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x:,.0f}'))
+ax2.tick_params(axis='x', rotation=45)
+ax2.spines['top'].set_visible(False)
+ax2.spines['right'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
+```
