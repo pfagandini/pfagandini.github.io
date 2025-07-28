@@ -13,12 +13,13 @@ format:
     from: markdown+emoji
     code-overflow: wrap
     code-block-font-size: 0.75em
+    progress: true
 jupyter: python3
 ---
 
-# Core Information
+# Course Introduction
 
----
+## Core Information
 
 **Instructor:** Paulo Fagandini
 
@@ -46,9 +47,7 @@ jupyter: python3
 
 <small>This last book is expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% discount with the code **MISLIBROS2025**. This code is valid for the whole site until December 31^st^ , 2025.</small>
 
-## Assessment
-
-### Continuous Assessment
+## Continuous Assessment
 
 | Assessment Element | Weight (%) | Duration | Syllabus | Date |
 |-------------------| ------------| ---------| -------- | ---- |
@@ -57,15 +56,13 @@ jupyter: python3
 
 <small>Each test has a minimum grade of 7.00 (out of 20), not 6.9, not 6.95.</small>
 
-<br>
-
-### Comprehensive Exam
+## Comprehensive Exam
 
 Students may opt, on the day of the Exam, to take an Exam worth 100% of the grade. This Exam will cover Topics 1, 2, and 3.
 
 \
 
-If you score less than 7.00 in the Midterm, you **will** have to do the Comprehensive Exam.
+If you score less than 7.00 in the Midterm, or if you cannot attend the midterm for whatever reason, you **will** have to do the Comprehensive Exam.
 
 # Growth Rates
 
@@ -119,22 +116,56 @@ Source: FRED
 :::{.column width="50%"}
 ```{python}
 #| echo: false
-# Create the dual-panel figure
-fig, (ax2) = plt.subplots(1, 1, figsize=(16, 9))
+#| fig-width: 5
+#| fig-height: 3
 
-# Right panel: Plot
-ax2.plot(annual_gdp.index, annual_gdp.iloc[:, 0], 
+plt.figure(figsize=(5, 3))
+plt.plot(annual_gdp.index, annual_gdp.iloc[:, 0], 
          marker='o', linewidth=3, markersize=8, color='#4472C4')
 
-ax2.set_title('GDP Trend', fontsize=16, fontweight='bold')
-ax2.set_xlabel('Year', fontsize=12)
-ax2.set_ylabel('GDP (Millions of Euros)', fontsize=12)
-ax2.grid(True, alpha=0.3)
-ax2.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x:,.0f}'))
-ax2.tick_params(axis='x', rotation=45)
-ax2.spines['top'].set_visible(False)
-ax2.spines['right'].set_visible(False)
+plt.title('GDP', fontsize=16, fontweight='bold')
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('GDP (Millions of Euros)', fontsize=12)
 
 plt.tight_layout()
 plt.show()
 ```
+
+:::
+:::
+
+```{python}
+# putting the dataset in usable variables for practicality
+
+y = []
+ys = []
+v = []
+vs = []
+
+for i in range(5):
+  y.append(annual_gdp.index[i])
+  ys.append(f"{y[i]:.0f}")
+
+  v.append(annual_gdp.iloc[i,0])
+  vs.append(f"{v[i]:,.0f} €")
+
+```
+
+## Example
+
+Let the GDP for Italy be represented by the variable $y_t$, so $y_{`{python} ys[0]`}$ is the GDP we got for `{python} ys[0]` (*i.e.* `{python} vs[0]`).
+
+How much did $y$ grow between `{python} ys[0]` and `{python} ys[1]`? 
+
+. . .
+
+$$\Delta y_{2020} = y_{`{python} ys[1]`} - y_{`{python} ys[0]`} = `{python} vs[1]` - `{python} vs[0]`$$
+
+. . .
+```{python}
+delta_str = f"= {v[1] - v[0]:,.0f} €"
+```
+
+<div style="text-align: center;">
+  `{python} delta_str`
+</div>
