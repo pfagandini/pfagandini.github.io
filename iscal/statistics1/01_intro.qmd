@@ -1,59 +1,46 @@
 ---
 title: "Introduction and Growth Rates"
 author: "Paulo Fagandini, PhD"
-institute: "Statistics I"
+institute: "Lisbon Accounting and Business School - Polytechnic University of Lisbon"
 format:
   revealjs:
-    theme: default # You might need to check Quarto's available themes
-    slide-number: false # Equivalent to Marp's paginate: false
-    incremental: false # If you want list items to appear all at once
-    # For a custom CSS file, uncomment and specify path:
-    # css: styles.css
+    slide-number: false
+    incremental: true
     math-method: katex # Explicitly use KaTeX
+    transition: slide
+    footer: Statistics I
 ---
 
-# Introduction and Growth Rates
-## Paulo Fagandini, PhD
-### Statistics I
-
-&nbsp;
-
-Lisbon Accounting and Business School
-Polytechnic University of Lisbon
+# Core Information
 
 ---
 
-## Core Information
 Instructor: Paulo Fagandini
 :email: pfagandini@iscal.ipl.pt
 
-&nbsp;
-
 Main source for course material: Moodle@ISCAL
+
 Alternative source (EN): https://pfagandini.github.io/statistics1.html
+
 Official communication channel: :email: Institutional Email
 
 ---
 
-## Core Information
+## Bibliography
 
-### Main Bibliography (Topic I):
+### Topic I:
 :book: Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo
 
-### Main Bibliography (Topics II and III):
+### Topics II and III:
 :book: Statistics for Business and Economics Global Edition. $10^{th}$ 2022. Paul Newbold, William Carlson, and Betty Thorne.
 
-&nbsp;
-
-<small>This last book is expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% with the discount code **MISLIBROS2025**. This code is valid for the whole site until December $31^{th}$, 2025.</small>
+<small>This last book is expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% discount with the code **MISLIBROS2025**. This code is valid for the whole site until December $31^{st}$, 2025.</small>
 
 ---
 
-## Core Information
+## Assessment
 
-### Assessment
-
-#### Continuous Assessment
+### Continuous Assessment
 
 | Assessment Element | Weight (%) | Duration | Syllabus | Date |
 |-------------------| ------------| ---------| -------- | ---- |
@@ -62,16 +49,13 @@ Official communication channel: :email: Institutional Email
 
 Each test has a minimum grade of 7.00 (out of 20), not 6.9, not 6.95.
 
+---
+
 ### Comprehensive Exam
 
-Students may opt, until the day of the Exam, to take an Exam worth 100% of the grade. This Exam will cover Topics 1, 2, and 3.
-
----
+Students may opt, on the day of the Exam, to take an Exam worth 100% of the grade. This Exam will cover Topics 1, 2, and 3.
 
 # Growth Rates
-
----
-## Growth Rates
 
 Italy's GDP per capita (current US$)
 
@@ -84,32 +68,4 @@ Italy's GDP per capita (current US$)
 |2019 | $33,812 |
 |2018 | $34,746 |
 
-Source: Macrotrends
-
----
-
-## Growth Rates
-
-::: {.columns}
-
-::: {.column width="50%"}
-**Italy's GDP per capita (current US$)**
-
-|year | GDP (per capita, US$)|
-|-----|----------------------|
-|2023 | $39,003 |
-|2022 | $35,635 |
-|2021 | $36,852 |
-|2020 | $32,091 |
-|2019 | $33,812 |
-|2018 | $34,746 |
-
-*Source: Macrotrends*
-:::
-
-::: {.column width="50%"}
-
-```mermaid
-graph TD
-  A --> B
-  B --> C
+Source Macrotrends
