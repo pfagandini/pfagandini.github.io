@@ -1,12 +1,17 @@
 ---
-marp: true
-theme: default
-paginate: false
-math: katex
-author: Paulo Fagandini
-title: Introduction and Growth Rates
-
+title: "Introduction and Growth Rates"
+author: "Paulo Fagandini, PhD"
+institute: "Statistics I"
+format:
+  revealjs:
+    theme: default # You might need to check Quarto's available themes
+    slide-number: false # Equivalent to Marp's paginate: false
+    incremental: false # If you want list items to appear all at once
+    # For a custom CSS file, uncomment and specify path:
+    # css: styles.css
+    math-method: katex # Explicitly use KaTeX
 ---
+
 # Introduction and Growth Rates
 ## Paulo Fagandini, PhD
 ### Statistics I
@@ -15,7 +20,6 @@ title: Introduction and Growth Rates
 
 Lisbon Accounting and Business School
 Polytechnic University of Lisbon
-
 
 ---
 
@@ -53,7 +57,7 @@ Official communication channel: :email: Institutional Email
 
 | Assessment Element | Weight (%) | Duration | Syllabus | Date |
 |-------------------| ------------| ---------| -------- | ---- |
-| Midterm | 60% | 80 minutes| Topics 1 and 2 | Week Nov 11-15  |
+| Midterm | 60% | 80 minutes| Topics 1 and 2 | Week Nov 11-15  |
 | Partial Exam | 40% | 80 minutes | Topic 3| Regular Exam Date |
 
 Each test has a minimum grade of 7.00 (out of 20), not 6.9, not 6.95.
@@ -73,36 +77,22 @@ Italy's GDP per capita (current US$)
 
 |year | GDP (per capita, US$)|
 |-----|----------------------|
-|2023 |	$39,003 |
-|2022 |	$35,635 |
-|2021 |	$36,852 |
-|2020 |	$32,091 |
-|2019 |	$33,812 |
-|2018 |	$34,746 |
+|2023 | $39,003 |
+|2022 | $35,635 |
+|2021 | $36,852 |
+|2020 | $32,091 |
+|2019 | $33,812 |
+|2018 | $34,746 |
 
 Source: Macrotrends
 
 ---
 
-<style>
-.columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.mermaid {
-  text-align: center;
-}
-</style>
-
 ## Growth Rates
 
-<div class="columns">
+::: {.columns}
 
-<div>
-
+::: {.column width="50%"}
 **Italy's GDP per capita (current US$)**
 
 |year | GDP (per capita, US$)|
@@ -115,17 +105,11 @@ Source: Macrotrends
 |2018 | $34,746 |
 
 *Source: Macrotrends*
+:::
 
-</div>
+::: {.column width="50%"}
 
-<div class="mermaid">
-
-
+```mermaid
 graph TD
- A --> B
- B --> C
-
-
-</div>
-
-</div>
+  A --> B
+  B --> C
