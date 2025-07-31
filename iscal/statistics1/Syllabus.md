@@ -5,8 +5,6 @@ permalink: /iscal/statistics1/Syllabus.html
 ---
 <div class="custom-margin">
 
-# Syllabus \- Statistics I
-
 Bachelor's Degree in Management  
 Course Director: Professor Dr. Maria Teresa Fortunato Pereira Esteves  
 Academic Year: 2025/2026
