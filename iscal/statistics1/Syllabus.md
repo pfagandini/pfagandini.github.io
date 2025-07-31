@@ -109,3 +109,4 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 * Pedrosa, A.C. & Gama, S.M.A. (2004) Introdução Computacional, Porto Editora  
 * Pimenta, F. et al. (2015) Introdução à Estatística, Escolar Editora  
 * Robalo, A. (1995) Exercícios de Estatística, Edições Sílabo
+\
