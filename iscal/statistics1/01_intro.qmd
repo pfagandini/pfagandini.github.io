@@ -489,8 +489,103 @@ An **Index Number** is a scaled variable that takes as a reference point the val
 $$I_t=\frac{x_t}{x_0}\times 100$$
 
 Where $x_t$ is the value the underlying variable takes at time $t$, and $x_0$ representes the value this variable took at our reference point. This period is called **base**.
+
+>Note: In this case we used time as the dimension for $t$ but this needs not be the case, we will see examples later.
 :::
 
 \
 
 In our previous example, the base day would have been `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`. Note that in the base period $$I_0=\frac{x_0}{x_0}\times 100 = 100$$
+
+## Index Numbers
+
+Index Numbers are defined by their underlying variable. This can change over time, or it can change according to another dimension, like geography, or both! We will see examples.
+
+Also, an Index Number can have a fixed base or a moving base.
+
+```{mermaid}
+flowchart TD
+  A[Index] --> B(Underlying Variable)
+  A --> C(Base)
+  A --> D(Dimension)
+
+  B --> E[Simple]
+  B --> F[Composite]
+
+  C --> G[Fixed]
+  C --> H[Rolling]
+
+  D --> I[Chronological]
+  D --> J[Geographical]
+  
+```
+
+* Simple and Composite are mutually exclusive
+* Fixed and Moving are mutually exclusive
+* Rolling always needs a chronological dimension
+
+## Examples
+
+| Type | Example |
+|------|---------|
+|Simple| Single stock price|
+|Composite| SP500 (market index), CPI|
+|Fixed Base| GDP, CPI, market index|
+|Rolling Base| Some measures of GDP, Commodities Futures|
+|Chronological | Stock price over time, CPI, GDP|
+|Geographical | BigMac Index |
+
+## Index Numbers
+
+Importantly, an index number is *no bueno* to reflect the level of a variable, but its evolution or relative value against a base.
+
+## Rolling Base
+
+::: {.callout-note appearance="simple" icon=false}
+## Chain or Link Index
+A **Chain or Link Index Number** is an index number that updates its base in every period.
+
+$$I_t = \frac{x_t}{x_{t-1}}\times 100$$
+
+:::
+
+## Index Numbers
+
+Index numbers allow us to easily compute the growth rate between any two periods, just like we would do with the underlying variable:
+
+1. Simple Index Number
+
+. . .
+
+$$1+\delta_{t+k,t}=\frac{x_{t+k}}{x_t}=\frac{x_{t+k}}{x_t}=\frac{\frac{x_{t+k}}{x_0}}{\frac{x_t}{x_0}}=\frac{I_{t+k}}{I_t}$$
+
+2. Chain Index Number
+
+. . .
+
+<small>
+$$1+\delta_{t+k,t}=\frac{x_{t+k}}{x_t}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t}}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t+k-2}}\frac{x_{t+k-2}}{x_{t}}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t+k-2}}...\frac{x_{t+1}}{x_{t}}$$
+$$1+\delta_{t+k,t}=I_{t+k}\times I_{t+k-1}\times ... \times I_{t+2} \times I_{t+1}$$
+</small>
+
+## Index Numbers
+
+
+::: {.callout-warning}
+## Do not use 100 index when multiplying chain or link indices, use the decimal notation.
+
+Note that if the underlying variable does not change at all, you should expect the same value, $x_t=x_{t+1}=x_{t+2}$
+
+In this case $I_{t+1}=\frac{x_{t+1}}{x_t}=1$ and $I_{t+2}=\frac{x_{t+2}}{x_{t+1}}=1$, and therefore $$1+\delta_{t+2,t}=1\times 1= 1$$
+This is the correct way to do it :white_check_mark:.
+
+But if instead you used the 100 to multiply: $$1+\delta_{t+2,t}=100\times 100= 10000$$ and we get that $x$ grew 100 times! (:x: because we know that $x_t=x_{t+1}=x_{t+2}$)
+
+:::
+
+## Index Numbers
+
+We can always transform a chain index number into a fixed base index number.
+
+1. Chose a reference, say $t$.
+2. 
