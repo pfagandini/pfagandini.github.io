@@ -38,14 +38,14 @@ jupyter: python3
 ## Bibliography
 
 ### Topic 1:
-:book: Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo
+:book: A Practical Introduction to Index Numbers. 1^st^ Ed 2015. Jeff Ralph, Rob O'Neill, Joe Winton.
 
 ### Topics 2 and 3:
-:book: Statistics for Business and Economics Global Edition. 10^th^ 2022. Paul Newbold, William Carlson, and Betty Thorne.
+:book: Statistics for Business and Economics Global Edition. 10^th^ Ed 2022. Paul Newbold, William Carlson, and Betty Thorne.
 
 \
 
-<small>This last book is expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% discount with the code **MISLIBROS2025**. This code is valid for the whole site until December 31^st^ , 2025.</small>
+<small>This last book is a bit expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% discount with the code **MISLIBROS2025**. This code is valid for the whole site until December 31^st^ , 2025.</small>
 
 ## Continuous Assessment
 
