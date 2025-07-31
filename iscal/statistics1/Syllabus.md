@@ -1,12 +1,13 @@
-
 <style>
-body {
+.content-with-margins {
     margin: 40px;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 </style>
+
+<div class="content-with-margins">
 
 # Syllabus \- Statistics I
 
@@ -97,7 +98,7 @@ Notes:
 
 Students may opt for a final exam worth 100% of the grade, covering the entire syllabus.
 
-### Bibliography
+### Bibliography (EN)
 
 * Ralph, J. et al. (2015) A Practical Introduction to Index Numbers, 1^st^ Ed, Wiley.
 * Newbold, P. et al. (2023) Statistics for Business and Economics, 10^th^ Global Edition, Pearson.
@@ -109,7 +110,7 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 * Ingram, J.A. & Monks, J.G. (1992) Statistics for Business and Economics, The Dryden Press  
 * Wooldridge, J.M. (2009) Introductory Econometrics, Thomson South-Western
 
-#### Bibliography in Portuguese:
+#### Bibliography (PT):
 
 * Ferreira, T., Custódio, S.G. (2023) Modelos Probabilísticos, Edições Sílabo  
 * Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo  
@@ -119,3 +120,5 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 * Pedrosa, A.C. & Gama, S.M.A. (2004) Introdução Computacional, Porto Editora  
 * Pimenta, F. et al. (2015) Introdução à Estatística, Escolar Editora  
 * Robalo, A. (1995) Exercícios de Estatística, Edições Sílabo
+
+</div>
