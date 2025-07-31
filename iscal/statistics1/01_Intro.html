@@ -216,8 +216,8 @@ Paulo Fagandini, PhD
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Italian Real GDP (base = 2010)</p>
-<div id="b546cf6d" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="2">
+<div id="fc9209d4" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="596">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -228,31 +228,31 @@ Paulo Fagandini, PhD
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">2019</td>
-<td style="text-align: left;">405,563 €</td>
+<td style="text-align: left;">405,563</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2020</td>
-<td style="text-align: left;">382,900 €</td>
+<td style="text-align: left;">382,900</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2021</td>
-<td style="text-align: left;">415,474 €</td>
+<td style="text-align: left;">415,474</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2022</td>
-<td style="text-align: left;">425,154 €</td>
+<td style="text-align: left;">425,154</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2023</td>
-<td style="text-align: left;">427,494 €</td>
+<td style="text-align: left;">427,494</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2024</td>
-<td style="text-align: left;">429,985 €</td>
+<td style="text-align: left;">429,985</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2025</td>
-<td style="text-align: left;">431,120 €</td>
+<td style="text-align: left;">431,120</td>
 </tr>
 </tbody>
 </table>
@@ -260,7 +260,7 @@ Paulo Fagandini, PhD
 </div>
 <p>Source: FRED</p>
 </div><div class="column" style="width:50%;">
-<div id="140b1ac7" class="cell" data-fig-height="3" data-fig-width="5" data-execution_count="3">
+<div id="8cb4dee6" class="cell" data-fig-height="3" data-fig-width="5" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -273,18 +273,302 @@ Paulo Fagandini, PhD
 </section>
 <section id="example-1" class="slide level2">
 <h2>Example</h2>
-<p>Let the GDP for Italy be represented by the variable <span class="math inline">\(y_t\)</span>, so <span class="math inline">\(y_{2019}\)</span> is the GDP we got for 2019 (<em>i.e.</em> 405,563 €).</p>
+<p>Let the GDP for Italy be represented by the variable <span class="math inline">\(y_t\)</span>, so <span class="math inline">\(y_{2019}\)</span> is the GDP we got for 2019 (<em>i.e.</em> 405,563).</p>
 <p>How much did <span class="math inline">\(y\)</span> grow between 2019 and 2020?</p>
 <div class="fragment">
-<p><span class="math display">\[\Delta y_{2020} = y_{2020} - y_{2019} = 382\,900 € - 405\,563 €\]</span></p>
+<p><span class="math display">\[\Delta y_{2020} = y_{2020} - y_{2019} = 382\,900 - 405\,563\]</span></p>
 </div>
 <div class="fragment">
-<div style="text-align: center;">
-<p>= -22,663 €</p>
+<div id="c2ed5388" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[=-22663\]</span></p>
 </div>
+</div>
+</div>
+<div class="fragment">
+<p>Or we could say</p>
+<div id="1ef2f4db" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[382900=405563+(-22663)\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<div id="92c5871d" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[y_{2020}=y_{2019}\left(1+\frac{\Delta y_{2020}}{y_{2019}}\right)\]</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[y_{2020}=y_{2019}\left(1+\delta^y_{2020}\right)\]</span></p>
+</div>
+</div>
+<p>This, <span class="math inline">\(\delta_{2020}^y\)</span>, is the <strong>growth rate</strong> of <span class="math inline">\(y\)</span> at year 2020.</p>
+</section>
+<section id="growth-rate" class="slide level2">
+<h2>Growth Rate</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Growth Rate</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(y_t\)</span> be a variable that might take different values over time. The <strong>growth rate</strong> at <span class="math inline">\(t\)</span> is given by <span class="math inline">\(\delta_t^y\)</span>, and takes a value such that: <span class="math display">\[y_t=y_{t-1}\left(1+\delta_t\right)\]</span></p>
+<p>And then <span class="math display">\[\delta_t = \frac{y_t-y_{t-1}}{y_{t-1}}\]</span></p>
+<p><small>Note: I dropped <span class="math inline">\(y\)</span> from the notation in the formula because it is obvious that we are talking about the variable <span class="math inline">\(y\)</span>.</small></p>
+<p>You can write the growth rate as a decimal or as a percentage. If you use decimal notation, consider at least 4 places, if you use percentage you use at least 2. Example: 0.0123 or 1.23%.</p>
+<p><strong>Interpretation</strong>: What is the percentage change for the variable <span class="math inline">\(y\)</span> between <span class="math inline">\(t-1\)</span> and <span class="math inline">\(t\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<div id="2ed613f9" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[382900=405563+(-22663)\]</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[382900=405563\left(1+\frac{-22663}{405563}\right)\]</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math display">\[382900=405563\left(1+{-0.0559}\right)\]</span></p>
+</div>
+</div>
+<div class="fragment">
+<p>In this case <span class="math inline">\(\delta_{2020}^y = -0.0559 = -5.59\%\)</span>.</p>
+<blockquote>
+<p>Interpretation: Between 2019 and 2020, the GDP for Italy <em>decreased</em> 5.59%.</p>
+</blockquote>
+</div>
+</section>
+<section id="growth-rates-1" class="slide level2">
+<h2>Growth Rates</h2>
+<p>More generally <span class="math display">\[\delta_{t+k|t}=\frac{y_{t+k}-y_t}{y_t}\]</span></p>
+<p>Or <span class="math display">\[y_{t+k}=y_t(1+\delta_{t+k|t})\]</span></p>
+<p><small>(homework: Show step by step how you go from one to the other.)</small></p>
+<blockquote>
+<p>Note: In this case <span class="math inline">\(\delta_{t+k|t}\)</span> is what percentage the variable changed from <span class="math inline">\(t\)</span> to <span class="math inline">\(t+k\)</span>, and <span class="math inline">\(k\)</span> is the number of periods.</p>
+</blockquote>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+<p>We had <span class="math inline">\(y_{2019}=405\,563\)</span>, and <span class="math inline">\(y_{2023} = 427\,494\)</span>. We will try to find <span class="math inline">\(\delta_{2023|2019}^y\)</span>.</p>
+<ul>
+<li class="fragment">What is the value of <span class="math inline">\(k\)</span> in this case?</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[k=2023-2019=4\]</span></p>
+<ul>
+<li class="fragment">What is the growth rate between <span class="math inline">\(2019\)</span> and <span class="math inline">\(2023\)</span> ?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\delta_{2023|2019}^y = \frac{427\,494 - 405\,563}{405\,563} = 0.0541 = 5.41\%\]</span></p>
+<blockquote>
+<p>In Italy, GDP grew 5.41% between 2019 and 2023, or GDP in Italy in 2023 is 5.41% larger than in 2019.</p>
+</blockquote>
+</div>
+</section>
+<section id="growth-rates-2" class="slide level2">
+<h2>Growth Rates</h2>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>You should be careful with your interpretation and use of this <em>cumulative</em> growth rate, because it <strong>does not</strong> mean that <span class="math inline">\(y\)</span> grew <span class="math inline">\(\delta_{t+k|t}^y\)</span> <strong>per period</strong> between <span class="math inline">\(t\)</span> and <span class="math inline">\(t+k\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Average Growth Rate</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(y_t\)</span> be a variable that might take different values over time. The <strong>average growth rate</strong> betweek <span class="math inline">\(t\)</span> and <span class="math inline">\(t+k\)</span> is given by <span class="math inline">\(\overline{\delta}_{t+k|t}^y\)</span>, and takes a value such that: <span class="math display">\[y_{t+k}=y_t\left(1+\overline{\delta}_{t+k|t}\right)^k\]</span></p>
+<p><small>I dropped <span class="math inline">\(y\)</span> from the notation in the formula because it is obvious that we are talking about the variable <span class="math inline">\(y\)</span>.</small></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="growth-rates-3" class="slide level2">
+<h2>Growth Rates</h2>
+<p>Let’s start with <span class="math inline">\(y_t\)</span>… and the traditional growth rates <span class="math inline">\(\delta_t\)</span>: <span class="math display">\[y_{t+1} = y_t(1+\delta_t)\]</span> <span class="math display">\[y_{t+2} = y_{t+1}(1+\delta_{t+1})\]</span> <span class="math display">\[y_{t+3} = y_{t+1}(1+\delta_{t+2})\]</span></p>
+<p>Can we write <span class="math inline">\(y_{t+2}\)</span> as a function of <span class="math inline">\(y_t\)</span>?</p>
+<div class="fragment">
+<p><span class="math display">\[y_{t+2} = y_{t+1}(1+\delta_{t+1}) = y_{t}(1+\delta_t)(1+\delta_{t+1})\]</span></p>
+</div>
+<div class="fragment">
+<p>And <span class="math inline">\(y_{t+3}\)</span>?</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[y_{t+3} = y_{t}(1+\delta_t)(1+\delta_{t+1})(1+\delta_{t+2})\]</span></p>
+</div>
+</section>
+<section id="growth-rates-4" class="slide level2">
+<h2>Growth Rates</h2>
+<p>Generalizing</p>
+<p><span class="math display">\[y_{t+k}=y_t (1+\delta_t)(1+\delta_{t+1})...(1+\delta_{t+k-1})\]</span></p>
+<p>When computing the average growth rate, we are trying to find <span class="math inline">\(\overline{\delta}\)</span> such that if the growth rate was the same every period, it would have taken <span class="math inline">\(y_t\)</span> to the value of <span class="math inline">\(y_{t+k}\)</span> all the same:</p>
+<p><span class="math display">\[y_{t+k}=y_t(1+\overline{\delta})(1+\overline{\delta})...(1+\overline{\delta})\]</span></p>
+<div class="fragment">
+<p>How many times is <span class="math inline">\((1+\overline{\delta})\)</span> multiplied in the expression?</p>
+</div>
+</section>
+<section id="growth-rates-5" class="slide level2">
+<h2>Growth Rates</h2>
+<p><span class="math display">\[y_{t+k} = y_t \left(1+\overline{\delta}\right)^k\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[\frac{y_{t+k}}{y_t} = \left(1+\overline{\delta}\right)^k\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\left(\frac{y_{t+k}}{y_t}\right)^{1/k} = \left(1+\overline{\delta}\right)\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\left(\frac{y_{t+k}}{y_t}\right)^{1/k} - 1 = \overline{\delta}\]</span></p>
+<p><span class="math display">\[\overline{\delta}_{t+k|t}=\left(\frac{y_{t+k}}{y_t}\right)^{1/k} - 1\]</span></p>
+</div>
+</section>
+<section id="example-5" class="slide level2">
+<h2>Example</h2>
+<p>We had <span class="math display">\[\delta_{2023|2019}^y = \frac{427\,494 - 405\,563}{405\,563} = 0.0541 = 5.41\%\]</span></p>
+<p>But what now is the <strong>average growth rate</strong> between 2019 and 2023?</p>
+<div class="fragment">
+<p>Remember <span class="math inline">\(k = 4\)</span>!</p>
+<p><span class="math display">\[\overline{\delta} = \left(\frac{427\,494}{405\,563}\right)^{1/4} - 1 \approx 0.0133=1.33\%\]</span></p>
+<blockquote>
+<p>Interpretation: On average, between 2019 and 2023 <span class="math inline">\(y\)</span> grew 1.33% every year.</p>
+</blockquote>
+</div>
+</section>
+<section id="example-6" class="slide level2">
+<h2>Example</h2>
+<p>Note that <span class="math display">\[(1+1.33\%)^4 = (1+0.0133)^4 \approx 1.0541 \approx 1 + 5.41\%\]</span></p>
+</section></section>
+<section>
+<section id="index-numbers" class="title-slide slide level1 center">
+<h1>Index Numbers</h1>
+
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<div id="671cef04" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="01_intro_files/figure-revealjs/cell-11-output-1.png" width="1141" height="662"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Which stock would you have purchased in 2015?</p>
+</section>
+<section id="motivation-1" class="slide level2">
+<h2>Motivation</h2>
+<p>What’s the important question here?</p>
+<div class="fragment">
+<p>Which one grew more! For this, levels are not as relevant as their evolution over time.</p>
+<p>For example, say we have prices for two stocks A and B. Say we want to hold these stocks for only one period, which one would choose to invest your hard earned <span class="emoji" data-emoji="dollar">💵</span>?</p>
+</div>
+<div class="fragment">
+<p>How many stocks will you be able to buy of each stock, if their prices are <span class="math inline">\(a_t\)</span> and <span class="math inline">\(b_t\)</span>, and you have US$1000?</p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(n_a=\frac{1000}{a_t}\)</span> of stock A and <span class="math inline">\(n_b=\frac{1000}{b_t}\)</span> of stock <span class="math inline">\(B\)</span>. Note that <span class="math inline">\(n_a\)</span> and <span class="math inline">\(n_b\)</span> are the amount of stock you can buy of each.</p>
+</div>
+</section>
+<section id="motivation-2" class="slide level2">
+<h2>Motivation</h2>
+<p>Now is a new day <span class="emoji" data-emoji="sunrise_over_mountains">🌄</span>! Prices are now <span class="math inline">\(a_{t+1}\)</span> and <span class="math inline">\(b_{t+1}\)</span>, how much is your portfolio worth today?</p>
+<div class="fragment">
+<ol type="1">
+<li class="fragment">If you bought stock A: <span class="math inline">\(a_{t+1} n_a = a_{t+1}\frac{1000}{a_t}\)</span></li>
+<li class="fragment">If you bought stock B: <span class="math inline">\(b_{t+1} n_b = b_{t+1}\frac{1000}{b_t}\)</span></li>
+</ol>
+</div>
+<div class="fragment">
+<p>Note that the 1000 is fixed, so it is just what we invested, it is not going to change anything in our decision on buying A vs B, what is really important is <span class="math inline">\(\frac{a_{t+1}}{a_t}\)</span> and <span class="math inline">\(\frac{b_{t+1}}{b_t}\)</span>, that is the growth rate of prices for each stock, as</p>
+<p><span class="math display">\[\frac{a_{t+1}}{a_t}=1+\delta_{t+1}^a \quad\text{and}\quad \frac{b_{t+1}}{b_t}=1+\delta_{t+1}^b\]</span></p>
+</div>
+</section>
+<section id="motivation-3" class="slide level2">
+<h2>Motivation</h2>
+<p>You did not sell and…</p>
+<p>Now is (another) new day <span class="emoji" data-emoji="sunrise_over_mountains">🌄</span>! Prices are now <span class="math inline">\(a_{t+2}\)</span> and <span class="math inline">\(b_{t+2}\)</span>, how much is your portfolio worth today?</p>
+<div class="fragment">
+<ol type="1">
+<li class="fragment">If you bought stock A: <span class="math inline">\(a_{t+2} n_a = a_{t+2}\frac{1000}{a_t}\)</span></li>
+<li class="fragment">If you bought stock B: <span class="math inline">\(b_{t+2} n_b = b_{t+2}\frac{1000}{b_t}\)</span></li>
+</ol>
+</div>
+<div class="fragment">
+<p>blah, blah…</p>
+<p><span class="math display">\[\frac{a_{t+2}}{a_t}=1+\delta_{t+2}^a \quad\text{and}\quad \frac{b_{t+2}}{b_t}=1+\delta_{t+2}^b\]</span></p>
+<p>If we wait two days, we only care how is the price today compared to when we made the purchase. We could make instead a plot of <span class="math inline">\(1+\delta_{t+k}\)</span> to see which grew more!</p>
+</div>
+</section>
+<section id="motivation-4" class="slide level2">
+<h2>Motivation</h2>
+<div id="c9b65fc2" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="01_intro_files/figure-revealjs/cell-12-output-1.png" width="1141" height="470"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now we have much clear picture. We can compare their evolution starting in 3/8/2015.</p>
+<p><br>
+</p>
+<p>What can you read from the plot?</p>
+</section>
+<section id="motivation-5" class="slide level2">
+<h2>Motivation</h2>
+<p>Note that for 3/8/2015, we would have, for A and B:</p>
+<p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
+<p>We just built and index number!</p>
+<p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
+<p><br>
+</p>
+<p>When our new series was 2, we understood that <span class="math inline">\(1+\delta_{t+k}=2\)</span> or <span class="math inline">\(\delta_{t+k}=1\)</span>, <em>i.e.</em> the price grew 100%, or <em>doubled</em>! Now, with the new notation, we would have that the new series would take the value of 200, <em>i.e.</em> the price is now 200% the value it had at our initial date.</p>
+</section>
+<section id="index-numbers-1" class="slide level2">
+<h2>Index Numbers</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Index Number</strong></p>
+</div>
+<div class="callout-content">
+<p>An <strong>Index Number</strong> is a scaled variable that takes as a reference point the value an underlying variable took at a fixed point in time. Say, for an underlying variable <span class="math inline">\(x_t\)</span> we build an index <span class="math inline">\(I_t\)</span>.</p>
+<p><span class="math display">\[I_t=\frac{x_t}{x_0}\times 100\]</span></p>
+<p>Where <span class="math inline">\(x_t\)</span> is the value the underlying variable takes at time <span class="math inline">\(t\)</span>, and <span class="math inline">\(x_0\)</span> representes the value this variable took at our reference point. This period is called <strong>base</strong>.</p>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<p>In our previous example, the base day would have been 3/8/2015. Note that in the base year <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 
 
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

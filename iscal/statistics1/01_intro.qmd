@@ -104,8 +104,8 @@ gdp_table = pd.DataFrame({
     'GDP (Millions €)': annual_gdp.iloc[:, 0].round(0).astype(int)
 })
 
-gdp_table['GDP (Millions €)'] = gdp_table['GDP (Millions €)'].apply(lambda x: f"{x:,.0f} €")
-markdown_table = gdp_table.to_markdown(index=False, stralign="left", numalign="right")
+gdp_table['GDP (Millions €)'] = gdp_table['GDP (Millions €)'].apply(lambda x: f"{x:,.0f}")
+markdown_table = gdp_table.to_markdown(index = False, stralign = "left", numalign = "right")
 Markdown(markdown_table)
 ```
 
@@ -119,13 +119,13 @@ Source: FRED
 #| fig-width: 5
 #| fig-height: 3
 
-plt.figure(figsize=(5, 3))
+plt.figure(figsize = (5, 3))
 plt.plot(annual_gdp.index, annual_gdp.iloc[:, 0], 
-         marker='o', linewidth=3, markersize=8, color='#4472C4')
+         marker = 'o', linewidth = 3, markersize = 8, color = '#4472C4')
 
-plt.title('GDP', fontsize=16, fontweight='bold')
-plt.xlabel('Year', fontsize=12)
-plt.ylabel('GDP (Millions of Euros)', fontsize=12)
+plt.title('GDP', fontsize = 16, fontweight = 'bold')
+plt.xlabel('Year', fontsize = 12)
+plt.ylabel('GDP (Millions of Euros)', fontsize = 12)
 
 plt.tight_layout()
 plt.show()
@@ -137,6 +137,9 @@ plt.show()
 ```{python}
 # putting the dataset in usable variables for practicality
 
+def d(x):
+  display(Markdown(x))
+
 y = []
 ys = []
 v = []
@@ -146,8 +149,8 @@ for i in range(5):
   y.append(annual_gdp.index[i])
   ys.append(f"{y[i]:.0f}")
 
-  v.append(annual_gdp.iloc[i,0])
-  vs.append(f"{v[i]:,.0f} €")
+  v.append(round(annual_gdp.iloc[i,0]))
+  vs.append(f"{v[i]:,.0f}")
 
 ```
 
@@ -159,13 +162,335 @@ How much did $y$ grow between `{python} ys[0]` and `{python} ys[1]`?
 
 . . .
 
-$$\Delta y_{2020} = y_{`{python} ys[1]`} - y_{`{python} ys[0]`} = `{python} vs[1]` - `{python} vs[0]`$$
+$$\Delta y_{`{python} ys[1]`} = y_{`{python} ys[1]`} - y_{`{python} ys[0]`} = `{python} vs[1]` - `{python} vs[0]`$$
 
 . . .
 ```{python}
-delta_str = f"= {v[1] - v[0]:,.0f} €"
+d(f'$$={v[1]-v[0]}$$')
 ```
 
-<div style="text-align: center;">
-  `{python} delta_str`
-</div>
+. . .
+
+Or we could say
+
+```{python}
+d(f"$$y_{{{y[1]}}}=y_{{{y[0]}}}+\\Delta y_{{{y[1]}}}$$")
+d(f'$${v[1]}={v[0]}+({v[1]-v[0]})$$')
+```
+
+## Example
+
+```{python}
+d(f"$$y_{{{y[1]}}}=y_{{{y[0]}}}+\\Delta y_{{{y[1]}}}$$")
+d(f"$$y_{{{y[1]}}}=y_{{{y[0]}}}\left(1+\\frac{{\\Delta y_{{{y[1]}}}}}{{y_{{{y[0]}}}}}\\right)$$")
+d(f"$$y_{{{y[1]}}}=y_{{{y[0]}}}\left(1+\\delta^y_{{{y[1]}}}\\right)$$")
+```
+
+This, $\delta_{2020}^y$, is the **growth rate** of $y$ at year `{python} ys[1]`.
+
+## Growth Rate
+
+::: {.callout-note appearance="simple" icon=false}
+## Growth Rate
+Let $y_t$ be a variable that might take different values over time. The **growth rate** at $t$ is given by $\delta_t^y$, and takes a value such that:
+$$y_t=y_{t-1}\left(1+\delta_t\right)$$
+
+And then
+$$\delta_t = \frac{y_t-y_{t-1}}{y_{t-1}}$$
+
+<small>Note: I dropped $y$ from the notation in the formula because it is obvious that we are talking about the variable $y$.</small>
+
+You can write the growth rate as a decimal or as a percentage. If you use decimal notation, consider at least 4 places, if you use percentage you use at least 2. Example: 0.0123 or 1.23\%.
+
+**Interpretation**: What is the percentage change for the variable $y$ between $t-1$ and $t$.
+:::
+
+
+
+
+## Example
+
+```{python}
+d(f'$${v[1]}={v[0]}+({v[1]-v[0]})$$')
+d(f'$${v[1]}={v[0]}\left(1+\\frac{({v[1]-v[0]})}{{{v[0]}}}\\right)$$')
+d(f'$${v[1]}={v[0]}\left(1+{{{round((v[1]-v[0])/v[0], 4)}}}\\right)$$')
+```
+
+. . .
+
+In this case $\delta_{`{python} ys[1]`}^y = `{python} round((v[1]-v[0])/v[0], 4)` = `{python} 100*round((v[1]-v[0])/v[0], 4)`\%$.
+
+> Interpretation: Between `{python} ys[0]` and `{python} ys[1]`, the GDP for Italy *`{python} 'decreased' if v[1]-v[0]<0 else 'increased'`* `{python} abs(100*round((v[1]-v[0])/v[0], 4))`\%.
+
+## Growth Rates
+
+More generally $$\delta_{t+k|t}=\frac{y_{t+k}-y_t}{y_t}$$
+
+Or $$y_{t+k}=y_t(1+\delta_{t+k|t})$$
+
+<small>(homework: Show step by step how you go from one to the other.)</small>
+
+> Note: In this case $\delta_{t+k|t}$ is what percentage the variable changed from $t$ to $t+k$, and $k$ is the number of periods.
+
+## Example
+
+We had $y_{`{python} ys[0]`}=`{python} vs[0]`$, and $y_{`{python} ys[4]`} = `{python} vs[4]`$. We will try to find $\delta_{`{python} ys[4]`|`{python} ys[0]`}^y$.
+
+* What is the value of $k$ in this case?
+
+. . .
+
+  $$k=`{python} ys[4]`-`{python} ys[0]`=`{python} f'{y[4]-y[0]}'`$$
+
+* What is the growth rate between $`{python} ys[0]`$ and $`{python} ys[4]`$ ?
+
+. . .
+
+$$\delta_{`{python} ys[4]`|`{python} ys[0]`}^y = \frac{`{python} vs[4]` - `{python} vs[0]`}{`{python} vs[0]`} = `{python} round((v[4]-v[0])/v[0], 4)` = `{python} 100*round((v[4]-v[0])/v[0], 4)`\%$$
+
+> In Italy, GDP grew `{python} 100*round((v[4]-v[0])/v[0], 4)`\% between `{python} ys[0]` and `{python} ys[4]`, or GDP in Italy in `{python} ys[4]` is `{python} 100*round((v[4]-v[0])/v[0], 4)`\% larger than in `{python} ys[0]`.
+
+## Growth Rates
+
+::: {.callout-warning}
+
+You should be careful with your interpretation and use of this *cumulative* growth rate, because it **does not** mean that $y$ grew $\delta_{t+k|t}^y$ **per period** between $t$ and $t+k$.
+
+:::
+
+. . .
+
+\
+
+::: {.callout-note appearance="simple" icon=false}
+## Average Growth Rate
+Let $y_t$ be a variable that might take different values over time. The **average growth rate** betweek $t$ and $t+k$ is given by $\overline{\delta}_{t+k|t}^y$, and takes a value such that:
+$$y_{t+k}=y_t\left(1+\overline{\delta}_{t+k|t}\right)^k$$
+
+<small>I dropped $y$ from the notation in the formula because it is obvious that we are talking about the variable $y$.</small>
+:::
+
+## Growth Rates
+
+Let's start with $y_t$... and the traditional growth rates $\delta_t$:
+$$y_{t+1} = y_t(1+\delta_t)$$
+$$y_{t+2} = y_{t+1}(1+\delta_{t+1})$$
+$$y_{t+3} = y_{t+1}(1+\delta_{t+2})$$
+
+Can we write $y_{t+2}$ as a function of $y_t$?
+
+. . .
+
+$$y_{t+2} = y_{t+1}(1+\delta_{t+1}) = y_{t}(1+\delta_t)(1+\delta_{t+1})$$
+
+. . . 
+
+And $y_{t+3}$?
+
+. . . 
+
+$$y_{t+3} = y_{t}(1+\delta_t)(1+\delta_{t+1})(1+\delta_{t+2})$$
+
+## Growth Rates
+
+Generalizing
+
+$$y_{t+k}=y_t (1+\delta_t)(1+\delta_{t+1})...(1+\delta_{t+k-1})$$
+
+When computing the average growth rate, we are trying to find $\overline{\delta}$ such that if the growth rate was the same every period, it would have taken $y_t$ to the value of $y_{t+k}$ all the same:
+
+$$y_{t+k}=y_t(1+\overline{\delta})(1+\overline{\delta})...(1+\overline{\delta})$$
+
+. . . 
+
+How many times is $(1+\overline{\delta})$ multiplied in the expression?
+
+## Growth Rates
+
+$$y_{t+k} = y_t \left(1+\overline{\delta}\right)^k$$
+
+. . .
+
+$$\frac{y_{t+k}}{y_t} = \left(1+\overline{\delta}\right)^k$$
+
+. . .
+
+$$\left(\frac{y_{t+k}}{y_t}\right)^{1/k} = \left(1+\overline{\delta}\right)$$
+
+. . .
+
+$$\left(\frac{y_{t+k}}{y_t}\right)^{1/k} - 1 = \overline{\delta}$$
+
+$$\overline{\delta}_{t+k|t}=\left(\frac{y_{t+k}}{y_t}\right)^{1/k} - 1$$
+
+## Example
+
+We had $$\delta_{`{python} ys[4]`|`{python} ys[0]`}^y = \frac{`{python} vs[4]` - `{python} vs[0]`}{`{python} vs[0]`} = `{python} round((v[4]-v[0])/v[0], 4)` = `{python} 100*round((v[4]-v[0])/v[0], 4)`\%$$
+
+But what now is the **average growth rate** between `{python} ys[0]` and `{python} ys[4]`?
+
+. . .
+
+Remember $k = `{python} f'{y[4]-y[0]}'`$!
+
+$$\overline{\delta} = \left(\frac{`{python} vs[4]`}{`{python} vs[0]`}\right)^{1/`{python} f'{y[4]-y[0]}'`} - 1 \approx `{python} float(round((v[4]/v[0])**(1/(y[4]-y[0]))-1,4))`=`{python} round(100*float((v[4]/v[0])**(1/(y[4]-y[0]))-1),2)`\%$$
+
+
+> Interpretation: On average, between `{python} ys[0]` and `{python} ys[4]` $y$ `{python} 'grew' if y[4]>y[0] else 'decreased'` `{python} round(100*float((v[4]/v[0])**(1/(y[4]-y[0]))-1),2)`\% every year.
+
+## Example
+
+Note that $$(1+`{python} round(100*float((v[4]/v[0])**(1/(y[4]-y[0]))-1),2)`\%)^`{python} f'{y[4]-y[0]}'` = (1+`{python} float(round((v[4]/v[0])**(1/(y[4]-y[0]))-1,4))`)^`{python} f'{y[4]-y[0]}'` \approx `{python} 1+round((v[4]-v[0])/v[0], 4)` \approx 1 + `{python} round(100*(v[4]-v[0])/v[0], 2)`\%$$
+
+
+# Index Numbers
+
+## Motivation
+
+```{python}
+import yfinance as yf
+
+high_price_stock = "NFLX"  
+low_price_stock = "AAPL"   
+
+# Set up date range for last 10 years
+end_date = datetime.now()
+start_date = end_date - timedelta(days = 10*365)
+
+high_stock_prices = yf.download(high_price_stock, start = start_date, end = end_date)['Close']
+low_stock_prices = yf.download(low_price_stock, start = start_date, end = end_date)['Close']
+```
+
+```{python}
+#| echo: false
+
+plt.figure(figsize = (12, 7))
+    
+# Plot both stocks on the same y-axis (same scale)
+plt.plot(high_stock_prices.index, high_stock_prices.values, color = 'blue', linewidth = 3, label = f'{high_price_stock}')
+plt.plot(low_stock_prices.index, low_stock_prices.values, color = 'red', linewidth = 3, label = f'{low_price_stock}')
+
+# Add labels and formatting
+plt.xlabel('Date', fontsize = 12)
+plt.ylabel('Stock Price ($)', fontsize = 12)
+plt.title(f'{high_price_stock} vs {low_price_stock}', fontsize = 14, pad = 20)
+plt.legend(fontsize = 12)
+plt.grid(True, alpha = 0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+Which stock would you have purchased in `{python} start_date.year`?
+
+## Motivation
+
+What's the important question here?
+
+. . .
+
+Which one grew more! For this, levels are not as relevant as their evolution over time.
+
+For example, say we have prices for two stocks A and B. Say we want to hold these stocks for only one period, which one would choose to invest your hard earned :dollar:?
+
+. . .
+
+How many stocks will you be able to buy of each stock, if their prices are $a_t$ and $b_t$, and you have US$1000?
+
+. . .
+
+$n_a=\frac{1000}{a_t}$ of stock A and $n_b=\frac{1000}{b_t}$ of stock $B$. Note that $n_a$ and $n_b$ are the amount of stock you can buy of each.
+
+## Motivation
+
+Now is a new day :sunrise_over_mountains:! Prices are now $a_{t+1}$ and $b_{t+1}$, how much is your portfolio worth today?
+
+. . .
+
+1. If you bought stock A: $a_{t+1} n_a = a_{t+1}\frac{1000}{a_t}$
+2. If you bought stock B: $b_{t+1} n_b = b_{t+1}\frac{1000}{b_t}$
+
+. . .
+
+Note that the 1000 is fixed, so it is just what we invested, it is not going to change anything in our decision on buying A vs B, what is really important is $\frac{a_{t+1}}{a_t}$ and $\frac{b_{t+1}}{b_t}$, that is the growth rate of prices for each stock, as
+
+$$\frac{a_{t+1}}{a_t}=1+\delta_{t+1}^a \quad\text{and}\quad \frac{b_{t+1}}{b_t}=1+\delta_{t+1}^b$$
+
+## Motivation
+
+You did not sell and...
+
+Now is (another) new day :sunrise_over_mountains:! Prices are now $a_{t+2}$ and $b_{t+2}$, how much is your portfolio worth today?
+
+. . .
+
+1. If you bought stock A: $a_{t+2} n_a = a_{t+2}\frac{1000}{a_t}$
+2. If you bought stock B: $b_{t+2} n_b = b_{t+2}\frac{1000}{b_t}$
+
+. . .
+
+blah, blah... 
+
+$$\frac{a_{t+2}}{a_t}=1+\delta_{t+2}^a \quad\text{and}\quad \frac{b_{t+2}}{b_t}=1+\delta_{t+2}^b$$
+
+If we wait two days, we only care how is the price today compared to when we made the purchase. We could make instead a plot of $1+\delta_{t+k}$ to see which grew more!
+
+## Motivation
+
+```{python}
+#| echo: false
+
+high_p = high_stock_prices/high_stock_prices.iloc[0,0]
+low_p = low_stock_prices/low_stock_prices.iloc[0,0]
+
+plt.figure(figsize = (12, 5))
+    
+# Plot both stocks on the same y-axis (same scale)
+plt.plot(high_p.index, high_p.values, color = 'blue', linewidth = 3, label = f'{high_price_stock}')
+plt.plot(low_p.index, low_p.values, color = 'red', linewidth = 3, label = f'{low_price_stock}')
+
+# Add labels and formatting
+plt.xlabel('Date', fontsize = 12)
+plt.ylabel(f'Price Evolution Compared to {start_date.day}/{start_date.month}/{start_date.year}', fontsize = 12)
+plt.title(f'{high_price_stock} vs {low_price_stock}', fontsize = 14, pad = 20)
+plt.legend(fontsize = 12)
+plt.grid(True, alpha = 0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+Now we have much clear picture. We can compare their evolution starting in `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`.
+
+\
+
+What can you read from the plot?
+
+## Motivation
+
+Note that for `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`, we would have, for A and B:
+
+$$1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1$$
+
+We just built and index number!
+
+By convention though, instead of using 1 for the reference date, we will use 100 (as in 100\%) for the reference day (we will put a name to this in a few moments).
+
+\
+
+When our new series was 2, we understood that $1+\delta_{t+k}=2$ or $\delta_{t+k}=1$, *i.e.* the price grew 100\%, or *doubled*! Now, with the new notation, we would have that the new series would take the value of 200, *i.e.* the price is now 200\% the value it had at our initial date.
+
+## Index Numbers
+
+::: {.callout-note appearance="simple" icon=false}
+## Index Number
+An **Index Number** is a scaled variable that takes as a reference point the value an underlying variable took at a fixed point in time. Say, for an underlying variable $x_t$ we build an index $I_t$.
+
+$$I_t=\frac{x_t}{x_0}\times 100$$
+
+Where $x_t$ is the value the underlying variable takes at time $t$, and $x_0$ representes the value this variable took at our reference point. This period is called **base**.
+:::
+
+\
+
+In our previous example, the base day would have been `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`. Note that in the base year $$I_0=\frac{x_0}{x_0}\times 100 = 100$$
