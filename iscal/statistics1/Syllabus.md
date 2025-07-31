@@ -1,14 +1,3 @@
-<style>
-.content-with-margins {
-    margin: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-</style>
-
-<div class="content-with-margins">
-
 # Syllabus \- Statistics I
 
 Bachelor's Degree in Management  
@@ -120,5 +109,3 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 * Pedrosa, A.C. & Gama, S.M.A. (2004) Introdução Computacional, Porto Editora  
 * Pimenta, F. et al. (2015) Introdução à Estatística, Escolar Editora  
 * Robalo, A. (1995) Exercícios de Estatística, Edições Sílabo
-
-</div>
