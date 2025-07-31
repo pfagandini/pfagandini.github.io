@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Syllabus - Statistics I
-permalink: /custom-page/
+permalink: /iscal/statistics1/Syllabus.html
 ---
 <div class="custom-margin">
 
