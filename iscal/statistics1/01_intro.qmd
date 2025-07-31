@@ -493,4 +493,4 @@ Where $x_t$ is the value the underlying variable takes at time $t$, and $x_0$ re
 
 \
 
-In our previous example, the base day would have been `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`. Note that in the base year $$I_0=\frac{x_0}{x_0}\times 100 = 100$$
+In our previous example, the base day would have been `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`. Note that in the base period $$I_0=\frac{x_0}{x_0}\times 100 = 100$$
