@@ -5,7 +5,7 @@ institute: "Lisbon Accounting and Business School – Polytechnic University of 
 format:
   revealjs:
     theme: default
-    slide-number: false
+    slide-number: true
     incremental: true
     math: katex
     transition: slide
@@ -460,7 +460,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-Now we have much clear picture. We can compare their evolution starting in `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`.
+Now we have a much clear picture. We can compare their evolution starting in `{python} f'{start_date.day}/{start_date.month}/{start_date.year}'`.
 
 \
 
@@ -547,6 +547,7 @@ A **Chain or Link Index Number** is an index number that updates its base in eve
 
 $$I_t = \frac{x_t}{x_{t-1}}\times 100$$
 
+> Interpretation: It tells you how much the variable increased compared to the **previous** period.
 :::
 
 ## Index Numbers
@@ -587,5 +588,98 @@ But if instead you used the 100 to multiply: $$1+\delta_{t+2,t}=100\times 100= 1
 
 We can always transform a chain index number into a fixed base index number.
 
-1. Chose a reference, say $t$.
-2. 
+1. Chose a reference, for example for period 3.
+2. Remember: what you want to achieve: $\forall t, I'_t=\frac{x_t}{x_3}$
+3. Remember: that we have $I_t=\frac{x_t}{x_{t-1}}$
+4. Use what we did just before:
+$$ I_t' = I_t I_{t-1} ...I_{4} = \frac{x_t}{x_{t-1}}\frac{x_{t-1}}{x_{t-2}}...\frac{x_4}{x_3}=\frac{x_t}{x_3}=I'_t$$
+
+## Example
+
+Suppose we want to conver this Chain Index into Fix Base index, with the base year in `{python} datetime.now().year-5`. This will be our 100.
+<small>
+
+| | `{python} datetime.now().year-5` | `{python} datetime.now().year-4` | `{python} datetime.now().year-3` | `{python} datetime.now().year-2` | `{python} datetime.now().year-1` | `{python} datetime.now().year` |
+| ---            | :---: | :---:                         | :---:                         | :---:                        | :---:                         | :---:                         |
+| Price          | 30    | 34                            | 37                            | 35                           | 36                            | 39                            |
+|                | -     | $\frac{34}{30} 100$           | $\frac{37}{34} 100$           | $\frac{35}{37} 100$          | $\frac{36}{35} 100$           | $\frac{39}{36} 100$           |
+| $I_{chain}$    | -     | `{python} round(34/30*100,1)` | `{python} round(37/34*100,1)` |`{python} round(35/37*100,1)` | `{python} round(34/35*100,1)` | `{python} round(39/36*100,1)` |
+|                | -     | $100\frac{113.3}{100}$        | $113.3\frac{108.8}{100}$      | $123.3\frac{94.6}{100}$      |$116.7 \frac{97.1}{100}$       | $120\frac{108.3}{100}$        |
+| $I_{t|{python} datetime.now().year-5}$| 100   | `{python} round(34/30*100,1)` | `{python} round(37/30*100,1)` | `{python} round(35/30*100,1)`|`{python} round(36/30*100,1)`  | `{python} round(39/30*100,1)` |
+
+: Stock prices
+
+\
+
+Note that, for example in `{python} datetime.now().year-1`, we have $I_{`{python} datetime.now().year-1`|{python} datetime.now().year-5}=116.7$, which was computed as $123.3\times\frac{94.6}{100}$. But $123.3$ was the base `{python} datetime.now().year-5` index of the previous period, which in turn was computed as $113.3\frac{108.8}{100}$, so in reality:
+
+$$116.7=123.3\frac{94.6}{100}=113.3\frac{108.8}{100}\frac{94.6}{100}=100\frac{113.3}{100}\frac{108.8}{100}\frac{94.6}{100}$$
+
+If you pay attention, wou will see that we have there the product of the *chain Index* in  `{python} datetime.now().year-4`,  `{python} datetime.now().year-3`, and  `{python} datetime.now().year-2`. We divided by 100 because, to multiply, we need to divide by 100 before.
+
+</small>
+
+## Base Change
+
+In case we have the data, we just need to compute the Index with the base  that we want, however, if we do not have the data, and we just have a Fix Base index, we can do it all the same!
+
+Say we have an index with base 0. Maybe we want to change it to base 2.
+
+
+## Base Change
+
+::: {#tbl-panel layout-ncol=2}
+| period | Index          | Formula              |
+| ---    | ---            | ---                  |
+| 0      | $I_{0|0}$      | $\frac{x_0}{x_0}$    |
+| 1      | $I_{1|0}$      | $\frac{x_1}{x_0}$    |
+| 2      | $I_{2|0}$      | $\frac{x_2}{x_0}$    |
+| 3      | $I_{3|0}$      | $\frac{x_3}{x_0}$    |
+| ...    | ...            | ...                  |
+| t      | $I_{t|0}$      | $\frac{x_t}{x_0}$    |
+
+: Base 0
+
+| period | Index          | Formula              |
+| ---    | ---            | ---                  |
+| 0      | $I_{0|2}$      | $\frac{x_0}{x_2}$    |
+| 1      | $I_{1|2}$      | $\frac{x_1}{x_2}$    |
+| 2      | $I_{2|2}$      | $\frac{x_2}{x_2}$    |
+| 3      | $I_{3|2}$      | $\frac{x_3}{x_2}$    |
+| ...    | ...            | ...                  |
+| t      | $I_{t|2}$      | $\frac{x_t}{x_2}$    |
+
+: Base 2
+
+Changing Base
+:::
+
+## Base Change
+
+But how can we transform them, if we do not know $x_i$ $\forall i$?
+
+. . . 
+
+$$I_{t|2}=\frac{x_t}{x_2}=1\frac{x_t}{x_2}=\frac{1/x_0}{1/x_0}\frac{x_t}{x_2}=\frac{\frac{x_t}{x_0}}{\frac{x_2}{x_0}}=\frac{I_{t|0}}{I_{2|0}}$$
+
+And that is how we can re-base an index without knowing the value for the underlying variable ($x_t$)!
+
+
+::: {.callout-tip}
+## Mixing up stuff
+
+Previously we covered how to go from a chain index to a fix base one. Now we saw how to change the base of a fix base index. With both things together you can turn a chain index into fix base one, with base you want!
+:::
+
+## Example
+
+| | `{python} datetime.now().year-5` | `{python} datetime.now().year-4` | `{python} datetime.now().year-3` | `{python} datetime.now().year-2` | `{python} datetime.now().year-1` | `{python} datetime.now().year` |
+| ---            | :---: | :---:                         | :---:                         | :---:                        | :---:                         | :---:                         |
+| Price          | 30    | 34                            | 37                            | 35                           | 36                            | 39                            |
+| $I_{t|`{python} datetime.now().year-5`}$   | 100   | `{python} round(34/30*100,1)` | `{python} round(37/30*100,1)` | `{python} round(35/30*100,1)`|`{python} round(36/30*100,1)`  | `{python} round(39/30*100,1)` |
+|                | $\frac{100}{123.3}$ | $\frac{113.3}{123.3}$ | $\frac{123.3}{123.3}$| $\frac{116.7}{123.3}$ | $\frac{120.0}{123.3}$ | $\frac{130.0}{123.3}$|
+| $I_{t|2022}$   | `{python} round(30/37*100,1)` |`{python} round(34/37*100,1)` | `{python} round(37/37*100,1)` | `{python} round(35/37*100,1)` | `{python} round(36/37*100,1)` |`{python} round(39/37*100,1)` |
+
+: Stock prices
+
+> New information? Yes! For example, without any computation we know that the price in `{python} datetime.now().year` was 30\% larger than in `{python} datetime.now().year-5`, and 5.4\% larger than in `{python} datetime.now().year-3`

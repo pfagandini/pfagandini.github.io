@@ -219,8 +219,8 @@ Paulo Fagandini, PhD
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Italian Real GDP (base = 2010)</p>
-<div id="e0c2061f" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="563">
+<div id="23eac527" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="57">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -263,7 +263,7 @@ Paulo Fagandini, PhD
 </div>
 <p>Source: FRED</p>
 </div><div class="column" style="width:50%;">
-<div id="84f3dfcc" class="cell" data-fig-height="3" data-fig-width="5" data-execution_count="3">
+<div id="1b989029" class="cell" data-fig-height="3" data-fig-width="5" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -282,7 +282,7 @@ Paulo Fagandini, PhD
 <p><span class="math display">\[\Delta y_{2020} = y_{2020} - y_{2019} = 382\,900 - 405\,563\]</span></p>
 </div>
 <div class="fragment">
-<div id="d5d8d823" class="cell" data-execution_count="5">
+<div id="0213a0c0" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[=-22663\]</span></p>
 </div>
@@ -290,7 +290,7 @@ Paulo Fagandini, PhD
 </div>
 <div class="fragment">
 <p>Or we could say</p>
-<div id="3a5d5f2c" class="cell" data-execution_count="6">
+<div id="81445f0f" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
 </div>
@@ -302,7 +302,7 @@ Paulo Fagandini, PhD
 </section>
 <section id="example-2" class="slide level2">
 <h2>Example</h2>
-<div id="5d5249c2" class="cell" data-execution_count="7">
+<div id="91a8b698" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
 </div>
@@ -334,7 +334,7 @@ Paulo Fagandini, PhD
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
-<div id="dea62c40" class="cell" data-execution_count="8">
+<div id="d58774e8" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[382900=405563+(-22663)\]</span></p>
 </div>
@@ -472,7 +472,7 @@ Paulo Fagandini, PhD
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
-<div id="cfd28759" class="cell" data-execution_count="10">
+<div id="3626f3ac" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -529,7 +529,7 @@ Paulo Fagandini, PhD
 </section>
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
-<div id="f5cf62b5" class="cell" data-execution_count="11">
+<div id="090506c1" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -538,14 +538,14 @@ Paulo Fagandini, PhD
 </div>
 </div>
 </div>
-<p>Now we have much clear picture. We can compare their evolution starting in 3/8/2015.</p>
+<p>Now we have a much clear picture. We can compare their evolution starting in 4/8/2015.</p>
 <p><br>
 </p>
 <p>What can you read from the plot?</p>
 </section>
 <section id="motivation-5" class="slide level2">
 <h2>Motivation</h2>
-<p>Note that for 3/8/2015, we would have, for A and B:</p>
+<p>Note that for 4/8/2015, we would have, for A and B:</p>
 <p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
 <p>We just built and index number!</p>
 <p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
@@ -572,7 +572,7 @@ Paulo Fagandini, PhD
 </div>
 <p><br>
 </p>
-<p>In our previous example, the base day would have been 3/8/2015. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
+<p>In our previous example, the base day would have been 4/8/2015. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
 <section id="index-numbers-2" class="slide level2">
 <h2>Index Numbers</h2>
@@ -660,6 +660,9 @@ Paulo Fagandini, PhD
 <div class="callout-content">
 <p>A <strong>Chain or Link Index Number</strong> is an index number that updates its base in every period.</p>
 <p><span class="math display">\[I_t = \frac{x_t}{x_{t-1}}\times 100\]</span></p>
+<blockquote>
+<p>Interpretation: It tells you how much the variable increased compared to the <strong>previous</strong> period.</p>
+</blockquote>
 </div>
 </div>
 </div>
@@ -702,9 +705,286 @@ Paulo Fagandini, PhD
 <h2>Index Numbers</h2>
 <p>We can always transform a chain index number into a fixed base index number.</p>
 <ol type="1">
-<li class="fragment">Chose a reference, say <span class="math inline">\(t\)</span>.</li>
-<li class="fragment"></li>
+<li class="fragment">Chose a reference, for example for period 3.</li>
+<li class="fragment">Remember: what you want to achieve: <span class="math inline">\(\forall t, I'_t=\frac{x_t}{x_3}\)</span></li>
+<li class="fragment">Remember: that we have <span class="math inline">\(I_t=\frac{x_t}{x_{t-1}}\)</span></li>
+<li class="fragment">Use what we did just before: <span class="math display">\[ I_t' = I_t I_{t-1} ...I_{4} = \frac{x_t}{x_{t-1}}\frac{x_{t-1}}{x_{t-2}}...\frac{x_4}{x_3}=\frac{x_t}{x_3}=I'_t\]</span></li>
 </ol>
+</section>
+<section id="example-7" class="slide level2">
+<h2>Example</h2>
+<p>Suppose we want to conver this Chain Index into Fix Base index, with the base year in 2020. This will be our 100. <small></small></p><small>
+<table class="caption-top" style="width:100%;">
+<caption>Stock prices</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">2020</th>
+<th style="text-align: center;">2021</th>
+<th style="text-align: center;">2022</th>
+<th style="text-align: center;">2023</th>
+<th style="text-align: center;">2024</th>
+<th style="text-align: center;">2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Price</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">39</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{34}{30} 100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{37}{34} 100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{35}{37} 100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{36}{35} 100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{39}{36} 100\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(I_{chain}\)</span></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">113.3</td>
+<td style="text-align: center;">108.8</td>
+<td style="text-align: center;">94.6</td>
+<td style="text-align: center;">97.1</td>
+<td style="text-align: center;">108.3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><span class="math inline">\(100\frac{113.3}{100}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(113.3\frac{108.8}{100}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(123.3\frac{94.6}{100}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(116.7 \frac{97.1}{100}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(120\frac{108.3}{100}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(I_{t|{python} datetime.now().year-5}\)</span></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">113.3</td>
+<td style="text-align: center;">123.3</td>
+<td style="text-align: center;">116.7</td>
+<td style="text-align: center;">120.0</td>
+<td style="text-align: center;">130.0</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p>Note that, for example in 2024, we have <span class="math inline">\(I_{2024|{python} datetime.now().year-5}=116.7\)</span>, which was computed as <span class="math inline">\(123.3\times\frac{94.6}{100}\)</span>. But <span class="math inline">\(123.3\)</span> was the base 2020 index of the previous period, which in turn was computed as <span class="math inline">\(113.3\frac{108.8}{100}\)</span>, so in reality:</p>
+<p><span class="math display">\[116.7=123.3\frac{94.6}{100}=113.3\frac{108.8}{100}\frac{94.6}{100}=100\frac{113.3}{100}\frac{108.8}{100}\frac{94.6}{100}\]</span></p>
+<p>If you pay attention, wou will see that we have there the product of the <em>chain Index</em> in 2021, 2022, and 2023. We divided by 100 because, to multiply, we need to divide by 100 before.</p>
+</small><p><small></small></p>
+</section>
+<section id="base-change" class="slide level2">
+<h2>Base Change</h2>
+<p>In case we have the data, we just need to compute the Index with the base that we want, however, if we do not have the data, and we just have a Fix Base index, we can do it all the same!</p>
+<p>Say we have an index with base 0. Maybe we want to change it to base 2.</p>
+</section>
+<section id="base-change-1" class="slide level2">
+<h2>Base Change</h2>
+<div id="tbl-panel" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Changing Base
+</figcaption>
+<div aria-describedby="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table class="caption-top">
+<caption>Base 0</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">period</th>
+<th style="text-align: left;">Index</th>
+<th style="text-align: left;">Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="math inline">\(I_{0|0}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_0}{x_0}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span class="math inline">\(I_{1|0}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_1}{x_0}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><span class="math inline">\(I_{2|0}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_2}{x_0}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><span class="math inline">\(I_{3|0}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_3}{x_0}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">t</td>
+<td style="text-align: left;"><span class="math inline">\(I_{t|0}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_t}{x_0}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table class="caption-top">
+<caption>Base 2</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">period</th>
+<th style="text-align: left;">Index</th>
+<th style="text-align: left;">Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="math inline">\(I_{0|2}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_0}{x_2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span class="math inline">\(I_{1|2}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_1}{x_2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><span class="math inline">\(I_{2|2}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_2}{x_2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><span class="math inline">\(I_{3|2}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_3}{x_2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">t</td>
+<td style="text-align: left;"><span class="math inline">\(I_{t|2}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{x_t}{x_2}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="base-change-2" class="slide level2">
+<h2>Base Change</h2>
+<p>But how can we transform them, if we do not know <span class="math inline">\(x_i\)</span> <span class="math inline">\(\forall i\)</span>?</p>
+<div class="fragment">
+<p><span class="math display">\[I_{t|2}=\frac{x_t}{x_2}=1\frac{x_t}{x_2}=\frac{1/x_0}{1/x_0}\frac{x_t}{x_2}=\frac{\frac{x_t}{x_0}}{\frac{x_2}{x_0}}=\frac{I_{t|0}}{I_{2|0}}\]</span></p>
+<p>And that is how we can re-base an index without knowing the value for the underlying variable (<span class="math inline">\(x_t\)</span>)!</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Mixing up stuff</strong></p>
+</div>
+<div class="callout-content">
+<p>Previously we covered how to go from a chain index to a fix base one. Now we saw how to change the base of a fix base index. With both things together you can turn a chain index into fix base one, with base you want!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-8" class="slide level2">
+<h2>Example</h2>
+<table class="caption-top" style="width:100%;">
+<caption>Stock prices</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">2020</th>
+<th style="text-align: center;">2021</th>
+<th style="text-align: center;">2022</th>
+<th style="text-align: center;">2023</th>
+<th style="text-align: center;">2024</th>
+<th style="text-align: center;">2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Price</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">39</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I_{t|2020}\)</span></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">113.3</td>
+<td style="text-align: center;">123.3</td>
+<td style="text-align: center;">116.7</td>
+<td style="text-align: center;">120.0</td>
+<td style="text-align: center;">130.0</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{100}{123.3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{113.3}{123.3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{123.3}{123.3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{116.7}{123.3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{120.0}{123.3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{130.0}{123.3}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I_{t|2022}\)</span></td>
+<td style="text-align: center;">81.1</td>
+<td style="text-align: center;">91.9</td>
+<td style="text-align: center;">100.0</td>
+<td style="text-align: center;">94.6</td>
+<td style="text-align: center;">97.3</td>
+<td style="text-align: center;">105.4</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>New information? Yes! For example, without any computation we know that the price in 2025 was 30% larger than in 2020, and 5.4% larger than in 2022</p>
+</blockquote>
 
 
 </section></section>
@@ -764,7 +1044,7 @@ Paulo Fagandini, PhD
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
