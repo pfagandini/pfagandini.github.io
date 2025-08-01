@@ -29,7 +29,7 @@ jupyter: python3
 
 **Main source for course material:** Moodle@ISCAL
 
-**Alternative source (EN):** [My personal website](https://pfagandini.github.io/statistics1.html)
+**Alternative source (EN):** [pfagandini.github.io/statistics1.html](https://pfagandini.github.io/statistics1.html)
 
 \
 
@@ -206,8 +206,6 @@ You can write the growth rate as a decimal or as a percentage. If you use decima
 :::
 
 
-
-
 ## Example
 
 ```{python}
@@ -343,7 +341,7 @@ $$\overline{\delta} = \left(\frac{`{python} vs[4]`}{`{python} vs[0]`}\right)^{1/
 Note that $$(1+`{python} round(100*float((v[4]/v[0])**(1/(y[4]-y[0]))-1),2)`\%)^`{python} f'{y[4]-y[0]}'` = (1+`{python} float(round((v[4]/v[0])**(1/(y[4]-y[0]))-1,4))`)^`{python} f'{y[4]-y[0]}'` \approx `{python} 1+round((v[4]-v[0])/v[0], 4)` \approx 1 + `{python} round(100*(v[4]-v[0])/v[0], 2)`\%$$
 
 
-# Index Numbers
+# Index Numbers - Introduction and Simple Index Numbers
 
 ## Motivation
 
@@ -683,3 +681,20 @@ Previously we covered how to go from a chain index to a fix base one. Now we saw
 : Stock prices
 
 > New information? Yes! For example, without any computation we know that the price in `{python} datetime.now().year` was 30\% larger than in `{python} datetime.now().year-5`, and 5.4\% larger than in `{python} datetime.now().year-3`
+
+# Index Numbers: Composite Index Numbers
+
+## Example: Inflation
+
+There is one index number that, along with a few others, captures large amounts of attention from the general public attention, because it reflects a phenomenon that heavily influences policy and individual decisions, **Inflation**. The index to which we refer is the CPI (Consumer Price Index). This is a single index among a broader family of price index numbers, very relevant to gauge the inflation in an economy (PPI - Producer Price Index).
+
+\
+
+This is a great opportunity to introduce another classification for our index numbers:
+
+```{mermaid}
+flowchart LR
+  A[Index Number] --> B[Prices $P$]
+  A --> C[Quantities $Q$]
+  A --> D[Value $P\times Q$]
+```

@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="01_intro_files/libs/revealjs/dist/theme/quarto-ee9ab3830bbe7759b42dda8416faf5cd.css">
   <link href="01_intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -156,7 +222,7 @@ Paulo Fagandini, PhD
 <p><br>
 </p>
 <p><strong>Main source for course material:</strong> Moodle@ISCAL</p>
-<p><strong>Alternative source (EN):</strong> <a href="https://pfagandini.github.io/statistics1.html">My personal website</a></p>
+<p><strong>Alternative source (EN):</strong> <a href="https://pfagandini.github.io/statistics1.html">pfagandini.github.io/statistics1.html</a></p>
 <p><br>
 </p>
 <p><strong>Official communication channel:</strong> <span class="emoji" data-emoji="email">📧</span> Institutional Email</p>
@@ -219,8 +285,8 @@ Paulo Fagandini, PhD
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Italian Real GDP (base = 2010)</p>
-<div id="23eac527" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="57">
+<div id="7141727f" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="13">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -263,7 +329,7 @@ Paulo Fagandini, PhD
 </div>
 <p>Source: FRED</p>
 </div><div class="column" style="width:50%;">
-<div id="1b989029" class="cell" data-fig-height="3" data-fig-width="5" data-execution_count="3">
+<div id="8c4e9813" class="cell" data-fig-height="3" data-fig-width="5" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -282,7 +348,7 @@ Paulo Fagandini, PhD
 <p><span class="math display">\[\Delta y_{2020} = y_{2020} - y_{2019} = 382\,900 - 405\,563\]</span></p>
 </div>
 <div class="fragment">
-<div id="0213a0c0" class="cell" data-execution_count="5">
+<div id="f1d3dfb5" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[=-22663\]</span></p>
 </div>
@@ -290,7 +356,7 @@ Paulo Fagandini, PhD
 </div>
 <div class="fragment">
 <p>Or we could say</p>
-<div id="81445f0f" class="cell" data-execution_count="6">
+<div id="6923f1a1" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
 </div>
@@ -302,7 +368,7 @@ Paulo Fagandini, PhD
 </section>
 <section id="example-2" class="slide level2">
 <h2>Example</h2>
-<div id="91a8b698" class="cell" data-execution_count="7">
+<div id="e6f742d9" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
 </div>
@@ -334,7 +400,7 @@ Paulo Fagandini, PhD
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
-<div id="d58774e8" class="cell" data-execution_count="8">
+<div id="4323e520" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><span class="math display">\[382900=405563+(-22663)\]</span></p>
 </div>
@@ -466,13 +532,13 @@ Paulo Fagandini, PhD
 <p>Note that <span class="math display">\[(1+1.33\%)^4 = (1+0.0133)^4 \approx 1.0541 \approx 1 + 5.41\%\]</span></p>
 </section></section>
 <section>
-<section id="index-numbers" class="title-slide slide level1 center">
-<h1>Index Numbers</h1>
+<section id="index-numbers---introduction-and-simple-index-numbers" class="title-slide slide level1 center">
+<h1>Index Numbers - Introduction and Simple Index Numbers</h1>
 
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
-<div id="3626f3ac" class="cell" data-execution_count="10">
+<div id="cf163247" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -529,7 +595,7 @@ Paulo Fagandini, PhD
 </section>
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
-<div id="090506c1" class="cell" data-execution_count="11">
+<div id="37badf53" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -553,7 +619,7 @@ Paulo Fagandini, PhD
 </p>
 <p>When our new series was 2, we understood that <span class="math inline">\(1+\delta_{t+k}=2\)</span> or <span class="math inline">\(\delta_{t+k}=1\)</span>, <em>i.e.</em> the price grew 100%, or <em>doubled</em>! Now, with the new notation, we would have that the new series would take the value of 200, <em>i.e.</em> the price is now 200% the value it had at our initial date.</p>
 </section>
-<section id="index-numbers-1" class="slide level2">
+<section id="index-numbers" class="slide level2">
 <h2>Index Numbers</h2>
 <div class="callout callout-note no-icon callout-titled callout-style-simple">
 <div class="callout-body">
@@ -574,7 +640,7 @@ Paulo Fagandini, PhD
 </p>
 <p>In our previous example, the base day would have been 4/8/2015. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
-<section id="index-numbers-2" class="slide level2">
+<section id="index-numbers-1" class="slide level2">
 <h2>Index Numbers</h2>
 <p>Index Numbers are defined by their underlying variable. This can change over time, or it can change according to another dimension, like geography, or both! We will see examples.</p>
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
@@ -646,7 +712,7 @@ Paulo Fagandini, PhD
 </tbody>
 </table>
 </section>
-<section id="index-numbers-3" class="slide level2">
+<section id="index-numbers-2" class="slide level2">
 <h2>Index Numbers</h2>
 <p>Importantly, an index number is <em>no bueno</em> to reflect the level of a variable, but its evolution or relative value against a base.</p>
 </section>
@@ -667,7 +733,7 @@ Paulo Fagandini, PhD
 </div>
 </div>
 </section>
-<section id="index-numbers-4" class="slide level2">
+<section id="index-numbers-3" class="slide level2">
 <h2>Index Numbers</h2>
 <p>Index numbers allow us to easily compute the growth rate between any two periods, just like we would do with the underlying variable:</p>
 <ol type="1">
@@ -683,7 +749,7 @@ Paulo Fagandini, PhD
 <p><small> <span class="math display">\[1+\delta_{t+k,t}=\frac{x_{t+k}}{x_t}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t}}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t+k-2}}\frac{x_{t+k-2}}{x_{t}}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t+k-2}}...\frac{x_{t+1}}{x_{t}}\]</span> <span class="math display">\[1+\delta_{t+k,t}=I_{t+k}\times I_{t+k-1}\times ... \times I_{t+2} \times I_{t+1}\]</span> </small></p>
 </div>
 </section>
-<section id="index-numbers-5" class="slide level2">
+<section id="index-numbers-4" class="slide level2">
 <h2>Index Numbers</h2>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -701,7 +767,7 @@ Paulo Fagandini, PhD
 </div>
 </div>
 </section>
-<section id="index-numbers-6" class="slide level2">
+<section id="index-numbers-5" class="slide level2">
 <h2>Index Numbers</h2>
 <p>We can always transform a chain index number into a fixed base index number.</p>
 <ol type="1">
@@ -985,6 +1051,24 @@ Table&nbsp;1: Changing Base
 <blockquote>
 <p>New information? Yes! For example, without any computation we know that the price in 2025 was 30% larger than in 2020, and 5.4% larger than in 2022</p>
 </blockquote>
+</section></section>
+<section>
+<section id="index-numbers-composite-index-numbers" class="title-slide slide level1 center">
+<h1>Index Numbers: Composite Index Numbers</h1>
+
+</section>
+<section id="example-inflation" class="slide level2">
+<h2>Example: Inflation</h2>
+<p>There is one index number that, along with a few others, captures large amounts of attention from the general public attention, because it reflects a phenomenon that heavily influences policy and individual decisions, <strong>Inflation</strong>. The index to which we refer is the CPI (Consumer Price Index). This is a single index among a broader family of price index numbers, very relevant to gauge the inflation in an economy (PPI - Producer Price Index).</p>
+<p><br>
+</p>
+<p>This is a great opportunity to introduce another classification for our index numbers:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {marmeid} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>```{mermaid}</span>
+<span id="cb1-2"><a href=""></a>flowchart LR</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a>A[Index Number] --&gt; B[Prices $P$]</span>
+<span id="cb1-5"><a href=""></a>A --&gt; C[Quantities $Q$]</span>
+<span id="cb1-6"><a href=""></a>A --&gt; D[Value $P\times Q$]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section></section>
