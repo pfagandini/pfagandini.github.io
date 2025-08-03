@@ -686,15 +686,33 @@ Previously we covered how to go from a chain index to a fix base one. Now we saw
 
 ## Example: Inflation
 
-There is one index number that, along with a few others, captures large amounts of attention from the general public attention, because it reflects a phenomenon that heavily influences policy and individual decisions, **Inflation**. The index to which we refer is the CPI (Consumer Price Index). This is a single index among a broader family of price index numbers, very relevant to gauge the inflation in an economy (PPI - Producer Price Index).
+There is one index number that, along with a few others, captures large amounts of attention from the general public attention, because it reflects a phenomenon that heavily influences policy and individual decisions, **Inflation**.
 
 \
 
+ The index to which we refer is the CPI (Consumer Price Index). This is a single index among a broader family of price index numbers, very relevant to gauge the inflation in an economy (PPI - Producer Price Index).
+
+## Composite Index Numbers
+
 This is a great opportunity to introduce another classification for our index numbers:
 
-```{mermaid}
-flowchart LR
-  A[Index Number] --> B[Prices $P$]
-  A --> C[Quantities $Q$]
-  A --> D[Value $P\times Q$]
+```{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\begin{tikzpicture}[
+  node distance=1.5cm and 2.5cm,
+  every node/.style={draw, rounded corners, align=center, minimum height=1.2cm, minimum width=2.5cm},
+  ->, thick
+]
+
+\node (A) {Index Number};
+\node (B) [right=of A, yshift=1.2cm] {Prices $P$};
+\node (C) [right=of A] {Quantities $Q$};
+\node (D) [right=of A, yshift=-1.2cm] {Value $P \times Q$};
+
+\draw (A) -- (B);
+\draw (A) -- (C);
+\draw (A) -- (D);
+
+\end{tikzpicture}
 ```
