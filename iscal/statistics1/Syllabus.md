@@ -3,7 +3,6 @@ layout: default
 title: Syllabus - Statistics I
 permalink: /iscal/statistics1/Syllabus.html
 ---
-<div class="custom-margin">
 
 Bachelor's Degree in Management  
 Course Director: Professor Dr. Maria Teresa Fortunato Pereira Esteves  
@@ -115,5 +114,3 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 * Pimenta, F. et al. (2015) Introdução à Estatística, Escolar Editora  
 * Robalo, A. (1995) Exercícios de Estatística, Edições Sílabo
 \
-
-</div>
