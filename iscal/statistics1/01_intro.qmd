@@ -27,7 +27,7 @@ jupyter: python3
 
 \
 
-**Main source for course material:** Moodle@ISCAL
+**Main source for course material:** [Moodle@ISCAL](https://moodle2526.ipl.pt/)
 
 **Alternative source (EN):** [pfagandini.github.io/statistics1.html](https://pfagandini.github.io/statistics1.html)
 
