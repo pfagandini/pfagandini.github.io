@@ -5,6 +5,7 @@ institute: "Lisbon Accounting and Business School – Polytechnic University of 
 format:
   revealjs:
     theme: default
+    execute: true
     slide-number: true
     incremental: true
     math: katex
@@ -603,13 +604,13 @@ Suppose we want to conver this Chain Index into Fix Base index, with the base ye
 |                | -     | $\frac{34}{30} 100$           | $\frac{37}{34} 100$           | $\frac{35}{37} 100$          | $\frac{36}{35} 100$           | $\frac{39}{36} 100$           |
 | $I_{chain}$    | -     | `{python} round(34/30*100,1)` | `{python} round(37/34*100,1)` |`{python} round(35/37*100,1)` | `{python} round(34/35*100,1)` | `{python} round(39/36*100,1)` |
 |                | -     | $100\frac{113.3}{100}$        | $113.3\frac{108.8}{100}$      | $123.3\frac{94.6}{100}$      |$116.7 \frac{97.1}{100}$       | $120\frac{108.3}{100}$        |
-| $I_{t|{python} datetime.now().year-5}$| 100   | `{python} round(34/30*100,1)` | `{python} round(37/30*100,1)` | `{python} round(35/30*100,1)`|`{python} round(36/30*100,1)`  | `{python} round(39/30*100,1)` |
+| $I_{t|`{python} datetime.now().year-5`}$| 100   | `{python} round(34/30*100,1)` | `{python} round(37/30*100,1)` | `{python} round(35/30*100,1)`|`{python} round(36/30*100,1)`  | `{python} round(39/30*100,1)` |
 
 : Stock prices
 
 \
 
-Note that, for example in `{python} datetime.now().year-1`, we have $I_{`{python} datetime.now().year-1`|{python} datetime.now().year-5}=116.7$, which was computed as $123.3\times\frac{94.6}{100}$. But $123.3$ was the base `{python} datetime.now().year-5` index of the previous period, which in turn was computed as $113.3\frac{108.8}{100}$, so in reality:
+Note that, for example in `{python} datetime.now().year-1`, we have $I_{`{python} datetime.now().year-1`|`{python} datetime.now().year-5`}=116.7$, which was computed as $123.3\times\frac{94.6}{100}$. But $123.3$ was the base `{python} datetime.now().year-5` index of the previous period, which in turn was computed as $113.3\frac{108.8}{100}$, so in reality:
 
 $$116.7=123.3\frac{94.6}{100}=113.3\frac{108.8}{100}\frac{94.6}{100}=100\frac{113.3}{100}\frac{108.8}{100}\frac{94.6}{100}$$
 
@@ -696,23 +697,60 @@ There is one index number that, along with a few others, captures large amounts 
 
 This is a great opportunity to introduce another classification for our index numbers:
 
-```{tikz}
-\usetikzlibrary{arrows.meta, positioning}
+```{python}
+from manim import *
 
-\begin{tikzpicture}[
-  node distance=1.5cm and 2.5cm,
-  every node/.style={draw, rounded corners, align=center, minimum height=1.2cm, minimum width=2.5cm},
-  ->, thick
-]
+# Create a configuration with a low quality and image output
+config.pixel_width = 1920
+config.pixel_height = 1080
+config.frame_rate = 30
+config.output_file = "manim_output.png"
+config.format = "png"
+config.verbosity = "WARNING"  # Avoid clutter
+config.background_color = WHITE
+config.media_dir = "./media" # Ensure media output goes to the current directory
 
-\node (A) {Index Number};
-\node (B) [right=of A, yshift=1.2cm] {Prices $P$};
-\node (C) [right=of A] {Quantities $Q$};
-\node (D) [right=of A, yshift=-1.2cm] {Value $P \times Q$};
+VMobject.set_default(color=BLACK)
 
-\draw (A) -- (B);
-\draw (A) -- (C);
-\draw (A) -- (D);
+class Diagram(Scene):
+  def construct(self):
+    # 1. Create the text for each box.
+    index_text = Tex("Index")
+    price_text = MathTex("\\text{price }", "(P)")
+    quantity_text = MathTex("\\text{quantity }", "(Q)")
+    value_text = MathTex("\\text{value }", "(P\\times Q)")
+    
+    # 2. Create the boxes (rectangles) around the text.
+    index_box = SurroundingRectangle(index_text, buff=0.2, color=BLUE)
+    price_box = SurroundingRectangle(price_text, buff=0.2, color=BLUE)
+    quantity_box = SurroundingRectangle(quantity_text, buff=0.2, color=BLUE)
+    value_box = SurroundingRectangle(value_text, buff=0.2, color=BLUE)
+    
+    # 3. Group the text and boxes together for easier manipulation.
+    index_group = VGroup(index_box, index_text)
+    price_group = VGroup(price_box, price_text)
+    quantity_group = VGroup(quantity_box, quantity_text)
+    value_group = VGroup(value_box, value_text)
+    
+    # 4. Arrange the groups on the screen.
+    index_group.to_edge(UP)
+    price_group.next_to(index_group, DOWN, buff=1.5).shift(4*LEFT)
+    quantity_group.next_to(index_group, DOWN, buff=1.5)
+    value_group.next_to(index_group, DOWN, buff=1.5).shift(4*RIGHT)
+    
+    # 5. Create the arrows connecting the boxes.
+    arrow_A_B = Arrow(index_group.get_bottom(), price_group.get_top())
+    arrow_A_C = Arrow(index_group.get_bottom(), quantity_group.get_top())
+    arrow_A_D = Arrow(index_group.get_bottom(), value_group.get_top())
 
-\end{tikzpicture}
+    # 6. Add all mobjects to the scene. This is the missing step.
+    self.add(index_group, price_group, quantity_group, value_group,
+            arrow_A_B, arrow_A_C, arrow_A_D)
+
+# Render the scene programmatically
+scene = Diagram()
+scene.render()
 ```
+
+
+![](media/images/manim_output.png)
