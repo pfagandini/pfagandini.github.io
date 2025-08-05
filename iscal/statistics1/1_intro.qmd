@@ -738,13 +738,19 @@ Previously we covered how to go from a chain index to a fixed base one. Now we s
 
 # Index Numbers: Composite Index Numbers
 
-## Example: Inflation
+## Composite Index Numbers
 
-There is one index number that, along with a few others, captures large amounts of attention from the general public attention, because it reflects a phenomenon that heavily influences policy and individual decisions, **Inflation**.
+::: {.callout-note appearance="simple" icon="false"}
+## Composite Index Numbers (a.k.a. Aggregate Index Numbers)
 
-\
+**Composite Index Numbers** are index numbers that have more than a single underlying variable, or which underlying variable is computed itself as a combination of other variables.
 
- The index to which we refer is the CPI (Consumer Price Index). This is a single index among a broader family of price index numbers, very relevant to gauge the inflation in an economy (PPI - Producer Price Index).
+A composite index tracks the combined evolution of multiple phenomena at the same time. It summarizes how a diverse group of elements changes over time.
+
+Example: The performance of a class, measured by the average grade. The average is computed with each individual grade, and therefore if we make an index based on the average of the class, we would have a composite index number.
+
+:::
+
 
 ## Composite Index Numbers
 
@@ -768,6 +774,257 @@ digraph flowchart {
 ")
 ```
 
-## Inflation
 
-Many times we have variables (or index numbers) that fit in the category of "value," just think on *sales*.
+## Composite Index Numbers
+
+Typically, values are collected in nominal terms, *i.e.* **current prices**, which is a *value*.
+
+$$v_t=p_t\times q_t$$
+
+. . .
+
+Note that, if $\delta_{t+1}^v$ is the growth rate of $v_t$:
+
+$$v_{t+1} = v_t\left(1+\delta_{t+1}^v\right)$$
+
+and obviously, it is also true that:
+
+$$v_{t+1} = p_{t+1}\times q_{t+1}$$
+
+## Composite Index Numbers
+
+But if we let $\delta_{t+1}^p$ be the growth rate of prices, and $\delta_{t+1}^p$ the growth rate of quantities we can rewrite $v_{t+1}$ as:
+
+$$v_{t+1}=p_t\left(1+\delta_{t+1}^p\right)q_t\left(1+\delta_{t+1}^q\right)$$
+
+. . .
+
+$$v_{t+1} = p_tq_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
+
+. . .
+
+$$v_{t+1} = v_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
+
+. . .
+
+$$v_{t}(1+\delta_{t+1}^v) = v_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
+
+## {.big-emoji}
+
+:bulb:
+
+<style>
+.big-emoji {
+  font-size: 10em;
+  text-align: center;
+  vertical-align: middle;
+}
+</style>
+
+
+## Composite Index Numbers
+
+$$(1+\delta_{t+1}^v) = (1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
+
+$\delta_t^v$ is what we call **nominal change rate**, while $\delta_t^q$ is what we call **real change rate**. We can find out the real change rate ($\delta^q$), if we know the nominal change rate ($\delta^v$), and the prices change rate ($\delta^p$):
+
+$$\left(1+\delta_{t}^q\right) = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}$$
+$$\delta_{t}^q = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}-1$$
+
+## Composite Index Numbers
+
+Suppose we have index numbers for $v$, $q$, and $p$, all with base $b$ (remember you can re-base your index numbers easily if they do not share the same base).
+
+$$I_{t|b}^q = \frac{I_{t|b}^v}{I_{t|b}^p}$$
+
+. . .
+
+$$\frac{q_t}{q_b} = \frac{\frac{v_t}{v_b}}{\frac{p_t}{p_b}}$$
+$$\frac{q_t}{q_b} = \frac{\frac{p_tq_t}{p_bq_b}}{\frac{p_t}{p_b}}=\frac{p_tq_t}{p_bq_b}\frac{p_b}{p_t}=\frac{q_t}{q_b}$$
+
+
+## Example
+
+|     | `r year(Sys.Date()) - 4` |  `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())`|
+| --- | ---                      | ---                       |---                       |---                       |---                  |
+| Sales Index | 99 | 100 | 107 | 110 | 111 |
+| Price Index | 95 | 100 | 102 | 106 | 109 |
+
+Let's find the quantities index, with base `r year(Sys.Date())-3`. Immediately we can fix $i_{t|b}^q=100$.
+
+$$I_{`r year(Sys.Date()) - 4`}^q=\frac{I_{`r year(Sys.Date()) - 4`}^v}{I_{`r year(Sys.Date()) - 4`}^p}=\frac{99}{95}=`r round(99/95, 2)`$$
+
+. . .
+
+Then $I_{`r year(Sys.Date()) - 4`} = 104$, quantities decreased from `r year(Sys.Date()) - 4` to `r year(Sys.Date()) - 3`!
+
+|     | `r year(Sys.Date()) - 4` |  `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())`|
+| --- | ---                      | ---                       |---                       |---                       |---                  |
+| Quantities Index | `r 100*round(99/95, 4)` | `r 100*round(100/100, 4)` | `r 100*round(107/102, 4)` | `r 100*round(110/106, 4)` | `r 100*round(111/109, 4)` |
+
+## Example
+
+|     | `r year(Sys.Date()) - 4` |  `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())`|
+| --- | ---                      | ---                       |---                       |---                       |---                  |
+| Quantities Index | `r 100*round(99/95, 4)` | `r 100*round(100/100, 4)` | `r 100*round(107/102, 4)` | `r 100*round(110/106, 4)` | `r 100*round(111/109, 4)` |
+
+
+Now we can compute what was the real change rate between `r year(Sys.Date()) - 1` and `r year(Sys.Date())`:
+
+. . .
+
+$$\delta_{`r year(Sys.Date())`}=\frac{102}{104}-1=`r round((111/109)/(110/106),4)-1`=`r 100*(round((111/109)/(110/106),4)-1)`\%$$
+
+> Real sales `r if ((111/109)/(110/106)-1 < 0) 'decreased' else 'increased' ` `r abs(100*(round((111/109)/(110/106),4)-1))`% from `r year(Sys.Date())-1` to `r year(Sys.Date())`.
+
+## Example
+
+Let's check:
+
+$$\delta_{2025}^q=\frac{(1+\delta_{2025}^v)}{(1+\delta_{2025}^p)}-1=\frac{111/110}{109/106}-1=`r round((111/110)/(109/106), 4)`-1$$
+$$\delta_{2025}^q=`r round((111/110)/(109/106), 4)-1`=`r 100*round((111/110)/(109/106), 4)-100`\%$$
+
+## Baskets
+
+::: {.callout-note appearance="simple" icon="false"}
+## Basket 🧺
+
+**Basket** are sets of goods, which are used to track the evolution of, for example, a price level.
+
+In economics, we often use price and quantity index numbers to measure how the prices or quantities of a set of goods (a **basket**) change over time.
+:::
+
+. . .
+
+> A very important question: What are the weights that the different goods should have in the basket?
+
+
+## Aggregate Index Numbers
+
+From the family of formulas to create weighted composite index numbers, we will focus on the two most common:
+
+1. **Laspeyres**: uses base-period quantities as weights.
+
+2. **Paasche**: uses current-period quantities as weights.
+
+These are used to measure the evolution of *prices* or *quantities*.
+
+## Kids' Explanation 
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+Old basket (🧺$_{past}$):
+
+::: {.nonincremental}
+
+- 🍎 10 apples
+- 🍊 5 oranges
+
+:::
+
+Old prices (🏷️$_{past}$):
+
+::: {.nonincremental}
+
+- $p_🍎=1$
+- $p_🍊=0.8$
+:::
+
+:::
+
+::: {.column width="50%"}
+
+  New basket (🧺$_{today}$):
+
+::: {.nonincremental}
+
+- 🍎 8 apples
+- 🍊 6 oranges
+
+:::
+
+New prices (🏷️$_{today}$):
+
+::: {.nonincremental}
+
+- $p_🍎=1.2$
+- $p_🍊=1.1$  
+
+:::
+
+:::
+
+:::
+
+Let's consider that the **base year is past**.
+
+
+## Kids' Explanation - Prices
+
+**Laspeyres - Price:**
+
+Use always $🧺_{past}$, but relevant :label:$! Laspeyres Price Index (LPI):
+
+<div style="text-align: center;">
+<small>
+
+$$🧺_{past}|\text{🏷️}_{past}\quad LPI_{past}=\frac{10\times 1 + 5 \times 0.8}{10\times 1 + 5 \times 0.8} = \frac{14}{14}=1$$
+$$🧺_{past}|\text{🏷️}_{today}\quad LPI_{today}=\frac{10\times 1.2 + 5\times 1.1}{10\times 1 + 5 \times 0.8}=\frac{17.5}{14}=`r round(17.5/14,2)`$$
+
+</small>
+</div>
+
+> Remember that 1 corresponds to 100, and `r round(17.5/14,2)` corresponds to `r round(17.5/14,2)*100`.
+
+## Kids' Explanation - Prices
+
+**Paasche - Price:**
+
+Use always $🧺_{today}$! Paasche Price Index (PPI):
+
+<div style="text-align: center;">
+<small>
+
+$$🧺_{today}|\text{🏷️}_{past}\quad PPI_{past}=\frac{8\times 1 + 6 \times 0.8}{8\times 1 + 6 \times 0.8} = \frac{12.8}{12.8}=1$$
+$$🧺_{today}|\text{🏷️}_{today}\quad PPI_{today}=\frac{8\times 1.2 + 6\times 1.1}{8\times 1 + 6 \times 0.8}=\frac{16.2}{12.8}=`r round(16.2/12.8,2)`$$
+
+</small>
+</div>
+
+> Remember that 1 corresponds to 100, and `r round(16.2/12.8,2)` corresponds to `r round(16.2/12.8,2)*100`.
+
+## Kids' Explanation - Quantities
+
+Laspeyres - Quantity: Use 🏷️$_{past}$! Laspeyres Quantity Index (LQI): $LQI_{old}=10\times 1 + 5 \times 0.8 = 14$, and $IPL_{new}=8\times 1 + 6\times 0.8=`12.8`$.
+If the base year is *old* then the index would be $100$ in *old* and `r round((12.8/14)*100, 1)` for the year *new*.
+
+\
+
+Paasche - Quantity: Use 🏷️$_{today}$! Paasche Quantity Index (PQI): $PQI_{old}=10\times 1.2 + 6 \times 1.1 = 18.6$, and $IPL_{new}=8\times 1.2 + 6\times 1.1=16.2$.
+If the base year is *old* then the index would be $100$ in *old* and `r round((16.2/18.6)*100, 1)` for the year *new*. :label:
+
+## In general - Laspeyres
+
+1. For prices, how much the old basket would cost at current prices relative to the **old basket and prices**?
+$$LPI = \frac{\sum_{k=1}^m p_t^k q_0^k}{\sum_{k=1}^m p_0^k q_0^k}$$
+
+2. For quantities, how much the current basket would cost at the old prices, relative to the **old basket and prices**?
+$$LQI = \frac{\sum_{k=1}^m p_0^k q_t^k}{\sum_{k=1}^m p_0^k q_0^k}$$
+
+. . .
+
+> Note: denominator is the same.
+
+## In general - Paasche
+
+1. For prices, how much more expensive is the **current basket** at current prices, relative to the original prices.
+$$PPI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_0^kq_t^k}$$
+
+2. For quantities, how much more the **current basket** costs, relative to what would cost the original basket at current prices.
+$$PQI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_t^kq_0^k}$$
+
+. . .
+
+> Note: numerator is the same.

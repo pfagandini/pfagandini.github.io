@@ -561,8 +561,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-60846aa38222a865d809" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-60846aa38222a865d809">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-61fd07ddf18c694bc654" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-61fd07ddf18c694bc654">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -973,28 +973,292 @@ Table&nbsp;1: Changing Base
 <h1>Index Numbers: Composite Index Numbers</h1>
 
 </section>
-<section id="example-inflation" class="slide level2">
-<h2>Example: Inflation</h2>
-<p>There is one index number that, along with a few others, captures large amounts of attention from the general public attention, because it reflects a phenomenon that heavily influences policy and individual decisions, <strong>Inflation</strong>.</p>
-<p><br>
-</p>
-<p>The index to which we refer is the CPI (Consumer Price Index). This is a single index among a broader family of price index numbers, very relevant to gauge the inflation in an economy (PPI - Producer Price Index).</p>
-</section>
 <section id="composite-index-numbers" class="slide level2">
+<h2>Composite Index Numbers</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Composite Index Numbers (a.k.a. Aggregate Index Numbers)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Composite Index Numbers</strong> are index numbers that have more than a single underlying variable, or which underlying variable is computed itself as a combination of other variables.</p>
+<p>A composite index tracks the combined evolution of multiple phenomena at the same time. It summarizes how a diverse group of elements changes over time.</p>
+<p>Example: The performance of a class, measured by the average grade. The average is computed with each individual grade, and therefore if we make an index based on the average of the class, we would have a composite index number.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="composite-index-numbers-1" class="slide level2">
 <h2>Composite Index Numbers</h2>
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-6e565a66fe515012f68e" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-6e565a66fe515012f68e">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-27ab1be10c5c24eb89b9" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-27ab1be10c5c24eb89b9">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
-<section id="inflation" class="slide level2">
-<h2>Inflation</h2>
-<p>Many times we have variables (or index numbers) that fit in the category of “value,” just think on <em>sales</em>.</p>
+<section id="composite-index-numbers-2" class="slide level2">
+<h2>Composite Index Numbers</h2>
+<p>Typically, values are collected in nominal terms, <em>i.e.</em> <strong>current prices</strong>, which is a <em>value</em>.</p>
+<p><span class="math display">\[v_t=p_t\times q_t\]</span></p>
+<div class="fragment">
+<p>Note that, if <span class="math inline">\(\delta_{t+1}^v\)</span> is the growth rate of <span class="math inline">\(v_t\)</span>:</p>
+<p><span class="math display">\[v_{t+1} = v_t\left(1+\delta_{t+1}^v\right)\]</span></p>
+<p>and obviously, it is also true that:</p>
+<p><span class="math display">\[v_{t+1} = p_{t+1}\times q_{t+1}\]</span></p>
+</div>
+</section>
+<section id="composite-index-numbers-3" class="slide level2">
+<h2>Composite Index Numbers</h2>
+<p>But if we let <span class="math inline">\(\delta_{t+1}^p\)</span> be the growth rate of prices, and <span class="math inline">\(\delta_{t+1}^p\)</span> the growth rate of quantities we can rewrite <span class="math inline">\(v_{t+1}\)</span> as:</p>
+<p><span class="math display">\[v_{t+1}=p_t\left(1+\delta_{t+1}^p\right)q_t\left(1+\delta_{t+1}^q\right)\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[v_{t+1} = p_tq_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[v_{t+1} = v_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[v_{t}(1+\delta_{t+1}^v) = v_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)\]</span></p>
+</div>
+</section>
+<section id="section" class="slide level2 big-emoji">
+<h2></h2>
+<p><span class="emoji" data-emoji="bulb">💡</span></p>
+<style>
+.big-emoji {
+  font-size: 10em;
+  text-align: center;
+  vertical-align: middle;
+}
+</style>
+</section>
+<section id="composite-index-numbers-4" class="slide level2">
+<h2>Composite Index Numbers</h2>
+<p><span class="math display">\[(1+\delta_{t+1}^v) = (1+\delta_{t+1}^p)(1+\delta_{t+1}^q)\]</span></p>
+<p><span class="math inline">\(\delta_t^v\)</span> is what we call <strong>nominal change rate</strong>, while <span class="math inline">\(\delta_t^q\)</span> is what we call <strong>real change rate</strong>. We can find out the real change rate (<span class="math inline">\(\delta^q\)</span>), if we know the nominal change rate (<span class="math inline">\(\delta^v\)</span>), and the prices change rate (<span class="math inline">\(\delta^p\)</span>):</p>
+<p><span class="math display">\[\left(1+\delta_{t}^q\right) = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}\]</span> <span class="math display">\[\delta_{t}^q = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}-1\]</span></p>
+</section>
+<section id="composite-index-numbers-5" class="slide level2">
+<h2>Composite Index Numbers</h2>
+<p>Suppose we have index numbers for <span class="math inline">\(v\)</span>, <span class="math inline">\(q\)</span>, and <span class="math inline">\(p\)</span>, all with base <span class="math inline">\(b\)</span> (remember you can re-base your index numbers easily if they do not share the same base).</p>
+<p><span class="math display">\[I_{t|b}^q = \frac{I_{t|b}^v}{I_{t|b}^p}\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[\frac{q_t}{q_b} = \frac{\frac{v_t}{v_b}}{\frac{p_t}{p_b}}\]</span> <span class="math display">\[\frac{q_t}{q_b} = \frac{\frac{p_tq_t}{p_bq_b}}{\frac{p_t}{p_b}}=\frac{p_tq_t}{p_bq_b}\frac{p_b}{p_t}=\frac{q_t}{q_b}\]</span></p>
+</div>
+</section>
+<section id="example-9" class="slide level2">
+<h2>Example</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+<th>2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sales Index</td>
+<td>99</td>
+<td>100</td>
+<td>107</td>
+<td>110</td>
+<td>111</td>
+</tr>
+<tr class="even">
+<td>Price Index</td>
+<td>95</td>
+<td>100</td>
+<td>102</td>
+<td>106</td>
+<td>109</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s find the quantities index, with base 2022. Immediately we can fix <span class="math inline">\(i_{t|b}^q=100\)</span>.</p>
+<p><span class="math display">\[I_{2021}^q=\frac{I_{2021}^v}{I_{2021}^p}=\frac{99}{95}=1.04\]</span></p>
+<div class="fragment">
+<p>Then <span class="math inline">\(I_{2021} = 104\)</span>, quantities decreased from 2021 to 2022!</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+<th>2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Quantities Index</td>
+<td>104.21</td>
+<td>100</td>
+<td>104.9</td>
+<td>103.77</td>
+<td>101.83</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="example-10" class="slide level2">
+<h2>Example</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+<th>2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Quantities Index</td>
+<td>104.21</td>
+<td>100</td>
+<td>104.9</td>
+<td>103.77</td>
+<td>101.83</td>
+</tr>
+</tbody>
+</table>
+<p>Now we can compute what was the real change rate between 2024 and 2025:</p>
+<div class="fragment">
+<p><span class="math display">\[\delta_{2025}=\frac{102}{104}-1=-0.0187=-1.87\%\]</span></p>
+<blockquote>
+<p>Real sales decreased 1.87% from 2024 to 2025.</p>
+</blockquote>
+</div>
+</section>
+<section id="example-11" class="slide level2">
+<h2>Example</h2>
+<p>Let’s check:</p>
+<p><span class="math display">\[\delta_{2025}^q=\frac{(1+\delta_{2025}^v)}{(1+\delta_{2025}^p)}-1=\frac{111/110}{109/106}-1=0.9813-1\]</span> <span class="math display">\[\delta_{2025}^q=-0.0187=-1.87\%\]</span></p>
+</section>
+<section id="baskets" class="slide level2">
+<h2>Baskets</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Basket 🧺</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Basket</strong> are sets of goods, which are used to track the evolution of, for example, a price level.</p>
+<p>In economics, we often use price and quantity index numbers to measure how the prices or quantities of a set of goods (a <strong>basket</strong>) change over time.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A very important question: What are the weights that the different goods should have in the basket?</p>
+</blockquote>
+</div>
+</section>
+<section id="aggregate-index-numbers" class="slide level2">
+<h2>Aggregate Index Numbers</h2>
+<p>From the family of formulas to create weighted composite index numbers, we will focus on the two most common:</p>
+<ol type="1">
+<li class="fragment"><p><strong>Laspeyres</strong>: uses base-period quantities as weights.</p></li>
+<li class="fragment"><p><strong>Paasche</strong>: uses current-period quantities as weights.</p></li>
+</ol>
+<p>These are used to measure the evolution of <em>prices</em> or <em>quantities</em>.</p>
+</section>
+<section id="kids-explanation" class="slide level2">
+<h2>Kids’ Explanation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Old basket (🧺<span class="math inline">\(_{past}\)</span>):</p>
+<ul>
+<li>🍎 10 apples</li>
+<li>🍊 5 oranges</li>
+</ul>
+<p>Old prices (🏷️<span class="math inline">\(_{past}\)</span>):</p>
+<ul>
+<li><span class="math inline">\(p_🍎=1\)</span></li>
+<li><span class="math inline">\(p_🍊=0.8\)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>New basket (🧺<span class="math inline">\(_{today}\)</span>):</p>
+<ul>
+<li>🍎 8 apples</li>
+<li>🍊 6 oranges</li>
+</ul>
+<p>New prices (🏷️<span class="math inline">\(_{today}\)</span>):</p>
+<ul>
+<li><span class="math inline">\(p_🍎=1.2\)</span></li>
+<li><span class="math inline">\(p_🍊=1.1\)</span></li>
+</ul>
+</div></div>
+<p>Let’s consider that the <strong>base year is past</strong>.</p>
+</section>
+<section id="kids-explanation---prices" class="slide level2">
+<h2>Kids’ Explanation - Prices</h2>
+<p><strong>Laspeyres - Price:</strong></p>
+<p>Use always <span class="math inline">\(🧺_{past}\)</span>, but relevant <span class="emoji" data-emoji="label">🏷️</span>$! Laspeyres Price Index (LPI):</p>
+<div style="text-align: center;">
+<p><small></small></p><small>
+<p><span class="math display">\[🧺_{past}|\text{🏷️}_{past}\quad LPI_{past}=\frac{10\times 1 + 5 \times 0.8}{10\times 1 + 5 \times 0.8} = \frac{14}{14}=1\]</span> <span class="math display">\[🧺_{past}|\text{🏷️}_{today}\quad LPI_{today}=\frac{10\times 1.2 + 5\times 1.1}{10\times 1 + 5 \times 0.8}=\frac{17.5}{14}=1.25\]</span></p>
+</small><p><small></small></p>
+</div>
+<blockquote>
+<p>Remember that 1 corresponds to 100, and 1.25 corresponds to 125.</p>
+</blockquote>
+</section>
+<section id="kids-explanation---prices-1" class="slide level2">
+<h2>Kids’ Explanation - Prices</h2>
+<p><strong>Paasche - Price:</strong></p>
+<p>Use always <span class="math inline">\(🧺_{today}\)</span>! Paasche Price Index (PPI):</p>
+<div style="text-align: center;">
+<p><small></small></p><small>
+<p><span class="math display">\[🧺_{today}|\text{🏷️}_{past}\quad PPI_{past}=\frac{8\times 1 + 6 \times 0.8}{8\times 1 + 6 \times 0.8} = \frac{12.8}{12.8}=1\]</span> <span class="math display">\[🧺_{today}|\text{🏷️}_{today}\quad PPI_{today}=\frac{8\times 1.2 + 6\times 1.1}{8\times 1 + 6 \times 0.8}=\frac{16.2}{12.8}=1.27\]</span></p>
+</small><p><small></small></p>
+</div>
+<blockquote>
+<p>Remember that 1 corresponds to 100, and 1.27 corresponds to 127.</p>
+</blockquote>
+</section>
+<section id="kids-explanation---quantities" class="slide level2">
+<h2>Kids’ Explanation - Quantities</h2>
+<p>Laspeyres - Quantity: Use 🏷️<span class="math inline">\(_{past}\)</span>! Laspeyres Quantity Index (LQI): <span class="math inline">\(LQI_{old}=10\times 1 + 5 \times 0.8 = 14\)</span>, and <span class="math inline">\(IPL_{new}=8\times 1 + 6\times 0.8=`12.8`\)</span>. If the base year is <em>old</em> then the index would be <span class="math inline">\(100\)</span> in <em>old</em> and 91.4 for the year <em>new</em>.</p>
+<p><br>
+</p>
+<p>Paasche - Quantity: Use 🏷️<span class="math inline">\(_{today}\)</span>! Paasche Quantity Index (PQI): <span class="math inline">\(PQI_{old}=10\times 1.2 + 6 \times 1.1 = 18.6\)</span>, and <span class="math inline">\(IPL_{new}=8\times 1.2 + 6\times 1.1=16.2\)</span>. If the base year is <em>old</em> then the index would be <span class="math inline">\(100\)</span> in <em>old</em> and 87.1 for the year <em>new</em>. <span class="emoji" data-emoji="label">🏷️</span></p>
+</section>
+<section id="in-general---laspeyres" class="slide level2">
+<h2>In general - Laspeyres</h2>
+<ol type="1">
+<li class="fragment"><p>For prices, how much the old basket would cost at current prices relative to the <strong>old basket and prices</strong>? <span class="math display">\[LPI = \frac{\sum_{k=1}^m p_t^k q_0^k}{\sum_{k=1}^m p_0^k q_0^k}\]</span></p></li>
+<li class="fragment"><p>For quantities, how much the current basket would cost at the old prices, relative to the <strong>old basket and prices</strong>? <span class="math display">\[LQI = \frac{\sum_{k=1}^m p_0^k q_t^k}{\sum_{k=1}^m p_0^k q_0^k}\]</span></p></li>
+</ol>
+<div class="fragment">
+<blockquote>
+<p>Note: denominator is the same.</p>
+</blockquote>
+</div>
+</section>
+<section id="in-general---paasche" class="slide level2">
+<h2>In general - Paasche</h2>
+<ol type="1">
+<li class="fragment"><p>For prices, how much more expensive is the <strong>current basket</strong> at current prices, relative to the original prices. <span class="math display">\[PPI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_0^kq_t^k}\]</span></p></li>
+<li class="fragment"><p>For quantities, how much more the <strong>current basket</strong> costs, relative to what would cost the original basket at current prices. <span class="math display">\[PQI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_t^kq_0^k}\]</span></p></li>
+</ol>
+<div class="fragment">
+<blockquote>
+<p>Note: numerator is the same.</p>
+</blockquote>
 
 
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
