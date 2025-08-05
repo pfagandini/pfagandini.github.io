@@ -5,7 +5,6 @@ institute: "Lisbon Accounting and Business School – Polytechnic University of 
 format:
   revealjs:
     theme: default
-    execute: true
     slide-number: true
     incremental: true
     math: katex
@@ -15,6 +14,9 @@ format:
     code-overflow: wrap
     code-block-font-size: 0.75em
     progress: true
+execute:
+  enabled: true
+engines: [knitr, jupyter]
 jupyter: python3
 ---
 
@@ -697,60 +699,10 @@ There is one index number that, along with a few others, captures large amounts 
 
 This is a great opportunity to introduce another classification for our index numbers:
 
-```{python}
-from manim import *
+```{mermaid}
+flowchart TB
 
-# Create a configuration with a low quality and image output
-config.pixel_width = 1920
-config.pixel_height = 1080
-config.frame_rate = 30
-config.output_file = "manim_output.png"
-config.format = "png"
-config.verbosity = "WARNING"  # Avoid clutter
-config.background_color = WHITE
-config.media_dir = "./media" # Ensure media output goes to the current directory
-
-VMobject.set_default(color=BLACK)
-
-class Diagram(Scene):
-  def construct(self):
-    # 1. Create the text for each box.
-    index_text = Tex("Index")
-    price_text = MathTex("\\text{price }", "(P)")
-    quantity_text = MathTex("\\text{quantity }", "(Q)")
-    value_text = MathTex("\\text{value }", "(P\\times Q)")
-    
-    # 2. Create the boxes (rectangles) around the text.
-    index_box = SurroundingRectangle(index_text, buff=0.2, color=BLUE)
-    price_box = SurroundingRectangle(price_text, buff=0.2, color=BLUE)
-    quantity_box = SurroundingRectangle(quantity_text, buff=0.2, color=BLUE)
-    value_box = SurroundingRectangle(value_text, buff=0.2, color=BLUE)
-    
-    # 3. Group the text and boxes together for easier manipulation.
-    index_group = VGroup(index_box, index_text)
-    price_group = VGroup(price_box, price_text)
-    quantity_group = VGroup(quantity_box, quantity_text)
-    value_group = VGroup(value_box, value_text)
-    
-    # 4. Arrange the groups on the screen.
-    index_group.to_edge(UP)
-    price_group.next_to(index_group, DOWN, buff=1.5).shift(4*LEFT)
-    quantity_group.next_to(index_group, DOWN, buff=1.5)
-    value_group.next_to(index_group, DOWN, buff=1.5).shift(4*RIGHT)
-    
-    # 5. Create the arrows connecting the boxes.
-    arrow_A_B = Arrow(index_group.get_bottom(), price_group.get_top())
-    arrow_A_C = Arrow(index_group.get_bottom(), quantity_group.get_top())
-    arrow_A_D = Arrow(index_group.get_bottom(), value_group.get_top())
-
-    # 6. Add all mobjects to the scene. This is the missing step.
-    self.add(index_group, price_group, quantity_group, value_group,
-            arrow_A_B, arrow_A_C, arrow_A_D)
-
-# Render the scene programmatically
-scene = Diagram()
-scene.render()
+A[Index] --> B[Price]
+A --> C[Quantity]
+A --> D[Value PQ]
 ```
-
-
-![](media/images/manim_output.png)

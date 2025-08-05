@@ -1,0 +1,769 @@
+---
+title: "Introduction and Growth Rates"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    incremental: true
+    math: katex
+    transition: slide
+    footer: "Statistics I"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: visual
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Course Introduction
+
+## Core Information
+
+**Instructor:** Paulo Fagandini
+
+:email: pfagandini\@iscal.ipl.pt
+
+\
+
+**Main source for course material:** [Moodle\@ISCAL](https://moodle2526.ipl.pt/)
+
+**Alternative source (EN):** [pfagandini.github.io/statistics1.html](https://pfagandini.github.io/statistics1.html)
+
+\
+
+**Official communication channel:** :email: Institutional Email
+
+## Bibliography
+
+### Topic 1:
+
+:book: A Practical Introduction to Index Numbers. 1^st^ Ed 2015. Jeff Ralph, Rob O'Neill, Joe Winton.
+
+### Topics 2 and 3:
+
+:book: Statistics for Business and Economics Global Edition. 10^th^ Ed 2022. Paul Newbold, William Carlson, and Betty Thorne.
+
+\
+
+<small>This last book is a bit expensive, but it can be rented for less money [here](https://eu.pearson.com/statistics-for-business-and-economics-global-edition/9781292438306). The Publisher kindly offered a 25% discount with the code **MISLIBROS2025**. This code is valid for the whole site until December 31^st^ , 2025.</small>
+
+## Continuous Assessment
+
+| Assessment Element | Weight (%) | Duration   | Syllabus       | Date              |
+|---------------|---------------|---------------|---------------|---------------|
+| Midterm            | 60%        | 80 minutes | Topics 1 and 2 | Week Nov 11-15    |
+| Partial Exam       | 40%        | 80 minutes | Topic 3        | Regular Exam Date |
+
+<small>Each test has a minimum grade of 7.00 (out of 20), not 6.9, not 6.95.</small>
+
+## Comprehensive Exam
+
+Students may opt, on the day of the Exam, to take an Exam worth 100% of the grade. This Exam will cover Topics 1, 2, and 3.
+
+\
+
+If you score less than 7.00 in the Midterm, or if you cannot attend the midterm for whatever reason, you **will** have to do the Comprehensive Exam.
+
+# Growth Rates
+
+## Example
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| results: 'hide'
+#| fig.align: "center"
+
+# Load required libraries
+library(quantmod)
+library(ggplot2)
+library(dplyr)
+
+# Set date range
+end_date <- Sys.Date()
+start_date <- end_date - 365*6
+
+# Get AAPL stock data
+getSymbols("AAPL", src = "yahoo", from = start_date, to = end_date, auto.assign = TRUE)
+aapl_data <- AAPL
+
+# Extract closing prices for the last trading day of each year
+aapl_annual <- aapl_data %>%
+  as.data.frame() %>%
+  mutate(Date = index(AAPL)) %>%
+  group_by(Year = format(Date, "%Y")) %>%
+  slice_tail(n = 1) %>%
+  ungroup()
+
+# Create dataframe with date and closing prices
+aapl_df <- data.frame(
+  Date = as.numeric(aapl_annual[['Year']]),
+  Close = round(aapl_annual[['AAPL.Close']], 2)
+)
+
+# Plot using ggplot2
+
+ggplot(aapl_df, aes(x = Date, y = Close)) +
+  geom_line(color = "blue") +
+  labs(title = "Time Series of Closing Prices",
+       x = "Year",
+       y = "Close Price") +
+  theme_minimal()
+
+```
+
+Source: FRED
+:::
+
+::: {.column width="50%"}
+```{r}
+library(knitr)
+
+# Display the table
+kable(aapl_df)
+
+```
+:::
+:::::
+
+## Example
+
+Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date[1]`}$ is the close price we got for`r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close[1]`).
+
+How much did $y$ grow between `{r} aapl_df$Date[1]` and `{r} aapl_df$Date[2]`?
+
+. . .
+
+$$\Delta y_{`r aapl_df$Date[2]`} = y_{`r aapl_df$Date[2]`} - y_{`r aapl_df$Date[1]`} = `r aapl_df$Close[2]` - `r aapl_df$Close[1]`$$ $$=`r aapl_df$Close[2] - aapl_df$Close[1]`$$
+
+. . .
+
+Or we could say
+
+$$y_{`r aapl_df$Date[2]`} = y_{`r aapl_df$Date[1]`} + \Delta y_{`r aapl_df$Date[2]`}$$ $$`r aapl_df$Close[2]` = `r aapl_df$Close[1]` + `r aapl_df$Close[2] - aapl_df$Close[1]`$$
+
+## Example
+
+$$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}+\Delta y_{`r aapl_df$Date[2]`}$$
+
+$$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\frac{\Delta y_{`r aapl_df$Date[2]`}}{y_{`r aapl_df$Date[1]`}}\right)$$
+
+$$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\delta^y_{`r aapl_df$Date[2]`}\right)$$
+
+This, $\delta_{`r aapl_df$Date[2]`}^y$, is the **growth rate** of $y$ at year`r aapl_df$Date[2]`.
+
+## Growth Rate
+
+::: {.callout-note appearance="simple" icon="false"}
+## Growth Rate
+
+Let $y_t$ be a variable that might take different values over time. The **growth rate** at $t$ is given by $\delta_t^y$, and takes a value such that:
+
+$$y_t=y_{t-1}\left(1+\delta_t\right)$$
+
+And then
+
+$$\delta_t = \frac{y_t-y_{t-1}}{y_{t-1}}$$
+
+<small>Note: I dropped $y$ from the notation in the formula because it is obvious that we are talking about the variable $y$.</small>
+
+You can write the growth rate as a decimal or as a percentage. If you use decimal notation, consider at least 4 places, if you use percentage you use at least 2. Example: 0.0123 or 1.23%.
+
+**Interpretation**: What is the percentage change for the variable $y$ between $t-1$ and $t$.
+:::
+
+## Example
+
+$$`r aapl_df$Close[2]` = `r aapl_df$Close[1]`+(`r aapl_df$Close[2]` - `r aapl_df$Close[1]`)$$
+
+$$`r aapl_df$Close[2]` =`r aapl_df$Close[1]`\left(1+\frac{`r aapl_df$Close[2]-aapl_df$Close[1]`}{`r aapl_df$Close[1]`}\right)$$
+
+$$`r aapl_df$Close[2]`=`r aapl_df$Close[1]`\left(1+`r round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)`\right)$$
+
+. . .
+
+In this case $\delta_{`r aapl_df$Date[2]`}^y =`r round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)`%$.
+
+> Interpretation: Between `r aapl_df$Date[0]` and `r aapl_df$Date[1]`, the price for Apple *`r if (aapl_df$Close[1] > aapl_df$Close[2]) "decreased" else "increased"`* `r abs(100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4))`%.
+
+## Growth Rates
+
+More generally $$\delta_{t+k|t}=\frac{y_{t+k}-y_t}{y_t}$$
+
+Or $$y_{t+k}=y_t(1+\delta_{t+k|t})$$
+
+<small>(homework: Show step by step how you go from one to the other.)</small>
+
+> Note: In this case $\delta_{t+k|t}$ is what percentage the variable changed from $t$ to $t+k$, and $k$ is the number of periods.
+
+## Example
+
+We had $y_{`r aapl_df$Date[1]`}=`r aapl_df$Close[1]`$, and $y_{`r aapl_df$Date[5]`} =`r aapl_df$Close[5]`$. We will try to find $\delta_{`r aapl_df$Date[5]`|`r aapl_df$Date[1]`}^y$
+
+-   What is the value of $k$ in this case?
+
+. . .
+
+$$k=`r aapl_df$Date[5]`-`r aapl_df$Date[1]`=`r aapl_df$Date[5]-aapl_df$Date[1]`$$
+
+-   What is the growth rate between $`r aapl_df$Date[1]`$ and $`r aapl_df$Date[5]`$?
+
+. . .
+
+$$\delta_{`r aapl_df$Date[5]`|`r aapl_df$Date[1]`}^y = \frac{`r aapl_df$Close[5]` - `r aapl_df$Close[1]`}{`r aapl_df$Close[1]`} = `r round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)`\%$$
+
+> For Apple, the stock price grew `r 100*round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)`% between `r aapl_df$Date[1]` and `r aapl_df$Date[5]`, or the stock price for Apple in `r aapl_df$Date[5]` is `r 100*round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)`% larger than in `r aapl_df$Date[1]`.
+
+## Growth Rates
+
+::: callout-warning
+You should be careful with your interpretation and use of this *cumulative* growth rate, because it **does not** mean that $y$ grew $\delta_{t+k|t}^y$ **per period** between $t$ and $t+k$.
+:::
+
+. . .
+
+\
+
+::: {.callout-note appearance="simple" icon="false"}
+## Average Growth Rate
+
+Let $y_t$ be a variable that might take different values over time. The **average growth rate** betweek $t$ and $t+k$ is given by $\overline{\delta}_{t+k|t}^y$, and takes a value such that:
+
+$$y_{t+k}=y_t\left(1+\overline{\delta}_{t+k|t}\right)^k$$
+
+<small>I dropped $y$ from the notation in the formula because it is obvious that we are talking about the variable $y$.</small>
+:::
+
+## Growth Rates
+
+Let's start with $y_t$... and the traditional growth rates $\delta_t$:
+
+$$y_{t+1} = y_t(1+\delta_t)$$
+
+$$y_{t+2} = y_{t+1}(1+\delta_{t+1})$$
+
+$$y_{t+3} = y_{t+1}(1+\delta_{t+2})$$
+
+Can we write $y_{t+2}$ as a function of $y_t$?
+
+. . .
+
+$$y_{t+2} = y_{t+1}(1+\delta_{t+1}) = y_{t}(1+\delta_t)(1+\delta_{t+1})$$
+
+. . .
+
+And $y_{t+3}$?
+
+. . .
+
+$$y_{t+3} = y_{t}(1+\delta_t)(1+\delta_{t+1})(1+\delta_{t+2})$$
+
+## Growth Rates
+
+Generalizing
+
+$$y_{t+k}=y_t (1+\delta_t)(1+\delta_{t+1})...(1+\delta_{t+k-1})$$
+
+When computing the average growth rate, we are trying to find $\overline{\delta}$ such that if the growth rate was the same every period, it would have taken $y_t$ to the value of $y_{t+k}$ all the same:
+
+$$y_{t+k}=y_t(1+\overline{\delta})(1+\overline{\delta})...(1+\overline{\delta})$$
+
+. . .
+
+How many times is $(1+\overline{\delta})$ multiplied in the expression?
+
+## Growth Rates
+
+$$y_{t+k} = y_t \left(1+\overline{\delta}\right)^k$$
+
+. . .
+
+$$\frac{y_{t+k}}{y_t} = \left(1+\overline{\delta}\right)^k$$
+
+. . .
+
+$$\left(\frac{y_{t+k}}{y_t}\right)^{1/k} = \left(1+\overline{\delta}\right)$$
+
+. . .
+
+$$\left(\frac{y_{t+k}}{y_t}\right)^{1/k} - 1 = \overline{\delta}$$
+
+$$\overline{\delta}_{t+k|t}=\left(\frac{y_{t+k}}{y_t}\right)^{1/k} - 1$$
+
+## Example
+
+We had $$\delta_{`r aapl_df$Date[5]`|`r aapl_df$Date[1]`}^y = \frac{`r aapl_df$Close[5]` - `r aapl_df$Close[1]`}{`r aapl_df$Close[1]`} = `r round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)`\%$$
+
+But what now is the **average growth rate** between `r aapl_df$Date[1]` and `r aapl_df$Date[5]`?
+
+. . .
+
+Remember $k = `r aapl_df$Date[5]-aapl_df$Date[1]`$
+
+$$
+\overline{\delta} =
+\left(\frac{`r aapl_df$Close[5]`}{`r aapl_df$Close[1]`}\right)^{1/`r aapl_df$Date[5]-aapl_df$Date[1]`} - 1
+\approx `r round((aapl_df$Close[5]/aapl_df$Close[1])^(1/(aapl_df$Date[5]-aapl_df$Date[1]))-1,4)`=
+`r round(100*(aapl_df$Close[5]/aapl_df$Close[1])^(1/(aapl_df$Date[5]-aapl_df$Date[1]))-100, 2)`\%
+$$
+
+> Interpretation: On average, between `r aapl_df$Date[1]` and `r aapl_df$Date[4]` $y$ `r if (aapl_df$Close[5]>aapl_df$Close[1]) 'grew' else 'decreased'` `r abs(round(100*(aapl_df$Close[5]/aapl_df$Close[1])^(1/(aapl_df$Date[5]-aapl_df$Date[1]))-100,2))`% every year.
+
+## Example
+
+Note that $$
+(1+`r round(100*(aapl_df$Close[5]/aapl_df$Close[1])^(1/(aapl_df$Date[5]-aapl_df$Date[1]))-100, 2)`\%)^`r aapl_df$Date[5]-aapl_df$Date[1]` =
+(1+`r round((aapl_df$Close[5]/aapl_df$Close[1])^(1/(aapl_df$Date[5]-aapl_df$Date[1]))-1, 4)`)^`r aapl_df$Date[5]-aapl_df$Date[1]` \approx
+`r 1+round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)`\approx
+1 + `r round(100*(aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 2)`\%
+$$
+
+# Index Numbers - Introduction and Simple Index Numbers
+
+## Motivation
+
+```{r}
+#| echo: false
+#| results: 'hide'
+
+
+# Define stock symbols
+high_price_stock <- "NFLX"
+low_price_stock <- "AAPL"
+
+# Set up date range for last 10 years
+end_date <- Sys.Date()
+start_date <- end_date - 365*10
+
+# Download closing prices
+getSymbols(high_price_stock, src = "yahoo", from = start_date, to = end_date, auto.assign = TRUE)
+getSymbols(low_price_stock, src = "yahoo", from = start_date, to = end_date, auto.assign = TRUE)
+
+# Extract closing prices
+high_stock_prices <- Cl(get(high_price_stock))
+low_stock_prices <- Cl(get(low_price_stock))
+
+prices <- cbind(data.frame(high_stock_prices), data.frame(low_stock_prices))
+```
+
+```{r}
+#| echo: false
+#| results: 'hide'
+#| fig.align: "center"
+
+library(ggplot2)
+library(reshape2)
+
+# Combine and reshape data
+prices_df <- data.frame(Date = as.Date(index(prices), origin = start_date), coredata(prices))
+colnames(prices_df) <- c("Date", high_price_stock, low_price_stock)
+
+# Convert to long format
+prices_long <- melt(prices_df, id.vars = "Date", variable.name = "Stock", value.name = "Price")
+
+# Plot
+ggplot(prices_long, aes(x = Date, y = Price, color = Stock)) +
+  geom_line() +
+  labs(title = "Stock Prices Over Time", x = "Date", y = "Closing Price") +
+  theme_minimal()
+
+
+```
+
+Which stock would you have purchased in `r start_date`?
+
+## Motivation
+
+What's the important question here?
+
+. . .
+
+Which one grew more! For this, levels are not as relevant as their evolution over time.
+
+For example, say we have prices for two stocks A and B. Say we want to hold these stocks for only one period, which one would choose to invest your hard earned :dollar:?
+
+. . .
+
+How many stocks will you be able to buy of each stock, if their prices are $a_t$ and $b_t$, and you have US\$1000?
+
+. . .
+
+$n_a=\frac{1000}{a_t}$ of stock A and $n_b=\frac{1000}{b_t}$ of stock $B$. Note that $n_a$ and $n_b$ are the amount of stock you can buy of each.
+
+## Motivation
+
+Now is a new day :sunrise_over_mountains:! Prices are now $a_{t+1}$ and $b_{t+1}$, how much is your portfolio worth today?
+
+. . .
+
+1.  If you bought stock A: $a_{t+1} n_a = a_{t+1}\frac{1000}{a_t}$
+
+2.  If you bought stock B: $b_{t+1} n_b = b_{t+1}\frac{1000}{b_t}$
+
+. . .
+
+Note that the 1000 is fixed, so it is just what we invested, it is not going to change anything in our decision on buying A vs B, what is really important is $\frac{a_{t+1}}{a_t}$ and $\frac{b_{t+1}}{b_t}$, that is the growth rate of prices for each stock, as
+
+$$\frac{a_{t+1}}{a_t}=1+\delta_{t+1}^a \quad\text{and}\quad \frac{b_{t+1}}{b_t}=1+\delta_{t+1}^b$$
+
+## Motivation
+
+You did not sell and...
+
+Now is (another) new day :sunrise_over_mountains:! Prices are now $a_{t+2}$ and $b_{t+2}$, how much is your portfolio worth today?
+
+. . .
+
+1.  If you bought stock A: $a_{t+2} n_a = a_{t+2}\frac{1000}{a_t}$
+
+2.  If you bought stock B: $b_{t+2} n_b = b_{t+2}\frac{1000}{b_t}$
+
+. . .
+
+blah, blah...
+
+$$\frac{a_{t+2}}{a_t}=1+\delta_{t+2}^a \quad\text{and}\quad \frac{b_{t+2}}{b_t}=1+\delta_{t+2}^b$$
+
+If we wait two days, we only care how is the price today compared to when we made the purchase. We could make instead a plot of $1+\delta_{t+k}$ to see which grew more!
+
+## Motivation
+
+```{r}
+#| fig.align: "center"
+#| echo: false
+
+library(ggplot2)
+library(reshape2)
+
+# Scale both series
+high_p <- high_stock_prices / as.numeric(first(high_stock_prices))
+low_p <- low_stock_prices / as.numeric(first(low_stock_prices))
+
+# Combine and rename columns using stock symbols
+scaled_prices <- cbind(high_p, low_p)
+colnames(scaled_prices) <- c(high_price_stock, low_price_stock)
+
+# Convert to long format
+scaled_df <- data.frame(Date = index(scaled_prices), coredata(scaled_prices))
+scaled_long <- melt(scaled_df, id.vars = "Date", variable.name = "Stock", value.name = "ScaledPrice")
+
+# Plot
+ggplot(scaled_long, aes(x = Date, y = ScaledPrice, color = Stock)) +
+  geom_line(size = 1.2) +
+  labs(
+    title = paste(high_price_stock, "vs", low_price_stock),
+    x = "Date",
+    y = paste("Price Evolution Compared to", format(start_date, "%d/%m/%Y"))
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, margin = margin(b = 20)),
+    axis.title = element_text(size = 12),
+    legend.title = element_blank(),
+    legend.text = element_text(size = 12)
+  ) +
+  guides(color = guide_legend(override.aes = list(size = 2)))
+
+
+```
+
+Now we have a much clear picture. We can compare their evolution starting in `r start_date`.
+
+What can you read from the plot?
+
+## Motivation
+
+Note that for `r start_date`, we would have, for A and B:
+
+$$1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1$$
+
+We just built and index number!
+
+By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).
+
+\
+
+When our new series was 2, we understood that $1+\delta_{t+k}=2$ or $\delta_{t+k}=1$, *i.e.* the price grew 100%, or *doubled*! Now, with the new notation, we would have that the new series would take the value of 200, *i.e.* the price is now 200% the value it had at our initial date.
+
+## Index Numbers
+
+::: {.callout-note appearance="simple" icon="false"}
+## Index Number
+
+An **Index Number** is a scaled variable that takes as a reference point the value an underlying variable took at a fixed point in time. Say, for an underlying variable $x_t$ we build an index $I_t$.
+
+$$I_t=\frac{x_t}{x_0}\times 100$$
+
+Where $x_t$ is the value the underlying variable takes at time $t$, and $x_0$ represents the value this variable took at our reference point. This period is called **base**.
+
+> Note: In this case we used time as the dimension for $t$ but this needs not be the case, we will see examples later.
+:::
+
+\
+
+In our previous example, the base day would have been `r start_date`. Note that in the base period $$I_0=\frac{x_0}{x_0}\times 100 = 100$$
+
+## Index Numbers
+
+Index Numbers are defined by their underlying variable. This can change over time, or it can change according to another dimension, like geography, or both! We will see examples.
+
+Also, an Index Number can have a fixed base or a moving base.
+
+```{R}
+library(DiagrammeR)
+
+grViz("
+digraph TimeSeriesStructure {
+  graph [layout = dot, rankdir = TB]
+
+  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]
+
+  Index [label = 'Index']
+  UnderlyingVariable [label = 'Underlying Variable']
+  Base [label = 'Base']
+  Dimension [label = 'Dimension']
+
+  Simple [label = 'Simple']
+  Composite [label = 'Composite']
+
+  Fixed [label = 'Fixed']
+  Rolling [label = 'Rolling']
+
+  Chronological [label = 'Chronological']
+  Geographical [label = 'Geographical']
+
+  Index -> UnderlyingVariable
+  Index -> Base
+  Index -> Dimension
+
+  UnderlyingVariable -> Simple
+  UnderlyingVariable -> Composite
+
+  Base -> Fixed
+  Base -> Rolling
+
+  Dimension -> Chronological
+  Dimension -> Geographical
+}
+")
+```
+
+## Index Numbers
+
+::: callout-warning
+## Index Numbers
+
+-   Simple and Composite are mutually exclusive
+-   Fixed and Moving are mutually exclusive
+-   Rolling always needs a chronological dimension
+:::
+
+## Examples
+
+| Type | Example |
+|------|---------|
+|Simple| Single stock price|
+|Composite| SP500 (market index), CPI|
+|Fixed Base| GDP, CPI, market index|
+|Rolling Base| Some measures of GDP, Commodities Futures|
+|Chronological | Stock price over time, CPI, GDP|
+|Geographical | BigMac Index |
+
+## Index Numbers
+
+Importantly, an index number is *no bueno* to reflect the level of a variable, but its evolution or relative value against a base.
+
+## Rolling Base
+
+::: {.callout-note appearance="simple" icon="false"}
+## Chain or Link Index
+
+A **Chain or Link Index Number** is an index number that updates its base in every period.
+
+$$I_t = \frac{x_t}{x_{t-1}}\times 100$$
+
+> Interpretation: It tells you how much the variable increased compared to the **previous** period.
+:::
+
+## Index Numbers
+
+Index numbers allow us to easily compute the growth rate between any two periods, just like we would do with the underlying variable:
+
+1.  Simple Index Number
+
+. . .
+
+$$1+\delta_{t+k,t}=\frac{x_{t+k}}{x_t}=\frac{x_{t+k}}{x_t}=\frac{\frac{x_{t+k}}{x_0}}{\frac{x_t}{x_0}}=\frac{I_{t+k}}{I_t}$$
+
+2.  Chain Index Number
+
+. . .
+
+<small>
+
+$$1+\delta_{t+k,t}=\frac{x_{t+k}}{x_t}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t}}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t+k-2}}\frac{x_{t+k-2}}{x_{t}}=\frac{x_{t+k}}{x_{t+k-1}}\frac{x_{t+k-1}}{x_{t+k-2}}...\frac{x_{t+1}}{x_{t}}$$
+
+$$1+\delta_{t+k,t}=I_{t+k}\times I_{t+k-1}\times ... \times I_{t+2} \times I_{t+1}$$
+
+</small>
+
+## Index Numbers
+
+::: callout-warning
+## Do not use 100 index when multiplying chain or link indices, use the decimal notation.
+
+Note that if the underlying variable does not change at all, you should expect the same value, $x_t=x_{t+1}=x_{t+2}$
+
+In this case $I_{t+1}=\frac{x_{t+1}}{x_t}=1$ and $I_{t+2}=\frac{x_{t+2}}{x_{t+1}}=1$, and therefore $$1+\delta_{t+2,t}=1\times 1= 1$$
+
+This is the correct way to do it :white_check_mark:.
+
+But if instead you used the 100 to multiply: $$1+\delta_{t+2,t}=100\times 100= 10000$$ and we get that $x$ grew 100 times! (:x: because we know that $x_t=x_{t+1}=x_{t+2}$)
+:::
+
+## Index Numbers
+
+We can always transform a chain index number into a fixed base index number.
+
+1.  Chose a reference, for example for period 3.
+
+2.  Remember: what you want to achieve: $\forall t, I'_t=\frac{x_t}{x_3}$
+
+3.  Remember: that we have $I_t=\frac{x_t}{x_{t-1}}$
+
+4.  Use what we did just before:
+
+. . .
+
+$$ I_t' = I_t I_{t-1} ...I_{4} = \frac{x_t}{x_{t-1}}\frac{x_{t-1}}{x_{t-2}}...\frac{x_4}{x_3}=\frac{x_t}{x_3}=I'_t$$
+
+## Example
+
+```{r}
+library(lubridate)
+```
+<small>
+
+Suppose we want to convert this Chain Index into Fix Base index, with the base year in `r year(Sys.Date())-5`. This will be our 100.
+
+| | `r year(Sys.Date())-5` | `r year(Sys.Date())-4` | `r year(Sys.Date())-3` | `r year(Sys.Date())-2` | `r year(Sys.Date())-1` | `r year(Sys.Date())` |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Price | 30 | 34 | 37 | 35 | 36 | 39 |
+|                |  | $\frac{34}{30} 100$ | $\frac{37}{34} 100$ | $\frac{35}{37} 100$ | $\frac{36}{35} 100$ | $\frac{39}{36} 100$ |
+| $I_{chain}$ |  | `r round(34/30*100,1)` | `r round(37/34*100,1)` |`r round(35/37*100,1)` | `r round(34/35*100,1)` | `r round(39/36*100,1)` |
+|                |  | $100\frac{113.3}{100}$ | $113.3\frac{108.8}{100}$ | $123.3\frac{94.6}{100}$ |$116.7 \frac{97.1}{100}$ | $120\frac{108.3}{100}$ |
+| $I_{t|`r year(Sys.Date())-5`}$ | 100 | `r round(34/30*100,1)` | `r round(37/30*100,1)` | `r round(35/30*100,1)`|`r round(36/30*100,1)` | `r round(39/30*100,1)` |
+
+
+Note that, for example in `r year(Sys.Date())-1`, we have $I_{`r year(Sys.Date())-1`|`r year(Sys.Date())-5`}=116.7$, which was computed as $123.3\times\frac{94.6}{100}$. But $123.3$ was the base `r year(Sys.Date())-5` index of the previous period, which in turn was computed as $113.3\frac{108.8}{100}$, so in reality:
+
+$$116.7=123.3\frac{94.6}{100}=113.3\frac{108.8}{100}\frac{94.6}{100}=100\frac{113.3}{100}\frac{108.8}{100}\frac{94.6}{100}$$
+
+If you pay attention, wou will see that we have there the product of the *chain Index* in `r year(Sys.Date())-4`, `r year(Sys.Date())-3`, and `r year(Sys.Date())-2`. We divided by 100 because, to multiply, we need to divide by 100 before.
+
+</small>
+
+## Base Change
+
+In case we have the data, we just need to compute the Index with the base  that we want, however, if we do not have the data, and we just have a Fix Base index, we can do it all the same!
+
+Say we have an index with base 0. Maybe we want to change it to base 2.
+
+## Base Change
+
+::: {#tbl-panel layout-ncol=2}
+
+| period | Index          | Formula              |
+| ---    | ---            | ---                  |
+| 0      | $I_{0|0}$      | $\frac{x_0}{x_0}$    |
+| 1      | $I_{1|0}$      | $\frac{x_1}{x_0}$    |
+| 2      | $I_{2|0}$      | $\frac{x_2}{x_0}$    |
+| 3      | $I_{3|0}$      | $\frac{x_3}{x_0}$    |
+| ...    | ...            | ...                  |
+| t      | $I_{t|0}$      | $\frac{x_t}{x_0}$    |
+
+: Base 0
+
+| period | Index          | Formula              |
+| ---    | ---            | ---                  |
+| 0      | $I_{0|2}$      | $\frac{x_0}{x_2}$    |
+| 1      | $I_{1|2}$      | $\frac{x_1}{x_2}$    |
+| 2      | $I_{2|2}$      | $\frac{x_2}{x_2}$    |
+| 3      | $I_{3|2}$      | $\frac{x_3}{x_2}$    |
+| ...    | ...            | ...                  |
+| t      | $I_{t|2}$      | $\frac{x_t}{x_2}$    |
+
+: Base 2
+
+Changing Base
+
+:::
+
+## Base Change
+
+But how can we transform them, if we do not know $x_i$ $\forall i$?
+
+. . . 
+
+$$I_{t|2}=\frac{x_t}{x_2}=1\frac{x_t}{x_2}=\frac{1/x_0}{1/x_0}\frac{x_t}{x_2}=\frac{\frac{x_t}{x_0}}{\frac{x_2}{x_0}}=\frac{I_{t|0}}{I_{2|0}}$$
+
+And that is how we can re-base an index without knowing the value for the underlying variable ($x_t$)!
+
+::: {.callout-tip}
+
+## Mixing up stuff
+
+Previously we covered how to go from a chain index to a fixed base one. Now we saw how to change the base of a fixed base index. With both things together you can turn a chain index into fixed base one, with base you want!
+
+:::
+
+## Example
+
+| | `r year(Sys.Date())-5` | `r year(Sys.Date())-4` | `r year(Sys.Date())-3` | `r year(Sys.Date())-2` | `r year(Sys.Date())-1` | `r year(Sys.Date())` |
+| ---            | :---: | :---:                         | :---:                         | :---:                        | :---:                         | :---:                         |
+| Price          | 30    | 34                            | 37                            | 35                           | 36                            | 39                            |
+| $I_{t|`r year(Sys.Date())-5`}$   | 100   | `r round(34/30*100,1)` | `r round(37/30*100,1)` | `r round(35/30*100,1)`|`r round(36/30*100,1)`  | `r round(39/30*100,1)` |
+|                | $\frac{100}{123.3}$ | $\frac{113.3}{123.3}$ | $\frac{123.3}{123.3}$| $\frac{116.7}{123.3}$ | $\frac{120.0}{123.3}$ | $\frac{130.0}{123.3}$|
+| $I_{t|`r year(Sys.Date())-3`}$   | `r round(30/37*100,1)` |`r round(34/37*100,1)` | `r round(37/37*100,1)` | `r round(35/37*100,1)` | `r round(36/37*100,1)` |`r round(39/37*100,1)` |
+
+: Stock prices
+
+> New information? Yes! For example, without any computation we know that the price in `r year(Sys.Date())` was 30\% larger than in `r year(Sys.Date())-5`, and 5.4\% larger than in `r year(Sys.Date())-3`
+
+# Index Numbers: Composite Index Numbers
+
+## Example: Inflation
+
+There is one index number that, along with a few others, captures large amounts of attention from the general public attention, because it reflects a phenomenon that heavily influences policy and individual decisions, **Inflation**.
+
+\
+
+ The index to which we refer is the CPI (Consumer Price Index). This is a single index among a broader family of price index numbers, very relevant to gauge the inflation in an economy (PPI - Producer Price Index).
+
+## Composite Index Numbers
+
+This is a great opportunity to introduce another classification for our index numbers:
+
+```{R}
+grViz("
+digraph flowchart {
+  graph [layout = dot, rankdir = TB]
+  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]
+
+  A [label = 'Index']
+  B [label = <Price <i>P</i>>]
+  C [label = <Quantity <i>Q</i>>]
+  D [label = <Value <i>P</i> <i>&times;</i> <i>Q</i>>]
+
+  A -> B
+  A -> C
+  A -> D
+}
+")
+```
