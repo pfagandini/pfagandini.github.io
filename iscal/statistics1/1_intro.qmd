@@ -767,3 +767,7 @@ digraph flowchart {
 }
 ")
 ```
+
+## Inflation
+
+Many times we have variables (or index numbers) that fit in the category of "value," just think on *sales*.
