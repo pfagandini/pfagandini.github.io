@@ -896,6 +896,7 @@ In economics, we often use price and quantity index numbers to measure how the p
 
 . . .
 
+
 > A very important question: What are the weights that the different goods should have in the basket?
 
 
@@ -903,11 +904,13 @@ In economics, we often use price and quantity index numbers to measure how the p
 
 From the family of formulas to create weighted composite index numbers, we will focus on the two most common:
 
-1. **Laspeyres**: uses base-period quantities as weights.
+1. **Laspeyres**: uses base-period quantities (prices) as weights.
 
-2. **Paasche**: uses current-period quantities as weights.
+2. **Paasche**: uses current-period quantities (prices) as weights.
 
-These are used to measure the evolution of *prices* or *quantities*.
+. . .
+
+These are used to measure the evolution of *prices (quantities)*.
 
 ## Kids' Explanation 
 
@@ -965,7 +968,7 @@ Let's consider that the **base year is past**.
 
 **Laspeyres - Price:**
 
-Use always $🧺_{past}$, but relevant :label:$! Laspeyres Price Index (LPI):
+Use always $🧺_{past}$, but relevant :label:! Laspeyres Price Index (LPI):
 
 <div style="text-align: center;">
 <small>
@@ -995,16 +998,6 @@ $$🧺_{today}|\text{🏷️}_{today}\quad PPI_{today}=\frac{8\times 1.2 + 6\tim
 
 > Remember that 1 corresponds to 100, and `r round(16.2/12.8,2)` corresponds to `r round(16.2/12.8,2)*100`.
 
-## Kids' Explanation - Quantities
-
-Laspeyres - Quantity: Use 🏷️$_{past}$! Laspeyres Quantity Index (LQI): $LQI_{old}=10\times 1 + 5 \times 0.8 = 14$, and $IPL_{new}=8\times 1 + 6\times 0.8=`12.8`$.
-If the base year is *old* then the index would be $100$ in *old* and `r round((12.8/14)*100, 1)` for the year *new*.
-
-\
-
-Paasche - Quantity: Use 🏷️$_{today}$! Paasche Quantity Index (PQI): $PQI_{old}=10\times 1.2 + 6 \times 1.1 = 18.6$, and $IPL_{new}=8\times 1.2 + 6\times 1.1=16.2$.
-If the base year is *old* then the index would be $100$ in *old* and `r round((16.2/18.6)*100, 1)` for the year *new*. :label:
-
 ## In general - Laspeyres
 
 1. For prices, how much the old basket would cost at current prices relative to the **old basket and prices**?
@@ -1028,3 +1021,74 @@ $$PQI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_t^kq_0^k}$$
 . . .
 
 > Note: numerator is the same.
+
+## Conclusions
+
+1. In both index numbers, for prices, quantities are constant: All variation comes from prices.
+
+2. In both index numbers, for quantities, prices are constant: All variation comes from quantities.
+
+. . .
+
+\
+
+> We tend to use much more often *Laspeyres* because quantities take much longer to be accurately collected than prices. Ergo, national statistics institutes usually use Laspeyres price index to measure the price evolution.
+
+## Fisher Index
+
+Some authors argue, however, that the true measure for *cost of life* is in between both metrics. This is captured by the **Fisher Index**:
+
+$$FPI_{t|0}=\sqrt{LPI_{t|0}\times PPI_{t|0}}$$
+
+$$FQI_{t|0}=\sqrt{LQI_{t|0}\times PQI_{t|0}}$$ 
+
+## Example
+
+Suppose you collected the following data for years `r year(Sys.Date())-2`, `r year(Sys.Date())-1`, and `r year(Sys.Date())`, from a basket of 15 goods.
+
+<div style="text-align: center;">
+<small>
+
+| $P-Q$|  `r year(Sys.Date())-2`| `r year(Sys.Date())-1`| `r year(Sys.Date())`| 
+| --- | :---: | :---: | :---: |
+| `r year(Sys.Date())-2` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())-2`}^k=8562$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())-1`}^k=9210$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())`}^k=9920$|
+| `r year(Sys.Date())-1` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-1`}^k q_{`r year(Sys.Date())-2`}^k=9150$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-1`}^k q_{`r year(Sys.Date())-1`}^k=9584$| |
+| `r year(Sys.Date())` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())`}^k q_{`r year(Sys.Date())-2`}^k=9657$ | |$\sum_{k=1}^{15} p_{`r year(Sys.Date())`}^k q_{`r year(Sys.Date())`}^k=10013$|
+
+\
+
+What are the LPI, PPI, and FPI if we choose as a base year `r year(Sys.Date())-2`?
+
+<table data-fragment-index = "0" class="fragment">
+  <tr>
+    <th data-fragment-index="0" class="fragment"> $t$ </th>
+    <th data-fragment-index="0" class="fragment">`r year(Sys.Date())-2`</th>
+    <th data-fragment-index="0" class="fragment">`r year(Sys.Date())-1`</th>
+    <th data-fragment-index="0" class="fragment">`r year(Sys.Date())`</th>
+  </tr>
+  <tr>
+    <td data-fragment-index="0" class="fragment">$LPI_{t|`r year(Sys.Date())-2`}$</td>
+    <td data-fragment-index="1" class="fragment">$100$ </td>
+    <td data-fragment-index="2" class="fragment">`r round(100*9150/8562,1)`</td>
+    <td data-fragment-index="2" class="fragment">`r round(100*9657/8562,1)`</td>
+  </tr>
+  <tr>
+    <td data-fragment-index="0" class="fragment">$PPI_{t|`r year(Sys.Date())-2`}$</td>
+    <td data-fragment-index="1" class="fragment">$100$</td>
+    <td data-fragment-index="3" class="fragment">`r round(100*9584/9210,1)`</td>
+    <td data-fragment-index="3" class="fragment">`r round(100*10013/9920,1)`</td>
+  </tr>
+  <tr>
+    <td data-fragment-index="0" class="fragment">$FPI_{t|`r year(Sys.Date())-2`}$</td>
+    <td data-fragment-index="1" class="fragment">$100$</td>
+    <td data-fragment-index="4" class="fragment"> `r round(100*sqrt(9150/8562*9584/9210), 1)`</td>
+    <td data-fragment-index="4" class="fragment"> `r round(100*sqrt(9657/8562*10013/9920), 1)`</td>
+  </tr>
+</table>
+
+<div data-fragment-index="5" class="fragment">
+$$LPI_{`r year(Sys.Date())-1`|`r year(Sys.Date())-2`}=100\times \frac{9150}{8562} \quad PPI_{`r year(Sys.Date())`|`r year(Sys.Date())-2`}=100\times\frac{10013}{9920}\quad FPI_{`r year(Sys.Date())-1`|`r year(Sys.Date())`}=\sqrt{106.9\times 104.1}$$ 
+</div>
+
+</small>
+</div>

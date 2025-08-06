@@ -279,7 +279,7 @@ Paulo Fagandini
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2025</td>
-<td style="text-align: right;">203.35</td>
+<td style="text-align: right;">202.92</td>
 </tr>
 </tbody>
 </table>
@@ -472,7 +472,7 @@ Paulo Fagandini
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-08-08?</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-08-09?</p>
 </section>
 <section id="motivation-1" class="slide level2">
 <h2>Motivation</h2>
@@ -521,12 +521,12 @@ Paulo Fagandini
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-08-08.</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-08-09.</p>
 <p>What can you read from the plot?</p>
 </section>
 <section id="motivation-5" class="slide level2">
 <h2>Motivation</h2>
-<p>Note that for 2015-08-08, we would have, for A and B:</p>
+<p>Note that for 2015-08-09, we would have, for A and B:</p>
 <p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
 <p>We just built and index number!</p>
 <p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
@@ -553,7 +553,7 @@ Paulo Fagandini
 </div>
 <p><br>
 </p>
-<p>In our previous example, the base day would have been 2015-08-08. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
+<p>In our previous example, the base day would have been 2015-08-09. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
 <section id="index-numbers-1" class="slide level2">
 <h2>Index Numbers</h2>
@@ -561,8 +561,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-61fd07ddf18c694bc654" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-61fd07ddf18c694bc654">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f04e0cfe263d3421e3f5" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f04e0cfe263d3421e3f5">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -993,8 +993,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-27ab1be10c5c24eb89b9" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-27ab1be10c5c24eb89b9">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-99f5df60af91bab06695" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-99f5df60af91bab06695">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1168,10 +1168,12 @@ Table&nbsp;1: Changing Base
 <h2>Aggregate Index Numbers</h2>
 <p>From the family of formulas to create weighted composite index numbers, we will focus on the two most common:</p>
 <ol type="1">
-<li class="fragment"><p><strong>Laspeyres</strong>: uses base-period quantities as weights.</p></li>
-<li class="fragment"><p><strong>Paasche</strong>: uses current-period quantities as weights.</p></li>
+<li class="fragment"><p><strong>Laspeyres</strong>: uses base-period quantities (prices) as weights.</p></li>
+<li class="fragment"><p><strong>Paasche</strong>: uses current-period quantities (prices) as weights.</p></li>
 </ol>
-<p>These are used to measure the evolution of <em>prices</em> or <em>quantities</em>.</p>
+<div class="fragment">
+<p>These are used to measure the evolution of <em>prices (quantities)</em>.</p>
+</div>
 </section>
 <section id="kids-explanation" class="slide level2">
 <h2>Kids’ Explanation</h2>
@@ -1204,7 +1206,7 @@ Table&nbsp;1: Changing Base
 <section id="kids-explanation---prices" class="slide level2">
 <h2>Kids’ Explanation - Prices</h2>
 <p><strong>Laspeyres - Price:</strong></p>
-<p>Use always <span class="math inline">\(🧺_{past}\)</span>, but relevant <span class="emoji" data-emoji="label">🏷️</span>$! Laspeyres Price Index (LPI):</p>
+<p>Use always <span class="math inline">\(🧺_{past}\)</span>, but relevant <span class="emoji" data-emoji="label">🏷️</span>! Laspeyres Price Index (LPI):</p>
 <div style="text-align: center;">
 <p><small></small></p><small>
 <p><span class="math display">\[🧺_{past}|\text{🏷️}_{past}\quad LPI_{past}=\frac{10\times 1 + 5 \times 0.8}{10\times 1 + 5 \times 0.8} = \frac{14}{14}=1\]</span> <span class="math display">\[🧺_{past}|\text{🏷️}_{today}\quad LPI_{today}=\frac{10\times 1.2 + 5\times 1.1}{10\times 1 + 5 \times 0.8}=\frac{17.5}{14}=1.25\]</span></p>
@@ -1226,13 +1228,6 @@ Table&nbsp;1: Changing Base
 <blockquote>
 <p>Remember that 1 corresponds to 100, and 1.27 corresponds to 127.</p>
 </blockquote>
-</section>
-<section id="kids-explanation---quantities" class="slide level2">
-<h2>Kids’ Explanation - Quantities</h2>
-<p>Laspeyres - Quantity: Use 🏷️<span class="math inline">\(_{past}\)</span>! Laspeyres Quantity Index (LQI): <span class="math inline">\(LQI_{old}=10\times 1 + 5 \times 0.8 = 14\)</span>, and <span class="math inline">\(IPL_{new}=8\times 1 + 6\times 0.8=`12.8`\)</span>. If the base year is <em>old</em> then the index would be <span class="math inline">\(100\)</span> in <em>old</em> and 91.4 for the year <em>new</em>.</p>
-<p><br>
-</p>
-<p>Paasche - Quantity: Use 🏷️<span class="math inline">\(_{today}\)</span>! Paasche Quantity Index (PQI): <span class="math inline">\(PQI_{old}=10\times 1.2 + 6 \times 1.1 = 18.6\)</span>, and <span class="math inline">\(IPL_{new}=8\times 1.2 + 6\times 1.1=16.2\)</span>. If the base year is <em>old</em> then the index would be <span class="math inline">\(100\)</span> in <em>old</em> and 87.1 for the year <em>new</em>. <span class="emoji" data-emoji="label">🏷️</span></p>
 </section>
 <section id="in-general---laspeyres" class="slide level2">
 <h2>In general - Laspeyres</h2>
@@ -1256,9 +1251,137 @@ Table&nbsp;1: Changing Base
 <blockquote>
 <p>Note: numerator is the same.</p>
 </blockquote>
-
-
 </div>
+</section>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
+<ol type="1">
+<li class="fragment"><p>In both index numbers, for prices, quantities are constant: All variation comes from prices.</p></li>
+<li class="fragment"><p>In both index numbers, for quantities, prices are constant: All variation comes from quantities.</p></li>
+</ol>
+<div class="fragment">
+<p><br>
+</p>
+<blockquote>
+<p>We tend to use much more often <em>Laspeyres</em> because quantities take much longer to be accurately collected than prices. Ergo, national statistics institutes usually use Laspeyres price index to measure the price evolution.</p>
+</blockquote>
+</div>
+</section>
+<section id="fisher-index" class="slide level2">
+<h2>Fisher Index</h2>
+<p>Some authors argue, however, that the true measure for <em>cost of life</em> is in between both metrics. This is captured by the <strong>Fisher Index</strong>:</p>
+<p><span class="math display">\[FPI_{t|0}=\sqrt{LPI_{t|0}\times PPI_{t|0}}\]</span></p>
+<p><span class="math display">\[FQI_{t|0}=\sqrt{LQI_{t|0}\times PQI_{t|0}}\]</span></p>
+</section>
+<section id="example-12" class="slide level2">
+<h2>Example</h2>
+<p>Suppose you collected the following data for years 2023, 2024, and 2025, from a basket of 15 goods.</p>
+<div style="text-align: center;">
+<p><small></small></p><small>
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(P-Q\)</span></th>
+<th style="text-align: center;">2023</th>
+<th style="text-align: center;">2024</th>
+<th style="text-align: center;">2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2023</td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{k=1}^{15} p_{2023}^k q_{2023}^k=8562\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{k=1}^{15} p_{2023}^k q_{2024}^k=9210\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{k=1}^{15} p_{2023}^k q_{2025}^k=9920\)</span></td>
+</tr>
+<tr class="even">
+<td>2024</td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{k=1}^{15} p_{2024}^k q_{2023}^k=9150\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{k=1}^{15} p_{2024}^k q_{2024}^k=9584\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>2025</td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{k=1}^{15} p_{2025}^k q_{2023}^k=9657\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{k=1}^{15} p_{2025}^k q_{2025}^k=10013\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p>What are the LPI, PPI, and FPI if we choose as a base year 2023?</p>
+<table data-fragment-index="0" class="fragment">
+<tbody><tr>
+<th data-fragment-index="0" class="fragment">
+<span class="math inline">\(t\)</span>
+</th>
+<th data-fragment-index="0" class="fragment">
+2023
+</th>
+<th data-fragment-index="0" class="fragment">
+2024
+</th>
+<th data-fragment-index="0" class="fragment">
+2025
+</th>
+</tr>
+<tr>
+<td data-fragment-index="0" class="fragment">
+<span class="math inline">\(LPI_{t|2023}\)</span>
+</td>
+<td data-fragment-index="1" class="fragment">
+<span class="math inline">\(100\)</span>
+</td>
+<td data-fragment-index="2" class="fragment">
+106.9
+</td>
+<td data-fragment-index="2" class="fragment">
+112.8
+</td>
+</tr>
+<tr>
+<td data-fragment-index="0" class="fragment">
+<span class="math inline">\(PPI_{t|2023}\)</span>
+</td>
+<td data-fragment-index="1" class="fragment">
+<span class="math inline">\(100\)</span>
+</td>
+<td data-fragment-index="3" class="fragment">
+104.1
+</td>
+<td data-fragment-index="3" class="fragment">
+100.9
+</td>
+</tr>
+<tr>
+<td data-fragment-index="0" class="fragment">
+<span class="math inline">\(FPI_{t|2023}\)</span>
+</td>
+<td data-fragment-index="1" class="fragment">
+<span class="math inline">\(100\)</span>
+</td>
+<td data-fragment-index="4" class="fragment">
+105.5
+</td>
+<td data-fragment-index="4" class="fragment">
+106.7
+</td>
+</tr>
+</tbody></table>
+<div class="fragment" data-fragment-index="5">
+<p><span class="math display">\[LPI_{2024|2023}=100\times \frac{9150}{8562} \quad PPI_{2025|2023}=100\times\frac{10013}{9920}\quad FPI_{2024|2025}=\sqrt{106.9\times 104.1}\]</span></p>
+</div>
+</small><p><small></small></p>
+</div>
+
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
