@@ -1092,3 +1092,20 @@ $$LPI_{`r year(Sys.Date())-1`|`r year(Sys.Date())-2`}=100\times \frac{9150}{8562
 
 </small>
 </div>
+
+# Inflation
+
+## Consumer Price Index
+
+To measure inflation, we use a Laspeyres Price Index, usually known as CPI (Consumer Price Index).
+
+. . .
+
+To do that, the National Institute of Statistics (or the equivalent national statistical office) defines a basket, which contains a certain mix of goods and services, that is to be representative of the consumption behavior of the population.
+
+. . .
+
+In Portugal :portugal:, the index has base in 2016, and, as stated above, follows a LPI formulation with small technical adjustments. This index has a monthly frequency, *i.e.* it is computed every month.
+
+## Consumer Price Index
+
