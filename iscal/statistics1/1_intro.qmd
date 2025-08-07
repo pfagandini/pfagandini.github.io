@@ -1109,3 +1109,8 @@ In Portugal :portugal:, the index has base in 2016, and, as stated above, follow
 
 ## Consumer Price Index
 
+To create a price index, you need to follow at least 3 steps.
+
+1. Survey families to determine representative basket :family_woman_woman_girl_boy: :family_man_woman_boy_boy: :family_man_man_girl_boy:
+2. Survey retail stores to find out sale prices. :convenience_store:
+3. Compute the index with the collected data. :chart_with_upwards_trend:

@@ -561,8 +561,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-8a4b0ad1a4b35d51750e" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8a4b0ad1a4b35d51750e">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-d41581ca671cb71617ac" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-d41581ca671cb71617ac">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -993,8 +993,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-142ecf2e9477e8c02b99" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-142ecf2e9477e8c02b99">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b5a6f7cdd4db1fde3e84" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b5a6f7cdd4db1fde3e84">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1398,6 +1398,12 @@ Table&nbsp;1: Changing Base
 </section>
 <section id="consumer-price-index-1" class="slide level2">
 <h2>Consumer Price Index</h2>
+<p>To create a price index, you need to follow at least 3 steps.</p>
+<ol type="1">
+<li class="fragment">Survey families to determine representative basket <span class="emoji" data-emoji="family_woman_woman_girl_boy">👩‍👩‍👧‍👦</span> <span class="emoji" data-emoji="family_man_woman_boy_boy">👨‍👩‍👦‍👦</span> <span class="emoji" data-emoji="family_man_man_girl_boy">👨‍👨‍👧‍👦</span></li>
+<li class="fragment">Survey retail stores to find out sale prices. <span class="emoji" data-emoji="convenience_store">🏪</span></li>
+<li class="fragment">Compute the index with the collected data. <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></li>
+</ol>
 
 
 </section></section>
