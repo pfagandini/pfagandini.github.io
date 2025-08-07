@@ -1111,6 +1111,107 @@ In Portugal :portugal:, the index has base in 2016, and, as stated above, follow
 
 To create a price index, you need to follow at least 3 steps.
 
-1. Survey families to determine representative basket :family_woman_woman_girl_boy: :family_man_woman_boy_boy: :family_man_man_girl_boy:
+1. Determine representative basket: Survey families :family_woman_woman_girl_boy: :family_man_woman_boy_boy: :family_man_man_girl_boy:
 2. Survey retail stores to find out sale prices. :convenience_store:
 3. Compute the index with the collected data. :chart_with_upwards_trend:
+    1. Compute the cost of the :basket: with the prices at the base period.
+    2. Compute the cost of the same :basket: with the prices of every succesive period.
+
+## Application
+
+```{r}
+library(eurostat)
+
+# Get the HICP monthly index dataset
+hicp_data <- get_eurostat("prc_hicp_midx", time_format = "date")
+
+hicp_df <- hicp_data %>%
+  filter(geo == "PT") %>% # Filter Portugal
+  filter(unit == "I15") %>% # Filter Base year 2015
+  filter(coicop == "CP00") # CP00	All-items, AP	All Products, APF	All but Food and Energy, FOOD ENERGY	SERV GOODS
+
+hicp_df <- hicp_df %>% select(-geo, -unit, -coicop, -freq)
+
+hicp_df <- hicp_df %>% rename(time = TIME_PERIOD, cpi = values)
+
+hicp_df_a <- hicp_df %>% 
+  mutate(year = year(time)) %>%
+  group_by(year) %>%
+  summarise(avg_cpi = mean(cpi, na.rm = TRUE))
+
+hicp_df_a <- hicp_df_a %>% 
+  filter(year >= year(Sys.Date())-4) %>%
+  filter(year <= year(Sys.Date())-1)
+
+hicp_df_a$avg_cpi <- round(hicp_df_a$avg_cpi, digits = 1)
+
+```
+
+
+A Labor union leader is complaining that the average salary in `r hicp_df_a[1,1]` was 1500, and in `r hicp_df_a[4,1]` it is 1650. This increase, they say, is not enough to maintain the workers' purshasing power, because of inflation. The data for inflation is the following:
+
+| Year | `r hicp_df_a[1,1]` |  `r hicp_df_a[2,1]` | `r hicp_df_a[3,1]` | `r hicp_df_a[4,1]` |
+| --- | :---: | :---: | :---: | :---: |
+| CPI | `r hicp_df_a[1,2]` | `r hicp_df_a[2,2]` | `r hicp_df_a[3,2]` | `r hicp_df_a[4,2]` |
+
+1. The year with the largest increase in prices was `r hicp_df_a[3,1]`?
+2. The average growth rate for the wages between `r hicp_df_a[1,1]` and `r hicp_df_a[4,1]`  was _______?
+3. Is the union leader right?
+
+## Application
+
+For the first question, we can compute the chain or link index:
+
+<table data-fragment-index = "0" class="fragment">
+  <tr>
+    <th data-fragment-index="0" class="fragment"> Year </th>
+    <th data-fragment-index="0" class="fragment">`r hicp_df_a[1,1]` </th>
+    <th data-fragment-index="0" class="fragment">`r hicp_df_a[2,1]`</th>
+    <th data-fragment-index="0" class="fragment">`r hicp_df_a[3,1]`</th>
+    <th data-fragment-index="0" class="fragment">`r hicp_df_a[4,1]`</th>
+  </tr>
+  <tr>
+    <td data-fragment-index="0" class="fragment">CPI</td>
+    <td data-fragment-index="0" class="fragment">`r hicp_df_a[1,2]`</td>
+    <td data-fragment-index="0" class="fragment">`r hicp_df_a[2,2]`</td>
+    <td data-fragment-index="0" class="fragment">`r hicp_df_a[3,2]`</td>
+    <td data-fragment-index="0" class="fragment">`r hicp_df_a[4,2]`</td>
+  </tr>
+  <tr>
+    <td data-fragment-index="0" class="fragment">CPI<sub>link</sub></td>
+    <td data-fragment-index="1" class="fragment"> --- </td>
+    <td data-fragment-index="2" class="fragment">`r round(hicp_df_a[2,2]/hicp_df_a[1,2]*100,1)`</td>
+    <td data-fragment-index="3" class="fragment">`r round(hicp_df_a[3,2]/hicp_df_a[2,2]*100,1)`</td>
+    <td data-fragment-index="4" class="fragment">`r round(hicp_df_a[4,2]/hicp_df_a[3,2]*100,1)`</td>
+  </tr>
+</table>
+
+. . .
+
+So the answer is: The year with the largest price increase was `r if (round(hicp_df_a[2,2]/hicp_df_a[1,2]*100,1) == max(round(hicp_df_a[2,2]/hicp_df_a[1,2]*100,1),round(hicp_df_a[3,2]/hicp_df_a[2,2]*100,1),round(hicp_df_a[4,2]/hicp_df_a[3,2]*100,1))) hicp_df_a[2,1] else if (round(hicp_df_a[3,2]/hicp_df_a[2,2]*100,1) == max(round(hicp_df_a[2,2]/hicp_df_a[1,2]*100,1),round(hicp_df_a[3,2]/hicp_df_a[2,2]*100,1),round(hicp_df_a[4,2]/hicp_df_a[3,2]*100,1))) hicp_df_a[3,1] else hicp_df_a[4,1]`.
+
+> Just in case there were doubts, an example: $$CPI_{link|`r hicp_df_a[3,1]`}=\frac{`r hicp_df_a[3,2]`}{`r hicp_df_a[2,2]`}\times 100=`r round(hicp_df_a[3,2]/hicp_df_a[2,2]*100,1)`$$
+
+## Application
+
+We know salary in `r hicp_df_a[1,1]` was 1500, and in `r hicp_df_a[4,1]` 1650. If the growth rate was constant, say $\delta_w$ we would have:
+
+. . .
+
+$$1650 = 1500(1+\delta_w)^{`r hicp_df_a[4,1]- hicp_df_a[1,1]`}$$
+
+Or conversely
+
+$$\frac{1650}{1500}=(1+\delta_w)^{`r hicp_df_a[4,1]-hicp_df_a[1,1]`}$$ 
+
+. . .
+
+or
+
+. . .
+
+$$\left(`r round(1650/1600,4)`\right)^{1/`r hicp_df_a[4,1]- hicp_df_a[1,1]`}=1+\delta_w$$
+ 
+. . . 
+
+$$`r round((1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1])),4)`-1=\delta_w \quad \Rightarrow \quad \delta_w=`r round((1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-1,4)`= `r round(100*(1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-100,2)`\%$$

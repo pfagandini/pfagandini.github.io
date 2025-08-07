@@ -561,8 +561,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-d41581ca671cb71617ac" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d41581ca671cb71617ac">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-07e137495322c88352e5" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-07e137495322c88352e5">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -993,8 +993,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-b5a6f7cdd4db1fde3e84" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b5a6f7cdd4db1fde3e84">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b18c195cc4afac432d97" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b18c195cc4afac432d97">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1400,12 +1400,126 @@ Table&nbsp;1: Changing Base
 <h2>Consumer Price Index</h2>
 <p>To create a price index, you need to follow at least 3 steps.</p>
 <ol type="1">
-<li class="fragment">Survey families to determine representative basket <span class="emoji" data-emoji="family_woman_woman_girl_boy">👩‍👩‍👧‍👦</span> <span class="emoji" data-emoji="family_man_woman_boy_boy">👨‍👩‍👦‍👦</span> <span class="emoji" data-emoji="family_man_man_girl_boy">👨‍👨‍👧‍👦</span></li>
+<li class="fragment">Determine representative basket: Survey families <span class="emoji" data-emoji="family_woman_woman_girl_boy">👩‍👩‍👧‍👦</span> <span class="emoji" data-emoji="family_man_woman_boy_boy">👨‍👩‍👦‍👦</span> <span class="emoji" data-emoji="family_man_man_girl_boy">👨‍👨‍👧‍👦</span></li>
 <li class="fragment">Survey retail stores to find out sale prices. <span class="emoji" data-emoji="convenience_store">🏪</span></li>
-<li class="fragment">Compute the index with the collected data. <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span></li>
+<li class="fragment">Compute the index with the collected data. <span class="emoji" data-emoji="chart_with_upwards_trend">📈</span>
+<ol type="1">
+<li class="fragment">Compute the cost of the <span class="emoji" data-emoji="basket">🧺</span> with the prices at the base period.</li>
+<li class="fragment">Compute the cost of the same <span class="emoji" data-emoji="basket">🧺</span> with the prices of every succesive period.</li>
+</ol></li>
 </ol>
+</section>
+<section id="application" class="slide level2">
+<h2>Application</h2>
+<p>A Labor union leader is complaining that the average salary in 2021 was 1500, and in 2024 it is 1650. This increase, they say, is not enough to maintain the workers’ purshasing power, because of inflation. The data for inflation is the following:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th style="text-align: center;">2021</th>
+<th style="text-align: center;">2022</th>
+<th style="text-align: center;">2023</th>
+<th style="text-align: center;">2024</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPI</td>
+<td style="text-align: center;">104.6</td>
+<td style="text-align: center;">113</td>
+<td style="text-align: center;">119</td>
+<td style="text-align: center;">122.2</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li class="fragment">The year with the largest increase in prices was 2023?</li>
+<li class="fragment">The average growth rate for the wages between 2021 and 2024 was _______?</li>
+<li class="fragment">Is the union leader right?</li>
+</ol>
+</section>
+<section id="application-1" class="slide level2">
+<h2>Application</h2>
+<p>For the first question, we can compute the chain or link index:</p>
+<table data-fragment-index="0" class="fragment">
+<tbody><tr>
+<th data-fragment-index="0" class="fragment">
+Year
+</th>
+<th data-fragment-index="0" class="fragment">
+2021
+</th>
+<th data-fragment-index="0" class="fragment">
+2022
+</th>
+<th data-fragment-index="0" class="fragment">
+2023
+</th>
+<th data-fragment-index="0" class="fragment">
+2024
+</th>
+</tr>
+<tr>
+<td data-fragment-index="0" class="fragment">
+CPI
+</td>
+<td data-fragment-index="0" class="fragment">
+104.6
+</td>
+<td data-fragment-index="0" class="fragment">
+113
+</td>
+<td data-fragment-index="0" class="fragment">
+119
+</td>
+<td data-fragment-index="0" class="fragment">
+122.2
+</td>
+</tr>
+<tr>
+<td data-fragment-index="0" class="fragment">
+CPI<sub>link</sub>
+</td>
+<td data-fragment-index="1" class="fragment">
+—
+</td>
+<td data-fragment-index="2" class="fragment">
+108
+</td>
+<td data-fragment-index="3" class="fragment">
+105.3
+</td>
+<td data-fragment-index="4" class="fragment">
+102.7
+</td>
+</tr>
+</tbody></table>
+<div class="fragment">
+<p>So the answer is: The year with the largest price increase was 2022.</p>
+<blockquote>
+<p>Just in case there were doubts, an example: <span class="math display">\[CPI_{link|2023}=\frac{119}{113}\times 100=105.3\]</span></p>
+</blockquote>
+</div>
+</section>
+<section id="application-2" class="slide level2">
+<h2>Application</h2>
+<p>We know salary in 2021 was 1500, and in 2024 1650. If the growth rate was constant, say <span class="math inline">\(\delta_w\)</span> we would have:</p>
+<div class="fragment">
+<p><span class="math display">\[1650 = 1500(1+\delta_w)^{3}\]</span></p>
+<p>Or conversely</p>
+<p><span class="math display">\[\frac{1650}{1500}=(1+\delta_w)^{3}\]</span></p>
+</div>
+<div class="fragment">
+<p>or</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\left(1.0312\right)^{1/3}=1+\delta_w\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[1.0103-1=\delta_w \quad \Rightarrow \quad \delta_w=0.0103= 1.03\%\]</span></p>
 
 
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
