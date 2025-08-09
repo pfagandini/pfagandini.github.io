@@ -46,7 +46,7 @@ Consider the following sales data, in thousands of euros, for a given company:
 | ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
 |$I^{sales}_{t|`r y-5`}$ | `r fitb(c(1,100))` | `r fitb(c(round(650/500,4), round(100*650/500,2)))` | `r fitb(c(round(600/500,4), round(100*600/500,2)))` | `r fitb(c(round(800/500,4), round(100*800/500,2)))` | `r fitb(c(round(750/500,4), round(100*750/500,2)))` | `r fitb(c(round(950/500,4), round(100*950/500,2)))` |
 
-2. `r mcq(c("True", "False", answer = "True"))` We could say that in year 2015, according to the index computed above, sales increased 20%.
+2. `r torf(TRUE)` We could say that in year 2015, according to the index computed above, sales increased 20%.
 
 :::
 
