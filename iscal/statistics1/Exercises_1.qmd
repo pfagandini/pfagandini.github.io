@@ -1,23 +1,57 @@
 ---
 title: "Chapter I - Statistics I - Exercises"
-author: "Paulo Fagandini"
 format: 
   html:
     css: [Exercises/webex.css]
     include-after-body: [Exercises/webex.js]
-    embed-resources: true 
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
 ---
 
-```{r setup, include = FALSE}
+```{r setup, include = FALSE, echo = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
 library(webexercises)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(lubridate)
+y <- year(Sys.Date())
 ```
 
 ```{r, echo = FALSE, results='asis'}
 # Uncomment to change widget colours:
 #style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
 ```
+
+This is a set of exercises created by the teaching Faculty for Statistics I, Chapter I - Index Numbers, from the Lisbon Accounting and Business School.
+
+## Questions
+
+::: {.webex-check .webex-box}
+
+Consider the following sales data, in thousands of euros, for a given company:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Sales | 500 | 650 | 600 | 800 | 750 | 950 |
+:::
+
+1. Build the index series with fix base in 2013.
+
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|$I^{sales}_{t|`r y-5`}$ | `r fitb(c(1,100))` | `r fitb(c(round(650/500,4), round(100*650/500,2)))` | `r fitb(c(round(600/500,4), round(100*600/500,2)))` | `r fitb(c(round(800/500,4), round(100*800/500,2)))` | `r fitb(c(round(750/500,4), round(100*750/500,2)))` | `r fitb(c(round(950/500,4), round(100*950/500,2)))` |
+
+2. `r mcq(c("True", "False", answer = "True"))` We could say that in year 2015, according to the index computed above, sales increased 20%.
+
+:::
+
+
+
 
 This is a Web Exercise template created by the [#PsyTeachR team at the University of Glasgow](https://psyteachr.github.io), based on ideas from [Software Carpentry](https://software-carpentry.org/lessons/). This template shows how instructors can easily create interactive web documents that students can use in self-guided learning.
 

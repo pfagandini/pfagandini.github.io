@@ -3,7 +3,7 @@ title: "Syllabus - Statistics I"
 author: "Paulo Fagandini"
 format: html
 lang: en
-editor: visual
+editor: source
 page-layout: full
 
 ---
