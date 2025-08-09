@@ -74,7 +74,7 @@ If you score less than 7.00 in the Midterm, or if you cannot attend the midterm 
 
 # Growth Rates
 
-## Example
+## Example: Apple Stock
 
 ::::: columns
 ::: {.column width="50%"}
@@ -121,7 +121,7 @@ ggplot(aapl_df, aes(x = Date, y = Close)) +
 
 ```
 
-Source: FRED
+Source: Yahoo Finance
 :::
 
 ::: {.column width="50%"}
@@ -135,7 +135,7 @@ kable(aapl_df)
 :::
 :::::
 
-## Example
+## Example: Apple Stock
 
 Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date[1]`}$ is the close price we got for`r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close[1]`).
 
@@ -151,7 +151,7 @@ Or we could say
 
 $$y_{`r aapl_df$Date[2]`} = y_{`r aapl_df$Date[1]`} + \Delta y_{`r aapl_df$Date[2]`}$$ $$`r aapl_df$Close[2]` = `r aapl_df$Close[1]` + `r aapl_df$Close[2] - aapl_df$Close[1]`$$
 
-## Example
+## Example: Apple Stock
 
 $$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}+\Delta y_{`r aapl_df$Date[2]`}$$
 
@@ -1368,7 +1368,7 @@ None, not even Fisher's Index pass the circularity test.
 
 ## Example
 
-According to LPI for year 2, prices for public transportantion grew 11.17%.
+**According to LPI for year 2, prices for public transportantion grew 11.17%.**
 
 . . .
 
@@ -1388,8 +1388,76 @@ Or $p_2^{metro}=`r round(112.5/100*1.2,2)`$
 
 ## Example
 
-$$IPL_{2|1}=\frac{\sum_{k=1}^m p_2^k q_1^k}{\sum_{k=1}^m p_0^k q_0^k}$$
+
+<table>
+  <tr>
+    <th></th>
+    <th colspan="2">Year 1</th>
+    <th colspan="2">Year 2</th>
+  </tr>
+  <tr>
+    <td> Public Transportation </td>
+    <td> N Trips </td>
+    <td> Ticket price </td>
+    <td> N Trips </td>
+    <td> Ticket price</td>
+  </tr>
+  <tr>
+    <td>Bus</td>
+    <td>1,763,521</td>
+    <td>1.15</td>
+    <td>1,875,345</td>
+    <td>1.25</td>
+  </tr>
+  <tr>
+    <td>Metro</td>
+    <td>3,148,350</td>
+    <td>1.2</td>
+    <td>3,396,138</td>
+    <td>1.35</td>
+  </tr>
+</table>
+
+## Example
+
+$$LPI_{2|1}=\frac{\sum_{k=1}^m p_2^k q_1^k}{\sum_{k=1}^m p_1^k q_1^k}$$
 
 . . .
 
-$$IPL_{2|1}=\frac{1,763,521\times 1.25 + 3,148,350 \times 1.35}{1,763,521\times 1.15 + 3,148,350 \times 1.2}=`r round((1763521 * 1.25 + 3148350 * 1.35)/(1763521*1.15 + 3148350*1.2),4)`$$
+$$LPI_{2|1}=\frac{1,763,521\times 1.25 + 3,148,350 \times 1.35}{1,763,521\times 1.15 + 3,148,350 \times 1.2}$$
+
+. . .
+
+$$LPI_{2|1}=`r round((1763521 * 1.25 + 3148350 * 1.35)/(1763521*1.15 + 3148350*1.2), 4)`$$
+
+. . . 
+
+> The *basket* in year 2 is 11.17\% more expensive than in year 1. $$LPI_{2|1}\times 100 - 100 = 11.17\%$$
+
+## Example
+
+**Real change, according to Paasche, for public transportation was 7.35%.**
+
+$$PQI_{2|1}=\frac{\sum_{k=1}^m p_2^k q_2^k}{\sum_{k=1}^m p_2^k q_1^k}$$
+
+$$PQI_{2|1}=\frac{1,875,345\times 1.25 + 3,396,138\times 1.35}{1,763,521\times 1.25 + 3,148,350\times 1.35}$$
+
+$$PQI_{2|1}=`r round((1875345*1.25 + 3396138* 1.35)/(1763521 * 1.25 + 3148350* 1.35), 4)`$$
+
+> Indeed, according to the Paasche index, in year 2 the amount of public transportantion trips was 7.35% larger than in year 1. $$PQI_{2|1}\times 100 - 100 = 7.35\%$$
+
+## Example
+
+**The composite index for change in expenditures with public transportation in year 2 compared the expenditure in year 1 is what type of change? (real, nominal, quantity, prices?) How much was it?**
+
+The value index for public transportation is a *nominal* index (price times quantity).
+
+. . . 
+
+>**Remember:** $$VI_{t|0}=LPI_{t|0}\times PQI_{t|0}$$
+
+## Example
+
+$$VI_{2|1}=LPI_{2|1}\times PQI_{2|1} = 1.1117 \times 1.0735 \approx `r round(1.1117*1.0735, 4)`$$
+
+The value of publc transportation trips grew 19.34% from year 1 to year 2. This includes the effect of an increase in prices and quantities.

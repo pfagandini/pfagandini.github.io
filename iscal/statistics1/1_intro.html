@@ -228,8 +228,8 @@ Paulo Fagandini
 <h1>Growth Rates</h1>
 
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
+<section id="example-apple-stock" class="slide level2">
+<h2>Example: Apple Stock</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -241,7 +241,7 @@ Paulo Fagandini
 </div>
 </div>
 </div>
-<p>Source: FRED</p>
+<p>Source: Yahoo Finance</p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
@@ -279,7 +279,7 @@ Paulo Fagandini
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2025</td>
-<td style="text-align: right;">220.03</td>
+<td style="text-align: right;">229.35</td>
 </tr>
 </tbody>
 </table>
@@ -287,8 +287,8 @@ Paulo Fagandini
 </div>
 </div></div>
 </section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
+<section id="example-apple-stock-1" class="slide level2">
+<h2>Example: Apple Stock</h2>
 <p>Let the close price for Apple be represented by the variable <span class="math inline">\(y_t\)</span>, so <span class="math inline">\(y_{2019}\)</span> is the close price we got for2019 (<em>i.e.</em> 73.41).</p>
 <p>How much did <span class="math inline">\(y\)</span> grow between 2019 and 2020?</p>
 <div class="fragment">
@@ -299,8 +299,8 @@ Paulo Fagandini
 <p><span class="math display">\[y_{2020} = y_{2019} + \Delta y_{2020}\]</span> <span class="math display">\[132.69 = 73.41 + 59.28\]</span></p>
 </div>
 </section>
-<section id="example-2" class="slide level2">
-<h2>Example</h2>
+<section id="example-apple-stock-2" class="slide level2">
+<h2>Example: Apple Stock</h2>
 <p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
 <p><span class="math display">\[y_{2020}=y_{2019}\left(1+\frac{\Delta y_{2020}}{y_{2019}}\right)\]</span></p>
 <p><span class="math display">\[y_{2020}=y_{2019}\left(1+\delta^y_{2020}\right)\]</span></p>
@@ -325,7 +325,7 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="example-3" class="slide level2">
+<section id="example" class="slide level2">
 <h2>Example</h2>
 <p><span class="math display">\[132.69 = 73.41+(132.69 - 73.41)\]</span></p>
 <p><span class="math display">\[132.69 =73.41\left(1+\frac{59.28}{73.41}\right)\]</span></p>
@@ -346,7 +346,7 @@ Paulo Fagandini
 <p>Note: In this case <span class="math inline">\(\delta_{t+k|t}\)</span> is what percentage the variable changed from <span class="math inline">\(t\)</span> to <span class="math inline">\(t+k\)</span>, and <span class="math inline">\(k\)</span> is the number of periods.</p>
 </blockquote>
 </section>
-<section id="example-4" class="slide level2">
+<section id="example-1" class="slide level2">
 <h2>Example</h2>
 <p>We had <span class="math inline">\(y_{2019}=73.41\)</span>, and <span class="math inline">\(y_{2023} =192.53\)</span>. We will try to find <span class="math inline">\(\delta_{2023|2019}^y\)</span></p>
 <ul>
@@ -438,7 +438,7 @@ Paulo Fagandini
 <p><span class="math display">\[\overline{\delta}_{t+k|t}=\left(\frac{y_{t+k}}{y_t}\right)^{1/k} - 1\]</span></p>
 </div>
 </section>
-<section id="example-5" class="slide level2">
+<section id="example-2" class="slide level2">
 <h2>Example</h2>
 <p>We had <span class="math display">\[\delta_{2023|2019}^y = \frac{192.53 - 73.41}{73.41} = 1.6227 = 162.27\%\]</span></p>
 <p>But what now is the <strong>average growth rate</strong> between 2019 and 2023?</p>
@@ -455,7 +455,7 @@ Paulo Fagandini
 </blockquote>
 </div>
 </section>
-<section id="example-6" class="slide level2">
+<section id="example-3" class="slide level2">
 <h2>Example</h2>
 <p>Note that <span class="math display">\[
 (1+27.26\%)^4 =
@@ -472,7 +472,7 @@ Paulo Fagandini
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-08-11?</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-08-12?</p>
 </section>
 <section id="motivation-1" class="slide level2">
 <h2>Motivation</h2>
@@ -521,12 +521,12 @@ Paulo Fagandini
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-08-11.</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-08-12.</p>
 <p>What can you read from the plot?</p>
 </section>
 <section id="motivation-5" class="slide level2">
 <h2>Motivation</h2>
-<p>Note that for 2015-08-11, we would have, for A and B:</p>
+<p>Note that for 2015-08-12, we would have, for A and B:</p>
 <p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
 <p>We just built and index number!</p>
 <p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
@@ -553,7 +553,7 @@ Paulo Fagandini
 </div>
 <p><br>
 </p>
-<p>In our previous example, the base day would have been 2015-08-11. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
+<p>In our previous example, the base day would have been 2015-08-12. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
 <section id="index-numbers-1" class="slide level2">
 <h2>Index Numbers</h2>
@@ -561,8 +561,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-ad89f0cf087934b1c594" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-ad89f0cf087934b1c594">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-8a4e38fb1b687f2b1193" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-8a4e38fb1b687f2b1193">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -695,7 +695,7 @@ Paulo Fagandini
 <p><span class="math display">\[ I_t' = I_t I_{t-1} ...I_{4} = \frac{x_t}{x_{t-1}}\frac{x_{t-1}}{x_{t-2}}...\frac{x_4}{x_3}=\frac{x_t}{x_3}=I'_t\]</span></p>
 </div>
 </section>
-<section id="example-7" class="slide level2">
+<section id="example-4" class="slide level2">
 <h2>Example</h2>
 <p><small></small></p><small>
 <p>Suppose we want to convert this Chain Index into Fix Base index, with the base year in 2020. This will be our 100.</p>
@@ -901,7 +901,7 @@ Table&nbsp;1: Changing Base
 </div>
 </div>
 </section>
-<section id="example-8" class="slide level2">
+<section id="example-5" class="slide level2">
 <h2>Example</h2>
 <table class="caption-top" style="width:100%;">
 <caption>Stock prices</caption>
@@ -1027,8 +1027,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-f1831dd121aa616e9565" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-f1831dd121aa616e9565">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ce09373bd9ae3af198ff" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ce09373bd9ae3af198ff">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1082,7 +1082,7 @@ Table&nbsp;1: Changing Base
 <p><span class="math display">\[\frac{q_t}{q_b} = \frac{\frac{v_t}{v_b}}{\frac{p_t}{p_b}}\]</span> <span class="math display">\[\frac{q_t}{q_b} = \frac{\frac{p_tq_t}{p_bq_b}}{\frac{p_t}{p_b}}=\frac{p_tq_t}{p_bq_b}\frac{p_b}{p_t}=\frac{q_t}{q_b}\]</span></p>
 </div>
 </section>
-<section id="example-9" class="slide level2">
+<section id="example-6" class="slide level2">
 <h2>Example</h2>
 <table class="caption-top">
 <thead>
@@ -1142,7 +1142,7 @@ Table&nbsp;1: Changing Base
 </table>
 </div>
 </section>
-<section id="example-10" class="slide level2">
+<section id="example-7" class="slide level2">
 <h2>Example</h2>
 <table class="caption-top">
 <thead>
@@ -1174,7 +1174,7 @@ Table&nbsp;1: Changing Base
 </blockquote>
 </div>
 </section>
-<section id="example-11" class="slide level2">
+<section id="example-8" class="slide level2">
 <h2>Example</h2>
 <p>Let’s check:</p>
 <p><span class="math display">\[\delta_{2025}^q=\frac{(1+\delta_{2025}^v)}{(1+\delta_{2025}^p)}-1=\frac{111/110}{109/106}-1=0.9813-1\]</span> <span class="math display">\[\delta_{2025}^q=-0.0187=-1.87\%\]</span></p>
@@ -1307,7 +1307,7 @@ Table&nbsp;1: Changing Base
 <p><span class="math display">\[FPI_{t|0}=\sqrt{LPI_{t|0}\times PPI_{t|0}}\]</span></p>
 <p><span class="math display">\[FQI_{t|0}=\sqrt{LQI_{t|0}\times PQI_{t|0}}\]</span></p>
 </section>
-<section id="example-12" class="slide level2">
+<section id="example-9" class="slide level2">
 <h2>Example</h2>
 <p>Suppose you collected the following data for years 2023, 2024, and 2025, from a basket of 15 goods.</p>
 <div style="text-align: center;">
@@ -1611,7 +1611,7 @@ CPI<sub>link</sub>
 <p>Homework: Verify it.</p>
 </blockquote>
 </section>
-<section id="example-13" class="slide level2">
+<section id="example-10" class="slide level2">
 <h2>Example</h2>
 <table>
 <tbody><tr>
@@ -1677,7 +1677,7 @@ Metro
 </tr>
 </tbody></table>
 </section>
-<section id="example-14" class="slide level2">
+<section id="example-11" class="slide level2">
 <h2>Example</h2>
 <ol type="1">
 <li class="fragment">According to LPI for year 2, prices for public transportantion grew 11.17%.</li>
@@ -1685,9 +1685,9 @@ Metro
 <li class="fragment">The composite index for change in expenditures with public transportation in year 2 compared the expenditure in year 1 is what type of change? (real, nominal, quantity, prices?) How much was it?</li>
 </ol>
 </section>
-<section id="example-15" class="slide level2">
+<section id="example-12" class="slide level2">
 <h2>Example</h2>
-<p>According to LPI for year 2, prices for public transportantion grew 11.17%.</p>
+<p><strong>According to LPI for year 2, prices for public transportantion grew 11.17%.</strong></p>
 <div class="fragment">
 <p>First, we need to find <span class="math inline">\(p_2\)</span> for bus and metro.</p>
 </div>
@@ -1700,14 +1700,113 @@ Metro
 <p>Or <span class="math inline">\(p_2^{metro}=1.35\)</span></p>
 </div>
 </section>
+<section id="example-13" class="slide level2">
+<h2>Example</h2>
+<table>
+<tbody><tr>
+<th>
+</th>
+<th colspan="2">
+Year 1
+</th>
+<th colspan="2">
+Year 2
+</th>
+</tr>
+<tr>
+<td>
+Public Transportation
+</td>
+<td>
+N Trips
+</td>
+<td>
+Ticket price
+</td>
+<td>
+N Trips
+</td>
+<td>
+Ticket price
+</td>
+</tr>
+<tr>
+<td>
+Bus
+</td>
+<td>
+1,763,521
+</td>
+<td>
+1.15
+</td>
+<td>
+1,875,345
+</td>
+<td>
+1.25
+</td>
+</tr>
+<tr>
+<td>
+Metro
+</td>
+<td>
+3,148,350
+</td>
+<td>
+1.2
+</td>
+<td>
+3,396,138
+</td>
+<td>
+1.35
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="example-14" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[LPI_{2|1}=\frac{\sum_{k=1}^m p_2^k q_1^k}{\sum_{k=1}^m p_1^k q_1^k}\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[LPI_{2|1}=\frac{1,763,521\times 1.25 + 3,148,350 \times 1.35}{1,763,521\times 1.15 + 3,148,350 \times 1.2}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[LPI_{2|1}=1.1117\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>The <em>basket</em> in year 2 is 11.17% more expensive than in year 1. <span class="math display">\[LPI_{2|1}\times 100 - 100 = 11.17\%\]</span></p>
+</blockquote>
+</div>
+</section>
+<section id="example-15" class="slide level2">
+<h2>Example</h2>
+<p><strong>Real change, according to Paasche, for public transportation was 7.35%.</strong></p>
+<p><span class="math display">\[PQI_{2|1}=\frac{\sum_{k=1}^m p_2^k q_2^k}{\sum_{k=1}^m p_2^k q_1^k}\]</span></p>
+<p><span class="math display">\[PQI_{2|1}=\frac{1,875,345\times 1.25 + 3,396,138\times 1.35}{1,763,521\times 1.25 + 3,148,350\times 1.35}\]</span></p>
+<p><span class="math display">\[PQI_{2|1}=1.0735\]</span></p>
+<blockquote>
+<p>Indeed, according to the Paasche index, in year 2 the amount of public transportantion trips was 7.35% larger than in year 1. <span class="math display">\[PQI_{2|1}\times 100 - 100 = 7.35\%\]</span></p>
+</blockquote>
+</section>
 <section id="example-16" class="slide level2">
 <h2>Example</h2>
-<p><span class="math display">\[IPL_{2|1}=\frac{\sum_{k=1}^m p_2^k q_1^k}{\sum_{k=1}^m p_0^k q_0^k}\]</span></p>
+<p><strong>The composite index for change in expenditures with public transportation in year 2 compared the expenditure in year 1 is what type of change? (real, nominal, quantity, prices?) How much was it?</strong></p>
+<p>The value index for public transportation is a <em>nominal</em> index (price times quantity).</p>
 <div class="fragment">
-<p><span class="math display">\[IPL_{2|1}=\frac{1,763,521\times 1.25 + 3,148,350 \times 1.35}{1,763,521\times 1.15 + 3,148,350 \times 1.2}=1.1117\]</span></p>
-
-
+<blockquote>
+<p><strong>Remember:</strong> <span class="math display">\[VI_{t|0}=LPI_{t|0}\times PQI_{t|0}\]</span></p>
+</blockquote>
 </div>
+</section>
+<section id="example-17" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[VI_{2|1}=LPI_{2|1}\times PQI_{2|1} = 1.1117 \times 1.0735 \approx 1.1934\]</span></p>
+<p>The value of publc transportation trips grew 19.34% from year 1 to year 2. This includes the effect of an increase in prices and quantities.</p>
+
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
