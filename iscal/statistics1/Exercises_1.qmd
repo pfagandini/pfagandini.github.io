@@ -18,7 +18,7 @@ library(webexercises)
 
 ```{r, echo = FALSE, include = FALSE}
 library(lubridate)
-y <- year(Sys.Date())
+y <- year(Sys.Date())-1
 ```
 
 ```{r, echo = FALSE, results='asis'}
@@ -29,6 +29,8 @@ y <- year(Sys.Date())
 This is a set of exercises created by the teaching Faculty for Statistics I, Chapter I - Index Numbers, from the Lisbon Accounting and Business School.
 
 ## Questions
+
+### Question 1
 
 ::: {.webex-check .webex-box}
 
@@ -48,18 +50,240 @@ Consider the following sales data, in thousands of euros, for a given company:
 
 2. `r torf(TRUE)` We could say that in year `r y-3`, according to the index computed above, sales increased 20% relative to the base year.
 
-3. 
+3. Study the evolution of sales, between consecutive years.
+
+`r hide("Solution")`
+
+We need to compute the link or chain index.
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Sales | 500 | 650 | 600 | 800 | 750 | 950 |
+|$I^{sales}_{chain}$ | | `r round(100*650/500,1)` | `r round(100*600/650,1)` | `r round(100*800/600,1)` | `r round(100*750/800,1)` | `r round(100*950/750,1)` |
+:::
+
+From `r y-5` to `r y-4` sales grew by 30%, from `r y-4` to `r y-3` sales diminished 7.7%, from `r y-3` to `r y-2` sales grew 33.3%, from `r y-2` to `r y-1` sales dropped 6.2%, and from `r y-1` to `r y` sales grew 26.7%.
+
+`r unhide()`
+
+4. What happened to sales during the whole studied period?
+
+`r hide("Solution")`
+
+Sales grew 90%, between `r y-5` and `r y`.
+
+`r unhide()`
+
+5. The growth rate between `r y-3` and `r y-1` was `r mcq(c(answer = "25%", "90%", "14%", "none of the above"))`
+
+6. The (rounded) average growth rate in the studied period is `r mcq(c("18%", "9%", answer="14%", "None of the above"))`
+
+:::
+
+### Question 2
+
+::: {.webex-check .webex-box}
+
+Consider the following sales data, in thousands of euros, for a given company:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Sales | 300 | 250 | $a$ | 240 | $b$ | 340 |
+:::
+
+1. `r torf(TRUE)` The average growth rate for sales, between `r y-5` and `r y` was, approximately, 2.53%.
+
+2. Let $i_{`r y-3`|`r y-5`}=67$. Also, assume you know that the growth rate doubled between `r y-2` and `r y-1`. The values for $a$ and $b$ are respectively: `r mcq(c(answer="201 and 333.1", "201 and 300", "240 and 333.1", "None of the above"))`
+
+3. `r torf(TRUE)` The average growth rate needed to triple sales between `r y` and `r y+4` would have to be 31.61%.
+
+4. `r torf(FALSE)` Assuming an average growth rate of 10%, it would be necessary to wait for 6 years for sales to triple.
+
+:::
+
+### Question 3
+
+::: {.webex-check .webex-box}
+
+A given company presented their financial statements with the following information:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Growth rate of sales |  | 20% | 15% | 20% | 10% | 25% |
+| Price Index (base = `r y-3`) | 81.17 | 89.29| 100 | 115 | 128.8 | 148.12 | 
+:::
+
+```{r}
+sol.3.1 <- (1.2*1.15*1.2*1.1*1.25)^0.2 - 1
+```
+
+1. Write the average growth rate of (nominal) sales for the whole period (rounded up, for example 11 if percentage, or 0.11 if decimal): `r fitb(round(sol.3.1,0), round(100*sol.3.1,0))`
+
+2. Find the annual **real** growth rate for sales, when this was negative.
+
+`r hide('Solution')`
+
+Start building the index for sales, base `r y-3`, and remember $i^v_{t|b}=i^q_{t|b}\times i^p_{t|b}$ to build the real growth rates:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+| Sales Index (base = `r y-3`) | `r round(100/(1.15*1.2),2)` | `r round(100/1.15,2)` | 100 | `r 100*1.2` | `r 100*1.2*1.1` | `r 100*1.2*1.1*1.25` |
+| Price Index (base = `r y-3`) | 81.17 | 89.29| 100 | 115 | 128.8 | 148.12 | 
+| Real Sales Index (base = `r y-3`) | `r round(100*72.46/81.17,2)` | `r round(100*86.96/89.29,2)`| 100 | `r round(100*120/115,2)` | `r round(100*132/128.8,2)` | `r round(100*165/148.12,2)` | 
+:::
+
+Clearly, the real growth rate was negative in `r y-1`, and it was `r round(100*102.48/104.35,2)-100`%.
+
+`r unhide()`
+
+3. How do you interpret the price index for years `r y-5` and `r y-4`?
+
+`r hide('Solution')`
+
+From `r y-5` to `r y-3` prices grew `r round(100*(100/81.17-1),2)` %, and from `r y-4` to `r y-3` prices grew `r round(100*(100/89.29-1),2)` %.
+
+`r unhide()`
 
 :::
 
 
+### Question 4
+
+::: {.webex-check .webex-box}
+
+For some country, water consumption in the period `r y-8` and `r y` evolved according the simple index, base `r y-3`, shown in the following table:
+
+::: {.table}
+| Year | `r y-8` | `r y-7`| `r y-6`| `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: | :---:   | :---:   | :---: |
+| Sales Index (base = `r y-3`) | 75.6 | 78.5 | 82.5 | 88.1 | 93.8 | 100 | 104.8 | 107.7 | 107.9 |
+:::
+
+1. `r torf(FALSE)` Water consumption betwee `r y-6` and `r y-4` grew 12.5%.
+
+2. `r torf(TRUE)`
+
+3. Taking yera `r y-8` as base year, $i_{`r y`|`r y-8`}$ would be equal to: `r mcq(c("136.32", answer="142.7", "175.6", "None of the above"))` 
 
 
-This is a Web Exercise template created by the [#PsyTeachR team at the University of Glasgow](https://psyteachr.github.io), based on ideas from [Software Carpentry](https://software-carpentry.org/lessons/). This template shows how instructors can easily create interactive web documents that students can use in self-guided learning.
 
-The `{webexercises}` package provides a number of functions that you use in [inline R code](https://github.com/rstudio/cheatsheets/raw/main/rmarkdown.pdf) or through code chunk options to create HTML widgets (text boxes, pull down menus, buttons that reveal hidden content). Examples are given below. Render this file to HTML to see how it works.
+4. `r torf(FALSE)` The average growth rate for water consumption in the whole period was 4.54%. Overall, during the whole period, water consumption grew 36.32%.
 
-**NOTE: To use the widgets in the compiled HTML file, you need to have a JavaScript-enabled browser.**
+:::
+
+### Question 5
+
+::: {.webex-check .webex-box}
+
+Wayne Industries reported sales using the chain index shown in the following table:
+
+::: {.table}
+| Year | `r y-6`| `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---: | :---:   | :---:   | :---: |
+| Sales Index | 120 | 125 | 135 | 145 | 150 | 160 | 165 |
+:::
+
+1. The average growth rate between `r y-6` and `r y` was approximately: `r mcq(c("50%", "42.86%", answer="46.01%", "None of the above"))`
+
+
+2. The growth rate for sales between `r y-7` and `r y` is approximately: `r mcq(c(answer="1062.8%","65%","42.86","None of the above"))`
+
+3. `r torf(TRUE)` The average semi-annual growth rate between `r y-4` and `r y-1` is approximately 23.10%.
+
+4. `r torf(FALSE)` The value for the semi-annual growth rate, in real terms, if the IPC (fix base) went from 130 in `r y-4` to 180 in `r y-1`, is approximately equal to 10%.
+
+:::
+
+### Question 6
+
+```{r , include = FALSE, echo = FALSE}
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+# Set parameters
+end_year <- year(Sys.Date())-1
+start_year <- end_year - 7
+geo <- "EU27_2020"  # EU27 (post-Brexit)
+
+####################
+# Dealing with GDP #
+####################
+
+data_gdp <- get_eurostat("nama_10_gdp",
+                     filters = list(
+                       geo = geo,
+                       unit = "CLV05_MEUR",  # GDP Base 15 Million of Euro
+                       na_item = "B1GQ", # GDP Gross domestic product at market prices (chain-linked volumes)
+                       time = as.character(start_year:end_year)
+                      )
+                     )
+
+data_gdp_year <- data_gdp %>%
+  select(time, values) %>%
+  mutate(year = time) %>%
+  select(-time) %>%
+  rename(GDP = values) %>%
+  mutate(year=year(as_date(year)))
+
+#######################
+# Dealing with Prices #
+#######################
+
+data_prices <-  get_eurostat("prc_hicp_midx",
+                        filters = list(
+                          geo = geo,
+                          coicop = "CP00",
+                          unit="I15"
+                          )
+                        )
+
+data_prices_year <- data_prices %>% 
+  mutate(year = year(as_date(time))) %>%
+  group_by(year) %>%
+  mutate(CPI = mean(values, na.rm = TRUE)) %>%
+  ungroup() %>%
+  select(-unit, -coicop, -geo, -time, -freq, -values) %>%
+  distinct() %>%
+  filter(year >= start_year)
+
+#################
+# Final Dataset #
+#################
+
+data <- merge(data_gdp_year, data_prices_year, by = 'year')
+
+data_link <- data %>%
+  mutate(
+    CPI_link = round(CPI/lag(CPI)*100, 1)
+  )
+
+data_long <- data_link %>% select(-CPI) %>%
+  pivot_longer(cols = c(GDP, CPI_link),
+               names_to = "indicator",
+               values_to = "value")
+
+data_horizontal <- data_long %>%
+  pivot_wider(names_from = year, values_from = value)
+
+```
+
+::: {.webex-check .webex-box}
+
+Consider the following data with respect to the evolution of the Euro Area GDP (EU27) between `r y-7` and `r y-1`, constant prices (base 2015), as well as the chain index for prices for the same period:
+
+```{r}
+
+library(knitr)
+kable(data_horizontal)
+
+```
+
+:::
 
 ## Example Questions
 

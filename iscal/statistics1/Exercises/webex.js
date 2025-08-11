@@ -35,10 +35,10 @@ check_func = function() {
   var cl = this.parentElement.classList;
   if (cl.contains('unchecked')) {
     cl.remove("unchecked");
-    this.innerHTML = "Hide Answers";
+    this.innerHTML = "Undo";
   } else {
     cl.add("unchecked");
-    this.innerHTML = "Show Answers";
+    this.innerHTML = "Check Answers";
   }
 }
 
