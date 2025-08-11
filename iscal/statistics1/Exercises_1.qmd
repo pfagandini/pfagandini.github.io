@@ -165,7 +165,7 @@ For some country, water consumption in the period `r y-8` and `r y` evolved acco
 
 1. `r torf(FALSE)` Water consumption betwee `r y-6` and `r y-4` grew 12.5%.
 
-2. `r torf(TRUE)`
+2. `r torf(TRUE)` The chain index of `r y-6` and `r y-5` are respectively equal to 105.1 and 106.8.
 
 3. Taking yera `r y-8` as base year, $i_{`r y`|`r y-8`}$ would be equal to: `r mcq(c("136.32", answer="142.7", "175.6", "None of the above"))` 
 
@@ -199,6 +199,12 @@ Wayne Industries reported sales using the chain index shown in the following tab
 :::
 
 ### Question 6
+
+::: {.webex-check .webex-box}
+
+:::
+
+### Question 7
 
 ```{r , include = FALSE, echo = FALSE}
 library(eurostat)
@@ -272,6 +278,8 @@ data_horizontal <- data_long %>%
 
 ```
 
+
+
 ::: {.webex-check .webex-box}
 
 Consider the following data with respect to the evolution of the Euro Area GDP (EU27) between `r y-7` and `r y-1`, constant prices (base 2015), as well as the chain index for prices for the same period:
@@ -283,122 +291,138 @@ kable(data_horizontal)
 
 ```
 
+1. `r torf(TRUE)` The inflation rate between `r y-3` and `r y-2` was `r round(data_link[data_link$year == y-2, 'CPI_link']/data_link[data_link$year == y-3, 'CPI_link']*100-100,2)`%.
+
+2. `r torf(FALSE)` Prices grew from `r y-4` to `r y` `r round(100*data_link[data_link$year == y, 'CPI_link']/data_link[data_link$year == y-4, 'CPI_link'], 2)-100`%.
+
+3. `r torf(TRUE)` The average growth rate between `r y` and `r y-7`, for GDP, was `r round(100*(data_link[data_link$year == y, 'GDP']/data_link[data_link$year == y-7, 'GDP'])^(1/7)-100,2)` % every year.
+
+4. `r torf(FALSE)` In `r y-1` and `r y` the real and nominal growth rates (for GDP) were the same.
+
 :::
 
-## Example Questions
-
-### Fill-In-The-Blanks (`fitb()`)
-
-Create fill-in-the-blank questions using `fitb()`, providing the answer as the first argument.
-
-- 2 + 2 is `r fitb(4)`
-
-You can also create these questions dynamically, using variables from your R session.
-
-```{r}
-x <- sample(2:8, 1)
-```
-
-- The square root of `r x^2` is: `r fitb(x)`
-
-The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE`.
-
-- What is the letter after D? `r fitb("E", ignore_case = TRUE)`
-
-If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` (which is the default) and include spaces in your answer anywhere they could be acceptable.
-
-- How do you load the tidyverse package? `r fitb(c("library( tidyverse )", "library( \"tidyverse\" )", "library( 'tidyverse' )"), ignore_ws = TRUE, width = "20")`
-
-You can set more than one possible correct answer by setting the answers as a vector.
-
-- Type a vowel: `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
-
-You can use regular expressions to test answers against more complex rules.
-
-- Type any 3 letters: `r fitb("^[a-zA-Z]{3}$", width = 3, regex = TRUE)`
-
-### Multiple Choice (`mcq()`)
-
-- "Never gonna give you up, never gonna: `r mcq(c("let you go", "turn you down", "run away", answer = "let you down"))`"
-- "I `r mcq(c(answer = "bless the rains", "guess it rains", "sense the rain"))` down in Africa" -Toto
-
-### True or False (`torf()`)
-
-- True or False? You can permute values in a vector using `sample()`. `r torf(TRUE)`
-
-### Longer MCQs (`longmcq()`)
-
-When your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use `longmcq()` to deal with this. Since the answers are long, It's probably best to set up the options inside an R chunk with `echo=FALSE`. 
-
-**What is a p-value?**
-
-```{r}
-opts_p <- c(
-   "the probability that the null hypothesis is true",
-   answer = "the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true",
-   "the probability of making an error in your conclusion"
-)
-```
-
-`r longmcq(opts_p)`
-
-**What is true about a 95% confidence interval of the mean?**
-
-```{r}
-# use sample() to randomise the order
-opts_ci <- sample(c(
-  answer = "if you repeated the process many times, 95% of intervals calculated in this way contain the true mean",
-  "there is a 95% probability that the true mean lies within this range",
-  "95% of the data fall within this range"
-))
-```
-
-`r longmcq(opts_ci)`
-
-## Checked sections
-
-Create sections with the class `webex-check` to add a button that hides feedback until it is pressed. Add the class `webex-box` to draw a box around the section (or use your own styles).
+### Question 8
 
 ::: {.webex-check .webex-box}
 
-I am going to learn a lot: `r torf(TRUE)`
+:::
 
-```{r, results='asis'}
-opts <- c(
-   "the probability that the null hypothesis is true",
-   answer = "the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true",
-   "the probability of making an error in your conclusion"
-)
+### Question 9
 
-cat("What is a p-value?", longmcq(opts))
-```
+::: {.webex-check .webex-box}
 
 :::
 
+### Question 10
 
+::: {.webex-check .webex-box}
 
-## Hidden solutions and hints
+After tracking a basket with 30 goods for 3 years (`r y-2` to `r y`), the following data was collected:
 
-You can fence off a solution area that will be hidden behind a button using `hide()` before the solution and `unhide()` after, each as inline R code.  Pass the text you want to appear on the button to the `hide()` function.
+| | `r y-2` | `r y-1` | `r y`|
+| --- | --- | --- | --- |
+| `r y-2` | $\sum p^k_{`r y-2`}q^k_{`r y-2`} = 8562$ | $\sum p^k_{`r y-2`}q^k_{`r y-1`}=9210$ | $\sum p^k_{`r y-2`} q^k_{`r y`} = 9920$|
+| `r y-1` | $\sum p^k_{`r y-1`}q^k_{`r y-2`} = 9150$| $\sum p^k_{`r y-1`}q^k_{`r y-1`} = 9584$ | | 
+| `r y` | $\sum p^k_{`r y`}q^k_{`r y-2`}=9657$| | $\sum p^k_{`r y`}q^k_{`r y`} = 10013$ |
 
-If the solution is a code chunk, instead of using `hide()` and `unhide()`, simply set the `webex.hide` chunk option to TRUE, or set it to the string you wish to display on the button.
+Fill the following table (use index in hundreds, rounded to the closest integer, for example 107):
 
-**Recreate the scatterplot below, using the built-in `cars` dataset.**
+| | `r y-2` | `r y-1` | `r y`|
+| --- | --- | --- | --- |
+| $LPI_{t|`r y-2`}$ | 100 | `r fitb(round(100*9150/8562))` | `r fitb(round(100*9657/8562))` |
+| $PPI_{t|`r y-2`}$ | 100 | `r fitb(round(100*9584/9210))` | `r fitb(round(100*10013/9920))` |
+| $FPI_{t|`r y-2`}$ | 100 | `r fitb(round(100*((9150/8562)*(9584/9210))^0.5))` | `r fitb(round(100*((9657/8562)*(10013/9920))^0.5))` |
 
-```{r}
-with(cars, plot(speed, dist))
+:::
+
+### Question 11
+
+```{r, results='asis'}
+opts <- c(
+   "To measure the change in prices",
+   "To measure the change in consumed quantities",
+   answer = "To measure the change of a variable/phenomena over time",
+   "To measure the changes in the demand"
+)
+
+cat("An Index Number is used:", longmcq(opts))
 ```
 
+```{r, results='asis'}
+opts <- c(
+   "Ratios",
+   answer = "Percentages",
+   "Either of the above",
+   "None of the above"
+)
 
-`r hide("I need a hint")`
-
-See the documentation for `plot()` (`?plot`)
-
-`r unhide()`
-
-<!-- note: you could also just set webex.hide to TRUE -->
-
-```{r, echo = TRUE, eval = FALSE}
-#| webex.hide: "Click here to see the solution"
-plot(cars$speed, cars$dist)
+cat("An index number is expressed as", longmcq(opts))
 ```
+
+```{r, results='asis'}
+opts <- c(
+   "A price index",
+   answer = "A price index (fixed base)",
+   "Both of the above",
+   "None of the above"
+)
+
+cat("A price index number, computed with a constant reference is:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "Median",
+   "Arithmetic mean",
+   "Harmonic mean",
+   answer = "Geometric mean"   
+)
+
+cat("The most adequate average to compute the average growth rate, for example, for prices, is:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   answer = "The Laspeyres formula",
+   "The Paasche formula",
+   "Average of Laspeyres and Paasche",
+   "The Fisher formula"
+)
+
+cat("The Consumer Price Index (CPI) is computed using:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "$$IP_{t|0}=\\frac{\\sum p_tq_0}{\\sum p_0 q_0}$$",
+   "$$IP_{t|0}=\\frac{\\sum p_t q_t}{\\sum p_0 q_t}$$",
+   answer = "$$IP_{t|0}=\\sqrt{\\frac{p_t q_0}{p_0q_0}\\times\\frac{\\sum p_tq_t}{p_0q_t}}$$",
+   "None of the above"
+)
+
+cat("Which of the following passes the test of time reversion?", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "The factor reversion test",
+   "Time reversion test",
+   answer = "Both test above",
+   "Circularity test"
+)
+
+cat("An index number, computed using Fisher's formula is considered *ideal* because passes:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "$IV_{t|0}=LPI_{t|0}\\times PQI_{t|0}$",
+   "IV_{t|0}=CPI_{t|0}\\times PQI_{t|0}",
+   "IV_{t|0}=FPI_{t|0}\\times FQI_{t|0}",
+   answer = "IV_{t|0}=PPI_{t|0}\\times PQI_{t|0}"
+)
+
+cat("From the following identities, select the FALSE one", longmcq(opts))
+```
+
+`r torf(TRUE)` The real growth rate, within a given timeframe, corresponds to the nominal growth rate, deflated by the CPI (consumer price index).

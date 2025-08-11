@@ -240,6 +240,8 @@ Let $y_t$ be a variable that might take different values over time. The **averag
 
 $$y_{t+k}=y_t\left(1+\overline{\delta}_{t+k|t}\right)^k$$
 
+We will use something called the *geometric mean*.
+
 <small>I dropped $y$ from the notation in the formula because it is obvious that we are talking about the variable $y$.</small>
 :::
 
@@ -1280,8 +1282,7 @@ $$FPI_{t|0}\times FQI_{t|0}=$$
 $$\sqrt{LPI_{t|0}\times PPI_{t|0}}\times\sqrt{LQI_{t|0}\times PQI_{t|0}}$$
 $$\sqrt{LPI_{t|0}\times PPI_{t|0}\times LQI_{t|0}\times PQI_{t|0}}$$
 $$\sqrt{LPI_{t|0}\times PQI_{t|0}\times LQI_{t|0}\times PPI_{t|0}}$$
-$$\sqrt{IV_{t|0}\times IV_{t|0}}=\sqrt{IV_{t|0}^2}$$
-$$IV_{t|0}$$
+$$\sqrt{IV_{t|0}\times IV_{t|0}}=\sqrt{IV_{t|0}^2}=IV_{t|0}$$
 
 ## About the Time Reversal Test for Composite Index Numbers
 
