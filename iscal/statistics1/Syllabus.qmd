@@ -95,6 +95,11 @@ Notes:
 
 Students may opt for a final exam worth 100% of the grade, covering the entire syllabus.
 
+### Core Bibliography (PT)
+
+* Ferreira, T., Custódio, S.G. (2023) Modelos Probabilísticos, Edições Sílabo  
+* Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo  
+
 ### Bibliography (EN)
 
 * Ralph, J. et al. (2015) A Practical Introduction to Index Numbers, 1^st^ Ed, Wiley.
@@ -109,8 +114,6 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 
 #### Bibliography (PT):
 
-* Ferreira, T., Custódio, S.G. (2023) Modelos Probabilísticos, Edições Sílabo  
-* Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo  
 * Murteira, B. (1993) Análise Exploratória de Dados, McGraw-Hill  
 * Murteira, B. et al. (2010) Introdução à Estatística, McGraw-Hill  
 * Paulino, C. & Branco, J. (2005) Exercícios de Probabilidade e Estatística, Escolar Editora  

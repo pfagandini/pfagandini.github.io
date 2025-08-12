@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Paulo Fagandini">
-  <title>Introduction to Probability</title>
+  <title>Introduction to Probability Theory</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,7 +127,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to Probability</h1>
+  <h1 class="title">Introduction to Probability Theory</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -141,11 +141,254 @@ Paulo Fagandini
 </div>
 
 </section>
-<section class="slide level2">
-
-
+<section>
+<section id="probability-background" class="title-slide slide level1 center">
+<h1>Probability, background</h1>
 
 </section>
+<section id="the-concept" class="slide level2">
+<h2>The concept</h2>
+<p>Consider the following scenario:</p>
+<div class="fragment">
+<p><span class="emoji" data-emoji="briefcase">💼</span> <strong>Investor</strong>: What’s the probability this startup will succeed?</p>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="bar_chart">📊</span> <strong>Analyst</strong>: Hard to say—every startup is different.</p>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="briefcase">💼</span> <strong>Investor</strong>: But if you had to guess, based on similar cases?</p>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="bar_chart">📊</span> <strong>Analyst</strong>: Maybe 1 in 3 succeed under these conditions.</p>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="briefcase">💼</span> <strong>Investor</strong>: So, would you bet on it?</p>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="bar_chart">📊</span> <strong>Analyst</strong>: Yes, I would.</p>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="briefcase">💼</span> <strong>Investor</strong>: Even if the odds aren’t great?</p>
+</div>
+<div class="fragment">
+<p><span class="emoji" data-emoji="bar_chart">📊</span> <strong>Analyst</strong>: I believe this one has what it takes.</p>
+</div>
+</section>
+<section id="the-concept-1" class="slide level2">
+<h2>The concept</h2>
+<p>Here we can define probability in terms of <strong>frequency of occurrence,</strong> <em>i.e.</em> as a percentage of successes in a moderately large number of similar situations.</p>
+<p>This is the most natural and traditional way of thinking about probability.</p>
+<div class="fragment">
+<ul>
+<li class="fragment">Regarding a fair coin <span class="emoji" data-emoji="coin">🪙</span> we could say: “with probability 50% the coin lands on heads” meaning “roughly half of the time.”</li>
+</ul>
+</div>
+<div class="fragment">
+<p>But, what if this company belongs to a completely novel market sector?</p>
+</div>
+</section>
+<section id="the-concept-2" class="slide level2">
+<h2>The concept</h2>
+<p>There might be situations where the frequency concept is not adequate, because it might refer to a one-time event. These are <strong>subjective beliefs.</strong></p>
+<ul>
+<li class="fragment"><p>A company is recruiting a new CEO, and a board member says:</p>
+<p>“I believe there’s a 90% chance that our chosen candidate will be an effective CEO.”</p></li>
+</ul>
+</section>
+<section id="the-concept-3" class="slide level2">
+<h2>The concept</h2>
+<p>It might seem easy to disregard the second case as unscientific or useless. However, many times people need to make decisions under uncertainty with not enough data (or no data at all!) about previous realizations of the specific event.</p>
+<p>Beliefs allow the decision maker to, well, make <em>some</em> decision, at least consistently.</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>What’s the difference between both situations?</p>
+<div class="fragment">
+<p>What they do have in common?</p>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="fragment" style="text-align: center; font-size: 3em;">
+<p><strong>Uncertainty</strong></p>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+</section></section>
+<section>
+<section id="a-refresh-on-set-theory" class="title-slide slide level1 center">
+<h1>A refresh on Set Theory</h1>
+
+</section>
+<section id="sets-and-elements" class="slide level2">
+<h2>Sets and elements</h2>
+<p>A <strong>set</strong> is a collection of objects, which are <strong>elements</strong> of the set.</p>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(S\)</span> represent a set, and <span class="math inline">\(s\)</span> an element of that set, we write <span class="math inline">\(s\in S\)</span> to mean <span class="math inline">\(s\)</span> <strong>belongs</strong> to <span class="math inline">\(S\)</span>.</p>
+<p>If <span class="math inline">\(s\)</span> does not belong to <span class="math inline">\(S\)</span>, we write <span class="math inline">\(s\notin S\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>If a set <span class="math inline">\(S\)</span> does not have any element, then it is the <strong>empty</strong> set, denoted by <span class="math inline">\(\emptyset\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-write-down-a-set" class="slide level2">
+<h2>How to write down a Set</h2>
+<p>There are several ways to specify a set.</p>
+<p>By extension, or as a list:</p>
+<ul>
+<li class="fragment"><p>If a set <span class="math inline">\(S\)</span> has a finite number of elements (<span class="math inline">\(x_i\in S\)</span>) we can write it like this: <span class="math display">\[S=\{x_1, x_2, ..., x_n\}\]</span></p></li>
+<li class="fragment"><p>If a set <span class="math inline">\(S\)</span> has an infinite (but countable) elements (<span class="math inline">\(x_i\in S\)</span>) we can write it like: <span class="math display">\[S=\{x_1, x_2, ...\}\]</span></p></li>
+</ul>
+</section>
+<section id="how-to-write-down-a-set-1" class="slide level2">
+<h2>How to write down a Set</h2>
+<p>By describing the property (<span class="math inline">\(P\)</span>) that <span class="math inline">\(x\)</span> must satisfy to be included in <span class="math inline">\(S\)</span>: <span class="math display">\[S= \{x|x \text{ satisfies } P\}\]</span> in this case <span class="math inline">\(|\)</span> reads as <em>such that.</em> For example <span class="math display">\[S=\{x\in\mathbb{R}|x&gt;=0\}\]</span> to describe the non-negative real numbers.</p>
+<p>This example is special, as the positive real numbers cannot be written down as a a list. In this case the interval <span class="math inline">\([0,\infty)\)</span> is an <strong>uncountable</strong> set.</p>
+</section>
+<section id="more-definitions" class="slide level2">
+<h2>More definitions</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(\forall x\in S\)</span> it is also true that <span class="math inline">\(x\in T\)</span>, then we say that <span class="math inline">\(S\)</span> is a <strong>subset</strong> of <span class="math inline">\(T\)</span>, and we write it like <span class="math inline">\(S\subseteq T\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(S\subseteq T\)</span> and at the same time <span class="math inline">\(T\subseteq S\)</span> then we say that <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> are <strong>equal</strong>, and we write it <span class="math inline">\(S=T\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>universal set</strong> <span class="math inline">\(\Omega\)</span> is the set that contains all objects that could conceivably be of interest in a particular context.</p>
+<p>By definition the, any set <span class="math inline">\(S\)</span> must be a subset of <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-definitions-1" class="slide level2">
+<h2>More definitions</h2>
+<p>The universal set is important because it defines the scope of our analysis. Say we are studying the performance of students of Statistics I in 2025.</p>
+<p>The cars parked outside our institution do not belong to the universal set, because they are not relevant for our purpose. Only students of Statistics I in 2025 belong to the universal set.</p>
+</section>
+<section id="set-operations" class="slide level2">
+<h2>Set Operations</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>complement</strong> of a set <span class="math inline">\(S\)</span>, with respect to <span class="math inline">\(\Omega\)</span>, is the set <span class="math inline">\(\{x\in\Omega| x\notin S\}\)</span>, that is, all the relevant elements that do not belong in <span class="math inline">\(S\)</span>. We denote it as <span class="math inline">\(S^c\)</span>.</p>
+<blockquote>
+<p><strong>Corollary:</strong> It is easy to see that <span class="math inline">\(\Omega^c=\emptyset\)</span>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="set-operations-1" class="slide level2">
+<h2>Set Operations</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>union</strong> of two sets <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> is the set of all elements that belong to <span class="math inline">\(S\)</span> <em>or</em> <span class="math inline">\(T\)</span> (or both), and is denoted by <span class="math inline">\(S\cup T\)</span>. <span class="math display">\[S\cup T=\{x\in\Omega | x\in S\ \vee\ x\in T\}\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>intersection</strong> of two sets <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> is the set of all elements that belong to <span class="math inline">\(S\)</span> <em>and</em> <span class="math inline">\(T\)</span>, and is denoted by <span class="math inline">\(S\cap T\)</span>. <span class="math display">\[S\cap T=\{x\in\Omega | x\in S\wedge x\in T\}\]</span></p>
+</div>
+</div>
+</div>
+<p>Note that <span class="math inline">\(\vee\)</span> stands for <em>or</em>, and <span class="math inline">\(\wedge\)</span> stands for <em>and</em>.</p>
+</section>
+<section id="set-operations-2" class="slide level2">
+<h2>Set Operations</h2>
+<p>Sometimes we might need to consider the union or intersection of many sets, and for that we can use a notation simmilar to the one we used for summations:</p>
+<ul>
+<li class="fragment"><p><span class="math display">\[\bigcup_{n=1}^\infty S_n = S_1 \cup S_2 \cup ... = \{x\in\Omega | x \in S_n \text{ for some } n\}\]</span></p></li>
+<li class="fragment"><p><span class="math display">\[\bigcap_{n=1}^\infty S_n = S_1 \cap S_2 \cap ... = \{x\in\Omega | x \in S_n \text{ for every } n\}\]</span></p></li>
+</ul>
+</section>
+<section id="set-operations-3" class="slide level2">
+<h2>Set Operations</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>Two sets (say <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span>) are said to be <strong>disjoint</strong> if <span class="math inline">\(S\cap T=\emptyset\)</span>.</p>
+<p>More generally, a collection of sets <span class="math inline">\(S_n\)</span> is disjoint if <span class="math inline">\(S_i\)</span> and <span class="math inline">\(S_j\)</span> are disjoint when <span class="math inline">\(i\neq j\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>A collection of sets is said to be a <strong>partition</strong> of a set <span class="math inline">\(S\)</span> if the sets in the collection are:</p>
+<ul>
+<li class="fragment"><p>Disjoint</p></li>
+<li class="fragment"><p>Their union is <span class="math inline">\(S\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="venn-diagrams" class="slide level2">
+<h2>Venn Diagrams</h2>
+
+<img data-src="2_prob_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch">
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
