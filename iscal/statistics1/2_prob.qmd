@@ -24,6 +24,84 @@ engine: knitr
 
 ```{r}
 library(lubridate)
+library(venn)
+
+set_plot <- function(sets, relation, extra = NULL) {
+  # Basic plot setup
+  plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 10),
+       axes = FALSE, xlab = "", ylab = "", asp = 1)
+  
+  # Universe rectangle
+  rect(0, 0, 10, 10, border = "black")
+  text(0.5, 9.5, expression(Omega), cex = 1.5, adj = 0)
+  
+  # Coordinates & sizes for sets
+  center_A <- c(4, 5)
+  center_B <- c(6, 5)
+  radius_big <- 3
+  radius_small <- 1.5
+  
+  if (relation == "subset") {
+    symbols(center_A, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "lightgreen")
+    symbols(center_A, circles = radius_small, inches = FALSE,
+            add = TRUE, bg = "lightblue")
+    text(center_small[1], center_small[2], sets[1], cex = 1.2)
+    text(center_A[1], center_A[2] + radius_big - 0.5, sets[2], cex = 1.2)
+    
+  } else if (relation == "intersection") {
+    symbols(center_A, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = adjustcolor("lightgreen", alpha.f = 0.5))
+    symbols(center_B, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = adjustcolor("lightblue", alpha.f = 0.5))
+    text(center_A[1]-1, center_A[2]+2, sets[1], cex = 1.2)
+    text(center_B[1]+1, center_B[2]+2, sets[2], cex = 1.2)
+    
+  } else if (relation == "union") {
+    symbols(center_A, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "lightgreen")
+    symbols(center_B, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "lightgreen")
+    text(center_A[1]-1, center_A[2]+2, sets[1], cex = 1.2)
+    text(center_B[1]+1, center_B[2]+2, sets[2], cex = 1.2)
+    
+  } else if (relation == "complement") {
+    rect(0, 0, 10, 10, col = "lightgreen", border = NA)
+    symbols(center_A, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "white")
+    text(center_A[1], center_A[2], sets[1], cex = 1.2)
+    text(8.5, 8.5, bquote(.(sets[1])^c), cex = 1.2)
+    
+  } else if (relation == "partition") {
+    if (is.null(extra)) stop("Specify number of parts for partition")
+    symbols(center_A, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = NA)
+    for (i in seq_len(extra)) {
+      angle <- (i - 0.5) * (2 * pi / extra)
+      x <- center_A[1] + radius_big * 0.6 * cos(angle)
+      y <- center_A[2] + radius_big * 0.6 * sin(angle)
+      text(x, y, paste0(sets[1], i), cex = 1.2)
+    }
+    text(center_A[1], center_A[2] + radius_big + 0.3, sets[1], cex = 1.2)
+    
+  } else if (relation == "disjoint") {
+    symbols(center_A, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "lightgreen")
+    symbols(center_B + c(2, 0), circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "lightblue")
+    text(center_A[1], center_A[2], sets[1], cex = 1.2)
+    text(center_B[1] + 2, center_B[2], sets[2], cex = 1.2)
+    
+  } else if (relation == "setminus") {
+    symbols(center_A, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "lightgreen")
+    symbols(center_B, circles = radius_big, inches = FALSE,
+            add = TRUE, bg = "white")
+    text(center_A[1]-1, center_A[2]+2, sets[1], cex = 1.2)
+    text(center_B[1]+1, center_B[2]+2, sets[2], cex = 1.2)
+  }
+}
+
 ```
 
 # Probability, background
@@ -148,6 +226,17 @@ If $s$ does not belong to $S$, we write $s\notin S$.
 If a set $S$ does not have any element, then it is the **empty** set, denoted by $\emptyset$.
 :::
 
+## Sets and Elements
+Set
+
+```{r}
+venn(list(S=1), zcolor = c("lightgreen", "white"))
+
+text(50, 950, labels = expression(Omega), cex = 1.5)
+text(500, 500, labels = expression(x), cex = 1.5)
+```
+
+
 ## How to write down a Set
 
 There are several ways to specify a set.
@@ -198,6 +287,18 @@ By definition the, any set $S$ must be a subset of $\Omega$.
 
 ## More definitions
 
+Subset $S\subset T$
+
+```{r}
+venn("1") 
+
+text(50, 950, labels = expression(T), cex = 1.5)
+```
+
+
+
+## More definitions
+
 The universal set is important because it defines the scope of our analysis. Say we are studying the performance of students of Statistics I in `r year(Sys.Date())`. 
 
 The cars parked outside our institution do not belong to the universal set, because they are not relevant for our purpose. Only students of Statistics I in `r year(Sys.Date())` belong to the universal set.
@@ -210,6 +311,19 @@ The **complement** of a set $S$, with respect to $\Omega$, is the set $\{x\in\Om
 
 > **Corollary:** It is easy to see that $\Omega^c=\emptyset$.
 :::
+
+## Set Operations
+
+The complement
+
+```{r}
+venn("0", ellipse = TRUE, names = "")
+
+text(50, 950, labels = expression(Omega), cex = 1.5)
+text(850, 850, labels = expression(A^c), cex = 1.2)
+```
+
+
 
 ## Set Operations
 
@@ -265,12 +379,3 @@ A collection of sets is said to be a **partition** of a set $S$ if the sets in t
 
 ## Venn Diagrams
 
-```{r}
-library(ggVennDiagram)
-
-x <- list(A = 1:5, B = 2:7, C = 5:10)
-
-ggVennDiagram(x, label = "none", legend = "none")
-
-ggVennDiagram::launch_app()
-```
