@@ -2404,6 +2404,34 @@ margin: 1em 0;
 </header>
 
 
+<!-- Style Block for nice tables -->
+<style>
+table {
+width: 100%;
+border-collapse: collapse;
+text-align: center;
+font-family: Arial, sans-serif;
+}
+thead tr:first-child th {
+background-color: #f2f2f2;
+border-bottom: 2px solid #999;
+}
+thead tr:nth-child(2) th {
+background-color: #e0e0e0;
+border-bottom: 2px solid #999;
+}
+tbody td {
+padding: 8px;
+border-bottom: 1px solid #ccc;
+}
+tbody tr:nth-child(even) td {
+background-color: #f9f9f9;
+}
+th, td {
+vertical-align: middle;
+}
+</style>
+<!-- Style Block for nice tables -->
 <p>This is a set of exercises created by the teaching Faculty for Statistics I, Chapter I - Index Numbers, from the Lisbon Accounting and Business School.</p>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
@@ -2794,7 +2822,72 @@ Solution
 <section id="question-6" class="level3">
 <h3 class="anchored" data-anchor-id="question-6">Question 6</h3>
 <div class="webex-check webex-box">
-
+<p>Consider the following data regarding nominal wages for the workers of Watto’s Junkyard. You also have the inflation rate in Tatooine, for the period 2020 and 2024.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th style="text-align: center;">2020</th>
+<th style="text-align: center;">2021</th>
+<th style="text-align: center;">2022</th>
+<th style="text-align: center;">2023</th>
+<th style="text-align: center;">2024</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wage Index (base 2021)</td>
+<td style="text-align: center;">93.5</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">104.3</td>
+<td style="text-align: center;">103.8</td>
+<td style="text-align: center;">109.7</td>
+</tr>
+<tr class="even">
+<td>Inflation rate</td>
+<td style="text-align: center;">3.0%</td>
+<td style="text-align: center;">2.4%</td>
+<td style="text-align: center;">2.8%</td>
+<td style="text-align: center;">2.3 %</td>
+<td style="text-align: center;">3.0%</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The nominal wage growth rate, from 2020 to 2024, is 17.33%.</li>
+<li><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> The average growth rate of inflation between 2020 and 2024 is 2%.</li>
+<li>Fill the following table (use 2 decimal places, for example 101.01):</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th style="text-align: center;">2021</th>
+<th style="text-align: center;">2022</th>
+<th style="text-align: center;">2023</th>
+<th style="text-align: center;">2024</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linked-Chain Index for wages</td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" size="6" data-answer="[&quot;106.95&quot;]"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" size="5" data-answer="[&quot;104.3&quot;]"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" size="5" data-answer="[&quot;99.52&quot;]"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" size="6" data-answer="[&quot;105.68&quot;]"></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li>The year where the wages had the largest real increase was <input class="webex-solveme nospaces" size="4" data-answer="[&quot;2021&quot;]">.</li>
+</ol>
 </div>
 </section>
 <section id="question-7" class="level3">
@@ -2866,7 +2959,78 @@ Solution
 <section id="question-8" class="level3">
 <h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
 <div class="webex-check webex-box">
-
+<p>The table below has data on regular consumption goods. You will find prices and quantities, before and after austerity measures were put in place for a economically struggling country. In this period, the LQI and PQI were 91.4 and 91.3 respectively.</p>
+<table>
+<thead>
+<tr>
+<th rowspan="2">
+Products
+</th>
+<th colspan="2">
+Before austerity
+</th>
+<th colspan="2">
+After austerity
+</th>
+</tr>
+<tr>
+<th>
+Price
+</th>
+<th>
+Quantity
+</th>
+<th>
+Price
+</th>
+<th>
+Quantity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Bread (units)
+</td>
+<td>
+0.2
+</td>
+<td>
+420
+</td>
+<td>
+0.25
+</td>
+<td>
+360
+</td>
+</tr>
+<tr>
+<td>
+Milk (Lts)
+</td>
+<td>
+0.7
+</td>
+<td>
+360
+</td>
+<td>
+0.80
+</td>
+<td>
+336
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>Assume the time window, between the two periods, was 3 years. The average growth rate for the price of bread was: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;7.72&quot;]">%. (use two decimals, for example 9.81)</p></li>
+<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> According to the Fisher index, in the studied period, the variation of consumed quantities, for both products, was negative and equal to -8.65%.</p></li>
+<li><p><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> The real and nominal growth rates, for sales, for both products, were similar after the implementation of the austerity measures.</p></li>
+<li><p>Suppose that after the implementation of the austerity measures, and until now, the price of milk dropped 5%. Then, the current price for milk would be <input class="webex-solveme nospaces" size="4" data-answer="[&quot;0.76&quot;,&quot;.76&quot;]"> (again, use two decimal places, for example 0.56)</p></li>
+</ol>
 </div>
 </section>
 <section id="question-9" class="level3">
@@ -2957,36 +3121,36 @@ Solution
 <section id="question-11" class="level3">
 <h3 class="anchored" data-anchor-id="question-11">Question 11</h3>
 An Index Number is used:
-<div id="radio_TBAMONWMCD" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TBAMONWMCD" value> <span>To measure the change in prices</span></label><label><input type="radio" autocomplete="off" name="radio_TBAMONWMCD" value> <span>To measure the change in consumed quantities</span></label><label><input type="radio" autocomplete="off" name="radio_TBAMONWMCD" value="answer"> <span>To measure the change of a variable/phenomena over time</span></label><label><input type="radio" autocomplete="off" name="radio_TBAMONWMCD" value> <span>To measure the changes in the demand</span></label>
+<div id="radio_ATUBLRLPQD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ATUBLRLPQD" value> <span>To measure the change in prices</span></label><label><input type="radio" autocomplete="off" name="radio_ATUBLRLPQD" value> <span>To measure the change in consumed quantities</span></label><label><input type="radio" autocomplete="off" name="radio_ATUBLRLPQD" value="answer"> <span>To measure the change of a variable/phenomena over time</span></label><label><input type="radio" autocomplete="off" name="radio_ATUBLRLPQD" value> <span>To measure the changes in the demand</span></label>
 </div>
 An index number is expressed as
-<div id="radio_XAJXHFQCVO" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XAJXHFQCVO" value> <span>Ratios</span></label><label><input type="radio" autocomplete="off" name="radio_XAJXHFQCVO" value="answer"> <span>Percentages</span></label><label><input type="radio" autocomplete="off" name="radio_XAJXHFQCVO" value> <span>Either of the above</span></label><label><input type="radio" autocomplete="off" name="radio_XAJXHFQCVO" value> <span>None of the above</span></label>
+<div id="radio_FGPBCUMRAJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FGPBCUMRAJ" value> <span>Ratios</span></label><label><input type="radio" autocomplete="off" name="radio_FGPBCUMRAJ" value="answer"> <span>Percentages</span></label><label><input type="radio" autocomplete="off" name="radio_FGPBCUMRAJ" value> <span>Either of the above</span></label><label><input type="radio" autocomplete="off" name="radio_FGPBCUMRAJ" value> <span>None of the above</span></label>
 </div>
 A price index number, computed with a constant reference is:
-<div id="radio_DMQMHLAAQY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_DMQMHLAAQY" value> <span>A price index</span></label><label><input type="radio" autocomplete="off" name="radio_DMQMHLAAQY" value="answer"> <span>A price index (fixed base)</span></label><label><input type="radio" autocomplete="off" name="radio_DMQMHLAAQY" value> <span>Both of the above</span></label><label><input type="radio" autocomplete="off" name="radio_DMQMHLAAQY" value> <span>None of the above</span></label>
+<div id="radio_BRKLRTQGBV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BRKLRTQGBV" value> <span>A price index</span></label><label><input type="radio" autocomplete="off" name="radio_BRKLRTQGBV" value="answer"> <span>A price index (fixed base)</span></label><label><input type="radio" autocomplete="off" name="radio_BRKLRTQGBV" value> <span>Both of the above</span></label><label><input type="radio" autocomplete="off" name="radio_BRKLRTQGBV" value> <span>None of the above</span></label>
 </div>
 The most adequate average to compute the average growth rate, for example, for prices, is:
-<div id="radio_XWXIWRUAGY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XWXIWRUAGY" value> <span>Median</span></label><label><input type="radio" autocomplete="off" name="radio_XWXIWRUAGY" value> <span>Arithmetic mean</span></label><label><input type="radio" autocomplete="off" name="radio_XWXIWRUAGY" value> <span>Harmonic mean</span></label><label><input type="radio" autocomplete="off" name="radio_XWXIWRUAGY" value="answer"> <span>Geometric mean</span></label>
+<div id="radio_LVGOUDGJHD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LVGOUDGJHD" value> <span>Median</span></label><label><input type="radio" autocomplete="off" name="radio_LVGOUDGJHD" value> <span>Arithmetic mean</span></label><label><input type="radio" autocomplete="off" name="radio_LVGOUDGJHD" value> <span>Harmonic mean</span></label><label><input type="radio" autocomplete="off" name="radio_LVGOUDGJHD" value="answer"> <span>Geometric mean</span></label>
 </div>
 The Consumer Price Index (CPI) is computed using:
-<div id="radio_YIZTXSUDOQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_YIZTXSUDOQ" value="answer"> <span>The Laspeyres formula</span></label><label><input type="radio" autocomplete="off" name="radio_YIZTXSUDOQ" value> <span>The Paasche formula</span></label><label><input type="radio" autocomplete="off" name="radio_YIZTXSUDOQ" value> <span>Average of Laspeyres and Paasche</span></label><label><input type="radio" autocomplete="off" name="radio_YIZTXSUDOQ" value> <span>The Fisher formula</span></label>
+<div id="radio_BSJHBKCHRM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BSJHBKCHRM" value="answer"> <span>The Laspeyres formula</span></label><label><input type="radio" autocomplete="off" name="radio_BSJHBKCHRM" value> <span>The Paasche formula</span></label><label><input type="radio" autocomplete="off" name="radio_BSJHBKCHRM" value> <span>Average of Laspeyres and Paasche</span></label><label><input type="radio" autocomplete="off" name="radio_BSJHBKCHRM" value> <span>The Fisher formula</span></label>
 </div>
 Which of the following passes the test of time reversion?
-<div id="radio_CRVCQZUVHV" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CRVCQZUVHV" value> <span><span class="math display">\[IP_{t|0}=\frac{\sum p_tq_0}{\sum p_0 q_0}\]</span></span></label><label><input type="radio" autocomplete="off" name="radio_CRVCQZUVHV" value> <span><span class="math display">\[IP_{t|0}=\frac{\sum p_t q_t}{\sum p_0 q_t}\]</span></span></label><label><input type="radio" autocomplete="off" name="radio_CRVCQZUVHV" value="answer"> <span><span class="math display">\[IP_{t|0}=\sqrt{\frac{p_t q_0}{p_0q_0}\times\frac{\sum p_tq_t}{p_0q_t}}\]</span></span></label><label><input type="radio" autocomplete="off" name="radio_CRVCQZUVHV" value> <span>None of the above</span></label>
+<div id="radio_JULKVAHFKC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JULKVAHFKC" value> <span><span class="math display">\[IP_{t|0}=\frac{\sum p_tq_0}{\sum p_0 q_0}\]</span></span></label><label><input type="radio" autocomplete="off" name="radio_JULKVAHFKC" value> <span><span class="math display">\[IP_{t|0}=\frac{\sum p_t q_t}{\sum p_0 q_t}\]</span></span></label><label><input type="radio" autocomplete="off" name="radio_JULKVAHFKC" value="answer"> <span><span class="math display">\[IP_{t|0}=\sqrt{\frac{p_t q_0}{p_0q_0}\times\frac{\sum p_tq_t}{p_0q_t}}\]</span></span></label><label><input type="radio" autocomplete="off" name="radio_JULKVAHFKC" value> <span>None of the above</span></label>
 </div>
 An index number, computed using Fisher’s formula is considered <em>ideal</em> because passes:
-<div id="radio_DOUPZFNVTQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_DOUPZFNVTQ" value> <span>The factor reversion test</span></label><label><input type="radio" autocomplete="off" name="radio_DOUPZFNVTQ" value> <span>Time reversion test</span></label><label><input type="radio" autocomplete="off" name="radio_DOUPZFNVTQ" value="answer"> <span>Both test above</span></label><label><input type="radio" autocomplete="off" name="radio_DOUPZFNVTQ" value> <span>Circularity test</span></label>
+<div id="radio_MRGOJXBYCN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MRGOJXBYCN" value> <span>The factor reversion test</span></label><label><input type="radio" autocomplete="off" name="radio_MRGOJXBYCN" value> <span>Time reversion test</span></label><label><input type="radio" autocomplete="off" name="radio_MRGOJXBYCN" value="answer"> <span>Both test above</span></label><label><input type="radio" autocomplete="off" name="radio_MRGOJXBYCN" value> <span>Circularity test</span></label>
 </div>
 From the following identities, select the FALSE one
-<div id="radio_WOUDHSOYLT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_WOUDHSOYLT" value> <span><span class="math inline">\(IV_{t|0}=LPI_{t|0}\times PQI_{t|0}\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_WOUDHSOYLT" value> <span>IV_{t|0}=CPI_{t|0}PQI_{t|0}</span></label><label><input type="radio" autocomplete="off" name="radio_WOUDHSOYLT" value> <span>IV_{t|0}=FPI_{t|0}FQI_{t|0}</span></label><label><input type="radio" autocomplete="off" name="radio_WOUDHSOYLT" value="answer"> <span>IV_{t|0}=PPI_{t|0}PQI_{t|0}</span></label>
+<div id="radio_JHFBJUBYQJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JHFBJUBYQJ" value> <span><span class="math inline">\(IV_{t|0}=LPI_{t|0}\times PQI_{t|0}\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_JHFBJUBYQJ" value> <span><span class="math inline">\(IV_{t|0}=CPI_{t|0}\times PQI_{t|0}\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_JHFBJUBYQJ" value> <span><span class="math inline">\(IV_{t|0}=FPI_{t|0}\times FQI_{t|0}\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_JHFBJUBYQJ" value="answer"> <span><span class="math inline">\(IV_{t|0}=PPI_{t|0}\times PQI_{t|0}\)</span></span></label>
 </div>
 <p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The real growth rate, within a given timeframe, corresponds to the nominal growth rate, deflated by the CPI (consumer price index).</p>
 </section>

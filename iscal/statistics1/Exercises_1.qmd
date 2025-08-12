@@ -26,6 +26,43 @@ y <- year(Sys.Date())-1
 #style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
 ```
 
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+</style>
+
+<!-- Style Block for nice tables -->
+
+
 This is a set of exercises created by the teaching Faculty for Statistics I, Chapter I - Index Numbers, from the Lisbon Accounting and Business School.
 
 ## Questions
@@ -202,6 +239,23 @@ Wayne Industries reported sales using the chain index shown in the following tab
 
 ::: {.webex-check .webex-box}
 
+Consider the following data regarding nominal wages for the workers of Watto's Junkyard. You also have the inflation rate in Tatooine, for the period `r y-4` and `r y`.
+
+| Year | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| --- | :---: | :---: | :---: | :---: | :---: |
+|Wage Index (base `r y-3`) | 93.5 | 100 | 104.3 | 103.8 | 109.7 |
+|Inflation rate | 3.0% | 2.4% | 2.8% | 2.3 % | 3.0% |
+
+1. `r torf(TRUE)` The nominal wage growth rate, from `r y-4` to `r y`, is 17.33%.
+2. `r torf(FALSE)` The average growth rate of inflation between `r y-4` and `r y` is 2%.
+3. Fill the following table (use 2 decimal places, for example 101.01):
+
+| Year | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| --- |  :---: | :---: | :---: | :---: |
+| Linked-Chain Index for wages | `r fitb(round(100*(100/93.5),2))` |`r fitb(round(100*(104.3/100),2))` | `r fitb(round(100*(103.8/104.3),2))`| `r fitb(round(100*(109.7/103.8),2))`|
+
+4. The year where the wages had the largest real increase was `r fitb(y-3)`.
+
 :::
 
 ### Question 7
@@ -305,11 +359,55 @@ kable(data_horizontal)
 
 ::: {.webex-check .webex-box}
 
+The table below has data on regular consumption goods. You will find prices and quantities, before and after austerity measures were put in place for a economically struggling country. In this period, the LQI and PQI were 91.4 and 91.3 respectively.
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Products</th>
+      <th colspan="2">Before austerity</th>
+      <th colspan="2">After austerity</th>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Bread (units)</td>
+        <td>0.2</td>
+        <td>420</td>
+        <td>0.25</td>
+        <td>360</td>
+      </tr>
+      <tr>
+        <td>Milk (Lts)</td>
+        <td>0.7</td>
+        <td>360</td>
+        <td>0.80</td>
+        <td>336</td>
+      </tr>
+    </tbody>
+  </table>
+
+1. Assume the time window, between the two periods, was 3 years. The average growth rate for the price of bread was: `r fitb(round(100*(.25/.2)^(1/3)-100, 2))`%. (use two decimals, for example 9.81)
+
+2. `r torf(TRUE)` According to the Fisher index, in the studied period, the variation of consumed quantities, for both products, was negative and equal to -8.65%.
+
+3. `r torf(FALSE)` The real and nominal growth rates, for sales, for both products, were similar after the implementation of the austerity measures.
+
+4. Suppose that after the implementation of the austerity measures, and until now, the price of milk dropped 5%. Then, the current price for milk would be `r fitb(round(.8*.95,2))` (again, use two decimal places, for example 0.56)
+
 :::
 
 ### Question 9
 
 ::: {.webex-check .webex-box}
+
+
 
 :::
 
@@ -417,9 +515,9 @@ cat("An index number, computed using Fisher's formula is considered *ideal* beca
 ```{r, results='asis'}
 opts <- c(
    "$IV_{t|0}=LPI_{t|0}\\times PQI_{t|0}$",
-   "IV_{t|0}=CPI_{t|0}\\times PQI_{t|0}",
-   "IV_{t|0}=FPI_{t|0}\\times FQI_{t|0}",
-   answer = "IV_{t|0}=PPI_{t|0}\\times PQI_{t|0}"
+   "$IV_{t|0}=CPI_{t|0}\\times PQI_{t|0}$",
+   "$IV_{t|0}=FPI_{t|0}\\times FQI_{t|0}$",
+   answer = "$IV_{t|0}=PPI_{t|0}\\times PQI_{t|0}$"
 )
 
 cat("From the following identities, select the FALSE one", longmcq(opts))
