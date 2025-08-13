@@ -407,9 +407,10 @@ Paulo Fagandini
 </div>
 </div>
 </div>
-</section>
-<section id="back-to-probability" class="slide level2">
-<h2>Back to Probability</h2>
+</section></section>
+<section>
+<section id="back-to-probability" class="title-slide slide level1 center">
+<h1>Back to Probability</h1>
 <p>In probability, <span class="math inline">\(\Omega\)</span>, the universal set, is a non-empty set that contains all possible <strong>outcomes</strong> of an experiment. Each outcome is represented by <span class="math inline">\(\omega\)</span>, and obviously <span class="math inline">\(\omega\in\Omega\)</span>.</p>
 </section>
 <section id="back-to-probability-1" class="slide level2">
@@ -559,15 +560,6 @@ Paulo Fagandini
 <li class="fragment"><span class="math inline">\(B\setminus C\)</span></li>
 <li class="fragment"><span class="math inline">\(C\setminus D\)</span></li>
 </ul>
-</section>
-<section id="probability" class="slide level2">
-<h2>Probability</h2>
-<p>Kolmogorov’s defined a set of characteristics that any probability <span class="math inline">\(P\)</span> measure should have, these are called the Kolmogorov’s axioms (1933):</p>
-<ol type="1">
-<li class="fragment"><span class="math inline">\(P(A)\in\mathbb{R}\)</span> and <span class="math inline">\(P(A)\geq 0\)</span>, for any event <span class="math inline">\(A\subseteq\Omega\)</span>.</li>
-<li class="fragment"><span class="math inline">\(P(\Omega)=1\)</span></li>
-<li class="fragment">For any <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> disjoint, <span class="math inline">\(P(A)+P(B)=P(A\cup B)\)</span></li>
-</ol>
 </section>
 <section id="concept-of-probability" class="slide level2">
 <h2>Concept of probability</h2>
@@ -728,6 +720,36 @@ Paulo Fagandini
 <p>It seems that the probability that the random number between 0 and 1 is below 0.4 is approximately 40%. The more experiments we run, the closer our relative frequency is to that number.</p>
 <p><span class="math display">\[P(A)\underset{N \rightarrow \infty}{\rightarrow} 0.4\]</span></p>
 <p>By the way, we will see later that theoretically, indeed <span class="math inline">\(P(A)=0.4\)</span></p>
+</section></section>
+<section>
+<section id="probability-axioms" class="title-slide slide level1 center">
+<h1>Probability Axioms</h1>
+
+</section>
+<section id="probability" class="slide level2">
+<h2>Probability</h2>
+<p>Andrey Kolmogorov defined a set of characteristics that any probability <span class="math inline">\(P\)</span> measure should have, these are called the Kolmogorov’s axioms (1933):</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(P(A)\in\mathbb{R}\)</span> and <span class="math inline">\(P(A)\geq 0\)</span>, for any event <span class="math inline">\(A\subseteq\Omega\)</span>.</li>
+<li class="fragment"><span class="math inline">\(P(\Omega)=1\)</span></li>
+<li class="fragment">For any <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> disjoint, <span class="math inline">\(P(A)+P(B)=P(A\cup B)\)</span></li>
+</ol>
+</section>
+<section id="corollary" class="slide level2">
+<h2>Corollary</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be some events in <span class="math inline">\(\Omega\)</span></p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(P(\emptyset)=0\)</span></li>
+<li class="fragment"><span class="math inline">\(P(A^c)=1-P(A)\)</span></li>
+<li class="fragment"><span class="math inline">\(A\subset B\Rightarrow P(A)\leq P(B)\)</span></li>
+<li class="fragment"><span class="math inline">\(0\leq P(A)\leq 1,\ \forall A\)</span></li>
+<li class="fragment"><span class="math inline">\(P(A\setminus B)=P(A)-P(A\cap B)\)</span></li>
+<li class="fragment"><span class="math inline">\(P(A\cup B)= P(A)+P(B)-P(A\cap B)\)</span></li>
+<li class="fragment"><span class="math display">\[P\left(\bigcup^n_{i=1}A_i\right)=\sum_{i=1}^n P(A_i)-\sum_{i\neq j} P(A_i\cap A_j)+\\ \sum_{i\neq j\neq k} P(A_i\cap A_j\cap A_k)+...+(-1)^{n-1}P\left(\bigcap_{i=1}^n A_i\right)\]</span></li>
+</ol>
+</section>
+<section id="conditional-probability" class="slide level2">
+<h2>Conditional Probability</h2>
 
 
 </section></section>
