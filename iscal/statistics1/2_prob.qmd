@@ -13,7 +13,6 @@ format:
     transition: slide
     footer: "Statistics I"
     from: markdown+emoji
-    code-overflow: wrap
     code-block-font-size: 0.75em
     progress: true
 editor: source
@@ -24,84 +23,6 @@ engine: knitr
 
 ```{r}
 library(lubridate)
-library(venn)
-
-set_plot <- function(sets, relation, extra = NULL) {
-  # Basic plot setup
-  plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 10),
-       axes = FALSE, xlab = "", ylab = "", asp = 1)
-  
-  # Universe rectangle
-  rect(0, 0, 10, 10, border = "black")
-  text(0.5, 9.5, expression(Omega), cex = 1.5, adj = 0)
-  
-  # Coordinates & sizes for sets
-  center_A <- c(4, 5)
-  center_B <- c(6, 5)
-  radius_big <- 3
-  radius_small <- 1.5
-  
-  if (relation == "subset") {
-    symbols(center_A, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "lightgreen")
-    symbols(center_A, circles = radius_small, inches = FALSE,
-            add = TRUE, bg = "lightblue")
-    text(center_small[1], center_small[2], sets[1], cex = 1.2)
-    text(center_A[1], center_A[2] + radius_big - 0.5, sets[2], cex = 1.2)
-    
-  } else if (relation == "intersection") {
-    symbols(center_A, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = adjustcolor("lightgreen", alpha.f = 0.5))
-    symbols(center_B, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = adjustcolor("lightblue", alpha.f = 0.5))
-    text(center_A[1]-1, center_A[2]+2, sets[1], cex = 1.2)
-    text(center_B[1]+1, center_B[2]+2, sets[2], cex = 1.2)
-    
-  } else if (relation == "union") {
-    symbols(center_A, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "lightgreen")
-    symbols(center_B, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "lightgreen")
-    text(center_A[1]-1, center_A[2]+2, sets[1], cex = 1.2)
-    text(center_B[1]+1, center_B[2]+2, sets[2], cex = 1.2)
-    
-  } else if (relation == "complement") {
-    rect(0, 0, 10, 10, col = "lightgreen", border = NA)
-    symbols(center_A, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "white")
-    text(center_A[1], center_A[2], sets[1], cex = 1.2)
-    text(8.5, 8.5, bquote(.(sets[1])^c), cex = 1.2)
-    
-  } else if (relation == "partition") {
-    if (is.null(extra)) stop("Specify number of parts for partition")
-    symbols(center_A, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = NA)
-    for (i in seq_len(extra)) {
-      angle <- (i - 0.5) * (2 * pi / extra)
-      x <- center_A[1] + radius_big * 0.6 * cos(angle)
-      y <- center_A[2] + radius_big * 0.6 * sin(angle)
-      text(x, y, paste0(sets[1], i), cex = 1.2)
-    }
-    text(center_A[1], center_A[2] + radius_big + 0.3, sets[1], cex = 1.2)
-    
-  } else if (relation == "disjoint") {
-    symbols(center_A, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "lightgreen")
-    symbols(center_B + c(2, 0), circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "lightblue")
-    text(center_A[1], center_A[2], sets[1], cex = 1.2)
-    text(center_B[1] + 2, center_B[2], sets[2], cex = 1.2)
-    
-  } else if (relation == "setminus") {
-    symbols(center_A, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "lightgreen")
-    symbols(center_B, circles = radius_big, inches = FALSE,
-            add = TRUE, bg = "white")
-    text(center_A[1]-1, center_A[2]+2, sets[1], cex = 1.2)
-    text(center_B[1]+1, center_B[2]+2, sets[2], cex = 1.2)
-  }
-}
-
 ```
 
 # Probability, background
@@ -190,11 +111,8 @@ Beliefs allow the decision maker to, well, make *some* decision, at least consis
 
 ##
 
-What's the difference between both situations?
-
-. . .
-
-What they do have in common?
+* What's the difference between both situations?
+* What do they have in common?
 
 ## 
 
@@ -225,17 +143,6 @@ If $s$ does not belong to $S$, we write $s\notin S$.
 
 If a set $S$ does not have any element, then it is the **empty** set, denoted by $\emptyset$.
 :::
-
-## Sets and Elements
-Set
-
-```{r}
-venn(list(S=1), zcolor = c("lightgreen", "white"))
-
-text(50, 950, labels = expression(Omega), cex = 1.5)
-text(500, 500, labels = expression(x), cex = 1.5)
-```
-
 
 ## How to write down a Set
 
@@ -287,18 +194,6 @@ By definition the, any set $S$ must be a subset of $\Omega$.
 
 ## More definitions
 
-Subset $S\subset T$
-
-```{r}
-venn("1") 
-
-text(50, 950, labels = expression(T), cex = 1.5)
-```
-
-
-
-## More definitions
-
 The universal set is important because it defines the scope of our analysis. Say we are studying the performance of students of Statistics I in `r year(Sys.Date())`. 
 
 The cars parked outside our institution do not belong to the universal set, because they are not relevant for our purpose. Only students of Statistics I in `r year(Sys.Date())` belong to the universal set.
@@ -311,19 +206,6 @@ The **complement** of a set $S$, with respect to $\Omega$, is the set $\{x\in\Om
 
 > **Corollary:** It is easy to see that $\Omega^c=\emptyset$.
 :::
-
-## Set Operations
-
-The complement
-
-```{r}
-venn("0", ellipse = TRUE, names = "")
-
-text(50, 950, labels = expression(Omega), cex = 1.5)
-text(850, 850, labels = expression(A^c), cex = 1.2)
-```
-
-
 
 ## Set Operations
 
@@ -377,5 +259,344 @@ A collection of sets is said to be a **partition** of a set $S$ if the sets in t
 
 :::
 
-## Venn Diagrams
+## Set Definition
 
+:::{.callout}
+
+The number of elements of a set $S$ is known as its **cardinality** and it is denoted as $\# S$. $\# S$ satisfies:
+
+1. $\# S \geq 0$
+2. $\# \emptyset = 0$
+
+:::
+
+## Set definition
+
+:::{.callout}
+
+If we have two sets, $S$ and $T$, we define the operation *set minus* as $\setminus$  the set that contains all elements of $S$ that do not belong to $T$
+
+$$S\setminus T = \{x\in S| s\notin T\}$$
+
+:::
+
+## Back to Probability
+
+In probability, $\Omega$, the universal set, is a non-empty set that contains all possible **outcomes** of an experiment. Each outcome is represented by $\omega$, and obviously $\omega\in\Omega$.
+
+## Back to Probability
+
+The sample space ($\Omega$) can be:
+
+* Discrete, when $\#\Omega$ is finite, or countable infinite.
+* Continuous, when $\#\Omega$ is uncountable.
+
+## Back to Probability
+
+Consider the experiment of throwing a die :game_die: and noting the number shown on side facing upwards.
+
+1. The sample space is $\Omega=\{1,2,3,4,5,6\}$
+2. In this case $\# \Omega = 6$
+3. $\Omega$ is discrete.
+
+## Back to Probability
+
+Consider now the random experiment of measuring the life expectancy of a lamp :bulb:, measured in hours.
+
+1. The sample space is $\Omega=\{x\in\mathbb{R}|x\geq 0\}$
+2. In this case, $\Omega$ is all non-negative real numbers.
+3. $\Omega$ is continuous.
+
+. . .
+
+Remember, $\Omega$ must include all possible outcomes from your experiment! Even then ones that seem ludicrous.
+
+## Back to Probability
+
+::: {.callout}
+
+## Definition
+
+A subset $A$ of the sample space $\Omega$ is called an **event**. $$A\subseteq \Omega$$
+
+By definition then $\Omega$ is also an event.
+
+:::
+
+::: {.callout}
+
+## Definition
+
+We call the **realization** of an event $A$ if, after an experiment, outcome $\omega$ is realized, and $\omega \in A$.
+
+:::
+
+## Example
+
+Let's go back to our experiment with the :game_die:
+
+The sample space is: $\Omega=\{1,2,3,4,5,6\}$
+
+Within this space, we can define the following events:
+
+1. $A=\{1,3,5\}$, *i.e.* the number is odd.
+2. $B=\{3,4,5,6\}$, *i.e.* the number is at least 3.
+3. $C=\{1,2,3\}$ , *i.e.* the number is lower than 4.
+4. $D=\{6\}$, *i.e.* the number is larger than 5.
+
+## Example
+
+Now let's revisit the example of our :bulb:
+
+The sample space is: $\Omega=\{x\in\mathbb{R}|x\geq 0\}$
+
+In this space, we can define the following events:
+
+1. $A=\{x\in\mathbb{R}|75<x<95\}$, *i.e.* the :bulb: lasts between 75 and 95 hours.
+2. $B=\{x\in\mathbb{R}|x\leq 100\}$, *i.e.* the :bulb: lasts no longer than 100 hours.
+3. $C=\{x\in\mathbb{R}|x\geq 60\}$, *i.e.* the :bulb: lasts at least 60 hours.
+
+## Events
+
+::: {.callout}
+
+## Definitions
+
+* An **elementary event** is any event that contains a single element (*i.e.* $\# A = 1$)
+
+* An **impossible event** is an event with no outcome, (*i.e.* $\# A=0$). As a consequence, an impossible event coincides with the empty set $\emptyset$.
+
+* A **certain event** is indeed the event $\Omega$, as for any outcome we obtain $\omega$, this outcome belongs to the sample space $\Omega$ by definition.
+
+:::
+
+## Mixing up Sets and Probability
+
+Consider two events $A$ and $B$ both subsets of $\Omega$
+
+1. $A^c$ contains all the outcomes that are not in $A$. $A^c$ is the event of *not $A$*.
+
+2. If  $A\subseteq B$, then an outcome that realizes event $A$ ($\omega\in A$), also realizes $B$, as $A\subseteq B\Rightarrow \omega\in B$ as well. $A\Rightarrow B$
+
+3. For $A\cup B$ to happen, we need $\omega \in A$ **or** $\omega \in B$, which means that $A$ happens, or $B$ happens, or both happen simultaneously.
+
+## Mixing up Sets and Probability
+
+4. For $A\cap B$ to happen, we need $\omega \in A$ **and** $\omega \in B$, which means that $A$ and $B$ happen simultaneously.
+
+5. $A$ and $B$ are incompatible if $A\cap B=\emptyset$, *i.e.* if an outcome is in one set, it cannot be in another, for example it cannot be that $A$ and $A^c$ happen simultaneously!
+
+## Inherited set properties for events
+
+Consider two events $A$ and $B$ both subsets of $\Omega$
+
+1. Commutativity: $A\cup B = B\cup A$; $A\cap B=B\cap A$
+2. Associativity: $(A\cup B)\cup C=A\cup(B\cup C)$; $(A\cap B)\cap C=A\cap(B\cap C)$
+3. Distributivity: $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$; $A\cap (B\cup C)=(A\cap B)\cup(A\cap C)$
+4. Morgan Law's: $(A\cap B)^c=A^c\cup B^c$; $(A\cup B)^c=A^c\cap B^c$
+
+## Inherited set properties for events
+
+5. $\left(A^c\right)^c=A$
+6. Complement law: $A\cup A^c=\Omega$; $A\cap A^c=\emptyset$
+7. Identity element: $A\cup\emptyset = A$; $A\cap\Omega = A$
+8. Absorbing element: $A\cup\Omega = \Omega$; $A\cap\emptyset = \emptyset$
+9. Idempotent law: $A\cup A=A$ ; $A\cap A=A$
+10. $A\subset B\Rightarrow A\cap B=A$; $A\subset B\Rightarrow A\cup B = B$
+
+## Example
+
+Consider the sample space $\Omega =\{1,2,3,4,5,6\}$, from our :game_die: case.
+
+Define the events: $$A=\{1\},\ B=\{3,6\},\ C=\{2,4,6\},\ D=\{4,5,6\}$$
+
+## Example
+
+Let's define the following events defined in $\Omega$
+
+* $A\cup B$
+* $A\cap B$
+* $A^c$
+* $(A\cup B)^c$
+* $(B\cap C)^c$
+* $B\setminus C$
+* $C\setminus D$
+
+## Probability
+
+Kolmogorov's defined a set of characteristics that any probability $P$ measure should have, these are called the Kolmogorov's axioms (1933):
+
+1. $P(A)\in\mathbb{R}$ and $P(A)\geq 0$, for any event $A\subseteq\Omega$.
+2. $P(\Omega)=1$
+3. For any $A$ and $B$ disjoint, $P(A)+P(B)=P(A\cup B)$
+
+## Concept of probability
+
+Besides the concepts we already saw of frequency and subjectivity for probability, there was an older, called *"classic"* one. This one was introduced by Pierre-Simon **Laplace** in 1812.
+
+::: {.callout}
+
+## Laplace or Classic interpretation of probability
+
+Let $A$ be an event defined over a finite $\Omega$. The probability of event $A$ is defined as:
+
+$$P(A)=\frac{\# A}{\# \Omega}$$
+
+:::
+
+## Example
+
+Consider now an experiment throwing two dice :game_die: :game_die:
+
+1. How many outcomes are in $\Omega$? $6^2=36$, $\#\Omega=36$.
+2. Let $A$ be the event where both dice show the same number: $$A=\{(1,1), (2,2),...,(6,6)\}$$ here $\# A=6$
+3. The probability that both dice show the same number is $$P(A)=\frac{\# A}{\# \Omega}=\frac{6}{36}=\frac{1}{6}$$
+
+## Laplace or Classic interpretation of probability
+
+The problem with this interpretation, is that we cannot use it, or it becomes meaningless, it when $\Omega$ is uncountable or infinite. Also, what if the outcomes are not equally likely? (*i.e.* if the dice are not fair?)
+
+## Frequency interpretation
+
+This is today still the dominant interpretation of probability.
+
+In this case, what we want is to observe several independent repetitions of the experiment. After a while, some statistical regularity begins to emerge.
+
+## Frequency interpretation
+
+Logically, if you run an experiment, and are interested in the probability of event $A$, then the events you are registering are $A$ and $A^c$ or *not $A$*.
+
+Every time you run your experiment, you count when you get an $A$ and when you observe an $A^c$ event. Obviously, the total number of experiments is how many times you observed $A$ and how many times you observed $A^c$.
+
+## Example:
+
+Experiment: Draw a random number in the interval $[0,1]$. $A$ denotes $x<0.4$.
+
+```{r}
+#| echo: false
+
+# Define the values of N
+N_values <- c(1, 10, 50, 100, 500, 2000, 5000, 10000, 50000)
+
+# Initialize vectors to store results
+event_A <- numeric(length(N_values))
+not_event_A <- numeric(length(N_values))
+total <- numeric(length(N_values))
+
+# Simulate experiments
+set.seed(42)
+for (i in seq_along(N_values)) {
+  trials <- runif(N_values[i])  # generate random numbers between 0 and 1
+  event_A[i] <- sum(trials < 0.4)
+  not_event_A[i] <- sum(trials >= 0.4)
+  total[i] <- N_values[i]
+}
+
+# Create the data frame
+results <- data.frame(
+  Event_A = event_A,
+  Not_Event_A = not_event_A,
+  Total_Experiments = total,
+  P_A = event_A/total
+)
+```
+
+
+<table>
+  <tr>
+    <th>$A$</th>
+    <th>$A^c$</th>
+    <th>$N$</th>
+    <th class="fragment" data-fragment-index="6">$P(A)$</th>
+  </tr>
+  <tr>
+    <td class="fragment" data-fragment-index="0">`r results[1,1]`</td>
+    <td class="fragment" data-fragment-index="0">`r results[1,2]`</td>
+    <td class="fragment" data-fragment-index="0">`r results[1,3]`</td>
+    <td class="fragment" data-fragment-index="7">`r results[1,4]`</td>
+  </tr>
+  <tr>
+    <td class="fragment" data-fragment-index="1">`r results[2,1]`</td>
+    <td class="fragment" data-fragment-index="1">`r results[2,2]`</td>
+    <td class="fragment" data-fragment-index="1">`r results[2,3]`</td>
+    <td class="fragment" data-fragment-index="7">`r results[2,4]`</td>
+  </tr>
+  <tr>
+    <td class="fragment" data-fragment-index="2">`r results[3,1]`</td>
+    <td class="fragment" data-fragment-index="2">`r results[3,2]`</td>
+    <td class="fragment" data-fragment-index="2">`r results[3,3]`</td>
+    <td class="fragment" data-fragment-index="7">`r results[3,4]`</td>
+  </tr>
+  <tr>
+    <td class="fragment" data-fragment-index="3">`r results[4,1]`</td>
+    <td class="fragment" data-fragment-index="3">`r results[4,2]`</td>
+    <td class="fragment" data-fragment-index="3">`r results[4,3]`</td>
+    <td class="fragment" data-fragment-index="7">`r results[4,4]`</td>
+  </tr>
+  <tr>
+    <td class="fragment" data-fragment-index="4">`r results[5,1]`</td>
+    <td class="fragment" data-fragment-index="4">`r results[5,2]`</td>
+    <td class="fragment" data-fragment-index="4">`r results[5,3]`</td>
+    <td class="fragment" data-fragment-index="7">`r results[5,4]`</td>
+  </tr>
+  <tr>
+    <td class="fragment" data-fragment-index="5">`r results[6,1]`</td>
+    <td class="fragment" data-fragment-index="5">`r results[6,2]`</td>
+    <td class="fragment" data-fragment-index="5">`r results[6,3]`</td>
+    <td class="fragment" data-fragment-index="7">`r results[6,4]`</td>
+</table>
+
+## Example:
+
+```{r}
+library(ggplot2)
+
+# Define the values of N
+N_values <- seq(1, 5000, by = 50)
+
+# Initialize vectors to store results
+event_A <- numeric(length(N_values))
+not_event_A <- numeric(length(N_values))
+total <- numeric(length(N_values))
+
+# Simulate experiments
+set.seed(42)
+for (i in seq_along(N_values)) {
+  trials <- runif(N_values[i])  # generate random numbers between 0 and 1
+  event_A[i] <- sum(trials < 0.4)
+  not_event_A[i] <- sum(trials >= 0.4)
+  total[i] <- N_values[i]
+}
+
+# Create the data frame
+results <- data.frame(
+  Event_A = event_A,
+  Not_Event_A = not_event_A,
+  Total_Experiments = total,
+  P_A = event_A/total
+)
+
+ggplot(data = results, aes(x = total, y = P_A)) +
+  geom_line() +
+  theme_minimal() +
+  labs(x = "Experiments", y = expression(P(A)))
+
+```
+
+## Frequency interpretation
+
+As you can see, the more experiments we run, the more stabilized the ratio of occurrences for $A$ over the total number of experiments. More generally:
+
+$$P(A)=\lim_{N\rightarrow \infty}\frac{A\text{ occurrences}}{N \text{- Number of Experiments}}$$
+
+This is the relative **f**requency of $A$ in $N$ experiments: $f_A$
+
+> Not always possible to repeat that many times the experiment in the **same** conditions.
+
+## About our previous example
+
+ It seems that the probability that the random number between 0 and 1 is below 0.4 is approximately 40%. The more experiments we run, the closer our relative frequency is to that number.
+
+$$P(A)\underset{N \rightarrow \infty}{\rightarrow} 0.4$$
+
+By the way, we will see later that theoretically, indeed $P(A)=0.4$

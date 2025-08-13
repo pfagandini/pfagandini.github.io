@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="2_prob_files/libs/revealjs/dist/theme/quarto-ee9ab3830bbe7759b42dda8416faf5cd.css">
+  <link rel="stylesheet" href="2_prob_files/libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link href="2_prob_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="2_prob_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="2_prob_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -202,10 +202,10 @@ Paulo Fagandini
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p>What’s the difference between both situations?</p>
-<div class="fragment">
-<p>What they do have in common?</p>
-</div>
+<ul>
+<li class="fragment">What’s the difference between both situations?</li>
+<li class="fragment">What do they have in common?</li>
+</ul>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
@@ -248,11 +248,6 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="sets-and-elements-1" class="slide level2">
-<h2>Sets and Elements</h2>
-<p>Set</p>
-
-<img data-src="2_prob_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="how-to-write-down-a-set" class="slide level2">
 <h2>How to write down a Set</h2>
 <p>There are several ways to specify a set.</p>
@@ -307,11 +302,6 @@ Paulo Fagandini
 </section>
 <section id="more-definitions-1" class="slide level2">
 <h2>More definitions</h2>
-<p>Subset <span class="math inline">\(S\subset T\)</span></p>
-
-<img data-src="2_prob_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="more-definitions-2" class="slide level2">
-<h2>More definitions</h2>
 <p>The universal set is important because it defines the scope of our analysis. Say we are studying the performance of students of Statistics I in 2025.</p>
 <p>The cars parked outside our institution do not belong to the universal set, because they are not relevant for our purpose. Only students of Statistics I in 2025 belong to the universal set.</p>
 </section>
@@ -332,11 +322,6 @@ Paulo Fagandini
 </div>
 </section>
 <section id="set-operations-1" class="slide level2">
-<h2>Set Operations</h2>
-<p>The complement</p>
-
-<img data-src="2_prob_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section id="set-operations-2" class="slide level2">
 <h2>Set Operations</h2>
 <div class="callout callout-none no-icon callout-titled callout-style-simple">
 <div class="callout-body">
@@ -360,7 +345,7 @@ Paulo Fagandini
 </div>
 <p>Note that <span class="math inline">\(\vee\)</span> stands for <em>or</em>, and <span class="math inline">\(\wedge\)</span> stands for <em>and</em>.</p>
 </section>
-<section id="set-operations-3" class="slide level2">
+<section id="set-operations-2" class="slide level2">
 <h2>Set Operations</h2>
 <p>Sometimes we might need to consider the union or intersection of many sets, and for that we can use a notation simmilar to the one we used for summations:</p>
 <ul>
@@ -368,7 +353,7 @@ Paulo Fagandini
 <li class="fragment"><p><span class="math display">\[\bigcap_{n=1}^\infty S_n = S_1 \cap S_2 \cap ... = \{x\in\Omega | x \in S_n \text{ for every } n\}\]</span></p></li>
 </ul>
 </section>
-<section id="set-operations-4" class="slide level2">
+<section id="set-operations-3" class="slide level2">
 <h2>Set Operations</h2>
 <div class="callout callout-none no-icon callout-titled callout-style-simple">
 <div class="callout-body">
@@ -398,8 +383,351 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="venn-diagrams" class="slide level2">
-<h2>Venn Diagrams</h2>
+<section id="set-definition" class="slide level2">
+<h2>Set Definition</h2>
+<div class="callout callout-none no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>The number of elements of a set <span class="math inline">\(S\)</span> is known as its <strong>cardinality</strong> and it is denoted as <span class="math inline">\(\# S\)</span>. <span class="math inline">\(\# S\)</span> satisfies:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(\# S \geq 0\)</span></li>
+<li class="fragment"><span class="math inline">\(\# \emptyset = 0\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="set-definition-1" class="slide level2">
+<h2>Set definition</h2>
+<div class="callout callout-none no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>If we have two sets, <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span>, we define the operation <em>set minus</em> as <span class="math inline">\(\setminus\)</span> the set that contains all elements of <span class="math inline">\(S\)</span> that do not belong to <span class="math inline">\(T\)</span></p>
+<p><span class="math display">\[S\setminus T = \{x\in S| s\notin T\}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="back-to-probability" class="slide level2">
+<h2>Back to Probability</h2>
+<p>In probability, <span class="math inline">\(\Omega\)</span>, the universal set, is a non-empty set that contains all possible <strong>outcomes</strong> of an experiment. Each outcome is represented by <span class="math inline">\(\omega\)</span>, and obviously <span class="math inline">\(\omega\in\Omega\)</span>.</p>
+</section>
+<section id="back-to-probability-1" class="slide level2">
+<h2>Back to Probability</h2>
+<p>The sample space (<span class="math inline">\(\Omega\)</span>) can be:</p>
+<ul>
+<li class="fragment">Discrete, when <span class="math inline">\(\#\Omega\)</span> is finite, or countable infinite.</li>
+<li class="fragment">Continuous, when <span class="math inline">\(\#\Omega\)</span> is uncountable.</li>
+</ul>
+</section>
+<section id="back-to-probability-2" class="slide level2">
+<h2>Back to Probability</h2>
+<p>Consider the experiment of throwing a die <span class="emoji" data-emoji="game_die">🎲</span> and noting the number shown on side facing upwards.</p>
+<ol type="1">
+<li class="fragment">The sample space is <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span></li>
+<li class="fragment">In this case <span class="math inline">\(\# \Omega = 6\)</span></li>
+<li class="fragment"><span class="math inline">\(\Omega\)</span> is discrete.</li>
+</ol>
+</section>
+<section id="back-to-probability-3" class="slide level2">
+<h2>Back to Probability</h2>
+<p>Consider now the random experiment of measuring the life expectancy of a lamp <span class="emoji" data-emoji="bulb">💡</span>, measured in hours.</p>
+<ol type="1">
+<li class="fragment">The sample space is <span class="math inline">\(\Omega=\{x\in\mathbb{R}|x\geq 0\}\)</span></li>
+<li class="fragment">In this case, <span class="math inline">\(\Omega\)</span> is all non-negative real numbers.</li>
+<li class="fragment"><span class="math inline">\(\Omega\)</span> is continuous.</li>
+</ol>
+<div class="fragment">
+<p>Remember, <span class="math inline">\(\Omega\)</span> must include all possible outcomes from your experiment! Even then ones that seem ludicrous.</p>
+</div>
+</section>
+<section id="back-to-probability-4" class="slide level2">
+<h2>Back to Probability</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>A subset <span class="math inline">\(A\)</span> of the sample space <span class="math inline">\(\Omega\)</span> is called an <strong>event</strong>. <span class="math display">\[A\subseteq \Omega\]</span></p>
+<p>By definition then <span class="math inline">\(\Omega\)</span> is also an event.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>We call the <strong>realization</strong> of an event <span class="math inline">\(A\)</span> if, after an experiment, outcome <span class="math inline">\(\omega\)</span> is realized, and <span class="math inline">\(\omega \in A\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Let’s go back to our experiment with the <span class="emoji" data-emoji="game_die">🎲</span></p>
+<p>The sample space is: <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span></p>
+<p>Within this space, we can define the following events:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(A=\{1,3,5\}\)</span>, <em>i.e.</em> the number is odd.</li>
+<li class="fragment"><span class="math inline">\(B=\{3,4,5,6\}\)</span>, <em>i.e.</em> the number is at least 3.</li>
+<li class="fragment"><span class="math inline">\(C=\{1,2,3\}\)</span> , <em>i.e.</em> the number is lower than 4.</li>
+<li class="fragment"><span class="math inline">\(D=\{6\}\)</span>, <em>i.e.</em> the number is larger than 5.</li>
+</ol>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p>Now let’s revisit the example of our <span class="emoji" data-emoji="bulb">💡</span></p>
+<p>The sample space is: <span class="math inline">\(\Omega=\{x\in\mathbb{R}|x\geq 0\}\)</span></p>
+<p>In this space, we can define the following events:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(A=\{x\in\mathbb{R}|75&lt;x&lt;95\}\)</span>, <em>i.e.</em> the <span class="emoji" data-emoji="bulb">💡</span> lasts between 75 and 95 hours.</li>
+<li class="fragment"><span class="math inline">\(B=\{x\in\mathbb{R}|x\leq 100\}\)</span>, <em>i.e.</em> the <span class="emoji" data-emoji="bulb">💡</span> lasts no longer than 100 hours.</li>
+<li class="fragment"><span class="math inline">\(C=\{x\in\mathbb{R}|x\geq 60\}\)</span>, <em>i.e.</em> the <span class="emoji" data-emoji="bulb">💡</span> lasts at least 60 hours.</li>
+</ol>
+</section>
+<section id="events" class="slide level2">
+<h2>Events</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definitions</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment"><p>An <strong>elementary event</strong> is any event that contains a single element (<em>i.e.</em> <span class="math inline">\(\# A = 1\)</span>)</p></li>
+<li class="fragment"><p>An <strong>impossible event</strong> is an event with no outcome, (<em>i.e.</em> <span class="math inline">\(\# A=0\)</span>). As a consequence, an impossible event coincides with the empty set <span class="math inline">\(\emptyset\)</span>.</p></li>
+<li class="fragment"><p>A <strong>certain event</strong> is indeed the event <span class="math inline">\(\Omega\)</span>, as for any outcome we obtain <span class="math inline">\(\omega\)</span>, this outcome belongs to the sample space <span class="math inline">\(\Omega\)</span> by definition.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="mixing-up-sets-and-probability" class="slide level2">
+<h2>Mixing up Sets and Probability</h2>
+<p>Consider two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> both subsets of <span class="math inline">\(\Omega\)</span></p>
+<ol type="1">
+<li class="fragment"><p><span class="math inline">\(A^c\)</span> contains all the outcomes that are not in <span class="math inline">\(A\)</span>. <span class="math inline">\(A^c\)</span> is the event of <em>not <span class="math inline">\(A\)</span></em>.</p></li>
+<li class="fragment"><p>If <span class="math inline">\(A\subseteq B\)</span>, then an outcome that realizes event <span class="math inline">\(A\)</span> (<span class="math inline">\(\omega\in A\)</span>), also realizes <span class="math inline">\(B\)</span>, as <span class="math inline">\(A\subseteq B\Rightarrow \omega\in B\)</span> as well. <span class="math inline">\(A\Rightarrow B\)</span></p></li>
+<li class="fragment"><p>For <span class="math inline">\(A\cup B\)</span> to happen, we need <span class="math inline">\(\omega \in A\)</span> <strong>or</strong> <span class="math inline">\(\omega \in B\)</span>, which means that <span class="math inline">\(A\)</span> happens, or <span class="math inline">\(B\)</span> happens, or both happen simultaneously.</p></li>
+</ol>
+</section>
+<section id="mixing-up-sets-and-probability-1" class="slide level2">
+<h2>Mixing up Sets and Probability</h2>
+<ol start="4" type="1">
+<li class="fragment"><p>For <span class="math inline">\(A\cap B\)</span> to happen, we need <span class="math inline">\(\omega \in A\)</span> <strong>and</strong> <span class="math inline">\(\omega \in B\)</span>, which means that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> happen simultaneously.</p></li>
+<li class="fragment"><p><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are incompatible if <span class="math inline">\(A\cap B=\emptyset\)</span>, <em>i.e.</em> if an outcome is in one set, it cannot be in another, for example it cannot be that <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span> happen simultaneously!</p></li>
+</ol>
+</section>
+<section id="inherited-set-properties-for-events" class="slide level2">
+<h2>Inherited set properties for events</h2>
+<p>Consider two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> both subsets of <span class="math inline">\(\Omega\)</span></p>
+<ol type="1">
+<li class="fragment">Commutativity: <span class="math inline">\(A\cup B = B\cup A\)</span>; <span class="math inline">\(A\cap B=B\cap A\)</span></li>
+<li class="fragment">Associativity: <span class="math inline">\((A\cup B)\cup C=A\cup(B\cup C)\)</span>; <span class="math inline">\((A\cap B)\cap C=A\cap(B\cap C)\)</span></li>
+<li class="fragment">Distributivity: <span class="math inline">\(A\cup(B\cap C)=(A\cup B)\cap(A\cup C)\)</span>; <span class="math inline">\(A\cap (B\cup C)=(A\cap B)\cup(A\cap C)\)</span></li>
+<li class="fragment">Morgan Law’s: <span class="math inline">\((A\cap B)^c=A^c\cup B^c\)</span>; <span class="math inline">\((A\cup B)^c=A^c\cap B^c\)</span></li>
+</ol>
+</section>
+<section id="inherited-set-properties-for-events-1" class="slide level2">
+<h2>Inherited set properties for events</h2>
+<ol start="5" type="1">
+<li class="fragment"><span class="math inline">\(\left(A^c\right)^c=A\)</span></li>
+<li class="fragment">Complement law: <span class="math inline">\(A\cup A^c=\Omega\)</span>; <span class="math inline">\(A\cap A^c=\emptyset\)</span></li>
+<li class="fragment">Identity element: <span class="math inline">\(A\cup\emptyset = A\)</span>; <span class="math inline">\(A\cap\Omega = A\)</span></li>
+<li class="fragment">Absorbing element: <span class="math inline">\(A\cup\Omega = \Omega\)</span>; <span class="math inline">\(A\cap\emptyset = \emptyset\)</span></li>
+<li class="fragment">Idempotent law: <span class="math inline">\(A\cup A=A\)</span> ; <span class="math inline">\(A\cap A=A\)</span></li>
+<li class="fragment"><span class="math inline">\(A\subset B\Rightarrow A\cap B=A\)</span>; <span class="math inline">\(A\subset B\Rightarrow A\cup B = B\)</span></li>
+</ol>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<p>Consider the sample space <span class="math inline">\(\Omega =\{1,2,3,4,5,6\}\)</span>, from our <span class="emoji" data-emoji="game_die">🎲</span> case.</p>
+<p>Define the events: <span class="math display">\[A=\{1\},\ B=\{3,6\},\ C=\{2,4,6\},\ D=\{4,5,6\}\]</span></p>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<p>Let’s define the following events defined in <span class="math inline">\(\Omega\)</span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(A\cup B\)</span></li>
+<li class="fragment"><span class="math inline">\(A\cap B\)</span></li>
+<li class="fragment"><span class="math inline">\(A^c\)</span></li>
+<li class="fragment"><span class="math inline">\((A\cup B)^c\)</span></li>
+<li class="fragment"><span class="math inline">\((B\cap C)^c\)</span></li>
+<li class="fragment"><span class="math inline">\(B\setminus C\)</span></li>
+<li class="fragment"><span class="math inline">\(C\setminus D\)</span></li>
+</ul>
+</section>
+<section id="probability" class="slide level2">
+<h2>Probability</h2>
+<p>Kolmogorov’s defined a set of characteristics that any probability <span class="math inline">\(P\)</span> measure should have, these are called the Kolmogorov’s axioms (1933):</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(P(A)\in\mathbb{R}\)</span> and <span class="math inline">\(P(A)\geq 0\)</span>, for any event <span class="math inline">\(A\subseteq\Omega\)</span>.</li>
+<li class="fragment"><span class="math inline">\(P(\Omega)=1\)</span></li>
+<li class="fragment">For any <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> disjoint, <span class="math inline">\(P(A)+P(B)=P(A\cup B)\)</span></li>
+</ol>
+</section>
+<section id="concept-of-probability" class="slide level2">
+<h2>Concept of probability</h2>
+<p>Besides the concepts we already saw of frequency and subjectivity for probability, there was an older, called <em>“classic”</em> one. This one was introduced by Pierre-Simon <strong>Laplace</strong> in 1812.</p>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Laplace or Classic interpretation of probability</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(A\)</span> be an event defined over a finite <span class="math inline">\(\Omega\)</span>. The probability of event <span class="math inline">\(A\)</span> is defined as:</p>
+<p><span class="math display">\[P(A)=\frac{\# A}{\# \Omega}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+<p>Consider now an experiment throwing two dice <span class="emoji" data-emoji="game_die">🎲</span> <span class="emoji" data-emoji="game_die">🎲</span></p>
+<ol type="1">
+<li class="fragment">How many outcomes are in <span class="math inline">\(\Omega\)</span>? <span class="math inline">\(6^2=36\)</span>, <span class="math inline">\(\#\Omega=36\)</span>.</li>
+<li class="fragment">Let <span class="math inline">\(A\)</span> be the event where both dice show the same number: <span class="math display">\[A=\{(1,1), (2,2),...,(6,6)\}\]</span> here <span class="math inline">\(\# A=6\)</span></li>
+<li class="fragment">The probability that both dice show the same number is <span class="math display">\[P(A)=\frac{\# A}{\# \Omega}=\frac{6}{36}=\frac{1}{6}\]</span></li>
+</ol>
+</section>
+<section id="laplace-or-classic-interpretation-of-probability-1" class="slide level2">
+<h2>Laplace or Classic interpretation of probability</h2>
+<p>The problem with this interpretation, is that we cannot use it, or it becomes meaningless, it when <span class="math inline">\(\Omega\)</span> is uncountable or infinite. Also, what if the outcomes are not equally likely? (<em>i.e.</em> if the dice are not fair?)</p>
+</section>
+<section id="frequency-interpretation" class="slide level2">
+<h2>Frequency interpretation</h2>
+<p>This is today still the dominant interpretation of probability.</p>
+<p>In this case, what we want is to observe several independent repetitions of the experiment. After a while, some statistical regularity begins to emerge.</p>
+</section>
+<section id="frequency-interpretation-1" class="slide level2">
+<h2>Frequency interpretation</h2>
+<p>Logically, if you run an experiment, and are interested in the probability of event <span class="math inline">\(A\)</span>, then the events you are registering are <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span> or <em>not <span class="math inline">\(A\)</span></em>.</p>
+<p>Every time you run your experiment, you count when you get an <span class="math inline">\(A\)</span> and when you observe an <span class="math inline">\(A^c\)</span> event. Obviously, the total number of experiments is how many times you observed <span class="math inline">\(A\)</span> and how many times you observed <span class="math inline">\(A^c\)</span>.</p>
+</section>
+<section id="example-5" class="slide level2">
+<h2>Example:</h2>
+<p>Experiment: Draw a random number in the interval <span class="math inline">\([0,1]\)</span>. <span class="math inline">\(A\)</span> denotes <span class="math inline">\(x&lt;0.4\)</span>.</p>
+<table>
+<tbody><tr>
+<th>
+<span class="math inline">\(A\)</span>
+</th>
+<th>
+<span class="math inline">\(A^c\)</span>
+</th>
+<th>
+<span class="math inline">\(N\)</span>
+</th>
+<th class="fragment" data-fragment-index="6">
+<span class="math inline">\(P(A)\)</span>
+</th>
+</tr>
+<tr>
+<td class="fragment" data-fragment-index="0">
+0
+</td>
+<td class="fragment" data-fragment-index="0">
+1
+</td>
+<td class="fragment" data-fragment-index="0">
+1
+</td>
+<td class="fragment" data-fragment-index="7">
+0
+</td>
+</tr>
+<tr>
+<td class="fragment" data-fragment-index="1">
+2
+</td>
+<td class="fragment" data-fragment-index="1">
+8
+</td>
+<td class="fragment" data-fragment-index="1">
+10
+</td>
+<td class="fragment" data-fragment-index="7">
+0.2
+</td>
+</tr>
+<tr>
+<td class="fragment" data-fragment-index="2">
+17
+</td>
+<td class="fragment" data-fragment-index="2">
+33
+</td>
+<td class="fragment" data-fragment-index="2">
+50
+</td>
+<td class="fragment" data-fragment-index="7">
+0.34
+</td>
+</tr>
+<tr>
+<td class="fragment" data-fragment-index="3">
+39
+</td>
+<td class="fragment" data-fragment-index="3">
+61
+</td>
+<td class="fragment" data-fragment-index="3">
+100
+</td>
+<td class="fragment" data-fragment-index="7">
+0.39
+</td>
+</tr>
+<tr>
+<td class="fragment" data-fragment-index="4">
+217
+</td>
+<td class="fragment" data-fragment-index="4">
+283
+</td>
+<td class="fragment" data-fragment-index="4">
+500
+</td>
+<td class="fragment" data-fragment-index="7">
+0.434
+</td>
+</tr>
+<tr>
+<td class="fragment" data-fragment-index="5">
+802
+</td>
+<td class="fragment" data-fragment-index="5">
+1198
+</td>
+<td class="fragment" data-fragment-index="5">
+2000
+</td>
+<td class="fragment" data-fragment-index="7">
+0.401
+</td>
+</tr></tbody></table>
+</section>
+<section id="example-6" class="slide level2">
+<h2>Example:</h2>
+
+<img data-src="2_prob_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="frequency-interpretation-2" class="slide level2">
+<h2>Frequency interpretation</h2>
+<p>As you can see, the more experiments we run, the more stabilized the ratio of occurrences for <span class="math inline">\(A\)</span> over the total number of experiments. More generally:</p>
+<p><span class="math display">\[P(A)=\lim_{N\rightarrow \infty}\frac{A\text{ occurrences}}{N \text{- Number of Experiments}}\]</span></p>
+<p>This is the relative <strong>f</strong>requency of <span class="math inline">\(A\)</span> in <span class="math inline">\(N\)</span> experiments: <span class="math inline">\(f_A\)</span></p>
+<blockquote>
+<p>Not always possible to repeat that many times the experiment in the <strong>same</strong> conditions.</p>
+</blockquote>
+</section>
+<section id="about-our-previous-example" class="slide level2">
+<h2>About our previous example</h2>
+<p>It seems that the probability that the random number between 0 and 1 is below 0.4 is approximately 40%. The more experiments we run, the closer our relative frequency is to that number.</p>
+<p><span class="math display">\[P(A)\underset{N \rightarrow \infty}{\rightarrow} 0.4\]</span></p>
+<p>By the way, we will see later that theoretically, indeed <span class="math inline">\(P(A)=0.4\)</span></p>
 
 
 </section></section>
