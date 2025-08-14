@@ -1342,6 +1342,7 @@ Paulo Fagandini
 <li class="fragment"><p>Disjoint</p></li>
 <li class="fragment"><p>Their union is <span class="math inline">\(S\)</span></p></li>
 </ul>
+<p>We can use the notation of <span class="math inline">\(\mathcal{P}(\Omega)\)</span></p>
 </div>
 </div>
 </div>
@@ -2227,9 +2228,66 @@ Paulo Fagandini
 </div>
 <div class="fragment">
 <p>Using the same identity we just used: <span class="math display">\[0.8=0.6+t-0.6t\Rightarrow t= 0.5\]</span></p>
-
-
 </div>
+</section>
+<section id="law-of-total-probability" class="slide level2">
+<h2>Law of Total Probability</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Theorem</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(\{A_i\}_{i=1}^n\)</span> be a partition of <span class="math inline">\(\Omega\)</span>, or <span class="math inline">\(\{A_i\}\in \mathcal{P}(\Omega)\)</span>. Then, for any <span class="math inline">\(B\subset\Omega\)</span>, it holds that:</p>
+<p><span class="math display">\[P(B)=\sum_{i=1}^n P(A_i\cap B)=\sum_{i=1}^n P(B|A_i)P(A_i)\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-17" class="slide level2">
+<h2>Example</h2>
+<p>Consider a financial institution that sells two products, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, with very high yields. It is known that, among its clients, 10% invest a share of their wealth in <span class="math inline">\(A\)</span> and the rest in <span class="math inline">\(B\)</span>. From those who invest in <span class="math inline">\(A\)</span>, 70% manage to get returns above the market. From among those who do not invest in <span class="math inline">\(A\)</span>, 55% get returns above the market. Randomly choosing a client of this firm, find the probability this customer gets a return above the market.</p>
+</section>
+<section id="example-18" class="slide level2">
+<h2>Example</h2>
+<p>Let’s define the events:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(A_1\)</span> the clients that invest in <span class="math inline">\(A\)</span></li>
+<li class="fragment"><span class="math inline">\(A_2\)</span> the clients that invest in <span class="math inline">\(B\)</span></li>
+<li class="fragment"><span class="math inline">\(B\)</span> return above the market.</li>
+</ul>
+<div class="fragment">
+<p>Matching with the available data we obtain:</p>
+<p><span class="math inline">\(P(A_1)=0.1\)</span>, <span class="math inline">\(P(A_2)=0.9\)</span>, <span class="math inline">\(P(B|A_1)=0.7\)</span>, and <span class="math inline">\(P(B|A_2)=0.55\)</span>.</p>
+<p>From the Law of Total Probability:</p>
+</div>
+</section>
+<section id="example-19" class="slide level2">
+<h2>Example</h2>
+<p><span class="math display">\[P(B)=\sum_{i=1}^2 P(A_i\cap B)\]</span> <span class="math display">\[P(B)=P(B|A_1)P(A_1)+P(B|A_2)P(A_2)\]</span> <span class="math display">\[P(B)=0.7\times 0.1 + 0.55\times 0.9 = 0.565\]</span></p>
+</section>
+<section id="bayes-theorem" class="slide level2">
+<h2>Bayes Theorem</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Bayes Theorem</strong></p>
+</div>
+<div class="callout-content">
+<p>Let events <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, … , <span class="math inline">\(A_n\)</span> with <span class="math inline">\(n\in\mathbb{N}\)</span> a partition of <span class="math inline">\(\Omega\)</span>, then, for any event <span class="math inline">\(B\subset\Omega\)</span>, with <span class="math inline">\(P(B)&gt;0\)</span>:</p>
+<p><span class="math display">\[P(A_i|B)=\frac{P(A_i\cap B)}{P(B)}=\frac{P(B|A_i)P(A_i)}{\sum_{i=1}^n P(B|A_i)P(A_i)}\]</span> with <span class="math inline">\(i=1,2,...n\)</span></p>
+</div>
+</div>
+</div>
+<p>Note that this is a consequence of the Law of Total Probability.</p>
+</section>
+<section id="bayes-theorem-2" class="slide level2">
+<h2>Bayes Theorem</h2>
+<p>On the other side, <span class="math inline">\(\sum_i P(A_i)=1\)</span> and <span class="math inline">\(\sum_{i} P(A_i|B)=1\)</span></p>
+<p>Bayes Theorem has been widely used in economics, in biomedical sciences, and social sciences when looking for causality.</p>
+<p>If event <span class="math inline">\(B\)</span> represents <em>consequences</em> and event <span class="math inline">\(A_i\)</span> probable <em>cause</em>, Bayes Theorem allows to assess the probability of this cause <span class="math inline">\((P(A_i))\)</span>.</p>
+
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

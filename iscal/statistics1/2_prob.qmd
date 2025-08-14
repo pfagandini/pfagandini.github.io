@@ -261,6 +261,8 @@ A collection of sets is said to be a **partition** of a set $S$ if the sets in t
 
 * Their union is $S$
 
+We can use the notation of $\mathcal{P}(\Omega)$
+
 :::
 
 ## Set Definition
@@ -882,3 +884,61 @@ From probability theory, we have $$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$ and therefo
 
 Using the same identity we just used:
 $$0.8=0.6+t-0.6t\Rightarrow t= 0.5$$
+
+## Law of Total Probability
+
+::: {.callout}
+
+## Theorem
+
+Let $\{A_i\}_{i=1}^n$ be a partition of $\Omega$, or $\{A_i\}\in \mathcal{P}(\Omega)$. Then, for any $B\subset\Omega$, it holds that:
+
+$$P(B)=\sum_{i=1}^n P(A_i\cap B)=\sum_{i=1}^n P(B|A_i)P(A_i)$$
+
+:::
+
+## Example
+
+Consider a financial institution that sells two products, $A$ and $B$, with very high yields. It is known that, among its clients, 10% invest a share of their wealth in $A$ and the rest in $B$. From those who invest in $A$, 70% manage to get returns above the market. From among those who do not invest in $A$, 55% get returns above the market. Randomly choosing a client of this firm, find the probability this customer gets a return above the market.
+
+## Example
+
+Let's define the events:
+
+* $A_1$ the clients that invest in $A$
+* $A_2$ the clients that invest in $B$
+* $B$ return above the market.
+
+. . . 
+
+Matching with the available data we obtain:
+
+$P(A_1)=0.1$, $P(A_2)=0.9$, $P(B|A_1)=0.7$, and $P(B|A_2)=0.55$.
+
+From the Law of Total Probability:
+
+## Example
+
+$$P(B)=\sum_{i=1}^2 P(A_i\cap B)$$
+$$P(B)=P(B|A_1)P(A_1)+P(B|A_2)P(A_2)$$
+$$P(B)=0.7\times 0.1 + 0.55\times 0.9 = 0.565$$
+
+## Bayes Theorem
+
+:::{.callout}
+## Bayes Theorem
+
+Let events $A_1$, $A_2$, ... , $A_n$ with $n\in\mathbb{N}$ a partition of $\Omega$, then, for any event $B\subset\Omega$, with $P(B)>0$:
+
+$$P(A_i|B)=\frac{P(A_i\cap B)}{P(B)}=\frac{P(B|A_i)P(A_i)}{\sum_{i=1}^n P(B|A_i)P(A_i)}$$ with $i=1,2,...n$
+:::
+
+Note that this is a consequence of the Law of Total Probability.
+
+## Bayes Theorem
+
+On the other side, $\sum_i P(A_i)=1$ and $\sum_{i} P(A_i|B)=1$
+
+Bayes Theorem has been widely used in economics, in biomedical sciences, and social sciences when looking for causality.
+
+If event $B$ represents *consequences* and event $A_i$ probable *cause*, Bayes Theorem allows to assess the probability of this cause $(P(A_i))$.
