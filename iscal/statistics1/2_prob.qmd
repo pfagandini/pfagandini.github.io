@@ -15,6 +15,9 @@ format:
     from: markdown+emoji
     code-block-font-size: 0.75em
     progress: true
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
 editor: source
 execute:
   enabled: true
@@ -23,6 +26,7 @@ engine: knitr
 
 ```{r}
 library(lubridate)
+library(webexercises)
 ```
 
 # Probability, background
@@ -615,3 +619,266 @@ Let $A$ and $B$ be some events in $\Omega$
 7. $$P\left(\bigcup^n_{i=1}A_i\right)=\sum_{i=1}^n P(A_i)-\sum_{i\neq j} P(A_i\cap A_j)+\\ \sum_{i\neq j\neq k} P(A_i\cap A_j\cap A_k)+...+(-1)^{n-1}P\left(\bigcap_{i=1}^n A_i\right)$$
 
 ## Conditional Probability
+
+Conditional probability, as the wording implies, means the probability of something happening **given** something else has happened. Now, note "something" here makes reference to an *event*.
+
+$$P(A|B)$$
+
+It reads *the probability of $A$, given $B$*.
+
+## Conditional Probability
+
+Note that if we think on sets, saying *given* $B$ we are immediately excluding everything that could have happened if $B$ did not happen, and therefore our Universal set is no longer $\Omega$, but $B$.
+
+What we are looking for are, among the events that live in $B$, how many of those live in $A$ (because those would *trigger* event $A$). Actually, we are interested on the relative measure of those outcomes, compared to the whole size of $B$: $$P(A|B)=\frac{P(A\cap B)}{P(B)}$$
+
+## Example
+
+Consider a factory that makes 10 wrenches :wrench:. Among those, we know that 2 have imperfections. Suppose you intend to remove, randomly, 2 :wrench: from the lot (of 10). Consider the following events:
+
+$A = \{\text{The first :wrench: is faulty}\}$
+$B = \{\text{The second :wrench: is faulty}\}$
+
+What if we want to compute $P(B)$? For a correct assessment for $B$, we would better have some information on the realization of $A$!
+
+## Example
+
+If the fist :wrench: was faulty, then $A$ happened. If the first :wrench: was *ok*, then $A^c$ happened, and therefore we can compute $P(B|A)$ and $P(B|A^c)$. We are assuming that we are removing these :wrench: without replacing them.
+
+Let's see why this last detail (replacing the :wrench:) is so relevant before going on.
+
+## Example: With replacement
+
+Initial set:
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| :---: |  :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :wrench: |:wrench: |:collision: |:wrench: |:collision: |:wrench: |:wrench: |:wrench: |:wrench: |:wrench: | 
+
+Remove one (if randomly you do not know which), but after you remove you can see what happened, let's take out 7.
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| :---: |  :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :wrench: |:wrench: |:collision: |:wrench: |:collision: |:wrench: | |:wrench: |:wrench: |:wrench: |
+
+We observe, and *voilá* it was a fine wrench :wrench:. If we replace it though, we would be picking from
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| :---: |  :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :wrench: |:wrench: |:collision: |:wrench: |:collision: |:wrench: |:wrench: |:wrench: |:wrench: |:wrench: | 
+
+That is in the exact same conditions we made our first choice, and therefore what happens with the first pick is irrelevant: These events are now independent!
+
+## Example: with replacement
+
+* With $A$, we know that when we pick the second wrench ($B$), in the box there are 2 :collision: and 8 :wrench:.
+
+* With $A^c$, we know that when we pick the second wrench ($B$), in the box there are 2 :collision: and 8 :wrench:.
+
+. . .
+
+The probability of getting a :collision: is the same in each scenario! $P(B|A)= P(B|A^c)$!
+
+. . .
+
+$$P(B|A)=\frac{2}{10}=0.2\ \text{and}\ P(B|A^c)=\frac{2}{10}=0.2$$
+
+## Example: no replacement
+
+Initial set:
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| :---: |  :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :wrench: |:wrench: |:collision: |:wrench: |:collision: |:wrench: |:wrench: |:wrench: |:wrench: |:wrench: | 
+
+Remove one (if randomly you do not know which is broken)
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| :---: |  :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :wrench: |:wrench: |:collision: |:wrench: | |:wrench: | :wrench: |:wrench: |:wrench: |:wrench: |
+
+We observe, and *voilá* it was a broken wrench :collision: $A$ happened!
+
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| :---: |  :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :wrench: |:wrench: |:collision: |:wrench: |:collision: |:wrench: | |:wrench: |:wrench: |:wrench: |
+
+We observe, and *voilá* it was a fine wrench :wrench: $A^c$ happened!
+
+## Example: no replacement
+
+* With $A$, we know that when we pick the second wrench ($B$), in the box there are 1 :collision: and 9 :wrench:.
+
+* With $A^c$, we know that when we pick the second wrench ($B$), in the box there are 2 :collision: and 9 :wrench:.
+
+. . .
+
+The probability of getting a :collision: is different in each scenario! $P(B|A)\neq P(B|A^c)$!
+
+. . .
+
+$$P(B|A)=\frac{1}{9}=`r round(1/9,3)`\ \text{and}\ P(B|A^c)=\frac{2}{9}=`r round(2/9,3)`$$
+
+## Conclusion Conditional Probability
+
+So formally
+
+::: {.callout}
+
+## Definition
+
+Let $A,B\subset\Omega$, the we say the probability of $A$ given $B$ is the conditional probability: $$P(A|B)=\frac{P(A\cap B)}{P(B)}$$ Note that from here, we can obtain also $P(A\cap B)=P(A|B)P(B)$. In both situations we need $P(B)\neq 0$.
+:::
+
+## Corollary
+
+It follows that the identity $$P(B|A)=\frac{P(A\cap B)}{P(A)}$$ or $$P(A\cap B)=P(B|A)P(A)$$ with $P(A)\neq 0$ also holds true.
+
+## Corollary
+
+Now let's think on $P(A\cap B \cap C)$:
+
+* $P(A\cap B \cap C)=P(A\cap (B \cap C))$
+* $P(A\cap B \cap C)=P(A|B\cap C)P(B\cap C)$
+* $P(A\cap B \cap C)=P(A|B\cap C)P(B|C) P(C)$
+
+## Corollary
+
+Note that given the commutativity of the intersection, we could have obtained also:
+
+* $P(A\cap B \cap C)=P(A|B\cap C)P(C|B) P(B)$
+* $P(A\cap B \cap C)=P(B|A\cap C)P(A|C) P(C)$
+* $P(A\cap B \cap C)=P(B|A\cap C)P(C|A) P(A)$
+* $P(A\cap B \cap C)=P(C|A\cap B)P(A|B) P(B)$
+* $P(A\cap B \cap C)=P(C|A\cap B)P(B|A) P(A)$
+
+And to make sense of all of this we need $P(X)>0$, $P(X\cap Y)>0$ with $X,Y\in\{A,B,C\}$.
+
+## Example
+
+Consider a region with 1,000 adults. Their job data is captured by the following table:
+
+| | Employed | Unemployed | Total |
+| --- | :---: | :---: | :---: |
+| Women | 470 | 55 | 525 |
+| Men | 430 | 45 | 475 |
+| Total  | 900 | 100 | 1,000 |
+
+1. Randomly selecting a person in this region, what is the probability this person is:
+    1. Woman
+    2. Unemployed
+    3. Unemployed woman
+
+## Example
+
+Let's define the events:
+
+$W=\{Woman\}$, $M=\{Man\}$, $U=\{Unemployed\}$
+
+1. Woman: $P(W)=\frac{525}{1000}=`r round(515/1000,3)`$
+2. Unemployed: $P(U)=\frac{100}{1000} = `r round(100/1000,3)`$
+3. Unemployed woman: $P(W\cap U)=\frac{55}{1000}=`r round(55/1000,3)`$
+
+## Example
+
+2. A citizen is randomly chosen from the population, and it happens to be a woman. What is the probability she is unemployed?
+
+. . .
+
+$P(U|W)=P(U\cap W)P(W)=`r round(55/1000,3)`\times `r round(515/1000,3)`=`r round(55/525,3)`$
+
+3. A citizen is randomly chosen from the population, and it happens to be unemployed. What is the probability  is unemployed?
+
+. . .
+
+$P(W|U)=P(W\cap U)P(U)=`r round(55/1000,3)`\times `r round(100/1000,3)`=`r round(55/100,3)`$
+
+## Independent Events
+
+::: {.callout}
+
+##  Definition
+
+Two events $A$ and $B$ $\subset\Omega$, are probabilistically independent if and only if: $$P(A\cap B)=P(A)P(B)$$
+
+:::
+
+## Independent Events
+
+From the definition of independence, we can obtain several properties. Let $A$ and $B$ independent events with $P(A)P(B)>0$:
+
+1. $P(A|B)=P(A)$ and $P(B|A)=P(B)$ (remember conditional example with replacement)
+2. $A^c$ and $B$ are independent, as well as $A$ and $B^c$, and even $A^c$ and $B^c$.
+3. If $A$ and $B$ are incompatible, they cannot be independent. $P(A\cap B)=P(\emptyset)=0\neq P(A)P(B)$
+4. Any event is independent of $\Omega$ and $\emptyset$.
+
+## Example
+
+Are $W$ and $U$ from the previous example independent?
+
+. . .
+
+$P(W)=0.525$, $P(U)=0.1$, $P(W|U)=0.55$, $P(U|W)=0.105$.
+
+. . .
+
+Note that $P(W)\neq P(W|U)$ and $P(U)\neq P(U|W)$. Therefore, **they cannot be independent.**
+
+## Example
+
+Consider a die :game_die: that is thrown twice. Consider the following two events:
+
+$A=\{\text{The die shows an odd number the first time}\}$
+$B=\{\text{The die shows a number }>4\text{ the second time}\}$
+
+Are $A$ and $B$ independent events?
+
+## Example
+
+In this case, $\Omega=\{(x,y)\in \mathbb{N}^2| x,y \leq 6\}$ with $\# \Omega = 6^2=36$
+
+* $P(A)=\frac{18}{36}=\frac{1}{2}$
+
+* $P(B)=\frac{12}{36}=\frac{1}{3}$
+
+* $P(A\cap B)=\frac{1}{6}=P(A)P(B)$
+
+* $P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{1}{2}=P(A)$
+
+* $P(B|A)=\frac{P(B\cap A)}{P(A)}=\frac{1}{3}=P(B)$
+
+* They are independent events!
+
+## Remark
+
+Two events being independent is not the same that they being incompatible:
+
+| $A$ and $B$ independent | $A$ and $B$ incompatible |
+| :---: | :---: |
+|$P(A\cap B)=P(A)P(B)$ | $P(A\cap B)=0$ |
+|$P(A|B)=P(A)$ and $P(B|A)=P(B)$ | $P(A|B)=0$ and $P(B|A)=0$|
+
+## Example
+
+Let $A$ and $B$ be two events such that: $P(A)=0.6$, $P(B)=t$, and $P(A\cup B)=0.8$
+
+Find $t$ such that $A$ and $B$ are:
+
+1. Mutually exclusive or incompatible.
+2. Independent.
+
+## Example
+
+1. In this case, what we need is that $P(A\cap B)=0$.
+
+. . .
+
+From probability theory, we have $$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$ and therefore we get: $$0.8 = 0.6+t\Rightarrow t=0.2$$
+
+2. To make $A$ and $B$ independent, we need that $P(A\cap B)=P(A)P(B)=0.6t$:
+
+. . .
+
+Using the same identity we just used:
+$$0.8=0.6+t-0.6t\Rightarrow t= 0.5$$
