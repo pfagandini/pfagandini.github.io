@@ -1516,15 +1516,21 @@ Paulo Fagandini
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
 <p>Let’s define the following events in <span class="math inline">\(\Omega\)</span></p>
+<div class="columns">
+<div class="column">
 <ul>
 <li class="fragment"><span class="math inline">\(A\cup B\)</span></li>
 <li class="fragment"><span class="math inline">\(A\cap B\)</span></li>
 <li class="fragment"><span class="math inline">\(A^c\)</span></li>
 <li class="fragment"><span class="math inline">\((A\cup B)^c\)</span></li>
+</ul>
+</div><div class="column">
+<ul>
 <li class="fragment"><span class="math inline">\((B\cap C)^c\)</span></li>
 <li class="fragment"><span class="math inline">\(B\setminus C\)</span></li>
 <li class="fragment"><span class="math inline">\(C\setminus D\)</span></li>
 </ul>
+</div></div>
 </section>
 <section id="concept-of-probability" class="slide level2">
 <h2>Concept of probability</h2>
@@ -1709,6 +1715,11 @@ Paulo Fagandini
 <li class="fragment"><span class="math inline">\(A\subset B\Rightarrow P(A)\leq P(B)\)</span></li>
 <li class="fragment"><span class="math inline">\(0\leq P(A)\leq 1,\ \forall A\)</span></li>
 <li class="fragment"><span class="math inline">\(P(A\setminus B)=P(A)-P(A\cap B)\)</span></li>
+</ol>
+</section>
+<section id="corollary-1" class="slide level2">
+<h2>Corollary</h2>
+<ol start="6" type="1">
 <li class="fragment"><span class="math inline">\(P(A\cup B)= P(A)+P(B)-P(A\cap B)\)</span></li>
 <li class="fragment"><span class="math display">\[P\left(\bigcup^n_{i=1}A_i\right)=\sum_{i=1}^n P(A_i)-\sum_{i\neq j} P(A_i\cap A_j)+\\ \sum_{i\neq j\neq k} P(A_i\cap A_j\cap A_k)+...+(-1)^{n-1}P\left(\bigcap_{i=1}^n A_i\right)\]</span></li>
 </ol>
@@ -2041,11 +2052,11 @@ Paulo Fagandini
 </div>
 </div>
 </section>
-<section id="corollary-1" class="slide level2">
+<section id="corollary-2" class="slide level2">
 <h2>Corollary</h2>
 <p>It follows that the identity <span class="math display">\[P(B|A)=\frac{P(A\cap B)}{P(A)}\]</span> or <span class="math display">\[P(A\cap B)=P(B|A)P(A)\]</span> with <span class="math inline">\(P(A)\neq 0\)</span> also holds true.</p>
 </section>
-<section id="corollary-2" class="slide level2">
+<section id="corollary-3" class="slide level2">
 <h2>Corollary</h2>
 <p>Now let’s think on <span class="math inline">\(P(A\cap B \cap C)\)</span>:</p>
 <ul>
@@ -2054,7 +2065,7 @@ Paulo Fagandini
 <li class="fragment"><span class="math inline">\(P(A\cap B \cap C)=P(A|B\cap C)P(B|C) P(C)\)</span></li>
 </ul>
 </section>
-<section id="corollary-3" class="slide level2">
+<section id="corollary-4" class="slide level2">
 <h2>Corollary</h2>
 <p>Note that given the commutativity of the intersection, we could have obtained also:</p>
 <ul>

@@ -420,13 +420,20 @@ Define the events: $$A=\{1\},\ B=\{3,6\},\ C=\{2,4,6\},\ D=\{4,5,6\}$$
 
 Let's define the following events in $\Omega$
 
+::: columns
+::: column
 * $A\cup B$
 * $A\cap B$
 * $A^c$
 * $(A\cup B)^c$
+:::
+
+::: column
 * $(B\cap C)^c$
 * $B\setminus C$
 * $C\setminus D$
+:::
+:::
 
 ## Concept of probability
 
@@ -617,6 +624,9 @@ Let $A$ and $B$ be some events in $\Omega$
 3. $A\subset B\Rightarrow P(A)\leq P(B)$
 4. $0\leq P(A)\leq 1,\ \forall A$
 5. $P(A\setminus B)=P(A)-P(A\cap B)$
+
+## Corollary
+
 6. $P(A\cup B)= P(A)+P(B)-P(A\cap B)$
 7. $$P\left(\bigcup^n_{i=1}A_i\right)=\sum_{i=1}^n P(A_i)-\sum_{i\neq j} P(A_i\cap A_j)+\\ \sum_{i\neq j\neq k} P(A_i\cap A_j\cap A_k)+...+(-1)^{n-1}P\left(\bigcap_{i=1}^n A_i\right)$$
 
