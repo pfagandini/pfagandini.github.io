@@ -1,0 +1,36 @@
+---
+title: "Random Variables"
+subtitle: "Statistics I"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Statistics I"
+    from: markdown+emoji
+    code-block-font-size: 0.75em
+    progress: true
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+```{r}
+library(lubridate)
+library(webexercises)
+```
+## Disclaimer
+
+These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Gancho Custódio from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
+
+# Random Variables

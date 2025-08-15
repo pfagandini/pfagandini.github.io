@@ -47,10 +47,10 @@ The student should:
 1. Index Numbers  
    1. Introduction. Definition of Simple Indexes and Growth Rates  
    2. Index Series: Fixed Base and Moving Base  
-   3. Properties of Simple Indexes  
-   4. Aggregated Indexes. Concept of Basket. Consumer Price Index (CPI)  
-   5. Aggregated Index Series: Fixed Base and Moving Base  
-   6. Desirable Properties of Aggregated Indexes. Problems in constructing index numbers  
+   3. Properties of Simple Indexes
+   4. Composite Index Numbers. Concept of Basket. Consumer Price Index (CPI)  
+   5. Composite Index Series: Fixed Base and Moving Base  
+   6. Desirable Properties of Composite Indexes. Problems in constructing index numbers  
 2. Probability, Random Variables, Probability Distributions, and Population Characteristics  
    1. Concepts of Random Phenomena, Random Experiments, Sample Space, and Events  
    2. Concepts of Probability. Kolmogorov AxiomsStatistics I \- Course Syllabus (2024/2025)  
