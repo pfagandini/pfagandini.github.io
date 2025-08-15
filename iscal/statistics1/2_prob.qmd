@@ -1,5 +1,6 @@
 ---
 title: "Introduction to Probability Theory"
+subtitle: "Statistics I"
 author: "Paulo Fagandini"
 institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
 format: 
@@ -28,6 +29,9 @@ engine: knitr
 library(lubridate)
 library(webexercises)
 ```
+## Disclaimer
+
+These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Gancho Custódio from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
 
 # Probability, background
 
@@ -1008,9 +1012,6 @@ According to the definition of independence: $P(A_1\cap B^c)=P(A_1)P(B^c)$
 Then $A_1$ and $B^c$ are not independent.
 
 ## Bibliography
-
-These slides are a free translation from the slide deck for Estatistica I from the bachelor in Management at the Lisbon Accounting and Business School by Prof. Sandra Gancho Custódio.
-
 
 <ul>
 <li>Murteira, B.; Ribeiro C.; Silva, J. and Pimenta, C. (2010) Introdução à Estatística (2<sup>a</sup> Edição). McGraw-hill.</li>
