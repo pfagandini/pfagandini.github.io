@@ -16,7 +16,7 @@ format:
     code-overflow: wrap
     code-block-font-size: 0.75em
     progress: true
-editor: visual
+editor: source
 execute:
   enabled: true
 engine: knitr
@@ -44,8 +44,7 @@ engine: knitr
 
 ### Topic 1:
 
-:book: The making of index numbers. 1^st^ Ed 1922. Irving Fisher.
-:book: A Practical Introduction to Index Numbers. 1^st^ Ed 2015. Jeff Ralph, Rob O'Neill, Joe Winton.
+:book: The making of index numbers. 1^st^ Ed 1922. Irving Fisher. :book: A Practical Introduction to Index Numbers. 1^st^ Ed 2015. Jeff Ralph, Rob O'Neill, Joe Winton.
 
 ### Topics 2 and 3:
 
@@ -71,6 +70,10 @@ Students may opt, on the day of the Exam, to take an Exam worth 100% of the grad
 \
 
 If you score less than 7.00 in the Midterm, or if you cannot attend the midterm for whatever reason, you **will** have to do the Comprehensive Exam.
+
+## Disclaimer
+
+These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Gancho Custódio from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
 
 # Growth Rates
 
@@ -137,7 +140,7 @@ kable(aapl_df)
 
 ## Example: Apple Stock
 
-Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date[1]`}$ is the close price we got for`r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close[1]`).
+Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date\[1\]`}$ is the close price we got for`r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close\[1\]\`).
 
 How much did $y$ grow between `{r} aapl_df$Date[1]` and `{r} aapl_df$Date[2]`?
 
@@ -159,7 +162,7 @@ $$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\frac{\Delta y_{`r aapl
 
 $$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\delta^y_{`r aapl_df$Date[2]`}\right)$$
 
-This, $\delta_{`r aapl_df$Date[2]`}^y$, is the **growth rate** of $y$ at year`r aapl_df$Date[2]`.
+This, $\delta_{`r aapl_df$Date\[2\]`}^y$, is the **growth rate** of $y$ at year`r aapl_df\$Date\[2\]\`.
 
 ## Growth Rate
 
@@ -191,7 +194,7 @@ $$`r aapl_df$Close[2]`=`r aapl_df$Close[1]`\left(1+`r round((aapl_df$Close[2]-aa
 
 . . .
 
-In this case $\delta_{`r aapl_df$Date[2]`}^y =`r round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)`%$.
+In this case $\delta_{`r aapl_df$Date\[2\]`}^y =`r round((aapl_df$Close[2]-aapl_df$Close\[1\])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close\[2\]-aapl_df$Close[1])/aapl_df$Close\[1\], 4)\`%\$.
 
 > Interpretation: Between `r aapl_df$Date[0]` and `r aapl_df$Date[1]`, the price for Apple *`r if (aapl_df$Close[1] > aapl_df$Close[2]) "decreased" else "increased"`* `r abs(100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4))`%.
 
@@ -207,7 +210,7 @@ Or $$y_{t+k}=y_t(1+\delta_{t+k|t})$$
 
 ## Example
 
-We had $y_{`r aapl_df$Date[1]`}=`r aapl_df$Close[1]`$, and $y_{`r aapl_df$Date[5]`} =`r aapl_df$Close[5]`$. We will try to find $\delta_{`r aapl_df$Date[5]`|`r aapl_df$Date[1]`}^y$
+We had $y_{`r aapl_df$Date\[1\]`}=`r aapl_df$Close[1]`$, and $y_{`r aapl_df$Date\[5\]`} =`r aapl_df$Close[5]`$. We will try to find $\delta_{`r aapl_df$Date\[5\]`|`r aapl_df$Date[1]`}^y$
 
 -   What is the value of $k$ in this case?
 
@@ -215,7 +218,7 @@ We had $y_{`r aapl_df$Date[1]`}=`r aapl_df$Close[1]`$, and $y_{`r aapl_df$Date[5
 
 $$k=`r aapl_df$Date[5]`-`r aapl_df$Date[1]`=`r aapl_df$Date[5]-aapl_df$Date[1]`$$
 
--   What is the growth rate between $`r aapl_df$Date[1]`$ and $`r aapl_df$Date[5]`$?
+-   What is the growth rate between $`r aapl_df$Date\[1\]`$ and $`r aapl_df$Date[5]`$?
 
 . . .
 
@@ -309,7 +312,7 @@ But what now is the **average growth rate** between `r aapl_df$Date[1]` and `r a
 
 . . .
 
-Remember $k = `r aapl_df$Date[5]-aapl_df$Date[1]`$
+Remember $k = `r aapl_df$Date\[5\]-aapl_df$Date[1]`$
 
 $$
 \overline{\delta} =
@@ -571,14 +574,14 @@ digraph TimeSeriesStructure {
 
 ## Examples
 
-| Type | Example |
-|------|---------|
-|Simple| Single stock price|
-|Composite| SP500 (market index), CPI|
-|Fixed Base| GDP, CPI, market index|
-|Rolling Base| Some measures of GDP, Commodities Futures|
-|Chronological | Stock price over time, CPI, GDP|
-|Geographical | BigMac Index |
+| Type          | Example                                   |
+|---------------|-------------------------------------------|
+| Simple        | Single stock price                        |
+| Composite     | SP500 (market index), CPI                 |
+| Fixed Base    | GDP, CPI, market index                    |
+| Rolling Base  | Some measures of GDP, Commodities Futures |
+| Chronological | Stock price over time, CPI, GDP           |
+| Geographical  | BigMac Index                              |
 
 ## Index Numbers
 
@@ -653,18 +656,18 @@ $$ I_t' = I_t I_{t-1} ...I_{4} = \frac{x_t}{x_{t-1}}\frac{x_{t-1}}{x_{t-2}}...\f
 ```{r}
 library(lubridate)
 ```
+
 <small>
 
 Suppose we want to convert this Chain Index into Fix Base index, with the base year in `r year(Sys.Date())-5`. This will be our 100.
 
-| | `r year(Sys.Date())-5` | `r year(Sys.Date())-4` | `r year(Sys.Date())-3` | `r year(Sys.Date())-2` | `r year(Sys.Date())-1` | `r year(Sys.Date())` |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: |
+|   | `r year(Sys.Date())-5` | `r year(Sys.Date())-4` | `r year(Sys.Date())-3` | `r year(Sys.Date())-2` | `r year(Sys.Date())-1` | `r year(Sys.Date())` |
+|-----------|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 | Price | 30 | 34 | 37 | 35 | 36 | 39 |
-|                |  | $\frac{34}{30} 100$ | $\frac{37}{34} 100$ | $\frac{35}{37} 100$ | $\frac{36}{35} 100$ | $\frac{39}{36} 100$ |
-| $I_{chain}$ |  | `r round(34/30*100,1)` | `r round(37/34*100,1)` |`r round(35/37*100,1)` | `r round(34/35*100,1)` | `r round(39/36*100,1)` |
-|                |  | $100\frac{113.3}{100}$ | $113.3\frac{108.8}{100}$ | $123.3\frac{94.6}{100}$ |$116.7 \frac{97.1}{100}$ | $120\frac{108.3}{100}$ |
-| $I_{t|`r year(Sys.Date())-5`}$ | 100 | `r round(34/30*100,1)` | `r round(37/30*100,1)` | `r round(35/30*100,1)`|`r round(36/30*100,1)` | `r round(39/30*100,1)` |
-
+|  |  | $\frac{34}{30} 100$ | $\frac{37}{34} 100$ | $\frac{35}{37} 100$ | $\frac{36}{35} 100$ | $\frac{39}{36} 100$ |
+| $I_{chain}$ |  | `r round(34/30*100,1)` | `r round(37/34*100,1)` | `r round(35/37*100,1)` | `r round(34/35*100,1)` | `r round(39/36*100,1)` |
+|  |  | $100\frac{113.3}{100}$ | $113.3\frac{108.8}{100}$ | $123.3\frac{94.6}{100}$ | $116.7 \frac{97.1}{100}$ | $120\frac{108.3}{100}$ |
+| $I_{t|`r year(Sys.Date())-5`}$ | 100 | `r round(34/30*100,1)` | `r round(37/30*100,1)` | `r round(35/30*100,1)` | `r round(36/30*100,1)` | `r round(39/30*100,1)` |
 
 Note that, for example in `r year(Sys.Date())-1`, we have $I_{`r year(Sys.Date())-1`|`r year(Sys.Date())-5`}=116.7$, which was computed as $123.3\times\frac{94.6}{100}$. But $123.3$ was the base `r year(Sys.Date())-5` index of the previous period, which in turn was computed as $113.3\frac{108.8}{100}$, so in reality:
 
@@ -676,92 +679,88 @@ If you pay attention, wou will see that we have there the product of the *chain 
 
 ## Base Change
 
-In case we have the data, we just need to compute the Index with the base  that we want, however, if we do not have the data, and we just have a Fix Base index, we can do it all the same!
+In case we have the data, we just need to compute the Index with the base that we want, however, if we do not have the data, and we just have a Fix Base index, we can do it all the same!
 
 Say we have an index with base 0. Maybe we want to change it to base 2.
 
 ## Base Change
 
-::: {#tbl-panel layout-ncol=2}
-
-| period | Index          | Formula              |
-| ---    | ---            | ---                  |
-| 0      | $I_{0|0}$      | $\frac{x_0}{x_0}$    |
-| 1      | $I_{1|0}$      | $\frac{x_1}{x_0}$    |
-| 2      | $I_{2|0}$      | $\frac{x_2}{x_0}$    |
-| 3      | $I_{3|0}$      | $\frac{x_3}{x_0}$    |
-| ...    | ...            | ...                  |
-| t      | $I_{t|0}$      | $\frac{x_t}{x_0}$    |
+::: {#tbl-panel layout-ncol="2"}
+| period | Index     | Formula           |
+|--------|-----------|-------------------|
+| 0      | $I_{0|0}$ | $\frac{x_0}{x_0}$ |
+| 1      | $I_{1|0}$ | $\frac{x_1}{x_0}$ |
+| 2      | $I_{2|0}$ | $\frac{x_2}{x_0}$ |
+| 3      | $I_{3|0}$ | $\frac{x_3}{x_0}$ |
+| ...    | ...       | ...               |
+| t      | $I_{t|0}$ | $\frac{x_t}{x_0}$ |
 
 : Base 0
 
-| period | Index          | Formula              |
-| ---    | ---            | ---                  |
-| 0      | $I_{0|2}$      | $\frac{x_0}{x_2}$    |
-| 1      | $I_{1|2}$      | $\frac{x_1}{x_2}$    |
-| 2      | $I_{2|2}$      | $\frac{x_2}{x_2}$    |
-| 3      | $I_{3|2}$      | $\frac{x_3}{x_2}$    |
-| ...    | ...            | ...                  |
-| t      | $I_{t|2}$      | $\frac{x_t}{x_2}$    |
+| period | Index     | Formula           |
+|--------|-----------|-------------------|
+| 0      | $I_{0|2}$ | $\frac{x_0}{x_2}$ |
+| 1      | $I_{1|2}$ | $\frac{x_1}{x_2}$ |
+| 2      | $I_{2|2}$ | $\frac{x_2}{x_2}$ |
+| 3      | $I_{3|2}$ | $\frac{x_3}{x_2}$ |
+| ...    | ...       | ...               |
+| t      | $I_{t|2}$ | $\frac{x_t}{x_2}$ |
 
 : Base 2
 
 Changing Base
-
 :::
 
 ## Base Change
 
 But how can we transform them, if we do not know $x_i$ $\forall i$?
 
-. . . 
+. . .
 
 $$I_{t|2}=\frac{x_t}{x_2}=1\frac{x_t}{x_2}=\frac{1/x_0}{1/x_0}\frac{x_t}{x_2}=\frac{\frac{x_t}{x_0}}{\frac{x_2}{x_0}}=\frac{I_{t|0}}{I_{2|0}}$$
 
 And that is how we can re-base an index without knowing the value for the underlying variable ($x_t$)!
 
-::: {.callout-tip}
-
+::: callout-tip
 ## Mixing up stuff
 
 Previously we covered how to go from a chain index to a fixed base one. Now we saw how to change the base of a fixed base index. With both things together you can turn a chain index into fixed base one, with base you want!
-
 :::
 
 ## Example
 
-| | `r year(Sys.Date())-5` | `r year(Sys.Date())-4` | `r year(Sys.Date())-3` | `r year(Sys.Date())-2` | `r year(Sys.Date())-1` | `r year(Sys.Date())` |
-| ---            | :---: | :---:                         | :---:                         | :---:                        | :---:                         | :---:                         |
-| Price          | 30    | 34                            | 37                            | 35                           | 36                            | 39                            |
-| $I_{t|`r year(Sys.Date())-5`}$   | 100   | `r round(34/30*100,1)` | `r round(37/30*100,1)` | `r round(35/30*100,1)`|`r round(36/30*100,1)`  | `r round(39/30*100,1)` |
-|                | $\frac{100}{123.3}$ | $\frac{113.3}{123.3}$ | $\frac{123.3}{123.3}$| $\frac{116.7}{123.3}$ | $\frac{120.0}{123.3}$ | $\frac{130.0}{123.3}$|
-| $I_{t|`r year(Sys.Date())-3`}$   | `r round(30/37*100,1)` |`r round(34/37*100,1)` | `r round(37/37*100,1)` | `r round(35/37*100,1)` | `r round(36/37*100,1)` |`r round(39/37*100,1)` |
+|   | `r year(Sys.Date())-5` | `r year(Sys.Date())-4` | `r year(Sys.Date())-3` | `r year(Sys.Date())-2` | `r year(Sys.Date())-1` | `r year(Sys.Date())` |
+|-----------|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+| Price | 30 | 34 | 37 | 35 | 36 | 39 |
+| $I_{t|`r year(Sys.Date())-5`}$ | 100 | `r round(34/30*100,1)` | `r round(37/30*100,1)` | `r round(35/30*100,1)` | `r round(36/30*100,1)` | `r round(39/30*100,1)` |
+|  | $\frac{100}{123.3}$ | $\frac{113.3}{123.3}$ | $\frac{123.3}{123.3}$ | $\frac{116.7}{123.3}$ | $\frac{120.0}{123.3}$ | $\frac{130.0}{123.3}$ |
+| $I_{t|`r year(Sys.Date())-3`}$ | `r round(30/37*100,1)` | `r round(34/37*100,1)` | `r round(37/37*100,1)` | `r round(35/37*100,1)` | `r round(36/37*100,1)` | `r round(39/37*100,1)` |
 
 : Stock prices
 
-> New information? Yes! For example, without any computation we know that the price in `r year(Sys.Date())` was 30\% larger than in `r year(Sys.Date())-5`, and 5.4\% larger than in `r year(Sys.Date())-3`
+> New information? Yes! For example, without any computation we know that the price in `r year(Sys.Date())` was 30% larger than in `r year(Sys.Date())-5`, and 5.4% larger than in `r year(Sys.Date())-3`
 
 ## Tests for good Simple Index Numbers
 
 We can test the properties for Simple Index Numbers. These represent desirable properties for good index numbers.
 
-1. **Identity test:** If the variable in the current period is the same as in the base period, the index should be 1 (or 100). Of course this implies $$I_{0|0}=1$$.
-2. **Proportionality test:** If the variable increases by $k$, the index should increase by $k$. $$x_t=kx_0\ \Rightarrow\ i_{t|0}=k$$
+1.  **Identity test:** If the variable in the current period is the same as in the base period, the index should be 1 (or 100). Of course this implies $$I_{0|0}=1$$.
+2.  **Proportionality test:** If the variable increases by $k$, the index should increase by $k$. $$x_t=kx_0\ \Rightarrow\ i_{t|0}=k$$
 
 ## Tests for good Simple Index Numbers {#factor-reversal}
 
-3. **Time Reversal test:** If you exchange the base between two periods, then the index in one base, should be the inverse of the other: $$i_{t|0}=\frac{1}{i{0|t}}\ \Leftrightarrow\ i_{t|0}i_{0|t}=1$$
-4. **Factor Reversal test:** If we have two index numbers, one for variable $x$ and another for $y$, then if $z=x\times y$ we should have $$i_{t|0}^z=i_{t|0}^x\times i_{t|0}^y$$
+3.  **Time Reversal test:** If you exchange the base between two periods, then the index in one base, should be the inverse of the other: $$i_{t|0}=\frac{1}{i{0|t}}\ \Leftrightarrow\ i_{t|0}i_{0|t}=1$$
+4.  **Factor Reversal test:** If we have two index numbers, one for variable $x$ and another for $y$, then if $z=x\times y$ we should have $$i_{t|0}^z=i_{t|0}^x\times i_{t|0}^y$$
 
 ## Tests for good Simple Index Numbers
 
-5. **Circularity test:** The index at $t$ base $0$ should be the product of all the link index numbers up to $t$, $$i_{t|0}=i_{t|t-1}\times i_{t-1|t-2}...i_{2|1}\times i_{1|0}$$ This formalizes the relationship between fixed base and chain index numbers.
+5.  **Circularity test:** The index at $t$ base $0$ should be the product of all the link index numbers up to $t$, $$i_{t|0}=i_{t|t-1}\times i_{t-1|t-2}...i_{2|1}\times i_{1|0}$$ This formalizes the relationship between fixed base and chain index numbers.
 
-6. **Homogeneity test:** If the variable, for every $t$ is multiplied by a constant, the index should not be affected.
+6.  **Homogeneity test:** If the variable, for every $t$ is multiplied by a constant, the index should not be affected.
 
 ## Tests for good Simple Index Numbers
 
-7. **Well-definedness:** The index number must be meaningful, and as prices and quantities usually are larger than zero, index numbers must be positive. Even further, a good index number should not take the value of $\infty$.
+7.  **Well-definedness:** The index number must be meaningful, and as prices and quantities usually are larger than zero, index numbers must be positive. Even further, a good index number should not take the value of $\infty$.
 
 . . .
 
@@ -783,9 +782,7 @@ A value of $0$ might also be problematic, although it is not totally meaningless
 A composite index tracks the combined evolution of multiple phenomena at the same time. It summarizes how a diverse group of elements changes over time.
 
 Example: The performance of a class, measured by the average grade. The average is computed with each individual grade, and therefore if we make an index based on the average of the class, we would have a composite index number.
-
 :::
-
 
 ## Composite Index Numbers
 
@@ -808,7 +805,6 @@ digraph flowchart {
 }
 ")
 ```
-
 
 ## Composite Index Numbers
 
@@ -844,10 +840,11 @@ $$v_{t+1} = v_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
 
 $$v_{t}(1+\delta_{t+1}^v) = v_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
 
-## {.big-emoji}
+##  {.big-emoji}
 
 :bulb:
 
+```{=html}
 <style>
 .big-emoji {
   font-size: 10em;
@@ -855,7 +852,7 @@ $$v_{t}(1+\delta_{t+1}^v) = v_t(1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
   vertical-align: middle;
 }
 </style>
-
+```
 
 ## Composite Index Numbers
 
@@ -863,8 +860,7 @@ $$(1+\delta_{t+1}^v) = (1+\delta_{t+1}^p)(1+\delta_{t+1}^q)$$
 
 $\delta_t^v$ is what we call **nominal change rate**, while $\delta_t^q$ is what we call **real change rate**. We can find out the real change rate ($\delta^q$), if we know the nominal change rate ($\delta^v$), and the prices change rate ($\delta^p$):
 
-$$\left(1+\delta_{t}^q\right) = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}$$
-$$\delta_{t}^q = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}-1$$
+$$\left(1+\delta_{t}^q\right) = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}$$ $$\delta_{t}^q = \frac{\left(1+\delta_t^v\right)}{\left(1+\delta_t^p\right)}-1$$
 
 ## Composite Index Numbers
 
@@ -874,14 +870,12 @@ $$I_{t|b}^q = \frac{I_{t|b}^v}{I_{t|b}^p}$$
 
 . . .
 
-$$\frac{q_t}{q_b} = \frac{\frac{v_t}{v_b}}{\frac{p_t}{p_b}}$$
-$$\frac{q_t}{q_b} = \frac{\frac{p_tq_t}{p_bq_b}}{\frac{p_t}{p_b}}=\frac{p_tq_t}{p_bq_b}\frac{p_b}{p_t}=\frac{q_t}{q_b}$$
-
+$$\frac{q_t}{q_b} = \frac{\frac{v_t}{v_b}}{\frac{p_t}{p_b}}$$ $$\frac{q_t}{q_b} = \frac{\frac{p_tq_t}{p_bq_b}}{\frac{p_t}{p_b}}=\frac{p_tq_t}{p_bq_b}\frac{p_b}{p_t}=\frac{q_t}{q_b}$$
 
 ## Example
 
-|     | `r year(Sys.Date()) - 4` |  `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())`|
-| --- | ---                      | ---                       |---                       |---                       |---                  |
+|   | `r year(Sys.Date()) - 4` | `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())` |
+|------------|------------|------------|------------|------------|------------|
 | Sales Index | 99 | 100 | 107 | 110 | 111 |
 | Price Index | 95 | 100 | 102 | 106 | 109 |
 
@@ -893,16 +887,15 @@ $$I_{`r year(Sys.Date()) - 4`}^q=\frac{I_{`r year(Sys.Date()) - 4`}^v}{I_{`r yea
 
 Then $I_{`r year(Sys.Date()) - 4`} = 104$, quantities decreased from `r year(Sys.Date()) - 4` to `r year(Sys.Date()) - 3`!
 
-|     | `r year(Sys.Date()) - 4` |  `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())`|
-| --- | ---                      | ---                       |---                       |---                       |---                  |
+|   | `r year(Sys.Date()) - 4` | `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())` |
+|------------|------------|------------|------------|------------|------------|
 | Quantities Index | `r 100*round(99/95, 4)` | `r 100*round(100/100, 4)` | `r 100*round(107/102, 4)` | `r 100*round(110/106, 4)` | `r 100*round(111/109, 4)` |
 
 ## Example
 
-|     | `r year(Sys.Date()) - 4` |  `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())`|
-| --- | ---                      | ---                       |---                       |---                       |---                  |
+|   | `r year(Sys.Date()) - 4` | `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())` |
+|------------|------------|------------|------------|------------|------------|
 | Quantities Index | `r 100*round(99/95, 4)` | `r 100*round(100/100, 4)` | `r 100*round(107/102, 4)` | `r 100*round(110/106, 4)` | `r 100*round(111/109, 4)` |
-
 
 Now we can compute what was the real change rate between `r year(Sys.Date()) - 1` and `r year(Sys.Date())`:
 
@@ -910,14 +903,13 @@ Now we can compute what was the real change rate between `r year(Sys.Date()) - 1
 
 $$\delta_{`r year(Sys.Date())`}=\frac{102}{104}-1=`r round((111/109)/(110/106),4)-1`=`r 100*(round((111/109)/(110/106),4)-1)`\%$$
 
-> Real sales `r if ((111/109)/(110/106)-1 < 0) 'decreased' else 'increased' ` `r abs(100*(round((111/109)/(110/106),4)-1))`% from `r year(Sys.Date())-1` to `r year(Sys.Date())`.
+> Real sales `r if ((111/109)/(110/106)-1 < 0) 'decreased' else 'increased'` `r abs(100*(round((111/109)/(110/106),4)-1))`% from `r year(Sys.Date())-1` to `r year(Sys.Date())`.
 
 ## Example
 
 Let's check:
 
-$$\delta_{2025}^q=\frac{(1+\delta_{2025}^v)}{(1+\delta_{2025}^p)}-1=\frac{111/110}{109/106}-1=`r round((111/110)/(109/106), 4)`-1$$
-$$\delta_{2025}^q=`r round((111/110)/(109/106), 4)-1`=`r 100*round((111/110)/(109/106), 4)-100`\%$$
+$$\delta_{2025}^q=\frac{(1+\delta_{2025}^v)}{(1+\delta_{2025}^p)}-1=\frac{111/110}{109/106}-1=`r round((111/110)/(109/106), 4)`-1$$ $$\delta_{2025}^q=`r round((111/110)/(109/106), 4)-1`=`r 100*round((111/110)/(109/106), 4)-100`\%$$
 
 ## Baskets
 
@@ -931,73 +923,57 @@ In economics, we often use price and quantity index numbers to measure how the p
 
 . . .
 
-
 > A very important question: What are the weights that the different goods should have in the basket?
-
 
 ## Aggregate Index Numbers
 
 From the family of formulas to create weighted composite index numbers, we will focus on the two most common:
 
-1. **Laspeyres**: uses base-period quantities (prices) as weights.
+1.  **Laspeyres**: uses base-period quantities (prices) as weights.
 
-2. **Paasche**: uses current-period quantities (prices) as weights.
+2.  **Paasche**: uses current-period quantities (prices) as weights.
 
 . . .
 
 These are used to measure the evolution of *prices (quantities)*.
 
-## Kids' Explanation 
+## Kids' Explanation
 
-::: {.columns}
-
-::: {.column width="50%"}
-
+::::::::: columns
+::::: {.column width="50%"}
 Old basket (🧺$_{past}$):
 
-::: {.nonincremental}
-
-- 🍎 10 apples
-- 🍊 5 oranges
-
+::: nonincremental
+-   🍎 10 apples
+-   🍊 5 oranges
 :::
 
 Old prices (🏷️$_{past}$):
 
-::: {.nonincremental}
-
-- $p_🍎=1$
-- $p_🍊=0.8$
+::: nonincremental
+-   $p_🍎=1$
+-   $p_🍊=0.8$
 :::
+:::::
 
-:::
+::::: {.column width="50%"}
+New basket (🧺$_{today}$):
 
-::: {.column width="50%"}
-
-  New basket (🧺$_{today}$):
-
-::: {.nonincremental}
-
-- 🍎 8 apples
-- 🍊 6 oranges
-
+::: nonincremental
+-   🍎 8 apples
+-   🍊 6 oranges
 :::
 
 New prices (🏷️$_{today}$):
 
-::: {.nonincremental}
-
-- $p_🍎=1.2$
-- $p_🍊=1.1$  
-
+::: nonincremental
+-   $p_🍎=1.2$
+-   $p_🍊=1.1$
 :::
-
-:::
-
-:::
+:::::
+:::::::::
 
 Let's consider that the **base year is past**.
-
 
 ## Kids' Explanation - Prices
 
@@ -1005,14 +981,13 @@ Let's consider that the **base year is past**.
 
 Use always $🧺_{past}$, but relevant :label:! Laspeyres Price Index (LPI):
 
-<div style="text-align: center;">
+::: {style="text-align: center;"}
 <small>
 
-$$🧺_{past}|\text{🏷️}_{past}\quad LPI_{past}=\frac{10\times 1 + 5 \times 0.8}{10\times 1 + 5 \times 0.8} = \frac{14}{14}=1$$
-$$🧺_{past}|\text{🏷️}_{today}\quad LPI_{today}=\frac{10\times 1.2 + 5\times 1.1}{10\times 1 + 5 \times 0.8}=\frac{17.5}{14}=`r round(17.5/14,2)`$$
+$$🧺_{past}|\text{🏷️}_{past}\quad LPI_{past}=\frac{10\times 1 + 5 \times 0.8}{10\times 1 + 5 \times 0.8} = \frac{14}{14}=1$$ $$🧺_{past}|\text{🏷️}_{today}\quad LPI_{today}=\frac{10\times 1.2 + 5\times 1.1}{10\times 1 + 5 \times 0.8}=\frac{17.5}{14}=`r round(17.5/14,2)`$$
 
 </small>
-</div>
+:::
 
 > Remember that 1 corresponds to 100, and `r round(17.5/14,2)` corresponds to `r round(17.5/14,2)*100`.
 
@@ -1022,24 +997,21 @@ $$🧺_{past}|\text{🏷️}_{today}\quad LPI_{today}=\frac{10\times 1.2 + 5\tim
 
 Use always $🧺_{today}$! Paasche Price Index (PPI):
 
-<div style="text-align: center;">
+::: {style="text-align: center;"}
 <small>
 
-$$🧺_{today}|\text{🏷️}_{past}\quad PPI_{past}=\frac{8\times 1 + 6 \times 0.8}{8\times 1 + 6 \times 0.8} = \frac{12.8}{12.8}=1$$
-$$🧺_{today}|\text{🏷️}_{today}\quad PPI_{today}=\frac{8\times 1.2 + 6\times 1.1}{8\times 1 + 6 \times 0.8}=\frac{16.2}{12.8}=`r round(16.2/12.8,2)`$$
+$$🧺_{today}|\text{🏷️}_{past}\quad PPI_{past}=\frac{8\times 1 + 6 \times 0.8}{8\times 1 + 6 \times 0.8} = \frac{12.8}{12.8}=1$$ $$🧺_{today}|\text{🏷️}_{today}\quad PPI_{today}=\frac{8\times 1.2 + 6\times 1.1}{8\times 1 + 6 \times 0.8}=\frac{16.2}{12.8}=`r round(16.2/12.8,2)`$$
 
 </small>
-</div>
+:::
 
 > Remember that 1 corresponds to 100, and `r round(16.2/12.8,2)` corresponds to `r round(16.2/12.8,2)*100`.
 
 ## In general - Laspeyres
 
-1. For prices, how much the old basket would cost at current prices relative to the **old basket and prices**?
-$$LPI = \frac{\sum_{k=1}^m p_t^k q_0^k}{\sum_{k=1}^m p_0^k q_0^k}$$
+1.  For prices, how much the old basket would cost at current prices relative to the **old basket and prices**? $$LPI = \frac{\sum_{k=1}^m p_t^k q_0^k}{\sum_{k=1}^m p_0^k q_0^k}$$
 
-2. For quantities, how much the current basket would cost at the old prices, relative to the **old basket and prices**?
-$$LQI = \frac{\sum_{k=1}^m p_0^k q_t^k}{\sum_{k=1}^m p_0^k q_0^k}$$
+2.  For quantities, how much the current basket would cost at the old prices, relative to the **old basket and prices**? $$LQI = \frac{\sum_{k=1}^m p_0^k q_t^k}{\sum_{k=1}^m p_0^k q_0^k}$$
 
 . . .
 
@@ -1047,11 +1019,9 @@ $$LQI = \frac{\sum_{k=1}^m p_0^k q_t^k}{\sum_{k=1}^m p_0^k q_0^k}$$
 
 ## In general - Paasche
 
-1. For prices, how much more expensive is the **current basket** at current prices, relative to the original prices.
-$$PPI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_0^kq_t^k}$$
+1.  For prices, how much more expensive is the **current basket** at current prices, relative to the original prices. $$PPI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_0^kq_t^k}$$
 
-2. For quantities, how much more the **current basket** costs, relative to what would cost the original basket at current prices.
-$$PQI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_t^kq_0^k}$$
+2.  For quantities, how much more the **current basket** costs, relative to what would cost the original basket at current prices. $$PQI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_t^kq_0^k}$$
 
 . . .
 
@@ -1059,9 +1029,9 @@ $$PQI = \frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_t^kq_0^k}$$
 
 ## Conclusions
 
-1. In both index numbers, for prices, quantities are constant: All variation comes from prices.
+1.  In both index numbers, for prices, quantities are constant: All variation comes from prices.
 
-2. In both index numbers, for quantities, prices are constant: All variation comes from quantities.
+2.  In both index numbers, for quantities, prices are constant: All variation comes from quantities.
 
 . . .
 
@@ -1075,58 +1045,62 @@ Some authors argue, however, that the true measure for *cost of life* is in betw
 
 $$FPI_{t|0}=\sqrt{LPI_{t|0}\times PPI_{t|0}}$$
 
-$$FQI_{t|0}=\sqrt{LQI_{t|0}\times PQI_{t|0}}$$ 
+$$FQI_{t|0}=\sqrt{LQI_{t|0}\times PQI_{t|0}}$$
 
 ## Example
 
 Suppose you collected the following data for years `r year(Sys.Date())-2`, `r year(Sys.Date())-1`, and `r year(Sys.Date())`, from a basket of 15 goods.
 
-<div style="text-align: center;">
+:::: {style="text-align: center;"}
 <small>
 
-| $P-Q$|  `r year(Sys.Date())-2`| `r year(Sys.Date())-1`| `r year(Sys.Date())`| 
-| --- | :---: | :---: | :---: |
-| `r year(Sys.Date())-2` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())-2`}^k=8562$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())-1`}^k=9210$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())`}^k=9920$|
-| `r year(Sys.Date())-1` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-1`}^k q_{`r year(Sys.Date())-2`}^k=9150$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-1`}^k q_{`r year(Sys.Date())-1`}^k=9584$| |
-| `r year(Sys.Date())` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())`}^k q_{`r year(Sys.Date())-2`}^k=9657$ | |$\sum_{k=1}^{15} p_{`r year(Sys.Date())`}^k q_{`r year(Sys.Date())`}^k=10013$|
+| $P-Q$ | `r year(Sys.Date())-2` | `r year(Sys.Date())-1` | `r year(Sys.Date())` |
+|-----------------|:-----------------:|:-----------------:|:-----------------:|
+| `r year(Sys.Date())-2` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())-2`}^k=8562$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())-1`}^k=9210$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-2`}^k q_{`r year(Sys.Date())`}^k=9920$ |
+| `r year(Sys.Date())-1` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-1`}^k q_{`r year(Sys.Date())-2`}^k=9150$ | $\sum_{k=1}^{15} p_{`r year(Sys.Date())-1`}^k q_{`r year(Sys.Date())-1`}^k=9584$ |  |
+| `r year(Sys.Date())` | $\sum_{k=1}^{15} p_{`r year(Sys.Date())`}^k q_{`r year(Sys.Date())-2`}^k=9657$ |  | $\sum_{k=1}^{15} p_{`r year(Sys.Date())`}^k q_{`r year(Sys.Date())`}^k=10013$ |
 
 \
 
 What are the LPI, PPI, and FPI if we choose as a base year `r year(Sys.Date())-2`?
 
-<table data-fragment-index = "0" class="fragment">
-  <tr>
-    <th data-fragment-index="0" class="fragment"> $t$ </th>
-    <th data-fragment-index="0" class="fragment">`r year(Sys.Date())-2`</th>
-    <th data-fragment-index="0" class="fragment">`r year(Sys.Date())-1`</th>
-    <th data-fragment-index="0" class="fragment">`r year(Sys.Date())`</th>
-  </tr>
-  <tr>
-    <td data-fragment-index="0" class="fragment">$LPI_{t|`r year(Sys.Date())-2`}$</td>
-    <td data-fragment-index="1" class="fragment">$100$ </td>
-    <td data-fragment-index="2" class="fragment">`r round(100*9150/8562,1)`</td>
-    <td data-fragment-index="2" class="fragment">`r round(100*9657/8562,1)`</td>
-  </tr>
-  <tr>
-    <td data-fragment-index="0" class="fragment">$PPI_{t|`r year(Sys.Date())-2`}$</td>
-    <td data-fragment-index="1" class="fragment">$100$</td>
-    <td data-fragment-index="3" class="fragment">`r round(100*9584/9210,1)`</td>
-    <td data-fragment-index="3" class="fragment">`r round(100*10013/9920,1)`</td>
-  </tr>
-  <tr>
-    <td data-fragment-index="0" class="fragment">$FPI_{t|`r year(Sys.Date())-2`}$</td>
-    <td data-fragment-index="1" class="fragment">$100$</td>
-    <td data-fragment-index="4" class="fragment"> `r round(100*sqrt(9150/8562*9584/9210), 1)`</td>
-    <td data-fragment-index="4" class="fragment"> `r round(100*sqrt(9657/8562*10013/9920), 1)`</td>
-  </tr>
+<table>
+<thead>
+<tr>
+<th><p>$t$</p></th>
+<th><p>`r year(Sys.Date())-2`</p></th>
+<th><p>`r year(Sys.Date())-1`</p></th>
+<th><p>`r year(Sys.Date())`</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>$LPI_{t|`r year(Sys.Date())-2`}$</p></td>
+<td><p>$100$</p></td>
+<td><p>`r round(100*9150/8562,1)`</p></td>
+<td><p>`r round(100*9657/8562,1)`</p></td>
+</tr>
+<tr>
+<td><p>$PPI_{t|`r year(Sys.Date())-2`}$</p></td>
+<td><p>$100$</p></td>
+<td><p>`r round(100*9584/9210,1)`</p></td>
+<td><p>`r round(100*10013/9920,1)`</p></td>
+</tr>
+<tr>
+<td><p>$FPI_{t|`r year(Sys.Date())-2`}$</p></td>
+<td><p>$100$</p></td>
+<td><p>`r round(100*sqrt(9150/8562*9584/9210), 1)`</p></td>
+<td><p>`r round(100*sqrt(9657/8562*10013/9920), 1)`</p></td>
+</tr>
+</tbody>
 </table>
 
-<div data-fragment-index="5" class="fragment">
-$$LPI_{`r year(Sys.Date())-1`|`r year(Sys.Date())-2`}=100\times \frac{9150}{8562} \quad PPI_{`r year(Sys.Date())`|`r year(Sys.Date())-2`}=100\times\frac{10013}{9920}\quad FPI_{`r year(Sys.Date())-1`|`r year(Sys.Date())`}=\sqrt{106.9\times 104.1}$$ 
-</div>
+::: {.fragment data-fragment-index="5"}
+$$LPI_{`r year(Sys.Date())-1`|`r year(Sys.Date())-2`}=100\times \frac{9150}{8562} \quad PPI_{`r year(Sys.Date())`|`r year(Sys.Date())-2`}=100\times\frac{10013}{9920}\quad FPI_{`r year(Sys.Date())-1`|`r year(Sys.Date())`}=\sqrt{106.9\times 104.1}$$
+:::
 
 </small>
-</div>
+::::
 
 # Inflation
 
@@ -1146,11 +1120,11 @@ In Portugal :portugal:, the index has base in 2016, and, as stated above, follow
 
 To create a price index, you need to follow at least 3 steps.
 
-1. Determine representative basket: Survey families :family_woman_woman_girl_boy: :family_man_woman_boy_boy: :family_man_man_girl_boy:
-2. Survey retail stores to find out sale prices. :convenience_store:
-3. Compute the index with the collected data. :chart_with_upwards_trend:
-    1. Compute the cost of the :basket: with the prices at the base period.
-    2. Compute the cost of the same :basket: with the prices of every succesive period.
+1.  Determine representative basket: Survey families :family_woman_woman_girl_boy: :family_man_woman_boy_boy: :family_man_man_girl_boy:
+2.  Survey retail stores to find out sale prices. :convenience_store:
+3.  Compute the index with the collected data. :chart_with_upwards_trend:
+    1.  Compute the cost of the :basket: with the prices at the base period.
+    2.  Compute the cost of the same :basket: with the prices of every succesive period.
 
 ## Application
 
@@ -1182,43 +1156,46 @@ hicp_df_a$avg_cpi <- round(hicp_df_a$avg_cpi, digits = 1)
 
 ```
 
-
 A Labor union leader is complaining that the average salary in `r hicp_df_a[1,1]` was 1500, and in `r hicp_df_a[4,1]` it is 1650. This increase, they say, is not enough to maintain the workers' purshasing power, because of inflation. The data for inflation is the following:
 
-| Year | `r hicp_df_a[1,1]` |  `r hicp_df_a[2,1]` | `r hicp_df_a[3,1]` | `r hicp_df_a[4,1]` |
-| --- | :---: | :---: | :---: | :---: |
+| Year | `r hicp_df_a[1,1]` | `r hicp_df_a[2,1]` | `r hicp_df_a[3,1]` | `r hicp_df_a[4,1]` |
+|---------------|:-------------:|:-------------:|:-------------:|:-------------:|
 | CPI | `r hicp_df_a[1,2]` | `r hicp_df_a[2,2]` | `r hicp_df_a[3,2]` | `r hicp_df_a[4,2]` |
 
-1. The year with the largest increase in prices was `r hicp_df_a[3,1]`?
-2. The average growth rate for the wages between `r hicp_df_a[1,1]` and `r hicp_df_a[4,1]`  was _______?
-3. Is the union leader right?
+1.  The year with the largest increase in prices was `r hicp_df_a[3,1]`?
+2.  The average growth rate for the wages between `r hicp_df_a[1,1]` and `r hicp_df_a[4,1]` was \_\_\_\_\_\_\_?
+3.  Is the union leader right?
 
 ## Application
 
 For the first question, we can compute the chain or link index:
 
-<table data-fragment-index = "0" class="fragment">
-  <tr>
-    <th data-fragment-index="0" class="fragment"> Year </th>
-    <th data-fragment-index="0" class="fragment">`r hicp_df_a[1,1]` </th>
-    <th data-fragment-index="0" class="fragment">`r hicp_df_a[2,1]`</th>
-    <th data-fragment-index="0" class="fragment">`r hicp_df_a[3,1]`</th>
-    <th data-fragment-index="0" class="fragment">`r hicp_df_a[4,1]`</th>
-  </tr>
-  <tr>
-    <td data-fragment-index="0" class="fragment">CPI</td>
-    <td data-fragment-index="0" class="fragment">`r hicp_df_a[1,2]`</td>
-    <td data-fragment-index="0" class="fragment">`r hicp_df_a[2,2]`</td>
-    <td data-fragment-index="0" class="fragment">`r hicp_df_a[3,2]`</td>
-    <td data-fragment-index="0" class="fragment">`r hicp_df_a[4,2]`</td>
-  </tr>
-  <tr>
-    <td data-fragment-index="0" class="fragment">CPI<sub>link</sub></td>
-    <td data-fragment-index="1" class="fragment"> --- </td>
-    <td data-fragment-index="2" class="fragment">`r round(hicp_df_a[2,2]/hicp_df_a[1,2]*100,1)`</td>
-    <td data-fragment-index="3" class="fragment">`r round(hicp_df_a[3,2]/hicp_df_a[2,2]*100,1)`</td>
-    <td data-fragment-index="4" class="fragment">`r round(hicp_df_a[4,2]/hicp_df_a[3,2]*100,1)`</td>
-  </tr>
+<table>
+<thead>
+<tr>
+<th><p>Year</p></th>
+<th><p>`r hicp_df_a[1,1]`</p></th>
+<th><p>`r hicp_df_a[2,1]`</p></th>
+<th><p>`r hicp_df_a[3,1]`</p></th>
+<th><p>`r hicp_df_a[4,1]`</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>CPI</p></td>
+<td><p>`r hicp_df_a[1,2]`</p></td>
+<td><p>`r hicp_df_a[2,2]`</p></td>
+<td><p>`r hicp_df_a[3,2]`</p></td>
+<td><p>`r hicp_df_a[4,2]`</p></td>
+</tr>
+<tr>
+<td><p>CPI<sub>link</sub></p></td>
+<td><p>---</p></td>
+<td><p>`r round(hicp_df_a[2,2]/hicp_df_a[1,2]*100,1)`</p></td>
+<td><p>`r round(hicp_df_a[3,2]/hicp_df_a[2,2]*100,1)`</p></td>
+<td><p>`r round(hicp_df_a[4,2]/hicp_df_a[3,2]*100,1)`</p></td>
+</tr>
+</tbody>
 </table>
 
 . . .
@@ -1237,7 +1214,7 @@ $$1650 = 1500(1+\delta_w)^{`r hicp_df_a[4,1]- hicp_df_a[1,1]`}$$
 
 Or conversely
 
-$$\frac{1650}{1500}=(1+\delta_w)^{`r hicp_df_a[4,1]-hicp_df_a[1,1]`}$$ 
+$$\frac{1650}{1500}=(1+\delta_w)^{`r hicp_df_a[4,1]-hicp_df_a[1,1]`}$$
 
 . . .
 
@@ -1246,8 +1223,8 @@ or
 . . .
 
 $$\left(`r round(1650/1600,4)`\right)^{1/`r hicp_df_a[4,1]- hicp_df_a[1,1]`}=1+\delta_w$$
- 
-. . . 
+
+. . .
 
 $$`r round((1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1])),4)`-1=\delta_w \quad \Rightarrow \quad \delta_w=`r round((1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-1,4)`= `r round(100*(1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-100,2)`\%$$
 
@@ -1266,6 +1243,7 @@ Note that neither Laspeyres nor Paasche pass the test for **factor reversal** (<
 But we can verify that: $$LPI_{t|0}\times PQI_{t|0}=IV_{t|0} \quad \quad PPI_{t|0}\times LQI_{t|0}=IV_{t|0}$$
 
 ## About the Test for Factor Reversal for Composite Index Numbers
+
 (... continuation)
 
 Example (do the rest as homework): $$LPI_{t|0}\times PQI_{t|0}=\frac{\sum_{k=1}^m p_t^kq_0^k}{\sum_{k=1}^m p_0^kq_0^k}\frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_t^kq_0^k}=\frac{\sum_{k=1}^m p_t^kq_t^k}{\sum_{k=1}^m p_0^kq_0^k}$$
@@ -1278,11 +1256,7 @@ You can verify, using the same procedure, that Fisher's index does indeed passes
 
 ## About the Factor Reversal Test for Composite Index Numbers
 
-$$FPI_{t|0}\times FQI_{t|0}=$$
-$$\sqrt{LPI_{t|0}\times PPI_{t|0}}\times\sqrt{LQI_{t|0}\times PQI_{t|0}}$$
-$$\sqrt{LPI_{t|0}\times PPI_{t|0}\times LQI_{t|0}\times PQI_{t|0}}$$
-$$\sqrt{LPI_{t|0}\times PQI_{t|0}\times LQI_{t|0}\times PPI_{t|0}}$$
-$$\sqrt{IV_{t|0}\times IV_{t|0}}=\sqrt{IV_{t|0}^2}=IV_{t|0}$$
+$$FPI_{t|0}\times FQI_{t|0}=$$ $$\sqrt{LPI_{t|0}\times PPI_{t|0}}\times\sqrt{LQI_{t|0}\times PQI_{t|0}}$$ $$\sqrt{LPI_{t|0}\times PPI_{t|0}\times LQI_{t|0}\times PQI_{t|0}}$$ $$\sqrt{LPI_{t|0}\times PQI_{t|0}\times LQI_{t|0}\times PPI_{t|0}}$$ $$\sqrt{IV_{t|0}\times IV_{t|0}}=\sqrt{IV_{t|0}^2}=IV_{t|0}$$
 
 ## About the Time Reversal Test for Composite Index Numbers
 
@@ -1306,23 +1280,19 @@ $$=\sqrt{\frac{\sum_{k=1}^m p_t^k q_0^k}{\sum_{k=1}^m p_0^k q_0^k}\frac{\sum_{k=
 
 $$=\sqrt{\frac{\sum_{k=1}^m p_t^k q_0^k}{\sum_{k=1}^m p_0^k q_0^k}\frac{\sum_{k=1}^m p_t^k q_t^k}{\sum_{k=1}^m p_0^k q_t^k}\frac{\sum_{k=1}^m p_0^k q_t^k}{\sum_{k=1}^m p_t^k q_t^k}\frac{\sum_{k=1}^m p_0^k q_0^k}{\sum_{k=1}^m p_t^k q_0^k}}$$
 
-
 ## About the Time Reversal Test for Composite Index Numbers {.slide data-transition="none"}
 
 Fisher on the other hand...
 
 $$FPI_{t|0}\times FPI_{0|t}=\sqrt{LPI_{t|0}PPI_{t|0}}\sqrt{LPI_{0|t}PPI_{0|t}}$$
 
-
 $$=\sqrt{\frac{\sum_{k=1}^m p_t^k q_0^k}{\sum_{k=1}^m p_0^k q_0^k}\frac{\sum_{k=1}^m p_t^k q_t^k}{\sum_{k=1}^m p_0^k q_t^k}}\sqrt{\frac{\sum_{k=1}^m p_0^k q_t^k}{\sum_{k=1}^m p_t^k q_t^k}\frac{\sum_{k=1}^m p_0^k q_0^k}{\sum_{k=1}^m p_t^k q_0^k}}$$
-
 
 $$=\sqrt{\frac{\color{red}{\sum_{k=1}^m p_t^k q_0^k}}{\color{blue}{\sum_{k=1}^m p_0^k q_0^k}}\frac{\color{green}{\sum_{k=1}^m p_t^k q_t^k}}{\sum_{k=1}^m p_0^k q_t^k}\frac{\sum_{k=1}^m p_0^k q_t^k}{\color{green}{\sum_{k=1}^m p_t^k q_t^k}}\frac{\color{blue}{\sum_{k=1}^m p_0^k q_0^k}}{\color{red}{\sum_{k=1}^m p_t^k q_0^k}}}$$
 
 . . .
 
 $$FPI_{t|0}\times FPI_{0|t}=1$$
-
 
 ## About the Circularity Test for Composite Index Numbers
 
@@ -1333,39 +1303,37 @@ None, not even Fisher's Index pass the circularity test.
 ## Example
 
 <table>
-  <tr>
-    <th></th>
-    <th colspan="2">Year 1</th>
-    <th colspan="2">Year 2</th>
-  </tr>
-  <tr>
-    <td> Public Transportation </td>
-    <td> N Trips </td>
-    <td> Ticket price </td>
-    <td> N Trips </td>
-    <td> Price Index (base = Year 1)</td>
-  </tr>
-  <tr>
-    <td>Bus</td>
-    <td>1,763,521</td>
-    <td>1.15</td>
-    <td>1,875,345</td>
-    <td>108.7</td>
-  </tr>
-  <tr>
-    <td>Metro</td>
-    <td>3,148,350</td>
-    <td>1.2</td>
-    <td>3,396,138</td>
-    <td>112.5</td>
-  </tr>
+<thead>
+<tr>
+<th><p></p></th>
+<th><p>Year 1</p></th>
+<th><p>Year 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Public Transportation</p></td>
+<td><p>N Trips</p></td>
+<td><p>Ticket price</p></td>
+</tr>
+<tr>
+<td><p>Bus</p></td>
+<td><p>1,763,521</p></td>
+<td><p>1.15</p></td>
+</tr>
+<tr>
+<td><p>Metro</p></td>
+<td><p>3,148,350</p></td>
+<td><p>1.2</p></td>
+</tr>
+</tbody>
 </table>
 
 ## Example
 
-1. According to LPI for year 2, prices for public transportantion grew 11.17%.
-2. Real change, according to Paasche, for public transportation was 7.35%.
-3. The composite index for change in expenditures with public transportation in year 2 compared the expenditure in year 1 is what type of change? (real, nominal, quantity, prices?) How much was it?
+1.  According to LPI for year 2, prices for public transportantion grew 11.17%.
+2.  Real change, according to Paasche, for public transportation was 7.35%.
+3.  The composite index for change in expenditures with public transportation in year 2 compared the expenditure in year 1 is what type of change? (real, nominal, quantity, prices?) How much was it?
 
 ## Example
 
@@ -1389,34 +1357,31 @@ Or $p_2^{metro}=`r round(112.5/100*1.2,2)`$
 
 ## Example
 
-
 <table>
-  <tr>
-    <th></th>
-    <th colspan="2">Year 1</th>
-    <th colspan="2">Year 2</th>
-  </tr>
-  <tr>
-    <td> Public Transportation </td>
-    <td> N Trips </td>
-    <td> Ticket price </td>
-    <td> N Trips </td>
-    <td> Ticket price</td>
-  </tr>
-  <tr>
-    <td>Bus</td>
-    <td>1,763,521</td>
-    <td>1.15</td>
-    <td>1,875,345</td>
-    <td>1.25</td>
-  </tr>
-  <tr>
-    <td>Metro</td>
-    <td>3,148,350</td>
-    <td>1.2</td>
-    <td>3,396,138</td>
-    <td>1.35</td>
-  </tr>
+<thead>
+<tr>
+<th><p></p></th>
+<th><p>Year 1</p></th>
+<th><p>Year 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Public Transportation</p></td>
+<td><p>N Trips</p></td>
+<td><p>Ticket price</p></td>
+</tr>
+<tr>
+<td><p>Bus</p></td>
+<td><p>1,763,521</p></td>
+<td><p>1.15</p></td>
+</tr>
+<tr>
+<td><p>Metro</p></td>
+<td><p>3,148,350</p></td>
+<td><p>1.2</p></td>
+</tr>
+</tbody>
 </table>
 
 ## Example
@@ -1431,9 +1396,9 @@ $$LPI_{2|1}=\frac{1,763,521\times 1.25 + 3,148,350 \times 1.35}{1,763,521\times 
 
 $$LPI_{2|1}=`r round((1763521 * 1.25 + 3148350 * 1.35)/(1763521*1.15 + 3148350*1.2), 4)`$$
 
-. . . 
+. . .
 
-> The *basket* in year 2 is 11.17\% more expensive than in year 1. $$LPI_{2|1}\times 100 - 100 = 11.17\%$$
+> The *basket* in year 2 is 11.17% more expensive than in year 1. $$LPI_{2|1}\times 100 - 100 = 11.17\%$$
 
 ## Example
 
@@ -1453,9 +1418,9 @@ $$PQI_{2|1}=`r round((1875345*1.25 + 3396138* 1.35)/(1763521 * 1.25 + 3148350* 1
 
 The value index for public transportation is a *nominal* index (price times quantity).
 
-. . . 
+. . .
 
->**Remember:** $$VI_{t|0}=LPI_{t|0}\times PQI_{t|0}$$
+> **Remember:** $$VI_{t|0}=LPI_{t|0}\times PQI_{t|0}$$
 
 ## Example
 
