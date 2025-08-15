@@ -1515,7 +1515,7 @@ Paulo Fagandini
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
-<p>Let’s define the following events defined in <span class="math inline">\(\Omega\)</span></p>
+<p>Let’s define the following events in <span class="math inline">\(\Omega\)</span></p>
 <ul>
 <li class="fragment"><span class="math inline">\(A\cup B\)</span></li>
 <li class="fragment"><span class="math inline">\(A\cap B\)</span></li>
@@ -2064,7 +2064,9 @@ Paulo Fagandini
 <li class="fragment"><span class="math inline">\(P(A\cap B \cap C)=P(C|A\cap B)P(A|B) P(B)\)</span></li>
 <li class="fragment"><span class="math inline">\(P(A\cap B \cap C)=P(C|A\cap B)P(B|A) P(A)\)</span></li>
 </ul>
+<div class="fragment">
 <p>And to make sense of all of this we need <span class="math inline">\(P(X)&gt;0\)</span>, <span class="math inline">\(P(X\cap Y)&gt;0\)</span> with <span class="math inline">\(X,Y\in\{A,B,C\}\)</span>.</p>
+</div>
 </section>
 <section id="example-9" class="slide level2">
 <h2>Example</h2>
@@ -2246,15 +2248,15 @@ Paulo Fagandini
 </section>
 <section id="example-17" class="slide level2">
 <h2>Example</h2>
-<p>Consider a financial institution that sells two products, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, with very high yields. It is known that, among its clients, 10% invest a share of their wealth in <span class="math inline">\(A\)</span> and the rest in <span class="math inline">\(B\)</span>. From those who invest in <span class="math inline">\(A\)</span>, 70% manage to get returns above the market. From among those who do not invest in <span class="math inline">\(A\)</span>, 55% get returns above the market. Randomly choosing a client of this firm, find the probability this customer gets a return above the market.</p>
+<p>Consider a financial institution that sells two products, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, with very high yields. It is known that, among its clients, 10% invest a share of their wealth in <span class="math inline">\(\alpha\)</span> and the rest in <span class="math inline">\(\beta\)</span>. From those who invest in <span class="math inline">\(\alpha\)</span>, 70% manage to get returns above the market. From among those who do not invest in <span class="math inline">\(\alpha\)</span>, 55% get returns above the market. Randomly choosing a client of this firm, find the probability this customer gets a return above the market.</p>
 </section>
 <section id="example-18" class="slide level2">
 <h2>Example</h2>
 <p>Let’s define the events:</p>
 <ul>
-<li class="fragment"><span class="math inline">\(A_1\)</span> the clients that invest in <span class="math inline">\(A\)</span></li>
-<li class="fragment"><span class="math inline">\(A_2\)</span> the clients that invest in <span class="math inline">\(B\)</span></li>
-<li class="fragment"><span class="math inline">\(B\)</span> return above the market.</li>
+<li class="fragment"><span class="math inline">\(A_1\)</span> the client invest in <span class="math inline">\(\alpha\)</span></li>
+<li class="fragment"><span class="math inline">\(A_2\)</span> the client invest in <span class="math inline">\(\beta\)</span></li>
+<li class="fragment"><span class="math inline">\(B\)</span> has returns above the market.</li>
 </ul>
 <div class="fragment">
 <p>Matching with the available data we obtain:</p>
@@ -2286,6 +2288,97 @@ Paulo Fagandini
 <p>On the other side, <span class="math inline">\(\sum_i P(A_i)=1\)</span> and <span class="math inline">\(\sum_{i} P(A_i|B)=1\)</span></p>
 <p>Bayes Theorem has been widely used in economics, in biomedical sciences, and social sciences when looking for causality.</p>
 <p>If event <span class="math inline">\(B\)</span> represents <em>consequences</em> and event <span class="math inline">\(A_i\)</span> probable <em>cause</em>, Bayes Theorem allows to assess the probability of this cause <span class="math inline">\((P(A_i))\)</span>.</p>
+</section>
+<section id="example-20" class="slide level2">
+<h2>Example</h2>
+<p>Let’s go back to the previous example, about our investors.</p>
+<div class="fragment">
+<p>Let’s compute the probability that the client invested his money on product <span class="math inline">\(\beta\)</span>, but given that the client had returns above the market (event <span class="math inline">\(B\)</span>).</p>
+</div>
+</section>
+<section id="example-21" class="slide level2">
+<h2>Example</h2>
+<p>If the customer invested in <span class="math inline">\(\beta\)</span>, then the event we are trying to is <span class="math inline">\(A_2\)</span>, but conditional on event <span class="math inline">\(B\)</span>, <span class="math inline">\(P(A_2|B)\)</span>:</p>
+<p><span class="math display">\[P(A_2|B)=\frac{P(A_2\cap B)}{P(B)}=\frac{P(A_2)\times P(B|A_2)}{\sum_i P(A_i)\times P(B|A_i)}\]</span></p>
+<p>We knew from the previous exercise that <span class="math inline">\(P(B)=0.565\)</span>, and therefore we obtain:</p>
+<p><span class="math display">\[P(A_2|B)=\frac{0.9\times 0.55}{0.565}=0.876\]</span></p>
+</section>
+<section id="example-22" class="slide level2">
+<h2>Example</h2>
+<p>How do we interpret this?</p>
+<div class="fragment">
+<blockquote>
+<p>The probability that the client invested in <span class="math inline">\(\beta\)</span>, given that he had a return above the market, is 0.876.</p>
+</blockquote>
+</div>
+</section>
+<section id="example-23" class="slide level2">
+<h2>Example</h2>
+<p>All these computations can be very easy with the help of the following table:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P(A_i)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P(B|A_i)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P(A_i)P(B|A_i)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P(A_i|B)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(A_1\)</span></td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.7</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">0.124</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(A_2\)</span></td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">0.495</td>
+<td style="text-align: center;">0.876</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.565</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-24" class="slide level2">
+<h2>Example</h2>
+<p>Let’s verify now if the event <span class="math inline">\(A_1\)</span> and <span class="math inline">\(B^c\)</span> are independent or not!</p>
+<div class="fragment">
+<p>According to the definition of independence: <span class="math inline">\(P(A_1\cap B^c)=P(A_1)P(B^c)\)</span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(P(A_1\cap B^c)=P(A_1)\times P(B^c|A_1)=0.1\times 0.3=0.03\)</span></li>
+<li class="fragment"><span class="math inline">\(P(A_1)\times P(B^c)=0.1\times(1-0.565)=0.0435\)</span></li>
+<li class="fragment">Then: <span class="math display">\[P(A_1\cap B^c)=P(A_1)\times P(B^c)\Leftrightarrow 0.03\neq 0.045\]</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Then <span class="math inline">\(A_1\)</span> and <span class="math inline">\(B^c\)</span> are not independent.</p>
+</div>
+</section>
+<section id="bibliography" class="slide level2">
+<h2>Bibliography</h2>
+<p>These slides are a free translation from the slide deck for Estatistica I from the bachelor in Management at the Lisbon Accounting and Business School by Prof. Sandra Gancho Custódio.</p>
+<ul>
+<li>
+Murteira, B.; Ribeiro C.; Silva, J. and Pimenta, C. (2010) Introdução à Estatística (2<sup>a</sup> Edição). McGraw-hill.
+</li>
+<li>
+Paulino C.D.; Branco J.A. (2005). Exercícios de Probabilidade e Estatística. Escolar Editora.
+</li>
+<li>
+Pedrosa, A.; Gama, S. (2004). Introdução Computacional à Probabilidade e Estatística. Porto Editora.
+</li>
+</ul>
 
 
 </section></section>

@@ -418,7 +418,7 @@ Define the events: $$A=\{1\},\ B=\{3,6\},\ C=\{2,4,6\},\ D=\{4,5,6\}$$
 
 ## Example
 
-Let's define the following events defined in $\Omega$
+Let's define the following events in $\Omega$
 
 * $A\cup B$
 * $A\cap B$
@@ -755,6 +755,8 @@ Note that given the commutativity of the intersection, we could have obtained al
 * $P(A\cap B \cap C)=P(C|A\cap B)P(A|B) P(B)$
 * $P(A\cap B \cap C)=P(C|A\cap B)P(B|A) P(A)$
 
+. . .
+
 And to make sense of all of this we need $P(X)>0$, $P(X\cap Y)>0$ with $X,Y\in\{A,B,C\}$.
 
 ## Example
@@ -899,15 +901,15 @@ $$P(B)=\sum_{i=1}^n P(A_i\cap B)=\sum_{i=1}^n P(B|A_i)P(A_i)$$
 
 ## Example
 
-Consider a financial institution that sells two products, $A$ and $B$, with very high yields. It is known that, among its clients, 10% invest a share of their wealth in $A$ and the rest in $B$. From those who invest in $A$, 70% manage to get returns above the market. From among those who do not invest in $A$, 55% get returns above the market. Randomly choosing a client of this firm, find the probability this customer gets a return above the market.
+Consider a financial institution that sells two products, $\alpha$ and $\beta$, with very high yields. It is known that, among its clients, 10% invest a share of their wealth in $\alpha$ and the rest in $\beta$. From those who invest in $\alpha$, 70% manage to get returns above the market. From among those who do not invest in $\alpha$, 55% get returns above the market. Randomly choosing a client of this firm, find the probability this customer gets a return above the market.
 
 ## Example
 
 Let's define the events:
 
-* $A_1$ the clients that invest in $A$
-* $A_2$ the clients that invest in $B$
-* $B$ return above the market.
+* $A_1$ the client invest in $\alpha$
+* $A_2$ the client invest in $\beta$
+* $B$ has returns above the market.
 
 . . . 
 
@@ -942,3 +944,66 @@ On the other side, $\sum_i P(A_i)=1$ and $\sum_{i} P(A_i|B)=1$
 Bayes Theorem has been widely used in economics, in biomedical sciences, and social sciences when looking for causality.
 
 If event $B$ represents *consequences* and event $A_i$ probable *cause*, Bayes Theorem allows to assess the probability of this cause $(P(A_i))$.
+
+## Example
+
+Let's go back to the previous example, about our investors.
+
+. . .
+
+Let's compute the probability that the client invested his money on product $\beta$, but given that the client had returns above the market (event $B$).
+
+## Example
+
+If the customer invested in $\beta$, then the event we are trying to is $A_2$, but conditional on event $B$, $P(A_2|B)$:
+
+$$P(A_2|B)=\frac{P(A_2\cap B)}{P(B)}=\frac{P(A_2)\times P(B|A_2)}{\sum_i P(A_i)\times P(B|A_i)}$$
+
+We knew from the previous exercise that $P(B)=0.565$, and therefore we obtain:
+
+$$P(A_2|B)=\frac{0.9\times 0.55}{0.565}=0.876$$
+
+## Example
+
+How do we interpret this?
+
+. . .
+
+> The probability that the client invested in $\beta$, given that he had a return above the market, is 0.876.
+
+## Example
+
+All these computations can be very easy with the help of the following table:
+
+| $A_i$ | $P(A_i)$ | $P(B|A_i)$ | $P(A_i)P(B|A_i)$| $P(A_i|B)$|
+| :---: | :---: | :---: | :---: | :---: |
+| $A_1$ | 0.1 | 0.7 | 0.07 | 0.124 |
+| $A_2$ | 0.9 | 0.55 | 0.495 | 0.876 |
+| | 1 | | 0.565 | 1 |
+
+## Example
+
+Let's verify now if the event $A_1$ and $B^c$ are independent or not!
+
+. . .
+
+According to the definition of independence: $P(A_1\cap B^c)=P(A_1)P(B^c)$
+
+* $P(A_1\cap B^c)=P(A_1)\times P(B^c|A_1)=0.1\times 0.3=0.03$
+* $P(A_1)\times P(B^c)=0.1\times(1-0.565)=0.0435$
+* Then: $$P(A_1\cap B^c)=P(A_1)\times P(B^c)\Leftrightarrow 0.03\neq 0.045$$
+
+. . .
+
+Then $A_1$ and $B^c$ are not independent.
+
+## Bibliography
+
+These slides are a free translation from the slide deck for Estatistica I from the bachelor in Management at the Lisbon Accounting and Business School by Prof. Sandra Gancho Custódio.
+
+
+<ul>
+<li>Murteira, B.; Ribeiro C.; Silva, J. and Pimenta, C. (2010) Introdução à Estatística (2<sup>a</sup> Edição). McGraw-hill.</li>
+<li>Paulino C.D.; Branco J.A. (2005). Exercícios de Probabilidade e Estatística. Escolar Editora.</li>
+<li>Pedrosa, A.; Gama, S. (2004). Introdução Computacional à Probabilidade e Estatística. Porto Editora.</li>
+</ul>
