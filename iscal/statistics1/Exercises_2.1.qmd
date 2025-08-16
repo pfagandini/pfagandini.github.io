@@ -1,0 +1,562 @@
+---
+title: "Chapter I - Statistics I - Exercises"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(lubridate)
+y <- year(Sys.Date())-1
+```
+
+```{r, echo = FALSE, results='asis'}
+# Uncomment to change widget colours:
+#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+</style>
+
+<!-- Style Block for nice tables -->
+
+
+This is a set of exercises created by the teaching Faculty for Statistics I, Chapter I - Index Numbers, from the Lisbon Accounting and Business School.
+
+## Questions
+
+### Question 1
+
+::: {.webex-check .webex-box}
+
+Consider the following sales data, in thousands of euros, for a given company:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Sales | 500 | 650 | 600 | 800 | 750 | 950 |
+:::
+
+1. Build the index series with fix base in `r y-5`.
+
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|$I^{sales}_{t|`r y-5`}$ | `r fitb(c(1,100))` | `r fitb(c(round(650/500,4), round(100*650/500,2)))` | `r fitb(c(round(600/500,4), round(100*600/500,2)))` | `r fitb(c(round(800/500,4), round(100*800/500,2)))` | `r fitb(c(round(750/500,4), round(100*750/500,2)))` | `r fitb(c(round(950/500,4), round(100*950/500,2)))` |
+
+2. `r torf(TRUE)` We could say that in year `r y-3`, according to the index computed above, sales increased 20% relative to the base year.
+
+3. Study the evolution of sales, between consecutive years.
+
+`r hide("Solution")`
+
+We need to compute the link or chain index.
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Sales | 500 | 650 | 600 | 800 | 750 | 950 |
+|$I^{sales}_{chain}$ | | `r round(100*650/500,1)` | `r round(100*600/650,1)` | `r round(100*800/600,1)` | `r round(100*750/800,1)` | `r round(100*950/750,1)` |
+:::
+
+From `r y-5` to `r y-4` sales grew by 30%, from `r y-4` to `r y-3` sales diminished 7.7%, from `r y-3` to `r y-2` sales grew 33.3%, from `r y-2` to `r y-1` sales dropped 6.2%, and from `r y-1` to `r y` sales grew 26.7%.
+
+`r unhide()`
+
+4. What happened to sales during the whole studied period?
+
+`r hide("Solution")`
+
+Sales grew 90%, between `r y-5` and `r y`.
+
+`r unhide()`
+
+5. The growth rate between `r y-3` and `r y-1` was `r mcq(c(answer = "25%", "90%", "14%", "none of the above"))`
+
+6. The (rounded) average growth rate in the studied period is `r mcq(c("18%", "9%", answer="14%", "None of the above"))`
+
+:::
+
+### Question 2
+
+::: {.webex-check .webex-box}
+
+Consider the following sales data, in thousands of euros, for a given company:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Sales | 300 | 250 | $a$ | 240 | $b$ | 340 |
+:::
+
+1. `r torf(TRUE)` The average growth rate for sales, between `r y-5` and `r y` was, approximately, 2.53%.
+
+2. Let $i_{`r y-3`|`r y-5`}=67$. Also, assume you know that the growth rate doubled between `r y-2` and `r y-1`. The values for $a$ and $b$ are respectively: `r mcq(c(answer="201 and 333.1", "201 and 300", "240 and 333.1", "None of the above"))`
+
+3. `r torf(TRUE)` The average growth rate needed to triple sales between `r y` and `r y+4` would have to be 31.61%.
+
+4. `r torf(FALSE)` Assuming an average growth rate of 10%, it would be necessary to wait for 6 years for sales to triple.
+
+:::
+
+### Question 3
+
+::: {.webex-check .webex-box}
+
+A given company presented their financial statements with the following information:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+|Growth rate of sales |  | 20% | 15% | 20% | 10% | 25% |
+| Price Index (base = `r y-3`) | 81.17 | 89.29| 100 | 115 | 128.8 | 148.12 | 
+:::
+
+```{r}
+sol.3.1 <- (1.2*1.15*1.2*1.1*1.25)^0.2 - 1
+```
+
+1. Write the average growth rate of (nominal) sales for the whole period (rounded up, for example 11 if percentage, or 0.11 if decimal): `r fitb(round(sol.3.1,0), round(100*sol.3.1,0))`
+
+2. Find the annual **real** growth rate for sales, when this was negative.
+
+`r hide('Solution')`
+
+Start building the index for sales, base `r y-3`, and remember $i^v_{t|b}=i^q_{t|b}\times i^p_{t|b}$ to build the real growth rates:
+
+::: {.table}
+| Year | `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: |
+| Sales Index (base = `r y-3`) | `r round(100/(1.15*1.2),2)` | `r round(100/1.15,2)` | 100 | `r 100*1.2` | `r 100*1.2*1.1` | `r 100*1.2*1.1*1.25` |
+| Price Index (base = `r y-3`) | 81.17 | 89.29| 100 | 115 | 128.8 | 148.12 | 
+| Real Sales Index (base = `r y-3`) | `r round(100*72.46/81.17,2)` | `r round(100*86.96/89.29,2)`| 100 | `r round(100*120/115,2)` | `r round(100*132/128.8,2)` | `r round(100*165/148.12,2)` | 
+:::
+
+Clearly, the real growth rate was negative in `r y-1`, and it was `r round(100*102.48/104.35,2)-100`%.
+
+`r unhide()`
+
+3. How do you interpret the price index for years `r y-5` and `r y-4`?
+
+`r hide('Solution')`
+
+From `r y-5` to `r y-3` prices grew `r round(100*(100/81.17-1),2)` %, and from `r y-4` to `r y-3` prices grew `r round(100*(100/89.29-1),2)` %.
+
+`r unhide()`
+
+:::
+
+
+### Question 4
+
+::: {.webex-check .webex-box}
+
+For some country, water consumption in the period `r y-8` and `r y` evolved according the simple index, base `r y-3`, shown in the following table:
+
+::: {.table}
+| Year | `r y-8` | `r y-7`| `r y-6`| `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---: | :---:   | :---:   | :---: |
+| Sales Index (base = `r y-3`) | 75.6 | 78.5 | 82.5 | 88.1 | 93.8 | 100 | 104.8 | 107.7 | 107.9 |
+:::
+
+1. `r torf(FALSE)` Water consumption betwee `r y-6` and `r y-4` grew 12.5%.
+
+2. `r torf(TRUE)` The chain index of `r y-6` and `r y-5` are respectively equal to 105.1 and 106.8.
+
+3. Taking yera `r y-8` as base year, $i_{`r y`|`r y-8`}$ would be equal to: `r mcq(c("136.32", answer="142.7", "175.6", "None of the above"))` 
+
+
+
+4. `r torf(FALSE)` The average growth rate for water consumption in the whole period was 4.54%. Overall, during the whole period, water consumption grew 36.32%.
+
+:::
+
+### Question 5
+
+::: {.webex-check .webex-box}
+
+Wayne Industries reported sales using the chain index shown in the following table:
+
+::: {.table}
+| Year | `r y-6`| `r y-5` | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| ---  | :---:   | :---:   | :---:   | :---: | :---:   | :---:   | :---: |
+| Sales Index | 120 | 125 | 135 | 145 | 150 | 160 | 165 |
+:::
+
+1. The average growth rate between `r y-6` and `r y` was approximately: `r mcq(c("50%", "42.86%", answer="46.01%", "None of the above"))`
+
+
+2. The growth rate for sales between `r y-7` and `r y` is approximately: `r mcq(c(answer="1062.8%","65%","42.86","None of the above"))`
+
+3. `r torf(TRUE)` The average semi-annual growth rate between `r y-4` and `r y-1` is approximately 23.10%.
+
+4. `r torf(FALSE)` The value for the semi-annual growth rate, in real terms, if the IPC (fix base) went from 130 in `r y-4` to 180 in `r y-1`, is approximately equal to 10%.
+
+:::
+
+### Question 6
+
+::: {.webex-check .webex-box}
+
+Consider the following data regarding nominal wages for the workers of Watto's Junkyard. You also have the inflation rate in Tatooine, for the period `r y-4` and `r y`.
+
+| Year | `r y-4` | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| --- | :---: | :---: | :---: | :---: | :---: |
+|Wage Index (base `r y-3`) | 93.5 | 100 | 104.3 | 103.8 | 109.7 |
+|Inflation rate | 3.0% | 2.4% | 2.8% | 2.3 % | 3.0% |
+
+1. `r torf(TRUE)` The nominal wage growth rate, from `r y-4` to `r y`, is 17.33%.
+2. `r torf(FALSE)` The average growth rate of inflation between `r y-4` and `r y` is 2%.
+3. Fill the following table (use 2 decimal places, for example 101.01):
+
+| Year | `r y-3` | `r y-2` | `r y-1` | `r y` |
+| --- |  :---: | :---: | :---: | :---: |
+| Linked-Chain Index for wages | `r fitb(round(100*(100/93.5),2))` |`r fitb(round(100*(104.3/100),2))` | `r fitb(round(100*(103.8/104.3),2))`| `r fitb(round(100*(109.7/103.8),2))`|
+
+4. The year where the wages had the largest real increase was `r fitb(y-3)`.
+
+:::
+
+### Question 7
+
+```{r , include = FALSE, echo = FALSE}
+library(eurostat)
+library(tidyverse)
+library(lubridate)
+
+# Set parameters
+end_year <- year(Sys.Date())-1
+start_year <- end_year - 7
+geo <- "EU27_2020"  # EU27 (post-Brexit)
+
+####################
+# Dealing with GDP #
+####################
+
+data_gdp <- get_eurostat("nama_10_gdp",
+                     filters = list(
+                       geo = geo,
+                       unit = "CLV05_MEUR",  # GDP Base 15 Million of Euro
+                       na_item = "B1GQ", # GDP Gross domestic product at market prices (chain-linked volumes)
+                       time = as.character(start_year:end_year)
+                      )
+                     )
+
+data_gdp_year <- data_gdp %>%
+  select(time, values) %>%
+  mutate(year = time) %>%
+  select(-time) %>%
+  rename(GDP = values) %>%
+  mutate(year=year(as_date(year)))
+
+#######################
+# Dealing with Prices #
+#######################
+
+data_prices <-  get_eurostat("prc_hicp_midx",
+                        filters = list(
+                          geo = geo,
+                          coicop = "CP00",
+                          unit="I15"
+                          )
+                        )
+
+data_prices_year <- data_prices %>% 
+  mutate(year = year(as_date(time))) %>%
+  group_by(year) %>%
+  mutate(CPI = mean(values, na.rm = TRUE)) %>%
+  ungroup() %>%
+  select(-unit, -coicop, -geo, -time, -freq, -values) %>%
+  distinct() %>%
+  filter(year >= start_year)
+
+#################
+# Final Dataset #
+#################
+
+data <- merge(data_gdp_year, data_prices_year, by = 'year')
+
+data_link <- data %>%
+  mutate(
+    CPI_link = round(CPI/lag(CPI)*100, 1)
+  )
+
+data_long <- data_link %>% select(-CPI) %>%
+  pivot_longer(cols = c(GDP, CPI_link),
+               names_to = "indicator",
+               values_to = "value")
+
+data_horizontal <- data_long %>%
+  pivot_wider(names_from = year, values_from = value)
+
+```
+
+
+
+::: {.webex-check .webex-box}
+
+Consider the following data with respect to the evolution of the Euro Area GDP (EU27) between `r y-7` and `r y-1`, constant prices (base 2015), as well as the chain index for prices for the same period:
+
+```{r}
+
+library(knitr)
+kable(data_horizontal)
+
+```
+
+1. `r torf(TRUE)` The inflation rate between `r y-3` and `r y-2` was `r round(data_link[data_link$year == y-2, 'CPI_link']/data_link[data_link$year == y-3, 'CPI_link']*100-100,2)`%.
+
+2. `r torf(FALSE)` Prices grew from `r y-4` to `r y` `r round(100*data_link[data_link$year == y, 'CPI_link']/data_link[data_link$year == y-4, 'CPI_link'], 2)-100`%.
+
+3. `r torf(TRUE)` The average growth rate between `r y` and `r y-7`, for GDP, was `r round(100*(data_link[data_link$year == y, 'GDP']/data_link[data_link$year == y-7, 'GDP'])^(1/7)-100,2)` % every year.
+
+4. `r torf(FALSE)` In `r y-1` and `r y` the real and nominal growth rates (for GDP) were the same.
+
+:::
+
+### Question 8
+
+::: {.webex-check .webex-box}
+
+The table below has data on regular consumption goods. You will find prices and quantities, before and after austerity measures were put in place for a economically struggling country. In this period, the LQI and PQI were 91.4 and 91.3 respectively.
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Products</th>
+      <th colspan="2">Before austerity</th>
+      <th colspan="2">After austerity</th>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Bread (units)</td>
+        <td>0.2</td>
+        <td>420</td>
+        <td>0.25</td>
+        <td>360</td>
+      </tr>
+      <tr>
+        <td>Milk (Lts)</td>
+        <td>0.7</td>
+        <td>360</td>
+        <td>0.80</td>
+        <td>336</td>
+      </tr>
+    </tbody>
+  </table>
+
+1. Assume the time window, between the two periods, was 3 years. The average growth rate for the price of bread was: `r fitb(round(100*(.25/.2)^(1/3)-100, 2))`%. (use two decimals, for example 9.81)
+
+2. `r torf(TRUE)` According to the Fisher index, in the studied period, the variation of consumed quantities, for both products, was negative and equal to -8.65%.
+
+3. `r torf(FALSE)` The real and nominal growth rates, for sales, for both products, were similar after the implementation of the austerity measures.
+
+4. Suppose that after the implementation of the austerity measures, and until now, the price of milk dropped 5%. Then, the current price for milk would be `r fitb(round(.8*.95,2))` (again, use two decimal places, for example 0.56)
+
+:::
+
+### Question 9
+
+::: {.webex-check .webex-box}
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Public Transportation</th>
+      <th colspan="2">Year 1</th>
+      <th colspan="2">Year 2</th>
+    </tr>
+    <tr>
+      <th>Trips</th>
+      <th>Price per trip</th>
+      <th>Trips</th>
+      <th>Price Index (Base: year 1)</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Bus</td>
+        <td>1,763,521</td>
+        <td>1.15</td>
+        <td>1,875,345</td>
+        <td>108.70</td>
+      </tr>
+      <tr>
+        <td>Metro</td>
+        <td>3,148,350</td>
+        <td>1.2</td>
+        <td>3,396,138</td>
+        <td>112.50</td>
+      </tr>
+    </tbody>
+  </table>
+
+1. `r torf(TRUE)` According to the LPI for year 2, prices for public transportation grew 11.17% compared to year 1.
+
+2. `r torf(TRUE)` The real change, according to PQI in year 2, was 7.35% compared to year 1.
+
+3. The composite index for value, in the public transportation sector, for year 2 compared to year 1, represents what type of change? `r mcq(c("real", answer="nominal", "quantity", "prices"))`
+
+:::
+
+### Question 10
+
+::: {.webex-check .webex-box}
+
+After tracking a basket with 30 goods for 3 years (`r y-2` to `r y`), the following data was collected:
+
+| | `r y-2` | `r y-1` | `r y`|
+| --- | --- | --- | --- |
+| `r y-2` | $\sum p^k_{`r y-2`}q^k_{`r y-2`} = 8,562$ | $\sum p^k_{`r y-2`}q^k_{`r y-1`}=9,210$ | $\sum p^k_{`r y-2`} q^k_{`r y`} = 9,920$|
+| `r y-1` | $\sum p^k_{`r y-1`}q^k_{`r y-2`} = 9,150$| $\sum p^k_{`r y-1`}q^k_{`r y-1`} = 9,584$ | | 
+| `r y` | $\sum p^k_{`r y`}q^k_{`r y-2`}=9,657$| | $\sum p^k_{`r y`}q^k_{`r y`} = 10,013$ |
+
+Fill the following table (use index in hundreds, rounded to the closest integer, for example 107):
+
+| | `r y-2` | `r y-1` | `r y`|
+| --- | --- | --- | --- |
+| $LPI_{t|`r y-2`}$ | 100 | `r fitb(round(100*9150/8562))` | `r fitb(round(100*9657/8562))` |
+| $PPI_{t|`r y-2`}$ | 100 | `r fitb(round(100*9584/9210))` | `r fitb(round(100*10013/9920))` |
+| $FPI_{t|`r y-2`}$ | 100 | `r fitb(round(100*((9150/8562)*(9584/9210))^0.5))` | `r fitb(round(100*((9657/8562)*(10013/9920))^0.5))` |
+
+:::
+
+### Question 11
+
+```{r, results='asis'}
+opts <- c(
+   "To measure the change in prices",
+   "To measure the change in consumed quantities",
+   answer = "To measure the change of a variable/phenomena over time",
+   "To measure the changes in the demand"
+)
+
+cat("An Index Number is used:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "Ratios",
+   answer = "Percentages",
+   "Either of the above",
+   "None of the above"
+)
+
+cat("An index number is expressed as", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "A price index",
+   answer = "A price index (fixed base)",
+   "Both of the above",
+   "None of the above"
+)
+
+cat("A price index number, computed with a constant reference is:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "Median",
+   "Arithmetic mean",
+   "Harmonic mean",
+   answer = "Geometric mean"   
+)
+
+cat("The most adequate average to compute the average growth rate, for example, for prices, is:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   answer = "The Laspeyres formula",
+   "The Paasche formula",
+   "Average of Laspeyres and Paasche",
+   "The Fisher formula"
+)
+
+cat("The Consumer Price Index (CPI) is computed using:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "$$IP_{t|0}=\\frac{\\sum p_tq_0}{\\sum p_0 q_0}$$",
+   "$$IP_{t|0}=\\frac{\\sum p_t q_t}{\\sum p_0 q_t}$$",
+   answer = "$$IP_{t|0}=\\sqrt{\\frac{p_t q_0}{p_0q_0}\\times\\frac{\\sum p_tq_t}{p_0q_t}}$$",
+   "None of the above"
+)
+
+cat("Which of the following passes the test of time reversion?", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "The factor reversion test",
+   "Time reversion test",
+   answer = "Both test above",
+   "Circularity test"
+)
+
+cat("An index number, computed using Fisher's formula is considered *ideal* because passes:", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+   "$IV_{t|0}=LPI_{t|0}\\times PQI_{t|0}$",
+   "$IV_{t|0}=CPI_{t|0}\\times PQI_{t|0}$",
+   "$IV_{t|0}=FPI_{t|0}\\times FQI_{t|0}$",
+   answer = "$IV_{t|0}=PPI_{t|0}\\times PQI_{t|0}$"
+)
+
+cat("From the following identities, select the FALSE one", longmcq(opts))
+```
+
+`r torf(TRUE)` The real growth rate, within a given timeframe, corresponds to the nominal growth rate, deflated by the CPI (consumer price index).
