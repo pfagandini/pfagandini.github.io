@@ -283,3 +283,25 @@ Nonetheless the r.v. is discrete or continuous, $F_X$ has the following properti
 * $F_X$ is monotone non-decreasing.
 * $\lim_{x\rightarrow -\infty} F_X(x)=0$
 * $\lim_{x\rightarrow \infty} F_X(x)=1$
+
+## Properties of the *cdf*
+
+$F_X$ for $X$ r.v. discrete
+
+- Single points, discontinuous support $\Omega_X$
+- It is continuous from the right
+- $P(X<x)=F(X^-)$
+- $P(X=x)=F(x)-F(x^-)$
+- $P(a<X\leq b)=F(b)-F(a)$
+- $P(a\leq X\leq b)=F(b)-F(a^-)$
+- $P(a<X<b)=F(b^-)-F(a^-)$
+- $P(a\leq X < b) = F(b^-)-F(a^-)$
+
+## Properties of the *cdf*
+
+$F_X$ for $X$ r.v. continuous
+
+- Continuous support $\Omega_X$
+- It is continuous in $\mathbb{R}$
+- $P(X<x)=P(X\leq x)=F(x)$
+- $P(a\square X\square b)=F(b)-F(a)$, [replace $\square$ for $<$ or $\leq$]
