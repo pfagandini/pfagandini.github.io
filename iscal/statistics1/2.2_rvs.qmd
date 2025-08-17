@@ -561,6 +561,74 @@ For the continuous r.v. case:
 2. $\sigma=\sqrt{V[X]}=\sqrt{0.0375}=0.1936$
 3. $CV=\frac{\sigma}{\mu}\times 100 = \frac{0.1936}{0.75}\times 100=25.81\% < 50\%$
 
+# Random Pairs
+
+## Random pair
+
+When running an experiment, it could be interesting to study the relationship between *two numeric features associated to each of the outcomes.*
+
+::: {.callout}
+## Random pair
+
+A random pair $(X,Y)$ is a functio $f_{X,Y}:\Omega\rightarrow \left(\Omega_X,\Omega_Y\right)\subset\mathbb{R}^2$. $\left(\Omega_X, \Omega_Y\right)$ is known as the support of the random pair $(X,Y)$.
+
+$$\omega\in\Omega \overset{(X,Y)}{\rightarrow}\left(X(\omega),Y(\omega)\right)\in(\Omega_X,\Omega_Y)\subset\mathbb{R}^2$$
+
+$X(\omega)$ is the image, under $X$ of outcome $\omega$, and $Y(\omega)$ the image under $Y$ of the same outcome.
+
+:::
+
+## Discrete random pair
+
+A random pair $(X,Y)$ is discrete when:
+
+* The support $(X,Y)$, $(\Omega_X,\Omega_Y)$, is a finite or countable infinite of pairs.
+* $P\left(\Omega_X,\Omega_y\right)=1$
+
+## Joint density function $f_{X,Y}$
+
+Let $(X,Y)$ a discrete random pair, the joint density function $f_{X,Y}(x,y)$ is a function $f_{X,Y}:\mathbb{R}^2\rightarrow\mathbb{R}$ defined as:
+
+$$
+f_{X,Y}(x,y)=\left\{
+    \begin{array}{cl}
+      P(X=x,Y=y) & , (x,y)\in(\Omega_X,\Omega_Y)\\
+      0 & ,  (x,y)\in\mathbb{R}^2\setminus(\Omega_X,\Omega_Y)
+    \end{array}
+  \right.
+$$
+
+## Joint density function $f_{X,Y}$
+
+$f_{X,Y}$ satisfies the following properties:
+
+1. $f_{X,Y}(x,y)\geq 0\forall(x,y)\in\mathbb{R}^2$ 
+2. $\sum_{x_i\in\Omega_X}\sum_{y_j\in\Omega_Y}P\left(X=x_i,Y=y_j\right)=1$ $\forall i,j=1,2,...$
+
+. . .
+
+> A possible notation for $P(X=x_i,Y=y_j)$ is $p_{i,j}$
+
+## Joint density function $f_{X,Y}$
+
+| | $y_1$ | $y_2$ | $\dots$ | $y_j$ | $\dots$ | | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $x_1$ | $p_{11}$ | $p_{12}$ | $\dots$ | $p_{1j}$ | $\dots$ |  $\sum_{j=1}^\infty p_{1j}$ |
+| $x_2$ | $p_{21}$ | $p_{22}$ | $\dots$ | $p_{2j}$ | $\dots$ | $\sum_{j=1}^\infty p_{2j}$ |
+| $\vdots$ |  $\vdots$ | $\vdots$ | $\ddots$ |  $\vdots$ | $\ddots$ | $\vdots$|
+| $x_i$ | $p_{i1}$ | $p_{i2}$ | $\dots$ | $p_{ij}$ | $\dots$ | $\sum_{j=1}^\infty p_{ij}$ |
+| $\vdots$ | $\vdots$ | $\vdots$ | $\ddots$ | $\vdots$ | $\ddots$ | $\vdots$ |
+| | $\sum_{i=1}^\infty p_{i1}$ | $\sum_{i=1}^\infty p_{i2}$ | $\dots$|  $\sum_{i=1}^\infty p_{ij}$ | $\dots$| 1 |
+
+## Marginal probability function
+
+Given a random pair $(X,Y)$, the **marginal probability function** of $X$ and $Y$ is respectively:
+
+* $f_X(x_i) = P(X=x_i)=\sum_{j=1}^\infty P(X=x_i, Y=y_j) = \sum_{j=1}^\infty p_{ij}$
+* $f_Y(y_j) = P(Y=x_j)=\sum_{i=1}^\infty P(X=x_i, Y=y_j) = \sum_{i=1}^\infty p_{ij}$
+
+For $i=1,2,...$ and $j=1,2,...$. Note that these functions have one dimension only.
+
 ## Bibliography
 
 <ul>

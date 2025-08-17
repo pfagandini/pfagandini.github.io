@@ -1679,6 +1679,150 @@ F(x)=P(X\leq x)=\left\{
 <li class="fragment"><span class="math inline">\(\sigma=\sqrt{V[X]}=\sqrt{0.0375}=0.1936\)</span></li>
 <li class="fragment"><span class="math inline">\(CV=\frac{\sigma}{\mu}\times 100 = \frac{0.1936}{0.75}\times 100=25.81\% &lt; 50\%\)</span></li>
 </ol>
+</section></section>
+<section>
+<section id="random-pairs" class="title-slide slide level1 center">
+<h1>Random Pairs</h1>
+
+</section>
+<section id="random-pair" class="slide level2">
+<h2>Random pair</h2>
+<p>When running an experiment, it could be interesting to study the relationship between <em>two numeric features associated to each of the outcomes.</em></p>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Random pair</strong></p>
+</div>
+<div class="callout-content">
+<p>A random pair <span class="math inline">\((X,Y)\)</span> is a functio <span class="math inline">\(f_{X,Y}:\Omega\rightarrow \left(\Omega_X,\Omega_Y\right)\subset\mathbb{R}^2\)</span>. <span class="math inline">\(\left(\Omega_X, \Omega_Y\right)\)</span> is known as the support of the random pair <span class="math inline">\((X,Y)\)</span>.</p>
+<p><span class="math display">\[\omega\in\Omega \overset{(X,Y)}{\rightarrow}\left(X(\omega),Y(\omega)\right)\in(\Omega_X,\Omega_Y)\subset\mathbb{R}^2\]</span></p>
+<p><span class="math inline">\(X(\omega)\)</span> is the image, under <span class="math inline">\(X\)</span> of outcome <span class="math inline">\(\omega\)</span>, and <span class="math inline">\(Y(\omega)\)</span> the image under <span class="math inline">\(Y\)</span> of the same outcome.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="discrete-random-pair" class="slide level2">
+<h2>Discrete random pair</h2>
+<p>A random pair <span class="math inline">\((X,Y)\)</span> is discrete when:</p>
+<ul>
+<li class="fragment">The support <span class="math inline">\((X,Y)\)</span>, <span class="math inline">\((\Omega_X,\Omega_Y)\)</span>, is a finite or countable infinite of pairs.</li>
+<li class="fragment"><span class="math inline">\(P\left(\Omega_X,\Omega_y\right)=1\)</span></li>
+</ul>
+</section>
+<section id="joint-density-function-f_xy" class="slide level2">
+<h2>Joint density function <span class="math inline">\(f_{X,Y}\)</span></h2>
+<p>Let <span class="math inline">\((X,Y)\)</span> a discrete random pair, the joint density function <span class="math inline">\(f_{X,Y}(x,y)\)</span> is a function <span class="math inline">\(f_{X,Y}:\mathbb{R}^2\rightarrow\mathbb{R}\)</span> defined as:</p>
+<p><span class="math display">\[
+f_{X,Y}(x,y)=\left\{
+    \begin{array}{cl}
+      P(X=x,Y=y) &amp; , (x,y)\in(\Omega_X,\Omega_Y)\\
+      0 &amp; ,  (x,y)\in\mathbb{R}^2\setminus(\Omega_X,\Omega_Y)
+    \end{array}
+  \right.
+\]</span></p>
+</section>
+<section id="joint-density-function-f_xy-1" class="slide level2">
+<h2>Joint density function <span class="math inline">\(f_{X,Y}\)</span></h2>
+<p><span class="math inline">\(f_{X,Y}\)</span> satisfies the following properties:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(f_{X,Y}(x,y)\geq 0\forall(x,y)\in\mathbb{R}^2\)</span></li>
+<li class="fragment"><span class="math inline">\(\sum_{x_i\in\Omega_X}\sum_{y_j\in\Omega_Y}P\left(X=x_i,Y=y_j\right)=1\)</span> <span class="math inline">\(\forall i,j=1,2,...\)</span></li>
+</ol>
+<div class="fragment">
+<blockquote>
+<p>A possible notation for <span class="math inline">\(P(X=x_i,Y=y_j)\)</span> is <span class="math inline">\(p_{i,j}\)</span></p>
+</blockquote>
+</div>
+</section>
+<section id="joint-density-function-f_xy-2" class="slide level2">
+<h2>Joint density function <span class="math inline">\(f_{X,Y}\)</span></h2>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(y_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\dots\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\dots\)</span></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{1j}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j=1}^\infty p_{1j}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{21}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{22}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{2j}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j=1}^\infty p_{2j}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\ddots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\ddots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(x_i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{i1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{i2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p_{ij}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j=1}^\infty p_{ij}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\ddots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\ddots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{i=1}^\infty p_{i1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{i=1}^\infty p_{i2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{i=1}^\infty p_{ij}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dots\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="marginal-probability-function" class="slide level2">
+<h2>Marginal probability function</h2>
+<p>Given a random pair <span class="math inline">\((X,Y)\)</span>, the <strong>marginal probability function</strong> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is respectively:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(f_X(x_i) = P(X=x_i)=\sum_{j=1}^\infty P(X=x_i, Y=y_j) = \sum_{j=1}^\infty p_{ij}\)</span></li>
+<li class="fragment"><span class="math inline">\(f_Y(y_j) = P(Y=x_j)=\sum_{i=1}^\infty P(X=x_i, Y=y_j) = \sum_{i=1}^\infty p_{ij}\)</span></li>
+</ul>
+<p>For <span class="math inline">\(i=1,2,...\)</span> and <span class="math inline">\(j=1,2,...\)</span>. Note that these functions have one dimension only.</p>
 </section>
 <section id="bibliography" class="slide level2">
 <h2>Bibliography</h2>
