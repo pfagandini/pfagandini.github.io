@@ -624,8 +624,8 @@ $f_{X,Y}$ satisfies the following properties:
 
 Given a random pair $(X,Y)$, the **marginal probability function** of $X$ and $Y$ is respectively:
 
-* $f_X(x_i) = P(X=x_i)=\sum_{j=1}^\infty P(X=x_i, Y=y_j) = \sum_{j=1}^\infty p_{ij}$
-* $f_Y(y_j) = P(Y=x_j)=\sum_{i=1}^\infty P(X=x_i, Y=y_j) = \sum_{i=1}^\infty p_{ij}$
+* $f_X(x_i) = P(X=x_i)=$ $$\sum_{j=1}^\infty P(X=x_i, Y=y_j) = \sum_{j=1}^\infty p_{ij}$$
+* $f_Y(y_j) = P(Y=x_j)=$ $$\sum_{i=1}^\infty P(X=x_i, Y=y_j) = \sum_{i=1}^\infty p_{ij}$$
 
 For $i=1,2,...$ and $j=1,2,...$. Note that these functions have one dimension only.
 
