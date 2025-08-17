@@ -629,6 +629,10 @@ Given a random pair $(X,Y)$, the **marginal probability function** of $X$ and $Y
 
 For $i=1,2,...$ and $j=1,2,...$. Note that these functions have one dimension only.
 
+## Example
+
+Superstore, a small convenience store, everyday 3 workers give their best.
+
 ## Bibliography
 
 <ul>
