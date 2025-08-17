@@ -147,6 +147,8 @@ There is a function $f_X:\mathbb{R}\rightarrow\mathbb{R}$, the *pdf* of $X$ such
 * $f_X(x)=0$, $\forall x\in\mathbb{R}$
 * $\int_{-\infty}^{\infty}f_X(x)dx=1$
 
+> Technically, from Measure Theory, we need an *absolutely continuous* r.v. to ensure the existence of a *pdf*. These issues are beyond the scope of this course. Just know that when we say *continuous* r.v. we mean *absolutely continuous* r.v.
+
 ## Probability density function (*pdf*)
 
 Note that this *pdf* allows to compute the probability of events $x\in(a,b]$:
@@ -305,3 +307,272 @@ $F_X$ for $X$ r.v. continuous
 - It is continuous in $\mathbb{R}$
 - $P(X<x)=P(X\leq x)=F(x)$
 - $P(a\square X\square b)=F(b)-F(a)$, [replace $\square$ for $<$ or $\leq$]
+
+## *pdf* and *cdf*
+
+For a discrete r.v.
+
+$$P(X=x)=F_X(x)-F_X(x^-)$$
+$$+\downarrow \uparrow -$$
+$$F_X(x)=\sum_{x_i\leq x}P(X=x_i)$$
+
+## *pdf* and *cdf*
+
+For a continuous r.v.
+
+$$
+f_X(x)=\left\{
+  \begin{array}{cc}
+    F_X'(x) & ,x\in\mathbb{R} \text{ if }F_X'\text{ exists} \\
+    0 & \text{, otherwise}
+  \end{array}
+  \right.
+$$
+
+$$ Derivative \downarrow \uparrow Primitive$$
+
+$$ F_X(x)=\int_{-\infty}^x f_X(t)dt$$
+
+> The *pdf* of $X$, a continuous r.v. is not unique.
+
+# Statistical Moments of a Population
+
+## Describing a population
+
+We could describe the range of $X$, a r.v., as a population, in the statistical sense, because it describes all the possible values it can take.
+
+We can use numerical values to do so, which can represent dispersion or centrality of the data.
+
+## Expected Value or mean
+
+The expected value or mean, is a location parameter for our r.v.
+
+::: {.callout}
+
+## Definition
+
+The **expected value** or **mean** of a random variable $X$ is:
+
+* $\mu_X=E[X]=\sum_{x\in\Omega_X}x P(X=x) < \infty$ if $X$ is discrete
+* $\mu_X=E[X]=\int_{-\infty}^{\infty}xf_X(x)dx<\infty$ if $X$ is continuous.
+
+:::
+
+. . .
+
+> Not all random variables have an expected value, it might be infinite.
+
+## Expected Value or mean
+
+Let $X,Y$ rvs, and $a,b\in\mathbb{R}$ scalars. Some properties of the mean
+
+1. $E[a]=a$
+2. $E[aX+bY]=aE[X]+bE[Y]$
+3. If $Y=g(X)$, a r.v.:
+    * Discrete, then $$E[Y]=\sum_{x\in\Omega_X}g(x)P(X=x)<\infty$$
+    * Continuous, then $$E[Y]=\int_{-\infty}^{\infty}g(x)f_X(x)dx<\infty$$
+
+## Example discrete
+
+Let $X$ be a discrete r.v. as in the previous example:
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|$f(x)$ | $0.05$ | $0.3$ | $0.35$| $0.25$| $0.05$|
+
+Let $g(X)=2(X-2)^2+3(X-1)-5$, find $E[g(X)]$.
+
+## Example discrete
+
+$$g(X)=2(X-2)^2+3(X-1)-5$$
+$$=2(X^2-2X+1)+3X-3-5$$
+$$=2X^2-4X+2+3X-8$$
+$$=2X^2-X-6$$
+
+$$E[Y]=E[2X^2-X-6]$$
+
+$$=2E[X^2]-E[X]-6$$
+
+## Example discrete
+
+We only need to find $E[X]$ and $E[X^2]$ to obtain $E[g(X)]$.
+
+$$E[X]=\sum xP(X=x)$$
+$$ = 0\times .05 + 1 \times .3 + 2 \times .35 + 3 \times .25 + 4\times .05 = 1.95$$
+
+$$E[X^2]=\sum x^2 P(X=x)$$
+
+$$ = 0\times .05 + 1 \times .3 + 4 \times .35 + 9 \times .25 + 16\times .05 = 4.75$$
+
+$$E[g(X)]=2\times 4.75 - 1.95 - 6 = 1.55$$
+
+## Example continuous
+
+Recall our example for continuous r.v.s. $X$:
+$$
+f_X(x)=\left\{
+  \begin{array}{cc}
+    3x^2 & ,0\leq x < 1 \\
+    0 & , \mathbb{R}\setminus[0,1)
+  \end{array}
+\right.
+$$
+
+Find $E[g(X)]$ when $g(X)=2(X-1)^2+3(X-1)-5$ We know already $g(X)=2X^2-X-6$. Let's focus on $E[x]$ and $E[X^2]$.
+
+## Example continuous
+
+$$E[X]=\int_{-\infty}^{\infty} xf_X(x)dx = \int_0^1 x\times 3x^2 dx$$
+$$= \int_0^1 3x^3dx=\left[3\frac{x^4}{4}\right]_{0}^1=\frac{3}{4}=0.75$$
+
+$$E[X^2]=\int_{-\infty}^{\infty} x^2f_X(x)dx = \int_0^1 x^2\times 3x^2 dx$$
+$$= \int_0^1 3x^4dx=\left[3\frac{x^5}{5}\right]_{0}^1=\frac{3}{5}=0.6$$
+
+## Example continuous
+
+Finally,
+
+$E[g(x)]=2\times 0.6 - 0.75 - 6 = -5.55$
+
+## p-quantile
+
+The p-quantile, $x_p$, of a r.v. $X$ is a location parameter, with fixed value.
+
+## p-quantile for discrete r.v.
+
+$x_p$ is the value for $x\in\Omega_X$ such that:
+
+1. $P(X\leq x)\geq p$
+2. $P(X\geq x)\geq 1-p$
+
+. . .
+
+O what is the same, $x\in\Omega_X$ such that $F_X(x^-)\leq p \leq F_X(x)$
+
+## p-quantile for continuous r.v.
+
+$x_p$ is an $x\in\Omega_X$ such that $F_X(x)=p$
+
+Let's apply this for the examples we just used for the expected value.
+
+## Example - Discrete
+
+Find the median (0.5-quantile) for $X$
+
+$$
+F(x)=P(X\leq x)=\left\{
+  \begin{array}{cc}
+    0 &, x\leq 0\\
+    0.05 &, 0\leq x <1 \\
+    0.35 &, 1\leq x < 2 \\
+    0.7 &, 2 \leq x < 3 \\
+    0.95 &, 3 \leq x < 4 \\
+    1 &, x\geq 4
+  \end{array}
+\right.
+$$
+
+For example $F(2^-)=0.35\leq 0.5 \leq 0.7=F(2)$ and therefore $X_{0.5}=Me = 2$. Given that $E[X]=1.95<Me(X)=2$ the distribution is slightly negatively (or left) skewed.
+
+## Example - Continuous
+
+$$F_X(x)=P(X\leq x)=\left\{
+  \begin{array}{cc}
+    0 & x < 0 \\
+    x^3 & 0\leq x <1 \\
+    1 & x\geq 1
+  \end{array}
+\right.
+$$
+
+Let's find $x$ such that $F(x)=0.5$
+
+$F(x)=0.5\Leftrightarrow x^3=0.5\Leftrightarrow x=\sqrt[3]{0.5}\approx`r round(0.5^(1/3),4)`$
+
+And therefore, $x_{0.5}=Me=.7937$
+
+## Variance
+
+Let $X$ be a r.v. The **variance** of $X$, if it exists, is defined as:
+
+$$V[X]=E\left[\left(X-E[X]\right)^2\right]$$
+
+It can be show, very easily, with some algebraic manipulation that $V[x]=E\left[X^2\right]-\left(E[X]\right)^2$
+
+## Variance
+
+Remember that $E[X]\equiv\mu_X$
+
+1. For a discrete r.v.: $$V[X]=\sum_{x\in\Omega_X}(x-\mu_X)^2P(X=x)$$
+2. For a continuous r.v.: $$V[X]=\int_{-\infty}^{\infty}(x-\mu_X)^2f_X(x)dx$$
+
+. . .
+
+Usually we write $V[X]$ as $\sigma^2_X$.
+
+## Variance
+
+Some properties for the variance:
+
+1. $V[a]=0$ for $a\in\mathbb{R}$
+2. $V[aX+b] = a^2V[X]$ for $a,b\in \mathbb{R}$ and $X$ a r.v.
+3. If $X$ and $Y$ are independent r.v. with finite variance, then $$V[X\pm Y]=V[X]+V[Y]$$
+
+## Standard deviation $\sigma_X$
+
+If $\sigma^2_X$ is the variance of $X$, then the standard deviation is known as: $$\sigma_X=\sqrt{V[x]}$$
+
+One characteristic of the standard deviation is that its units are the same as those of the random variable.
+
+## Coefficient of variation
+
+While the variance and standard deviation allow us to measure the dispersion of the data, we might want to have it relative to the mean (a $\sigma_X=1$ can be a lot for $X$ taking relatively low values, but negligible if we are talking in millions!)
+
+For that we use the coefficient of variation:
+
+$$C.V._X =\frac{\sigma_X}{\mu_X}\times 100$$
+
+## Coefficient of variation
+
+Some properties of the $CV_X$
+
+1. It is not defined for $\mu_X=0$
+2. Lower values for $CV_X$ means less dispersion around $\mu_X$, therefore, more precision.
+3. $CV_X$ could be a measure for risk, if we are looking at returns for some asset.
+4. $CV_X$ is the relative weight of deviations from the mean, over the mean itself.
+
+## Example
+
+Let's compute $\sigma^2$, $\sigma$, and $CV$ for our previous examples:
+
+1. $V[X]=E[X^2]-\mu_X^2=4.75-1.95^2=0.9475$
+2. $\sigma=\sqrt{V[X]}=\sqrt{0.9475}=0.97$
+3. $CV=\frac{\sigma}{\mu}\times 100 = \frac{0.97}{1.95}\times 100 = 49.7\%$
+
+. . .
+
+Values below $50\%$ for $CV$ allow us to see $\mu$ as representative for the data. The lower, the closer the data to $\mu$ and therefore the more representative it is.
+
+## Example
+
+For the continuous r.v. case:
+
+1. $V[X]=E[X^2]-\mu_X^2=0.6-0.75^2=0.0375$
+2. $\sigma=\sqrt{V[X]}=\sqrt{0.0375}=0.1936$
+3. $CV=\frac{\sigma}{\mu}\times 100 = \frac{0.1936}{0.75}\times 100=25.81\% < 50\%$
+
+## Bibliography
+
+<ul>
+  <li>Figueiredo, F., Figueiredo, A., Ramos, A. \& Teles, R. (2009). Estatística Descritiva e Probabilidades (2<sup>a</sup> Edição). Escolar Editora.
+  </li>
+  <li>
+    Murteira, B., Ribeiro, C.R., Silva, J.R. \& Pimenta, C. (2007). Introdução à Estatística (2<sup>a</sup> Edição). McGraw-Hill.
+  </li>
+  <li>
+    Pestana, D. \& Velosa, S.F. (2008). Introdução à Probabilidade e à Estatística (3<sup>a</sup> Edição). Fundação Calouste Gulbenkian.
+  </li>
+  <li>
+    Paulino, C.D. \& Branco, J.A. (2005). Exercícios de Probabilidade e Estatística. Escolar Editora.
+  </li>
+</ul>

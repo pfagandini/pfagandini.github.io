@@ -1287,6 +1287,9 @@ Paulo Fagandini
 <li class="fragment"><span class="math inline">\(f_X(x)=0\)</span>, <span class="math inline">\(\forall x\in\mathbb{R}\)</span></li>
 <li class="fragment"><span class="math inline">\(\int_{-\infty}^{\infty}f_X(x)dx=1\)</span></li>
 </ul>
+<blockquote>
+<p>Technically, from Measure Theory, we need an <em>absolutely continuous</em> r.v. to ensure the existence of a <em>pdf</em>. These issues are beyond the scope of this course. Just know that when we say <em>continuous</em> r.v. we mean <em>absolutely continuous</em> r.v.</p>
+</blockquote>
 </section>
 <section id="probability-density-function-pdf-3" class="slide level2">
 <h2>Probability density function (<em>pdf</em>)</h2>
@@ -1425,6 +1428,273 @@ f(x)=\left\{\begin{array}{cc}
 <li class="fragment">It is continuous in <span class="math inline">\(\mathbb{R}\)</span></li>
 <li class="fragment"><span class="math inline">\(P(X&lt;x)=P(X\leq x)=F(x)\)</span></li>
 <li class="fragment"><span class="math inline">\(P(a\square X\square b)=F(b)-F(a)\)</span>, [replace <span class="math inline">\(\square\)</span> for <span class="math inline">\(&lt;\)</span> or <span class="math inline">\(\leq\)</span>]</li>
+</ul>
+</section>
+<section id="pdf-and-cdf" class="slide level2">
+<h2><em>pdf</em> and <em>cdf</em></h2>
+<p>For a discrete r.v.</p>
+<p><span class="math display">\[P(X=x)=F_X(x)-F_X(x^-)\]</span> <span class="math display">\[+\downarrow \uparrow -\]</span> <span class="math display">\[F_X(x)=\sum_{x_i\leq x}P(X=x_i)\]</span></p>
+</section>
+<section id="pdf-and-cdf-1" class="slide level2">
+<h2><em>pdf</em> and <em>cdf</em></h2>
+<p>For a continuous r.v.</p>
+<p><span class="math display">\[
+f_X(x)=\left\{
+  \begin{array}{cc}
+    F_X&#39;(x) &amp; ,x\in\mathbb{R} \text{ if }F_X&#39;\text{ exists} \\
+    0 &amp; \text{, otherwise}
+  \end{array}
+  \right.
+\]</span></p>
+<p><span class="math display">\[ Derivative \downarrow \uparrow Primitive\]</span></p>
+<p><span class="math display">\[ F_X(x)=\int_{-\infty}^x f_X(t)dt\]</span></p>
+<blockquote>
+<p>The <em>pdf</em> of <span class="math inline">\(X\)</span>, a continuous r.v. is not unique.</p>
+</blockquote>
+</section></section>
+<section>
+<section id="statistical-moments-of-a-population" class="title-slide slide level1 center">
+<h1>Statistical Moments of a Population</h1>
+
+</section>
+<section id="describing-a-population" class="slide level2">
+<h2>Describing a population</h2>
+<p>We could describe the range of <span class="math inline">\(X\)</span>, a r.v., as a population, in the statistical sense, because it describes all the possible values it can take.</p>
+<p>We can use numerical values to do so, which can represent dispersion or centrality of the data.</p>
+</section>
+<section id="expected-value-or-mean" class="slide level2">
+<h2>Expected Value or mean</h2>
+<p>The expected value or mean, is a location parameter for our r.v.</p>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>expected value</strong> or <strong>mean</strong> of a random variable <span class="math inline">\(X\)</span> is:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\mu_X=E[X]=\sum_{x\in\Omega_X}x P(X=x) &lt; \infty\)</span> if <span class="math inline">\(X\)</span> is discrete</li>
+<li class="fragment"><span class="math inline">\(\mu_X=E[X]=\int_{-\infty}^{\infty}xf_X(x)dx&lt;\infty\)</span> if <span class="math inline">\(X\)</span> is continuous.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Not all random variables have an expected value, it might be infinite.</p>
+</blockquote>
+</div>
+</section>
+<section id="expected-value-or-mean-1" class="slide level2">
+<h2>Expected Value or mean</h2>
+<p>Let <span class="math inline">\(X,Y\)</span> rvs, and <span class="math inline">\(a,b\in\mathbb{R}\)</span> scalars. Some properties of the mean</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(E[a]=a\)</span></li>
+<li class="fragment"><span class="math inline">\(E[aX+bY]=aE[X]+bE[Y]\)</span></li>
+<li class="fragment">If <span class="math inline">\(Y=g(X)\)</span>, a r.v.:
+<ul>
+<li class="fragment">Discrete, then <span class="math display">\[E[Y]=\sum_{x\in\Omega_X}g(x)P(X=x)&lt;\infty\]</span></li>
+<li class="fragment">Continuous, then <span class="math display">\[E[Y]=\int_{-\infty}^{\infty}g(x)f_X(x)dx&lt;\infty\]</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="example-discrete" class="slide level2">
+<h2>Example discrete</h2>
+<p>Let <span class="math inline">\(X\)</span> be a discrete r.v. as in the previous example:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.05\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.35\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.25\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.05\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Let <span class="math inline">\(g(X)=2(X-2)^2+3(X-1)-5\)</span>, find <span class="math inline">\(E[g(X)]\)</span>.</p>
+</section>
+<section id="example-discrete-1" class="slide level2">
+<h2>Example discrete</h2>
+<p><span class="math display">\[g(X)=2(X-2)^2+3(X-1)-5\]</span> <span class="math display">\[=2(X^2-2X+1)+3X-3-5\]</span> <span class="math display">\[=2X^2-4X+2+3X-8\]</span> <span class="math display">\[=2X^2-X-6\]</span></p>
+<p><span class="math display">\[E[Y]=E[2X^2-X-6]\]</span></p>
+<p><span class="math display">\[=2E[X^2]-E[X]-6\]</span></p>
+</section>
+<section id="example-discrete-2" class="slide level2">
+<h2>Example discrete</h2>
+<p>We only need to find <span class="math inline">\(E[X]\)</span> and <span class="math inline">\(E[X^2]\)</span> to obtain <span class="math inline">\(E[g(X)]\)</span>.</p>
+<p><span class="math display">\[E[X]=\sum xP(X=x)\]</span> <span class="math display">\[ = 0\times .05 + 1 \times .3 + 2 \times .35 + 3 \times .25 + 4\times .05 = 1.95\]</span></p>
+<p><span class="math display">\[E[X^2]=\sum x^2 P(X=x)\]</span></p>
+<p><span class="math display">\[ = 0\times .05 + 1 \times .3 + 4 \times .35 + 9 \times .25 + 16\times .05 = 4.75\]</span></p>
+<p><span class="math display">\[E[g(X)]=2\times 4.75 - 1.95 - 6 = 1.55\]</span></p>
+</section>
+<section id="example-continuous" class="slide level2">
+<h2>Example continuous</h2>
+<p>Recall our example for continuous r.v.s. <span class="math inline">\(X\)</span>: <span class="math display">\[
+f_X(x)=\left\{
+  \begin{array}{cc}
+    3x^2 &amp; ,0\leq x &lt; 1 \\
+    0 &amp; , \mathbb{R}\setminus[0,1)
+  \end{array}
+\right.
+\]</span></p>
+<p>Find <span class="math inline">\(E[g(X)]\)</span> when <span class="math inline">\(g(X)=2(X-1)^2+3(X-1)-5\)</span> We know already <span class="math inline">\(g(X)=2X^2-X-6\)</span>. Let’s focus on <span class="math inline">\(E[x]\)</span> and <span class="math inline">\(E[X^2]\)</span>.</p>
+</section>
+<section id="example-continuous-1" class="slide level2">
+<h2>Example continuous</h2>
+<p><span class="math display">\[E[X]=\int_{-\infty}^{\infty} xf_X(x)dx = \int_0^1 x\times 3x^2 dx\]</span> <span class="math display">\[= \int_0^1 3x^3dx=\left[3\frac{x^4}{4}\right]_{0}^1=\frac{3}{4}=0.75\]</span></p>
+<p><span class="math display">\[E[X^2]=\int_{-\infty}^{\infty} x^2f_X(x)dx = \int_0^1 x^2\times 3x^2 dx\]</span> <span class="math display">\[= \int_0^1 3x^4dx=\left[3\frac{x^5}{5}\right]_{0}^1=\frac{3}{5}=0.6\]</span></p>
+</section>
+<section id="example-continuous-2" class="slide level2">
+<h2>Example continuous</h2>
+<p>Finally,</p>
+<p><span class="math inline">\(E[g(x)]=2\times 0.6 - 0.75 - 6 = -5.55\)</span></p>
+</section>
+<section id="p-quantile" class="slide level2">
+<h2>p-quantile</h2>
+<p>The p-quantile, <span class="math inline">\(x_p\)</span>, of a r.v. <span class="math inline">\(X\)</span> is a location parameter, with fixed value.</p>
+</section>
+<section id="p-quantile-for-discrete-r.v." class="slide level2">
+<h2>p-quantile for discrete r.v.</h2>
+<p><span class="math inline">\(x_p\)</span> is the value for <span class="math inline">\(x\in\Omega_X\)</span> such that:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(P(X\leq x)\geq p\)</span></li>
+<li class="fragment"><span class="math inline">\(P(X\geq x)\geq 1-p\)</span></li>
+</ol>
+<div class="fragment">
+<p>O what is the same, <span class="math inline">\(x\in\Omega_X\)</span> such that <span class="math inline">\(F_X(x^-)\leq p \leq F_X(x)\)</span></p>
+</div>
+</section>
+<section id="p-quantile-for-continuous-r.v." class="slide level2">
+<h2>p-quantile for continuous r.v.</h2>
+<p><span class="math inline">\(x_p\)</span> is an <span class="math inline">\(x\in\Omega_X\)</span> such that <span class="math inline">\(F_X(x)=p\)</span></p>
+<p>Let’s apply this for the examples we just used for the expected value.</p>
+</section>
+<section id="example---discrete" class="slide level2">
+<h2>Example - Discrete</h2>
+<p>Find the median (0.5-quantile) for <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[
+F(x)=P(X\leq x)=\left\{
+  \begin{array}{cc}
+    0 &amp;, x\leq 0\\
+    0.05 &amp;, 0\leq x &lt;1 \\
+    0.35 &amp;, 1\leq x &lt; 2 \\
+    0.7 &amp;, 2 \leq x &lt; 3 \\
+    0.95 &amp;, 3 \leq x &lt; 4 \\
+    1 &amp;, x\geq 4
+  \end{array}
+\right.
+\]</span></p>
+<p>For example <span class="math inline">\(F(2^-)=0.35\leq 0.5 \leq 0.7=F(2)\)</span> and therefore <span class="math inline">\(X_{0.5}=Me = 2\)</span>. Given that <span class="math inline">\(E[X]=1.95&lt;Me(X)=2\)</span> the distribution is slightly negatively (or left) skewed.</p>
+</section>
+<section id="example---continuous" class="slide level2">
+<h2>Example - Continuous</h2>
+<p><span class="math display">\[F_X(x)=P(X\leq x)=\left\{
+  \begin{array}{cc}
+    0 &amp; x &lt; 0 \\
+    x^3 &amp; 0\leq x &lt;1 \\
+    1 &amp; x\geq 1
+  \end{array}
+\right.
+\]</span></p>
+<p>Let’s find <span class="math inline">\(x\)</span> such that <span class="math inline">\(F(x)=0.5\)</span></p>
+<p><span class="math inline">\(F(x)=0.5\Leftrightarrow x^3=0.5\Leftrightarrow x=\sqrt[3]{0.5}\approx0.7937\)</span></p>
+<p>And therefore, <span class="math inline">\(x_{0.5}=Me=.7937\)</span></p>
+</section>
+<section id="variance" class="slide level2">
+<h2>Variance</h2>
+<p>Let <span class="math inline">\(X\)</span> be a r.v. The <strong>variance</strong> of <span class="math inline">\(X\)</span>, if it exists, is defined as:</p>
+<p><span class="math display">\[V[X]=E\left[\left(X-E[X]\right)^2\right]\]</span></p>
+<p>It can be show, very easily, with some algebraic manipulation that <span class="math inline">\(V[x]=E\left[X^2\right]-\left(E[X]\right)^2\)</span></p>
+</section>
+<section id="variance-1" class="slide level2">
+<h2>Variance</h2>
+<p>Remember that <span class="math inline">\(E[X]\equiv\mu_X\)</span></p>
+<ol type="1">
+<li class="fragment">For a discrete r.v.: <span class="math display">\[V[X]=\sum_{x\in\Omega_X}(x-\mu_X)^2P(X=x)\]</span></li>
+<li class="fragment">For a continuous r.v.: <span class="math display">\[V[X]=\int_{-\infty}^{\infty}(x-\mu_X)^2f_X(x)dx\]</span></li>
+</ol>
+<div class="fragment">
+<p>Usually we write <span class="math inline">\(V[X]\)</span> as <span class="math inline">\(\sigma^2_X\)</span>.</p>
+</div>
+</section>
+<section id="variance-2" class="slide level2">
+<h2>Variance</h2>
+<p>Some properties for the variance:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(V[a]=0\)</span> for <span class="math inline">\(a\in\mathbb{R}\)</span></li>
+<li class="fragment"><span class="math inline">\(V[aX+b] = a^2V[X]\)</span> for <span class="math inline">\(a,b\in \mathbb{R}\)</span> and <span class="math inline">\(X\)</span> a r.v.</li>
+<li class="fragment">If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent r.v. with finite variance, then <span class="math display">\[V[X\pm Y]=V[X]+V[Y]\]</span></li>
+</ol>
+</section>
+<section id="standard-deviation-sigma_x" class="slide level2">
+<h2>Standard deviation <span class="math inline">\(\sigma_X\)</span></h2>
+<p>If <span class="math inline">\(\sigma^2_X\)</span> is the variance of <span class="math inline">\(X\)</span>, then the standard deviation is known as: <span class="math display">\[\sigma_X=\sqrt{V[x]}\]</span></p>
+<p>One characteristic of the standard deviation is that its units are the same as those of the random variable.</p>
+</section>
+<section id="coefficient-of-variation" class="slide level2">
+<h2>Coefficient of variation</h2>
+<p>While the variance and standard deviation allow us to measure the dispersion of the data, we might want to have it relative to the mean (a <span class="math inline">\(\sigma_X=1\)</span> can be a lot for <span class="math inline">\(X\)</span> taking relatively low values, but negligible if we are talking in millions!)</p>
+<p>For that we use the coefficient of variation:</p>
+<p><span class="math display">\[C.V._X =\frac{\sigma_X}{\mu_X}\times 100\]</span></p>
+</section>
+<section id="coefficient-of-variation-1" class="slide level2">
+<h2>Coefficient of variation</h2>
+<p>Some properties of the <span class="math inline">\(CV_X\)</span></p>
+<ol type="1">
+<li class="fragment">It is not defined for <span class="math inline">\(\mu_X=0\)</span></li>
+<li class="fragment">Lower values for <span class="math inline">\(CV_X\)</span> means less dispersion around <span class="math inline">\(\mu_X\)</span>, therefore, more precision.</li>
+<li class="fragment"><span class="math inline">\(CV_X\)</span> could be a measure for risk, if we are looking at returns for some asset.</li>
+<li class="fragment"><span class="math inline">\(CV_X\)</span> is the relative weight of deviations from the mean, over the mean itself.</li>
+</ol>
+</section>
+<section id="example-5" class="slide level2">
+<h2>Example</h2>
+<p>Let’s compute <span class="math inline">\(\sigma^2\)</span>, <span class="math inline">\(\sigma\)</span>, and <span class="math inline">\(CV\)</span> for our previous examples:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(V[X]=E[X^2]-\mu_X^2=4.75-1.95^2=0.9475\)</span></li>
+<li class="fragment"><span class="math inline">\(\sigma=\sqrt{V[X]}=\sqrt{0.9475}=0.97\)</span></li>
+<li class="fragment"><span class="math inline">\(CV=\frac{\sigma}{\mu}\times 100 = \frac{0.97}{1.95}\times 100 = 49.7\%\)</span></li>
+</ol>
+<div class="fragment">
+<p>Values below <span class="math inline">\(50\%\)</span> for <span class="math inline">\(CV\)</span> allow us to see <span class="math inline">\(\mu\)</span> as representative for the data. The lower, the closer the data to <span class="math inline">\(\mu\)</span> and therefore the more representative it is.</p>
+</div>
+</section>
+<section id="example-6" class="slide level2">
+<h2>Example</h2>
+<p>For the continuous r.v. case:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(V[X]=E[X^2]-\mu_X^2=0.6-0.75^2=0.0375\)</span></li>
+<li class="fragment"><span class="math inline">\(\sigma=\sqrt{V[X]}=\sqrt{0.0375}=0.1936\)</span></li>
+<li class="fragment"><span class="math inline">\(CV=\frac{\sigma}{\mu}\times 100 = \frac{0.1936}{0.75}\times 100=25.81\% &lt; 50\%\)</span></li>
+</ol>
+</section>
+<section id="bibliography" class="slide level2">
+<h2>Bibliography</h2>
+<ul>
+<li>
+Figueiredo, F., Figueiredo, A., Ramos, A. &amp; Teles, R. (2009). Estatística Descritiva e Probabilidades (2<sup>a</sup> Edição). Escolar Editora.
+</li>
+<li>
+Murteira, B., Ribeiro, C.R., Silva, J.R. &amp; Pimenta, C. (2007). Introdução à Estatística (2<sup>a</sup> Edição). McGraw-Hill.
+</li>
+<li>
+Pestana, D. &amp; Velosa, S.F. (2008). Introdução à Probabilidade e à Estatística (3<sup>a</sup> Edição). Fundação Calouste Gulbenkian.
+</li>
+<li>
+Paulino, C.D. &amp; Branco, J.A. (2005). Exercícios de Probabilidade e Estatística. Escolar Editora.
+</li>
 </ul>
 
 
