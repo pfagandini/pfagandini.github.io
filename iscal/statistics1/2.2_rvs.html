@@ -1826,7 +1826,289 @@ f_{X,Y}(x,y)=\left\{
 </section>
 <section id="example-7" class="slide level2">
 <h2>Example</h2>
-<p>Superstore, a small convenience store, everyday 3 workers give their best.</p>
+<p>At SuperStore <span class="emoji" data-emoji="convenience_store">🏪</span>, three trained employees are qualified to operate the checkout counters, restock products on the shelves, and perform some administrative tasks. SuperStore has three checkout counters, and at least one of them must always be operating.</p>
+<p>At any given day and moment when SuperStore is open to customers, consider the following random variables:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(X\)</span> N of employees in the checkout counters <span class="emoji" data-emoji="shopping_cart">🛒</span> <span class="emoji" data-emoji="credit_card">💳</span> .</li>
+<li class="fragment"><span class="math inline">\(Y\)</span> N of employees restocking products on the shelves <span class="emoji" data-emoji="package">📦</span>.</li>
+</ul>
+</section>
+<section id="example-8" class="slide level2">
+<h2>Example</h2>
+<p>The r.v. <span class="math inline">\(X\)</span> has <span class="math inline">\(\Omega_X=\{1,2,3\}\)</span> and the following <em>pdf</em>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f_X(x)\)</span></td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">0.03</td>
+</tr>
+</tbody>
+</table>
+<p>Consider the following table for the joint probability of <span class="math inline">\((X,Y)\)</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(X\setminus Y\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-9" class="slide level2">
+<h2>Example</h2>
+<ol type="1">
+<li class="fragment"><p>If <span class="math inline">\(P(X=1, Y=0)=0.02\)</span>, find <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span></p>
+<ul>
+<li class="fragment">Directly we get <span class="math inline">\(a=0.02\)</span> as it is <span class="math inline">\(P(X=1, Y=0)\)</span></li>
+<li class="fragment">Note that the top row is <span class="math inline">\(f_Y(y)\)</span> and the right column is <span class="math inline">\(f_X(x)\)</span></li>
+<li class="fragment">Fill directly <span class="math inline">\(f_X(x)\)</span> with <span class="math inline">\(0.17\)</span>, <span class="math inline">\(0.8\)</span>, and <span class="math inline">\(0.03\)</span>.</li>
+<li class="fragment">Fill <span class="math inline">\(f_Y(y)\)</span> with the summation of each column</li>
+</ul></li>
+</ol>
+</section>
+<section id="example-10" class="slide level2">
+<h2>Example</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(X\setminus Y\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;"><span class="math inline">\(\color{red}{f_X(x)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(\color{red}{0.02}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\color{red}{0.17}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="math inline">\(\color{red}{0.8}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="math inline">\(\color{red}{0.03}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\color{red}{f_Y(y)}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\color{red}{0.15}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\color{red}{2b+c}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\color{red}{b}\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li class="fragment">From first row: <span class="math inline">\(0.02 + 2b + b = 0.17\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(b=\frac{0.15}{3}=0.05\)</span></li>
+<li class="fragment">From second row: <span class="math inline">\(0.1 + c = 0.8\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(c=0.7\)</span></li>
+</ul>
+</section>
+<section id="example-11" class="slide level2">
+<h2>Example</h2>
+<ol start="2" type="1">
+<li class="fragment"><p><span class="math inline">\(P(X=2|Y\geq 1)\)</span> is approximately…?</p>
+<ul>
+<li class="fragment"><span class="math display">\[P(X=2|Y\geq 1)=\frac{P(X=2, Y\geq 1)}{P(Y\geq 1)}\]</span></li>
+<li class="fragment"><span class="math display">\[= \frac{P(X=2, Y=1) + P(X=2, Y=2)}{P(Y=1)+P(Y=2)}\]</span></li>
+<li class="fragment"><span class="math display">\[\frac{0.7+0}{0.8+0.05}=\frac{0.7}{0.85}\approx 0.8235\]</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="independence-of-random-variables-revisited" class="slide level2">
+<h2>Independence of random variables (revisited)</h2>
+<p>Let <span class="math inline">\((X,Y)\)</span> a discrete random pair, <span class="math inline">\(X,Y\)</span> are independent if, and only if: <span class="math display">\[P(X=x, Y=y)=P(X=x)P(Y=y)\quad \forall(x,y)\in\mathbb{R}^2\]</span></p>
+<blockquote>
+<p>The joint <em>cdf</em> is the same as the product of each marginal <em>pdf</em></p>
+</blockquote>
+</section>
+<section id="example-12" class="slide level2">
+<h2>Example</h2>
+<ol start="3" type="1">
+<li class="fragment"><p>… (continued exercise) Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
+<ul>
+<li class="fragment"><span class="math inline">\(P(X=2, Y=2)=0\)</span></li>
+<li class="fragment"><span class="math inline">\(P(X=2)P(Y=2)= 0.8 \times 0.05=0.04\)</span></li>
+<li class="fragment"><span class="math inline">\(0\neq 0.04\)</span></li>
+<li class="fragment"><span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent.</li>
+</ul></li>
+</ol>
+</section>
+<section id="moments-of-a-random-pair" class="slide level2">
+<h2>Moments of a random pair</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>Let the discrete random pair <span class="math inline">\((X,Y)\)</span> have a joint <span class="math inline">\(cdf\)</span> <span class="math inline">\(P(X=x,Y=y)\)</span> and a function <span class="math inline">\(g:\mathbb{R}^2\rightarrow\mathbb{R}\)</span>. The <strong>expected value or mean</strong> of <span class="math inline">\(g(X,Y)\)</span> is:</p>
+<p><span class="math display">\[E[g(X,Y)]=\sum_{i=1}^\infty\sum_{j=1}^\infty g(x_i,y_j)P(X=x_i,Y=y_j)\]</span></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>If <span class="math inline">\(g(x,y)=xy\)</span>, then <span class="math inline">\(E[g(x,y)]=E[XY]\)</span> and that equals <span class="math display">\[\sum_{i=1}^\infty\sum_{j=1}^\infty x_iy_jP(x=x_i,Y=y_j)\]</span></p>
+</blockquote>
+</section>
+<section id="moments-of-a-random-pair-1" class="slide level2">
+<h2>Moments of a random pair</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>Let the discrete random pair <span class="math inline">\((X,Y)\)</span> have a joint <span class="math inline">\(cdf\)</span> <span class="math inline">\(P(X=x,Y=y)\)</span>, and <span class="math inline">\(\mu_X=E[X]\)</span> and <span class="math inline">\(\mu_Y=E[Y]\)</span>. The <strong>covariance</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is:</p>
+<p><span class="math display">\[cov(X,Y)=E[(X-\mu_X)(Y-\mu_Y)]\]</span></p>
+<p>Given that <span class="math inline">\(E[(X-\mu_X)(Y-\mu_Y)]\)</span> exists.</p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>Note that this is equivalent to <span class="math inline">\(cov(X,y)=E[XY]-E[X]E[Y]\)</span></p>
+</blockquote>
+</section>
+<section id="properties-of-the-covariance" class="slide level2">
+<h2>Properties of the covariance</h2>
+<p>The covariance tries to capture how the two r.v. move together. If it is positive, it means that both tend to go in the same direction more often than not (both above or below their means at the same time). Being negative means that more often than not when one is above its mean, the other is below.</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(cov(X,Y)=cov(Y,X)\)</span></li>
+<li class="fragment"><span class="math inline">\(cov(X,X)=V[X]\)</span> and <span class="math inline">\(cov(Y,Y)=V[Y]\)</span> if <span class="math inline">\(V[X]\)</span> and <span class="math inline">\(V[Y]\)</span> exist.</li>
+<li class="fragment"><span class="math inline">\(cov(a+bX, c+dY)=bd cov(X,Y)\)</span> with <span class="math inline">\(a,b,c,e\in\mathbb{R}\)</span></li>
+</ol>
+</section>
+<section id="properties-of-the-covariance-1" class="slide level2">
+<h2>Properties of the covariance</h2>
+<p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent r.v. then <span class="math inline">\(cov(X,Y)=0\)</span>. Note that the opposite is not necessarily true, i.e. <span class="math inline">\(cov(X,Y)=0\)</span> does not imply that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<div class="fragment">
+<p>Another important identity with the covariance is the following:</p>
+<p><span class="math display">\[V[X\pm Y] =  V(X)+V[Y]\pm 2 cov(X,Y)\]</span></p>
+</div>
+</section>
+<section id="example-13" class="slide level2">
+<h2>Example</h2>
+<p>Knowing that <span class="math inline">\(E[Y]=0.9\)</span>, <span class="math inline">\(cov(X,Y)\)</span> is equal to? …</p>
+<ul>
+<li class="fragment"><p>From the first table: <span class="math inline">\(E[X]=0.17\times 1 + 0.8 \times 2 + 0.03 \times 3 = 1.86\)</span></p></li>
+<li class="fragment"><p><span class="math display">\[E[XY]=\sum_{x}\sum_{y}xyP(X=x,Y=y)=\]</span> <span class="math display">\[= 1 \times 0 \times 0.02 + 1\times 1 \times 0.1 + 1\times 2 \times 0.05 +\]</span> <span class="math display">\[+ 3\times 0 \times 0.1 + 2 \times 1 \times 0.7 + 2\times 2 \times 0 + \]</span> <span class="math display">\[+ 3 \times 0 \times 0.03 + 3 \times 1 \times 0 + 3 \times 2 \times 0 = 1.6\]</span></p></li>
+<li class="fragment"><p><span class="math inline">\(cov(X,Y)=E[XY]-E[X]E[Y]=1.6-1.86\times 0.9=-0.074\)</span></p></li>
+</ul>
+</section>
+<section id="correlation-coefficient" class="slide level2">
+<h2>Correlation coefficient</h2>
+<p>A caveat of the covariance is that its units depends directly on the units of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. The correlation coefficient allow us to express this relationship, between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> without being affected by the units in which these r.v. are measured.</p>
+<p><span class="math display">\[\rho_{XY} = \frac{cov(X,Y)}{\sqrt{V[X]V[Y]}}=\frac{cov(X,Y)}{\sigma_X\sigma_Y}\]</span></p>
+<p>Clearly <span class="math inline">\(\rho\in[-1,1]\)</span>. Note also that <span class="math inline">\(|\rho|=1\)</span> if and only if <span class="math inline">\(P(Y=a+bX)=1\)</span> with <span class="math inline">\(a,b\in\mathbb{R}\)</span>. If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent r.v. then <span class="math inline">\(\rho=0\)</span>.</p>
+</section>
+<section id="correlation-coefficient-1" class="slide level2">
+<h2>Correlation coefficient</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Correlation coefficient</th>
+<th style="text-align: center;">Correlation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(|\rho| = 1\)</span></td>
+<td style="text-align: center;">Perfect</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0.8 \geq |\rho| &lt; 1\)</span></td>
+<td style="text-align: center;">Strong</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0.5 \geq |\rho| &lt; 0.8\)</span></td>
+<td style="text-align: center;">Moderate</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0.1 \geq |\rho| &lt; 0.5\)</span></td>
+<td style="text-align: center;">Weak</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0 &lt; |\rho| &lt; 0.1\)</span></td>
+<td style="text-align: center;">Very weak</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\rho= 0\)</span></td>
+<td style="text-align: center;">None</td>
+</tr>
+</tbody>
+</table>
+<p>Write <em>positive</em> or <em>negative</em> in front of correlation if <span class="math inline">\(\rho&gt;0\)</span> or <span class="math inline">\(\rho&lt;0\)</span> respectively.</p>
+</section>
+<section id="example-14" class="slide level2">
+<h2>Example</h2>
+<ol start="5" type="1">
+<li class="fragment">Based on the previous question, find the correlation coefficient between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</li>
+</ol>
+<ul>
+<li class="fragment"><p>From the marginal probability function we obtain <span class="math inline">\(V[X]\)</span> and <span class="math inline">\(V[Y]\)</span>: <span class="math display">\[V[x]=0.1804\text{ and }V[Y]=0.19\]</span></p></li>
+<li class="fragment"><p>Therefore, <span class="math display">\[\rho = \frac{cov(X,Y)}{\sigma_X\sigma_Y}=\frac{-0.074}{\sqrt{0.1804}\sqrt{0.19}}=-0.3997\]</span></p></li>
+<li class="fragment"><p>We observe a weak negative linear correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p></li>
+</ul>
 </section>
 <section id="bibliography" class="slide level2">
 <h2>Bibliography</h2>

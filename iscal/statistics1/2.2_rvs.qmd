@@ -631,7 +631,162 @@ For $i=1,2,...$ and $j=1,2,...$. Note that these functions have one dimension on
 
 ## Example
 
-Superstore, a small convenience store, everyday 3 workers give their best.
+At SuperStore :convenience_store:, three trained employees are qualified to operate the checkout counters, restock products on the shelves, and perform some administrative tasks. SuperStore has three checkout counters, and at least one of them must always be operating.
+
+At any given day and moment when SuperStore is open to customers, consider the following random variables:
+
+* $X$ N of employees in the checkout counters :shopping_cart: :credit_card: .
+* $Y$ N of employees restocking products on the shelves :package:.
+
+## Example
+
+The r.v. $X$ has $\Omega_X=\{1,2,3\}$ and the following *pdf*:
+
+| $x$ | 1 | 2 | 3 |
+| :--: | :--: | :--: | :--: |
+| $f_X(x)$ | 0.17 | 0.8 | 0.03 |
+
+Consider the following table for the joint probability of $(X,Y)$
+
+|$X\setminus Y$ | 0 | 1 | 2 | |
+| :--: | :--: | :--: | :--: | :--: |
+| 1 | $a$ | $2b$ | $b$ | |
+| 2 | 0.1  | $c$ | 0 | |
+| 3 | 0.03 | 0 | 0 | |
+|   |   |  |  | 1| 
+
+## Example
+
+1. If $P(X=1, Y=0)=0.02$, find $b$ and $c$
+
+    * Directly we get $a=0.02$ as it is $P(X=1, Y=0)$
+    * Note that the top row is $f_Y(y)$ and the right column is $f_X(x)$
+    * Fill directly $f_X(x)$ with $0.17$, $0.8$, and $0.03$.
+    * Fill $f_Y(y)$ with the summation of each column
+
+## Example
+
+|$X\setminus Y$ | 0 | 1 | 2 | $\color{red}{f_X(x)}$ |
+| :--: | :--: | :--: | :--: | :--: |
+| 1 | $\color{red}{0.02}$ | $2b$ | $b$ | $\color{red}{0.17}$|
+| 2 | 0.1  | $c$ | 0 | $\color{red}{0.8}$ |
+| 3 | 0.03 | 0 | 0 | $\color{red}{0.03}$|
+|$\color{red}{f_Y(y)}$   | $\color{red}{0.15}$  | $\color{red}{2b+c}$ | $\color{red}{b}$ | 1| 
+
+* From first row: $0.02 + 2b + b = 0.17$ $\Rightarrow$ $b=\frac{0.15}{3}=0.05$
+* From second row: $0.1 + c = 0.8$ $\Rightarrow$ $c=0.7$
+
+## Example
+
+2. $P(X=2|Y\geq 1)$ is approximately...?
+
+    * $$P(X=2|Y\geq 1)=\frac{P(X=2, Y\geq 1)}{P(Y\geq 1)}$$
+    * $$= \frac{P(X=2, Y=1) + P(X=2, Y=2)}{P(Y=1)+P(Y=2)}$$
+    * $$\frac{0.7+0}{0.8+0.05}=\frac{0.7}{0.85}\approx 0.8235$$
+
+## Independence of random variables (revisited)
+
+Let $(X,Y)$ a discrete random pair, $X,Y$ are independent if, and only if: $$P(X=x, Y=y)=P(X=x)P(Y=y)\quad \forall(x,y)\in\mathbb{R}^2$$
+
+> The joint *cdf* is the same as the product of each marginal *pdf*
+
+## Example
+
+3. ... (continued exercise) Are $X$ and $Y$ independent?
+
+    * $P(X=2, Y=2)=0$
+    * $P(X=2)P(Y=2)= 0.8 \times 0.05=0.04$
+    * $0\neq 0.04$
+    * $X$ and $Y$ are not independent.
+
+## Moments of a random pair
+
+::: {.callout}
+## Definition
+
+Let the discrete random pair $(X,Y)$ have a joint $cdf$ $P(X=x,Y=y)$ and a function $g:\mathbb{R}^2\rightarrow\mathbb{R}$. The **expected value or mean** of $g(X,Y)$ is:
+
+$$E[g(X,Y)]=\sum_{i=1}^\infty\sum_{j=1}^\infty g(x_i,y_j)P(X=x_i,Y=y_j)$$
+
+:::
+
+> If $g(x,y)=xy$, then $E[g(x,y)]=E[XY]$ and that equals $$\sum_{i=1}^\infty\sum_{j=1}^\infty x_iy_jP(x=x_i,Y=y_j)$$
+
+## Moments of a random pair
+
+::: {.callout}
+
+## Definition
+
+Let the discrete random pair $(X,Y)$ have a joint $cdf$ $P(X=x,Y=y)$, and $\mu_X=E[X]$ and $\mu_Y=E[Y]$. The **covariance** between $X$ and $Y$ is:
+
+$$cov(X,Y)=E[(X-\mu_X)(Y-\mu_Y)]$$
+
+Given that $E[(X-\mu_X)(Y-\mu_Y)]$ exists.
+
+:::
+
+> Note that this is equivalent to $cov(X,y)=E[XY]-E[X]E[Y]$
+
+## Properties of the covariance
+
+The covariance tries to capture how the two r.v. move together. If it is positive, it means that both tend to go in the same direction more often than not (both above or below their means at the same time). Being negative means that more often than not when one is above its mean, the other is below.
+
+1. $cov(X,Y)=cov(Y,X)$
+2. $cov(X,X)=V[X]$ and $cov(Y,Y)=V[Y]$ if $V[X]$ and $V[Y]$ exist.
+3. $cov(a+bX, c+dY)=bd cov(X,Y)$ with $a,b,c,e\in\mathbb{R}$
+
+## Properties of the covariance
+
+If $X$ and $Y$ are independent r.v. then $cov(X,Y)=0$. Note that the opposite is not necessarily true, i.e. $cov(X,Y)=0$ does not imply that $X$ and $Y$ are independent.
+
+. . .
+
+Another important identity with the covariance is the following:
+
+$$V[X\pm Y] =  V(X)+V[Y]\pm 2 cov(X,Y)$$
+
+
+## Example
+
+Knowing that $E[Y]=0.9$, $cov(X,Y)$ is equal to? ...
+
+* From the first table: $E[X]=0.17\times 1 + 0.8 \times 2 + 0.03 \times 3 = 1.86$
+* $$E[XY]=\sum_{x}\sum_{y}xyP(X=x,Y=y)=$$ $$= 1 \times 0 \times 0.02 + 1\times 1 \times 0.1 + 1\times 2 \times 0.05 +$$ $$+ 3\times 0 \times 0.1 + 2 \times 1 \times 0.7 + 2\times 2 \times 0 + $$ $$+ 3 \times 0 \times 0.03 + 3 \times 1 \times 0 + 3 \times 2 \times 0 = 1.6$$
+
+* $cov(X,Y)=E[XY]-E[X]E[Y]=1.6-1.86\times 0.9=-0.074$
+
+## Correlation coefficient
+
+A caveat of the covariance is that its units depends directly on the units of $X$ and $Y$. The correlation coefficient allow us to express this relationship, between $X$ and $Y$ without being affected by the units in which these r.v. are measured.
+
+$$\rho_{XY} = \frac{cov(X,Y)}{\sqrt{V[X]V[Y]}}=\frac{cov(X,Y)}{\sigma_X\sigma_Y}$$
+
+
+Clearly $\rho\in[-1,1]$. Note also that $|\rho|=1$ if and only if $P(Y=a+bX)=1$ with $a,b\in\mathbb{R}$. If $X$ and $Y$ are independent r.v. then $\rho=0$.
+
+## Correlation coefficient
+
+| Correlation coefficient | Correlation |
+| :--: | :--:|
+|$|\rho| = 1$ | Perfect  |
+|$0.8 \geq |\rho| < 1$ | Strong  |
+|$0.5 \geq |\rho| < 0.8$ | Moderate  |
+|$0.1 \geq |\rho| < 0.5$ | Weak  |
+|$0 < |\rho| < 0.1$ | Very weak  |
+|$\rho= 0$ | None  |
+
+Write *positive* or *negative* in front of correlation if $\rho>0$ or $\rho<0$ respectively.
+
+## Example
+
+5. Based on the previous question, find the correlation coefficient between $X$ and $Y$.
+
+* From the marginal probability function we obtain $V[X]$ and $V[Y]$: $$V[x]=0.1804\text{ and }V[Y]=0.19$$
+
+* Therefore, $$\rho = \frac{cov(X,Y)}{\sigma_X\sigma_Y}=\frac{-0.074}{\sqrt{0.1804}\sqrt{0.19}}=-0.3997$$
+
+* We observe a weak negative linear correlation between $X$ and $Y$.
 
 ## Bibliography
 
