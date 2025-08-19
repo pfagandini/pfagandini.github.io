@@ -1,0 +1,342 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{opensans}
+
+\title{Functions}
+\author{Paulo Fagandini}
+\institute{\includegraphics[scale=0.3]{NovaPrincipalV1.png}}
+\date{}
+
+\makeatletter
+\setbeamertemplate{theorem begin}{%
+  \setbeamercolor{block title}{bg=white,fg=black}%
+  \setbeamercolor{itemize item}{fg=black}%
+  \setbeamercolor{itemize subitem}{fg=black}%
+  \setbeamercolor{itemize subsubitem}{fg=black}%
+  \setbeamercolor{enumerate item}{fg=black}%
+  \setbeamercolor{enumerate subitem}{fg=black}%
+  \setbeamercolor{enumerate subsubitem}{fg=black}%
+  \begin{\inserttheoremblockenv}
+    {%
+      \textbf{\inserttheoremname}
+      %\inserttheoremnumber
+      \ifx\inserttheoremaddition\@empty\else\ \inserttheoremaddition\fi%
+    }%
+    \normalfont%
+}
+
+\setbeamertemplate{theorem end}{%
+    \end{\inserttheoremblockenv}%
+}
+
+\setbeamercolor{block title}{bg=white,fg=black}%
+\setbeamercolor{itemize item}{fg=black}%
+\setbeamercolor{itemize subitem}{fg=black}%
+\setbeamercolor{itemize subsubitem}{fg=black}%
+\setbeamercolor{enumerate item}{fg=black}%
+\setbeamercolor{enumerate subitem}{fg=black}%
+\setbeamercolor{enumerate subsubitem}{fg=black}%
+
+\makeatother
+
+\newtheorem{defenition}{Definition}[section]
+\newtheorem{proposition}{Conjecture}[section]
+
+\AtBeginSection{\frame{\sectionpage}}
+
+\setbeamertemplate{footline}{
+    \hspace{0.05\textwidth}
+    \raisebox{3ex}{\insertshortauthor{}}\hfill
+    \raisebox{3ex}{\insertframenumber{}/\inserttotalframenumber} \hfill
+    {\raisebox{3ex}{\includegraphics[height=0.04\textheight]{NovaPrincipalV2.png}}}
+    \hspace{0.05\textwidth}
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{title}{fg = black}
+\setbeamercolor{subtitle}{fg = black}
+\setbeamercolor{frametitle}{fg = white, bg = black}
+
+\hypersetup{linkcolor=black, colorlinks=true}
+
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} 
+\begin{frame}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Functions}
+     A \emph{function} takes one element from a set, and associates it with an element of another set.
+     
+     \begin{definition}
+        $f$ is a \textbf{function} from $A$ to $B$, if it links each element from $A$ to a \underline{single} element from $B$.
+        
+        The set $A$ is called the \emph{domain of $f$}, and the set $B$ is called the \emph{codomain of $f$}.
+     \end{definition}
+     
+     The notation for a function is $f:A\rightarrow B$, and if $y=f(x)$ we say that $(x,y)\in f$.
+     
+\end{frame}
+
+\begin{frame}{Functions}
+    \begin{definition}
+        Consider a function $f:\mathbb{R}^n\rightarrow\mathbb{R}$, the \textbf{Graph} of $f$, $Gr(f)$ is defined as:
+        $$Gr(f):=\{(x,y)\in \mathbb{R}^n\times\mathbb{R}|y=f(x)\}$$
+    \end{definition}
+    
+    \pause
+    
+    Note: More generally neither the domain needs to be $\mathbb{R}^n$ nor the codomain needs to be $\mathbb{R}$, the case given above is just the most common situation in economics.
+\end{frame}
+
+\begin{frame}{Functions}
+    
+    \begin{definition}
+        Consider $f:\mathbb{R}\rightarrow\mathbb{R}$ and $g:\mathbb{R}\rightarrow\mathbb{R}$,
+        \begin{enumerate}
+            \item Sum: $(f+g):\mathbb{R}\rightarrow\mathbb{R}$, and $(f+g)(x)=f(x)+g(x)$.
+            \item Product: $(f\cdot g):\mathbb{R}\rightarrow\mathbb{R}$, and $(f\cdot g)(x)=f(x)g(x)$
+            \item Division: $(f/g):\mathbb{R}\rightarrow\mathbb{R}$, and $(f/g)(x)=\frac{f(x)}{g(x)}$. This is only well defined when $g(x)\neq 0$.
+            \item Scaling: If $\alpha\in\mathbb{R}$, $(\alpha f):\mathbb{R}\rightarrow\mathbb{R}$, and $(\alpha f)(x)=\alpha f(x)$
+        \end{enumerate}
+    \end{definition}
+    
+\end{frame}
+
+\begin{frame}{Functions}
+    \begin{definition}
+        Consider the functions $f:B\rightarrow C$, and $g:A\rightarrow B$, then the \textbf{composite} function $f \circ g:A\rightarrow C$ is defined as
+        $$(f\circ g)(x) = f(g(x))$$
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Functions}
+    \begin{definition}
+        Consider sets $A$ and $B$, and the function $f:A\rightarrow B$.
+        \begin{enumerate}
+            \item $f$ is \textbf{injective} if, for $a$ and $a'$ in $A$, such that $a\neq a'$, then $f(a)\neq f(a')$.
+            \item $f$ is \textbf{surjective} if, for any $b\in B$, exists $a\in A$ such that $f(a)=b$.
+            \item $f$ is \textbf{bijective} if it is both, injective and surjective at the same time.
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Quick Quiz - 5 Minutes}
+    Classify the following functions
+    \begin{center}
+        \begin{tabular}{c|c}
+            Function & Classification \\
+            \hline
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^2$ & \\
+            $f:\mathbb{R}\rightarrow[-1,1], f(x) = sin(x)$ & \\
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^3$ & 
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Quick Quiz - 5 Minutes}
+    Classify the following functions
+    \begin{center}
+        \begin{tabular}{c|c}
+            Function & Classification \\
+            \hline
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^2$ & - \\
+            $f:\mathbb{R}\rightarrow[-1,1], f(x) = sin(x)$ & \\
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^3$ & 
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Quick Quiz - 5 Minutes}
+    Classify the following functions
+    \begin{center}
+        \begin{tabular}{c|c}
+            Function & Classification \\
+            \hline
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^2$ & - \\
+            $f:\mathbb{R}\rightarrow[-1,1], f(x) = sin(x)$ & Surjective \\
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^3$ & 
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Quick Quiz - 5 Minutes}
+    Classify the following functions
+    \begin{center}
+        \begin{tabular}{c|c}
+            Function & Classification \\
+            \hline
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^2$ & - \\
+            $f:\mathbb{R}\rightarrow[-1,1], f(x) = sin(x)$ & Surjective \\
+            $f:\mathbb{R}\rightarrow\mathbb{R}, f(x) = x^3$ & Bijective
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Functions}
+    \begin{proposition}
+        If $f:A\rightarrow B$ is a bijective function, then there exists a unique function $g:B\rightarrow A$, bijective, such that $$g(f(x))=x$$
+        
+        $g$ is called the inverse of $f$, also known as $f^{-1}$.
+    \end{proposition}
+    
+    \begin{proposition}
+        Let $f:B\rightarrow C$, and $g:A\rightarrow B$ be both invertible functions, then $f\circ g$ is invertible. Moreover,
+        
+        $$(f\circ g)^{-1}=g^{-1}\circ f^{-1}$$
+    \end{proposition}
+    
+\end{frame}
+
+\begin{frame}{Functions}
+    
+    \begin{proof}
+    
+    Existence:
+    
+        \begin{itemize}
+        
+        \item Let $g = \{(b,a)|(a,b)\in f\}$. \pause
+        
+        \item If $(b,a_1),(b,a_2)\in g$, then $(a_1,b),(a_2,b)\in f$, but $f$ is injective, so $a_1 = a_2$. Then $g$ is a function.\pause
+        
+        \item The domain of $g$ is $\{b|(b,a)\in g\} = \{b|(a,b)\in f\} = f(X)$.\pause
+        
+        \item Let $(b,a_2)\in g$ and $(a_1,b)\in f$. Then $(a_2,b)\in f$, and given $f$ injective, we have $a_1=a_2$. Then $g\circ f = \{(a,a)|a\in A\} = Id.$\pause
+        
+        \item Let $f^{-1} = g$
+        
+        \end{itemize}
+        
+        Homework, show that $g$ is bijective. Hint: Go with contradiction.
+    \end{proof}
+    
+\end{frame}
+
+\begin{frame}{Functions}
+    Unicity,
+    
+    \begin{itemize}
+        \item Let $g$ and $h$ be inverse of $f$.\pause
+        
+        \item Assume $g(b)\neq h(b)$, at least for some $x\in B$.\pause
+        
+        \item As $b\in B$, then there is $a$ such that $f(a)=b$.\pause
+        
+        \item So $g(b) \neq h(b)$, but $g(f(a)) \neq h(f(a))$.\pause
+        
+        \item But $g\circ f$ and $h\circ f$ are both the identity so...\pause
+        
+        \item $g(f(a)) = a \neq a = h(f(a))$, contradiction!
+        
+    \end{itemize}
+    
+    So the inverse must be unique.
+    
+\end{frame}
+
+\begin{frame}
+    
+    Composite Invertible
+    \begin{proof}
+    
+    \begin{itemize}
+        
+        \item $(g\circ f)\circ(f^{-1}\circ g^{-1}) = g \circ f \circ f^{-1} \circ g^{-1}$. \pause
+        
+        \item $g \circ f \circ f^{-1} \circ g^{-1} = g \circ Id \circ g^{-1} $. \pause
+        
+        \item $g \circ Id \circ g^{-1} = g \circ g^{-1} = Id. $ \pause
+    \end{itemize}
+
+    Trivial to show that $(f^{-1}\circ g^{-1})\circ (g\circ f) = Id.$ as well, using the same steps.
+    
+    \end{proof}
+\end{frame}
+
+\begin{frame}{Functions}
+\begin{definition}
+    Consider $f:\mathbb{R}^n\rightarrow \mathbb{R}$ and $\hat{y}$ in the codomain. 
+    \begin{enumerate}
+    \item The \textbf{level curve} of $f$ at $\hat{y}$ is:
+    
+    $$\mathcal{C}_{\hat{y}}=\{(x,\hat{y})\in \mathbb{R}^{n+1}|f(x)=\hat{y}\}$$
+    \item The \textbf{isoquant} curve of $f$ at $\hat{y}$ is:
+    $$I_{\hat{y}}=\{x\in\mathbb{R}^n|f(x)=\hat{y}\}$$
+    \end{enumerate}    
+\end{definition}
+\end{frame}
+
+\begin{frame}{Functions}
+    \begin{definition}
+        Consider the function $f:\mathbb{R}\rightarrow\mathbb{R}$, and any pair $x$ and $y$ in $\mathbb{R}$ such that $x<y$, we say that
+        \begin{enumerate}
+            \item $f$ is \textbf{increasing} if $f(x)\leq f(y)$.
+            \item $f$ is \textbf{decreasing} if $f(x)\geq f(y)$.
+        \end{enumerate}
+    \end{definition}
+    
+    If the inequalities are strict, then you add the word \emph{strictly} to increasing or decreasing. A non decreasing function is also known as monotonically increasing. Conversely, a non increasing function is also known as monotonically decreasing.
+\end{frame}
+
+\begin{frame}{Functions}
+    \begin{definition}
+        Consider the function $f:\mathbb{R}^n\rightarrow\mathbb{R}$, and any pair $x$ and $y$ in $\mathbb{R}^n$ such that $y_i=x_i$ for every $i=1,.,j-1,j+1,..,n$, and $y_i=x_i+\epsilon$, with $\epsilon>0$ we say that
+        \begin{enumerate}
+            \item $f$ is \textbf{increasing in the component $j$} if $$f(x_1,\ldots,x_j,\ldots,x_n)\leq f(x_1,\ldots,x_j+\epsilon,\ldots,x_n)$$
+        \end{enumerate}
+    \end{definition}
+    
+    If the inequalities are strict, then you add the word \emph{strictly} to increasing or decreasing.
+\end{frame}
+
+\begin{frame}{Functions}
+    \begin{definition}
+    Consider the function $f:\mathbb{R}^n\rightarrow\mathbb{R}$, $x$ and $y$ in $\mathbb{R}^n$, and $\lambda\in [0,1]$, we say that:
+    \begin{enumerate}
+        \item $f$ is \textbf{convex} if $$f(\lambda x+ (1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)$$
+        \item $f$ is \textbf{concave} if $$f(\lambda x+ (1-\lambda)y)\geq \lambda f(x)+(1-\lambda)f(y)$$
+    \end{enumerate}
+    \end{definition}
+If the inequalities are strict, then you add the word \emph{strictly} to convex or concave.
+\end{frame}
+
+\begin{frame}{Quick Quiz - 15 minutes}
+
+Consider you want to avoid a bad behavior from a certain agent. You catch the agent in such behavior with probability $p$. The agent has an initial wealth of $W$, and you can determine a fine $F$ in case you catch him/her. The agent gets a benefit of $M$ for missbehaving.
+\vspace{0.5cm}
+
+Consider for this exercise that a risk neutral/lover/averse agent has a linear(identity)/(str)convex/(str)concave utility function over money (monotonically increasing). Find the relationship between the \emph{lowest} fine necessary for a risk neutral and a risk lover/averse agent to behave properly. \textbf{You need to show your conclusions mathematically.}
+    
+\end{frame}
+
+\begin{frame}{Solution}
+    
+    Start with the reference, the risk neutral. So you can find an $F_0$ such that $$u(W) = p u(W+M-F_0) + (1-p) u(W+M)$$ as $u()$ is monotonically increasing (identity) and linear, we know it is bijective, therefore exists $u^{-1}$, $$F_0 = W+M-u^{-1}\left(\frac{u(W)-(1-p)u(W+M)}{p}\right)$$
+    
+    furthermore, this is trivial, as the identity is equal to the inverse... the point is that exists and can be found (indeed $F_0 = M/p$).
+    
+\end{frame}
+
+\begin{frame}{Solution}
+
+    Now that $F_0$ is well defined, let's compare it with our risk averse agent. We know that $F_0$ is such that:
+    
+    $$ W = p (W+M-F_0) + (1-p)(W+M)$$
+    
+    \vspace{0.5cm}
+    
+    By the definition of concavity (for the risk averse) we know that $$ u(W) > p u(W+M-F_0) + (1-p)u(W+M)$$ and therefore $F_0$ is too big!, note is the only thing we can adjust, and $u()$ is monotonically increasing in the argument, so we can decrease $F_0$ and still the Agent prefers to behave!
+    
+    Same rationale can be applied to the risk lover agent.
+    
+\end{frame}
+
+\end{document}
