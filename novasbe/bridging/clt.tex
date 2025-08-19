@@ -1,0 +1,342 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{opensans}
+\usepackage{dsfont}
+\usetikzlibrary {decorations.fractals,shadows,shapes.symbols,spy}
+
+\pgfplotsset{compat=1.8,samples=25}
+
+\usetheme{NOVASBE}
+
+\title[]{4509 - Bridging Mathematics}
+\subtitle{Central Limit Theorem}
+\author[P. Fagandini]{Paulo Fagandini}
+\institute{}
+\date{}
+
+\newtheorem{defenition}{Definition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\begin{document}
+
+\begin{frame}
+    Consider a sequence $X_1,X_2,...$ of independent and identical random variables with $\mu_X=\mu$ and $\sigma_X^2=\sigma^2$.
+    \vspace{0.4cm}
+    
+    Further, from now on, let $S_n=\sum_{i=1}^n X_i$, and $M_n=\frac{S_n}{n}$ (the \textbf{sample mean}).
+    
+
+\end{frame}
+
+\begin{frame}
+    \begin{proposition}
+        The variance of $S_n$ is $n\sigma^2$.
+    \end{proposition}\pause
+    \begin{proof}
+        Using independence we have $var(S_n)=\sum_{i}^n var(X_i)=\sum_{i}^n \sigma^2=n\sigma^2$
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \begin{proposition}
+        The variance of the sample mean is $\frac{\sigma^2}{n}$.
+    \end{proposition}\pause
+    \begin{proof}
+        $var(M_n)=\frac{1}{n^2}var(S_n)=\frac{n\sigma^2}{n^2}=\frac{\sigma^2}{n}$
+    \end{proof}
+    \vspace{0.2cm}
+    As a consequence we have that, the greater our sample... the lower the variance of the sample mean! See, it is trivial to show that $E[M_n]=\mu$, so if the variance goes to zero, it means that big samples should give very accurate estimates of the mean of the distribution!.
+\end{frame}
+
+\begin{frame}{Important Inequalities}
+    \begin{itemize}
+        \item \textbf{Markov:} If $X$ is a nonnegative r.v., then $P(X\geq a) \leq \frac{E[X]}{a}$ for any $a>0$.
+        \item \textbf{Chebyshev:} If $X$ is a r.v. with mean $\mu$ and variance $\sigma^2$, then $P(|X-\mu|\geq c)\leq\frac{\sigma^2}{c^2}$ for any $c>0$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Proof: Markov's}
+    
+    You have 10 minutes. \pause
+    
+    \begin{proof}
+        
+        \begin{align*}
+            E[X] &= \int_{-\infty}^{\infty} x f_x(x)dx = \int_{0}^{\infty} xf_x(x)dx\\
+            &\geq \int_{a>0}^\infty xf_x(x)dx\geq \int_{a>0}^\infty af_x(x)dx\\
+            &= a\int_{a>0}^\infty f_x(x)dx = a P(X\geq a)
+        \end{align*}
+        
+        So $$P(X\geq a) \leq \frac{E[X]}{a}$$ for $a>0$.
+        
+    \end{proof}
+    
+\end{frame}
+
+\begin{frame}{Proof: Chebyshev's}
+    More 5 minutes?\pause
+    
+    \begin{proof}
+    
+        Let $Y=(X-E[X])^2$, then $Y$ is a nonnegative r.v. Apply Markov's inequality:
+        \begin{align*}
+            P(Y\geq c^2) \leq \frac{E[Y]}{c^2}
+        \end{align*}
+    
+        But $E[Y]= V[X]$, and $P(|X-E[X]|^2\geq c^2) = P(|X-E[X]|\geq c)$ so $$ P(|X-E[X]|\geq c) \leq \frac{\sigma^2}{c^2}$$
+        With $c>0$.
+    \end{proof}
+    
+\end{frame}
+
+\begin{frame}
+    \begin{definition}
+        Let $Y_1, Y_2,...$ be a sequence of r.v. (not necessarily indep), and let $a\in\mathbb{R}$. $Y_n$ is said to \textbf{converge to $a$ in probability} if for every $\epsilon>0$ holds that:
+        
+        $$\lim_{n\rightarrow \infty} P(|Y_n-a|\geq \epsilon)=0$$
+    \end{definition}
+    \vspace{0.2cm}
+    
+    We can adapt conveniently the previous definition as...
+    
+    For every $\epsilon>0$, and for every $\delta>0$, there is $n_0$ such that $$P(|Y_n-a|<\epsilon)\leq \delta,\quad \forall n\geq n_0$$
+    
+    $\epsilon$ is the accuracy and $\delta$ the confidence level. So with a confidence level $\delta$ we can say that $Y_n$ is around $a$ with an accuracy of $\epsilon$.
+\end{frame}
+
+
+\begin{frame}
+    One can think that if a sequence $Y_n$ converges in probability to some constant $c$, then $E[Y_n]$ must also converge to $c$, however, this need not be the case!
+\end{frame}
+
+\begin{frame}
+    Consider the discrete sequence of random variables $Y_n$ with the following distribution:
+    \begin{align*}
+        P(Y_n=y)=\left\{\begin{array}{cc}1-\frac{1}{n}&\text{, for }y=0\\ \frac{1}{n} &\text{, for }y=n^2\\ 0&\text{, elsewhere}\end{array}\right.
+    \end{align*}
+    \onslide<2->{
+        For every $\epsilon>0$ we have:
+        \[\lim_{n\rightarrow\infty} P(|Y_n|\geq\epsilon)=\lim_{n\rightarrow\infty}\frac{1}{n}=0\]
+        so $Y_n$ converges to $0$ in probability.
+    }
+
+    \onslide<3->{
+        However,
+        \[E[Y_n]=\frac{n^2}{n}=n\]
+        which goes to $\infty$ as $n\rightarrow\infty$.
+    }
+    
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[Weak Law of Large Numbers]
+    Let $X_1,X_2,...$ be independent and identically distributed (i.i.d) r.v. with mean $\mu$. For every $\epsilon>0$ we have
+    $$P(|M_n-\mu|\geq \epsilon)\rightarrow 0,\quad n\rightarrow\infty$$
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{WLLN Proof}
+
+3 minutes?\pause
+\begin{proof}
+    Using Chebyshev's inequality, and remembering that $M$ is the average of the X's, and setting $c=\epsilon$ we can write:
+    \begin{align*}
+        P(|M_n-\mu|\geq \epsilon) \leq \frac{var[M_n]}{\epsilon^2}
+    \end{align*}
+    But the variance of $M_n$ is $\sigma^2/n$...
+    
+    $$P(|M_n-\mu|\geq \epsilon) \leq \frac{var[M_n]}{\epsilon^2} = \frac{\sigma^2}{n\epsilon^2}$$ which goes to zero as $n\rightarrow\infty$.
+\end{proof}
+    
+\end{frame}
+
+\begin{frame}
+    From the WLLN we get that $Var[M_n]\rightarrow 0$ as $n\rightarrow\infty$. However, that is not the case for $S_n$. Note that $S_n$, which was the sum of the $X$'s does not necessarily converge.\pause Note:
+
+    \vspace*{2em}
+
+    $$E[S_n]=E\left[\sum_{i=1}^n X_i\right]=\sum_{i=1}^n E\left[ X_i\right]=\sum_{i=1}^n M_n=nM_n$$
+
+    Which clearly goes to infinity as $n\rightarrow\infty$. Furthermore, we cannot say anything about the distribution of $S_n$ as $n\rightarrow\infty$
+
+    \vspace*{2em}
+    
+    Let's define another variable.
+
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[Convergence in distribution]
+        A sequence of random variables $X_1$, $X_2$, ..., converges in distribution to  a random variable $X$ if:
+        \[\lim_{n\rightarrow\infty} F_{X_n}(x)=F_X(x)\]
+        at all points where $F_X(x)$ is continuous.
+        We denote it as $X_n\xrightarrow[]{d} X$.
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[Continuity Theorem]
+        Let $X_n$ be a sequence of random variables with cumulative distribution function $F_n(x)$ and corresponding to moment generating functions $M_n(s)$ (transform). Let $X$ be a random variable with cumulative distribution function $F(x)$ and
+        moment generating function $M(s)$.
+        
+        \vspace{1em}
+        
+        If $M_n(s)\rightarrow M(s)$ for any $s$ in an open interval containing $0$, then $F_n(x)\rightarrow F(x)$ at all continuity points of $F$, \textit{i.e.} $X_n\xrightarrow[]{d} X$.
+    \end{theorem}
+    
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[Transform]
+        The transform of the distribution of a random variable $X$ (also referred to as the moment generating function of $X$) is a function $M_X(s)$ of a free parameter $s$, defined by:
+        \[M_X(s)=E\left[e^{sX}\right]\]
+    \end{definition}
+    Moreover, we have that:
+    \[M(s)=\sum_{x}e^{sx}p_X(x)\] for a discrete random variable, and \[M(s)=\int_{-\infty}^{\infty}e^{sx}f_X(x)dx\] for a continuous r.v.
+\end{frame}
+
+\begin{frame}{A special case}
+        The transform of a Normal Random Variable:
+
+        Let $X$ be a normal random variable with mean $\mu$ and variance $\sigma^2$. To compute the corresponding transform, consider the special case of the standard normal r.v. $Y\sim N(0,1)$.
+        The \textit{pdf} of the standard normal is \[f_Y(y)=\frac{1}{\sqrt{2\pi}}e^{\frac{-y^2}{2}}\] and its transform is:
+\end{frame}
+
+\begin{frame}{A special case}
+        \begin{align*}
+            M_Y(s) &= \int_{\infty}^\infty \frac{1}{\sqrt{2\pi}} e^{\frac{-y^2}{2}}e^{sy}dy\\
+                   &= \frac{1}{\sqrt{2\pi}} \int_{\infty}^\infty e^{\frac{-y^2}{2}+sy}dy\\
+                   &= e^{\frac{s^2}{2}}\frac{1}{\sqrt{2\pi}} \int_{\infty}^\infty e^{\frac{-y^2}{2}+sy-\frac{s^2}{2}}dy\\
+                   &= e^{\frac{s^2}{2}}\frac{1}{\sqrt{2\pi}} \int_{\infty}^\infty e^{\frac{-(y-s)^2}{2}}dy\\
+                   &= e^{\frac{s^2}{2}}
+        \end{align*}
+\end{frame}
+
+\begin{frame}{From transform to moments}
+    Recall that \[M(s)=\int_{-\infty}^\infty e^{sx}f_X(x)dx\]
+    Taking derivatives with respect to $s$ in both sides we get:
+    \begin{align*}
+        \frac{d}{ds}M(s) &= \frac{d}{ds}\int_{-\infty}^\infty e^{sx}f_X(x)dx\\
+                         &= \int_{-\infty}^\infty \frac{d}{ds}e^{sx}f_X(x)dx\\
+                         &= \int_{-\infty}^\infty xe^{sx}f_X(x)dx\\
+    \end{align*}
+    If $s=0$ we have:\[\left.\frac{d}{ds}M(s)\right|_{s=0}=\int_{-\infty}^\infty xf_X(x)dx=E[X]\]
+\end{frame}
+
+\begin{frame}{From transform to moments}
+    Generalizing, taking the \emph{n-th} derivative with respect to $s$ in both sides we get:
+    \begin{align*}
+        \frac{d^n}{ds^n}M(s) &= \int_{-\infty}^\infty x^ne^{sx}f_X(x)dx\\
+    \end{align*}
+    If $s=0$ we have:\[\left.\frac{d^n}{ds^n}M(s)\right|_{s=0}=\int_{-\infty}^\infty x^nf_X(x)dx=E[X^n]\]
+\end{frame}
+
+\begin{frame}
+    Let $Z_n=\frac{S_n-n\mu}{\sigma\sqrt{n}}$
+    \begin{proposition}
+        $E[Z_n]=0$ and $var(Z_n)=1$.
+    \end{proposition}
+    \begin{proof}
+        $E[Z_n]=\frac{1}{\sigma\sqrt{n}}(E[S_n]-n\mu)=\frac{1}{\sigma\sqrt{n}}(n\mu-n\mu)=0$
+        
+        $var(Z_n)=\frac{1}{n\sigma^2}var(S_n-n\mu)=\frac{1}{n\sigma^2}var(S_n)=\frac{1}{n\sigma^2}n\sigma^2=1$
+    \end{proof}
+\end{frame}
+
+\begin{frame}{The Central Limit Theorem}
+    \begin{theorem}
+        Let $X_1,X_2,...$ be a sequence of i.i.d. r.v. with common mean $\mu$ and variance $\sigma^2$. Define: $$Z_n=\frac{S_n-n\mu}{\sigma\sqrt{n}}$$ then the cumulative distribution function of $Z_n$ converges to the standard normal cumulative distribution function $$\Phi(z)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{z}e^{-x^2/2}dx$$ in the sense that $$\lim_{n\rightarrow\infty}P(Z_n\leq z)=\Phi(z),\quad \forall z$$
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Proof CLM}
+    Let $X_1$, $X_2$... be a sequence of i.i.d. r.v. with mean $0$ and variance $\sigma^2$, and associated to the transform $M_X(s)$. Assume that $M_X(s)$ is finite when $-d<s<d$, for $d$ some positive number.
+
+    Now, let $$Z_n=\frac{S_n-n\mu}{\sigma\sqrt{n}}=\frac{S_n}{\sigma\sqrt{n}}$$
+    and let's rewrite $S_n=\sum_{i=1}^n X_i$.
+\end{frame}
+
+\begin{frame}{Proof CLM}
+    \begin{align*}
+        M_{Z_n}(s) &= E\left[e^{sZ_n}\right]\\
+                   &= E\left[e^{\frac{s\sum_{i=1}^n X_i}{\sigma\sqrt{n}}}\right]\\
+                   &= \prod_{i=1}^n E\left[e^{\frac{sX_i}{\sigma\sqrt{n}}}\right]\\
+                   &= \prod_{i=1}^n M_X\left(\frac{s}{\sigma\sqrt{n}}\right)\\
+                   &= \left(M_X\left(\frac{s}{\sigma\sqrt{n}}\right)\right)^n
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Proof CLM}
+    Use a Taylor expansion around $s=0$ to write $$M_X(s)=M_X(0)+\frac{d}{ds}M_X(0)(s-0)+\frac{1}{2}\frac{d^2}{ds^2}M_X(0)(s-0)^2+o(s^2)$$ where $\lim_{s\rightarrow 0}\frac{o(s^2)}{s^2}=0$
+    
+    And remember that $M_X(0)=E[e^{0}]=1$, $\left.\frac{d}{dx}M_X(s)\right|_{s=0}=E[X]=0$, and $\left.\frac{1}{2}\frac{d}{dx}M_X(s)\right|_{s=0}=E[X^2]=\frac{\sigma^2}{2}$.
+
+    \[M_{Z_n}(s)=\left(M_X\left(\frac{s}{\sigma\sqrt{n}}\right)\right)^n=\left(1+\frac{s^2}{2n}+o\left(\frac{s^2}{\sigma^2n}\right)\right)^n\]
+\end{frame}
+
+\begin{frame}
+    Noting that the error goes to zero, we have the following limit:
+    \[\lim_{n\rightarrow\infty} M_{Z_n}(s)=\lim_{n\rightarrow\infty} \left(1+\frac{s^2/2}{n}\right)^n=e^{s^2/2}\]
+
+    Which is exactly the same as the transform of the Normal Distribution.
+
+    \vspace{1em}
+
+    Using the Continuity Theorem, we get that our $Z_n$'s distribution convergest to the Normal Distribution.
+\end{frame}
+
+\begin{frame}
+    \begin{definition}[Almost surely convergence]
+        Let $X_1,X_2,...$ be a sequence of r.v. (not necessarily independent) associated with the same probability model. Let $c\in\mathbb{R}$. We say that $X_n\rightarrow c$ \textbf{almost surely} if
+        $$P\left(\lim_{n\rightarrow \infty} X_n=c\right)=1$$
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[Strong Law of Large Numbers]
+        Let $X_1,X_2,...$ be a sequence of i.i.d. r.v. with mean $\mu$. Then the sequence of sample means $M_n$ converges to $\mu$, \textbf{with probability 1}, in the sense that:
+        
+        \begin{align*}
+            P\left(\lim_{n\rightarrow\infty}M_n=\mu\right)=1
+        \end{align*}
+    \end{theorem}
+\end{frame}
+
+
+\begin{frame}
+    It is not easy to see the difference between \emph{SLLN} and \emph{WLLN}. So first thing, they \textbf{are} very close. Indeed, almost sure convergence implies convergence in probability, however the opposite is not true. 
+\end{frame}
+
+\begin{frame}
+    \begin{lemma}[Second Borel-Cantelli Lemma]
+        If $\sum_{i=1}^\infty Pr(E_n)=\infty$, with $\{E_n\}_{n=1}^\infty$ being independent events, then, $Pr(\limsup_{n\rightarrow\infty
+        }E_n)=1$.
+    \end{lemma}
+    \vspace{0.4cm}
+    In words, if the sum of the probabilities of an event goes to infinity, then that event happens infinitely many times, and therefore with a non zero probability.
+\end{frame}
+
+\begin{frame}
+    Consider the r.v. $X_n$ as $P(X_n=1)=\frac{1}{n}$ and $P(X_n=0)=1-P(X_n=1)=1-\frac{1}{n}$. 
+    
+    \vspace{0.3cm}
+    
+    For any $\epsilon\in(0,1)$, $X_n<\epsilon$ only if $X_n=0$, which happens with probability $1-\frac{1}{n}$, and as $n\rightarrow\infty$, then $P(X_n<\epsilon)\rightarrow 1$, so $X_n\rightarrow 0$ in probability.
+    
+    \vspace{0.3cm}
+    
+    Because $\sum_{i=1}^n P(X_n=1) =\infty$, so there are a lot of elements in $\Omega$ that make $X_n=1$, and therefore the sequence does not converge \emph{almost surely}.
+    
+\end{frame}
+
+\begin{frame}
+    Another way to see the difference... consider a film is just released. The probability that someone watch it is very high at the beginning but decreases steadily over time. After 100 000 days, the probability of someone watching the film is almost zero (convergence in probability), however if you wait enough time, almost surely someone will see it (no convergence \emph{almost surely}).
+\end{frame}
+
+
+
+\end{document}

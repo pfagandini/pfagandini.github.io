@@ -2,75 +2,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{tikz}
+\usepackage{dsfont}
 \usepackage{opensans}
 
-\title{Matrices}
-\author{Paulo Fagandini}
-\institute{\includegraphics[scale=0.3]{NovaPrincipalV1.png}}
+\usetheme{NOVASBE}
+
+\title[]{4509 - Bridging Mathematics}
+\subtitle{Matrices}
+\author[P. Fagandini]{Paulo Fagandini}
+\institute{}
 \date{}
 
-\makeatletter
-\setbeamertemplate{theorem begin}{%
-  \setbeamercolor{block title}{bg=white,fg=black}%
-  \setbeamercolor{itemize item}{fg=black}%
-  \setbeamercolor{itemize subitem}{fg=black}%
-  \setbeamercolor{itemize subsubitem}{fg=black}%
-  \setbeamercolor{enumerate item}{fg=black}%
-  \setbeamercolor{enumerate subitem}{fg=black}%
-  \setbeamercolor{enumerate subsubitem}{fg=black}%
-  \begin{\inserttheoremblockenv}
-    {%
-      \textbf{\inserttheoremname}
-      %\inserttheoremnumber
-      \ifx\inserttheoremaddition\@empty\else\ \inserttheoremaddition\fi%
-    }%
-    \normalfont%
-}
-
-\setbeamertemplate{theorem end}{%
-    \end{\inserttheoremblockenv}%
-}
-
-\setbeamercolor{block title}{bg=white,fg=black}%
-\setbeamercolor{itemize item}{fg=black}%
-\setbeamercolor{itemize subitem}{fg=black}%
-\setbeamercolor{itemize subsubitem}{fg=black}%
-\setbeamercolor{enumerate item}{fg=black}%
-\setbeamercolor{enumerate subitem}{fg=black}%
-\setbeamercolor{enumerate subsubitem}{fg=black}%
-
-\makeatother
-
-\newtheorem{defenition}{Definition}[section]
 \newtheorem{proposition}{Conjecture}[section]
 
-\AtBeginSection{\frame{\sectionpage}}
-
-\setbeamertemplate{footline}{
-    \hspace{0.05\textwidth}
-    \raisebox{3ex}{\insertshortauthor{}}\hfill
-    \raisebox{3ex}{\insertframenumber{}/\inserttotalframenumber} \hfill
-    {\raisebox{3ex}{\includegraphics[height=0.04\textheight]{NovaPrincipalV2.png}}}
-    \hspace{0.05\textwidth}
-}
-
-\setbeamertemplate{navigation symbols}{}
-
-\setbeamercolor{title}{fg = black}
-\setbeamercolor{subtitle}{fg = black}
-\setbeamercolor{frametitle}{fg = white, bg = black}
-\setbeamercolor{title example}{fg=black} 
-
-\hypersetup{linkcolor=black, colorlinks=true}
-
 \begin{document}
-
-{
-\setbeamertemplate{footline}{} 
-\begin{frame}
-  \titlepage
-\end{frame}
-}
 
 \begin{frame}{Introduction}
     \begin{center}
@@ -104,34 +49,40 @@
 \end{frame}
 
 \begin{frame}{Introduction}
-    \begin{center}
-        \begin{tikzpicture}[scale=0.6,every node/.style = {scale = 0.6}]
-            \draw[<->,thick,opacity=0.3] (-6,0) -- (5,0);
-            \draw[<->,thick,opacity=0.3] (0,-3) -- (0,5);
-            \draw[->,thick,orange,opacity=0.3] (0,0) -- (-2,1)node[left]{$v$};
-            
-            \draw[->,red,opacity=0.4] (0,0) -- (1,0)node[below]{\(\hat{\imath}\)};
-            \draw[->,blue,opacity=0.4] (0,0) -- (0,1)node[right]{\(\hat{\jmath}\)};
-            
-            \draw[<->,thick] (-6,-1.5) -- (6,1.5);
-            \draw[<->,thick] (-4.5,-3) -- (4.5,3);
-
-            \onslide<1->{
-                \draw[->,red] (0,0) -- (4,1)node[below]{\(\hat{\imath}'\)};
-                \draw[->,blue] (0,0) -- (3,2)node[below]{\(\hat{\jmath}'\)};
+    \begin{columns}        
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}[scale=0.6,every node/.style = {scale = 0.6}]
+                \draw[<->,thick,opacity=0.3] (-6,0) -- (5,0);
+                \draw[<->,thick,opacity=0.3] (0,-3) -- (0,5);
+                \draw[->,thick,orange,opacity=0.3] (0,0) -- (-2,1)node[left]{$v$};
+                
+                \draw[->,red,opacity=0.4] (0,0) -- (1,0)node[below]{\(\hat{\imath}\)};
+                \draw[->,blue,opacity=0.4] (0,0) -- (0,1)node[right]{\(\hat{\jmath}\)};
+                
+                \draw[<->,thick] (-6,-1.5) -- (6,1.5);
+                \draw[<->,thick] (-4.5,-3) -- (4.5,3);
+    
+                \onslide<1->{
+                    \draw[->,red] (0,0) -- (4,1)node[below]{\(\hat{\imath}'\)};
+                    \draw[->,blue] (0,0) -- (3,2)node[below]{\(\hat{\jmath}'\)};
+                }
+                
+                \onslide<4->{
+                    \draw[->,thick,orange] (0,0) -- (-5,0)node[below]{$v'$};
+                }
+                
+            \end{tikzpicture}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            {\small
+            \only<2>{\[\hat{\imath}'=\begin{bmatrix}4\\1\end{bmatrix}\quad\hat{\jmath}'=\begin{bmatrix}3\\2\end{bmatrix}\]}
+            \only<3>{\[v=-2\times\hat{\imath}'+1\times\hat{\jmath}'=-2\times\begin{bmatrix}4\\1\end{bmatrix}+1\times\begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}-5\\0\end{bmatrix}\]}
+            \only<5>{\[w=\begin{bmatrix}x\\y\end{bmatrix} \text{ lands on } x\times \begin{bmatrix}4\\1\end{bmatrix}+y\times \begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}4x+3y\\1x+2y\end{bmatrix}\]}
+            \only<6>{\[\begin{bmatrix}1&0\\0&1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}=x\times \hat{\imath}+y\times \hat{\jmath}\]
+            \[\begin{bmatrix}4&3\\1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}4x+3y\\1x+2y\end{bmatrix}=x\times\hat{\imath}'+y\times\hat{\jmath}'\]}
             }
-            
-            \onslide<4->{
-                \draw[->,thick,orange] (0,0) -- (-5,0)node[below]{$v'$};
-            }
-            
-        \end{tikzpicture}
-        \only<2>{\[\hat{\imath}'=\begin{bmatrix}4\\1\end{bmatrix}\quad\hat{\jmath}'=\begin{bmatrix}3\\2\end{bmatrix}\]}
-        \only<3>{\[v=-2\times\hat{\imath}'+1\times\hat{\jmath}'=-2\times\begin{bmatrix}4\\1\end{bmatrix}+1\times\begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}-5\\0\end{bmatrix}\]}
-        \only<5>{\[w=\begin{bmatrix}x\\y\end{bmatrix} \text{ lands on } x\times \begin{bmatrix}4\\1\end{bmatrix}+y\times \begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}4x+3y\\1x+2y\end{bmatrix}\]}
-        \only<6>{\[\begin{bmatrix}1&0\\0&1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}=x\times \hat{\imath}+y\times \hat{\jmath}\]
-        \[\begin{bmatrix}4&3\\1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}4x+3y\\1x+2y\end{bmatrix}=x\times\hat{\imath}'+y\times\hat{\jmath}'\]}
-    \end{center}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Introduction}
@@ -183,7 +134,7 @@
 \end{frame}
 
 \begin{frame}{Introduction}
-    The important thing, is that if the vectors are linearly dependent, then we cannot invert the matrix, we just saw that two vectors that reside on the same line, end up in the same (although probably a different one) line.
+    The important thing is that: if the vectors are linearly dependent, then we cannot invert the matrix, we just saw that two vectors that reside on the same line, end up in the same (although probably a different one) line.
 \end{frame}
 
 \begin{frame}{Introduction}
@@ -324,14 +275,14 @@
             \right)
         \end{align*}
         
-        Where $a_{ij}\in\mathbb{R}$. $A$ is said to be an element of $\mathbb{R}^{m\times n}$
+        Where $a_{ij}\in\mathds{R}$. $A$ is said to be an element of $\mathds{R}^{m\times n}$
     \end{definition}
     
     A vector would be then a matrix with only 1 column!
 \end{frame}
 
 \begin{frame}
-    Let $A,B\in\mathbb{R}^{m\times n}$. Let $C\in\mathbb{R}^{n\times l}$. Finally, let $\alpha\in\mathbb{R}$.
+    Let $A,B\in\mathds{R}^{m\times n}$. Let $C\in\mathds{R}^{n\times l}$. Finally, let $\alpha\in\mathds{R}$.
     \begin{enumerate}
         \item $[A+B]_{ij} = a_{ij}+b_{ij}$
         \item $[A \cdot C]_{ik}=\sum_{j=1}^n a_{ij}\cdot c_{jk}$, and it has a dimension $m\times l$
@@ -341,7 +292,7 @@
 
 \begin{frame}
     \begin{definition}
-        Let $A\in\mathbb{R}^{m\times n}$, $A$'s \textbf{transpose}, denoted $A^t\in\mathbb{R}^{n\times m}$ is such that its elements are:
+        Let $A\in\mathds{R}^{m\times n}$, $A$'s \textbf{transpose}, denoted $A^t\in\mathds{R}^{n\times m}$ is such that its elements are:
         
         \begin{align*}
             a^t_{ij}=a_{ji}
@@ -349,7 +300,7 @@
     \end{definition}
     
     \begin{definition}
-        Matrix $A\in\mathbb{R}^{m\times n}$ is said to be \textbf{squared} if $n=m$
+        Matrix $A\in\mathds{R}^{m\times n}$ is said to be \textbf{squared} if $n=m$
     \end{definition}
     
     \begin{definition}
@@ -362,10 +313,10 @@
 
 \begin{frame}
     \begin{definition}
-        The \textbf{Identity} is a squared matrix $I_n\in\mathbb{R}^{n\times n}$ that has $I_{ij}=0$ if $i\neq j$, and $I_{ij}=1$ if $i=j$.
+        The \textbf{Identity} is a squared matrix $I_n\in\mathds{R}^{n\times n}$ that has $I_{ij}=0$ if $i\neq j$, and $I_{ij}=1$ if $i=j$.
     \end{definition}
     
-    The identity has a nice property: $A I_n = I_m A= A$ for any $A\in\mathbb{R}^{m\times n}$.
+    The identity has a nice property: $A I_n = I_m A= A$ for any $A\in\mathds{R}^{m\times n}$.
     
     \begin{definition}
         Matrix $A$ is \textbf{invertible}, if there is another matrix $A^{-1}$ such that $A\cdot A^{-1} = A^{-1}\cdot A = I$
@@ -374,7 +325,7 @@
 
 \begin{frame}
     \begin{proposition}
-        Given $A,B,C\in\mathbb{R}^{n\times n}$
+        Given $A,B,C\in\mathds{R}^{n\times n}$
         
         \begin{enumerate}
             \item $A+B=B+A$
@@ -405,18 +356,18 @@
 
 \begin{frame}
 \begin{proposition}
-    The set of the matrices in $\mathbb{R}^{m\times n}$, together with the sum and scalar multiplication is a vector space.    
+    The set of the matrices in $\mathds{R}^{m\times n}$, together with the sum and scalar multiplication is a vector space.    
 \end{proposition}
 
 \begin{proposition}
-A squared matrix $A\in\mathbb{R}^{n\times n}$ is invertible if and only if all of its columns are linearly independent.
+A squared matrix $A\in\mathds{R}^{n\times n}$ is invertible if and only if all of its columns are linearly independent.
 \end{proposition}
 \end{frame}
 
 
 \begin{frame}
     \begin{definition}
-        Matrix $A\in\mathbb{R}^{m\times n}$ is \textbf{upper triangular} if it has the following shape:
+        Matrix $A\in\mathds{R}^{m\times n}$ is \textbf{upper triangular} if it has the following shape:
         
         \begin{align*}
             A=\left[
@@ -433,7 +384,7 @@ A squared matrix $A\in\mathbb{R}^{n\times n}$ is invertible if and only if all o
     \end{definition}
     
     \begin{proposition}
-        The set of the upper triangular matrices in $\mathbb{R}^{n\times m}$, with the sum and scalar multiplication is a vector subspace of $\mathbb{R}^{n\times m}$.
+        The set of the upper triangular matrices in $\mathds{R}^{n\times m}$, with the sum and scalar multiplication is a vector subspace of $\mathds{R}^{n\times m}$.
     \end{proposition}
 \end{frame}
 
@@ -474,14 +425,14 @@ A squared matrix $A\in\mathbb{R}^{n\times n}$ is invertible if and only if all o
 \begin{frame}
 \begin{definition}
     Given a system of equations $AX=B$, \begin{itemize}
-        \item $\hat{X}\in\mathbb{R}^n$ is a \textbf{particular solution} of the system if $A\hat{X}=B$.
+        \item $\hat{X}\in\mathds{R}^n$ is a \textbf{particular solution} of the system if $A\hat{X}=B$.
         \item $X_0$ is an \textbf{homogeneous solution} if $AX_0=0$.
     \end{itemize}
     
     
 \end{definition}
     
-    Note that for $\lambda\in\mathbb{R}$, $A(\hat{X}+\lambda X_0)=A\hat{X}+\lambda A X_0 = B+0 = B$.
+    Note that for $\lambda\in\mathds{R}$, $A(\hat{X}+\lambda X_0)=A\hat{X}+\lambda A X_0 = B+0 = B$.
     
     \vspace{0.5cm}
     
@@ -489,14 +440,14 @@ A squared matrix $A\in\mathbb{R}^{n\times n}$ is invertible if and only if all o
 
 \begin{frame}
     \begin{definition}
-        The \textbf{kernel} of $A\in\mathbb{R}^{m\times n}$ is defined as:
+        The \textbf{kernel} of $A\in\mathds{R}^{m\times n}$ is defined as:
         \begin{align*}
-            Ker(A):=\{X\in\mathbb{R}^n| AX = 0\}
+            Ker(A):=\{X\in\mathds{R}^n| AX = 0\}
         \end{align*}
     \end{definition}
     
     \begin{proposition}
-        $Ker(A)\subseteq\mathbb{R}^n$ is a vector subspace of $\mathbb{R}^n$
+        $Ker(A)\subseteq\mathds{R}^n$ is a vector subspace of $\mathds{R}^n$
     \end{proposition}
     
     \begin{definition}
@@ -509,25 +460,25 @@ A squared matrix $A\in\mathbb{R}^{n\times n}$ is invertible if and only if all o
 
 \begin{frame}
     \begin{proposition}
-        Matrix $A\in\mathbb{R}^{n\times n}$ is invertible if and only if $Null(A)=0$.
+        Matrix $A\in\mathds{R}^{n\times n}$ is invertible if and only if $Null(A)=0$.
     \end{proposition}
     
     \begin{proposition}
-        $A\in\mathbb{R}^{n\times n}$ is invertible if and only if the system $AX=B$ as a unique solution, for any $B\in\mathbb{R}^n$.
+        $A\in\mathds{R}^{n\times n}$ is invertible if and only if the system $AX=B$ as a unique solution, for any $B\in\mathds{R}^n$.
     \end{proposition}
     
 \end{frame}
 
 \begin{frame}
     \begin{definition}
-        The \textbf{image} of $A\in\mathbb{R}^{n\times n}$ is defined as:
+        The \textbf{image} of $A\in\mathds{R}^{n\times n}$ is defined as:
         \begin{align*}
-            Im(A):=\{Y\in\mathbb{R}^n|\exists X\in\mathbb{R}^n, Y=AX\}\equiv \{AX|X\in\mathbb{R}^n\}
+            Im(A):=\{Y\in\mathds{R}^n|\exists X\in\mathds{R}^n, Y=AX\}\equiv \{AX|X\in\mathds{R}^n\}
         \end{align*}
     \end{definition}
     
     \begin{proposition}
-        Let $A\in\mathbb{R}^{n\times n}$. $Im(A)$ is a vector subspace of $\mathbb{R}^n$.
+        Let $A\in\mathds{R}^{n\times n}$. $Im(A)$ is a vector subspace of $\mathds{R}^n$.
     \end{proposition}
     
     \begin{definition}
@@ -537,32 +488,32 @@ A squared matrix $A\in\mathbb{R}^{n\times n}$ is invertible if and only if all o
 
 \begin{frame}
     \begin{proposition}
-        Let $A\in\mathbb{R}^{n\times n}$. $R(A)$ is the number of l.i. columns of $A$.
+        Let $A\in\mathds{R}^{n\times n}$. $R(A)$ is the number of l.i. columns of $A$.
     \end{proposition}
     
     \begin{proposition}
-        Consider $A\in\mathbb{R}^{n\times n}$. It holds that $Null(A)+R(A)=n$.
+        Consider $A\in\mathds{R}^{n\times n}$. It holds that $Null(A)+R(A)=n$.
     \end{proposition}
 \end{frame}
 \iffalse
 \begin{frame}
     \begin{proposition}
-        For any $A\in\mathbb{R}^{n\times n}$, there is an invertible matrix $C$, and an upper triangular matrix $R$ such that, $$CA=R\Leftrightarrow A=C^{-1}R$$
+        For any $A\in\mathds{R}^{n\times n}$, there is an invertible matrix $C$, and an upper triangular matrix $R$ such that, $$CA=R\Leftrightarrow A=C^{-1}R$$
     \end{proposition}
 \end{frame}
 \fi
 \begin{frame}
     \begin{definition}
-        The quadratic form associated to $A$ is a function $Q_A:\mathbb{R}^n\rightarrow\mathbb{R}$ such that for any $X\in\mathbb{R}^n$,
+        The quadratic form associated to $A$ is a function $Q_A:\mathds{R}^n\rightarrow\mathds{R}$ such that for any $X\in\mathds{R}^n$,
         
-        $$Q_A(X)=X^tAX\in\mathbb{R}$$
+        $$Q_A(X)=X^tAX\in\mathds{R}$$
     \end{definition}
 \end{frame}
 
 \begin{frame}
 
 \begin{proposition}
-    For any matrix $A\in\mathbb{R}^n$, there are always symmetric and antisymmetric matrices $S$ and $T$ such that $$A=S+T$$
+    For any matrix $A\in\mathds{R}^{n\times n}$, there are always symmetric and antisymmetric matrices $S$ and $T$ such that $$A=S+T$$
 \end{proposition}
 
 Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, $T$ is antisymmetric,
@@ -582,7 +533,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
     \begin{itemize}
         \item Let $A = (S+T)$
         \item Then $Q_A(X) = X^t(S+T)X = X^tSX + X^tTX$
-        \item But $X^tTX\in \mathbb{R}$, so $(X^tTX)^t=X^tTX$ (a number trasposed is the same number).
+        \item But $X^tTX\in \mathds{R}$, so $(X^tTX)^t=X^tTX$ (a number trasposed is the same number).
         \item So you end up that $X^tTX = (X^tTX)^t = X^tT^tX$
         \item But $T$ is anytsymmetric so $T^t = -T$...
         \item Then $X^tTX = -X^tTX$, so if $X^tTX$ is the number $z$, you have $z=-z$, that only is true for $z=0$.
@@ -593,7 +544,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
 
 \begin{frame}
     \begin{definition}
-        Let $A\in\mathbb{R}^{n\times n}$, symmetric. Consider the quadratic form $Q_A(X)=X^t A X$. If for any $X\in\mathbb{R}^n\setminus\{0\}$,
+        Let $A\in\mathds{R}^{n\times n}$, symmetric. Consider the quadratic form $Q_A(X)=X^t A X$. If for any $X\in\mathds{R}^n\setminus\{0\}$,
         \begin{enumerate}
             \item $Q_A(X)>0$, $A$ is \textbf{positive definite}, \item $Q_A(X)\geq0$, $A$ is \textbf{positive semi-definite}, \item $Q_A(X)<0$, $A$ is \textbf{negative definite}, \item $Q_A(X)\leq0$, $A$ is \textbf{negative semi-definite}.
         \end{enumerate}
@@ -602,18 +553,18 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
 
 \begin{frame}
     \begin{definition}
-        $\lambda\in\mathbb{C}$ is an \textbf{eigenvalue} (or characteristic value) of matrix $A\in\mathbb{R}^{n\times n}$ if there is a vector, called \textbf{eigenvector}, $X_\lambda\in\mathbb{R}^n\setminus\{0\}$ such that $$A X_\lambda = \lambda X_\lambda$$
+        $\lambda\in\mathds{C}$ is an \textbf{eigenvalue} (or characteristic value) of matrix $A\in\mathds{R}^{n\times n}$ if there is a vector, called \textbf{eigenvector}, $X_\lambda\in\mathds{R}^n\setminus\{0\}$ such that $$A X_\lambda = \lambda X_\lambda$$
     \end{definition}
     
 \end{frame}
 
 \begin{frame}
     \begin{proposition}
-        Let $A\in\mathbb{R}^{n\times n}$, and $\lambda_1$ and $\lambda_2$ two eigenvalues of $A$, with $\lambda_1\neq\lambda_2$. If $V_1$ in the vector subspace associated to $\lambda_1$, and $V_2$ in the vector subspace of $\lambda_2$ then $V_1$ and $V_2$ are linearly independent.
+        Let $A\in\mathds{R}^{n\times n}$, and $\lambda_1$ and $\lambda_2$ two eigenvalues of $A$, with $\lambda_1\neq\lambda_2$. If $V_1$ in the vector subspace associated to $\lambda_1$, and $V_2$ in the vector subspace of $\lambda_2$ then $V_1$ and $V_2$ are linearly independent.
     \end{proposition}
     
     \begin{proposition}
-        Given $A\in\mathbb{R}^{n\times n}$ symmetric, then its eigenvalues are real valued.
+        Given $A\in\mathds{R}^{n\times n}$ symmetric, then its eigenvalues are real valued.
     \end{proposition}
 \end{frame}
 
@@ -667,7 +618,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
 \end{frame}
 
 \begin{frame}
-    How to calculate the determinant of a big matrix? Recursively. Let $A\in\mathbb{R}^{n\times n}$.
+    How to calculate the determinant of a big matrix? Recursively. Let $A\in\mathds{R}^{n\times n}$.
     Define $A_{ij}$ as:
     
     \begin{align*}
@@ -702,7 +653,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
     
     \begin{itemize}
         \item A squared matrix is invertible if and only if its determinant is different from zero.
-        \item Take a finite set of matrices $\mathbb{A}\subseteq\mathbb{R}^{n\times n}$, with $A_i$ being the $ith$ element of $\mathbb{A}$ then, $$det(A_1A_2\ldots A_k)=det(A_1)det(A_2)\ldots det(A_k)$$
+        \item Take a finite set of matrices $\mathds{A}\subseteq\mathds{R}^{n\times n}$, with $A_i$ being the $ith$ element of $\mathds{A}$ then, $$det(A_1A_2\ldots A_k)=det(A_1)det(A_2)\ldots det(A_k)$$
         \item If $A$ is invertible, then $$det(A^{-1})=\frac{1}{det(A)}$$
         \item For any squared $A$ it holds that $det(A^t)=det(A)$.
     \end{itemize}
@@ -723,7 +674,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
 
 \begin{frame}
     \begin{definition}
-    Given $A\in\mathbb{R}^{n\times n}$, the \textbf{characteristic polynomial} of $A$ is defined as the function $p_A:\mathbb{R}\rightarrow\mathbb{R}$ such that $$p_A(\lambda)=det[A-\lambda I]$$
+    Given $A\in\mathds{R}^{n\times n}$, the \textbf{characteristic polynomial} of $A$ is defined as the function $p_A:\mathds{R}\rightarrow\mathds{R}$ such that $$p_A(\lambda)=det[A-\lambda I]$$
     \end{definition}
 
     So, $\lambda$ is an eigenvalue of $A$ if $p_A(\lambda)=0$
@@ -740,12 +691,12 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
     Note that:
     $$ A V = V D(\lambda)\quad\Leftrightarrow\quad A = V D(\lambda) V^{-1}$$
     
-    It can be shown that, given that the eigen vectors are l.i., $V^t=V^{-1}$ and therefore $$A=V D(\lambda) V^{-1}$$ which is one of the fundamental properties of the symmetric matrices.
+    Note that given the properties of matrix multiplication $$A^{-1}=V D\left(\frac{1}{\lambda}\right) V^{-1}$$ which is one of the fundamental properties of the symmetric matrices.
 \end{frame}
 
 \begin{frame}
     \begin{proposition}
-        Given $A\in\mathbb{R}^{n\times n}$, symmetric. It holds that,
+        Given $A\in\mathds{R}^{n\times n}$, symmetric. It holds that,
         \begin{align*}
             A  = V D V^t
         \end{align*}
@@ -756,7 +707,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
 
 \begin{frame}
     \begin{proposition}
-        Let $A\in\mathbb{R}^{n\times n}$, symmetric.
+        Let $A\in\mathds{R}^{n\times n}$, symmetric.
         
         \begin{enumerate}
             \item $A$ is positive definite if all the eigenvalues of $A$ are strictly positive.
@@ -769,7 +720,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
 
 \begin{frame}
 \begin{definition}
-    A function $f:\mathbb{R}^n\rightarrow\mathbb{R}^m$ is linear if, for any $X,Y\in\mathbb{R}^n$, and for any $\alpha\in\mathbb{R}$
+    A function $f:\mathds{R}^n\rightarrow\mathds{R}^m$ is linear if, for any $X,Y\in\mathds{R}^n$, and for any $\alpha\in\mathds{R}$
     \begin{align*}
         f(X+Y)=f(X)+f(Y),\quad f(\alpha X)=\alpha f(X)
     \end{align*}
@@ -784,7 +735,7 @@ Note:  Let $S=\frac{A+A^t}{2}$ and $T=\frac{A-A^t}{2}$. While $S$ is symmetric, 
 
 \begin{frame}
     \begin{theorem}
-    Let $A\in\mathbb{R}^{n\times n}$, then:
+    Let $A\in\mathds{R}^{n\times n}$, then:
     \begin{itemize}
         \item the product of the eigenvalues of $A$ is equal to its determinant, that is,\[det(A)=\prod_{i=1}^n \lambda_i\]
         \item the sum of the eigenvalues of $A$ is equal to its trace, that is, \[\sum_{i=1}^n a_{i,i} =\sum_{i=1}^n \lambda_i\]

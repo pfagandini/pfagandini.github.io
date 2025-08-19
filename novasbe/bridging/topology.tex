@@ -1,88 +1,35 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169, handout]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{tikz}
+\usepackage{dsfont}
 \usepackage{opensans}
 
-\title{Topology and Continuity}
-\author{Paulo Fagandini}
-\institute{\includegraphics[scale=0.3]{NovaPrincipalV1.png}}
+\usetheme{NOVASBE}
+
+\title[]{4509 - Bridging Mathematics}
+\subtitle{Topology and Continuity}
+\author[P. Fagandini]{Paulo Fagandini}
+\institute{}
 \date{}
-
-\makeatletter
-\setbeamertemplate{theorem begin}{%
-  \setbeamercolor{block title}{bg=white,fg=black}%
-  \setbeamercolor{itemize item}{fg=black}%
-  \setbeamercolor{itemize subitem}{fg=black}%
-  \setbeamercolor{itemize subsubitem}{fg=black}%
-  \setbeamercolor{enumerate item}{fg=black}%
-  \setbeamercolor{enumerate subitem}{fg=black}%
-  \setbeamercolor{enumerate subsubitem}{fg=black}%
-  \begin{\inserttheoremblockenv}
-    {%
-      \textbf{\inserttheoremname}
-      %\inserttheoremnumber
-      \ifx\inserttheoremaddition\@empty\else\ \inserttheoremaddition\fi%
-    }%
-    \normalfont%
-}
-
-\setbeamertemplate{theorem end}{%
-    \end{\inserttheoremblockenv}%
-}
-
-\setbeamercolor{block title}{bg=white,fg=black}%
-\setbeamercolor{itemize item}{fg=black}%
-\setbeamercolor{itemize subitem}{fg=black}%
-\setbeamercolor{itemize subsubitem}{fg=black}%
-\setbeamercolor{enumerate item}{fg=black}%
-\setbeamercolor{enumerate subitem}{fg=black}%
-\setbeamercolor{enumerate subsubitem}{fg=black}%
-
-\makeatother
 
 \newtheorem{defenition}{Definition}[section]
 \newtheorem{proposition}{Conjecture}[section]
 
-\AtBeginSection{\frame{\sectionpage}}
-
-\setbeamertemplate{footline}{
-    \hspace{0.05\textwidth}
-    \raisebox{3ex}{\insertshortauthor{}}\hfill
-    \raisebox{3ex}{\insertframenumber{}/\inserttotalframenumber} \hfill
-    {\raisebox{3ex}{\includegraphics[height=0.04\textheight]{NovaPrincipalV2.png}}}
-    \hspace{0.05\textwidth}
-}
-
-\setbeamertemplate{navigation symbols}{}
-
-\setbeamercolor{title}{fg = black}
-\setbeamercolor{subtitle}{fg = black}
-\setbeamercolor{frametitle}{fg = white, bg = black}
-
-\hypersetup{linkcolor=black, colorlinks=true}
-
 \begin{document}
-
-{
-\setbeamertemplate{footline}{} 
-\begin{frame}
-  \titlepage
-\end{frame}
-}
 
 \begin{frame}
    \begin{definition}
-    The \textbf{open ball} centered around $x_0\in\mathbb{R}^n$ and radius $r>0$ is defined as $$B(x_0,r)=\{x\in\mathbb{R}^n | \quad ||x-x_0||<r\}$$ while the \textbf{closed ball} centered around $x_0$ and radius $r>0$ is $$\overline{B}(x_0,r)=\{x\in\mathbb{R}^n| \quad ||x-x_0||\leq r\}$$
+    The \textbf{open ball} centered around $x_0\in\mathds{R}^n$ and radius $r>0$ is defined as $$B(x_0,r)=\{x\in\mathds{R}^n | \quad ||x-x_0||<r\}$$ while the \textbf{closed ball} centered around $x_0$ and radius $r>0$ is $$\overline{B}(x_0,r)=\{x\in\mathds{R}^n| \quad ||x-x_0||\leq r\}$$
    \end{definition}
 \end{frame}
 
 \begin{frame}
     \begin{definition}
     \begin{itemize}
-        \item Let $A\subset\mathbb{R}^n$. $x_0\in A$ is \textbf{interior}, if there is $\epsilon>0$ such that $B(x_0,\epsilon)\subseteq A$.
-        \item Let $A\subseteq \mathbb{R}^n$, the \textbf{interior} of $A$, denoted as $int(A)$, is the set of all its interior points, $int(A)=\{x\in A|\exists\epsilon>0,B(x_0,\epsilon)\subseteq A\}$.
-        \item The set $A\subseteq\mathbb{R}^n$ is \textbf{open} if $A\setminus int(A)=\emptyset$.
+        \item Let $A\subset\mathds{R}^n$. $x_0\in A$ is \textbf{interior}, if there is $\epsilon>0$ such that $B(x_0,\epsilon)\subseteq A$.
+        \item Let $A\subseteq \mathds{R}^n$, the \textbf{interior} of $A$, denoted as $int(A)$, is the set of all its interior points, $int(A)=\{x\in A|\exists\epsilon>0,B(x_0,\epsilon)\subseteq A\}$.
+        \item The set $A\subseteq\mathds{R}^n$ is \textbf{open} if $A\setminus int(A)=\emptyset$.
         \item The set $A$ is \textbf{closed} if $A^c$ is open.
     \end{itemize}
     \end{definition}
@@ -98,22 +45,22 @@
 \end{definition}
 
 \begin{definition}
-    $A\subset\mathbb{R}^n$ is \textbf{bounded} if there is an open ball that contains $A$.
+    $A\subset\mathds{R}^n$ is \textbf{bounded} if there is an open ball that contains $A$.
 \end{definition}
     
 \begin{definition}
-    A set $A\subseteq\mathbb{R}^n$ is said to be \textbf{compact} if it is closed and bounded.
+    A set $A\subseteq\mathds{R}^n$ is said to be \textbf{compact} if it is closed and bounded.
 \end{definition}    
     
 \end{frame}
 
 \begin{frame}
 \begin{definition}
-    A \textbf{sequence} is any function $f:\mathbb{N}\rightarrow\mathbb{R}$.
+    A \textbf{sequence} is any function $f:\mathds{N}\rightarrow\mathds{R}$.
 \end{definition}
 
 \begin{definition}
-    The sequence $x_t$ \textbf{converges} to $x_0$ if, for any open ball $B$ containing $x_0$, exists $t_\epsilon\in\mathbb{N}$ such that for $t\geq t_\epsilon$, $x_t\in B$. It is denoted as $x_t\rightarrow x_0.$ $x_0$ is called the \textbf{limit} of $x_t$.
+    The sequence $x_t$ \textbf{converges} to $x_0$ if, for any open ball $B$ containing $x_0$, exists $t_\epsilon\in\mathds{N}$ such that for $t\geq t_\epsilon$, $x_t\in B$. It is denoted as $x_t\rightarrow x_0.$ $x_0$ is called the \textbf{limit} of $x_t$.
 \end{definition}
 
 \begin{proposition}
@@ -131,7 +78,7 @@ You know what is coming, ... \pause ... Quiz! Think on a way to prove it... 10 m
         \begin{enumerate}
             \item $x_t\rightarrow x_0$ and also $x_t\rightarrow x_1$, and $x_1\neq x_0$.\pause
             
-            \item $\exists t^0_\epsilon ,t^1_\epsilon\in\mathbb{N}$ such that for $t^*_\epsilon>\max\{t^0_\epsilon ,t^1_\epsilon\}$ $x_t\in B(t_0,\epsilon)$ and $x_t\in B(t_1, \epsilon)$ $\forall t> t^*$.\pause
+            \item $\exists t^0_\epsilon ,t^1_\epsilon\in\mathds{N}$ such that for $t^*_\epsilon>\max\{t^0_\epsilon ,t^1_\epsilon\}$ $x_t\in B(t_0,\epsilon)$ and $x_t\in B(t_1, \epsilon)$ $\forall t> t^*$.\pause
             
             \item Let $|x_0-x_1| = \delta$. Choose $\epsilon = \delta/2$. So there is $t^*$ such that $|x_t-x_0|<\delta/2$ and $|x_t-x_1|<\delta/2$. \pause
             $|x_0-x_1|=|x_0-x_t+x_t-x_1| = |(x_0-x_t)+(-x_1+x_t)|\leq |x_0-x_t|+|x_1-x_t| < 2\epsilon = \delta$, contradiction!
@@ -143,8 +90,8 @@ You know what is coming, ... \pause ... Quiz! Think on a way to prove it... 10 m
 \begin{frame}
     \begin{definition}
     \begin{itemize}
-        \item The sequence $x_t$ is \textbf{increasing} if for any $t\in\mathbb{N}$, $x_t\leq x_{t+1}\in\mathbb{R}$.
-        \item If $x_t$ is increasing, it is called \textbf{bounded from above} if $x_t\leq c, \forall t\in\mathbb{N}$.
+        \item The sequence $x_t$ is \textbf{increasing} if for any $t\in\mathds{N}$, $x_t\leq x_{t+1}\in\mathds{R}$.
+        \item If $x_t$ is increasing, it is called \textbf{bounded from above} if $x_t\leq c, \forall t\in\mathds{N}$.
     \end{itemize}
     \end{definition}
     
@@ -155,7 +102,7 @@ You know what is coming, ... \pause ... Quiz! Think on a way to prove it... 10 m
 
 \begin{frame}
     \begin{definition}
-        Let $x_t$ be a sequence. A \textbf{subsequence} of $x_t$ is a sequence built by removing some of the elements of $x_t$ without changing its order. Let $\phi:\mathbb{N}\rightarrow\mathbb{N}$ be increasing, then $y_t=x_{\phi(t)}$ is a subsequence of $x_t$.
+        Let $x_t$ be a sequence. A \textbf{subsequence} of $x_t$ is a sequence built by removing some of the elements of $x_t$ without changing its order. Let $\phi:\mathds{N}\rightarrow\mathds{N}$ be increasing, then $y_t=x_{\phi(t)}$ is a subsequence of $x_t$.
     \end{definition}
     
     \begin{definition}
@@ -176,8 +123,8 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
 
 \begin{definition}
 \begin{itemize}
-    \item The \textbf{upper bound} of $x_t$ is defined as $\max\{x_1^*,x_2^*,...,x_p^*\}$.
-    \item The \textbf{lower bound} of $x_t$ is defined as $\min\{x_1^*,x_2^*,...,x_p^*\}$.
+    \item The \textbf{limit superior} (a.k.a. greatest limit, maximum limit, upper limit, lim sup, $\overline{lim}$) of $x_t$ is defined as $\max\{x_1^*,x_2^*,...,x_p^*\}$.
+    \item The \textbf{limit inferior} (a.k.a. least limit, minimum limit, lower limit, lim inf, $\underline{lim}$) of $x_t$ is defined as $\min\{x_1^*,x_2^*,...,x_p^*\}$.
 \end{itemize}
 \end{definition}
     
@@ -186,7 +133,7 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
 \begin{frame}
 
 \begin{proposition}
-    Let $A\subseteq\mathbb{R}^n$.
+    Let $A\subseteq\mathds{R}^n$.
     \begin{itemize}
         \item $A$ is closed if and only if any convergent sequence $x_t\subseteq A$ has its limit in $A$. If $x_t\subseteq A, x_t\rightarrow x_0\Leftrightarrow x_0\in A$.
         \item $A$ is compact if and only if for any sequence $x_t\subseteq A$, there is a convergent subsequence.
@@ -198,7 +145,7 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
 
 \begin{frame}
     \begin{definition}
-    Let $A,C\subseteq \mathbb{R}^n$ such that $C\subseteq A$. We'll say that $C$ is \textbf{dense} in $A$ if and only if $\overline{C}=A$.
+    Let $A,C\subseteq \mathds{R}^n$ such that $C\subseteq A$. We'll say that $C$ is \textbf{dense} in $A$ if and only if $\overline{C}=A$.
     \end{definition}
     
 \end{frame}
@@ -206,15 +153,15 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
 \begin{frame}
 
     \begin{definition}
-    Consider $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$. $f(x)$ \textbf{converges} to $\alpha \in \mathbb{R}^n$ when $x\in\mathbb{R}^m$ goes to $x_0\in\mathbb{R}^m$, if for any sequence $x_n\rightarrow x_0$, $f(x_n)\rightarrow \alpha$. This is written as $\lim_{x\rightarrow x_0} f(x)=a$.
+    Consider $f:\mathds{R}^m\rightarrow\mathds{R}^n$. $f(x)$ \textbf{converges} to $\alpha \in \mathds{R}^n$ when $x\in\mathds{R}^m$ goes to $x_0\in\mathds{R}^m$, if for any sequence $x_n\rightarrow x_0$, $f(x_n)\rightarrow \alpha$. This is written as $\lim_{x\rightarrow x_0} f(x)=\alpha$.
     \end{definition}
     
     \begin{definition}
-    $f:\mathbb{R}^m\rightarrow\mathbb{R}^m$ is \textbf{continuous} in $x_0\in\mathbb{R}^m$ if, for any sequence $x_t\rightarrow x_0$ it holds that $f(x_t)\rightarrow f(x_0)$
+    $f:\mathds{R}^m\rightarrow\mathds{R}^m$ is \textbf{continuous} in $x_0\in\mathds{R}^m$ if, for any sequence $x_t\rightarrow x_0$ it holds that $f(x_t)\rightarrow f(x_0)$
     \end{definition}
     
     \begin{definition}
-     If $f:\mathbb{R}^m\rightarrow \mathbb{R}^n$ is continuous for all $x_0\in A\subseteq \mathbb{R}^m$, then it is continuous in $A$.
+     If $f:\mathds{R}^m\rightarrow \mathds{R}^n$ is continuous for all $x_0\in A\subseteq \mathds{R}^m$, then it is continuous in $A$.
     \end{definition}
 \end{frame}
 
@@ -223,7 +170,7 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
     A more conventional definition of continuity is:
     
     \begin{definition}
-     A function is said to be \textbf{continuous} on the set $S\subseteq\mathbb{R}^n$ if for every $a\in S$, and any $\epsilon>0$ there exists $\delta$ such that for any $x\in S$ that satisfies $|x-a|\leq \delta$ implies $|f(x)-f(a)|\leq \epsilon$.
+     A function is said to be \textbf{continuous} on the set $S\subseteq\mathds{R}^n$ if for every $a\in S$, and any $\epsilon>0$ there exists $\delta$ such that for any $x\in S$ that satisfies $|x-a|\leq \delta$ implies $|f(x)-f(a)|\leq \epsilon$.
     \end{definition}
     
     
@@ -236,19 +183,33 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
     \end{proposition}
 
     \begin{proposition}
-        Let $A\subseteq\mathbb{R}^m$, and given $\mathcal{F}=\{f:A\rightarrow\mathbb{R}^m, f \text{ continuous in } A\}$, it holds that $\mathcal{F}$ is a vector space.
+        Let $A\subseteq\mathds{R}^m$, and given $\mathcal{F}=\{f:A\rightarrow\mathds{R}^m, f \text{ continuous in } A\}$, it holds that $\mathcal{F}$ is a vector space.
     \end{proposition}
 \end{frame}
 
 \begin{frame}
     \begin{proposition}
-        Let $K\subseteq\mathbb{R}^n$ be compact and $f:\mathbb{R}^n\rightarrow\mathbb{R}^m$ a continuous function. Then $f(K)$ is compact.
+        Let $K\subseteq\mathds{R}^n$ be compact and $f:\mathds{R}^n\rightarrow\mathds{R}^m$ a continuous function. Then $f(K)$ is compact.
     \end{proposition}
 \end{frame}
 
 \begin{frame}
+    \begin{proof}
+        Take a sequence $y_n\in f(K)$ that converges to some $y$ (not necessarily in $f(K)$). Then, by definition $\exists x_n\in K$ such that $f(x_n)=y_n$. Because $K$ is compact,
+        there is a subsequence of $x_n$, say $x_{n_j}$ that converges to some $x_0\in K$. Now, by continuity of $f$, we have that $y=f(x_0)\in f(K)$ and $f(K)$ is closed.
+
+        \vspace{0.5em}
+
+        Let's check if it is bounded. Assume it is not, and let $z_n$ be a sequence in $f(K)$ such that $z_n\geq n$ for $n\in\mathds{N}$. Again, repeating the argument we can get that there is some
+        subsequence $s_{n_j}$ in $K$, such that $f(s_{n_j})=z_n$, and that converges to some $\hat{s}\in K$, because $K$ is compact. However:
+        \[\infty = \lim_{n\rightarrow\infty}z_n\leq \lim_{j\rightarrow\infty} f(s_{n_j})=f(\hat{s})\]
+        by the continuity of $f$, which is a contradiction (we found an upper bound for infinity!).
+    \end{proof}
+\end{frame}
+
+\begin{frame}
     \begin{definition}
-        Let $K\subseteq\mathbb{R}^n$ and $f:K\rightarrow\mathbb{R}$. The \textbf{maximum}$(x_M)$ and the \textbf{minimum}$(x_m)$ of $f$ are defined as:
+        Let $K\subseteq\mathds{R}^n$ and $f:K\rightarrow\mathds{R}$. The \textbf{maximum}$(x_M)$ and the \textbf{minimum}$(x_m)$ of $f$ are defined as:
         \begin{itemize}
             \item $f(x_M)\geq f(x) \quad \forall x\in K$
             \item $f(x_m)\leq f(x) \quad \forall x\in K$
@@ -258,7 +219,7 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
     \end{definition}
     
     \begin{proposition}
-        Let $f:K\rightarrow\mathbb{R}$ be continuous and $K$ compact, then $x_M$ and $x_m$ exist.
+        Let $f:K\rightarrow\mathds{R}$ be continuous and $K$ compact, then $x_M$ and $x_m$ exist.
     \end{proposition}
 \end{frame}
 
@@ -268,15 +229,34 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
     \end{definition}
 
     \begin{theorem}[Bolzano]
-        Let $f:\mathbb{R}\rightarrow\mathbb{R}$ continuous. Let $a,b\in\mathbb{R}$ such that $f(a)<0$ and $f(b)>0$, then there is $c\in\mathbb{R}$ such that $f(c)=0$.
+        Let $f:\mathds{R}\rightarrow\mathds{R}$ continuous. Let $a,b\in\mathds{R}$ such that $f(a)<0$ and $f(b)>0$, then there is $c\in\mathds{R}$ such that $f(c)=0$.
     \end{theorem}
     
     \begin{theorem}[Weierstrass]
         
-        Let $[a,b]\subseteq\mathbb{R}$, let $f:[a,b]\rightarrow\mathbb{R}$ continuous. Then for any $u\in(a,b)$, there is at least one $c$ such that $f(c)=u.$
+        Let $[a,b]\subseteq\mathds{R}$, let $f:[a,b]\rightarrow\mathds{R}$ continuous. Then for any $u\in(a,b)$, there is at least one $c$ such that $f(c)=u.$
         
     \end{theorem}
 \end{frame}
+
+\begin{frame}
+    \begin{proof}[Bolzano's]
+        We start with interval $I_0=(a_0=a,b_0=b)$. Define $d=\frac{b+a}{2}$. There are only three possibilities:
+        \begin{enumerate}
+            \item $f(d)=0$ and therefore the proof is complete, and $c=d$.
+            \item $f(d)<0$, and we define interval $I_1 = (a_1 = d , b_1 = b_0)$
+            \item $f(d)>0$, and we define interval $I_1 = (a_1 = a_0 , b_1 = d)$
+        \end{enumerate}
+        Note that $I_1\subset I_0$, with half the length. Repeat and build a sequence of open intervals, where $I_n\subset I_{n+1}$ with $f(a_n)<0<f(b_n)$.
+        Define $c_{2n}=a_n$ and $c_{2n+1}=b_n$, you have that the sequence $c_i$ converges by the Cauchy criterion, as for $m>n$ we have $|c_m-c_n|\leq 2^{-n/2}|I_0|$.
+        Then $c_n\rightarrow c\in[a,b]$, and given that $a_n$ and $b_n$ are subsequences, they converge to the same limit.
+
+        Given $f$ continuous, $x_n\rightarrow x \Rightarrow f(x_n)\rightarrow f(x)$.
+        We set $a$ such that $f(a_n)\leq 0$, but $\lim_{n\rightarrow \infty} f(a_n)=f(c)\leq 0$, and the same can be said for $b_n$, $\lim_{n\rightarrow\infty}f(b_n)=f(c)\geq 0$, but if
+        $f(c)\leq0$ and $f(c)\geq 0$ then it must be that $f(c)=0$.
+    \end{proof}
+\end{frame}
+
 
 \begin{frame}
     \begin{center}
@@ -302,11 +282,12 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
     \end{center}
 \end{frame}
 
-\begin{frame}{Brouwer fixed point theorem in $\mathbb{R}$}
+\begin{frame}{Brouwer fixed point theorem in $\mathds{R}$}
 
     \begin{theorem}
-    Let $f:K\rightarrow K$ continuous, with $K\subseteq\mathbb{R}$ compact and convex.\footnote{A.k.a. interval.} Then there is $\overline{x}$ such that $f(\overline{x})=\overline{x}$.
+    Let $f:K\rightarrow K$ continuous, with $K\subseteq\mathds{R}$ compact and convex.\footnote{A.k.a. interval.} Then there is $\overline{x}$ such that $f(\overline{x})=\overline{x}$.
     \end{theorem}
+    \onslide<2->{
     \begin{proof}
     \begin{itemize}
         \item Let $f:[0,1]\rightarrow[0,1]$ continuous.
@@ -316,6 +297,29 @@ Let $x_1^*,x_2^*,...,x_p^*$ be cluster points of $x_t$.
         \item Then, because of the proposition we just saw, there must be $\overline{x}$ such that $g(\overline{x})=0$, or $f(\overline{x})=\overline{x}$.
     \end{itemize}
     \end{proof}
+    }
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}[Brower fixed point in $\mathds{R}^n$]
+        Consider $B_n\subseteq\mathds{R}^n$ the unit open ball (an open ball of radius 1). Let $f:B_n\rightarrow B_n$ continuous. Then $f$ has a fixed point in $B_n$, that is, there is $x^*\in B_n$ such that $f(x^*)=x^*$.
+    \end{theorem}
+    
+\end{frame}
+
+
+\begin{frame}
+    \begin{definition}
+        $f:\mathds{R}^n\rightarrow\mathds{R}^n$ is called \textbf{locally Lipschitz continuous} if for any $x_0\in\mathds{R}^n$, there is a neighborhood $V_{x_0}$ and a constant $L>0$ such that for any $x,y\in V_{x_0}$ it holds that $$||f(x)-f(y)||\leq L ||x-y||$$ $L$ is called the \textbf{Lipschitz constant}.
+        
+        If $L$ does not depend on $x_0$, it is called simply a \textbf{Lipschitz continuous}, and furthermore, if $L<1$ it is called a \textbf{contraction}.
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+\begin{theorem}[Banach fixed point]
+    If $f:\mathds{R}^n\rightarrow\mathds{R}^n$ is a contraction, then there is a single $x^*\in\mathds{R}^n$ such that $f(x^*)=x^*$.
+\end{theorem}
 \end{frame}
 
 

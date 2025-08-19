@@ -1,79 +1,18 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169, handout]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{tikz}
+\usepackage{dsfont}
 \usepackage{opensans}
+\usetheme{NOVASBE}
 
-\title{Sets}
-\author{Paulo Fagandini}
-\institute{NOVA School of Business and Economics}
+\title[]{4509 - Bridging Mathematics}
+\subtitle{Sets}
+\author[P. Fagandini]{Paulo Fagandini}
+\institute{}
 \date{}
-
-\institute{\includegraphics[scale=0.3]{NovaPrincipalV1.png}}
-\date{}
-
-\makeatletter
-\setbeamertemplate{theorem begin}{%
-  \setbeamercolor{block title}{bg=white,fg=black}%
-  \setbeamercolor{itemize item}{fg=black}%
-  \setbeamercolor{itemize subitem}{fg=black}%
-  \setbeamercolor{itemize subsubitem}{fg=black}%
-  \setbeamercolor{enumerate item}{fg=black}%
-  \setbeamercolor{enumerate subitem}{fg=black}%
-  \setbeamercolor{enumerate subsubitem}{fg=black}%
-  \begin{\inserttheoremblockenv}
-    {%
-      \textbf{\inserttheoremname}
-      %\inserttheoremnumber
-      \ifx\inserttheoremaddition\@empty\else\ \inserttheoremaddition\fi%
-    }%
-    \normalfont%
-}
-
-\setbeamertemplate{theorem end}{%
-    \end{\inserttheoremblockenv}%
-}
-
-\setbeamercolor{block title}{bg=white,fg=black}%
-\setbeamercolor{itemize item}{fg=black}%
-\setbeamercolor{itemize subitem}{fg=black}%
-\setbeamercolor{itemize subsubitem}{fg=black}%
-\setbeamercolor{enumerate item}{fg=black}%
-\setbeamercolor{enumerate subitem}{fg=black}%
-\setbeamercolor{enumerate subsubitem}{fg=black}%
-
-\makeatother
-
-\newtheorem{defenition}{Definition}[section]
-\newtheorem{proposition}{Conjecture}[section]
-
-\AtBeginSection{\frame{\sectionpage}}
-
-\setbeamertemplate{footline}{
-    \hspace{0.05\textwidth}
-    \raisebox{3ex}{\insertshortauthor{}}\hfill
-    \raisebox{3ex}{\insertframenumber{}/\inserttotalframenumber} \hfill
-    {\raisebox{3ex}{\includegraphics[height=0.04\textheight]{NovaPrincipalV2.png}}}
-    \hspace{0.05\textwidth}
-}
-
-\setbeamertemplate{navigation symbols}{}
-
-\setbeamercolor{title}{fg = black}
-\setbeamercolor{subtitle}{fg = black}
-\setbeamercolor{frametitle}{fg = white, bg = black}
-
-\hypersetup{linkcolor=black, colorlinks=true}
-
 
 \begin{document}
-
-{
-\setbeamertemplate{footline}{} 
-\begin{frame}
-  \titlepage
-\end{frame}
-}
 
 \begin{frame}{Sets}
 
@@ -123,7 +62,7 @@ There are two very important sets: The Universal set $\mathcal{U}$ and the empty
         $$\mathcal{P}(A):=\{B|B\subseteq A\}$$
     \end{definition}
     
-    Note that the elements of $A$ do not belong to $\mathcal{P}(A)$, however, the sets containing a single element do. In other words the \textbf{set} $\{a\}$ is different than the \textbf{element} $a$.
+    Note that the elements of $A$ do not belong to $\mathcal{P}(A)$, however, the sets containing a single element do. In other words the \textbf{set} $\{a\}$ is different from the \textbf{element} $a$.
 
     \begin{definition}
         The \textbf{cardinality} of a set is the number of elements it contains. It is denoted as $\#A$.
@@ -149,11 +88,11 @@ There are two very important sets: The Universal set $\mathcal{U}$ and the empty
     
     \vspace{0.5cm}
     
-    Consider the set $\mathbb{N}$, the natural numbers. $\#\mathbb{N}=\infty$. This infinite set is special, because you can count it, from zero to infinity. We call this cardinality \emph{aleph zero}, $\aleph_0$, and the set is \textbf{countable}.
+    Consider the set $\mathds{N}$, the natural numbers. $\#\mathds{N}=\infty$. This infinite set is special, because you can count it, from zero to infinity. We call this cardinality \emph{aleph zero}, $\aleph_0$, and the set is \textbf{countable}.
     
     \vspace{0.5cm}
     
-    Now consider the set $\mathbb{R}$, which you know as the real numbers. Again, $\#\mathbb{R}=\infty$. This cardinal is called \emph{continuum}, and denoted with $c$. The sets with this cardinality are considered \textbf{uncountable}.
+    Now consider the set $\mathds{R}$, which you know as the real numbers. Again, $\#\mathds{R}=\infty$. This cardinal is called \emph{continuum}, and denoted with $c$. The sets with this cardinality are considered \textbf{uncountable}.
 \end{frame}
 
 \begin{frame}{Quick Quiz - 5 minutes}
@@ -163,54 +102,9 @@ Classify the cardinality of the following sets:
 \begin{tabular}{c|c}
     Set & Cardinality \\
     \hline
-    $\mathbb{Z}$ &  \\
-    $\mathbb{Q}$ &  \\
-    $f(x) = a + bx, x\in\mathbb{R^+}$ &
-\end{tabular}
-\end{center}
-
-\end{frame}
-
-\begin{frame}{Quick Quiz - 5 minutes}
-
-Classify the cardinality of the following sets:
-\begin{center}
-\begin{tabular}{c|c}
-    Set & Cardinality \\
-    \hline
-    $\mathbb{Z}$ & $\aleph_0$  \\
-    $\mathbb{Q}$ & \\
-    $f(x) = a + bx, x\in\mathbb{R^+}$ &
-\end{tabular}
-\end{center}
-
-\end{frame}
-
-\begin{frame}{Quick Quiz - 5 minutes}
-
-Classify the cardinality of the following sets:
-\begin{center}
-\begin{tabular}{c|c}
-    Set & Cardinality \\
-    \hline
-    $\mathbb{Z}$ & $\aleph_0$  \\
-    $\mathbb{Q}$ &  $\aleph_0$ \\
-    $f(x) = a + bx, x\in\mathbb{R^+}$ &
-\end{tabular}
-\end{center}
-
-\end{frame}
-
-\begin{frame}{Quick Quiz - 5 minutes}
-
-Classify the cardinality of the following sets:
-\begin{center}
-\begin{tabular}{c|c}
-    Set & Cardinality \\
-    \hline
-    $\mathbb{Z}$ & $\aleph_0$  \\
-    $\mathbb{Q}$ &  $\aleph_0$ \\
-    $f(x) = a + bx, x\in\mathbb{R^+}$ & $c$
+    $\mathds{Z}$ & \onslide<2>{$\aleph_0$}  \\
+    $\mathds{Q}$ & \onslide<3>{ $\aleph_0$} \\
+    $f(x) = a + bx, x\in\mathds{R^+}$ & \onslide<4>{$c$}
 \end{tabular}
 \end{center}
 \end{frame}
@@ -226,6 +120,8 @@ Classify the cardinality of the following sets:
         \end{enumerate}
     \end{definition}
 \end{frame}
+
+
 
 \begin{frame}{Sets}
     
@@ -286,19 +182,19 @@ Classify the cardinality of the following sets:
 
 \begin{frame}{Numbers and Sets}
     \begin{itemize}
-        \item The naturals, $\mathbb{N}:=\{0,1,2,3,\ldots\}$
-        \item The integers, $\mathbb{Z}:=\{\ldots,-2,-1,0,1,2,\ldots\}$
-        \item The rationals, $\mathbb{Q}:=\left\{\frac{p}{q}|p\in\mathbb{Z},q\in\mathbb{Z}\setminus\{0\}\right\}$
-        \item The reals, $\mathbb{R}:=\mathbb{Q}\cup I$, with $I$ being the irrationals.
+        \item The naturals, $\mathds{N}:=\{0,1,2,3,\ldots\}$
+        \item The integers, $\mathds{Z}:=\{\ldots,-2,-1,0,1,2,\ldots\}$
+        \item The rationals, $\mathds{Q}:=\left\{\frac{p}{q}|p\in\mathds{Z},q\in\mathds{Z}\setminus\{0\}\right\}$
+        \item The reals, $\mathds{R}:=\mathds{Q}\cup I$, with $I$ being the irrationals.
     \end{itemize}
     
-    It holds that $$\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}$$
+    It holds that $$\mathds{N}\subseteq\mathds{Z}\subseteq\mathds{Q}\subseteq\mathds{R}$$
     
 \end{frame}
 
 \begin{frame}{Working on the Real Numbers}
 
-Let $a<b$, and $a,b\in \mathbb{R}$.
+Let $a<b$, and $a,b\in \mathds{R}$.
 
 \begin{enumerate}
     \item $[a,b]$ is called closed interval. This set contains all the real numbers between $a$ and $b$, with $a$ and $b$ included.
@@ -310,7 +206,7 @@ Let $a<b$, and $a,b\in \mathbb{R}$.
 \end{frame}
 
 \begin{frame}{Working on the Real Numbers}
-    If a subset A of $\mathbb{R}$ is such that $A:=\{x\in\mathbb{R}|x\leq a\}$ we can write it as $(-\infty,a]$.
+    If a subset A of $\mathds{R}$ is such that $A:=\{x\in\mathds{R}|x\leq a\}$ we can write it as $(-\infty,a]$.
     
     \vspace{1cm}
     
@@ -319,7 +215,7 @@ Let $a<b$, and $a,b\in \mathbb{R}$.
 
 \begin{frame}{Working on the Real Numbers}
     \begin{definition}
-        Let $x\in\mathbb{R}$, the module of $x$ is,
+        Let $x\in\mathds{R}$, the module of $x$ is,
         
         \begin{eqnarray*}
             |x|=\left\{
@@ -335,17 +231,17 @@ Let $a<b$, and $a,b\in \mathbb{R}$.
 
 \begin{frame}{Working on the Real Numbers}
     \begin{definition}
-        Let $A\subseteq\mathbb{R}$,
+        Let $A\subseteq\mathds{R}$,
         \begin{enumerate}
-            \item $A$ is said to be bounded from above if $$\exists M\in\mathbb{R}\quad s.th.\quad \forall a\in A, a\leq M$$ $M$ is an upper bound of $A$.
-            \item $A$ is said to be bounded from below if $$\exists M\in\mathbb{R}\quad s.th.\quad \forall a\in A, a\geq M$$ $M$ is a lower bound of $A$.
+            \item $A$ is said to be bounded from above if $$\exists M\in\mathds{R}\quad s.th.\quad \forall a\in A, a\leq M$$ $M$ is an upper bound of $A$.
+            \item $A$ is said to be bounded from below if $$\exists M\in\mathds{R}\quad s.th.\quad \forall a\in A, a\geq M$$ $M$ is a lower bound of $A$.
             \item $A$ is said to be bounded if it is bounded from above and from below.
         \end{enumerate}
     \end{definition}
 \end{frame}
 
 \begin{frame}{Working on the Real Numbers}
-    Let $A\subseteq\mathbb{R}$ be bounded.
+    Let $A\subseteq\mathds{R}$ be bounded.
     
     \begin{definition}
         \begin{itemize}

@@ -1,0 +1,265 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usetheme{NOVASBE}
+
+\title[]{4509 - Bridging Mathematics}
+\subtitle{Dynamic Optimization:\\Optimal Control}
+\author[P. Fagandini]{Paulo Fagandini}
+\institute{}
+\date{}
+
+\newtheorem{proposition}{Conjecture}[section]
+
+\begin{document}
+
+\begin{frame}
+
+Consider the following problem:
+\begin{align*}
+    \max_{u(t),0\leq t\leq T}\ &\int_0^T \alpha(t) F[u(t),x(t),t]dt + \alpha(T)S[x(T)]\\
+    s.t.\ &x(0)=x_0\ \text{given},\\
+    &\dot{x}(t)=m[u(t),x(t),t]
+\end{align*}
+Where $x$ is the state vector, and $u$ the vector of control variables. $S$ is the salvage or scrap function, allowing the possibility of putting some value at the end of the planning horizon $T$.\par
+
+$\alpha(t)$ represents the discount factor, and it will be assumed to be of the form $e^{-\int_0^t \rho(s)ds}$.
+    
+\end{frame}
+
+\begin{frame}
+    A brief parenthesis to deal with the discount factor.
+    \begin{columns}
+        \begin{column}{0.47\textwidth}
+            \begin{align*}
+                g = \frac{z_{t+1}-z_t}{z_t}\\
+                z_t = z_0(1+g)^t\
+            \end{align*}
+        \end{column}
+        \pause
+        \begin{column}{0.47\textwidth}
+            \begin{align*}
+                g &= \frac{\left(\frac{d z(t)}{dt}\right)}{z(t)}\\
+                g dt &= \frac{1}{z(t)}dz(t)\\
+                \int g dt &= \int \frac{1}{z(t)}dz(t)\\
+                c+tg &= ln(z(t))\\
+                z_0e^{tg} &= z(t)
+            \end{align*}
+        \end{column}
+    \end{columns}
+    \vspace{0.5cm}
+    \begin{columns}
+        \begin{column}{0.47\textwidth}
+            \centering{Discrete}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            \centering{Continuous}
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{}
+    In this case, $\alpha(t)=e^{-\int_0^t \rho(s)ds}$ allows for a non constant discount factor. If this discount factor would be constant, then $\alpha(t)=e^{-\rho t}$... now let's go back to the central problem
+\end{frame}
+
+\begin{frame}
+
+Consider the following problem:
+\begin{align}
+    \max_{u(t),0\leq t\leq T}\ &\int_0^T \alpha(t) F[u(t),x(t),t]dt + \alpha(T)S[x(T)]\label{prob}\\
+    s.t.\ &x(0)=x_0\ \text{given},\nonumber\\
+    &\dot{x}(t)=m[u(t),x(t),t]\nonumber
+\end{align}
+Where $x$ is the state vector, and $u$ the vector of control variables. $S$ is the salvage or scrap function, allowing the possibility of putting some value at the end of of the planning horizon $T$.\par
+
+$\alpha(t)$ represents the discount factor, and it will be assumed to be of the form $e^{-\int_0^t \rho(s)ds}$.
+    
+\end{frame}
+
+\begin{frame}
+    It is necessary now to chose a control trajectory $u(t)$. The state vector $x(t)$ is determined by the law of motion $\dot{x}(t)$ and the initial condition $x(0)=x_0$.
+    
+    \vspace{0.5cm}
+    
+    The objective is to describe $u(t)$ and $x(t)$ that maximizes the objective function. The strategy will be to treat this problem as a combination of a static maximization at each point in time, and a system of ordinary differential equations.
+\end{frame}
+
+\begin{frame}{The Maximum Principle}
+    At each point $t$, the agent finds herself with some inherited value $x(t)$ and has to chose the control vector $u(t)$ that will determine both the immediate payoff $F$ and the rate of change of the state variables $\hat{x}(t)$.
+    
+    \vspace{0.5cm}
+    
+    The current decision about $u(t)$ has two effects: through $F(\cdot,t)$ (immediate), and through $\dot{x}(t)$ for the future.
+    
+    \vspace{0.4cm}
+    
+\end{frame}
+
+\begin{frame}
+    
+    The idea is to introduce a modified objective function that will add to the immediate return the value of the change in the state vector due to current decisions. To this end, we introduce a new set of variables $q(t)$, one for each component of the state vector. These variables, known as multipliers or \textbf{costate variables}, can be interpreted as the prices associated with the state variables. The modified objective function, known as the \textit{current-value} Hamiltonian.
+    
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    \begin{definition}
+        The Hamiltonian is a modified objective function for the problem in \eqref{prob}, represented by:
+        \begin{align*}
+            H^c(t)&=H^c(u(t),x(t),q(t),t)\equiv \\ &\equiv F(u(t),x(t),t)+q(t)m(u(t),x(t),t)=\\&=F(\cdot,t)+q(t)\dot{x}(t)
+        \end{align*}
+    \end{definition}
+    
+    The first term, $F(\cdot,t)$ represents the current gains to the agent. The second term $q(t)\dot{x}(t)$ represents the increase in value due to the change in the state variables. The Hamiltonian can be interpreted as the sum between the current gains plus the gains of accrue from the ``investment in the future'' represented by the change in the state variable.
+    
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    If $H^c$ is differentiable, a necessary condition for an optimum is:
+    \begin{align*}
+        \frac{\partial H^c}{\partial u(t)}=0\ \Rightarrow\ \frac{\partial F(u(t),x(t),t)}{\partial u(t)} + q(t)\frac{\partial m(u(t),x(t),t)}{\partial u(t)}=0
+    \end{align*}
+    This requires that the $q(t)$ truly reflect the marginal contribution of the state variables to the agent's total payoff.
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    A conclusion of that is that the evolution of the costate variables over timer is described by the system:
+    \begin{align*}
+        -\frac{\partial H_c(t)}{\partial x(t)}=\dot{q}(t)-\rho(t)q(t)
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    Note that the derivative of the Hamiltonian with respect to $x(t)$ is:
+    \begin{align*}
+        \frac{\partial H^c(t)}{\partial x(t)} = \frac{\partial F(u(t),x(t),t)}{\partial x(t)}+q(t)\frac{\partial m(u(t),x(t),t)}{\partial x(t)}
+    \end{align*}
+    \begin{itemize}
+        \item <2-> $\frac{\partial F(u(t),x(t),t)}{\partial x(t)}$ is the current marginal return of $x(t)$
+        \item <3-> $q(t)\frac{\partial m(u(t),x(t),t)}{\partial x(t)}$ is the contribution to the increase of the stock of $x(t)$ valued at its shadow price $q(t)$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    Rearranging the system that describes the evolution of the costate variables we obtain:
+    \begin{align*}
+        \frac{\frac{\partial H_c(t)}{\partial x(t)}+\dot{q}(t)}{q(t)}=\rho(t)
+    \end{align*}
+    Think of $x(t)$ as an asset,
+    \begin{itemize}
+        \item <2-> $\frac{\partial H_c(t)}{\partial x(t)}$ is like the dividend.
+        \item <3-> $\dot{q}(t)$ are like the capital gains (price change).
+        \item <4-> $q(t)$ is the price.
+    \end{itemize}
+    \onslide<5->{
+    So the left hand side is the instantaneous rate of return. Look closely, the condition requires that the instantaneous rate of return equals the instantaneous discount rate! So there are no possible gains of a change in holdings (other choice of $x(\cdot)$).}
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    \begin{theorem}[Pontryagin's Maximum Principle]
+        Let $u^*(t)$, with $t\in[0,T]$, be the time path of the control vector that solves the problem \eqref{prob}. Then there \underline{\textbf{exist}} continuous functions of time $q(t)$ such that for each $t\in[0,T]$,
+        \begin{enumerate}
+            \item the control maximizes the current-value Hamiltonian \[u^*(t)=\arg\max_{u}\{F(x(t),u,t)+q(t)m(x(t),u,t)\}\]
+            \item the law of motion of the state vector holds, \[\dot{x}(t)=m[u^*(t),x(t),t]\]
+            \item and the functions $q(t)$ satisfy the differential equations \[-\frac{\partial H^c(t)}{\partial x(t)}=\dot{q}(t)-\rho(t)q(t)\]
+        \end{enumerate}
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    The appropriate terminal condition in this case is \[q(T)=DS(x(T))\] i.e. the price of the state variable must be equal to the marginal scrap function on the state variable.
+    
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    If there is no scrap function, then there are further transversality conditions that are necessary to identify the optimal path. When we have a finite problem (not very common in economics, at least compared to the infinite horizon one) we would require $x(T)\geq0$ and $q(T)\geq0$ and $q(T)x(T)=0$. Note what this means.
+    \begin{itemize}
+        \item If we are leaving resources ($x(T)>0$) then they must have no value ($q(T)=0$).
+        \item If we they are valuable ($q(T)>0$) then we need to use it all ($x(T)=0$).
+    \end{itemize} 
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    \begin{theorem}[Max. principle and transv. condition ($T<\infty$)]
+        Let $u^*(t)$, with $t\in[0,T]$, be the time path of the control vector that solves the problem \eqref{prob}. Then there \underline{\textbf{exist}} costate variables $q(T)$ continuous functions of time, such that for each $t\in[0,T]$,
+        \begin{enumerate}
+            \item the control maximizes the current-value Hamiltonian \[u^*(t)=\arg\max_{u}\{F(x(t),u,t)+q(t)m(x(t),u,t)\}\]
+            \item the law of motion of the state vector holds, \[\dot{x}(t)=m[u^*(t),x(t),t]\]
+            \item and the functions $q(t)$ satisfy the differential equations \[-\frac{\partial H^c(t)}{\partial x(t)}=\dot{q}(t)-\rho(t)q(t)\]
+        \end{enumerate}
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    \begin{enumerate}
+        \setcounter{enumi}{4}
+        \item and the transversality conditions \[q(T)\geq 0 \ \text{and}\ q(T)x(T)=0\]
+    \end{enumerate}
+    
+    An important point is that these theorems are of ``existence,'' and further, they are necessary conditions, not sufficient (somehow like the first order condition on static optimization is not sufficient).
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    \begin{theorem}
+        Assume the maximized Hamiltonian,
+        \begin{align*}
+            \tilde{H}(x(t),q(t),t)=\max_{u}\{F(x(t),u,t)+q(t)m(x(t),u,t)\}
+        \end{align*}
+        is a concave function of $x$ for given $q$ and $t$. Then any policy satisfying the necessary conditions specified in the Theorem ``\emph{Max. principle and transv. condition ($T<\infty$)}'' is optimal for the finite-horizon problem with terminal constraint $x(T)\geq 0$.
+    \end{theorem}
+    
+\end{frame}
+
+\begin{frame}{Hamiltonian}
+    What about the infinite horizon?\pause
+    
+    This is the most frequent case modeled in economics, but it brings some problems (as we saw in yesterday's example)... \pause
+    \begin{enumerate}
+        \item The objective function might not converge... $\left\{\lim_T\rightarrow\infty \int_0^T\alpha(t)F[u(t),x(t),t]dt\right\}\rightarrow ?$
+        \item We cannot ensure the existence of a sequence even if the objective function converges...\pause
+    \end{enumerate}
+    
+    So what now?
+\end{frame}
+
+\begin{frame}
+    On the good side, if a solution exists, then the conditions we had from the previous theorems are still valid, but we need to update our transversality conditions.
+    \begin{align*}
+        \lim_{t\rightarrow\infty}&\ \alpha(t)q(t)\geq 0\\
+        \lim_{t\rightarrow\infty}&\ \alpha(t)q(t)x(t)=0
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        [Max. principle and suff. conditions ($T\rightarrow\infty$)]
+        Let $u^*(t)$, $t\in[0,\infty)$, be the time path of the control vectors that solves the problem
+        \begin{align*}
+            \max_{u(t),0\leq t\leq \infty} \int_0^\infty \alpha(t)F[u(t),x(t),t]dt\\
+            s.t.\quad x(0)=x_0\\
+            \dot{x}(t)=m[u(t),x(t),t]
+        \end{align*}
+        Where $\alpha(t)=e^{-\int_0^t\rho(s)ds}$. Then there exist continuous functions of time, $q(t)$ such that for each $t$
+    \end{theorem}
+    
+\end{frame}
+
+\begin{frame}{theorem continuation}
+    \begin{enumerate}
+        \item the control maximizes the current-value Hamiltonian, $u^*(t)=\arg\max_{u}H^c[u,x(t),q(t),t]$
+        \item the law of motion of the state vector holds, $\dot{x}(t)=m[u^*(t),x(t),t]$, and,
+        \item the functions $q(t)$ satisfy the differential equations $\frac{-\partial H^c}{\partial x(t)}=\dot{q}(t)-\rho(t)q(t)$
+    \end{enumerate}
+    Moreover, if the maximized Hamiltonian is a concave function of $x(t)$ for given $q(t)$ and $t$, then any policy function satisfying the Potryagin conditions and the transversality conditions at infinity \[\lim_{t\rightarrow\infty}\alpha(t)q(t)\geq 0\ \text{and}\ \lim_{t\rightarrow\infty}\alpha(t)q(t)x(t)=0\] is optimal.
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+        Let $x^*(t)$, $u^*(t)$, and $q^*(t)$ be a path satisfying the necessary conditions for a stationary, infinite-horizon control problem, as given in the previous theorem, with $\alpha(t)=e^{-\rho t}$, $\rho>0$. Suppose further than the concavity assumption of the sufficiency part of the theorem holds. Then, if $x^*(t)$ and $q^*(t)$ converge to a steady state $(x^s,q^s)$, with $x^s,q^s\geq0$, they constitute an optimal path.
+    \end{theorem}
+\end{frame} 
+
+\end{document}
