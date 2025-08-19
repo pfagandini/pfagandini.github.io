@@ -19,6 +19,10 @@ Year: 1st Year
 Weekly Hours: 22.5 Hours  
 ECTS: 0
 
+### Short bio
+
+I am a Commercial Engineer from the University of Chile. I hold a PhD in Economics from Nova SBE. After completing a postdoc in Finance, here at Nova as well, I became Assistant Professor of Economics (Adjunct) at the Lisbon Accounting and Business School and at Nova SBE, and research member of the Center for Advanced Studies in Management and Economics, of the University of Évora. My research focuses on applied microeconomic theory, computational economics, and empirical corporate finance. My current teaching duties are bachelor’s Microeconomics, Statistics I, and Statistics II at the Lisbon Accounting and Business School. At Nova SBE my teaching duties involve, besides this course, the master’s Math & Stats at Nova SBE.
+
 ### General Objective
 
 The course should provide a coverage of the basic mathematical concepts students should be familiar with before entering the coursework of the doctorate. Furthermore, they will be exposed to some proof techniques and mathematical methods. If time permits, we will also cover some pieces of software that could prove useful for the students throughout the semester.
