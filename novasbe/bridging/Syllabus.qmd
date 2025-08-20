@@ -8,20 +8,20 @@ page-layout: full
 
 ---
 
-PhD in Economics and Finance
-Academic Year: 2025/2026
-
+PhD in Economics and Finance\
+Academic Year: 2025/2026\
 Course Unit: Bridging Mathematics
-Instructor: Paulo Fagandini
-:mail: : paulo.fagandini@novasbe.pt
 
-Year: 1st Year
-Weekly Hours: 22.5 Hours  
+Instructor: Paulo Fagandini\
+:email: : paulo.fagandini@novasbe.pt
+
+Year: 1st Year\
+Weekly Hours: 22.5 Hours\
 ECTS: 0
 
 ### Short bio
 
-I am a Commercial Engineer from the University of Chile. I hold a PhD in Economics from Nova SBE. After completing a postdoc in Finance, here at Nova as well, I became Assistant Professor of Economics (Adjunct) at the Lisbon Accounting and Business School and at Nova SBE, and research member of the Center for Advanced Studies in Management and Economics, of the University of Évora. My research focuses on applied microeconomic theory, computational economics, and empirical corporate finance. My current teaching duties are bachelor’s Microeconomics, Statistics I, and Statistics II at the Lisbon Accounting and Business School. At Nova SBE my teaching duties involve, besides this course, the master’s Math & Stats at Nova SBE.
+I am a Commercial Engineer from the UChile. I hold a PhD in Economics from Nova SBE. After completing a postdoc in Finance, here at Nova as well, I became Assistant Professor of Economics (Adjunct) at ISCAL-IPL and at Nova SBE, and research member of CEFAGE Research Center. My research focuses on applied microeconomic theory, computational economics, and empirical corporate finance. My current teaching duties are bachelor’s Economics, Microeconomics, Statistics I, and Statistics II at ISCAL-IPL. At Nova SBE my teaching duties includes, besides this course, the master’s Math & Stats.
 
 ### General Objective
 
@@ -37,21 +37,22 @@ Students should become familiarized with basic mathematical concepts that are cr
 
 ### Syllabus
 
-1. Set theory
-2. Functions
-3. Topology and Continuity
-4. Concavity and Quansiconcavity
-5. Vectors and Vector Spaces
-6. Matrices
-7. Differentiation
-8. Static Optimization
-9. Differential Equations
+1. Set theory [8]
+2. Functions [8]
+3. Topology and Continuity [1, 8]
+4. Concavity and Quansiconcavity [3]
+5. Vectors and Vector Spaces [8]
+6. Matrices [8]
+7. Differentiation [8]
+8. Static Optimization [2, 3]
+9. Differential Equations [2]
 10. Dynamic Optimization: Discrete Case, Euler Equations
-11. Optimal Control
-12. The Ramsey-Cass-Koopmans Growth Model
-13. Review of Probability Theory
-14. The Central Limit Theorem
-15. Markov Chains
+11. Optimal Control [2]
+12. The Ramsey-Cass-Koopmans Growth Model [2]
+13. Introduction to Measure and Integration [4]
+14. Review of Probability Theory [7]
+15. The Central Limit Theorem
+16. Markov Chains [7]
 
 ### Assessment Methods
 
@@ -60,14 +61,13 @@ There is no assessment.
 
 ### Bibliography
 
-•	“Advanced Mathematical Economics”, Rakesh V. Vohra.
-•	“Mathematical Methods and Models for Economists”, Angel de la Fuente.
-•	“Apuntes de matemáticas para economía” [Lecture Notes], Jorge Rivera. (*)
-•	“Mathematics for Economists”, Carl P. Simon and Lawrence E. Blume.
-•	“Introduction to Analysis”, Maxwell Rosenlicht.
-•	“Introduction to Probability”, Dimitri P. Bertsekas and John N. Tsitsiklis (*)
-•	“The Structure of Economics: A Mathematical Analysis”, Eugene Silberberg and Wing Suen
-•	“Advanced Microeconomic Theory”, Geoffrey Jehle and Philip Reny.
-•	“LQ Dynamic Optimization and Differential Games”, J.C. Engwerda
-
-The content and exercises are based mainly on those two references (*). However, if you want to go deeper, with the topics of the first 4 days, I suggest Simon and Blume’s book. If you want to see the advanced level of mathematical economics (specially the theoretical ground of optimization) I suggest Rakesh V. Vohra’s book, their exposition and simplicity for complex issues is beautiful.
+1. “Advanced Mathematical Economics”, Rakesh V. Vohra
+2. “Mathematical Methods and Models for Economists”, Angel de la Fuente
+3. “Mathematics for Economists”, Carl P. Simon and Lawrence E. Blume
+4. "Real Analysis for Graduate Students: Measure and Integration Theory", Richard F. Bass
+5. “Introduction to Analysis”, Maxwell Rosenlicht
+6. "Statistical Inference" 2E, George Casella and Roger L. Berger
+7. “Introduction to Probability”, Dimitri P. Bertsekas and John N. Tsitsiklis (*)
+8. “Apuntes de matemáticas para economía” [Lecture Notes], Jorge Rivera. (*)
+9. “The Structure of Economics: A Mathematical Analysis”, Eugene Silberberg and Wing Suen
+10. “Advanced Microeconomic Theory”, Geoffrey Jehle and Philip Reny.
