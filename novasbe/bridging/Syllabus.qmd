@@ -49,7 +49,7 @@ Students should become familiarized with basic mathematical concepts that are cr
 10. Dynamic Optimization: Discrete Case, Euler Equations
 11. Optimal Control [2]
 12. The Ramsey-Cass-Koopmans Growth Model [2]
-13. Introduction to Measure and Integration [4]
+<!-- 13. Introduction to Measure and Integration [4] -->
 14. Review of Probability Theory [7]
 15. The Central Limit Theorem
 16. Markov Chains [7]
@@ -71,3 +71,4 @@ There is no assessment.
 8. “Apuntes de matemáticas para economía” [Lecture Notes], Jorge Rivera. (*)
 9. “The Structure of Economics: A Mathematical Analysis”, Eugene Silberberg and Wing Suen
 10. “Advanced Microeconomic Theory”, Geoffrey Jehle and Philip Reny.
+11. "Introdução à Economia Matemática, Aloísio Araújo"

@@ -1,0 +1,76 @@
+---
+title: "Suggested exercises for correspondences"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(lubridate)
+y <- year(Sys.Date())-1
+```
+
+```{r, echo = FALSE, results='asis'}
+# Uncomment to change widget colours:
+#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+</style>
+
+<!-- Style Block for nice tables -->
+
+### Question 1
+
+1. Analyze if the following correspondences are uhc and lhc.
+
+    1. $\Gamma:[0,1]\twoheadrightarrow [0,1]$, $\Gamma(x)=(a,b)\subset [0,1]$.
+    2. $\Gamma:[0,1]\twoheadrightarrow [0,1]$, $\Gamma(x)=(0.2+0.2x,0.4+0.2x)\subset [0,1]$.
+    3. $\Gamma:[0,1]\twoheadrightarrow [0,1]$, $\Gamma(x)=[0.2+0.2x,0.4+0.2x]\subset [0,1]$.
+
+2. Propose a correspondence that:
+
+    1. It is neither uhc nor lhc.
+    2. It is both, *i.e.* it is continuous.
