@@ -289,7 +289,7 @@
     \begin{proof}
         \begin{enumerate}
             \item We know that $B(p)$ is compact.
-            \item If $B(p)\in V$, then $B(p)$ and $V^c$ are disjoint. Moreover, given that $V$ is open, $V^c$ is closed.
+            \item If $B(p)\subset V$, then $B(p)$ and $V^c$ are disjoint. Moreover, given that $V$ is open, $V^c$ is closed.
             \item Use the theorem we just saw, and you obtain that $\exists \epsilon > 0$ such that the budget constraint is ``separated'' from $V$.
             \item Take $\epsilon/2$ to rotate the budget constraint up to $x_i\epsilon/2$. This rotation implies a new price vector, say $\hat{p}$ (recall, rotates on the endowment bundle)
             \item Now define $U$ as the set of all the prices larger than the new prices in each corner. That ensures that the new budget constraints will be below all the possible rotations.\[U:=\left\{p\in S| p_i>p_i^0+\frac{\epsilon}{2}\right\}\]
@@ -302,8 +302,6 @@
     \begin{figure}
         \begin{tikzpicture}
             \draw [<->] (4,0)node[below]{$x_{\cdot1}$} -- (0,0) -- (0,4)node[left]{$x_{\cdot2}$};
-
-            
 
             \draw (2.5,0) -- (1.25, 0.9) node[below left]{$B(p)$}-- (0, 1.8);
             \draw[dashed,decorate, decoration={snake, amplitude=1mm, segment length=5mm}] (3.2,0) -- (0,2.2)node[above right]{$V^c$};

@@ -1,0 +1,39 @@
+---
+title: "Correspondences"
+author: "Paulo Fagandini"
+institute: "PhD in Economics and Finance - Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Bridging Mathematics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+include-in-header: 
+    - text: |
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+---
+
+
+# A slide with TikZ
+
+Here is a TikZ diagram rendered directly in the browser:
+
+\begin{tikzpicture}
+  \draw[->, thick] (0,0) -- (2,0) node[right]{x};
+  \draw[->, thick] (0,0) -- (0,2) node[above]{y};
+  \draw[blue, thick] (0,0) circle (1cm);
+  \fill[red] (1,1) circle (2pt);
+\end{tikzpicture}
+
