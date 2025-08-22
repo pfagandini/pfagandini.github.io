@@ -1,0 +1,208 @@
+\documentclass[a4paper,answers]{exam}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\usepackage[defaultsans,oldstyle,scale=0.95]{opensans}
+\usepackage[T1]{fontenc}
+
+\usepackage[black]{PlayfairDisplay} 
+\renewcommand*\oldstylenums[1]{{\playfairOsF #1}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{Problem Set}
+\author{Paulo Fagandini\\ Nova SBE}
+\date{}
+
+\headrule
+\header{\includegraphics[scale=0.25]{NovaSecundarioV4.png}}{Bridging Mathematics 4509}{PhD Econ | Fin}
+
+\footrule
+\footer{}{Page \thepage}{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{headandfoot}
+
+\begin{itemize}
+	\item The deadline to deliver the solution, if you want any feedback, is September 2\textsuperscript{nd} at midnight.
+	\item The solution must be delivered by e-mail to \texttt{paulo.fagandini@novasbe.pt} using \LaTeX. The \texttt{pdf} as well as the \texttt{tex} file must be provided.
+	\item You are allowed to work in groups to solve the exercises, however each \texttt{tex} (and therefore \texttt{pdf}) file must be individually produced, the idea is that you learn and practice \LaTeX.
+	\item Solutions must be detailed, carried out and explained step by step.
+\end{itemize}
+
+\section*{Questions}
+
+{
+\sffamily
+\begin{questions}
+
+\question Consider the matrix $A\in\mathds{R}^{n\times n}$. Show that if $AB=BA$ then a matrix $B$ must also be in $\mathds{R}^{n\times n}$.\footnote{Note: B cannot be a scalar.}
+
+\begin{solution}
+	Assume it is not. Assume $B\in\mathds{R}^{n\times k}$ with $k\neq n$. If so, then the l.h.s. has dimesions $n\times k$. The r.h.s. however, presents a problem, because pre-multiplying $A$ requires that $B$ has $n$ columns (for the r.h.s. the number of rows is irrelevant). Therefore $k$ cannot be different from $n$. You can make a simmilar argument for $B\in\mathds{R}^{k\times n}$ for $k\neq n$ showing that for $AB=BA$ it is necessary that $B\in\mathds{R}^ {n\times n}$.
+
+Moreover, it would have been enough to say that if $AB$ and $BA$ are both a matrix of some dimension, then $B$ would need to be in $\mathds{R}^{n\times n}$.
+\end{solution}
+ 
+\question Let $A\subset B$, with $A$ closed, and $B$ compact. Show that $A$ is compact.
+
+\begin{solution}
+	Because $B$ is compact, then it is bounded, \textit{i.e.} $\forall b_0\in B,\ \exists \epsilon_{b_0}>0$ such that $\forall b \in B, b\in B(b_0,\epsilon_{b_0})$ or $B\subseteq B(b_0,\epsilon_{b_0})$. Because $A\subset B$, then $A\subset B(b_0,\epsilon_{b_0}$ and therefore $A$ is bounded. Because $A$ is closed by hypothesis, then $A$ is compact.
+\end{solution}
+
+\question Maximize the function $f(x,y) = x^2+x+4y^2$ subject to the following constraints $2x+2y \leq 1$, $x\geq 0$, and $y\geq 0$.
+
+\begin{solution}
+	Very simple, with the KKT conditions the result is $x^*=0$, $y^*=\frac{1}{2}$. Clearly only constraints $2x+2y\leq 1$ and $x\geq 0$ are binding, and then the Lagrangian can be solved with those constraints in equality.
+\end{solution}
+
+\question Compute the first and second order Taylor polynomial of $f(x)=e^x$ around $x=0$. Show which polynomial approaches better the true function using $x=1$ as an example.
+
+\begin{solution}
+ 	The first order TP of $f$ around 0 is $1+x$, and the second order is $1+x+\frac{x^2}{2}$. If we evaluate at $1$, we obtain $2$ for the first order approximation, and $2.5$ for the second order approximation. Clearly the second order is a better approximation, as $e^1$ is $2.718...$
+\end{solution}
+
+\question Show that $f(x_1,x_2) = x_1^{2}+x_2^{2}$ is convex.
+
+\begin{solution}
+	Using the differential approach, letting $x,y\in \mathds{R}^2$, we need to show that $f(y)-f(x) \geq Df(X)(x-y)$
+	\begin{align*}
+		Df(x)(x-y)=\begin{pmatrix}2x_1 & 2x_2 \end{pmatrix} (y-x) = \begin{pmatrix}2x_1 & 2x_2 \end{pmatrix} \begin{pmatrix}y_1-x_1\\y_2-x_2\end{pmatrix}
+	\end{align*}
+We have then:
+\begin{align*}
+	2x_1(y_1-x_1)+2x_2(y_2-x_2) &= 2x_1y_1 - 2x_1^2 + 2x_2y_2-2x_2^2 
+\end{align*}
+Going back to the initial problem we need to verify that:
+\begin{align*}
+	y_1^2+y_2^2-(x_1^2+x_2^2)\geq 2x_1y_1 - 2x_1^2 + 2x_2y_2-2x_2^2 
+\end{align*}
+or 
+\begin{align*}
+	y_1^2-2y_1x_1+x_1^2+y_2^2- 2x_2y_2 +x_2^2\geq 0 \ \Leftrightarrow\ (y_1-x_1)^2 + (y_2-x_2)^2 \geq 0
+\end{align*}
+Which always holds.
+\end{solution}
+
+\question Consider the expenditure function \[e(p,u)=\min\{p_1x_1+\hdots+p_n x_n: u(x)\geq u\}\] show that $e(p,u)$ is concave in \(p\).
+
+\begin{solution}
+
+Take any two pairs of prices and quantities that satisfy the equation for some given utility level $u$, for example $(p,x)$ and $(p',x')$. The convex combination between $p$ and $p''$ can be writteng as $tp+(1-t)p''$ $\forall t\in[0,1]$. Let $x''$ be the expenditure minimizing bundle, \textit{i.e.},
+\[e(p'',u)=p''\cdot x'' = tp\cdot x'' + (1-t)p'\cdot x'' \]
+Note that $x''$ is not the optimal choice of quantities be it for $p$ or for $p''$, and therefore:
+\[p\cdot x'' \geq e(p,u)\quad p'\cdot x''\geq e(p',u)\]
+Replacing in the previous expression we obtain:
+\[e(p'',u)\geq te(p,u))+(1-t)e(p',u)\]
+So $e$ is concave in $p$.
+\end{solution}
+
+%\question Prove that every Cobb Douglas function $f(x,y)=Ax^\alpha y^\beta$ with $A, \alpha, \beta\in\mathds{R}_{++}$ is quasiconcave in $\mathds{R}^2_+$.
+
+%\begin{solution}
+%\begin{align*}
+%	Df([x,y]) = \begin{pmatrix}A\alpha x^{\alpha-1} y^{\beta} A\beta x^{\alpha} y^{\beta-1}\end{pmatrix} \begin{pmatrix}x'-x\\y'-y\end{pmatrix}
+%\end{align*}
+%So we have:
+%\begin{align*}
+%	A\alpha x^{\alpha -1}y^\beta (x'-x)+ A\beta x^{\alpha} y^{\beta-1}(y'-y) &\geq 0 \\
+%	A\alpha x^{\alpha -1}y^\beta x'-\alpha f(x,y)+ A\beta x^{\alpha} y^{\beta-1}y'- \beta f(x,y) &\geq 0 \\
+%	\alpha f(x,y)\frac{x'}{x}-\alpha f(x,y)+ \beta f(x,y)\frac{y'}{y}- \beta f(x,y) &\geq 0\\
+%	\alpha f(x,y)\left(\frac{x'-x}{x}\right) + \beta f(x,y)\left(\frac{y'-y}{y}\right)&\geq 0\\
+%	\alpha \left(\frac{x'-x}{x}\right) + \beta\left(\frac{y'-y}{y}\right)&\geq 0
+%\end{align*}
+%\end{comment}
+
+% And remember, we have the condition that $f(x',y')\geq f(x,y)$ $\Rightarrow$ $Df(x,y)([x',y']^T-[x,y]^T)\geq 0$ for $f$ to be quasiconcave.
+
+% \begin{align*}
+% 	f(x',y')\geq f(x,y)\ \Rightarrow Ax'^\alpha y'^\beta&\geq Ax^\alpha y^\beta \\
+% 	\left(\frac{x'}{x}\right)^\alpha\left(\frac{y'}{y}\right)^\beta&\geq 1 \\
+% 	\alpha (\log(x')-\log(x)) + \beta(\log(y')-\log(y))\geq 0
+% \end{align*}
+
+% Note that the percentage change is larger or equal to the $log$ difference, the linear approximation goes tangent above logarithm (and that is why log is a good approximation for low percentage changes only). That means that $\frac{x'-x}{x}\geq \ln(x)-\ln(x')$. Considering that $\alpha$ and $\beta$ are positive, then we can substitute and maintain the inequality.
+
+% \end{solution}
+
+\question Find out which of the following functions is concave, quasiconcave or neither.
+\begin{parts}
+	\part $x^4-x^2$
+		\begin{solution}
+			Neither.
+			\begin{center}
+				\begin{tikzpicture}[declare function={f(\x) = \x^4-\x^2;}]
+					\draw[->] (-2,0) -- (2,0);
+					\draw[->] (0,-2) -- (0,2);
+					
+					\draw[domain = -1.3:1.3] plot (\x,{f(\x)});
+
+				\end{tikzpicture}
+			\end{center}
+		\end{solution}
+	\part $\ln(x)$
+		\begin{solution}
+			Concave and quasiconcave.
+			\begin{center}
+				\begin{tikzpicture}[declare function={f(\x) = ln(\x);}]
+					\draw[->] (-0.1,0) -- (2,0);
+					\draw[->] (0,-1) -- (0,2);
+					
+					\draw[domain = 0.5:3] plot (\x,{f(\x)});
+
+				\end{tikzpicture}
+			\end{center}
+		\end{solution}
+	\part $sin(x)$
+		\begin{solution}
+			Neither.
+			\begin{center}
+				\begin{tikzpicture}[declare function={f(\x) = sin(\x r);}]
+					\draw[->] (-4,0) -- (4,0);
+					\draw[->] (0,-1.2) -- (0,1.2);
+					
+					\draw[domain = -3.9:3.9, samples = 100] plot (\x,{f(\x)});
+
+				\end{tikzpicture}
+			\end{center}
+		\end{solution}
+	\part $x^3-x$
+
+		\begin{solution}
+			Neither.
+			\begin{center}
+				\begin{tikzpicture}[declare function={f(\x) = \x^3-\x;}]
+					\draw[->] (-2,0) -- (2,0);
+					\draw[->] (0,-2) -- (0,2);
+					
+					\draw[domain = -1.3:1.3] plot (\x,{f(\x)});
+				\end{tikzpicture}
+			\end{center}
+		\end{solution}
+
+\end{parts}
+
+\question Present an example for a convex, concave, quasiconcave (but not concave), quasiconvex (but non convex). Present a plot and a graphical description or reasoning.
+\begin{solution}
+Convex and concave, if lacking imagination any parabola or inverted parabola will do.
+
+For a quasiconcave function, for example the normal density (Bell curve) is quasiconcave and not concave, while $f:\mathds{R}\rightarrow\mathds{R}$ with $f(x)=log(|x|+1)$ is quasiconvex and not convex (also $-f(x)$ with $f$ being the normal density would work).
+\end{solution}
+
+\question Explain what is a concave set.
+\begin{solution}
+	Is the closest animal to the unicorn.
+\end{solution}
+
+\end{questions}
+}
+
+\end{document}

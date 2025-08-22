@@ -1,0 +1,110 @@
+\documentclass[answers]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+
+\title{Problem Set 4\\ Static Optimization}
+\author{Paulo Fagandini}
+\date{August 2018}
+
+\begin{document}
+
+\maketitle
+
+\begin{questions}
+
+
+
+\question Solve:
+
+\begin{align*}
+    \min_{(x_1,x_2)}\quad & 2x_1^2+2x_1x_2+x_2^2-10x_1-10x_2\\
+    s.t.\quad & x_1^2+x_2^2\leq5\\
+    & 3x_1+x_2\leq 6
+\end{align*}
+
+\begin{solution}
+So as we said, we solve the problem with Lagrange for any combination of of binding constraints, only the first, only the second, none, both, and check if the solution satisfies the other constraints. Further, we compare the solution evaluated in the objective function.
+
+\begin{enumerate}
+    \item No constraint is binding $\mu_1=\mu_2=0$.
+    
+    \item First constraint is binding $\mu_1\neq0$, $\mu_2=0$,
+    
+    \item Third constraint is binding $\mu_1=0$, $\mu_2\neq 0$,
+    
+    \item All constraint are binding $\mu_1\neq0\neq\mu_2$
+\end{enumerate}
+
+Here I show how to solve this with Mathematica \copyright. What is in \textbf{bold} is the code to generate what appears below. This is useful so you can learn to use the software to solve the problems without losing sight of what you are doing. You are basically only skipping algebraic manipulations and arithmetic operations.
+
+\input{optimization_kuhn_tucker.tex}
+
+\end{solution}
+
+\question Solve:
+
+\begin{align*}
+    \max_{(x,y)}\quad & -x^2-y^2+20x-40y\\
+    s.t.\quad & -x-y^2+0\geq 0\\
+    & x\geq 0\\
+    &x^2+y^2-26=0
+\end{align*}
+
+\question Solve:
+
+\begin{align*}
+    \max_{(x_1,x_2)}\quad & -8x_1^2-10x_2^2+12x_1x_2-50x_1+80x_2\\
+    s.t.\quad & x_1+x_2\leq 1\\
+    & 8x_1^2+x_2^2\leq 2\\
+    &x_1\geq 0\\
+    &x_2\geq 0
+\end{align*}
+
+\question Consider the problem:
+
+\begin{align*}
+    \max_{(x_1,x_2)}\quad & px_1^2+qx_1x_2\\
+    s.t. \quad & x_1^2+rx_2^2\leq 1\\
+    &x_1\geq0\\
+    &x_2\geq0
+\end{align*}
+
+\begin{parts}
+\part Find the solution as a function of the parameters.
+\part Find geometrically the solution if $p=0$ and $q=r=1$.
+\part For which values of the parameter does the problem has a solution?
+\end{parts}
+
+\question Find the optimal dimensions ($x,y,z$) of a box that maximizes the volume that can contain given that you can only use a surface $C$ of cardboard.
+
+\question Assume the central bank wants to minimize the following function:
+
+\begin{align*}
+    E[\alpha\pi_t^2+(1-\alpha)y_t^2]
+\end{align*}
+where $\pi$ is the inflation rate, and $y_t$ is the logarithm of the GDP. The authority's aversion for inflation or deviations in the $GDP$, is captured by $\alpha$. The GDP and the inflation can be modelled as:
+
+\begin{align*}
+    y_t &= \gamma(r_t-d_t)+s_t\\
+    \pi_t &= -(r_t-d_t)-\omega s_t
+\end{align*}
+
+Where $\gamma<0$, $d_t\overset{iid}{\sim}N(0,\sigma_d^2)$ is a demand shock, and $s_t\overset{iid}{\sim}N(0,\sigma_s^2)$ is a supply shock. $r_t$ represents the interest rate.
+
+\begin{parts}
+\part Why $d_t$ affects both $GDP$ and inflation in the same direction? Why $s_t$ does not?
+\part Write down the maximization problem of the Central Bank.
+\part Assume $r=a s_t+b d_t$. Find $a$ and $b$.
+\part Find $\sigma_y^2$ and $\sigma_{\pi}^2$. Find $\left(\frac{\sigma_y^2}{\sigma_\pi^2}\right)$ as a function of $\alpha$. Explain the intuition.
+\end{parts}
+
+\end{questions}
+
+
+\end{document}

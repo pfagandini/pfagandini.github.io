@@ -1,0 +1,125 @@
+\documentclass[a4paper,12pt,answers]{exam}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\usepackage[defaultsans,oldstyle,scale=0.95]{opensans}
+\usepackage[T1]{fontenc}
+
+\usepackage[black]{PlayfairDisplay} 
+\renewcommand*\oldstylenums[1]{{\playfairOsF #1}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{Pre-Exam}
+\author{Paulo Fagandini\\ Nova SBE}
+\date{}
+
+\headrule
+\header{\includegraphics[scale=0.25]{NovaSecundarioV4.png}}{Bridging Mathematics 4509}{PhD Econ | Fin}
+
+\footrule
+\footer{}{Page \thepage}{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{headandfoot}
+
+\makebox[\textwidth]{Name:\enspace\hrulefill}
+\vspace{0.1cm}
+
+\begin{itemize}
+	\item Remember, there are no ETCs associated to this course, so the \textit{grade} will not affect your GPA.
+	\item This assessment is closed book and individual.
+	\item You have 90 minutes to solve it.
+\end{itemize}
+
+\section*{Questions}
+
+{
+\sffamily
+\begin{questions}
+
+\question Solve, for some $c\in\mathds{R}$ $$\frac{\partial k}{\partial x}=k(x)+c$$
+
+    \begin{solutionorgrid}[11cm]
+        $$\frac{dk/dx}{k(x)+c}=1$$
+        $$\frac{dk}{k(x)+c}=dx$$
+        $$\int \frac{1}{k(x)+c} dk=\int 1 dx$$
+        $$ln(|k(x)+c|)+A_0 =  x + A_1$$
+        with $A_0$ and $A_1$ some constants. Let $A_2=A_1-A_0$:
+        $$ln(|k(x)+c|) =  x + A_2$$
+        $$|k(x)+c|=e^{x+A_2}=e^xe^{A_2}$$
+        Let $e^{A_2}=A$
+        $$k(x)+c = \pm A e^x$$
+        $$k(x)=\pm Ae^x - c$$
+        Given that $A$ is an arbitrary condition, which will be determined by $x_0$, then we can get rid of the $\pm$, so:
+        $$k(x)=Ae^x-c$$
+    \end{solutionorgrid}
+
+\question From $x(t)+e^{x(t)}=t$ find $dx/dt$
+
+    \begin{solutionorgrid}[13cm]
+        Differentiate both sides on $t$
+        $$\frac{\partial}{\partial t} \left[x(t)+e^{x(t)}\right] =  \frac{\partial}{\partial t}t $$
+        $$\frac{\partial x(t)}{\partial t} + e^{x(t)}\frac{\partial x(t)}{\partial t} = 1$$
+        $$\frac{\partial x(t)}{\partial t}\left[1+e^{x(t)}\right] = 1$$
+        $$\frac{\partial x(t)}{\partial t}=\frac{1}{1+e^{x(t)}}$$
+        Which concludes the exercise.
+    \end{solutionorgrid}
+
+\question Consider a sample of $n$ numerical random variables, who are independently and indetically distributed, following a continuous distribution with pdf $f(x)$ and cdf $F(x)$. Write down the expected value of the highest order statistic.\footnote{If you do not know what this is, it is the expected value of the highest value in the sample.}
+
+    \begin{solutionorgrid}[8cm]
+        $$E[x_n] = \frac{\int_{\mathcal{S}} x f(x)F(x)^{n-1} dx}{\int_{\mathcal{S}} f(x)F(x)^{n-1} dx}$$
+        The relevant part here, or maybe novel, is the denominator. Note here that if we do not do it, then our ``density'' does not add up to 1.
+    \end{solutionorgrid}
+
+\question Explain the difference between maximum, supremum, and upper bound of some set $\mathcal{S}$
+
+    \begin{solutionorgrid}[6cm]
+        \begin{itemize}
+            \item An upper bound is any number that is larger or equal than any $s\in\mathcal{S}$.
+            \item The supremum is the lowest upper bound.
+            \item The maximum is the supremum when this is included in $\mathcal{S}$
+        \end{itemize}        
+    \end{solutionorgrid}
+
+
+\question Let $(X,d)$ be a metric space, and let $B(x_0,r)$ denote the open ball centered at $x_0$ with radius $r>0$. Prove that the open ball $B(x_0,r)$ is an open set in the metric space $(X,d)$.
+
+    \begin{solutionorgrid}[15cm]
+        The definition of an open set is that for any of its elements you can create an open ball that is fully contained in the set.
+
+        Given that an open ball is $$B(x_0,r)=\{x\ |\ d(x,x_0)<r\}$$
+
+        Take $a\in B(x_0,r)$, meaning that $d(a,x_0)<r$. You can easily construct $B(a,r-d(a,x_0))$. Note that this ball is fully contained in the original ball.
+
+        Take $y\in B(a,(r-d(a,x_0)))$. Because of the triangular inequality we have:
+        $$d(x_0,y)\leq d(x_0,a)+d(a,y)<d(x_0,a)+r-d(a,x_0)=r$$ therefore we have that $$d(x_0,y)<r$$ or in other words, $y\in B(x_0,r)$ completing the proof.
+    \end{solutionorgrid}
+
+\question Consider the space of Cobb Douglas functions, \textit{i.e.}, the functions of the form $f(x)=Ax^\alpha y^\beta$. Is this a vector space?
+
+    \begin{solutionorgrid}[20cm]
+        No. For it to be a vector space, it is necessary that the addition of two elements of this space is an element of the space, however $A_1 x^{\alpha_1}y^{\beta_1}+A_2 x^{\alpha_2}y^{\beta_2}$ cannot be written as a Cobb-Douglas function, unless for very specific values of $(\alpha,\beta)$.
+    \end{solutionorgrid}
+
+\end{questions}
+}
+
+\clearpage
+
+\center{DRAFT}
+
+\clearpage
+
+\center{DRAFT}
+
+\end{document}
