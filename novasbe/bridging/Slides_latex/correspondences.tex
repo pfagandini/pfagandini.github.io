@@ -1,4 +1,4 @@
-\documentclass[aspectratio=169, handout]{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{tikz}
@@ -311,8 +311,41 @@
 
 \begin{frame}
     \begin{theorem}
-        $B$ is lhc.
+        If $p x_0>0$, then $B$ is lhc.
     \end{theorem}
+
+    To prove this we need to show that:
+
+    \begin{itemize}
+        \item $B(p)=\{x\in\mathds{R}^n_{++} | px \leq px_0\}$, $B:S\twoheadrightarrow \mathds{R}^n_{+}$
+        \item For $V$ open, and $B(p)\cap V\neq \emptyset$, then
+        \item $\exists U$ open, such that if $p_0\in U$ and $p\in U$ then $B(p)\cap U\neq\emptyset$
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \begin{proof}
+        \begin{itemize}
+            \item Let $V$ open such that $V\cap B(p_0)\neq \emptyset$.
+            \item Let $\overline{x}\in V$ such that $p_0 \overline{x}<p_0x_0$.
+            \item Let $c=|p_0\overline{x}-p_0x_0|>0$
+            \item Define $\delta>0$ such that $||p-p_0||_{\infty}<\delta\Rightarrow p(\overline{x}-x_0)<p_0(\overline{x}-x_0)+c\Rightarrow p\overline{x}<px_0$
+            \item With this you have $\overline{x}\in B(p)$ and therefore $B(p)\cap V\neq \emptyset$
+        \end{itemize}
+    \end{proof}
+   
+\end{frame}
+
+\begin{frame}
+    Where are you going to find correspondences?
+    \begin{enumerate}
+        \item Obviously, the budget set
+        \item Flats on indifference curves (substitute goods)
+        \item Constant returns to scale
+        \item Mixed strategies in game theory
+        \item Action availabitility (at a specific node) in game theory
+    \end{enumerate}
 \end{frame}
 
 \end{document}
