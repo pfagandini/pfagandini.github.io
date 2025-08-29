@@ -1,6 +1,8 @@
 # ---------- CONFIG ----------
 # List your top-level .tex mains here (no _handout files; just the real sources).
-MAINS := clt.tex concavity.tex correspondences.tex diff_equations.tex differentiability.tex dynamic_optimization_discrete.tex functions.tex intro_prob_theory.tex markov.tex matrices.tex measure.tex optimal_control.tex rck.tex sets.tex topology.tex vectors.tex 
+MAINS := intro_prob_theory.tex
+
+#clt.tex concavity.tex correspondences.tex diff_equations.tex differentiability.tex dynamic_optimization_discrete.tex functions.tex intro_prob_theory.tex markov.tex matrices.tex measure.tex optimal_control.tex rck.tex sets.tex topology.tex vectors.tex 
 
 # clt.tex concavity.tex correspondences.tex diff_equations.tex differentiability.tex dynamic_optimization_discrete.tex functions.tex intro_prob_theory.tex markov.tex matrices.tex measure.tex optimal_control.tex rck.tex sets.tex topology.tex vectors.tex 
 # This does not work static_optimization.tex

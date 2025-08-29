@@ -1,11 +1,11 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.8.22)  22 AUG 2025 17:25
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.8.27)  27 AUG 2025 12:38
  system commands enabled.
  file:line:error style messages enabled.
 **\PassOptionsToClass{handout}{beamer}\input{rck.tex}
 Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended collection.
-luaotfload | conf : Root cache directory is "/home/paulo_wsl/.texlive2023/texmf-var/luatex-cache/generic/names".
+luaotfload | conf : Root cache directory is "/home/paulo/.texlive2023/texmf-var/luatex-cache/generic/names".
 luaotfload | init : Loading fontloader "fontloader-2023-08-19.lua" from kpse-resolved path "/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader-2023-08-19.lua".
 Lua-only attribute luaotfload@noligature = 1
 luaotfload | init : Context OpenType loader version 3.133
@@ -14,7 +14,7 @@ Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
 Inserting `luaotfload.define_font' in `define_font'.
 Lua-only attribute luaotfload_color_attribute = 2
-luaotfload | conf : Root cache directory is "/home/paulo_wsl/.texlive2023/texmf-var/luatex-cache/generic/names".
+luaotfload | conf : Root cache directory is "/home/paulo/.texlive2023/texmf-var/luatex-cache/generic/names".
 Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
 Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
 Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
@@ -195,8 +195,8 @@ thmetics.code.tex)
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
-luaotfload | db : Font names database loaded from /home/paulo_wsl/.texlive2023/t
-exmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
+luaotfload | db : Font names database loaded from /home/paulo/.texlive2023/texmf
+-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -1974,11 +1974,11 @@ File: logos/NovaTitlePage.png Graphic file (type png)
 Package luatex.def Info: logos/NovaTitlePage.png  used on input line 21.
 (luatex.def)             Requested size: 258.91765pt x 219.47665pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2024,11 +2024,11 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./logos/NovaTitlePage.png><.
 /logos/NovaPrincipalV2-eps-converted-to.pdf>] (./latex_output/rck_handout.nav)
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2040,11 +2040,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 21.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2056,11 +2056,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 34.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2075,11 +2075,11 @@ put line 34.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2091,11 +2091,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 38.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2110,11 +2110,11 @@ put line 38.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2126,11 +2126,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 53.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2145,11 +2145,11 @@ put line 53.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2161,11 +2161,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 61.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2181,11 +2181,11 @@ put line 61.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2197,11 +2197,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 78.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2216,11 +2216,11 @@ put line 78.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2232,11 +2232,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 94.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2251,11 +2251,11 @@ put line 94.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2267,11 +2267,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 103.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2286,11 +2286,11 @@ put line 103.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2302,11 +2302,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 111.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2321,11 +2321,11 @@ put line 111.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2337,11 +2337,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 123.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2356,11 +2356,11 @@ put line 123.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2372,11 +2372,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 137.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2391,11 +2391,11 @@ put line 137.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2407,11 +2407,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 143.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2426,11 +2426,11 @@ put line 143.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2454,11 +2454,11 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 160.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2473,11 +2473,11 @@ put line 160.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2489,11 +2489,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 174.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2508,11 +2508,11 @@ put line 174.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2524,11 +2524,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 180.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2543,11 +2543,11 @@ put line 180.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2559,11 +2559,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 186.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2578,11 +2578,11 @@ put line 186.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2594,11 +2594,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 196.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2613,11 +2613,11 @@ put line 196.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2633,11 +2633,11 @@ LaTeX Font Info:    Font shape `TU/PlayfairDisplay(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <9> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 203.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2652,11 +2652,11 @@ put line 203.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2668,11 +2668,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 214.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2687,11 +2687,11 @@ put line 214.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2703,11 +2703,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 236.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2722,11 +2722,11 @@ put line 236.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2738,11 +2738,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 248.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2758,11 +2758,11 @@ put line 248.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2774,11 +2774,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 258.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2793,11 +2793,11 @@ put line 258.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2809,11 +2809,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 267.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2828,11 +2828,11 @@ put line 267.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2844,11 +2844,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 276.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2863,11 +2863,11 @@ put line 276.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2879,11 +2879,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 291.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2898,11 +2898,11 @@ put line 291.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2914,11 +2914,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 300.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2933,11 +2933,11 @@ put line 300.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2949,11 +2949,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 335.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2968,11 +2968,11 @@ put line 335.
 
 ]
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
@@ -2984,11 +2984,11 @@ Package luatex.def Info: logos/NovaPrincipalV2-eps-converted-to.pdf  used on in
 put line 346.
 (luatex.def)             Requested size: 82.35413pt x 13.85114pt.
 Package epstopdf Info: Source file: <logos/NovaPrincipalV2.eps>
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 586774 bytes
 (epstopdf)             Output file: <logos/NovaPrincipalV2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2025-08-19 18:15:03
+(epstopdf)                    date: 2025-08-27 08:42:54
 (epstopdf)                    size: 15230 bytes
 (epstopdf)             Command: <epstopdf --outfile=logos/NovaPrincipalV2-eps-c
 onverted-to.pdf logos/NovaPrincipalV2.eps>
