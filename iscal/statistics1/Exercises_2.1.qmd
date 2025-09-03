@@ -255,6 +255,8 @@ $$
 
 ::: {.webex-check .webex-box}
 
+In the convenience store Grocery work daily 3 workers.
+
 1. `r mcq(c("", answer="","",""))`
 2. `r mcq(c("", answer="","",""))`
 3. `r mcq(c(answer="","","",""))`
