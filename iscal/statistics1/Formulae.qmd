@@ -7,7 +7,7 @@ editor: source
 page-layout: full
 ---
 
-This is the formulae for the course, that you will be able to access for the midterm and exam.
+This is the formulae for the course, that you will be given for the midterm and exam.
 
 ## Index Numbers
 
