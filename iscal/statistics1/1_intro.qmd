@@ -196,7 +196,7 @@ $$`r aapl_df$Close[2]`=`r aapl_df$Close[1]`\left(1+`r round((aapl_df$Close[2]-aa
 
 In this case $\delta_{`r aapl_df$Date[2]`}^y =`r round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)`\%$.
 
-> Interpretation: Between `r aapl_df$Date[0]` and `r aapl_df$Date[1]`, the price for Apple *`r if (aapl_df$Close[1] > aapl_df$Close[2]) "decreased" else "increased"`* `r abs(100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4))`%.
+> Interpretation: Between `r aapl_df$Date[1]` and `r aapl_df$Date[2]`, the price for Apple *`r if (aapl_df$Close[1] > aapl_df$Close[2]) "decreased" else "increased"`* `r abs(100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4))`%.
 
 ## Growth Rates
 
@@ -252,17 +252,17 @@ We will use something called the *geometric mean*.
 
 Let's start with $y_t$... and the traditional growth rates $\delta_t$:
 
-$$y_{t+1} = y_t(1+\delta_t)$$
+$$y_{t+1} = y_t(1+\delta_{t+1})$$
 
-$$y_{t+2} = y_{t+1}(1+\delta_{t+1})$$
+$$y_{t+2} = y_{t+1}(1+\delta_{t+2})$$
 
-$$y_{t+3} = y_{t+1}(1+\delta_{t+2})$$
+$$y_{t+3} = y_{t+2}(1+\delta_{t+3})$$
 
 Can we write $y_{t+2}$ as a function of $y_t$?
 
 . . .
 
-$$y_{t+2} = y_{t+1}(1+\delta_{t+1}) = y_{t}(1+\delta_t)(1+\delta_{t+1})$$
+$$y_{t+2} = y_{t+1}(1+\delta_{t+2}) = y_{t}(1+\delta_{t+1})(1+\delta_{t+2})$$
 
 . . .
 
@@ -270,13 +270,13 @@ And $y_{t+3}$?
 
 . . .
 
-$$y_{t+3} = y_{t}(1+\delta_t)(1+\delta_{t+1})(1+\delta_{t+2})$$
+$$y_{t+3} = y_{t}(1+\delta_{t+1})(1+\delta_{t+2})(1+\delta_{t+3})$$
 
 ## Growth Rates
 
 Generalizing
 
-$$y_{t+k}=y_t (1+\delta_t)(1+\delta_{t+1})...(1+\delta_{t+k-1})$$
+$$y_{t+k}=y_t (1+\delta_{t+1})...(1+\delta_{t+k-1})(1+\delta_{t+k})$$
 
 When computing the average growth rate, we are trying to find $\overline{\delta}$ such that if the growth rate was the same every period, it would have taken $y_t$ to the value of $y_{t+k}$ all the same:
 

@@ -337,7 +337,7 @@ Paulo Fagandini
 <div class="fragment">
 <p>In this case <span class="math inline">\(\delta_{2020}^y =0.8075 = 80.75\%\)</span>.</p>
 <blockquote>
-<p>Interpretation: Between and 2019, the price for Apple <em>increased</em> 80.75%.</p>
+<p>Interpretation: Between 2019 and 2020, the price for Apple <em>increased</em> 80.75%.</p>
 </blockquote>
 </div>
 </section>
@@ -405,24 +405,24 @@ Paulo Fagandini
 <section id="growth-rates-3" class="slide level2">
 <h2>Growth Rates</h2>
 <p>Let’s start with <span class="math inline">\(y_t\)</span>… and the traditional growth rates <span class="math inline">\(\delta_t\)</span>:</p>
-<p><span class="math display">\[y_{t+1} = y_t(1+\delta_t)\]</span></p>
-<p><span class="math display">\[y_{t+2} = y_{t+1}(1+\delta_{t+1})\]</span></p>
-<p><span class="math display">\[y_{t+3} = y_{t+1}(1+\delta_{t+2})\]</span></p>
+<p><span class="math display">\[y_{t+1} = y_t(1+\delta_{t+1})\]</span></p>
+<p><span class="math display">\[y_{t+2} = y_{t+1}(1+\delta_{t+2})\]</span></p>
+<p><span class="math display">\[y_{t+3} = y_{t+2}(1+\delta_{t+3})\]</span></p>
 <p>Can we write <span class="math inline">\(y_{t+2}\)</span> as a function of <span class="math inline">\(y_t\)</span>?</p>
 <div class="fragment">
-<p><span class="math display">\[y_{t+2} = y_{t+1}(1+\delta_{t+1}) = y_{t}(1+\delta_t)(1+\delta_{t+1})\]</span></p>
+<p><span class="math display">\[y_{t+2} = y_{t+1}(1+\delta_{t+2}) = y_{t}(1+\delta_{t+1})(1+\delta_{t+2})\]</span></p>
 </div>
 <div class="fragment">
 <p>And <span class="math inline">\(y_{t+3}\)</span>?</p>
 </div>
 <div class="fragment">
-<p><span class="math display">\[y_{t+3} = y_{t}(1+\delta_t)(1+\delta_{t+1})(1+\delta_{t+2})\]</span></p>
+<p><span class="math display">\[y_{t+3} = y_{t}(1+\delta_{t+1})(1+\delta_{t+2})(1+\delta_{t+3})\]</span></p>
 </div>
 </section>
 <section id="growth-rates-4" class="slide level2">
 <h2>Growth Rates</h2>
 <p>Generalizing</p>
-<p><span class="math display">\[y_{t+k}=y_t (1+\delta_t)(1+\delta_{t+1})...(1+\delta_{t+k-1})\]</span></p>
+<p><span class="math display">\[y_{t+k}=y_t (1+\delta_{t+1})...(1+\delta_{t+k-1})(1+\delta_{t+k})\]</span></p>
 <p>When computing the average growth rate, we are trying to find <span class="math inline">\(\overline{\delta}\)</span> such that if the growth rate was the same every period, it would have taken <span class="math inline">\(y_t\)</span> to the value of <span class="math inline">\(y_{t+k}\)</span> all the same:</p>
 <p><span class="math display">\[y_{t+k}=y_t(1+\overline{\delta})(1+\overline{\delta})...(1+\overline{\delta})\]</span></p>
 <div class="fragment">
@@ -566,8 +566,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-b5901a52131bd40672ff" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b5901a52131bd40672ff">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b8e758c55c7364508ab2" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b8e758c55c7364508ab2">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1032,8 +1032,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-540404d916c8082a415f" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-540404d916c8082a415f">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-df92ede33c1177f36c11" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-df92ede33c1177f36c11">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
