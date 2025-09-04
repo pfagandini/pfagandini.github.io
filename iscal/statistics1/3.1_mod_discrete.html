@@ -261,11 +261,13 @@ S_k&amp;\sim Bin\left(s_k, n=\sum_{i=1}^k n_i, p\right)
 <summary>
 ✅ Answer
 </summary>
+<div style="font-size: 0.6em;">
 <ol type="1">
 <li>By direct Table inspection <span class="math inline">\(P(X\leq 3)=0.4826\)</span></li>
 <li><span class="math inline">\(P(2\leq x\leq 6)=P(x\leq 6)-P(x\leq 2^-)=\\=F(6)-F(1)=0.9998-0.3294=0.6704\)</span></li>
 <li>By direct inspection of the table <span class="math inline">\(p=0.40\)</span></li>
 </ol>
+</div>
 </details>
 </section>
 <section id="bin-example-2" class="slide level2">
@@ -289,23 +291,233 @@ P(Y=2|X+Y=5)&amp;=\frac{P(Y=2, X+Y=5)}{P(X+Y=5)}\\
 &amp;=\frac{P(Y=2)P(X=3)}{P(X+Y=5)}
 \end{aligned}
 \]</span></p>
-<p>Using the <a href="#/app-bin-tables">tables</a> we have <span class="math inline">\(P(Y=2)=0.1488\)</span>, <span class="math inline">\(P(X=3)=0.0574\)</span>, <span class="math inline">\(P(X+Y=5)=0.0218\)</span>, and therefore <span class="math inline">\(P(Y=2|X+Y=5)=0.392\)</span>. :cross: False</p>
+<p>Using the <a href="#/app-bin-tables">tables</a> we have <span class="math inline">\(P(Y=2)=0.1488\)</span>, <span class="math inline">\(P(X=3)=0.0574\)</span>, <span class="math inline">\(P(X+Y=5)=0.0218\)</span>, and therefore <span class="math inline">\(P(Y=2|X+Y=5)=0.392\)</span>. <span class="emoji" data-emoji="x">❌</span> False</p>
 </section></section>
+<section>
 <section id="hypergeometric-distribution" class="title-slide slide level1 center">
 <h1>Hypergeometric Distribution</h1>
 
 </section>
-
+<section id="hypergeometric-distribution-1" class="slide level2">
+<h2>Hypergeometric Distribution</h2>
+<p>Suppose you have a population with size <span class="math inline">\(N\)</span>, from where <span class="math inline">\(M\)</span> elements have some characteristic, and therefore <span class="math inline">\(N-M\)</span> do not. From that sample, we draw randomly a sample of size <span class="math inline">\(n\)</span>, without replacement, and we would like to know, from this sample, how many have the characteristic we mentioned.</p>
+<div class="callout callout-none no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>Given we are not replacing the elements we put in our sample, the events here are not independent!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="hypergeometric-distribution-2" class="slide level2">
+<h2>Hypergeometric Distribution</h2>
+<p>In this case the r.v. <span class="math inline">\(X\)</span> would be how many elements from our sample have the referred characteristic. <span class="math inline">\(X\sim Hypergeometric (N,M,n)\)</span> if its probability distribution function <span class="math inline">\(P(X=x)\)</span> is:</p>
+<p><span class="math display">\[
+f_X(x)=\frac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}}
+\]</span></p>
+<p>where <span class="math inline">\(max(0,M+n-N)\leq x \leq min(M,n)\)</span></p>
+</section>
+<section id="hypergeometric-distribution-3" class="slide level2">
+<h2>Hypergeometric Distribution</h2>
+<p>The first two moments of the distribution are found as:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(E[X]=\mu_X=n\frac{M}{N}=np\)</span></li>
+<li class="fragment"><span class="math inline">\(V[X]=npq\frac{N-n}{N-1}\)</span> note here that because we do not replace elements, we get a smaller variance.</li>
+</ul>
+</section>
+<section id="hypergeometric-vs-binomial" class="slide level2">
+<h2>Hypergeometric vs Binomial</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment"><strong>Binomial</strong></li>
+<li class="fragment">Replacement</li>
+<li class="fragment">Same population every draw</li>
+<li class="fragment">Independent draws</li>
+</ul>
+</div><div class="column">
+<ul>
+<li class="fragment"><strong>Hypergeometric</strong></li>
+<li class="fragment">No replacement</li>
+<li class="fragment">Population changes every time</li>
+<li class="fragment">Dependent draws</li>
+</ul>
+</div></div>
+</section>
+<section id="hypergeometric-rightarrow-binomial" class="slide level2">
+<h2>Hypergeometric <span class="math inline">\(\rightarrow\)</span> Binomial</h2>
+<p>Let <span class="math inline">\(X\sim Hypergeometric(N,M,n)\)</span>. If <span class="math inline">\(N&gt;&gt;n\)</span> then the change in the population is very small, and then the draws approximate independent draws (population is very similar after a draw). As a rule of thumb if <span class="math inline">\(\frac{n}{N}\leq 0.1\)</span> or if the sample size is less than 10% of the population, we can approximate the Hypergeometric with the Binomial.</p>
+<p><span class="math display">\[X\sim Hypergeom(N,M,n)\leftrightarrow X\approx Bin\left(n,p=\frac{M}{N}\right)\]</span></p>
+<p>The smaller <span class="math inline">\(\frac{n}{N}\)</span> the better the approximation.</p>
+</section></section>
+<section>
 <section id="geometric-distribution" class="title-slide slide level1 center">
 <h1>Geometric Distribution</h1>
 
 </section>
-
+<section id="geometric-distribution-pascals" class="slide level2">
+<h2>Geometric Distribution (Pascal’s)</h2>
+<p>Consider a succession of Bernoulli trials, and let <span class="math inline">\(X\)</span> the r.v. how many trials you need until observing the first success. This is a r.v. because there might be situations when you get success at your first trial, or second, etc. You cannot anticipate this.</p>
+<p><span class="math inline">\(X\sim Geo(p)\)</span> if its probability distribution function <span class="math inline">\(P(X=x)\)</span> is given by:</p>
+<p><span class="math display">\[f_X(x)=p^x(1-p)^{1-x}\ ,\ x\in\{1,2,...\},\ p\in[0,1]\]</span></p>
+</section>
+<section id="geometric-distribution-pascals-1" class="slide level2">
+<h2>Geometric Distribution (Pascal’s)</h2>
+<p>The first two moments of the distribution are found as:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(E[X]=\mu_X=\frac{1}{p}\)</span></li>
+<li class="fragment"><span class="math inline">\(V[X]=\frac{1-p}{p^2}\)</span></li>
+<li class="fragment"><span class="math inline">\(F_X(x)=\begin{cases}0 &amp; x&lt;1 \\ 1-(1-p)^k &amp; k\leq x &lt; k+1,\ k\in\mathbb{N}\end{cases}\)</span></li>
+</ul>
+</section>
+<section id="geometric-distribution-pascals-2" class="slide level2">
+<h2>Geometric Distribution (Pascal’s)</h2>
+<p>There is a special feature of this distribution, it is said it <em>“lacks memory”</em> in the following sense. Let <span class="math inline">\(s&gt;t&gt;0\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+P(X&gt;s|X&gt;t)&amp;=\frac{P(X&gt;s \wedge X&gt;t)}{P(X&gt;t)}=\frac{P(X&gt;s)}{P(X&gt;t)}\\
+&amp;=\frac{1-F(s)}{1-F(t)}=\frac{(1-p)^s}{(1-p)^t}=(1-p)^{s-t}\\
+P(X&gt;s-t)&amp;=1-P(x\leq s-t)=1-F(x)\\
+&amp;=(1-p)^{s-t}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="geometric-and-binomial" class="slide level2">
+<h2>Geometric and Binomial</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Distribution</th>
+<th style="text-align: center;">r.v. <span class="math inline">\(X\)</span></th>
+<th style="text-align: center;">Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Binomial</td>
+<td style="text-align: center;"># Success</td>
+<td style="text-align: center;"># Trials</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Geometric</td>
+<td style="text-align: center;"># Trials</td>
+<td style="text-align: center;">1<sup>st</sup> Success</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hyper-geom-example" class="slide level2">
+<h2>Example</h2>
+<p>A company specialized in sport footwear, imports a share of the material that is packed in boxes of 1000 units. To avoid counterfeiting, in each box 5 products are randomly selected, and the whole box is returned if one of these 5 products raises suspicions.</p>
+<ol type="1">
+<li class="fragment">What is the probability that a box with 10 suspicious units is returned? <a href="#/app-hyper-example-1">Sol</a></li>
+<li class="fragment">Check if this probability changes too much if you disregard that you are not replacing the items. <a href="#/app-hyper-example-2">Sol</a></li>
+<li class="fragment">What is the probability that we need to inspect 15 units, independently between them, until finding a suspicious item? <a href="#/app-hyper-example-3">Sol</a></li>
+<li class="fragment">How many units you inspect until finding the first suspicious unit? <a href="#/app-hyper-example-4">Sol</a></li>
+</ol>
+</section></section>
+<section>
 <section id="poisson-distribution" class="title-slide slide level1 center">
 <h1>Poisson Distribution</h1>
 
 </section>
-
+<section id="poisson-distribution-1" class="slide level2">
+<h2>Poisson Distribution</h2>
+<p>This distribution is associated with a process of counting, a Poisson process.</p>
+<p>Examples:</p>
+<ul>
+<li class="fragment">Count the number of patients arriving every day to the E.R. in a hospital.</li>
+<li class="fragment">Count how many calls does a call-center receive in an hour.</li>
+<li class="fragment">Count how many typos does a book have.</li>
+</ul>
+<p>You can count something in a time frame, or a particular region.</p>
+</section>
+<section id="poisson-process" class="slide level2">
+<h2>Poisson process</h2>
+<p>The Poisson process has the following features:</p>
+<ol type="1">
+<li class="fragment">It must be homogeneous in time/space. It only depends on the length that you consider to measure, not where, not when.</li>
+<li class="fragment">Events happening in disjoint regions/time slots must be independent.</li>
+<li class="fragment">The probability of having an event in the exact same space or at the exact same time is negligible (no simultaneous events).</li>
+</ol>
+</section>
+<section id="poisson-distribution-2" class="slide level2">
+<h2>Poisson Distribution</h2>
+<p>The r.v. <span class="math inline">\(X\)</span> follows a Poisson distribution if <span class="math inline">\(X\sim Poi(\lambda)\)</span> if its probability distribution function <span class="math inline">\(P(X=x)\)</span> is given by:</p>
+<p><span class="math display">\[
+f_X(x)=\begin{cases}
+\frac{e^{-\lambda}\lambda^x}{x!} &amp; x=0,1,... \\
+0 &amp; otherwise
+\end{cases}
+\]</span></p>
+<p>with <span class="math inline">\(\lambda&gt;0\)</span>, which represents the average number of events in a given time slot or region.</p>
+</section>
+<section id="poisson-distribution-3" class="slide level2">
+<h2>Poisson Distribution</h2>
+<p>The first two moments of the distribution are found as:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(E[X]=\lambda\)</span></li>
+<li class="fragment"><span class="math inline">\(V[X]=\lambda\)</span></li>
+</ul>
+</section>
+<section id="additivity-theorem-of-the-poisson-distribution" class="slide level2">
+<h2>Additivity Theorem of the Poisson Distribution</h2>
+<p>Let <span class="math inline">\(k\)</span> r.v.s <span class="math inline">\(X_i\)</span> with <span class="math inline">\(i=1,2,...,k\)</span>, independent, where <span class="math inline">\(X_i\sim Poi(\lambda_i)\)</span>. Let</p>
+<p><span class="math display">\[S_k=X_1+...+X_k=\sum_{i=1}^k X_i\]</span></p>
+<p>Then <span class="math inline">\(S_k\sim Poi\left(\Sigma_{i=1}^k\lambda_i\right)\)</span></p>
+</section>
+<section id="binomial-rightarrow-poisson" class="slide level2">
+<h2>Binomial <span class="math inline">\(\rightarrow\)</span> Poisson</h2>
+<p>Let <span class="math inline">\(X\sim Bin(n,p)\)</span>. If <span class="math inline">\(n&gt;&gt;1&gt;&gt;p\)</span>, <em>i.e.</em> if this is a very rare event (very low success probability) in a very large sample, you can approximate this with a Poisson distribution, where <span class="math inline">\(\lambda=np\)</span>.</p>
+<p><span class="math inline">\(X\sim Bin(x,n,p)\leftrightarrow\ X\approx Poi(x,\lambda=np)\)</span></p>
+<p>As a rule of thumb, do not approximate if <span class="math inline">\(p\in[0.1,0.9]\)</span> or if <span class="math inline">\(n\leq 20\)</span>.</p>
+</section>
+<section id="poi-example-1" class="slide level2">
+<h2>Example</h2>
+<p>Find the value of the following probabilities, using the Poisson <a href="#/app-poi-tables">table</a></p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(P(X\leq 5)\)</span> if <span class="math inline">\(X\sim Poi(10)\)</span></li>
+<li class="fragment"><span class="math inline">\(P(4\leq X \leq 8)\)</span> if <span class="math inline">\(X\sim Poi(5)\)</span> <a href="#/app-poi-example-2">Sol</a></li>
+<li class="fragment"><span class="math inline">\(P(X=7)\)</span> if <span class="math inline">\(X\sim Poi(10)\)</span> <a href="#/app-poi-example-3">Sol</a></li>
+</ol>
+<details>
+<summary>
+✅ Answer
+</summary>
+<div style="font-size: 0.6em;">
+<ol type="1">
+<li>Looking directly at the table, we find that <span class="math inline">\(P(X\leq 5)=F(5)=0.0671\)</span></li>
+<li>Looking at the table we get <span class="math inline">\(F(8)=0.9319\)</span> and <span class="math inline">\(F(4^-)=F(3)=0.2650\)</span>, therefore <span class="math inline">\(P(4\leq X \leq 8)=0.9319-0.2650=0.6669\)</span></li>
+<li>Looking directly at the table, we see that <span class="math inline">\(P(X\leq 7)=0.2202\)</span> and <span class="math inline">\(P(X\leq 6)=0.1301\)</span>, and therefore <span class="math inline">\(P(X=7)=0.2202-0.1301=0.0901\)</span></li>
+</ol>
+</div>
+</details>
+</section>
+<section id="poi-example-2" class="slide level2" style="font-size: 0.8em;">
+<h2>Example</h2>
+<p>The number of patients arriving daily to the ICU in a hospital, follows a <a href="#/app-poi-tables">Poisson</a> process with mean 4. The ICU has capacity of 6 patients, the others, are derived to the nearest hospital. Assess the validity of the following sentences:</p>
+<ol type="1">
+<li class="fragment">The probability that, on a given day, there is no need to transfer any patient is 0.8893.<a href="#/app-poi-example-1">Sol</a></li>
+<li class="fragment">The most likely number of patients arriving daily to the ICU is 6.<a href="#/app-poi-example-2">Sol</a></li>
+<li class="fragment">The probability that, on a given day, arrive 5 patients, given that in the previous day only 2 patients arrived, is 0.1563.<a href="#/app-poi-example-3">Sol</a></li>
+<li class="fragment">The probability that, in 5 days, at least 15 patients arrive to the ICU is 0.8435.<a href="#/app-poi-example-4">Sol</a></li>
+<li class="fragment">To ensure that approx. 97% of the time (days) there are no transfers, it is necessary to increase the capacity in 4 more beds.<a href="#/app-poi-example-5">Sol</a></li>
+</ol>
+</section>
+<section id="bibliography" class="slide level2">
+<h2>Bibliography</h2>
+<ul>
+<li>
+Murteira, B.; Silva Ribeiro, C.; Andrade e Silva, J. &amp; Pimenta, C.,Introdução à Estatística,Escolar Editora,McGraw-Hill, 2010
+</li>
+<li>
+Paulino, C. D. &amp; Branco, J. A. (2005). Exercícios de Probabilidade e Estatística. Escolar Editora
+</li>
+<li>
+Pimenta, F., Andrade e Silva, J.; Silva Ribeiro, C. &amp; Murteira, B., Introdução à Estatística – 3ª Edição, Escolar Editora, 2015
+</li>
+</ul>
+</section></section>
 <section>
 <section id="appendix" class="title-slide slide level1 center">
 <h1>Appendix</h1>
@@ -316,10 +528,11 @@ P(Y=2|X+Y=5)&amp;=\frac{P(Y=2, X+Y=5)}{P(X+Y=5)}\\
 <p><a href="#/binomial_dist">Back to Binomial Distribution</a></p>
 </section>
 <section id="app-bin-tables" class="slide level2 small">
-<h2>Binomial Tables</h2>
+<h2>Binomial Table</h2>
 <p><a href="#/bin-example-1">Back to exercise</a></p>
-<h3 id="função-de-distribuição">Função de distribuição</h3>
+<h3 id="distribution-function">Distribution Function</h3>
 <div style="overflow-x: auto; font-size: 0.7em; max-width:100%; max-height:50%">
+<h4 id="n-1">n = 1</h4>
 <table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 3%">
@@ -3970,6 +4183,1608 @@ P(Y=2|X+Y=5)&amp;=\frac{P(Y=2, X+Y=5)}{P(X+Y=5)}\\
 </tbody>
 </table>
 </div>
+</section>
+<section id="app-hyper-example-1" class="slide level2">
+<h2>Hypergeometric Example</h2>
+<p><a href="#/hyper-geom-example">Back to the exercise</a></p>
+<p>First, note that <span class="math inline">\(X\sim Hypergeometric(1000, 10, n)\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+P(X\geq 1)&amp;=1-P(X&lt;1)=1-P(X\leq 0)\\
+&amp;=1-P(X=0) = 1-\frac{\binom{10}{0}\binom{990}{5}}{\binom{1000}{5}}\\
+&amp;=1-0.9509\approx 0.0491
+\end{aligned}
+\]</span></p>
+</section>
+<section id="app-hyper-example-2" class="slide level2">
+<h2>Hypergeometric Example</h2>
+<p><a href="#/hyper-geom-example">Back to the exercise</a></p>
+<p>With reposition we could approximate with the Binomial (note <span class="math inline">\(n/N=0.005&lt;0.1\)</span>), <span class="math inline">\(X\approx Bin(n=5,M/N=0.01)\)</span></p>
+<p><span class="math display">\[P(X\geq 1)=1-P(X=0)\approx 1-0.95099\approx 0.04901\]</span></p>
+<p>Both values are very close.</p>
+</section>
+<section id="app-hyper-example-3" class="slide level2">
+<h2>Hypergeometric Example</h2>
+<p><a href="#/hyper-geom-example">Back to the exercise</a></p>
+<p><span class="math inline">\(Y\sim Geo(p=0.01)\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(Y=15)&amp;=p(1-p)^{y-1}=0.01(1-0.01)^{14}\\
+&amp;=0.01(0.8687458)^14\approx 0.009
+\end{aligned}
+\]</span></p>
+</section>
+<section id="app-hyper-example-4" class="slide level2">
+<h2>Hypergeometric Example</h2>
+<p><a href="#/hyper-geom-example">Back to the exercise</a></p>
+<p><span class="math inline">\(Y\sim Geo(p=0.01)\)</span>, then <span class="math display">\[E[Y]=\frac{1}{p}=\frac{1}{0.01}=100\]</span></p>
+<p>You need to inspect 100 units on average.</p>
+</section>
+<section id="app-poi-tables" class="slide level2 small">
+<h2>Poisson Table</h2>
+<p><a href="#/poi-example-1">Back to exercise</a></p>
+<h3 id="distribution-function-1">Distribution Function</h3>
+<div style="overflow-x: auto; font-size: 0.7em; max-width:100%; max-height:50%">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>0.1</th>
+<th>0.2</th>
+<th>0.3</th>
+<th>0.4</th>
+<th>0.5</th>
+<th>0.6</th>
+<th>0.7</th>
+<th>0.8</th>
+<th>0.9</th>
+<th>1.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.9048</td>
+<td>0.8187</td>
+<td>0.7408</td>
+<td>0.6703</td>
+<td>0.6065</td>
+<td>0.5488</td>
+<td>0.4966</td>
+<td>0.4493</td>
+<td>0.4066</td>
+<td>0.3679</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.9953</td>
+<td>0.9825</td>
+<td>0.9631</td>
+<td>0.9384</td>
+<td>0.9098</td>
+<td>0.8781</td>
+<td>0.8442</td>
+<td>0.8088</td>
+<td>0.7725</td>
+<td>0.7358</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.9998</td>
+<td>0.9989</td>
+<td>0.9964</td>
+<td>0.9921</td>
+<td>0.9856</td>
+<td>0.9769</td>
+<td>0.9659</td>
+<td>0.9526</td>
+<td>0.9371</td>
+<td>0.9197</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1.0000</td>
+<td>0.9999</td>
+<td>0.9997</td>
+<td>0.9992</td>
+<td>0.9982</td>
+<td>0.9966</td>
+<td>0.9942</td>
+<td>0.9909</td>
+<td>0.9865</td>
+<td>0.9810</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>0.9999</td>
+<td>0.9998</td>
+<td>0.9996</td>
+<td>0.9992</td>
+<td>0.9986</td>
+<td>0.9977</td>
+<td>0.9963</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>0.9999</td>
+<td>0.9998</td>
+<td>0.9997</td>
+<td>0.9994</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>0.9999</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>1.1</th>
+<th>1.2</th>
+<th>1.3</th>
+<th>1.4</th>
+<th>1.5</th>
+<th>1.6</th>
+<th>1.7</th>
+<th>1.8</th>
+<th>1.9</th>
+<th>2.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.3329</td>
+<td>0.3012</td>
+<td>0.2725</td>
+<td>0.2466</td>
+<td>0.2231</td>
+<td>0.2019</td>
+<td>0.1827</td>
+<td>0.1653</td>
+<td>0.1496</td>
+<td>0.1353</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.6990</td>
+<td>0.6626</td>
+<td>0.6268</td>
+<td>0.5918</td>
+<td>0.5578</td>
+<td>0.5249</td>
+<td>0.4932</td>
+<td>0.4628</td>
+<td>0.4337</td>
+<td>0.4060</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.9004</td>
+<td>0.8795</td>
+<td>0.8571</td>
+<td>0.8335</td>
+<td>0.8088</td>
+<td>0.7834</td>
+<td>0.7572</td>
+<td>0.7306</td>
+<td>0.7037</td>
+<td>0.6767</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.9743</td>
+<td>0.9662</td>
+<td>0.9569</td>
+<td>0.9463</td>
+<td>0.9344</td>
+<td>0.9212</td>
+<td>0.9068</td>
+<td>0.8913</td>
+<td>0.8747</td>
+<td>0.8571</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.9946</td>
+<td>0.9923</td>
+<td>0.9893</td>
+<td>0.9857</td>
+<td>0.9814</td>
+<td>0.9763</td>
+<td>0.9704</td>
+<td>0.9636</td>
+<td>0.9559</td>
+<td>0.9473</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.9990</td>
+<td>0.9985</td>
+<td>0.9978</td>
+<td>0.9968</td>
+<td>0.9955</td>
+<td>0.9940</td>
+<td>0.9920</td>
+<td>0.9896</td>
+<td>0.9868</td>
+<td>0.9834</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.9999</td>
+<td>0.9997</td>
+<td>0.9996</td>
+<td>0.9994</td>
+<td>0.9991</td>
+<td>0.9987</td>
+<td>0.9981</td>
+<td>0.9974</td>
+<td>0.9966</td>
+<td>0.9955</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>0.9999</td>
+<td>0.9999</td>
+<td>0.9998</td>
+<td>0.9997</td>
+<td>0.9996</td>
+<td>0.9994</td>
+<td>0.9992</td>
+<td>0.9989</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>0.9999</td>
+<td>0.9999</td>
+<td>0.9998</td>
+<td>0.9998</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>2.1</th>
+<th>2.2</th>
+<th>2.3</th>
+<th>2.4</th>
+<th>2.5</th>
+<th>2.6</th>
+<th>2.7</th>
+<th>2.8</th>
+<th>2.9</th>
+<th>3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.1225</td>
+<td>0.1108</td>
+<td>0.1003</td>
+<td>0.0907</td>
+<td>0.0821</td>
+<td>0.0743</td>
+<td>0.0672</td>
+<td>0.0608</td>
+<td>0.0550</td>
+<td>0.0498</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.3796</td>
+<td>0.3546</td>
+<td>0.3309</td>
+<td>0.3084</td>
+<td>0.2873</td>
+<td>0.2674</td>
+<td>0.2487</td>
+<td>0.2311</td>
+<td>0.2146</td>
+<td>0.1991</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.6496</td>
+<td>0.6227</td>
+<td>0.5960</td>
+<td>0.5697</td>
+<td>0.5438</td>
+<td>0.5184</td>
+<td>0.4936</td>
+<td>0.4695</td>
+<td>0.4460</td>
+<td>0.4232</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.8386</td>
+<td>0.8194</td>
+<td>0.7993</td>
+<td>0.7787</td>
+<td>0.7576</td>
+<td>0.7360</td>
+<td>0.7141</td>
+<td>0.6919</td>
+<td>0.6696</td>
+<td>0.6472</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.9379</td>
+<td>0.9275</td>
+<td>0.9162</td>
+<td>0.9041</td>
+<td>0.8912</td>
+<td>0.8774</td>
+<td>0.8629</td>
+<td>0.8477</td>
+<td>0.8318</td>
+<td>0.8153</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.9796</td>
+<td>0.9751</td>
+<td>0.9700</td>
+<td>0.9643</td>
+<td>0.9580</td>
+<td>0.9510</td>
+<td>0.9433</td>
+<td>0.9349</td>
+<td>0.9258</td>
+<td>0.9161</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.9941</td>
+<td>0.9925</td>
+<td>0.9906</td>
+<td>0.9884</td>
+<td>0.9858</td>
+<td>0.9828</td>
+<td>0.9794</td>
+<td>0.9756</td>
+<td>0.9713</td>
+<td>0.9665</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.9985</td>
+<td>0.9980</td>
+<td>0.9974</td>
+<td>0.9967</td>
+<td>0.9958</td>
+<td>0.9947</td>
+<td>0.9934</td>
+<td>0.9919</td>
+<td>0.9901</td>
+<td>0.9881</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.9997</td>
+<td>0.9995</td>
+<td>0.9994</td>
+<td>0.9991</td>
+<td>0.9989</td>
+<td>0.9985</td>
+<td>0.9981</td>
+<td>0.9976</td>
+<td>0.9969</td>
+<td>0.9962</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.9999</td>
+<td>0.9999</td>
+<td>0.9999</td>
+<td>0.9998</td>
+<td>0.9997</td>
+<td>0.9996</td>
+<td>0.9995</td>
+<td>0.9993</td>
+<td>0.9991</td>
+<td>0.9989</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>0.9999</td>
+<td>0.9999</td>
+<td>0.9999</td>
+<td>0.9998</td>
+<td>0.9998</td>
+<td>0.9997</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>3.1</th>
+<th>3.2</th>
+<th>3.3</th>
+<th>3.4</th>
+<th>3.5</th>
+<th>3.6</th>
+<th>3.7</th>
+<th>3.8</th>
+<th>3.9</th>
+<th>4.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.0450</td>
+<td>0.0408</td>
+<td>0.0369</td>
+<td>0.0334</td>
+<td>0.0302</td>
+<td>0.0273</td>
+<td>0.0247</td>
+<td>0.0224</td>
+<td>0.0202</td>
+<td>0.0183</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.1847</td>
+<td>0.1712</td>
+<td>0.1586</td>
+<td>0.1468</td>
+<td>0.1359</td>
+<td>0.1257</td>
+<td>0.1162</td>
+<td>0.1074</td>
+<td>0.0992</td>
+<td>0.0916</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.4012</td>
+<td>0.3799</td>
+<td>0.3594</td>
+<td>0.3397</td>
+<td>0.3208</td>
+<td>0.3027</td>
+<td>0.2854</td>
+<td>0.2689</td>
+<td>0.2531</td>
+<td>0.2381</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.6248</td>
+<td>0.6025</td>
+<td>0.5803</td>
+<td>0.5584</td>
+<td>0.5366</td>
+<td>0.5152</td>
+<td>0.4942</td>
+<td>0.4735</td>
+<td>0.4532</td>
+<td>0.4335</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.7982</td>
+<td>0.7806</td>
+<td>0.7626</td>
+<td>0.7442</td>
+<td>0.7254</td>
+<td>0.7064</td>
+<td>0.6872</td>
+<td>0.6678</td>
+<td>0.6484</td>
+<td>0.6288</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.9057</td>
+<td>0.8946</td>
+<td>0.8829</td>
+<td>0.8705</td>
+<td>0.8576</td>
+<td>0.8441</td>
+<td>0.8301</td>
+<td>0.8156</td>
+<td>0.8006</td>
+<td>0.7851</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.9612</td>
+<td>0.9554</td>
+<td>0.9490</td>
+<td>0.9421</td>
+<td>0.9347</td>
+<td>0.9267</td>
+<td>0.9182</td>
+<td>0.9091</td>
+<td>0.8995</td>
+<td>0.8893</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.9858</td>
+<td>0.9832</td>
+<td>0.9802</td>
+<td>0.9769</td>
+<td>0.9733</td>
+<td>0.9692</td>
+<td>0.9648</td>
+<td>0.9599</td>
+<td>0.9546</td>
+<td>0.9489</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.9953</td>
+<td>0.9943</td>
+<td>0.9931</td>
+<td>0.9917</td>
+<td>0.9901</td>
+<td>0.9883</td>
+<td>0.9863</td>
+<td>0.9840</td>
+<td>0.9815</td>
+<td>0.9786</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.9986</td>
+<td>0.9982</td>
+<td>0.9978</td>
+<td>0.9973</td>
+<td>0.9967</td>
+<td>0.9960</td>
+<td>0.9952</td>
+<td>0.9942</td>
+<td>0.9931</td>
+<td>0.9919</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>0.9996</td>
+<td>0.9995</td>
+<td>0.9994</td>
+<td>0.9992</td>
+<td>0.9990</td>
+<td>0.9987</td>
+<td>0.9984</td>
+<td>0.9981</td>
+<td>0.9977</td>
+<td>0.9972</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>4.1</th>
+<th>4.2</th>
+<th>4.3</th>
+<th>4.4</th>
+<th>4.5</th>
+<th>4.6</th>
+<th>4.7</th>
+<th>4.8</th>
+<th>4.9</th>
+<th>5.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.0166</td>
+<td>0.0150</td>
+<td>0.0136</td>
+<td>0.0123</td>
+<td>0.0111</td>
+<td>0.0101</td>
+<td>0.0091</td>
+<td>0.0082</td>
+<td>0.0074</td>
+<td>0.0067</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.0845</td>
+<td>0.0780</td>
+<td>0.0719</td>
+<td>0.0663</td>
+<td>0.0611</td>
+<td>0.0563</td>
+<td>0.0518</td>
+<td>0.0477</td>
+<td>0.0439</td>
+<td>0.0404</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.2238</td>
+<td>0.2102</td>
+<td>0.1974</td>
+<td>0.1851</td>
+<td>0.1736</td>
+<td>0.1626</td>
+<td>0.1523</td>
+<td>0.1425</td>
+<td>0.1333</td>
+<td>0.1247</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.4142</td>
+<td>0.3954</td>
+<td>0.3772</td>
+<td>0.3594</td>
+<td>0.3423</td>
+<td>0.3257</td>
+<td>0.3097</td>
+<td>0.2942</td>
+<td>0.2793</td>
+<td>0.2650</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.6093</td>
+<td>0.5898</td>
+<td>0.5704</td>
+<td>0.5512</td>
+<td>0.5321</td>
+<td>0.5132</td>
+<td>0.4946</td>
+<td>0.4763</td>
+<td>0.4582</td>
+<td>0.4405</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.7693</td>
+<td>0.7531</td>
+<td>0.7367</td>
+<td>0.7199</td>
+<td>0.7029</td>
+<td>0.6858</td>
+<td>0.6684</td>
+<td>0.6510</td>
+<td>0.6335</td>
+<td>0.6160</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.8786</td>
+<td>0.8675</td>
+<td>0.8558</td>
+<td>0.8436</td>
+<td>0.8311</td>
+<td>0.8180</td>
+<td>0.8046</td>
+<td>0.7908</td>
+<td>0.7767</td>
+<td>0.7622</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.9427</td>
+<td>0.9361</td>
+<td>0.9290</td>
+<td>0.9214</td>
+<td>0.9134</td>
+<td>0.9049</td>
+<td>0.8960</td>
+<td>0.8867</td>
+<td>0.8769</td>
+<td>0.8666</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.9755</td>
+<td>0.9721</td>
+<td>0.9683</td>
+<td>0.9642</td>
+<td>0.9597</td>
+<td>0.9549</td>
+<td>0.9497</td>
+<td>0.9442</td>
+<td>0.9382</td>
+<td>0.9319</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.9905</td>
+<td>0.9889</td>
+<td>0.9871</td>
+<td>0.9851</td>
+<td>0.9829</td>
+<td>0.9805</td>
+<td>0.9778</td>
+<td>0.9749</td>
+<td>0.9717</td>
+<td>0.9682</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>0.9966</td>
+<td>0.9959</td>
+<td>0.9952</td>
+<td>0.9943</td>
+<td>0.9933</td>
+<td>0.9922</td>
+<td>0.9910</td>
+<td>0.9896</td>
+<td>0.9880</td>
+<td>0.9863</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>5.1</th>
+<th>5.2</th>
+<th>5.3</th>
+<th>5.4</th>
+<th>5.5</th>
+<th>5.6</th>
+<th>5.7</th>
+<th>5.8</th>
+<th>5.9</th>
+<th>6.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.00610</td>
+<td>0.00552</td>
+<td>0.00499</td>
+<td>0.00452</td>
+<td>0.00409</td>
+<td>0.00370</td>
+<td>0.00335</td>
+<td>0.00303</td>
+<td>0.00274</td>
+<td>0.00248</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.03719</td>
+<td>0.03420</td>
+<td>0.03145</td>
+<td>0.02891</td>
+<td>0.02656</td>
+<td>0.02441</td>
+<td>0.02242</td>
+<td>0.02059</td>
+<td>0.01890</td>
+<td>0.01735</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.11648</td>
+<td>0.10879</td>
+<td>0.10155</td>
+<td>0.09476</td>
+<td>0.08838</td>
+<td>0.08239</td>
+<td>0.07677</td>
+<td>0.07151</td>
+<td>0.06658</td>
+<td>0.06197</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.25127</td>
+<td>0.23807</td>
+<td>0.22541</td>
+<td>0.21329</td>
+<td>0.20170</td>
+<td>0.19062</td>
+<td>0.18005</td>
+<td>0.16996</td>
+<td>0.16035</td>
+<td>0.15120</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.42313</td>
+<td>0.40613</td>
+<td>0.38952</td>
+<td>0.37331</td>
+<td>0.35752</td>
+<td>0.34215</td>
+<td>0.32721</td>
+<td>0.31272</td>
+<td>0.29866</td>
+<td>0.28506</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.59842</td>
+<td>0.58091</td>
+<td>0.56347</td>
+<td>0.54613</td>
+<td>0.52892</td>
+<td>0.51186</td>
+<td>0.49498</td>
+<td>0.47831</td>
+<td>0.46187</td>
+<td>0.44568</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.74742</td>
+<td>0.73239</td>
+<td>0.71713</td>
+<td>0.70167</td>
+<td>0.68604</td>
+<td>0.67026</td>
+<td>0.65437</td>
+<td>0.63839</td>
+<td>0.62236</td>
+<td>0.60630</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.85598</td>
+<td>0.84492</td>
+<td>0.83348</td>
+<td>0.82166</td>
+<td>0.80949</td>
+<td>0.79698</td>
+<td>0.78415</td>
+<td>0.77103</td>
+<td>0.75763</td>
+<td>0.74398</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.92518</td>
+<td>0.91806</td>
+<td>0.91055</td>
+<td>0.90265</td>
+<td>0.89436</td>
+<td>0.88568</td>
+<td>0.87662</td>
+<td>0.86719</td>
+<td>0.85739</td>
+<td>0.84724</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.96440</td>
+<td>0.96033</td>
+<td>0.95594</td>
+<td>0.95125</td>
+<td>0.94622</td>
+<td>0.94087</td>
+<td>0.93518</td>
+<td>0.92916</td>
+<td>0.92279</td>
+<td>0.91608</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>0.98440</td>
+<td>0.98230</td>
+<td>0.98000</td>
+<td>0.97749</td>
+<td>0.97475</td>
+<td>0.97178</td>
+<td>0.96856</td>
+<td>0.96510</td>
+<td>0.96137</td>
+<td>0.95738</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>6.1</th>
+<th>6.2</th>
+<th>6.3</th>
+<th>6.4</th>
+<th>6.5</th>
+<th>6.6</th>
+<th>6.7</th>
+<th>6.8</th>
+<th>6.9</th>
+<th>7.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.00224</td>
+<td>0.00203</td>
+<td>0.00184</td>
+<td>0.00166</td>
+<td>0.00150</td>
+<td>0.00136</td>
+<td>0.00123</td>
+<td>0.00111</td>
+<td>0.00101</td>
+<td>0.00091</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.01592</td>
+<td>0.01461</td>
+<td>0.01341</td>
+<td>0.01230</td>
+<td>0.01128</td>
+<td>0.01034</td>
+<td>0.00948</td>
+<td>0.00869</td>
+<td>0.00796</td>
+<td>0.00730</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.05765</td>
+<td>0.05362</td>
+<td>0.04985</td>
+<td>0.04632</td>
+<td>0.04304</td>
+<td>0.03997</td>
+<td>0.03711</td>
+<td>0.03444</td>
+<td>0.03195</td>
+<td>0.02964</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.14250</td>
+<td>0.13423</td>
+<td>0.12637</td>
+<td>0.11892</td>
+<td>0.11185</td>
+<td>0.10515</td>
+<td>0.09881</td>
+<td>0.09281</td>
+<td>0.08713</td>
+<td>0.08177</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.27189</td>
+<td>0.25918</td>
+<td>0.24690</td>
+<td>0.23507</td>
+<td>0.22367</td>
+<td>0.21270</td>
+<td>0.20216</td>
+<td>0.19203</td>
+<td>0.18231</td>
+<td>0.17299</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.42975</td>
+<td>0.41411</td>
+<td>0.39877</td>
+<td>0.38374</td>
+<td>0.36904</td>
+<td>0.35467</td>
+<td>0.34065</td>
+<td>0.32698</td>
+<td>0.31366</td>
+<td>0.30071</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.59024</td>
+<td>0.57421</td>
+<td>0.55823</td>
+<td>0.54233</td>
+<td>0.52652</td>
+<td>0.51084</td>
+<td>0.49530</td>
+<td>0.47992</td>
+<td>0.46472</td>
+<td>0.44971</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.73010</td>
+<td>0.71602</td>
+<td>0.70175</td>
+<td>0.68732</td>
+<td>0.67276</td>
+<td>0.65808</td>
+<td>0.64332</td>
+<td>0.62849</td>
+<td>0.61361</td>
+<td>0.59871</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.83674</td>
+<td>0.82591</td>
+<td>0.81477</td>
+<td>0.80331</td>
+<td>0.79157</td>
+<td>0.77956</td>
+<td>0.76728</td>
+<td>0.75477</td>
+<td>0.74203</td>
+<td>0.72909</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.90902</td>
+<td>0.90162</td>
+<td>0.89388</td>
+<td>0.88580</td>
+<td>0.87738</td>
+<td>0.86864</td>
+<td>0.85957</td>
+<td>0.85018</td>
+<td>0.84049</td>
+<td>0.83050</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>0.95311</td>
+<td>0.94856</td>
+<td>0.94372</td>
+<td>0.93859</td>
+<td>0.93316</td>
+<td>0.92743</td>
+<td>0.92140</td>
+<td>0.91507</td>
+<td>0.90843</td>
+<td>0.90148</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>7.1</th>
+<th>7.2</th>
+<th>7.3</th>
+<th>7.4</th>
+<th>7.5</th>
+<th>7.6</th>
+<th>7.7</th>
+<th>7.8</th>
+<th>7.9</th>
+<th>8.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.000825</td>
+<td>0.000747</td>
+<td>0.000676</td>
+<td>0.000611</td>
+<td>0.000553</td>
+<td>0.000500</td>
+<td>0.000453</td>
+<td>0.000410</td>
+<td>0.000371</td>
+<td>0.000335</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.006683</td>
+<td>0.006122</td>
+<td>0.005607</td>
+<td>0.005135</td>
+<td>0.004701</td>
+<td>0.004304</td>
+<td>0.003940</td>
+<td>0.003606</td>
+<td>0.003300</td>
+<td>0.003019</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.027480</td>
+<td>0.025474</td>
+<td>0.023607</td>
+<td>0.021871</td>
+<td>0.020257</td>
+<td>0.018757</td>
+<td>0.017364</td>
+<td>0.016070</td>
+<td>0.014869</td>
+<td>0.013754</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.076699</td>
+<td>0.071917</td>
+<td>0.067406</td>
+<td>0.063153</td>
+<td>0.059145</td>
+<td>0.055371</td>
+<td>0.051819</td>
+<td>0.048477</td>
+<td>0.045334</td>
+<td>0.042380</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.164063</td>
+<td>0.155516</td>
+<td>0.147340</td>
+<td>0.139525</td>
+<td>0.132062</td>
+<td>0.124939</td>
+<td>0.118145</td>
+<td>0.111670</td>
+<td>0.105503</td>
+<td>0.099632</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.288119</td>
+<td>0.275897</td>
+<td>0.264043</td>
+<td>0.252557</td>
+<td>0.241436</td>
+<td>0.230681</td>
+<td>0.220287</td>
+<td>0.210251</td>
+<td>0.200569</td>
+<td>0.191236</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.434920</td>
+<td>0.420356</td>
+<td>0.406032</td>
+<td>0.391962</td>
+<td>0.378155</td>
+<td>0.364621</td>
+<td>0.351369</td>
+<td>0.338407</td>
+<td>0.325740</td>
+<td>0.313374</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.583817</td>
+<td>0.568941</td>
+<td>0.554107</td>
+<td>0.539333</td>
+<td>0.524639</td>
+<td>0.510042</td>
+<td>0.495560</td>
+<td>0.481209</td>
+<td>0.467004</td>
+<td>0.452961</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.715964</td>
+<td>0.702668</td>
+<td>0.689224</td>
+<td>0.675651</td>
+<td>0.661967</td>
+<td>0.648192</td>
+<td>0.634343</td>
+<td>0.620441</td>
+<td>0.606503</td>
+<td>0.592547</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.820212</td>
+<td>0.809650</td>
+<td>0.798820</td>
+<td>0.787735</td>
+<td>0.776408</td>
+<td>0.764851</td>
+<td>0.753080</td>
+<td>0.741109</td>
+<td>0.728952</td>
+<td>0.716624</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>0.894229</td>
+<td>0.886677</td>
+<td>0.878825</td>
+<td>0.870677</td>
+<td>0.862238</td>
+<td>0.853513</td>
+<td>0.844508</td>
+<td>0.835230</td>
+<td>0.825686</td>
+<td>0.815886</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\setminus\lambda\)</span></th>
+<th>9.1</th>
+<th>9.2</th>
+<th>9.3</th>
+<th>9.4</th>
+<th>9.5</th>
+<th>9.6</th>
+<th>9.7</th>
+<th>9.8</th>
+<th>9.9</th>
+<th>10.0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.000112</td>
+<td>0.000101</td>
+<td>0.000091</td>
+<td>0.000083</td>
+<td>0.000075</td>
+<td>0.000068</td>
+<td>0.000061</td>
+<td>0.000055</td>
+<td>0.000050</td>
+<td>0.000045</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.001128</td>
+<td>0.001031</td>
+<td>0.000942</td>
+<td>0.000860</td>
+<td>0.000786</td>
+<td>0.000718</td>
+<td>0.000656</td>
+<td>0.000599</td>
+<td>0.000547</td>
+<td>0.000499</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.005751</td>
+<td>0.005307</td>
+<td>0.004895</td>
+<td>0.004515</td>
+<td>0.004164</td>
+<td>0.003839</td>
+<td>0.003539</td>
+<td>0.003262</td>
+<td>0.003006</td>
+<td>0.002769</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.019776</td>
+<td>0.018420</td>
+<td>0.017152</td>
+<td>0.015967</td>
+<td>0.014860</td>
+<td>0.013826</td>
+<td>0.012861</td>
+<td>0.011960</td>
+<td>0.011120</td>
+<td>0.010336</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.051682</td>
+<td>0.048580</td>
+<td>0.045647</td>
+<td>0.042878</td>
+<td>0.040263</td>
+<td>0.037795</td>
+<td>0.035467</td>
+<td>0.033271</td>
+<td>0.031202</td>
+<td>0.029253</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.109751</td>
+<td>0.104074</td>
+<td>0.098650</td>
+<td>0.093471</td>
+<td>0.088528</td>
+<td>0.083815</td>
+<td>0.079322</td>
+<td>0.075041</td>
+<td>0.070965</td>
+<td>0.067086</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.197823</td>
+<td>0.189165</td>
+<td>0.180803</td>
+<td>0.172733</td>
+<td>0.164949</td>
+<td>0.157447</td>
+<td>0.150221</td>
+<td>0.143265</td>
+<td>0.136574</td>
+<td>0.130141</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.312316</td>
+<td>0.301000</td>
+<td>0.289950</td>
+<td>0.279171</td>
+<td>0.268663</td>
+<td>0.258428</td>
+<td>0.248467</td>
+<td>0.238779</td>
+<td>0.229364</td>
+<td>0.220221</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.442552</td>
+<td>0.429609</td>
+<td>0.416834</td>
+<td>0.404235</td>
+<td>0.391823</td>
+<td>0.379606</td>
+<td>0.367590</td>
+<td>0.355783</td>
+<td>0.344191</td>
+<td>0.332820</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.574235</td>
+<td>0.561076</td>
+<td>0.547946</td>
+<td>0.534858</td>
+<td>0.521826</td>
+<td>0.508862</td>
+<td>0.495979</td>
+<td>0.483188</td>
+<td>0.470502</td>
+<td>0.457930</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>0.694067</td>
+<td>0.682026</td>
+<td>0.669881</td>
+<td>0.657646</td>
+<td>0.645331</td>
+<td>0.632949</td>
+<td>0.620510</td>
+<td>0.608024</td>
+<td>0.595501</td>
+<td>0.582950</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="app-poi-example-1" class="slide level2">
+<h2>Poisson Example</h2>
+<p><a href="#/poi-example-2">Back to the exercise</a></p>
+<p>If <span class="math inline">\(X\)</span> if the r.v. of the number of patients arriving every day at the ICU, <span class="math inline">\(X\sim Poi(4)\)</span>. We are interested in <span class="math inline">\(P(X\leq 6)\)</span>, looking at the table we get <span class="math inline">\(F(6)=0.8893\)</span>. <span class="emoji" data-emoji="white_check_mark">✅</span> True.</p>
+</section>
+<section id="app-poi-example-2" class="slide level2">
+<h2>Poisson Example</h2>
+<p><a href="#/poi-example-2">Back to the exercise</a></p>
+<p>Note that from the table we can see that <span class="math inline">\(P(X=3)=P(X=4)=0.1954\)</span>, and also <span class="math inline">\(\lambda=4\)</span>. Given that <span class="math inline">\(\lambda=E[X]\)</span>, the most likely value must be <span class="math inline">\(\lambda\)</span> or very close. In sum, the sentence is <span class="emoji" data-emoji="x">❌</span> false.</p>
+</section>
+<section id="app-poi-example-3" class="slide level2">
+<h2>Poisson Example</h2>
+<p><a href="#/poi-example-2">Back to the exercise</a></p>
+<p>We need to remember two important facts about the Poisson distribution. In two disjoint periods, the random variables are independent. So the number of patients one day, and the number of patients in the next days are independent. On the other hand, remember that the distribution must be the same for the same time-window (they are independently but identically distributed):</p>
+<p><span class="math display">\[P(X_{day2}=5|X_{day1}=2)=P(X_{day2}=5)=0.1563\]</span></p>
+<p>The sentence is <span class="emoji" data-emoji="white_check_mark">✅</span> true.</p>
+</section>
+<section id="app-poi-example-4" class="slide level2">
+<h2>Poisson Example</h2>
+<p><a href="#/poi-example-2">Back to the exercise</a></p>
+<p>Let <span class="math inline">\(Y\sim Poi(20)\)</span> (because of the additivity theorem).</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(Y\geq 15)&amp;=1-P(Y&lt;15)\\
+&amp;=1-P(Y\leq 14)=1-F(14)\\&amp;
+=1-0.1049=0.8951
+\end{aligned}
+\]</span></p>
+<p>The sentence is <span class="emoji" data-emoji="x">❌</span> false.</p>
+</section>
+<section id="app-poi-example-5" class="slide level2">
+<h2>Poisson Example</h2>
+<p><a href="#/poi-example-2">Back to the exercise</a></p>
+<p>In this exercise, we need to find, given that <span class="math inline">\(\lambda=4\)</span>, the <span class="math inline">\(x\)</span> that makes <span class="math inline">\(F(x)\)</span> greater or equal than 0.97. By inspection in the table, we see that it is <span class="math inline">\(x=8\)</span>, but we have know 6 beds, and therefore we would need 2 more beds to satisfy our requirement.</p>
+<p>The sentence is <span class="emoji" data-emoji="x">❌</span> false.</p>
 
 
 </section></section>
