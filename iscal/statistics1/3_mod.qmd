@@ -16,8 +16,9 @@ format:
     code-overflow: wrap
     code-block-font-size: 0.75em
     progress: true
-editor: visual
+editor: source
 execute:
   enabled: true
 engine: knitr
 ---
+

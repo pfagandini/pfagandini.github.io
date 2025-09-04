@@ -58,7 +58,7 @@ engine: knitr
 
 | Assessment Element | Weight (%) | Duration   | Syllabus       | Date              |
 |---------------|---------------|---------------|---------------|---------------|
-| Midterm            | 60%        | 80 minutes | Topics 1 and 2 | Week Nov 11-15    |
+| Midterm            | 60%        | 80 minutes | Topics 1 and 2 | Nov 6<sup>th</sup>    |
 | Partial Exam       | 40%        | 80 minutes | Topic 3        | Regular Exam Date |
 
 <small>Each test has a minimum grade of 7.00 (out of 20), not 6.9, not 6.95.</small>
@@ -73,7 +73,7 @@ If you score less than 7.00 in the Midterm, or if you cannot attend the midterm 
 
 ## Disclaimer
 
-These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Gancho Custódio from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
+These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Custódio and Prof. Teresa Ferreira from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
 
 # Growth Rates
 
@@ -140,7 +140,7 @@ kable(aapl_df)
 
 ## Example: Apple Stock
 
-Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date\[1\]`}$ is the close price we got for`r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close\[1\]\`).
+Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date[1]`}$ is the close price we got for`r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close[1]`).
 
 How much did $y$ grow between `{r} aapl_df$Date[1]` and `{r} aapl_df$Date[2]`?
 
@@ -162,7 +162,7 @@ $$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\frac{\Delta y_{`r aapl
 
 $$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\delta^y_{`r aapl_df$Date[2]`}\right)$$
 
-This, $\delta_{`r aapl_df$Date\[2\]`}^y$, is the **growth rate** of $y$ at year`r aapl_df\$Date\[2\]\`.
+This, $\delta_{`r aapl_df$Date[2]`}^y$, is the **growth rate** of $y$ at year`r aapl_df$Date[2]`.
 
 ## Growth Rate
 
@@ -194,7 +194,7 @@ $$`r aapl_df$Close[2]`=`r aapl_df$Close[1]`\left(1+`r round((aapl_df$Close[2]-aa
 
 . . .
 
-In this case $\delta_{`r aapl_df$Date\[2\]`}^y =`r round((aapl_df$Close[2]-aapl_df$Close\[1\])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close\[2\]-aapl_df$Close[1])/aapl_df$Close\[1\], 4)\`%\$.
+In this case $\delta_{`r aapl_df$Date[2]`}^y =`r round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)` = `r 100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4)`\%$.
 
 > Interpretation: Between `r aapl_df$Date[0]` and `r aapl_df$Date[1]`, the price for Apple *`r if (aapl_df$Close[1] > aapl_df$Close[2]) "decreased" else "increased"`* `r abs(100*round((aapl_df$Close[2]-aapl_df$Close[1])/aapl_df$Close[1], 4))`%.
 
@@ -210,7 +210,7 @@ Or $$y_{t+k}=y_t(1+\delta_{t+k|t})$$
 
 ## Example
 
-We had $y_{`r aapl_df$Date\[1\]`}=`r aapl_df$Close[1]`$, and $y_{`r aapl_df$Date\[5\]`} =`r aapl_df$Close[5]`$. We will try to find $\delta_{`r aapl_df$Date\[5\]`|`r aapl_df$Date[1]`}^y$
+We had $y_{`r aapl_df$Date[1]`}=`r aapl_df$Close[1]`$, and $y_{`r aapl_df$Date[5]`} =`r aapl_df$Close[5]`$. We will try to find $\delta_{`r aapl_df$Date[5]`|`r aapl_df$Date[1]`}^y$
 
 -   What is the value of $k$ in this case?
 
@@ -218,7 +218,7 @@ We had $y_{`r aapl_df$Date\[1\]`}=`r aapl_df$Close[1]`$, and $y_{`r aapl_df$Date
 
 $$k=`r aapl_df$Date[5]`-`r aapl_df$Date[1]`=`r aapl_df$Date[5]-aapl_df$Date[1]`$$
 
--   What is the growth rate between $`r aapl_df$Date\[1\]`$ and $`r aapl_df$Date[5]`$?
+-   What is the growth rate between $`r aapl_df$Date[1]`$ and $`r aapl_df$Date[5]`$?
 
 . . .
 
@@ -312,7 +312,7 @@ But what now is the **average growth rate** between `r aapl_df$Date[1]` and `r a
 
 . . .
 
-Remember $k = `r aapl_df$Date\[5\]-aapl_df$Date[1]`$
+Remember $k = `r aapl_df$Date[5]-aapl_df$Date[1]`$
 
 $$
 \overline{\delta} =

@@ -31,7 +31,7 @@ library(webexercises)
 ```
 ## Disclaimer
 
-These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Gancho Custódio from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
+These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Custódio and Prof. Teresa Ferreira from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
 
 # Probability, background
 

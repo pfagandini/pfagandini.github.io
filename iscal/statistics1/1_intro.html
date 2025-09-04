@@ -203,7 +203,7 @@ Paulo Fagandini
 <td>60%</td>
 <td>80 minutes</td>
 <td>Topics 1 and 2</td>
-<td>Week Nov 11-15 &nbsp;</td>
+<td>Nov 6<sup>th</sup> &nbsp;</td>
 </tr>
 <tr class="even">
 <td>Partial Exam</td>
@@ -222,6 +222,10 @@ Paulo Fagandini
 <p><br>
 </p>
 <p>If you score less than 7.00 in the Midterm, or if you cannot attend the midterm for whatever reason, you <strong>will</strong> have to do the Comprehensive Exam.</p>
+</section>
+<section id="disclaimer" class="slide level2">
+<h2>Disclaimer</h2>
+<p>These slides are a free translation and adaptation from the slide deck for Estatística I by Prof.&nbsp;Sandra Custódio and Prof.&nbsp;Teresa Ferreira from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.</p>
 </section></section>
 <section>
 <section id="growth-rates" class="title-slide slide level1 center">
@@ -279,7 +283,7 @@ Paulo Fagandini
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2025</td>
-<td style="text-align: right;">229.35</td>
+<td style="text-align: right;">238.47</td>
 </tr>
 </tbody>
 </table>
@@ -331,7 +335,7 @@ Paulo Fagandini
 <p><span class="math display">\[132.69 =73.41\left(1+\frac{59.28}{73.41}\right)\]</span></p>
 <p><span class="math display">\[132.69=73.41\left(1+0.8075\right)\]</span></p>
 <div class="fragment">
-<p>In this case <span class="math inline">\(\delta_{2020}^y =0.8075 = 80.75%\)</span>.</p>
+<p>In this case <span class="math inline">\(\delta_{2020}^y =0.8075 = 80.75\%\)</span>.</p>
 <blockquote>
 <p>Interpretation: Between and 2019, the price for Apple <em>increased</em> 80.75%.</p>
 </blockquote>
@@ -391,6 +395,7 @@ Paulo Fagandini
 <div class="callout-content">
 <p>Let <span class="math inline">\(y_t\)</span> be a variable that might take different values over time. The <strong>average growth rate</strong> betweek <span class="math inline">\(t\)</span> and <span class="math inline">\(t+k\)</span> is given by <span class="math inline">\(\overline{\delta}_{t+k|t}^y\)</span>, and takes a value such that:</p>
 <p><span class="math display">\[y_{t+k}=y_t\left(1+\overline{\delta}_{t+k|t}\right)^k\]</span></p>
+<p>We will use something called the <em>geometric mean</em>.</p>
 <p><small>I dropped <span class="math inline">\(y\)</span> from the notation in the formula because it is obvious that we are talking about the variable <span class="math inline">\(y\)</span>.</small></p>
 </div>
 </div>
@@ -472,7 +477,7 @@ Paulo Fagandini
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-08-12?</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-09-07?</p>
 </section>
 <section id="motivation-1" class="slide level2">
 <h2>Motivation</h2>
@@ -521,12 +526,12 @@ Paulo Fagandini
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-08-12.</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-09-07.</p>
 <p>What can you read from the plot?</p>
 </section>
 <section id="motivation-5" class="slide level2">
 <h2>Motivation</h2>
-<p>Note that for 2015-08-12, we would have, for A and B:</p>
+<p>Note that for 2015-09-07, we would have, for A and B:</p>
 <p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
 <p>We just built and index number!</p>
 <p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
@@ -553,7 +558,7 @@ Paulo Fagandini
 </div>
 <p><br>
 </p>
-<p>In our previous example, the base day would have been 2015-08-12. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
+<p>In our previous example, the base day would have been 2015-09-07. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
 <section id="index-numbers-1" class="slide level2">
 <h2>Index Numbers</h2>
@@ -561,8 +566,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-8a4e38fb1b687f2b1193" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8a4e38fb1b687f2b1193">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b5901a52131bd40672ff" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b5901a52131bd40672ff">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -701,13 +706,13 @@ Paulo Fagandini
 <p>Suppose we want to convert this Chain Index into Fix Base index, with the base year in 2020. This will be our 100.</p>
 <table class="caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 9%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -906,13 +911,13 @@ Table&nbsp;1: Changing Base
 <table class="caption-top" style="width:100%;">
 <caption>Stock prices</caption>
 <colgroup>
-<col style="width: 9%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1027,8 +1032,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-ce09373bd9ae3af198ff" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-ce09373bd9ae3af198ff">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-540404d916c8082a415f" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-540404d916c8082a415f">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1084,7 +1089,15 @@ Table&nbsp;1: Changing Base
 </section>
 <section id="example-6" class="slide level2">
 <h2>Example</h2>
-<table class="caption-top">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -1118,7 +1131,15 @@ Table&nbsp;1: Changing Base
 <p><span class="math display">\[I_{2021}^q=\frac{I_{2021}^v}{I_{2021}^p}=\frac{99}{95}=1.04\]</span></p>
 <div class="fragment">
 <p>Then <span class="math inline">\(I_{2021} = 104\)</span>, quantities decreased from 2021 to 2022!</p>
-<table class="caption-top">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -1144,7 +1165,15 @@ Table&nbsp;1: Changing Base
 </section>
 <section id="example-7" class="slide level2">
 <h2>Example</h2>
-<table class="caption-top">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -1314,10 +1343,10 @@ Table&nbsp;1: Changing Base
 <p><small></small></p><small>
 <table class="caption-top">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 27%">
-<col style="width: 27%">
-<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1351,64 +1380,100 @@ Table&nbsp;1: Changing Base
 <p><br>
 </p>
 <p>What are the LPI, PPI, and FPI if we choose as a base year 2023?</p>
-<table data-fragment-index="0" class="fragment">
-<tbody><tr>
-<th data-fragment-index="0" class="fragment">
+<table>
+<thead>
+<tr>
+<th>
+<p>
 <span class="math inline">\(t\)</span>
+</p>
 </th>
-<th data-fragment-index="0" class="fragment">
+<th>
+<p>
 2023
+</p>
 </th>
-<th data-fragment-index="0" class="fragment">
+<th>
+<p>
 2024
+</p>
 </th>
-<th data-fragment-index="0" class="fragment">
+<th>
+<p>
 2025
+</p>
 </th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 <span class="math inline">\(LPI_{t|2023}\)</span>
+</p>
 </td>
-<td data-fragment-index="1" class="fragment">
+<td>
+<p>
 <span class="math inline">\(100\)</span>
+</p>
 </td>
-<td data-fragment-index="2" class="fragment">
+<td>
+<p>
 106.9
+</p>
 </td>
-<td data-fragment-index="2" class="fragment">
+<td>
+<p>
 112.8
+</p>
 </td>
 </tr>
 <tr>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 <span class="math inline">\(PPI_{t|2023}\)</span>
+</p>
 </td>
-<td data-fragment-index="1" class="fragment">
+<td>
+<p>
 <span class="math inline">\(100\)</span>
+</p>
 </td>
-<td data-fragment-index="3" class="fragment">
+<td>
+<p>
 104.1
+</p>
 </td>
-<td data-fragment-index="3" class="fragment">
+<td>
+<p>
 100.9
+</p>
 </td>
 </tr>
 <tr>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 <span class="math inline">\(FPI_{t|2023}\)</span>
+</p>
 </td>
-<td data-fragment-index="1" class="fragment">
+<td>
+<p>
 <span class="math inline">\(100\)</span>
+</p>
 </td>
-<td data-fragment-index="4" class="fragment">
+<td>
+<p>
 105.5
+</p>
 </td>
-<td data-fragment-index="4" class="fragment">
+<td>
+<p>
 106.7
+</p>
 </td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <div class="fragment" data-fragment-index="5">
 <p><span class="math display">\[LPI_{2024|2023}=100\times \frac{9150}{8562} \quad PPI_{2025|2023}=100\times\frac{10013}{9920}\quad FPI_{2024|2025}=\sqrt{106.9\times 104.1}\]</span></p>
 </div>
@@ -1447,6 +1512,13 @@ Table&nbsp;1: Changing Base
 <h2>Application</h2>
 <p>A Labor union leader is complaining that the average salary in 2021 was 1500, and in 2024 it is 1650. This increase, they say, is not enough to maintain the workers’ purshasing power, because of inflation. The data for inflation is the following:</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Year</th>
@@ -1475,59 +1547,93 @@ Table&nbsp;1: Changing Base
 <section id="application-1" class="slide level2">
 <h2>Application</h2>
 <p>For the first question, we can compute the chain or link index:</p>
-<table data-fragment-index="0" class="fragment">
-<tbody><tr>
-<th data-fragment-index="0" class="fragment">
+<table>
+<thead>
+<tr>
+<th>
+<p>
 Year
+</p>
 </th>
-<th data-fragment-index="0" class="fragment">
+<th>
+<p>
 2021
+</p>
 </th>
-<th data-fragment-index="0" class="fragment">
+<th>
+<p>
 2022
+</p>
 </th>
-<th data-fragment-index="0" class="fragment">
+<th>
+<p>
 2023
+</p>
 </th>
-<th data-fragment-index="0" class="fragment">
+<th>
+<p>
 2024
+</p>
 </th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 CPI
+</p>
 </td>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 104.6
+</p>
 </td>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 113
+</p>
 </td>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 119
+</p>
 </td>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 122.2
+</p>
 </td>
 </tr>
 <tr>
-<td data-fragment-index="0" class="fragment">
+<td>
+<p>
 CPI<sub>link</sub>
+</p>
 </td>
-<td data-fragment-index="1" class="fragment">
+<td>
+<p>
 —
+</p>
 </td>
-<td data-fragment-index="2" class="fragment">
+<td>
+<p>
 108
+</p>
 </td>
-<td data-fragment-index="3" class="fragment">
+<td>
+<p>
 105.3
+</p>
 </td>
-<td data-fragment-index="4" class="fragment">
+<td>
+<p>
 102.7
+</p>
 </td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <div class="fragment">
 <p>So the answer is: The year with the largest price increase was 2022.</p>
 <blockquote>
@@ -1575,7 +1681,7 @@ CPI<sub>link</sub>
 </section>
 <section id="about-the-factor-reversal-test-for-composite-index-numbers" class="slide level2">
 <h2>About the Factor Reversal Test for Composite Index Numbers</h2>
-<p><span class="math display">\[FPI_{t|0}\times FQI_{t|0}=\]</span> <span class="math display">\[\sqrt{LPI_{t|0}\times PPI_{t|0}}\times\sqrt{LQI_{t|0}\times PQI_{t|0}}\]</span> <span class="math display">\[\sqrt{LPI_{t|0}\times PPI_{t|0}\times LQI_{t|0}\times PQI_{t|0}}\]</span> <span class="math display">\[\sqrt{LPI_{t|0}\times PQI_{t|0}\times LQI_{t|0}\times PPI_{t|0}}\]</span> <span class="math display">\[\sqrt{IV_{t|0}\times IV_{t|0}}=\sqrt{IV_{t|0}^2}\]</span> <span class="math display">\[IV_{t|0}\]</span></p>
+<p><span class="math display">\[FPI_{t|0}\times FQI_{t|0}=\]</span> <span class="math display">\[\sqrt{LPI_{t|0}\times PPI_{t|0}}\times\sqrt{LQI_{t|0}\times PQI_{t|0}}\]</span> <span class="math display">\[\sqrt{LPI_{t|0}\times PPI_{t|0}\times LQI_{t|0}\times PQI_{t|0}}\]</span> <span class="math display">\[\sqrt{LPI_{t|0}\times PQI_{t|0}\times LQI_{t|0}\times PPI_{t|0}}\]</span> <span class="math display">\[\sqrt{IV_{t|0}\times IV_{t|0}}=\sqrt{IV_{t|0}^2}=IV_{t|0}\]</span></p>
 </section>
 <section id="about-the-time-reversal-test-for-composite-index-numbers" class="slide level2">
 <h2>About the Time Reversal Test for Composite Index Numbers</h2>
@@ -1614,68 +1720,78 @@ CPI<sub>link</sub>
 <section id="example-10" class="slide level2">
 <h2>Example</h2>
 <table>
-<tbody><tr>
+<thead>
+<tr>
 <th>
+<p>
+</p>
 </th>
-<th colspan="2">
+<th>
+<p>
 Year 1
+</p>
 </th>
-<th colspan="2">
+<th>
+<p>
 Year 2
+</p>
 </th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
+<p>
 Public Transportation
+</p>
 </td>
 <td>
+<p>
 N Trips
+</p>
 </td>
 <td>
+<p>
 Ticket price
-</td>
-<td>
-N Trips
-</td>
-<td>
-Price Index (base = Year 1)
+</p>
 </td>
 </tr>
 <tr>
 <td>
+<p>
 Bus
+</p>
 </td>
 <td>
+<p>
 1,763,521
+</p>
 </td>
 <td>
+<p>
 1.15
-</td>
-<td>
-1,875,345
-</td>
-<td>
-108.7
+</p>
 </td>
 </tr>
 <tr>
 <td>
+<p>
 Metro
+</p>
 </td>
 <td>
+<p>
 3,148,350
+</p>
 </td>
 <td>
+<p>
 1.2
-</td>
-<td>
-3,396,138
-</td>
-<td>
-112.5
+</p>
 </td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </section>
 <section id="example-11" class="slide level2">
 <h2>Example</h2>
@@ -1703,68 +1819,78 @@ Metro
 <section id="example-13" class="slide level2">
 <h2>Example</h2>
 <table>
-<tbody><tr>
+<thead>
+<tr>
 <th>
+<p>
+</p>
 </th>
-<th colspan="2">
+<th>
+<p>
 Year 1
+</p>
 </th>
-<th colspan="2">
+<th>
+<p>
 Year 2
+</p>
 </th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
+<p>
 Public Transportation
+</p>
 </td>
 <td>
+<p>
 N Trips
+</p>
 </td>
 <td>
+<p>
 Ticket price
-</td>
-<td>
-N Trips
-</td>
-<td>
-Ticket price
+</p>
 </td>
 </tr>
 <tr>
 <td>
+<p>
 Bus
+</p>
 </td>
 <td>
+<p>
 1,763,521
+</p>
 </td>
 <td>
+<p>
 1.15
-</td>
-<td>
-1,875,345
-</td>
-<td>
-1.25
+</p>
 </td>
 </tr>
 <tr>
 <td>
+<p>
 Metro
+</p>
 </td>
 <td>
+<p>
 3,148,350
+</p>
 </td>
 <td>
+<p>
 1.2
-</td>
-<td>
-3,396,138
-</td>
-<td>
-1.35
+</p>
 </td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </section>
 <section id="example-14" class="slide level2">
 <h2>Example</h2>
