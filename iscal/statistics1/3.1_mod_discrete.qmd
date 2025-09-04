@@ -1,0 +1,49 @@
+---
+title: "Probabilistic Models"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Statistics I"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+## Disclaimer
+
+These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Custódio and Prof. Teresa Ferreira from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
+
+## Types of random variables
+
+- We studied a couple of ways in which we could categorize the random variables.
+
+- One of these classifications was *discrete* and *continuous* random variables.
+
+- We will start by focusing in the first family of *r.v.s*
+
+## Types of random variables
+
+- According to the type of event we are measuring, we can do even better, and cluster together random variables that behave similarly.
+
+- We will define *families* of **statistical distributions**. Knowing to which statistical distribution our random variable belongs, will endow us with a set of tools to deal with them adequately.
+
+# Bernoulli and Binomial Distributions
+
+# Hypergeometric Distribution
+
+# Geometric Distribution
+
+# Poisson Distribution

@@ -1,0 +1,174 @@
+---
+title: "Formulae - Statistics I"
+author: ""
+format: html
+lang: en
+editor: source
+page-layout: full
+---
+
+This is the formulae for the course, that you will be able to access for the midterm and exam.
+
+## Index Numbers
+
+::: {.columns}
+
+::: {.column width="30%"}
+* $i_{t|0}=\frac{x_t}{x_0}\times 100$ with $x_t, x_0>0$
+* $\delta_{t,0}=\frac{x_t-x_0}{x_0}$
+* $\delta_{t,0}=i_{t|0}-1$
+* $r_{t|0}=\left(i_{t|0}\right)^{1/k}-1$
+:::
+
+::: {.column width="30%"}
+* $LPI_{t|0}=\frac{\sum p_t^k q_0^k}{\sum p_0^k q_0^k}$
+* $LQI_{t|0}=\frac{\sum p_0^k q_t^k}{\sum p_0^k q_0^k}$
+* $PPI_{t|0}=\frac{\sum p_t^k q_t^k}{\sum p_0^k q_t^k}$
+* $PQI_{t|0}=\frac{\sum p_t^k q_t^k}{\sum p_t^k q_0^k}$
+:::
+
+::: {.column width="30%"}
+* $FPI_{t|0}=\sqrt{LPI_{t|0}PPI_{t|0}}$
+* $FQI_{t|0}=\sqrt{LQI_{t|0}PQI_{t|0}}$
+:::
+
+:::
+
+## Probability Theory
+
+::: {.columns}
+
+::: {.column width="30%"}
+
+### Conditional probability
+
+* $P(A|B)=\frac{P(A\cap B)}{P(B)}$ with $P(B)>0$
+
+:::
+
+::: {.column width="35%"}
+
+### Total Probability Theorem
+
+* $P(B)=\sum_{i=1}^n P(A_i)P(B|A_i)$
+
+:::
+
+::: {.column width="25%"}
+
+### Bayes Theorem
+
+* $P(A_i|B)=\frac{P(A_i)P(B|A_i)}{\sum_{i=1}^n P(A_i)P(B|A_i)}$
+
+:::
+
+:::
+
+## Random variables
+
+::: {.columns}
+
+::: {.column width="30%"}
+
+### Expected Value
+
+* $\mu_X \equiv E[X]$
+* $\mu_X = \sum x_i f(x_i)$
+* $\mu_X = \int x f(x) dx$
+
+:::
+
+::: {.column width="30%"}
+
+### Variance
+
+* $\sigma_X^2 = Var(X) = V[X]$
+* $\sigma_X^2 = E[(X-\mu_X)^2]=E[X^2]-\mu_X^2$
+
+:::
+
+:::
+
+## Discrete Joint Random Variables
+
+### Joint density function
+
+* $f_{XY}(x,y)=P(X=x_i,Y=y_i)=p_{ij}$ with $p_i=\sum_j p_{ij}$ and $p_j=\sum_i p_{ij}$
+
+
+### Expected Value
+* $E[g(X,Y)]=\sum_i\sum_j g(x_i,y_j)P(X=x_i,Y=y_j)$
+
+
+### Variance, Covariance, Correlation
+* $cov(X,Y)=E[(X-\mu_X)(Y-\mu_Y)]=E[XY]-E[X]E[Y]$
+* $V[X\pm Y]=V[X]+V[Y]\pm 2cov(X,Y)$
+* $cov(a+bX,c+dY)=bdcov(X,Y)$ with $a,b,c,d\in\mathbb{R}$
+* $\rho = \frac{cov(X,Y)}{\sqrt{V[X]V[Y]}}$ with $\sigma_X, \sigma_Y > 0$
+
+## Discrete Probabilistic Models
+
+### Binomial Distribution
+
+* $X\sim Bin(n,p)$
+* $P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}$ with $x=0,1...,n$
+* $E[X]=np$
+* $V[X]=npq$
+* $q=1-p$
+
+### Hypergeometric Distribution
+
+* $X\sim Hypergeometric(N,M,n)$ with $p=\frac{M}{N}$, $q=1-p$
+* $P(X=x)=\frac{\binom{n}{x}\binom{N-M}{n-x}}{\binom{N}{n}}$ with $max(0,M+n-N)\leq x \leq min(M,n)$
+* $E[X]=np$
+* $V[X]=npq\frac{N-n}{N-1}$
+
+
+### Geometric Distribution
+
+* $X\sim Geo(p)$ $0\leq p \leq 1$
+* $P(X=x)=p(1-p)^{x-1}$ with $x=1,2,...$
+* $E[x]=\frac{1}{p}$
+* $V[X]=\frac{1-p}{p^2}$
+* $F(x)=\begin{cases}0 & x<1 \\ 1-(1-p)^k & k\leq x < k+1\quad k=1,2..\end{cases}$
+
+### Poisson Distribution
+
+* $X\sim Poi(\lambda)$ with $\lambda>0$
+* $P(X=x)=\frac{e^{-\lambda}\lambda^x}{x!}$ with $x=0,1,2...$
+* $E[X]=V[X]=\lambda$
+
+## Continuous Probabilistic Models
+
+### Uniform Distribution
+
+* $X\sim Unif(a,b)$ with $a,b\in\mathbb{R}$ and $a<b$
+* $F(x)=\begin{cases}0 & x< a\\ \frac{x-a}{b-a} & a\leq x < b\\ 1 & x\geq b\end{cases}$
+* $E[X]=\frac{a+b}{2}$
+* $V[X]=\frac{(b-a)^2}{12}$
+
+### Exponential Distribution
+* $X\sim Exp(\lambda)$ with $\lambda>0$
+* $F(x)=\begin{cases}0 & x\leq 0 \\ 1-e^{-\lambda x} & x>0\end{cases}$
+* $E[x]=\frac{1}{\lambda}$
+* $V[X]=\frac{1}{\lambda^2}$
+
+### Normal Distribution
+::: {.columns}
+
+::: {.column}
+* $X\sim \mathcal{N}(\mu,\sigma)$
+* $\mu\in\mathbb{R}$, $\sigma>0$
+* $E[X]=\mu$
+* $V[X]=\sigma^2$
+
+:::
+
+::: {.column}
+* $Z=\frac{X-\mu}{\sigma}\sim \mathcal{N}(0,1)$
+* $E[Z]=0$
+* $V[Z]=1$
+* $\Phi(z)=P(Z\leq z)$
+* $\Phi(-z)=1-\Phi(z)$
+:::
+:::
