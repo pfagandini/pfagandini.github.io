@@ -72,16 +72,12 @@ This is a set of exercises created by the teaching Faculty for Statistics I, Cha
 
 ::: {.webex-check .webex-box}
 
-Using the Binomial tables, or the calculator, answer:
+The length of short commercial spots (between 5 and 12 sec) on a streaming platform can be considered a random variable with uniform distribution.
 
-a) Verify the validity of the following claims:
-    1. `r torf(TRUE)` $P(X\leq 3)=0.4826$ when $X\sim Bin(9,0.4)$
-    2. `r torf(FALSE)` $P(2\leq X\leq 6)=0.3294$ when $X\sim Bin(7,0.3)$
-    3. `r torf(TRUE)` $P(X=7)=0.2668$ if $X\sim Bin(10,0.7)$
-
-b) Check the values of $n$ and $p$ for the following cases:
-    1. `r torf(TRUE)` $X\sim Bin(10,0)$ and $P(X\leq 5)=0.8338$, then $p=0.4$
-    2. `r torf(FALSE)` $X\sim Bin(n,0.2)$ and $P(2\leq X\leq n)=0.5638$, then $n=8$.
+1. `r torf(TRUE)` The distribution function is given by $$F(x)=\begin{cases}0& x\leq 5\\ \frac{x-5}{7}& 5<x\leq 12\\ 1&x\geq 12\end{cases}$$
+2. The probability that one of these spots last at least 7 seconds is `r mcq(c("2/7",answer="5/7","6/7","None"))`
+3. The probability that one of these spots last more than 6 seconds, given that it will not last more than 10 seconds is `r mcq(c(answer="4/5","4/7","1/7","None"))`
+4. `r torf(TRUE)` The expected value and standard deviation for this r.v. is $8.5$ and $2$ respectively, both in seconds.
 
 :::
 
@@ -89,11 +85,9 @@ b) Check the values of $n$ and $p$ for the following cases:
 
 ::: {.webex-check .webex-box}
 
-For a given company, the historical data indicates that the probability of a receipt being filled incorrectly is 0.2. Suppose you pick randomly 10 for analysis. The probability that:
+Let the r.v. $X\sim U(2,b)$ with $b>2$.
 
-1. Exactly 5 receipts contain irregularities is `r mcq(c("0.1",answer="0.0264","0.9736","None"))`
-2. At most 3 receipts contain irregularities is `r mcq(c(answer="0.8791","0.1209","0.2013","None"))`
-3. At least one was filled incorrectly is `r mcq(c("0.1074","0.6242",answer="0.8926","None"))`
+1. $b$ must equal what in order for $P(3\leq X\leq 5)=0.4$? `r mcq(c("12","8",answer="7","None"))`
 
 :::
 
@@ -101,9 +95,11 @@ For a given company, the historical data indicates that the probability of a rec
 
 ::: {.webex-check .webex-box}
 
-The National Health Service (SNS in Portugal) informs that the probability that a resident carries a gene that triggers some disease is 0.1. In Porto you randomly select 10 residents, and in Lisbon 8 to conduct a study.
+In a factory, the time to produce some item is a r.v. distributed exponentially with expected value of 5 minutes.
 
-1. `r torf(FALSE)` The probability that in Lisbon 2 residents carry the gene, knowing that between both cities 5 subjects actually carried the gene, is 0.2941.
+1. $\lambda$ in this case is equal to `r mcq(c("5",answer="1/5","1/25","None"))`
+2. You now that the item has been in production for at least 2 minutes. The probability of taking at least 4 more minutes until completed is `r mcq(c("0.5507","0.6703",answer="0.4493","None"))`
+3. `r torf(TRUE)` Choose randomly 5 items. The probability that two of them took less than 4 minutes to produce is 0.2757.
 
 :::
 
@@ -111,10 +107,9 @@ The National Health Service (SNS in Portugal) informs that the probability that 
 
 ::: {.webex-check .webex-box}
 
-In the supermarket *SweetDrop*, the probability that a customer spends more than 25 euro is 0.1.
+Let $X$ be a r.v. distributed exponentially with $\lambda=0.5$.
 
-1. If in a group of $n$ customers, randomly chosen, it is expected that 45 spend more than 25 euro, than $n$ is equal to `r mcq(c("45",answer="450","0","None"))`
-2. From a group of 20 customers, randomly chosen, you know that 10 bought products from the in-house *SweetDrop* brand. If we choose randomly and without replacement 5 customers, and being $X$ a random variable that represents the number of customers that, among the chosen, buy products branded *SweetDrop*, then $P(X=2)$ is `r mcq(c(answer="0.3483","0.3125","0.5000","None"))`
+1. `r torf(TRUE)` $P(X>2)=e^{-1}$
 
 :::
 
@@ -122,12 +117,9 @@ In the supermarket *SweetDrop*, the probability that a customer spends more than
 
 ::: {.webex-check .webex-box}
 
-A given sport footwear company imports a share of the inputs used in production. This material comes in boxes of 1000 units. In order to prevent counterfeit units, in each of these boxes, a random sample of 5 units is taken. If one of these raises concerns, the box is sent back to the supplier.
+On the consultation of Dr. Rotcod The time until the first appointment, and between consecutive appointments, are independent random variables distributed exponentially with parameter equal to 0.1.
 
-1. The probability that a box with 10 suspicious units is returned is `r mcq(c("0.9509",answer="0.0491","0.010","None"))`
-2. `r torf(FALSE)` To compute the previous probability it is important to know if the selection was made with replacement, because the difference between both values is significative.
-3. The probability of having to inspect 15 units, independent among each other, until finding one that is suspect is approximately `r mcq(c(answer="0.009","0.000","0.050","None"))`
-4. The expected number of units to inspect until find the first suspicious is `r mcq(c("10","50",answer="100","None"))`
+1. `r torf(TRUE)` The probability of starting the first appointment after the first 10 minutes is 0.3679.
 
 :::
 
@@ -135,17 +127,9 @@ A given sport footwear company imports a share of the inputs used in production.
 
 ::: {.webex-check .webex-box}
 
-Using Poisson distribution tables, or a calculator:
+The number of cars checked in the inspection center, in an hour, is a r.v. distributed Poisson with an expected value of 4.
 
-a) Check the value of the following probabilities:
-    1. `r torf(TRUE)` $P(X\leq 5)=0.0671$ if $X\sim Poi(10)$
-    2. `r torf(FALSE)` $P(4\leq X\leq 8)=0.4914$ if $X\sim Poi(5)$
-    3. `r torf(TRUE)` $P(X=7)=0.0901$ if $X\sim Poi(10)$
-
-b) Verify the values for $\lambda$
-    4. `r torf(TRUE)` $\lambda=8.1$ if $P(X=8)=0.1321$
-    5. `r torf(FALSE)` $\lambda=4.3$ if $P(X\leq 4)=0.7442$
-    6. `r torf(TRUE)` $\lambda=6.5$ if $P(X\geq 6)=0.6310$
+1. `r torf(FALSE)` The expected time that a car will be waiting until being inspected is 25 minutes.
 
 :::
 
@@ -153,13 +137,13 @@ b) Verify the values for $\lambda$
 
 ::: {.webex-check .webex-box}
 
-The number of patients arriving daily to the ICU in a hospital, follows a Poisson process with mean 4. The ICU has capacity of 6 patients, the others, are derived to the nearest hospital. Assess the validity of the following sentences:
+Let $Z\sim\mathcal{N}(0,1)$
 
-1. `r torf(TRUE)` The probability that, on a given day, there is no need to transfer any patient is 0.8893. 
-2. `r torf(FALSE)` The most likely number of patients arriving daily to the ICU is 6.
-3. `r torf(TRUE)` The probability that, on a given day, arrive 5 patients, given that in the previous day only 2 patients arrived, is 0.1563.
-4. `r torf(FALSE)` The probability that, in 5 days, at least 15 patients arrive to the ICU is 0.8435.
-5. `r torf(FALSE)` To ensure that approx. 97% of the time (days) there are no transfers, it is necessary to increase the capacity in 4 more beds.
+1. `r torf(FALSE)` $P(0<Z\leq 2.05)=0.9790$
+2. `r torf(TRUE)` $P(-1.22\leq Z < 1.05)=0.7419$
+3. `r torf(FALSE)` $P(Z\geq -2.05)=0.0202$
+4. `r torf(TRUE)` The value for $k$ such that $P(|Z|>k)=0.05$ is equal to 1.96.
+5. `r torf(TRUE)` The value for $k$ such that $P(|Z|<k)=0.90$ is equal to 1.645.
 
 :::
 
@@ -167,12 +151,13 @@ The number of patients arriving daily to the ICU in a hospital, follows a Poisso
 
 ::: {.webex-check .webex-box}
 
-Suppose that in Branch 17 of the Bank of Coins, the number of clients inquiring about financial services, is a random variable $X$ that follows a Poisson process. You know that the probability that in the first hour no client shows up is 0.3679, and that this branch opens from 8:30 in the morning until 14:30 without any breaks. Further, you know from the data that 25% of the inquiries are made by female clients.
+If $X\sim \mathcal{N}(\mu=6,\sigma^2=25)$ then 
 
-1. The expected value for the number of clients showing up between 12:00 and 13:00 is `r mcq(c("0.43","0.1",answer="1","None"))`
-2. `r torf(FALSE)` Letting $\lambda=1$, in an hour, the probability that in a day at most 4 clients requested information, given that until then only 2 had done so is 0.9963.
-3. Choosing randomly 10 clients, in some day, the probability that 6 or less of them were female is `r mcq(c(answer="0.9965","0.0035","0.9803","None"))`
-4. `r torf(TRUE)` The probability of having to receive 4 clients until one of the is female is 0.4219.
+1. `r torf(FALSE)` $P(6<X\leq 12)=0.8849$
+2. `r torf(TRUE)` $P(0\leq X \leq 8) = 0.5404$
+3. `r torf(TRUE)` $P(X\leq -4)=0.0228$
+4. `r torf(TRUE)` $P(|X-6|>10)=0.0456$
+5. `r torf(FALSE)` $k$ must be equal to 0.4 such that $P(X>k)=0.90$.
 
 :::
 
@@ -180,9 +165,9 @@ Suppose that in Branch 17 of the Bank of Coins, the number of clients inquiring 
 
 ::: {.webex-check .webex-box}
 
-You know that the probability that a subject is allergic to the active ingredient of drug M is 0.05. In the laboratory 80 randomly chosen subjects were tested to arrive to this conclusion.
+Let $X$ a r.v. distributed $\mathcal{N}(12,2)$. Considere $P(a\leq X\leq 15)=0.7332$
 
-1. `r torf(TRUE)` The probability that exactly 2 subjects are allergic to the active ingredient of drug M is approximately 0.1465.
+1. `r torf(TRUE)` $a$ must be equal to 10.32.
 
 :::
 
@@ -190,12 +175,11 @@ You know that the probability that a subject is allergic to the active ingredien
 
 ::: {.webex-check .webex-box}
 
-Let $X$ and $Y$ be random variables, with the same expected value, 3, and distributed as:
+The number of deposits made in a fintech, every day, is a r.v. distributed $\mathcal{N}(120,64)$ in euro.
 
-$$X\sim Bin(10,0)\quad and \quad Y\sim Poi(\lambda)$$
-
-1. `r torf(FALSE)` $E[X-2Y]=0$
-2. `r torf(TRUE)` $P(X+Y=5 | X<2)=0.1553$
+1. `r torf(FALSE)` The percentage of days in which the amount of the deposits is in between 105 and 135 euro is 96.99%
+2. `r torf(TRUE)` The probability that the amount of deposits is above its mean, in the days that it never surpasses 125 is 0.32.
+3. `r torf(TRUE)` The mean and variance of the weekly total amount of deposits (i.e. in 5 days) are respectively 600 euro and 320 euro<sup>2</sup>.
 
 :::
 
@@ -203,10 +187,42 @@ $$X\sim Bin(10,0)\quad and \quad Y\sim Poi(\lambda)$$
 
 ::: {.webex-check .webex-box}
 
-1. `r torf(FALSE)` If $X\sim Bin(n,p)$ and $Y\sim Bin(n,\theta)$ are independent random variables, then $X+Y\sim Bin(n,p+\theta)$.
-2. `r torf(TRUE)` If $X$ and $Y$ are independent r.v.s such that $X\sim Poi(2)$ and $Y\sim Poi(3)$, then $X+Y\sim Poi(5)$.
+An item is produce in a way such that its weight (in grams) is a r.v. $X\sim \mathcal{N}(250,100)$.
+
+1. The probability of a package weight between 230.4 and 269.6 grams is `r fitb(0.95)` (use 2 decimals, like 0.12)
+2. The quality control department rejects packages with a weight farther away from the mean than 15.3 grams. The probability that a random package is rejected is `r fitb(0.126)` (use three decimals, like 0.123)
+3. Find and interpret the value for $k$ such that $P(X<k)=0.9$ Answer: `r fitb(262.82)` grs (use only 2 decimals, like 123.45)
+4. Randomly picking 4 packages, compute the probability that the total weight is above its mean. Justify. Answer: `r fitb(0.5)`
 
 :::
+
+### Question 12
+
+::: {.webex-check .webex-box}
+
+Being $X$ and $Z$ independent random variables, distributed $X\sim\mathcal{N}(1,1)$ and $Z\sim\mathcal{N}(0,1)$
+
+1. `r torf(TRUE)` $P(X<Z+1)=0.5$ 
+2. The value for $a$ such that $P(X>Z+a)=0.1$ is equal to `r mcq(c("1.282",answer="2.813","1","None"))`
+
+:::
+
+
+### Question 13
+
+::: {.webex-check .webex-box}
+
+Check the truthfulness of each sentence
+
+1. `r torf(TRUE)` If $Y\sim U(0,1)$ and $0<x<z<1$, then: $$P(x<Y<z)=z-x$$
+2. `r torf(TRUE)` If $X\sim U(0,1)$ with $0<a<b<1$, then $$P(X<a|X<b)=\frac{a}{b}$$
+3. `r torf(TRUE)` If $X$ is normally distributed, then the media coincides with the mean. 
+4. `r torf(TRUE)` If $X\sim \mathcal{N}(0,1)$, and $Y\sim\mathcal{N}(1,2)$, with $X$ and $Y$ independent r.v.s, then $2X+Y\sim\mathcal{N}(1,6)$
+5. `r torf(FALSE)` Letting $\Phi$ be the distribution function of a r.v. distributed normal standard, then $\Phi(-x)=\Phi(x)$ $\forall x\in\mathbb{R}$.
+6. `r torf(FALSE)` Letting $\phi$ represent the density of a r.v. distributed normal standard, then $\phi(-x)=1-\phi(x)$ $\forall x\in\mathbb{R}$.
+
+:::
+
 
 
 
