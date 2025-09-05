@@ -99,6 +99,7 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 
 * Ferreira, T., Custódio, S.G. (2023) Modelos Probabilísticos, Edições Sílabo  
 * Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo  
+* Murteira, B. et al. (2010) Introdução à Estatística, McGraw-Hill  
 
 ### Bibliography (EN)
 
@@ -115,7 +116,6 @@ Students may opt for a final exam worth 100% of the grade, covering the entire s
 #### Bibliography (PT):
 
 * Murteira, B. (1993) Análise Exploratória de Dados, McGraw-Hill  
-* Murteira, B. et al. (2010) Introdução à Estatística, McGraw-Hill  
 * Paulino, C. & Branco, J. (2005) Exercícios de Probabilidade e Estatística, Escolar Editora  
 * Pedrosa, A.C. & Gama, S.M.A. (2004) Introdução Computacional, Porto Editora  
 * Pimenta, F. et al. (2015) Introdução à Estatística, Escolar Editora  

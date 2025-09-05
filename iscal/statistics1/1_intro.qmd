@@ -44,7 +44,23 @@ engine: knitr
 
 ### Topic 1:
 
-:book: The making of index numbers. 1^st^ Ed 1922. Irving Fisher. :book: A Practical Introduction to Index Numbers. 1^st^ Ed 2015. Jeff Ralph, Rob O'Neill, Joe Winton.
+:book: Gancho Custódio, S. et al. (2022) Números Índices, Edições Sílabo
+
+### Topic 2:
+
+:book: Murteira, B.; Silva Ribeiro, C.; Andrade e Silva, J. & Pimenta, C., Introdução à
+Estatística, Escolar Editora, McGraw-Hill, 2010
+
+### Topic 3:
+
+:book: Ferreira, T., Custódio, S.G. (2023) Modelos Probabilísticos, Edições Sílabo  
+
+## Bibliography (EN)
+
+### Topic 1:
+
+:book: The making of index numbers. 1^st^ Ed 1922. Irving Fisher.
+:book: A Practical Introduction to Index Numbers. 1^st^ Ed 2015. Jeff Ralph, Rob O'Neill, Joe Winton.
 
 ### Topics 2 and 3:
 
