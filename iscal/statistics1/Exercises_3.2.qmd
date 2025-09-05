@@ -1,5 +1,5 @@
 ---
-title: "Chapter III Part I - Statistics I - Exercises"
+title: "Chapter III Part II - Statistics I - Exercises"
 format: 
   html:
     css: [Exercises/webex.css]
@@ -63,7 +63,7 @@ y <- year(Sys.Date())-1
 <!-- Style Block for nice tables -->
 
 
-This is a set of exercises created by the teaching Faculty for Statistics I, Chapter III, part I - discrete probability models, from the Lisbon Accounting and Business School.
+This is a set of exercises created by the teaching Faculty for Statistics I, Chapter III, part II, continuous probability models, from the Lisbon Accounting and Business School.
 
 
 ## Questions
