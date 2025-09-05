@@ -167,10 +167,12 @@ The number of patients arriving daily to the ICU in a hospital, follows a Poisso
 
 ::: {.webex-check .webex-box}
 
-1. `r mcq(c("","",answer="","None"))`
-2. `r torf(FALSE)`
-3. `r mcq(c(answer="","","","None"))`
-4. `r torf(TRUE)`
+Suppose that in Branch 17 of the Bank of Coins, the number of clients inquiring about financial services, is a random variable $X$ that follows a Poisson process. You know that the probability that in the first hour no client shows up is 0.3679, and that this branch opens from 8:30 in the morning until 14:30 without any breaks. Further, you know from the data that 25% of the inquiries are made by female clients.
+
+1. The expected value for the number of clients showing up between 12:00 and 13:00 is `r mcq(c("0.43","0.1",answer="1","None"))`
+2. `r torf(FALSE)` Letting $\lambda=1$, in an hour, the probability that in a day at most 4 clients requested information, given that until then only 2 had done so is 0.9963.
+3. Choosing randomly 10 clients, in some day, the probability that 6 or less of them were female is `r mcq(c(answer="0.9965","0.0035","0.9803","None"))`
+4. `r torf(TRUE)` The probability of having to receive 4 clients until one of the is female is 0.4219.
 
 :::
 
@@ -178,7 +180,9 @@ The number of patients arriving daily to the ICU in a hospital, follows a Poisso
 
 ::: {.webex-check .webex-box}
 
-1. `r torf(TRUE)`
+You know that the probability that a subject is allergic to the active ingredient of drug M is 0.05. In the laboratory 80 randomly chosen subjects were tested to arrive to this conclusion.
+
+1. `r torf(TRUE)` The probability that exactly 2 subjects are allergic to the active ingredient of drug M is approximately 0.1465.
 
 :::
 
@@ -186,8 +190,12 @@ The number of patients arriving daily to the ICU in a hospital, follows a Poisso
 
 ::: {.webex-check .webex-box}
 
-1. `r torf(FALSE)`
-2. `r torf(TRUE)`
+Let $X$ and $Y$ be random variables, with the same expected value, 3, and distributed as:
+
+$$X\sim Bin(10,0)\quad and \quad Y\sim Poi(\lambda)$$
+
+1. `r torf(FALSE)` $E[X-2Y]=0$
+2. `r torf(TRUE)` $P(X+Y=5 | X<2)=0.1553$
 
 :::
 
@@ -195,8 +203,8 @@ The number of patients arriving daily to the ICU in a hospital, follows a Poisso
 
 ::: {.webex-check .webex-box}
 
-1. `r torf(FALSE)`
-2. `r torf(TRUE)`
+1. `r torf(FALSE)` If $X\sim Bin(n,p)$ and $Y\sim Bin(n,\theta)$ are independent random variables, then $X+Y\sim Bin(n,p+\theta)$.
+2. `r torf(TRUE)` If $X$ and $Y$ are independent r.v.s such that $X\sim Poi(2)$ and $Y\sim Poi(3)$, then $X+Y\sim Poi(5)$.
 
 :::
 
