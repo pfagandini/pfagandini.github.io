@@ -63,7 +63,7 @@ y <- year(Sys.Date())-1
 <!-- Style Block for nice tables -->
 
 
-This is a set of exercises created by the teaching Faculty for Statistics I, Chapter II, part I - Random Variables, from the Lisbon Accounting and Business School.
+This is a set of exercises created by the teaching Faculty for Statistics I, Chapter II - Random Variables, from the Lisbon Accounting and Business School.
 
 ## Questions
 

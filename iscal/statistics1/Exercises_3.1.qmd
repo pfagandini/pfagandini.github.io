@@ -1,0 +1,211 @@
+---
+title: "Chapter III Part I - Statistics I - Exercises"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(lubridate)
+y <- year(Sys.Date())-1
+```
+
+```{r, echo = FALSE, results='asis'}
+# Uncomment to change widget colours:
+#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+</style>
+
+<!-- Style Block for nice tables -->
+
+
+This is a set of exercises created by the teaching Faculty for Statistics I, Chapter III, part I - Random Variables, from the Lisbon Accounting and Business School.
+
+
+## Questions
+
+### Question 1
+
+::: {.webex-check .webex-box}
+
+Using the Binomial tables, or the calculator, answer:
+
+a) Verify the validity of the following claims:
+    1. `r torf(TRUE)` $P(X\leq 3)=0.4826$ when $X\sim Bin(9,0.4)$
+    2. `r torf(FALSE)` $P(2\leq X\leq 6)=0.3294$ when $X\sim Bin(7,0.3)$
+    3. `r torf(TRUE)` $P(X=7)=0.2668$ if $X\sim Bin(10,0.7)$
+
+b) Check the values of $n$ and $p$ for the following cases:
+    1. `r torf(TRUE)` $X\sim Bin(10,0)$ and $P(X\leq 5)=0.8338$, then $p=0.4$
+    2. `r torf(FALSE)` $X\sim Bin(n,0.2)$ and $P(2\leq X\leq n)=0.5638$, then $n=8$.
+
+:::
+
+### Question 2
+
+::: {.webex-check .webex-box}
+
+For a given company, the historical data indicates that the probability of a receipt being filled incorrectly is 0.2. Suppose you pick randomly 10 for analysis. The probability that:
+
+1. Exactly 5 receipts contain irregularities is `r mcq(c("0.1",answer="0.0264","0.9736","None"))`
+2. At most 3 receipts contain irregularities is `r mcq(c(answer="0.8791","0.1209","0.2013","None"))`
+3. At least one was filled incorrectly is `r mcq(c("0.1074","0.6242",answer="0.8926","None"))`
+
+:::
+
+### Question 3
+
+::: {.webex-check .webex-box}
+
+The National Health Service (SNS in Portugal) informs that the probability that a resident carries a gene that triggers some disease is 0.1. In Porto you randomly select 10 residents, and in Lisbon 8 to conduct a study.
+
+1. `r torf(FALSE)` The probability that in Lisbon 2 residents carry the gene, knowing that between both cities 5 subjects actually carried the gene, is 0.2941.
+
+:::
+
+### Question 4
+
+::: {.webex-check .webex-box}
+
+In the supermarket *SweetDrop*, the probability that a customer spends more than 25 euro is 0.1.
+
+1. If in a group of $n$ customers, randomly chosen, it is expected that 45 spend more than 25 euro, than $n$ is equal to `r mcq(c("45",answer="450","0","None"))`
+2. From a group of 20 customers, randomly chosen, you know that 10 bought products from the in-house *SweetDrop* brand. If we choose randomly and without replacement 5 customers, and being $X$ a random variable that represents the number of customers that, among the chosen, buy products branded *SweetDrop*, then $P(X=2)$ is `r mcq(c(answer="0.3483","0.3125","0.5000","None"))`
+
+:::
+
+### Question 5
+
+::: {.webex-check .webex-box}
+
+A given sport footwear company imports a share of the inputs used in production. This material comes in boxes of 1000 units. In order to prevent counterfeit units, in each of these boxes, a random sample of 5 units is taken. If one of these raises concerns, the box is sent back to the supplier.
+
+1. The probability that a box with 10 suspicious units is returned is `r mcq(c("0.9509",answer="0.0491","0.010","None"))`
+2. `r torf(FALSE)` To compute the previous probability it is important to know if the selection was made with replacement, because the difference between both values is significative.
+3. The probability of having to inspect 15 units, independent among each other, until finding one that is suspect is approximately `r mcq(c(answer="0.009","0.000","0.050","None"))`
+4. The expected number of units to inspect until find the first suspicious is `r mcq(c("10","50",answer="100","None"))`
+
+:::
+
+### Question 6
+
+::: {.webex-check .webex-box}
+
+Using Poisson distribution tables, or a calculator:
+
+a) Check the value of the following probabilities:
+    1. `r torf(TRUE)` $P(X\leq 5)=0.0671$ if $X\sim Poi(10)$
+    2. `r torf(FALSE)` $P(4\leq X\leq 8)=0.4914$ if $X\sim Poi(5)$
+    3. `r torf(TRUE)` $P(X=7)=0.0901$ if $X\sim Poi(10)$
+
+b) Verify the values for $\lambda$
+    4. `r torf(TRUE)` $\lambda=8.1$ if $P(X=8)=0.1321$
+    5. `r torf(FALSE)` $\lambda=4.3$ if $P(X\leq 4)=0.7442$
+    6. `r torf(TRUE)` $\lambda=6.5$ if $P(X\geq 6)=0.6310$
+
+:::
+
+### Question 7
+
+::: {.webex-check .webex-box}
+
+The number of patients arriving daily to the ICU in a hospital, follows a Poisson process with mean 4. The ICU has capacity of 6 patients, the others, are derived to the nearest hospital. Assess the validity of the following sentences:
+
+1. `r torf(TRUE)` The probability that, on a given day, there is no need to transfer any patient is 0.8893. 
+2. `r torf(FALSE)` The most likely number of patients arriving daily to the ICU is 6.
+3. `r torf(TRUE)` The probability that, on a given day, arrive 5 patients, given that in the previous day only 2 patients arrived, is 0.1563.
+4. `r torf(FALSE)` The probability that, in 5 days, at least 15 patients arrive to the ICU is 0.8435.
+5. `r torf(FALSE)` To ensure that approx. 97% of the time (days) there are no transfers, it is necessary to increase the capacity in 4 more beds.
+
+:::
+
+### Question 8
+
+::: {.webex-check .webex-box}
+
+1. `r mcq(c("","",answer="","None"))`
+2. `r torf(FALSE)`
+3. `r mcq(c(answer="","","","None"))`
+4. `r torf(TRUE)`
+
+:::
+
+### Question 9
+
+::: {.webex-check .webex-box}
+
+1. `r torf(TRUE)`
+
+:::
+
+### Question 10
+
+::: {.webex-check .webex-box}
+
+1. `r torf(FALSE)`
+2. `r torf(TRUE)`
+
+:::
+
+### Question 11
+
+::: {.webex-check .webex-box}
+
+1. `r torf(FALSE)`
+2. `r torf(TRUE)`
+
+:::
+
+
+
+
+
+
+
+
+
+
