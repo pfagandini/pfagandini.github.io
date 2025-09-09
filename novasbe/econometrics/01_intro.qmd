@@ -1,5 +1,5 @@
 ---
-title: "Statistical Review and Intro to R"
+title: "Statistical Review"
 author: "Paulo Fagandini"
 institute: "Nova School of Business and Economics"
 format: 
@@ -24,8 +24,21 @@ engine: knitr
 
 # Introduction
 
+TA: Paulo Fagandini
+
+:email: paulo.fagandini@novasbe.pt
+
 # Assessment Quiz
 
-![Assessment test link](qr-code.svg)
+## Assessment Quiz
+
+![https://moodle.novasbe.pt/mod/quiz/view.php?id=20767](qr-code.svg)
 
 # Statistical Review
+
+* Random Variables
+* Probability Distributions
+* Expected Value
+* Variance and Standard Deviation
+* Covariance
+* Correlation
