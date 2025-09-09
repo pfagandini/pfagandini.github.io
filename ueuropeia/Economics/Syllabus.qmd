@@ -1,7 +1,7 @@
 ---
 title: "Syllabus - Economics"
 author: "Paulo Fagandini"
-affiliation: "Universidade Europeia"
+institute: "Universidade Europeia"
 format: html
 lang: en
 editor: source
