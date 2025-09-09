@@ -1,0 +1,25 @@
+---
+title: "Review of Statistics"
+author: "Paulo Fagandini"
+institute: "Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# 
