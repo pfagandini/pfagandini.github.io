@@ -1,0 +1,44 @@
+---
+title: "Statistical Review"
+author: "Paulo Fagandini"
+institute: "Nova School of Business and Economics"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Introduction
+
+TA: Paulo Fagandini
+
+:email: paulo.fagandini@novasbe.pt
+
+# Assessment Quiz
+
+## Assessment Quiz
+
+![https://moodle.novasbe.pt/mod/quiz/view.php?id=20767](qr-code.svg)
+
+# Statistical Review
+
+* Random Variables
+* Probability Distributions
+* Expected Value
+* Variance and Standard Deviation
+* Covariance
+* Correlation
