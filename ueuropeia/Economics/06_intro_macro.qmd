@@ -25,9 +25,8 @@ execute:
 engine: knitr
 ---
 
-# Introduction
+# Foundations of Macroeconomics
 
-## Introduction
+# Neoclassical and Keynesian Schools of Thought
 
-Instructor: Paulo Fagandini, PhD
-:email: EMAIL HERE
+# National Accounts

@@ -25,9 +25,10 @@ execute:
 engine: knitr
 ---
 
-# Introduction
+# Economic Systems
 
-## Introduction
+# Demand
 
-Instructor: Paulo Fagandini, PhD
-:email: EMAIL HERE
+# Supply
+
+# Market Equilibrium

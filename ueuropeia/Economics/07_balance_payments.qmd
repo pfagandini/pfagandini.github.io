@@ -25,9 +25,4 @@ execute:
 engine: knitr
 ---
 
-# Introduction
-
-## Introduction
-
-Instructor: Paulo Fagandini, PhD
-:email: EMAIL HERE
+# The balance of payments

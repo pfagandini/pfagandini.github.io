@@ -31,3 +31,9 @@ engine: knitr
 
 Instructor: Paulo Fagandini, PhD
 :email: EMAIL HERE
+
+# The concept of Economics
+
+# **Micro**economics vs **Macro**economics
+
+# The Economic Problem

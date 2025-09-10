@@ -25,9 +25,8 @@ execute:
 engine: knitr
 ---
 
-# Introduction
+# Money
 
-## Introduction
+# Inflation
 
-Instructor: Paulo Fagandini, PhD
-:email: EMAIL HERE
+# Unemployment

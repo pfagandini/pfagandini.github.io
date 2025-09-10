@@ -25,9 +25,6 @@ execute:
 engine: knitr
 ---
 
-# Introduction
+# Market Structure
 
-## Introduction
-
-Instructor: Paulo Fagandini, PhD
-:email: EMAIL HERE
+# Imperfect Competition
