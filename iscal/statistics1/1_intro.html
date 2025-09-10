@@ -163,7 +163,7 @@ Paulo Fagandini
 <p><br>
 </p>
 <p><strong>Main source for course material:</strong> <a href="https://moodle2526.ipl.pt/">Moodle@ISCAL</a></p>
-<p><strong>Alternative source (EN):</strong> <a href="https://pfagandini.github.io/statistics1.html">pfagandini.github.io/statistics1.html</a></p>
+<!-- **Alternative source (EN):** [pfagandini.github.io/statistics1.html](https://pfagandini.github.io/statistics1.html) -->
 <p><br>
 </p>
 <p><strong>Official communication channel:</strong> <span class="emoji" data-emoji="email">📧</span> Institutional Email</p>
@@ -180,7 +180,8 @@ Paulo Fagandini
 <section id="bibliography-en" class="slide level2">
 <h2>Bibliography (EN)</h2>
 <h3 id="topic-1-1">Topic 1:</h3>
-<p><span class="emoji" data-emoji="book">📖</span> The making of index numbers. 1<sup>st</sup> Ed 1922. Irving Fisher. <span class="emoji" data-emoji="book">📖</span> A Practical Introduction to Index Numbers. 1<sup>st</sup> Ed 2015. Jeff Ralph, Rob O’Neill, Joe Winton.</p>
+<p><span class="emoji" data-emoji="book">📖</span> The making of index numbers. 1<sup>st</sup> Ed 1922. Irving Fisher.<br>
+<span class="emoji" data-emoji="book">📖</span> A Practical Introduction to Index Numbers. 1<sup>st</sup> Ed 2015. Jeff Ralph, Rob O’Neill, Joe Winton.</p>
 <h3 id="topics-2-and-3">Topics 2 and 3:</h3>
 <p><span class="emoji" data-emoji="book">📖</span> Statistics for Business and Economics Global Edition. 10<sup>th</sup> Ed 2022. Paul Newbold, William Carlson, and Betty Thorne.</p>
 <p><br>
@@ -292,7 +293,7 @@ Paulo Fagandini
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2025</td>
-<td style="text-align: right;">239.78</td>
+<td style="text-align: right;">234.35</td>
 </tr>
 </tbody>
 </table>
@@ -486,7 +487,7 @@ Paulo Fagandini
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-09-08?</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-09-13?</p>
 </section>
 <section id="motivation-1" class="slide level2">
 <h2>Motivation</h2>
@@ -535,12 +536,12 @@ Paulo Fagandini
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-09-08.</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-09-13.</p>
 <p>What can you read from the plot?</p>
 </section>
 <section id="motivation-5" class="slide level2">
 <h2>Motivation</h2>
-<p>Note that for 2015-09-08, we would have, for A and B:</p>
+<p>Note that for 2015-09-13, we would have, for A and B:</p>
 <p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
 <p>We just built and index number!</p>
 <p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
@@ -567,7 +568,7 @@ Paulo Fagandini
 </div>
 <p><br>
 </p>
-<p>In our previous example, the base day would have been 2015-09-08. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
+<p>In our previous example, the base day would have been 2015-09-13. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
 <section id="index-numbers-1" class="slide level2">
 <h2>Index Numbers</h2>
@@ -575,8 +576,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-fb73cb65ded141c2ce2b" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-fb73cb65ded141c2ce2b">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-6eb94d05fabd554c27ab" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6eb94d05fabd554c27ab">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1041,8 +1042,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-aaa27e4784a15602ceb3" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-aaa27e4784a15602ceb3">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-9919a4e19cd3cccea8b7" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-9919a4e19cd3cccea8b7">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

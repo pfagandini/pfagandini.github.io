@@ -34,7 +34,7 @@ engine: knitr
 
 **Main source for course material:** [Moodle\@ISCAL](https://moodle2526.ipl.pt/)
 
-**Alternative source (EN):** [pfagandini.github.io/statistics1.html](https://pfagandini.github.io/statistics1.html)
+<!-- **Alternative source (EN):** [pfagandini.github.io/statistics1.html](https://pfagandini.github.io/statistics1.html) -->
 
 \
 
@@ -59,7 +59,7 @@ Estatística, Escolar Editora, McGraw-Hill, 2010
 
 ### Topic 1:
 
-:book: The making of index numbers. 1^st^ Ed 1922. Irving Fisher.
+:book: The making of index numbers. 1^st^ Ed 1922. Irving Fisher.\
 :book: A Practical Introduction to Index Numbers. 1^st^ Ed 2015. Jeff Ralph, Rob O'Neill, Joe Winton.
 
 ### Topics 2 and 3:
