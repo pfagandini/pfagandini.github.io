@@ -16,8 +16,6 @@ format:
     from: markdown+emoji
     code-block-font-size: 0.75em
     progress: true
-    css: [Exercises/webex.css]
-    include-after-body: [Exercises/webex.js]
     embed-resources: true
 editor: source
 execute:
@@ -29,11 +27,153 @@ engine: knitr
 
 ## Introduction
 
-Instructor: Paulo Fagandini, PhD
+Instructor: Paulo Fagandini, PhD\
 :email: EMAIL HERE
+
+
+Official source of material and communication: MOODLE HERE
+
+## Bibliography
+
+:book: Shapiro, D.; MacDonald, D.; Greenlaw, S. A. (2022). Principles of Economics 3<sup>e</sup>. OpenStax.\
+
+This book is free and you can get it from [https://www.openstax.org](https://www.openstax.org).
+
+## Assessment
+
+There are two ways to pass this course:
+
+1. **Continuous assessment**:
+  Two midterms, 50% each, multiple choice and written questions (with computations and drawing graphs). Weighted average needs to be greater or equal than 10 (out of 20).
+
+2. **Final Exam**: 
+  A single written exam, covering the whole semester worth 100%. Needs a grade above 10 (out of 20) to pass.
 
 # The concept of Economics
 
-# **Micro**economics vs **Macro**economics
+## Study Economics… Why?
 
-# The Economic Problem
+*	:classical_building: Understand the Government and its economic policies 
+*	:world_map: Understand the Global Market and its implications for companies
+*	:moneybag: Because we aspire to financial success and business prosperity
+*	:bar_chart: Mastering the supply and demand mechanisms is fundamental for efficient management
+*	:factory_worker: Understand income inequality and its impact on the labor market and companies
+
+
+## Study Economics... why?
+
+Key concepts that will appear during any manager's career:
+
+* Budget deficit
+* Inflation
+* Unemployment
+* Taxes
+
+. . .
+
+Economics helps you to make rational decisions by relying in optimization principles and helping you understand your environment.
+
+## But what is Economics?
+
+::: {.callout}
+
+## Economics
+
+Economics is the discipline that looks to manage and allocate scarce resources to satisfy unlimited needs.
+
+:::
+
+* Economics comes from the greek "oikonomia"
+* Two roots: *oikos* which translates to *household*, and *nomos* with is something like *management*.
+* When you talk about **political economics** remember that *polis* in Greek was the citi-state: **the state management**.
+
+## Economics nowadays
+
+To manage efficiently a system you need to know how it works! For this we study:
+
+*	The influence of institutions over resource allocations.
+*	Financial markets and capital allocation.
+*	Income distribution and efficient ways of social support.
+*	Economic cycles and monetary policy.
+*	International trade, finance and the effects of globalization.
+*	Economic growth in developing countries.
+*	How government policies can be used to achieve its goals.
+
+## Economics vs The Economy
+
+While Economics is a discipline, the Economy is a system, the whole set of agents interacting according to some pre-established rules.
+
+## Economics
+
+1. In sum, **economics** is the study of how humans make decisions in the face of **scarcity**. These can be individual decisions, family decisions, business decisions, or societal decisions.
+
+2. **Scarcity** means that human wants for goods, services and resources exceed what is available.
+
+
+## Economics in the Social Media Age
+
+Economics is greatly impacted by how well information flows through society. After all, the more and *better* information we have, the better decisions we can make.
+
+> Tiktok, Meta, X, etc. have a huge role (and grip) in the information highways these days!
+
+## Scarcity
+
+It is easy to verify that scarcity is a characteristic of our economies:
+
+1. On the one side, it is easy to observe people who has many needs (food, shelter, etc.)
+2. On the other side, even people with its basic needs covered, will justify the need for more (*education*, *personal fulfillment*, etc.)
+
+## Comprehensive Study of Economics
+
+::: {.columns}
+
+::: {.column}
+
+![Adam Smith (1723-1790)](pictures\01\Adam_Smith_The_Muir_portrait.jpg)
+
+:::
+
+::: {.column}
+
+1. (*An Inquiry into the Nature of*) The Wealth of Nations
+2. The Theory of Moral Sentiments
+3. Division of Labor
+4. (*Grand*)father of Modern Economics
+
+:::
+
+:::
+
+## Division and Specialization of Labor
+
+This is the way in which different workers divide required tasks to produce a good or service.
+
+::: {.centered}
+
+{{< video https://www.youtube.com/watch?v=t60XOhW0-Wc width="560" height="315" >}}
+
+:::
+
+## Why the Division of Labor Increases Production?
+
+* **Dividing** and subdividing the tasks involved with producing a good or service, produces a greater quantity of output.
+
+* **Specialization** - when workers or firms focus on particular tasks for which they are well-suited within the overall production process.
+    * Specialization allows businesses to take advantage of economies of scale, which means that for many goods, as the level of production increases, the average cost of producing each individual unit declines.
+
+## Micro vs Macro
+
+Economics is concerned with the well-being of all people, including those with jobs and those without jobs, as well as those with high incomes and those with low incomes.
+
+1. **Microeconomics** focuses on the actions of individual agents within the economy, like households, workers, and businesses.
+
+2. **Macroeconomics** is the branch of economics that focuses on broad issues such as growth, unemployment, inflation, and trade balance.
+
+
+# Reference
+
+## Reference
+
+Shapiro, D.; MacDonald, D.; Greenlaw, S. A. (2022). Principles of Economics 3<sup>e</sup>. OpenStax.
+
+Chapter 1

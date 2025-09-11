@@ -71,6 +71,8 @@ Students will have access to the following resources to support autonomous learn
 
 ### Syllabus
 
+Not necessarily in that order.
+
 1. Introduction
 2. The Concept of Economics
 3. Micro Vs Macro
@@ -112,6 +114,7 @@ A single exam that covers all the topics of the course, worth 100% of the grade.
 
 ### Core Bibliography (EN)
 
+* Shapiro, D.; MacDonald, D.; Greenlaw, S. A. (2022). Principles of Economics 3<sup>e</sup>. OpenStax.
 * Dornbush, R.; Fischer, Stanley and Startz, R. (2017). Macroeconomics 13e. McGraw-Hill
 * Frank, R. H. (2020). Microeconomics and Behavior 10e. McGraw-Hill.
 * Frank, R. H; Bernanke, B. et al. (2021). Princíples of Economics 8e. McGraw-Hill.
