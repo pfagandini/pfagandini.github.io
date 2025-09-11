@@ -5,6 +5,7 @@ author: "Paulo Fagandini"
 institute: "Universidade Europeia"
 format: 
   revealjs:
+    logo: pictures/ue_logo.svg
     theme: default
     slide-number: true
     cross-ref: true
@@ -169,8 +170,127 @@ Economics is concerned with the well-being of all people, including those with j
 
 2. **Macroeconomics** is the branch of economics that focuses on broad issues such as growth, unemployment, inflation, and trade balance.
 
+# Economic Models, Systems, and The Economic Problem
 
-# Reference
+## Theories and Models to Understand Economic Issues
+
+::: {.columns}
+
+::: {.column}
+
+* One of the most influential economists in modern times was John Maynard Keynes.
+
+* Keynes thought that economics teaches you how to think, not what to think.
+
+:::
+
+::: {.column}
+
+![John M. Keynes (1983-1946)](pictures/01/Keynes_1933.jpeg)
+
+:::
+
+:::
+
+## Theories and Models to Understand Economic Issues
+
+* A **theory** is a simplified representation of how two or more variables interact with each other.
+    * A good theory is simple enough to understand, while complex enough to capture the key features of the object or situation you are studying.
+
+* Economists use **models** to test theories. They help us simplify reality to isolate the core issue at hand.
+
+## A simple model
+
+* The **circular flow diagram** shows how households and firms interact in the goods and services market, and in the labor market. 
+    * The direction of the arrows shows that in the **goods and services market**, households receive goods and services and pay firms for them. 
+    * In the **labor market**, households provide labor and receive payment from firms through wages, salaries, and benefits.
+
+## Theories and Models to Understand Economic Issues
+
+
+
+```{mermaid}
+%%| fig-align: center
+
+flowchart LR
+    H[Households] 
+    F[Firms]
+    
+    F -->|A: Goods and Services| H
+    H -->|B: Payment for Goods and Services| F
+    H -->|C: Labor Services| F
+    F -->|D: Wages, Salaries and Benefits| H
+    
+    %% style H fill:#e1f5fe
+    %% style F fill:#e8f5e8
+```
+
+## An Overview of Economic Systems
+
+There are at least three ways that societies organize an economy:
+
+1. **Traditional economy** - typically an agricultural economy where things are done the same as they have always been done.
+    * Oldest economic system
+    * Used in parts of Asia, Africa, and South America
+    * Occupations tend to stay in the family
+    * What you produce is what you consume
+    * Little economic progress or development
+
+## An Overview of Economic Systems
+
+2. **Command economy** - an economy where economic decisions are passed down from government authority and where the government owns the resources.
+    * Government decides what goods and services will be produced and what prices it will charge for them.
+    * The government decides what methods of production to use and sets wages for workers.
+    * The government provides many necessities like healthcare and education for free.
+
+## An Overview of Economic Systems
+
+Examples of command economy:
+
+* Ancient Egypt
+* Medieval manor life
+* Communism
+* Currently, Cuba and North Korea
+
+## An Overview of Economic Systems
+
+::: {.columns style="font-size:0.9em;"}
+
+::: {.column width="30%"}
+![Wall Street](pictures/01/wall_street.jpg)
+:::
+
+::: {.column width="70%"}
+3. **Market economy** - an economy where economic decisions are decentralized, private individuals own resources, and businesses supply goods and services based on demand.
+    * **Market** - interaction between potential buyers and sellers; a combination of demand and supply.
+    * **Private enterprise** - system where private individuals or groups of private individuals own and operate the means of production (resources and businesses).
+:::
+
+:::
+
+## Real World Economies
+
+* Most economies in the real world are mixed. They combine elements of command, traditional, and market systems.
+    * :us: The U.S. economy is positioned toward the market-oriented end of the spectrum.
+    * Many countries in Europe :eu: and Latin America, while primarily market-oriented, have a greater degree of government involvement in economic decisions than the U.S. economy.
+    * China :cn: and Russia :ru:, while they have moved more in the direction of having a market-oriented system, remain closer to the command economy end of the spectrum
+
+## Regulations: The Rules of the Game
+
+* There is no such thing as an absolutely free market.
+* Regulations always define the "rules of the game" in the economy.
+* Economies that are primarily market-oriented have fewer regulations—ideally just enough to maintain an even playing field for participants.
+* Heavily regulated economies often have **underground economies** (or black markets), which are markets where the buyers and sellers make transactions without the government's approval.
+
+## The Rise of Globalization
+
+* **Globalization** - the trend in which buying and selling in markets have increasingly crossed national borders.
+
+* **Exports** - the goods and services that a nation produces domestically and sells abroad.
+
+* **Imports** - the goods and services that are produced abroad and then sold domestically.
+
+* **Gross domestic product (GDP)** - measures the size of total production in an economy.
 
 ## Reference
 
