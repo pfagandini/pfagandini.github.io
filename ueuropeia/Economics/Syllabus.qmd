@@ -45,27 +45,6 @@ Intended Learning Outcomes (ILOs)
 
 The course will primarily use the lecture method. However, whenever deemed beneficial, students will be encouraged to participate actively through problem-solving and tutorial exercises.
 
-#### Autonomous Work Resources
-
-Students will have access to the following resources to support autonomous learning:
-
-- Studio Lessons
-  These sessions introduce the course content through the discussion of conflicts, dilemmas, analogies, or problems. Their purpose is to spark students' interest and connect new concepts to prior learning.
-
-- 2D Studio Lectures
-  Designed to teach complex theoretical content, these lectures incorporate animations and graphic elements that aid in the interpretation and memorization of:
-  - Historical content (e.g., *Economic Systems*)
-  - Graphical content (e.g., *Consumer Theory*, *Producer Theory*)
-
-- Infographics  
-  Multimedia presentations that combine various elements to convey complex concepts and help students understand their interconnections.
-
-- Problem-Based Learning
-  Starting from a real-world scenario, student groups are guided to:
-  - Formulate hypotheses to identify the root cause of the problem presented by the instructor
-  - Explore potential solutions  
-  This activity is supported by tutorial sessions.
-
 ---
 
 ### Syllabus

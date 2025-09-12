@@ -216,20 +216,24 @@ Economics is concerned with the well-being of all people, including those with j
 
 
 
-```{mermaid}
-%%| fig-align: center
+```{r, engine = 'tikz'}
+#| echo: false
+#| fig.align: center
 
-flowchart LR
-    H[Households] 
-    F[Firms]
-    
-    F -->|A: Goods and Services| H
-    H -->|B: Payment for Goods and Services| F
-    H -->|C: Labor Services| F
-    F -->|D: Wages, Salaries and Benefits| H
-    
-    %% style H fill:#e1f5fe
-    %% style F fill:#e8f5e8
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+    \node [font=\LARGE] at (4.5,14.5) {Households};
+    \node [font=\LARGE] at (12.75,14.5) {Firms};
+    \draw [line width=1pt, ->] (6.5,15) .. controls (9,17) and (9,17) .. (11.25,15) ;
+    \draw [line width=1pt, ->] (11.25,13.5) .. controls (9,11.5) and (9,11.5) .. (6.5,13.5) ;
+    \node [font=\normalsize] at (9,14.75) {Payment for Goods and Services};
+    \node [font=\normalsize] at (9,13) {Goods and Services};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, line width=1pt, ->] (12.5,13.5) .. controls (9,10) and (9,10) .. (5.25,13.5) ;
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, line width=1pt, -> ] (5.25,15.25) .. controls (9,18.5) and (9,18.5) .. (12.5,15.25) ;
+    \node [font=\normalsize, color={rgb,255:red,255; green,0; blue,0}] at (9,17.25) {Labor};
+    \node [font=\normalsize, color={rgb,255:red,255; green,0; blue,0}] at (8.75,11.5) {Wages};
+\end{tikzpicture}
+
 ```
 
 ## An Overview of Economic Systems
