@@ -158,7 +158,7 @@ This is the way in which different workers divide required tasks to produce a go
 
 ::: {.centered}
 
-{{< video https://www.youtube.com/watch?v=t60XOhW0-Wc width="560" height="315" >}}
+{{< video https://www.youtube.com/watch?v=t60XOhW0-Wc width="560" height="315" fig-align="center" >}}
 
 :::
 
