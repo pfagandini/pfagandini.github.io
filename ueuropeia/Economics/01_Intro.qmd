@@ -28,11 +28,11 @@ engine: knitr
 
 ## Introduction
 
-Instructor: Paulo Fagandini, PhD\
-:email: EMAIL HERE
-
-
-Official source of material and communication: CANVA HERE
+* Instructor:
+    * Paulo Fagandini, PhD\
+    * :email: paulo.fagandini@ext.universidadeeuropeia.pt
+* Official source of material and communication:
+    * [Canvas](https://www.mycampus.pt/)
 
 ## Bibliography
 
