@@ -1,0 +1,191 @@
+---
+title: "The Economic Problem"
+subtitle: "Economics"
+author: "Paulo Fagandini"
+institute: "Universidade Europeia"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures/ue_logo.svg
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Economics"
+    from: markdown+emoji
+    code-block-font-size: 0.75em
+    progress: true
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+### The Economic Problem
+
+## The Economic Problem
+
+The economic problem is the problem of how to make a choice in a world of scarcity.
+
+## Choices and tradeoffs
+
+Consider the following example:
+
+> In general, the higher the degree, the higher the salaries.
+
+. . .
+
+Why then not everyone is pursuing higher degrees?
+
+. . .
+
+Choices and tradeoffs.
+
+## How Individuals Make Choices Based on Their Budget Constraint
+
+* **Budget constraint** - all possible consumption combinations of goods that someone can afford, given the prices of goods, when all income is spent; the boundary of the opportunity set.
+* **Opportunity set** - all possible combinations of consumption that someone can afford given the prices of goods and the individual’s income (all income does not need to be spent).
+* Given the price of the two goods and a budget amount, a budget constraint can be illustrated graphically.
+* With a limited amount of income to spend on things, consumers must choose what they need and want.
+
+## The Budget Constraint: Alphonso's Consumption Choice
+
+* Each point on the budget constraint represents a combination of burgers and bus tickets whose total cost adds up to Alphonso's budget of $10. 
+* The slope of the budget constraint is determined by the relative price of burgers and bus tickets. 
+* Giving up one burger means gaining four bus tickets.
+* **The opportunity set** - every point on (or inside) the constraint which shows a combination of burgers and bus tickets that Alphonso can afford.
+* Any point outside the constraint is not affordable, because it would cost more money than Alphonso has in his budget.
+
+## The Budget Constraint:
+
+```{r}
+#| fig-width: 7
+#| fig-height: 4
+#| fig-align: center
+
+library(ggplot2)
+
+# Define the function: f(x) = 5 - 0.25x
+f <- function(x) 5 - 0.25 * x
+
+# Data for the line on [0, 20] only
+line_df <- data.frame(
+  x = seq(0, 20, length.out = 200)
+)
+line_df$y <- f(line_df$x)
+
+# Points at x = 0, 4, 8, 12, 16, 20 with labels A-F
+x_pts <- seq(0, 20, by = 4)
+pts_df <- data.frame(
+  x = x_pts,
+  y = f(x_pts),
+  lab = LETTERS[1:6]
+)
+
+ggplot() +
+  geom_line(data = line_df, aes(x, y), linewidth = 1.2, color = "#2b8cbe") +
+  geom_point(data = pts_df, aes(x, y), size = 2.8, color = "#2b8cbe") +
+  geom_text(data = pts_df, aes(x, y, label = lab),
+            nudge_x = 0.4, nudge_y = 0.15, size = 4, color = "#333333") +
+  annotate("text", x = 2, y = 5.5, label = "f(x) = 5 - 0.25x", hjust = 0,
+           size = 4.2, color = "#444") +
+  scale_x_continuous(limits = c(0, 24)) +
+  scale_y_continuous(limits = c(0, 6)) +
+  labs(title = "Budget constraint for Alphonso, with a budget of 20",
+       x = "Bus tickets",
+       y = "Burgers") +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid.minor = element_blank()
+  )+
+   annotate("segment", x = 0, xend = 24, y = 0, yend = 0,
+           arrow = arrow(length = unit(0.3, "cm"), type = "closed")) +
+  annotate("segment", x = 0, xend = 0, y = 0, yend = 6,
+           arrow = arrow(length = unit(0.3, "cm"), type = "closed")) +
+  annotate("text", x = 24, y = -0.2, label = "x", hjust = 1, vjust = 1, size = 5) +
+  annotate("text", x = -0.5, y = 6, label = "y", hjust = 1, vjust = 1, size = 5)
+
+```
+
+## The Concept of Opportunity Cost
+
+* **Opportunity cost** indicates what people must give up to obtain what they desire.
+    * The cost of one item is the lost opportunity to do or consume something else.
+    * The opportunity cost is the value of the next best alternative.
+    * A fundamental principle of economics is that every choice has an opportunity cost.
+
+* For Alphonso, the opportunity cost of a burger is the four bus tickets he would have to give up.
+
+## Identifying Opportunity Cost
+
+* The price as measured in dollars may not accurately capture the true opportunity cost, such as when costs of time are involved.
+    * Example: Attending college
+        * The out-of-pocket costs of attending college include tuition, books, room and board, and other expenses.
+        * Additionally, during the hours  you are attending class and studying, it is impossible to work at a paying job.
+        * So, college imposes both an out-of-pocket cost and an opportunity cost of lost earnings.
+
+## Opportunity Cost Examples
+
+* What are the opportunity costs of...
+    * Buying vs. leasing a car
+    * Investing in different ways (i.e., savings accounts, certificates of deposit, mutual funds, stocks, etc.)
+    * Going out to eat vs. preparing food at home
+    * Walking or taking public transportation
+
+## Marginal Decision-Making and Diminishing Marginal Utility
+
+* **Marginal analysis** - examining the benefits and costs of choosing a little more or a little less of a good.
+
+* **Utility** - satisfaction, usefulness, or value one obtains from consuming goods and services.
+
+* **Law of diminishing marginal utility** - as a person receives more of a good, the additional (or marginal) utility from each additional unit of the good declines.
+    * *Example* - the first slice of pizza eaten brings more satisfaction than the sixth.
+
+## Sunk Costs
+
+* **Sunk costs** - costs that were incurred in the past and cannot be recovered.
+
+* For people and firms alike, dealing with sunk costs can be frustrating.
+    * *Example* - A firm finds it hard to give up on a new product that is doing poorly because much money was spent in creating and launching the product.
+
+* The lesson of sunk costs is to ignore the past errors and make decisions based on what will happen in the future.
+
+## Confronting Objections to the Economic Approach
+
+Objections in understanding the economic approach to *decision-making*:
+
+1. People, firms, and society do not act in a way that fits the economic way of thinking.
+    * However, it is reasonable, as a first approximation, to analyze them with the tools of economic analysis.
+    * Will be addressed in a later chapter on consumer choices.
+
+## Confronting Objections to the Economic Approach
+
+2. People, firms, and society should not act this way.
+    * The economics approach: 
+        * Portrays people as self-interested, *but economics is not a form of moral instruction*.
+        * Seeks to describe economic behavior as it actually exists.
+        * Uses, **positive statements**, which describe the world as it is. These are factual.
+        * Tries to avoid **normative statements**, which describe how the world should be. These statements are subjective questions of opinion.
+
+## Confronting Objections to the Economic Approach
+
+* **Invisible hand** - concept that individuals' self-interested behavior can lead to positive social outcomes
+    * Identified in Adam Smith's The Wealth of Nations.
+
+* Consumers will encourage businesses to offer goods and services that meet their needs.
+
+* It is possible that broader social good can emerge from selfish individual actions.
+
+* Self-interest in economics does not imply self-interest in all aspects of life.
+
+
+## Reference
+
+Shapiro, D.; MacDonald, D.; Greenlaw, S. A. (2022). Principles of Economics 3<sup>e</sup>. OpenStax.
+
+Chapter 2

@@ -6,7 +6,6 @@ format: html
 lang: en
 editor: source
 page-layout: full
-
 ---
 
 Bachelor's in Management\
@@ -105,6 +104,10 @@ Students might opt for one of two assessment methods, continuous assessment or a
 #### Continuous Assessment
 
 Two individual tests, consisting of multiple choice and exercises that may include drawing graphs.
+
+1. Two midterm, each worth 50%.
+2. Minimum grade of 8.00 in each.
+3. Minimum of 70% attendance.
 
 #### Final Exam Assessment
 

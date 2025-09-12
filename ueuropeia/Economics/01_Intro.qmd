@@ -5,7 +5,7 @@ author: "Paulo Fagandini"
 institute: "Universidade Europeia"
 format: 
   revealjs:
-    logo: pictures/ue_logo.svg
+    logo: pictures/universidade-europeia-seeklogo.svg
     theme: default
     slide-number: true
     cross-ref: true
@@ -32,7 +32,7 @@ Instructor: Paulo Fagandini, PhD\
 :email: EMAIL HERE
 
 
-Official source of material and communication: MOODLE HERE
+Official source of material and communication: CANVA HERE
 
 ## Bibliography
 
@@ -44,11 +44,18 @@ This book is free and you can get it from [https://www.openstax.org](https://www
 
 There are two ways to pass this course:
 
-1. **Continuous assessment**:
-  Two midterms, 50% each, multiple choice and written questions (with computations and drawing graphs). Weighted average needs to be greater or equal than 10 (out of 20).
+1. Continuous assessment
+2. Final Exam
 
-2. **Final Exam**: 
-  A single written exam, covering the whole semester worth 100%. Needs a grade above 10 (out of 20) to pass.
+## Continuous Assessment
+
+* Two midterms, 50% each, multiple choice and written questions (with computations and drawing graphs).
+* Minimum grade of 8.00 in each test.
+* At least 70% attendance.
+
+## Final Exam
+
+A single written exam, covering the whole semester worth 100%. Needs a grade above 10 (out of 20) to pass.
 
 # The concept of Economics
 
