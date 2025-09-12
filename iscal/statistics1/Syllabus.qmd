@@ -79,8 +79,8 @@ Assessment may be continuous or through a final exam.
 
 | Assessment Element | Weight (%) | Duration  | Syllabus  | Date |
 | :---- | :---: | :---: | :---: | :---: |
-| Midterm | 60% | 80 minutes | Topics 1 and 2 |Nov 6<sup>th</sup> |
-| Partial Exam | 40% | 80 minutes | Topic 3 | Regular Exam Date |
+| Midterm 1 | 60% | 80 minutes | Topics 1 and 2 |Nov 6<sup>th</sup> |
+| Midterm 2 | 40% | 80 minutes | Topic 3 |Dec 11<sup>th</sup> |
 
 Notes:
 
