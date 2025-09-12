@@ -5,6 +5,7 @@ institute: "Lisbon Accounting and Business School – Polytechnic University of 
 format: 
   revealjs:
     theme: default
+    logo: images/iscal_logo.svg
     slide-number: true
     cross-ref: true
     incremental: true

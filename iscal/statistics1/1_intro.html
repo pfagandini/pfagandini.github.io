@@ -293,7 +293,7 @@ Paulo Fagandini
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2025</td>
-<td style="text-align: right;">234.35</td>
+<td style="text-align: right;">230.03</td>
 </tr>
 </tbody>
 </table>
@@ -487,7 +487,7 @@ Paulo Fagandini
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-09-13?</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-09-15?</p>
 </section>
 <section id="motivation-1" class="slide level2">
 <h2>Motivation</h2>
@@ -536,12 +536,12 @@ Paulo Fagandini
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-09-13.</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-09-15.</p>
 <p>What can you read from the plot?</p>
 </section>
 <section id="motivation-5" class="slide level2">
 <h2>Motivation</h2>
-<p>Note that for 2015-09-13, we would have, for A and B:</p>
+<p>Note that for 2015-09-15, we would have, for A and B:</p>
 <p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
 <p>We just built and index number!</p>
 <p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
@@ -568,7 +568,7 @@ Paulo Fagandini
 </div>
 <p><br>
 </p>
-<p>In our previous example, the base day would have been 2015-09-13. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
+<p>In our previous example, the base day would have been 2015-09-15. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
 <section id="index-numbers-1" class="slide level2">
 <h2>Index Numbers</h2>
@@ -576,8 +576,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-6eb94d05fabd554c27ab" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-6eb94d05fabd554c27ab">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-bafafade8fa8e2a71a63" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bafafade8fa8e2a71a63">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1042,8 +1042,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-9919a4e19cd3cccea8b7" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-9919a4e19cd3cccea8b7">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-0cb969fdae474e9309cc" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0cb969fdae474e9309cc">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1946,6 +1946,7 @@ Metro
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/iscal_logo.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Statistics I</p>
 </div>
