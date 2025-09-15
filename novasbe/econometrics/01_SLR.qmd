@@ -29,6 +29,13 @@ engine: knitr
 
 * SLR
 * Log transformations
+* $SST = SSR + SSE$
+
+## Exercises
+
+https://moodle.novasbe.pt/mod/folder/view.php?id=4021
+
+![](pictures/qr_code.svg)
 
 # Question 1.1
 
@@ -36,6 +43,8 @@ engine: knitr
 
 Europe is in the midst of an unprecedented human migration with hundreds of thousands flocking to
 Europe's shores. You want to study the root causes of this issue and decide to do some research.
+
+## Question 1.1
 
 a) Write an equation that would allow you to test whether a country’s GDP has a linear influence in
 its number of asylum seekers.
