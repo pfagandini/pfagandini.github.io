@@ -1,0 +1,147 @@
+---
+title: "SLR"
+author: "Paulo Fagandini"
+institute: "Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures/NovaPrincipalV2.svg
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Review
+
+## Review
+
+* SLR
+* Log transformations
+
+# Question 1.1
+
+## Question 1.1
+
+Europe is in the midst of an unprecedented human migration with hundreds of thousands flocking to
+Europe's shores. You want to study the root causes of this issue and decide to do some research.
+
+a) Write an equation that would allow you to test whether a country’s GDP has a linear influence in
+its number of asylum seekers.
+b) Can you say there is an exact linear relationship between both variables?
+c) Can you easily compute the population parameters for the regression model you presented before?
+d) What do you suggest then?
+
+::: {.notes}
+
+a) $num_asy_i=\beta_0+\beta_1 GDP_i + u_i$
+b) It is unlikely that if we get $\beta_0$ and $\beta_1$ we would obtain the exact number of asylum seekers. There might be many other factors influencing this.
+c) Can never get the population, then $\beta_0$ and $\beta_1$ are unknown.
+d) Get a sample, and estimate $\beta_0$ and $\beta_1$.
+
+:::
+
+# Question 1.2
+
+## Question 1.2
+
+You move on with your endeavour and collect a set of cross-sectional data for 166 countries on their
+number of asylum seekers and GDP per capita in 1999 and estimate the following models by OLS:
+
+## Question 1.2
+
+<div style="text-align: center;">
+  <img src="pictures/02_slr_plot_1.png" alt="" />
+</div>
+
+## Question 1.2
+
+::: {.nonincremental}
+
+1. Level-level: $\widehat{asylum}=2,569-0.12 GDP$ with $n=166$ and $R^2=0.0447$
+2. Log-level : $\widehat{log(asylum)}=5.64-0.0002 GDP$ with $n=166$ and $R^2=0.2585$
+3. Level-log : $\widehat{asylum}=7,804-731.97 log(GDP)$ with $n=166$ and $R^2=0.0368$
+4. Log-log : $\widehat{log(asylum)}=17.56-1.65 log(GDP)$ with $n=166$ and $R^2=0.2673$
+
+:::
+
+## Question 1.2
+
+a) Interpret the coefficient on the regressor of each model.
+
+::: {.notes}
+
+1. If $GDP_pc$ increases by $1, the number of asylum seekers decreases by 0.12 persons, on average, ceteris paribus.
+2. If $GDP_pc$ increases by $1, the number of asylum seekers decreases by 0.02%, on average, ceteris paribus.
+3. If $GDP_pc$ increases by 1%, the number of asylum seekers decreases by 7.32 persons, on average, ceteris paribus.
+4. If $GDP_pc$ increases by 1%, the number of asylum seekers decreases by 1.64%, on average, ceteris paribus.
+
+:::
+
+# Question 1.2
+
+b) Taking into account this econometric exercise alone can you say that higher GDP causes the
+number of asylum seekers to decrease?
+c) You happen to read in a newspaper the following sentence: "The asylum migration flows are
+determined by economic incentives alone." Does the $R^2$ of any of the fitted models provide
+evidence in favour of this claim?
+d) What can you conclude when you compare the quality of adjustment of the four regressions?
+e) Intuitively, what do you point out as the main limitations of these models?
+
+::: {.notes}
+
+
+1. Yes, but it is counter-intuitive. We would expect a positive relationship. Suggests that the model
+performs poorly/is not good.
+2. No, the best case scenario gives about 27% of explanatory power.
+3. Can only compare $R^2$ if same sample and same $y$. M4 is better than M2, and M1 is better than M3.
+4. Because it is a SLR, many other factors are missing. Probably it is not the best functional form.
+
+:::
+
+# Question 1.5
+
+Consider the savings function:
+
+$$sav=\beta_0 + \beta_1 inc + u$$
+Where $u=e\sqrt{inc}$ with $E[e]=0$ and $V[e]=\sigma_e^2$. Furthermore, $e$ and $inc$ are independent.
+
+## Question 1.5
+
+a) Show that $E[u|inc] = 0$, so that the key zero conditional mean assumption (SLR.4) is satisfied. [Hint: If $e$ is independent of $inc$, then $E[e|inc] = E[e]$].
+b) Suppose now that $E[u] = \alpha \neq 0$. Show that the model can always be rewritten with the same slope, but a new intercept and error, where the new error has a zero expected value.
+c) Show that $V[u|inc] = \sigma_e^2 inc$, so that homoskedasticity (SLR.5) is violated. In particular, the variance of $sav$ increases with $inc$. [Hint: $V[e|inc] = V[e]$, if $e$ and $inc$ are independent.]
+
+::: {.notes}
+
+1. $E[u|inc]=E[e\sqrt{inc}|inc]=\sqrt{inc}E[e|inc]=\sqrt{inc}0=0$
+2. $sav=\beta_0+\beta_1 inc + u = \beta_0+\beta_1 inc + u +\alpha-\alpha =(\beta_0+\alpha)+\beta_1inc +(u-\alpha)$
+3. $V[u|inc]=V[e\sqrt{inc}|inc]=inc V[e|inc]=inc V[e]=inc \sigma_e^2$
+
+:::
+
+## Question 1.5
+
+d) Provide a discussion that supports the assumption that the variance of savings increases with family income. Do you find evidence of that in the graph below?
+
+<div style="text-align: center;">
+  <img src="pictures/02_slr_plot_2.png" alt="" />
+</div>
+
+::: {.notes}
+
+Poor households (do not have enough money to make a living and just buy necessities) vs Richer
+households (have more discretion).
+
+:::
