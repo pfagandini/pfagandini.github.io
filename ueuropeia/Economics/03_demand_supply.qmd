@@ -1,0 +1,486 @@
+---
+title: "Demand and Supply"
+subtitle: "Economics"
+author: "Paulo Fagandini"
+institute: "Universidade Europeia"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures\universidade-europeia-seeklogo.svg
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Economics"
+    from: markdown+emoji
+    code-block-font-size: 0.75em
+    progress: true
+    css: 
+      - Exercises/webex.css
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Demand, Supply, and Equilibrium in Markets for Goods and Services
+
+## Demand, Supply, and Equilibrium in Markets for Goods and Services
+
+* **Demand** - the amount of some good or service consumers are willing and able to purchase at each price.
+
+* **Price** - what a buyer pays for a unit of the specific good or service.
+
+* **Quantity demanded** - the total number of units of a good or service consumers are willing to purchase at a given price
+
+* **Law of demand** - keeping all other variables that affect demand constant,
+    * if price $\uparrow$ , then quantity demanded $\downarrow$
+    * If price goes $\downarrow$ , then quantity demanded $\uparrow$
+
+## Demand Schedule & Curve
+
+* **Demand schedule** - a table that shows a range of prices for a certain good or service and the quantity demanded at each price.
+
+* **Demand curve** - a graphic representation of the relationship between price and quantity demanded of a certain good or service, with quantity on the horizontal axis and the price on the vertical axis.
+
+
+## Demand Schedule
+
+| Price | Quantity |
+| :--: | :--: |
+| 2.20 | 420 |
+| 2.00 | 460 |
+| 1.80 | 500 |
+| 1.60 | 550 |
+| 1.40 | 600 |
+| 1.20 | 700 |
+| 1.00 | 800 |
+
+
+## Graphing the Demand
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[blue] (.2,2.2) -- (.6, 2) -- (1, 1.8) -- (1.5, 1.6) -- (2, 1.4) -- (3, 1.2) -- (4, 1)node[right]{$D$};
+
+    \draw[dotted] (.2,0)node[below]{420} -- (.2,2.2) -- (0,2.2)node[left]{2.20};
+    \draw[dotted] (1,0)node[below]{500} -- (1,1.8) -- (0,1.8)node[left]{1.80};
+    \draw[dotted] (2,0)node[below]{600} -- (2,1.4) -- (0,1.4)node[left]{1.40};
+    \draw[dotted] (4,0)node[below]{800} -- (4,1) -- (0,1)node[left]{1.00};
+
+
+\end{tikzpicture}
+
+```
+
+## Graphing the Demand
+
+* The points of a demand schedule are graphed, and the line connecting them is the **demand curve** (D). 
+
+* The downward slope of the demand curve again illustrates the *law of demand* - the inverse relationship between prices and quantity demanded.
+
+## Supply of Goods and Services
+
+* **Supply** - the amount of some good or service a producer is willing to supply at each price.
+
+* **Quantity supplied** - the total number of units of a good or service producers are willing to sell at a given price.
+
+* **Law of supply** - assuming all other variables that affect supply are held constant,
+    * if price goes $\uparrow$ , then quantity supplied goes $\uparrow$
+    * if price goes $\downarrow$, then quantity supplied goes $\downarrow$
+
+## Supply Schedule & Curve
+
+* **Supply schedule** - a table that shows the quantity supplied at a range of different prices.
+
+* **Supply curve** - a graphic illustration of the relationship between price, shown on the vertical axis, and quantity, shown on the horizontal axis.
+
+## Supply Schedule
+
+| Price | Quantity |
+| :--: | :--: |
+| 2.20 | 720 |
+| 2.00 | 700 |
+| 1.80 | 680 |
+| 1.60 | 640 |
+| 1.40 | 600 |
+| 1.20 | 550 |
+| 1.00 | 500 |
+
+## Graphing the supply
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[blue] (3.2,2.2)node[right]{$S$} -- (3, 2) -- (2.8, 1.8) -- (2.4, 1.6) -- (2, 1.4) -- (1.5, 1.2) -- (1, 1);
+
+    \draw[dotted] (3.2,0)node[below right]{720} -- (3.2,2.2) -- (0,2.2)node[left]{2.20};
+    \draw[dotted] (2.8,0)node[below]{680} -- (2.8,1.8) -- (0,1.8)node[left]{1.80};
+    \draw[dotted] (2,0)node[below]{600} -- (2,1.4) -- (0,1.4)node[left]{1.40};
+    \draw[dotted] (1,0)node[below]{500} -- (1,1) -- (0,1)node[left]{1.00};
+
+
+\end{tikzpicture}
+
+```
+
+## Graphing the supply
+
+* The **supply curve** (S) is created by graphing the points from a supply schedule and then connecting them. 
+
+* The upward slope of the supply curve illustrates the *law of supply* - that a higher price leads to a higher quantity supplied, and vice versa.
+
+## Equilibrium
+
+::: {.callout}
+
+## Equilibrium
+
+The combination of price and quantity where there is no economic pressure from surpluses or shortages that would cause price or quantity to change
+$$\text{quantity demanded} = \text{quantity supplied}$$
+
+:::
+
+## Equilibrium
+
+* **Equilibrium price** - the price where quantity demanded is equal to quantity supplied
+* **Equilibrium quantity** - the quantity at which quantity demanded and quantity supplied are equal for a certain price level.
+* **Surplus or excess supply** - at the existing price, quantity supplied exceeds the quantity demanded.
+* **Shortage or excess demand** - at the existing price, the quantity demanded exceeds the quantity supplied.
+
+## Equilibrium
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    % Demand
+    \draw[blue] (.2,2.2) -- (.6, 2) -- (1, 1.8) -- (1.5, 1.6) -- (2, 1.4) -- (3, 1.2) -- (4, 1)node[right]{$D$};
+
+    % Supply
+    \draw[blue] (3.2,2.2)node[right]{$S$} -- (3, 2) -- (2.8, 1.8) -- (2.4, 1.6) -- (2, 1.4) -- (1.5, 1.2) -- (1, 1);
+
+    \draw[dashed] (2,0)node[below]{$600$} -- (2,1.4)node[fill, circle, inner sep = 1pt]{} -- (0,1.4)node[left]{$1.40$};
+
+
+\end{tikzpicture}
+
+```
+
+## Equilibrium
+
+* The demand curve ($D$) and the supply curve ($S$) intersect at the equilibrium point $(600, 1.40)$.
+* The equilibrium price is the only price where, $$\text{quantity demanded } (Q_D) = \text{quantity supplied } (Q_S)$$
+* At $p>1.40$, $Q_S>Q_D$ $\Rightarrow$ **excess supply**. 
+* At $p<1.40$, $Q_D>Q_S$ $\Rightarrow$ **excess demand**.
+
+
+# Shifts in Demand and Supply for Goods and Services
+
+## Shifts in Demand and Supply for Goods and Services
+
+* **Ceteris paribus** - Latin phrase meaning *other things being equal*
+
+* Any given demand or supply curve is based on the *ceteris paribus* assumption that all else is held equal.
+
+## Demand Curve
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[domain=1:3,samples=10, blue] plot (\x,{2.5-0.5*\x})node[right]{$D$};
+
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (0,1.5)node[left]{$P_0$} -- (2,{2.5-0.5*2})node[fill, circle, inner sep=1pt]{};
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (2,{2.5-0.5*2}) -- (2,0)node[below]{$Q_0$};
+
+\end{tikzpicture}
+```
+
+The demand curve can be used to identify how much consumers would buy at any given price.
+
+## If Income increases
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[domain=1:3,samples=10, blue] plot (\x,{2.5-0.5*\x})node[right]{$D$};
+
+    \draw[domain=3:5,samples=10, blue] plot (\x,{3.5-0.5*\x})node[right]{$\hat{D}$};
+
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (0,1.5)node[left]{$P_0$} -- (2,{2.5-0.5*2})node[fill, circle, inner sep=1pt]{};
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (2,{2.5-0.5*2}) -- (2,0)node[below]{$Q_0$};
+
+\end{tikzpicture}
+```
+
+## If Income increases
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[domain=1:3,samples=10, blue] plot (\x,{2.5-0.5*\x})node[right]{$D$};
+
+    \draw[domain=3:5,samples=10, blue] plot (\x,{3.5-0.5*\x})node[right]{$\hat{D}$};
+
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (0,1.5)node[left]{$P_0$} -- (2,{2.5-0.5*2})node[fill, circle, inner sep=1pt]{};
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (2,{2.5-0.5*2}) -- (2,0)node[below]{$Q_0$};
+
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (2,1.5)node[left]{} -- (4,{3.5-0.5*4})node[fill, circle, inner sep=1pt]{};
+    \draw[dashed, ->,shorten >=5pt, shorten <=5pt] (4,{3.5-0.5*4}) -- (4,0)node[below]{$Q_1$};
+
+\end{tikzpicture}
+```
+
+If income increases: 
+
+1. Consumers will purchase larger quantities, pushing demand to the right (left). 
+2. Thus, causing the demand curve to shift right (right).
+
+## Shifts because of Income
+
+* Increased demand means that at every given price, the quantity demanded is higher, so that the demand curve shifts to the right from $D$ to $\hat{D}$. 
+* Decreased demand means that at every given price, the quantity demanded is lower, so that the demand curve shifts to the left from $\hat{D}$ to $D$.
+
+## What Factors Affect Demand?
+
+1. A shift in demand happens when a change in some economic factor (other than price) causes a different quantity to be demanded at every price.
+
+2. Factors that affect demand:
+    1. Income
+    2. Changing tastes or preferences
+    3. Changes in the composition of the population
+    4. Price of substitute or complement changes
+    5. Changes in expectations about future
+
+## Types of Goods & Services
+
+* **Normal good** - A product whose demand rises when income rises, and vice versa.
+
+* **Inferior good** - A product whose demand falls when income rises, rises, and vice versa.
+
+* **Substitute** - a good or service that we can use in place of another good or service.
+
+* **Complements** - goods or services that are often used together so that consumption of one good tends to enhance consumption of the other.
+
+## Supply Curve
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[domain=1:3,samples=10, blue] plot (\x,{\x})node[right]{$S$};
+
+    \draw[dashed, <-,shorten >=5pt, shorten <=5pt] (0,2)node[left]{$P_0$} -- (2,{2})node[fill, circle, inner sep=1pt]{};
+    \draw[dashed, <-,shorten >=5pt, shorten <=5pt] (2,{2}) -- (2,0)node[below]{$Q_0$};
+
+\end{tikzpicture}
+```
+
+* The supply curve can be used to show the minimum price a firm will accept to produce a given quantity of output.
+* $P_0$ equals cost of production plus any margin.
+
+## Supply Curve
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[domain=1:3,samples=10, blue] plot (\x,{\x})node[right]{$S$};
+
+    \draw[dashed] (0,2)node[left]{$P_0$} -- (2,{2})node[fill, circle, inner sep=1pt]{};
+    \draw[dashed] (2,{2}) -- (2,0)node[below]{$Q_0$};
+    
+    \draw[dashed] (2,2) -- (2,2.5)node[fill,circle,inner sep = 1pt]{};
+    \draw[dashed] (2,2.5) -- (0,2.5)node[left]{$P_1$};
+
+\end{tikzpicture}
+```
+
+If costs increase...
+
+## Supply Curve
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Quantity} -- (0,0) -- (0,3)node[left, font=\tiny]{Price};
+
+    \draw[domain=1:3,samples=10, blue] plot (\x,{\x})node[right]{$S$};
+    \draw[domain=1:3,samples=10, blue] plot (\x,{0.5+\x})node[right]{$\hat{S}$};
+
+    \draw[dashed] (0,2)node[left]{$P_0$} -- (2,{2})node[fill, circle, inner sep=1pt]{};
+    \draw[dashed] (2,{2}) -- (2,0)node[below]{$Q_0$};
+    
+    \draw[dashed] (2,2) -- (2,2.5)node[fill,circle,inner sep = 1pt]{};
+    \draw[dashed] (2,2.5) -- (0,2.5)node[left]{$P_1$};
+
+\end{tikzpicture}
+```
+
+* Then the price, for the same quantity, must also increase!
+* When the cost of production increases, the supply curve shifts up to a new price level.
+
+## Shifting the Supply Curve
+
+* Decreased supply means that at every given price, the quantity supplied is lower, so that the supply curve shifts to the *left*, from $S$ to $\hat{S}$. 
+* Increased supply means that at every given price, the quantity supplied is higher, so that the supply curve shifts to the *right*, from $\hat{S}$ to $S$.
+
+## What Factors Affect Supply?
+
+* **Shift in supply** - when a change in some economic factor (other than price) causes a different quantity to be supplied at every price.
+
+* **Inputs or factors of production** - the combination of labor, materials, and machinery that is used to produce goods and services.
+
+* Factors that affect *supply*:
+    * Natural conditions
+    * Input prices
+    * Technology
+    * Government policies
+
+
+# Changes in Equilibrium Price and Quantity: The Four-Step Process
+
+## Changes in Equilibrium Price and Quantity: The Four-Step Process
+
+Four-step process to determining how an economic event affects equilibrium price and quantity:
+
+1. Draw a demand and supply model before the economic change took place.
+2. Decide whether the economic change affects demand or supply.
+3. Decide whether the effect causes a curve shift to the right or to the left, and sketch the new curve on the diagram.
+4. Identify the new equilibrium and then compare to the original.
+
+## Example: Shift in Supply
+
+1. How did excellent weather conditions during the summer affect the quantity and price of salmon?
+2. From 2004 to 2012, the share of Americans who reported obtaining their news from digital sources increased from 24% to 39%. How has this affected the consumption of traditional sources, such as print news media, and radio and television news?
+3. What does an increase in labor compensation, as well as an increase in digital communication suggest about the continued viability of the Postal Service?
+
+# Price Ceilings and Price Floors
+
+## Price Ceilings and Price Floors
+
+* **Price controls** - laws that governments enact to regulate prices.
+
+* Price ceiling
+    * keeps a price from rising above a certain level
+    * a legal maximum price that one pays for some good or service
+
+* Price floor
+    * keeps a price from falling below a given level
+    * is the lowest price that one can legally pay for some good or service.
+
+## Price Ceilings and Price Floors
+
+1. A Price Ceiling Example - Rent Control
+2. A Price Floor Example - European Wheat Prices
+
+# Demand, Supply, and Efficiency
+
+## Demand, Supply, and Efficiency
+
+* Consumer surplus
+    * the amount that individuals would have been willing to pay minus the amount that they actually paid.
+    * the area above the market price and below the demand curve.
+
+## Demand, Supply, and Efficiency
+
+* Producer surplus
+    * the price the producer actually received minus the price the producer would have been willing to accept.
+    * the area between the market price and the segment of the supply curve below the equilibrium.
+
+## Demand, Supply, and Efficiency
+
+* Social/economic/total **surplus** 
+    * consumer surplus + producer surplus
+
+* **Deadweight loss** - the loss in social surplus that occurs when a market produces an inefficient quantity
+
+## Demand, Supply, and Efficiency
+
+```{r, engine='tikz'}
+#| echo: false
+#| fig.align: center
+
+\begin{tikzpicture}
+    \tikzstyle{every node}=[font=\normalsize]
+
+    \draw[<->] (5,0)node[below, font=\tiny]{Q} -- (0,0) -- (0,3.5)node[left, font=\tiny]{P};
+
+    \draw[domain=0:3,samples=10, blue] plot (\x,{\x})node[right]{$S$};
+    \draw[domain=0:3,samples=10, blue] plot (\x,{3-\x})node[above right]{$D$};
+
+    \draw[dashed] (0,1.5)node[left]{$P^*$} -- (1.5,1.5)node[fill, circle, inner sep=1pt]{} -- (1.5,0)node[below]{$Q^*$};
+
+    \draw (0.4,2) node {$XD$};
+    \draw (0.4,1) node {$XS$};
+
+\end{tikzpicture}
+```
+
+* $XD$: Consumer Surplus, $XS$: Producer Surplus, $XD+XS$: Total Surplus.
+
+## Demand, Supply, and Efficiency 
+
+* The somewhat triangular area labeled by F shows the area of *consumer surplus*, which shows that the equilibrium price in the market was less than what many of the consumers were willing to pay. 
+
+* The somewhat triangular area labeled by G shows the area of *producer surplus*, which shows that the equilibrium price received in the market was greater than what many of the producers were willing to accept for their products. 
+
+## Reference
+
+Shapiro, D.; MacDonald, D.; Greenlaw, S. A. (2022). Principles of Economics 3<sup>e</sup>. OpenStax.
+
+Chapter 3
