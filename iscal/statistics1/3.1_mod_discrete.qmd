@@ -1,5 +1,5 @@
 ---
-title: "Probabilistic Models"
+title: "Discrete Probabilistic Models"
 author: "Paulo Fagandini"
 institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
 format: 

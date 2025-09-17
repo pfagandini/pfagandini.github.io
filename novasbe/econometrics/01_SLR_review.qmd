@@ -1,0 +1,126 @@
+---
+title: "Review for lecture SLR"
+format: html
+---
+
+## Derivation of OLS estimators
+
+Assume the model:
+
+$$ y = \beta_0 + \beta_1 x + u$$
+
+With the classical assumptions on $u_i$.
+
+The estimators come from minimizing $\sum_i u_i^2$, for that define isolate $u_i$
+
+$$
+\begin{aligned}
+    u_i &= y_i-\beta_0-\beta_1 x_i\\
+    u_i^2 &= (y_i-\beta_0-\beta_1 x_i)^2 \\
+    \sum_{i} u_i^2 &= \sum_{i} (y_i-\beta_0-\beta_1 x_i)^2
+\end{aligned}
+$$
+
+Then, the optimization problem becomes:
+
+$$
+\min_{\beta_0,\beta_1} F(\beta_0,\beta_1)=\sum_{i} (y_i-\beta_0-\beta_1 x_i)^2
+$$
+
+From where we can compute the first order conditions $\partial F/\partial \beta_0=0$ and $\partial F/\partial \beta_1=0$.
+
+### $\beta_0$
+
+$\partial F/\partial \beta_0=0$ implies:
+
+$$
+\begin{aligned}
+    \frac{\partial}{\partial \beta_0}\sum_{i} (y_i-\beta_0-\beta_1 x_i)^2 = 0 \ &\Rightarrow\ 2(-1)\sum_i (y_i-\beta_0-\beta_1 x_i)=0\\
+    \sum_i (y_i-\beta_0-\beta_1 x_i)=0\ &\Rightarrow\ \sum_i y_i-\beta_0\sum_i 1 -\beta_1 \sum_i x_i=0 \\
+    n\beta_0= \sum_i y_i -\beta_1 \sum_i x_i\ &\Rightarrow\ \beta_0 = \frac{\sum_i y_i}{n} -\beta_1 \frac{\sum_i x_i}{n}=\overline{y}-\beta_1 \overline{x}\\
+    \beta_0 &= \overline{y}-\beta_1 \overline{x}
+\end{aligned}
+$$
+
+A consequence of this, is that the original regression would be the same (same residuals, same slope) than regressing the deviations of $y$ from its mean on the deviation of $x$ around its mean, without a constant, or in other words, if we center $y$ and $x$ around their means.
+
+$$y=\beta_0+\beta_1 x + u_i\ \Leftrightarrow\ (y-\overline{y})=\beta_1(x-\overline{x})+u_i$$
+
+### $\beta_1$
+
+$\partial F/\partial \beta_1=0$ implies:
+
+$$
+\begin{aligned}
+    \frac{\partial}{\partial \beta_1}\sum_{i} (y_i-\beta_0-\beta_1 x_i)^2 = 0 \ &\Rightarrow\ 2(-1)\sum_i x_i(y_i-\beta_0-\beta_1 x_i)=0\\
+    \sum_i x_i(y_i-\beta_0-\beta_1 x_i)=0\ &\Rightarrow\ \sum_i x_iy_i-\beta_0\sum_i x_i-\beta_1 \sum_i x_i^2=0
+\end{aligned}
+$$
+
+Replacing $\beta_0$ and noting that $\sum_i x_i=n\overline{x}$:
+
+$$
+\begin{aligned}
+    \sum_i x_iy_i-\beta_0\sum_i x_i-\beta_1 \sum_i x_i^2=0\ &\Rightarrow\ \sum_i x_iy_i-(\overline{y}-\beta_1\overline{x})n\overline{x}-\beta_1 \sum_i x_i^2=0\\
+    \sum_i x_iy_i-n\overline{y}\overline{x}+n \beta_1\overline{x}^2-\beta_1 \sum_i x_i^2=0\ &\Rightarrow\ \sum_i x_iy_i-n\overline{y}\overline{x}-\beta_1\left(\sum_i x_i^2-n\overline{x}^2\right)=0 \\
+    \sum_i x_iy_i-n\overline{y}\overline{x}=\beta_1\left(\sum_i x_i^2-n\overline{x}^2\right)\ &\Rightarrow\ \beta_1 = \frac{\sum_i x_iy_i-n\overline{y}\overline{x}}{\sum_i x_i^2-n\overline{x}^2}
+\end{aligned}
+$$
+
+Now note that $n\overline{y}\overline{x}=\sum_i y_i\overline{x}=\sum_i x_i\overline{y}=\sum_i \overline{x}\overline{y}$:
+
+$$
+\begin{aligned}
+\sum_i x_iy_i-n\overline{y}\overline{x}&=\sum_i x_iy_i-n\overline{y}\overline{x}+n\overline{y}\overline{x}-n\overline{y}\overline{x}\\
+\sum_i x_iy_i-\sum_i x_i\overline{y}+\sum_i y_i\overline{x}-\sum_i\overline{y}\overline{x}&=\sum_ix_i(y_i-\overline{y})-\sum_i\overline{x}(y_i-\overline{y})\\
+\sum_i(x_i-\overline{x})(y_i-\overline{y})&=n Cov(X,Y)
+\end{aligned}
+$$
+
+Now,
+
+$$
+\begin{aligned}
+    \sum_i x_i^2-n\overline{x}^2 &= \sum_i x_i^2-n\overline{x}^2 + n\overline{x}^2 - n\overline{x}^2\\
+    \sum_i x_i^2-2 n\overline{x}^2 + n\overline{x}^2 &= \sum_i x_i^2-2 \sum_i x_i\overline{x} + \sum_i\overline{x}^2\\
+    \sum_i \left(x_i^2-2 x_i\overline{x} + \overline{x}^2\right) &= \sum_i \left(x_i- \overline{x}\right)^2 = nV[X]
+\end{aligned}
+$$
+
+Finally
+$$ \beta_1 = \frac{n Cov(X,Y)}{nV[X]}=\frac{Cov(X,Y)}{V[X]}$$
+
+## Logs in the regression
+
+## $SST=SSR+SSE$
+
+Start with the regression:
+
+$$y_i=\beta_0+\beta_1 x_i+u_i$$
+
+Note that $\hat{y}_i=\hat{\beta}_0+\hat{\beta}_1 x_i$ and rewrite:
+
+$$
+\begin{aligned}
+    y_i&=\hat{y}_i+\hat{u}_i\\
+    y_i-\overline{y}&=\hat{y}_i-\overline{y}+\hat{u}_i\\
+    \left(y_i-\overline{y}\right)^2&=\left((\hat{y}_i-\overline{y})+\hat{u}_i\right)^2\\
+    %\left(y_i-\overline{y}\right)^2&=\left(\hat{y}_i-\overline{y}\right)^2+2(\hat{y}_i-\overline{y})u_i+\hat{u}_i^2\\
+    \sum_i \left(y_i-\overline{y}\right)^2&=\sum_i\left(\hat{y}_i-\overline{y}\right)^2+2\sum_i\left(\hat{y}_i-\overline{y}\right)\hat{u}_i+\sum_i\hat{u}_i^2\\
+    SST &= SSR + 2\sum_i\left(\hat{y}_i-\overline{y}\right)\hat{u}_i + SSE
+\end{aligned}
+$$
+
+Where $SST$ is the sum of squares of the total, $SSR$ is the sum of squares of the regression, and $SSE$ is the sum of squares of the error.
+
+Let's check that $2\sum_i\left(\hat{y}_i-\overline{y}\right)\hat{u}_i=0$. First, the $2$ can be cancelled out, and then the term becomes
+
+$$
+\begin{aligned}
+    \sum_i\left(\hat{y}_i-\overline{y}\right)\hat{u}_i &= \sum_i\hat{y}_i\hat{u}_i-\overline{y}\sum_i\hat{u}_i
+\end{aligned}
+$$
+
+By assumption $E[u|X]=0$, that means that $\frac{1}{n}\sum \hat{u}_i=0$ and therefore $\sum \hat{u}_i=0$, so the second term must be zero. Now consider that $\hat{y}_i=\beta_0+\beta_1x_i$, and therefore $\sum_i \hat{y}_i \hat{u}_i=\beta_0 \sum_i \hat{u}_i + \beta_1\sum_i x_i \hat{u}_i$, but by assumption $x_i$ and $\hat{u}_i$ are uncorrelated, and therefore $\sum_i x_i \hat{u}_i=0$. The first term is zero also because $E[u]=0$. Then, the whole term is zero and we have our result:
+
+$$SST=SSR+SSE$$

@@ -1,0 +1,108 @@
+---
+title: "renv Terminal Cheat Sheet"
+format: html
+---
+
+# renv Terminal Usage Guide
+
+A quick reference for using renv (R package management) from the terminal without RStudio.
+
+## Basic Setup
+
+```bash
+# Start R in your project directory
+R
+
+# In R console, initialize renv
+renv::init()
+
+# Exit R
+quit()
+```
+
+## Daily Workflow
+
+```bash
+# Activate environment (if not auto-activated)
+R -e "renv::activate()"
+
+# Install packages (in R console)
+R
+> install.packages("package_name")
+> renv::snapshot()  # Save current state
+> quit()
+
+# Restore environment from lockfile
+R -e "renv::restore()"
+```
+
+## Key Commands
+
+Run these commands in the R console:
+
+```r
+renv::status()      # Check project status
+renv::snapshot()    # Update lockfile with current packages
+renv::restore()     # Install packages from lockfile
+renv::clean()       # Remove unused packages
+renv::deactivate()  # Deactivate renv for this session
+renv::activate()    # Reactivate renv
+```
+
+## File Structure Created
+
+```
+your_project/
+├── renv.lock        # Package versions (like requirements.txt)
+├── .Rprofile        # Auto-activates renv
+└── renv/            # Private library directory
+    ├── library/     # Project-specific packages
+    └── settings.dcf # renv settings
+```
+
+## Important Files
+
+- **`renv.lock`**: Contains exact package versions and dependencies (commit to git)
+- **`.Rprofile`**: Auto-activates renv when starting R in the project directory
+- **`renv/`**: Private library where packages are stored
+
+## Common Workflow Example
+
+```bash
+# 1. Create new project
+mkdir my_r_project && cd my_r_project
+
+# 2. Initialize renv
+R -e "renv::init()"
+
+# 3. Install packages
+R -e "install.packages(c('dplyr', 'ggplot2')); renv::snapshot()"
+
+# 4. Work on your project with any editor
+# Your R scripts will use the renv environment automatically
+
+# 5. Share project - others run:
+R -e "renv::restore()"
+```
+
+## Tips & Best Practices
+
+- Always run `renv::snapshot()` after installing new packages
+- The `.Rprofile` file automatically activates renv when you start R
+- Use `renv::status()` to check if packages need to be snapshotted
+- Share `renv.lock` with collaborators (like `requirements.txt` in Python)
+- Keep `renv/` folder out of version control (add to `.gitignore`)
+- Use `renv::clean()` periodically to remove unused packages
+
+## Troubleshooting
+
+```r
+# If renv isn't working properly
+renv::diagnostics()
+
+# Reset renv (use with caution)
+renv::init(force = TRUE)
+
+# Check renv version
+renv::version()
+```
