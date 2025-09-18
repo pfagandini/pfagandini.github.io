@@ -4,7 +4,9 @@ author: "Paulo Fagandini"
 institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
 format: 
   revealjs:
-    theme: default
+    theme:
+      - default
+      - font_adjust.scss
     self-contained: false
     logo: images/iscal_logo.svg
     slide-number: true
