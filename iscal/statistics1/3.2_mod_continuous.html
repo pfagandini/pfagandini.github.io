@@ -241,12 +241,54 @@ F_X(x)=\begin{cases}
 <li class="fragment"><span class="math inline">\(E[X]=\frac{1}{\lambda}\)</span></li>
 <li class="fragment"><span class="math inline">\(V[X]=\frac{1}{\lambda^2}\)</span></li>
 </ul>
+</section>
+<section id="exponential-distribution-5" class="slide level2">
+<h2>Exponential Distribution</h2>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Property</strong></p>
+</div>
+<div class="callout-content">
+<p>Lack of memory of the exponential distribution:</p>
+<p>Let the r.v. <span class="math inline">\(X\sim Exp(\lambda)\)</span>, then:</p>
+<p><span class="math display">\[P(X&gt;x+h|X&gt;x)=P(X&gt;h)\]</span></p>
+<p>with <span class="math inline">\(x,h&gt;0\)</span></p>
+</div>
+</div>
+</div>
+<p>Considering the survival application of this distribution, this property states that, the time left to leave is independent of what it already lived.</p>
+</section>
+<section id="exp-example-1" class="slide level2">
+<h2>Exponential Distribution - Example</h2>
+<p>In a factory, the execution time of a piece is random variable distributed exponentially with expected value of 5 minutes.</p>
+<ol type="1">
+<li class="fragment">For this distribution, what is the value of <span class="math inline">\(\lambda\)</span>?</li>
+<li class="fragment">You know that the piece has been in execution by at least 2 minutes. What is the probability that 4 more minutes are necessary to complete the piece?</li>
+<li class="fragment">Picking randomly 5 pieces. What is the probability that 2 out of the 5 were produced in less than 4 minutes?</li>
+</ol>
+<p><a href="#/exp-example-sol-1">Solution</a></p>
+</section>
+<section id="exp-example-2" class="slide level2">
+<h2>Exponential Distribution - Example</h2>
+<p>The time it takes until the first consultation, and between consultations, in the clinic of Dr.&nbsp;Shawn are independent and distributed exponentially with <span class="math inline">\(\lambda=0.1\)</span>.</p>
+<p>What is the probability that no consultation occurs before the first 10 minutes?</p>
+<p><a href="#/exp-example-sol-2">Solution</a></p>
 </section></section>
+<section>
 <section id="normal-distribution" class="title-slide slide level1 center">
 <h1>Normal Distribution</h1>
 
 </section>
-
+<section id="references" class="slide level2">
+<h2>References</h2>
+<ul>
+<li>Murteira, B.; Silva Ribeiro, C.; Andrade e Silva, J. &amp; Pimenta, C.,&nbsp;Introdução à Estatística,&nbsp;Escolar Editora,&nbsp;McGraw-Hill, 2010</li>
+<li>Paulino, C. D. &amp; Branco, J. A. (2005). Exercícios de Probabilidade e Estatística. Escolar Editora</li>
+<li>Pimenta, F., Andrade e Silva, J.; Silva Ribeiro, C. &amp; Murteira, B., Introdução à Estatística – 3ª Edição, Escolar Editora, 2015</li>
+<li>Ferreira, T., Custódio, S.G., Modelos Probabilísticos – Síntese Teórica e Exercícios Resolvidos, Edições Sílabo (1ª Edição), 2023</li>
+</ul>
+</section></section>
 <section>
 <section id="appendix" class="title-slide slide level1 center">
 <h1>Appendix</h1>
@@ -255,27 +297,46 @@ F_X(x)=\begin{cases}
 <section id="unif-example-1-sol" class="slide level2">
 <h2>Uniform Exercise</h2>
 <ol type="1">
-<li class="fragment">$$ F_X(x)=
-<span class="math display">\[\begin{cases}
+<li><span class="math display">\[
+F_X(x)=
+\begin{cases}
 0 &amp; x&lt;5\\
 \frac{x-5}{12-5} &amp; 5\leq x &lt; 12\\
 1 &amp; x\geq 12
-\end{cases}\]</span></li>
-<li class="fragment"><span class="math inline">\(F_X(12)-F_X(7)=1-\frac{2}{7}=\frac{5}{7}\)</span></li>
-<li class="fragment"><span class="math inline">\(\frac{F_X(10)-F_X(6)}{F_X(10)}=\frac{5/7-1/7}{5/7}=4/5\)</span></li>
-<li class="fragment"><span class="math inline">\(E[X]=\frac{5+12}{2}=8.5\)</span>, <span class="math inline">\(V[X]=\frac{(12-5)^2}{12}=\frac{49}{12}\approx 4 \Rightarrow \sigma_X\approx\sqrt{4}\approx 2\)</span></li>
+\end{cases}
+\]</span></li>
+<li><span class="math inline">\(F_X(12)-F_X(7)=1-\frac{2}{7}=\frac{5}{7}\)</span></li>
+<li><span class="math inline">\(\frac{F_X(10)-F_X(6)}{F_X(10)}=\frac{5/7-1/7}{5/7}=4/5\)</span></li>
+<li><span class="math inline">\(E[X]=\frac{5+12}{2}=8.5\)</span>, <span class="math inline">\(V[X]=\frac{(12-5)^2}{12}=\frac{49}{12}\approx 4 \Rightarrow \sigma_X\approx\sqrt{4}\approx 2\)</span></li>
 </ol>
 <p><a href="#/unif-example-1">Back to the exercise</a></p>
 </section>
 <section id="unif-example-2-sol" class="slide level2">
 <h2>Uniform Exercise</h2>
 <ol type="1">
-<li class="fragment"><span class="math inline">\(P(3\leq X\leq 5)=0.4\ \Rightarrow\ F_X(5)-F_X(3)=0.4\)</span></li>
-<li class="fragment"><span class="math inline">\(\frac{5-2}{b-2}-\frac{3-2}{b-2}=0.4\ \Rightarrow\ \frac{3}{b-2}-\frac{1}{b-2}=0.4\)</span></li>
-<li class="fragment"><span class="math inline">\(\frac{2}{b-2}=0.4\ \Rightarrow\ \frac{1}{b-2}=0.2\)</span>, but <span class="math inline">\(0.2 = \frac{2}{10} = \frac{1}{5}\)</span></li>
-<li class="fragment"><span class="math inline">\(\frac{1}{b-2}=\frac{1}{5}\ \Rightarrow\ 5=b-2\ \Rightarrow\ b=7\)</span></li>
+<li><span class="math inline">\(P(3\leq X\leq 5)=0.4\ \Rightarrow\ F_X(5)-F_X(3)=0.4\)</span></li>
+<li><span class="math inline">\(\frac{5-2}{b-2}-\frac{3-2}{b-2}=0.4\ \Rightarrow\ \frac{3}{b-2}-\frac{1}{b-2}=0.4\)</span></li>
+<li><span class="math inline">\(\frac{2}{b-2}=0.4\ \Rightarrow\ \frac{1}{b-2}=0.2\)</span>, but <span class="math inline">\(0.2 = \frac{2}{10} = \frac{1}{5}\)</span></li>
+<li><span class="math inline">\(\frac{1}{b-2}=\frac{1}{5}\ \Rightarrow\ 5=b-2\ \Rightarrow\ b=7\)</span></li>
 </ol>
 <p><a href="#/unif-example-2">Back to the exercise</a></p>
+</section>
+<section id="exp-example-sol-1" class="slide level2">
+<h2>Exponential Exercise</h2>
+<ol type="1">
+<li><span class="math inline">\(\lambda=\frac{1}{5}=0.2\)</span>. On average 2 pieces are produced every minute. <span class="math inline">\(X\sim Exp(0.2)\)</span></li>
+<li><span class="math inline">\(P(X&gt;6|X&gt;2)=P(X&gt;4)=1-P(T&lt;4)=\)</span> <span class="math inline">\(1-\left(1-e^{-0.2\times 4}\right)=e^{-0.8}\approx 0.4493\)</span></li>
+<li>This problem calls for the binomial distribution, <span class="math inline">\(X~\sim Bin(n=5, p)\)</span>, however, we do not know <span class="math inline">\(p\)</span>. This is the probability that a single piece is produced in 4 minutes or less. <span class="math inline">\(p=P(X&lt;4)\)</span> with <span class="math inline">\(X\sim Exp(0.2)\)</span>. In this case <span class="math inline">\(p=P(X&lt;4)=1-e^{-0.2\times 4}\approx 0.55\)</span>. Then, binomial <span class="math inline">\(X\sim Bin(5, 0.55)\)</span>, and then <span class="math inline">\(P(X=2)\approx 0.2757\)</span>.</li>
+</ol>
+<p><a href="#/exp-example-1">Back to the exercise</a></p>
+</section>
+<section id="exp-example-sol-2" class="slide level2">
+<h2>Exponential Exercise</h2>
+<p>In this case the r.v. <span class="math inline">\(X\)</span> is the time until the first consultation, and <span class="math inline">\(X\sim Exp(0.1)\)</span>.</p>
+<p><span class="math display">\[P(X&gt;10)=1-P(X&lt;10)=1-F(10)\]</span></p>
+<p>Or</p>
+<p><span class="math display">\[1-(1-exp^{-0.1\times 10})=e^{-1}\approx 0.3679\]</span></p>
+<p><a href="#/exp-example-2">Back to the exercise</a></p>
 
 
 </section></section>

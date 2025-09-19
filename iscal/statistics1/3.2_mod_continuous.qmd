@@ -152,31 +152,113 @@ And its moments are:
 * $E[X]=\frac{1}{\lambda}$
 * $V[X]=\frac{1}{\lambda^2}$
 
+## Exponential Distribution
+
+::: {.callout}
+
+## Property
+
+Lack of memory of the exponential distribution:
+
+Let the r.v. $X\sim Exp(\lambda)$, then:
+
+$$P(X>x+h|X>x)=P(X>h)$$
+
+with $x,h>0$
+
+:::
+
+Considering the survival application of this distribution, this property states that, the time left to leave is independent of what it already lived.
+
+## Exponential Distribution - Example {#exp-example-1}
+
+In a factory, the execution time of a piece is random variable distributed exponentially with expected value of 5 minutes.
+
+1. For this distribution, what is the value of $\lambda$?
+2. You know that the piece has been in execution by at least 2 minutes. What is the probability that 4 more minutes are necessary to complete the piece?
+3. Picking randomly 5 pieces. What is the probability that 2 out of the 5 were produced in less than 4 minutes?
+
+[Solution](#exp-example-sol-1)
+
+## Exponential Distribution - Example {#exp-example-2}
+
+The time it takes until the first consultation, and between consultations, in the clinic of Dr. Shawn are independent and distributed exponentially with $\lambda=0.1$.
+
+What is the probability that no consultation occurs before the first 10 minutes?
+
+[Solution](#exp-example-sol-2)
+
 # Normal Distribution
+
+## References
+
+::: {.nonincremental}
+
+* Murteira, B.; Silva Ribeiro, C.; Andrade e Silva, J. & Pimenta, C., Introdução à Estatística, Escolar Editora, McGraw-Hill, 2010
+* Paulino, C. D. & Branco, J. A. (2005). Exercícios de Probabilidade e Estatística. Escolar Editora
+* Pimenta, F., Andrade e Silva, J.; Silva Ribeiro, C. & Murteira, B., Introdução à Estatística – 3ª Edição, Escolar Editora, 2015
+* Ferreira, T., Custódio, S.G., Modelos Probabilísticos – Síntese Teórica e Exercícios Resolvidos, Edições Sílabo (1ª Edição), 2023 
+
+:::
 
 # Appendix
 
 ## Uniform Exercise {#unif-example-1-sol}
 
-1. $$
-F_X(x)=\begin{cases}
+::: {.nonincremental}
+
+1. 
+$$
+F_X(x)=
+\begin{cases}
 0 & x<5\\
 \frac{x-5}{12-5} & 5\leq x < 12\\
 1 & x\geq 12 
 \end{cases}
+$$
 2. $F_X(12)-F_X(7)=1-\frac{2}{7}=\frac{5}{7}$
 3. $\frac{F_X(10)-F_X(6)}{F_X(10)}=\frac{5/7-1/7}{5/7}=4/5$
 4. $E[X]=\frac{5+12}{2}=8.5$, $V[X]=\frac{(12-5)^2}{12}=\frac{49}{12}\approx 4 \Rightarrow \sigma_X\approx\sqrt{4}\approx 2$
 
+:::
+
 [Back to the exercise](#unif-example-1)
 
 ## Uniform Exercise {#unif-example-2-sol}
+
+::: {.nonincremental}
 
 1. $P(3\leq X\leq 5)=0.4\ \Rightarrow\ F_X(5)-F_X(3)=0.4$
 2. $\frac{5-2}{b-2}-\frac{3-2}{b-2}=0.4\ \Rightarrow\ \frac{3}{b-2}-\frac{1}{b-2}=0.4$
 4. $\frac{2}{b-2}=0.4\ \Rightarrow\ \frac{1}{b-2}=0.2$, but $0.2 = \frac{2}{10} = \frac{1}{5}$
 5. $\frac{1}{b-2}=\frac{1}{5}\ \Rightarrow\ 5=b-2\ \Rightarrow\ b=7$
 
-
+:::
 
 [Back to the exercise](#unif-example-2)
+
+## Exponential Exercise {#exp-example-sol-1}
+
+::: {.nonincremental}
+
+1. $\lambda=\frac{1}{5}=0.2$. On average 2 pieces are produced every minute. $X\sim Exp(0.2)$
+2. $P(X>6|X>2)=P(X>4)=1-P(T<4)=$ $1-\left(1-e^{-0.2\times 4}\right)=e^{-0.8}\approx 0.4493$
+3. This problem calls for the binomial distribution, $X~\sim Bin(n=5, p)$, however, we do not know $p$. This is the probability that a single piece is produced in 4 minutes or less. $p=P(X<4)$ with $X\sim Exp(0.2)$. In this case $p=P(X<4)=1-e^{-0.2\times 4}\approx 0.55$. Then, binomial $X\sim Bin(5, 0.55)$, and then $P(X=2)\approx 0.2757$.
+
+:::
+
+[Back to the exercise](#exp-example-1)
+
+## Exponential Exercise {#exp-example-sol-2}
+
+In this case the r.v. $X$ is the time until the first consultation, and $X\sim Exp(0.1)$.
+
+$$P(X>10)=1-P(X<10)=1-F(10)$$
+
+Or
+
+$$1-(1-exp^{-0.1\times 10})=e^{-1}\approx 0.3679$$
+
+
+[Back to the exercise](#exp-example-2)
+
