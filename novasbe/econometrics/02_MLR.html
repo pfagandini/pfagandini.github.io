@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="01_intro_files/libs/clipboard/clipboard.min.js"></script>
-<script src="01_intro_files/libs/quarto-html/tabby.min.js"></script>
-<script src="01_intro_files/libs/quarto-html/popper.min.js"></script>
-<script src="01_intro_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="01_intro_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="01_intro_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01_intro_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<script src="02_MLR_files/libs/clipboard/clipboard.min.js"></script>
+<script src="02_MLR_files/libs/quarto-html/tabby.min.js"></script>
+<script src="02_MLR_files/libs/quarto-html/popper.min.js"></script>
+<script src="02_MLR_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="02_MLR_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="02_MLR_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="02_MLR_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Paulo Fagandini">
-  <title>Statistical Review</title>
+  <title>MLR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="01_intro_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="01_intro_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="02_MLR_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="02_MLR_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="01_intro_files/libs/revealjs/dist/theme/quarto-5f66212b01f094180b8d10b5b9960144.css">
-  <link href="01_intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="01_intro_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="01_intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="01_intro_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="02_MLR_files/libs/revealjs/dist/theme/quarto-ee9ab3830bbe7759b42dda8416faf5cd.css">
+  <link href="02_MLR_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="02_MLR_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="02_MLR_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="02_MLR_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -127,7 +127,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Statistical Review</h1>
+  <h1 class="title">MLR</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -135,61 +135,165 @@
 Paulo Fagandini 
 </div>
         <p class="quarto-title-affiliation">
-            Nova School of Business and Economics
+            Nova SBE
           </p>
     </div>
 </div>
 
 </section>
-<section id="introduction" class="title-slide slide level1 center">
-<h1>Introduction</h1>
-<p>TA: Paulo Fagandini</p>
-<p><span class="emoji" data-emoji="email">📧</span> paulo.fagandini@novasbe.pt</p>
-</section>
-
 <section>
-<section id="assessment-quiz" class="title-slide slide level1 center">
-<h1>Assessment Quiz</h1>
+<section id="review" class="title-slide slide level1 center">
+<h1>Review</h1>
 
 </section>
-<section id="assessment-quiz-1" class="slide level2">
-<h2>Assessment Quiz</h2>
-
-<img data-src="qr-code.svg" class="r-stretch quarto-figure-center"><p class="caption">https://moodle.novasbe.pt/mod/quiz/view.php?id=20767</p></section></section>
-<section id="statistical-review" class="title-slide slide level1 center">
-<h1>Statistical Review</h1>
+<section id="review-1" class="slide level2">
+<h2>Review</h2>
 <ul>
-<li class="fragment">Random Variables</li>
-<li class="fragment">Probability Distributions</li>
-<li class="fragment">Expected Value</li>
-<li class="fragment">Variance and Standard Deviation</li>
-<li class="fragment">Covariance</li>
-<li class="fragment">Correlation</li>
+<li class="fragment">Matrix/vector SLR</li>
+<li class="fragment">MLR</li>
+<li class="fragment"><span class="math inline">\(\beta_i=\frac{\sum \hat{r}y}{\sum \hat{r}^2}\)</span> with <span class="math inline">\(\hat{r}\)</span> the residuals of <span class="math inline">\(x_i=\gamma_0+\sum_{j\neq i} \gamma_j x_j+\varepsilon\)</span></li>
 </ul>
-
-
 </section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<p>https://moodle.novasbe.pt/mod/folder/view.php?id=4021</p>
+
+<img data-src="pictures/qr_code.svg" class="r-stretch"></section>
+<section id="exercise-2.1" class="slide level2" style="font-size: 70%;">
+<h2>Exercise 2.1</h2>
+<p>On 18<sup>th</sup> September of 2015, during apractical class taking place at Nova SBE, a survey was delivered to 52 promising future leaders. This survey collected information on their GPA and on how many hours they usually spend per day in each of the five activities: study, sleep, work, sport, and leisure. Any activity was put into one of the five categories, so that ofr each student the sum of hours in the five activities was 24. Consider the following population regression model:</p>
+<p><span class="math display">\[GPA=\beta_0+\beta_1 study+ \beta_2 sleep + \beta_3 work + \beta_4 sport + \beta_5 leisure + u\]</span></p>
+</section>
+<section id="exercise-2.1-1" class="slide level2">
+<h2>Exercise 2.1</h2>
+<ol type="1">
+<li class="fragment">Does it make sense to hold <em>sleep, work, sport</em>, and <em>leisure</em> fixed, while changing <em>study</em>?</li>
+<li class="fragment">Explain why this model violates assumption MLR.3 (No perfect collinearity). What is the implication for the OLX estimators?</li>
+<li class="fragment">How could you reformulate the model so that its parameters have a useful interpretation and it satisfies Assumption MLR.3?</li>
+</ol>
+<aside class="notes">
+<ol type="1">
+<li>By definition <span class="math inline">\(sleep+study+work+sport+leisure=24\)</span>. Changing study requires something else to change.</li>
+<li>Each indep. var. is a l.c. of all others. It is not possible to obtain estimates.</li>
+<li>Drop any variable, for example sleep. Then the <span class="math inline">\(\beta_{study}\)</span> can be interpreted while holding work, sport, and leisure constant.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exercise-2.1-2" class="slide level2">
+<h2>Exercise 2.1</h2>
+<ol start="4" type="1">
+<li>After omitting the variable <em>sleep</em> the model was estimated by OLS. What would your advice to these promising future leaders?</li>
+</ol>
+<div style="font-size: 70%;">
+<p><span class="math display">\[ \widehat{GPA}=22.81-0.57 study - 0.20 work - 0.38 sport - 0.51 leisure\]</span></p>
+</div>
+<aside class="notes">
+<p>Studying one more hour a day, implies sleeping one hour less! Thus studying one more hour a day (while sleeping one hour less) reduces GPA by 0.57, on average, certeris paribus.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exercise-2.3" class="slide level2">
+<h2>Exercise 2.3</h2>
+The following model is a simplified version of the multiple regression model used by Biddle and Hamermesh (1990) to study how total hours work, years of education and age affect sleeping:
+<div style="font-size: 90%;">
+<p><span class="math display">\[sleep=\beta_0+\beta_1 totwrk + \beta_2 educ + \beta_3 age + u\]</span></p>
+</div>
+<p>where <em>sleep</em> and <em>totwrk</em> are measured in minutes per week and <em>educ</em> and <em>age</em> are measured in years.</p>
+</section>
+<section id="exercise-2.3-1" class="slide level2">
+<h2>Exercise 2.3</h2>
+<ol type="1">
+<li class="fragment">If adults trade off sleep for work what is the sign of <span class="math inline">\(\beta_1\)</span>?</li>
+<li class="fragment">What signs do you think <span class="math inline">\(\beta_2\)</span> and <span class="math inline">\(\beta_3\)</span> will have?</li>
+</ol>
+<aside class="notes">
+<ol type="1">
+<li>If there is a trade-off <span class="math inline">\(\beta_1&lt;0\)</span></li>
+<li>It is unclear!</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exercise-2.3-2" class="slide level2">
+<h2>Exercise 2.3</h2>
+<p>Using real data, the authors have estimated the following relationship:</p>
+<p><span class="math display">\[\widehat{sleep}=3,638.25-0.148totwrk-11.13educ+2.20age\]</span></p>
+<p>With <span class="math inline">\(n=706\)</span> and <span class="math inline">\(R^2=0.113\)</span>.</p>
+<ol start="3" type="1">
+<li class="fragment">If someone works five more hours per week, by how many minutes is <em>sleep</em> predicted to fall? Is this a large trade-off?</li>
+<li class="fragment">Discuss the sign and magnitude of the estimated coefficient on <em>educ</em>.</li>
+<li class="fragment">Woudl you say <em>totwrk</em>, <em>educ</em>, and <em>age</em> explain much of the variation in <em>sleep</em>? What other factors might affect the time spent sleeping? Are these likely to be correlated with <em>totwrk</em>?</li>
+</ol>
+<aside class="notes">
+<ol start="3" type="1">
+<li><span class="math inline">\(\Delta sleep=-0.148(5\times 60)=-44.4\)</span> minutes. Not a very large trade-off</li>
+<li>1 more year of education reduces sleeping time by 11 minutes, on average, ceteris paribus.</li>
+<li>The three variables only explain 11% of the variability/variation of <em>sleep</em>. Marital stautyes, number/age of children, type of job, health, …, and are likely correlated with total work.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="pictures/NovaPrincipalV2.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Econometrics</p>
 </div>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="01_intro_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="02_MLR_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="01_intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="01_intro_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="01_intro_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="01_intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="01_intro_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="01_intro_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="01_intro_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="01_intro_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="01_intro_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="02_MLR_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -358,7 +462,7 @@ Paulo Fagandini
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -508,14 +612,13 @@ Paulo Fagandini
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
