@@ -94,7 +94,7 @@ $$
 
 ## $\beta_j$ as a regression of $y$ on the residuals of $x_j$ on $x_{-j}$
 
-Let $$y=\beta_0+\sum \beta_i x_i + u$$ Running the regression $x_j = \gamma_0 + \sum \gamma_{i\neq j} \gamma_i x_i + r_j$ to obtain $r_j = x_j - \gamma_0-\sum_{i\neq j} \gamma_i x_i$.
+Let $$y=\beta_0+\sum \beta_i x_i + u$$ Running the regression $x_j = \gamma_0 + \sum_{i\neq j} \gamma_i x_i + r_j$ to obtain $r_j = x_j - \gamma_0-\sum_{i\neq j} \gamma_i x_i$.
 
 Multiply the first equation by $r_j$ and sum 
 

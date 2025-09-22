@@ -171,7 +171,7 @@ X =
 </section>
 <section id="beta_j-as-a-regression-of-y-on-the-residuals-of-x_j-on-x_-j" class="level2">
 <h2 class="anchored" data-anchor-id="beta_j-as-a-regression-of-y-on-the-residuals-of-x_j-on-x_-j"><span class="math inline">\(\beta_j\)</span> as a regression of <span class="math inline">\(y\)</span> on the residuals of <span class="math inline">\(x_j\)</span> on <span class="math inline">\(x_{-j}\)</span></h2>
-<p>Let <span class="math display">\[y=\beta_0+\sum \beta_i x_i + u\]</span> Running the regression <span class="math inline">\(x_j = \gamma_0 + \sum \gamma_{i\neq j} \gamma_i x_i + r_j\)</span> to obtain <span class="math inline">\(r_j = x_j - \gamma_0-\sum_{i\neq j} \gamma_i x_i\)</span>.</p>
+<p>Let <span class="math display">\[y=\beta_0+\sum \beta_i x_i + u\]</span> Running the regression <span class="math inline">\(x_j = \gamma_0 + \sum_{i\neq j} \gamma_i x_i + r_j\)</span> to obtain <span class="math inline">\(r_j = x_j - \gamma_0-\sum_{i\neq j} \gamma_i x_i\)</span>.</p>
 <p>Multiply the first equation by <span class="math inline">\(r_j\)</span> and sum</p>
 <p><span class="math display">\[\sum r_j y = \sum \beta_0 r_j + \sum \beta_i x_i r_j + \sum u r_j\]</span></p>
 <p>Remember that <span class="math inline">\(E[r_j]=0\)</span> and that <span class="math inline">\(r_j\)</span> is orthogonal to <span class="math inline">\(x_{-j}\)</span> and therefore the previous expression reduces to:</p>
