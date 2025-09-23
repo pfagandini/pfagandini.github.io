@@ -6,8 +6,8 @@
 <script src="02_MLR_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="02_MLR_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="02_MLR_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="02_MLR_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="02_MLR_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Paulo Fagandini">
   <title>MLR</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="02_MLR_files/libs/revealjs/dist/theme/quarto-ee9ab3830bbe7759b42dda8416faf5cd.css">
+  <link rel="stylesheet" href="02_MLR_files/libs/revealjs/dist/theme/quarto-5f66212b01f094180b8d10b5b9960144.css">
   <link href="02_MLR_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="02_MLR_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="02_MLR_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -244,14 +244,16 @@ The following model is a simplified version of the multiple regression model use
 </section>
 <section id="exercise-2.3-2" class="slide level2">
 <h2>Exercise 2.3</h2>
+<div style="font-size: 90%;">
 <p>Using real data, the authors have estimated the following relationship:</p>
 <p><span class="math display">\[\widehat{sleep}=3,638.25-0.148totwrk-11.13educ+2.20age\]</span></p>
 <p>With <span class="math inline">\(n=706\)</span> and <span class="math inline">\(R^2=0.113\)</span>.</p>
 <ol start="3" type="1">
 <li class="fragment">If someone works five more hours per week, by how many minutes is <em>sleep</em> predicted to fall? Is this a large trade-off?</li>
 <li class="fragment">Discuss the sign and magnitude of the estimated coefficient on <em>educ</em>.</li>
-<li class="fragment">Woudl you say <em>totwrk</em>, <em>educ</em>, and <em>age</em> explain much of the variation in <em>sleep</em>? What other factors might affect the time spent sleeping? Are these likely to be correlated with <em>totwrk</em>?</li>
+<li class="fragment">Would you say <em>totwrk</em>, <em>educ</em>, and <em>age</em> explain much of the variation in <em>sleep</em>? What other factors might affect the time spent sleeping? Are these likely to be correlated with <em>totwrk</em>?</li>
 </ol>
+</div>
 <aside class="notes">
 <ol start="3" type="1">
 <li><span class="math inline">\(\Delta sleep=-0.148(5\times 60)=-44.4\)</span> minutes. Not a very large trade-off</li>
@@ -462,7 +464,7 @@ The following model is a simplified version of the multiple regression model use
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -489,80 +491,42 @@ The following model is a simplified version of the multiple regression model use
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -612,13 +576,14 @@ The following model is a simplified version of the multiple regression model use
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

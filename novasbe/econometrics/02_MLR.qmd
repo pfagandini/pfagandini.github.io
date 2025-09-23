@@ -102,6 +102,8 @@ where *sleep* and *totwrk* are measured in minutes per week and *educ* and *age*
 
 ## Exercise 2.3
 
+<div style="font-size: 90%;">
+
 Using real data, the authors have estimated the following relationship:
 
 $$\widehat{sleep}=3,638.25-0.148totwrk-11.13educ+2.20age$$
@@ -110,7 +112,9 @@ With $n=706$ and $R^2=0.113$.
 
 3. If someone works five more hours per week, by how many minutes is *sleep* predicted to fall? Is this a large trade-off?
 4. Discuss the sign and magnitude of the estimated coefficient on *educ*.
-5. Woudl you say *totwrk*, *educ*, and *age* explain much of the variation in *sleep*? What other factors might affect the time spent sleeping? Are these likely to be correlated with *totwrk*?
+5. Would you say *totwrk*, *educ*, and *age* explain much of the variation in *sleep*? What other factors might affect the time spent sleeping? Are these likely to be correlated with *totwrk*?
+
+</div>
 
 ::: {.notes}
 
