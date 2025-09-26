@@ -343,7 +343,8 @@ $$
 
 ## Example
 
-Note that $$
+Note that 
+$$
 (1+`r round(100*(aapl_df$Close[5]/aapl_df$Close[1])^(1/(aapl_df$Date[5]-aapl_df$Date[1]))-100, 2)`\%)^`r aapl_df$Date[5]-aapl_df$Date[1]` =
 (1+`r round((aapl_df$Close[5]/aapl_df$Close[1])^(1/(aapl_df$Date[5]-aapl_df$Date[1]))-1, 4)`)^`r aapl_df$Date[5]-aapl_df$Date[1]` \approx
 `r 1+round((aapl_df$Close[5]-aapl_df$Close[1])/aapl_df$Close[1], 4)`\approx
@@ -892,6 +893,9 @@ $$\frac{q_t}{q_b} = \frac{\frac{v_t}{v_b}}{\frac{p_t}{p_b}}$$ $$\frac{q_t}{q_b} 
 
 ## Example
 
+<div style="font-size: 70%;">
+
+
 |   | `r year(Sys.Date()) - 4` | `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())` |
 |------------|------------|------------|------------|------------|------------|
 | Sales Index | 99 | 100 | 107 | 110 | 111 |
@@ -908,6 +912,8 @@ Then $I_{`r year(Sys.Date()) - 4`} = 104$, quantities decreased from `r year(Sys
 |   | `r year(Sys.Date()) - 4` | `r year(Sys.Date()) - 3` | `r year(Sys.Date()) - 2` | `r year(Sys.Date()) - 1` | `r year(Sys.Date())` |
 |------------|------------|------------|------------|------------|------------|
 | Quantities Index | `r 100*round(99/95, 4)` | `r 100*round(100/100, 4)` | `r 100*round(107/102, 4)` | `r 100*round(110/106, 4)` | `r 100*round(111/109, 4)` |
+
+</div>
 
 ## Example
 
@@ -1240,11 +1246,11 @@ or
 
 . . .
 
-$$\left(`r round(1650/1600,4)`\right)^{1/`r hicp_df_a[4,1]- hicp_df_a[1,1]`}=1+\delta_w$$
+$$\left(`r round(1650/1500,4)`\right)^{1/`r hicp_df_a[4,1]- hicp_df_a[1,1]`}=1+\delta_w$$
 
 . . .
 
-$$`r round((1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1])),4)`-1=\delta_w \quad \Rightarrow \quad \delta_w=`r round((1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-1,4)`= `r round(100*(1650/1600)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-100,2)`\%$$
+$$`r round((1650/1500)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1])),4)`-1=\delta_w \quad \Rightarrow \quad \delta_w=`r round((1650/1500)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-1,4)`= `r round(100*(1650/1500)^(1/(hicp_df_a[4,1]-hicp_df_a[1,1]))-100,2)`\%$$
 
 ## Summarizing
 
@@ -1349,7 +1355,7 @@ None, not even Fisher's Index pass the circularity test.
 
 ## Example
 
-1.  According to LPI for year 2, prices for public transportantion grew 11.17%.
+1.  According to LPI for year 2, prices for public transportation grew 11.17%.
 2.  Real change, according to Paasche, for public transportation was 7.35%.
 3.  The composite index for change in expenditures with public transportation in year 2 compared the expenditure in year 1 is what type of change? (real, nominal, quantity, prices?) How much was it?
 
