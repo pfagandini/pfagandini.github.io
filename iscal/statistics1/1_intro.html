@@ -297,7 +297,7 @@ Paulo Fagandini
 </section>
 <section id="example-apple-stock-1" class="slide level2">
 <h2>Example: Apple Stock</h2>
-<p>Let the close price for Apple be represented by the variable <span class="math inline">\(y_t\)</span>, so <span class="math inline">\(y_{2019}\)</span> is the close price we got for2019 (<em>i.e.</em> 73.41).</p>
+<p>Let the close price for Apple be represented by the variable <span class="math inline">\(y_t\)</span>, so <span class="math inline">\(y_{2019}\)</span> is the close price we got for 2019 (<em>i.e.</em> 73.41).</p>
 <p>How much did <span class="math inline">\(y\)</span> grow between 2019 and 2020?</p>
 <div class="fragment">
 <p><span class="math display">\[\Delta y_{2020} = y_{2020} - y_{2019} = 132.69 - 73.41\]</span> <span class="math display">\[=59.28\]</span></p>
@@ -312,7 +312,7 @@ Paulo Fagandini
 <p><span class="math display">\[y_{2020}=y_{2019}+\Delta y_{2020}\]</span></p>
 <p><span class="math display">\[y_{2020}=y_{2019}\left(1+\frac{\Delta y_{2020}}{y_{2019}}\right)\]</span></p>
 <p><span class="math display">\[y_{2020}=y_{2019}\left(1+\delta^y_{2020}\right)\]</span></p>
-<p>This, <span class="math inline">\(\delta_{2020}^y\)</span>, is the <strong>growth rate</strong> of <span class="math inline">\(y\)</span> at year2020.</p>
+<p>This, <span class="math inline">\(\delta_{2020}^y\)</span>, is the <strong>growth rate</strong> of <span class="math inline">\(y\)</span> at year 2020.</p>
 </section>
 <section id="growth-rate" class="slide level2">
 <h2>Growth Rate</h2>
@@ -570,8 +570,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c702c1acc08479593d07" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-c702c1acc08479593d07">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-7882c0fd2834cdc2fb51" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7882c0fd2834cdc2fb51">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1036,8 +1036,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-825bfaf574489c8f3396" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-825bfaf574489c8f3396">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a6248077776a57c2f562" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a6248077776a57c2f562">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

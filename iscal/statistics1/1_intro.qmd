@@ -158,7 +158,7 @@ kable(aapl_df)
 
 ## Example: Apple Stock
 
-Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date[1]`}$ is the close price we got for`r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close[1]`).
+Let the close price for Apple be represented by the variable $y_t$, so $y_{`r aapl_df$Date[1]`}$ is the close price we got for `r aapl_df$Date[1]` (*i.e.* `r aapl_df$Close[1]`).
 
 How much did $y$ grow between `{r} aapl_df$Date[1]` and `{r} aapl_df$Date[2]`?
 
@@ -180,7 +180,7 @@ $$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\frac{\Delta y_{`r aapl
 
 $$y_{`r aapl_df$Date[2]`}=y_{`r aapl_df$Date[1]`}\left(1+\delta^y_{`r aapl_df$Date[2]`}\right)$$
 
-This, $\delta_{`r aapl_df$Date[2]`}^y$, is the **growth rate** of $y$ at year`r aapl_df$Date[2]`.
+This, $\delta_{`r aapl_df$Date[2]`}^y$, is the **growth rate** of $y$ at year `r aapl_df$Date[2]`.
 
 ## Growth Rate
 
