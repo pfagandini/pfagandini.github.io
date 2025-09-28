@@ -32,6 +32,7 @@ The first thing to do is to clean the environment
 ```{r}
 #| echo: true
 #| eval: false
+
 rm(list = ls())
 ```
 
@@ -61,6 +62,7 @@ If you fail to load one of these libraries, you can install it with:
 ```{r}
 #| echo: true
 #| eval: false
+
 install.packages{'tidyverse'}
 ```
 For example, with this we install the library **tidyverse**
@@ -72,6 +74,7 @@ In here, we will tell R where our files (data) are, and by default, where it wil
 ```{r}
 #| echo: true
 #| eval: false
+
 setwd("/the/path/to/your/files")
 ```
 
@@ -79,6 +82,7 @@ setwd("/the/path/to/your/files")
 ```{r}
 #| echo: true
 #| eval: false
+
 DM <- read.csv('DirectMarketing.csv')
 skim_without_charts(DM)
 DM$History[is.na(DM$History)] <- "No past purchases"
@@ -91,6 +95,7 @@ DM$PastPurchases <- ifelse(DM$History == "No past purchases",
 ```{r}
 #| echo: true
 #| eval: false
+
 stargazer(as.data.frame(DM), type = "text", title="Descriptive stats")
 stargazer(as.data.frame(DM), type = "html",
     title="Descriptive stats", out="DS.html")
@@ -101,6 +106,7 @@ stargazer(as.data.frame(DM), type = "html",
 ```{r}
 #| echo: true
 #| eval: false
+
 DM_aux <- dummyVars(" ~ .", data = DM)
 DM_num <- data.frame(predict(DM_aux, newdata = DM))
 stargazer(as.data.frame(DM_num), type = "text", 
@@ -115,6 +121,7 @@ stargazer(as.data.frame(DM_num), type = "html",
 ```{r}
 #| echo: true
 #| eval: false
+
 corrDM = cor(DM[,c("AmountSpent", "Salary", "Catalogs", "Children")])
 
 stargazer(corrDM, title="Correlation Matrix", 
@@ -256,8 +263,6 @@ stargazer(lm.spend1, lm.spend2, lm.spend3,
 #| eval: false
 
 linearHypothesis(lm.spend2, c("Salary=0"))
-
 linearHypothesis(lm.spend2, c("4*Catalogs=-Children"))
-
 linearHypothesis(lm.spend2, c("Catalogs=0","Children=0"))
 ```
