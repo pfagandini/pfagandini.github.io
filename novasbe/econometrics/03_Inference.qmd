@@ -64,8 +64,8 @@ With $R^2=0.0464$
 [t-student](#app-t-table)
 
 ::: {.notes}
-1. If *rdintensity$ increases by 1 pp profit margin increases by 0.79pp on average, ceteris paribus.
-2. $H_0: \beta_{rintensity}=0$, $H_a: \beta_{rintensity}\neq0$. $\alpha=10%$, $df=32-2-1=29$, $t^c=1.699$. $t=\frac{0.79-0}{0.7233}=1.09<t^c$. Fail to reject $H_0$ at 10%.
+1. If *rdintensity* increases by 1 pp profit margin increases by 0.79pp on average, ceteris paribus.
+2. $H_0: \beta_{rintensity}=0$, $H_a: \beta_{rintensity}\neq0$. $\alpha=10\%$, $df=32-2-1=29$, $t^c=1.699$. $t=\frac{0.79-0}{0.7233}=1.09<t^c$. Fail to reject $H_0$ at 10%.
 3. We do not find statistically significant effect of r&d on profit, maybe it is not *only* about the money.
 :::
 
@@ -85,6 +85,7 @@ $$
 3. Can you reject the hypothesis $H_0: \beta_{hsGPA}=1$ against the two-sided alternative at the 5% significance level?
 
 ::: {.notes}
+
 1.$0.412\pm 1.96\times 0.094\Rightarrow [0.228, 0.596]$
 2. $H_0: \beta_1=0.4$ cannot be rejected at 5% significance as 0.4 is in the confidence interval.
 3. $H_0: \beta_1=1$ is rejected at 5% significance as 1 falls out of the CI.
@@ -121,7 +122,7 @@ where $\theta_3=\beta_2+\beta_3$
 
 :::
 
-## Exercise 3.4
+## Exercise 3.4 {#ex-3.4-questions2}
 
 3. Using 43 observations, you estimate the original equation:
 <div style="font-size: 70%;">
@@ -138,8 +139,10 @@ $$
 With $R^2=0.310$ for both regressions.
 Test if the effect of annual firm sales (in dollars) on scrap rates is the symmetric of the effect of the number of firm employees on scrap rates.
 
+[t-student](#app-t-table)
+
 ::: {.notes}
-$H_0:\theta_3=0$ and $H_a: \theta_3\neq 0$. For $\alpha=5%$ and $dof=43-3-1=39$ the critical value $t^c=2.023$. In this case $t=\frac{0.041}{0.205}=0.2$. Because $t<t^c$ we fail to rjeect $H_0$ at 5%.
+$H_0:\theta_3=0$ and $H_a: \theta_3\neq 0$. For $\alpha=5\%$ and $dof=43-3-1=39$ the critical value $t^c=2.023$. In this case $t=\frac{0.041}{0.205}=0.2$. Because $t<t^c$ we fail to reject $H_0$ at 5%.
 
 :::
 
@@ -160,8 +163,8 @@ where $y$ is the number of animals and plants in extintion danger in each park, 
 3. The director of the Natural Parks association is worried about the number of vists to the parks: *"... if not for the nature, at least in financial terms we have to reduce the number of visits, because in order to compensate for an increase of one thousand visitors we have to spend 0.5 millin euros more in maintenance"*. Comment on this sentence.
 
 ::: {.notes}
-1. If visitors increase by 1000 the N of endangered species icnreases by 3.73 on average ceteris paribus. If maintenance increases by 1 million euros, the number of endangered species decreases by 9.614, on average, ceteris paribus.
-2. $F=\frac{R^2_{ur}/k}{(1-R^2_{ur})/(n-k-1)}\sim F_{k,n-k-1}$ here $F=\frac{0.984/2}{(1-0.984)/(28-2-1)}=768.75$ Since $F>F^c=F_{5%,2.25}=3.39$ we reject $H_0$. The coefficients are jointly statistical significant, or the model is statistical significant.
+1. If visitors increase by 1000 the N of endangered species increases by 3.73 on average ceteris paribus. If maintenance increases by 1 million euros, the number of endangered species decreases by 9.614, on average, ceteris paribus.
+2. $F=\frac{R^2_{ur}/k}{(1-R^2_{ur})/(n-k-1)}\sim F_{k,n-k-1}$ here $F=\frac{0.984/2}{(1-0.984)/(28-2-1)}=768.75$ Since $F>F^c=F_{5\%,2.25}=3.39$ we reject $H_0$. The coefficients are jointly statistical significant, or the model is statistical significant.
 3. We want to test if 0.5 million euro compensate the impact on the number of endangered species for having 1000 more visits to the park: $H_0: -\beta_1=0.5\beta_2$ or $H_0=\beta_1+0.5\beta_2=0$. Test for $\hat{\rho}=\hat{\beta}_1+0.5\hat{\beta}_2$: $t=\frac{\hat{\rho}}{se(\hat{\rho})}=\frac{3.743-0.5(9.614)}{se(\hat{\rho})}$ $se(\hat{\rho})=\sqrt{V(\hat{\beta}_1+0.5\hat{\beta}_2)}$ and that is $\sqrt{V(\hat{\beta}_1)+0.5^2 V(\hat{\beta}_2+2\times 0.5Cov(\hat{\beta}_1, \hat{\beta}_2)}=2.024$, leading to $t=-0.526$. Thus, we fail to reject $H_0$ as $|t|<|t^c|$, and we have evidence that spending 0.5 million europ in maintenance compensates the impact on the number of endangered species of having 1000 more visitors.
 :::
 
@@ -175,4 +178,4 @@ where $y$ is the number of animals and plants in extintion danger in each park, 
 
 </div>
 
-[Back to the exercise](#ex-3.1-questions)
+[Back to the exercise 3.1](#ex-3.1-questions) [Back to the exercise 3.4](#ex-3.4-questions2)
