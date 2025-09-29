@@ -6,8 +6,8 @@
 <script src="1_intro_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="1_intro_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="1_intro_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="1_intro_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="1_intro_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Paulo Fagandini">
   <title>Introduction and Growth Rates</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="1_intro_files/libs/revealjs/dist/theme/quarto-70bf8efb484b24f2a3e86c10bde9a4bf.css">
+  <link rel="stylesheet" href="1_intro_files/libs/revealjs/dist/theme/quarto-41ecee5cfd56ab9c7aeb19d918fe5717.css">
   <link href="1_intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="1_intro_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="1_intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -122,10 +122,15 @@
     }
   </style>
   <link href="1_intro_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
   <script src="1_intro_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
   <script src="1_intro_files/libs/viz-1.8.2/viz.js"></script>
+
   <link href="1_intro_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
   <script src="1_intro_files/libs/grViz-binding-1.0.11/grViz.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -287,7 +292,7 @@ Paulo Fagandini
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2025</td>
-<td style="text-align: right;">256.87</td>
+<td style="text-align: right;">255.46</td>
 </tr>
 </tbody>
 </table>
@@ -481,7 +486,7 @@ Paulo Fagandini
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-09-29?</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Which stock would you have purchased in 2015-10-02?</p>
 </section>
 <section id="motivation-1" class="slide level2">
 <h2>Motivation</h2>
@@ -530,12 +535,12 @@ Paulo Fagandini
 <section id="motivation-4" class="slide level2">
 <h2>Motivation</h2>
 
-<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-09-29.</p>
+<img data-src="1_intro_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>Now we have a much clear picture. We can compare their evolution starting in 2015-10-02.</p>
 <p>What can you read from the plot?</p>
 </section>
 <section id="motivation-5" class="slide level2">
 <h2>Motivation</h2>
-<p>Note that for 2015-09-29, we would have, for A and B:</p>
+<p>Note that for 2015-10-02, we would have, for A and B:</p>
 <p><span class="math display">\[1+\frac{a_t-a_t}{a_t}=1\quad\text{and}\quad 1+\frac{b_t-b_t}{b_t}=1\]</span></p>
 <p>We just built and index number!</p>
 <p>By convention though, instead of using 1 for the reference date, we will use 100 (as in 100%) for the reference day (we will put a name to this in a few moments).</p>
@@ -562,7 +567,7 @@ Paulo Fagandini
 </div>
 <p><br>
 </p>
-<p>In our previous example, the base day would have been 2015-09-29. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
+<p>In our previous example, the base day would have been 2015-10-02. Note that in the base period <span class="math display">\[I_0=\frac{x_0}{x_0}\times 100 = 100\]</span></p>
 </section>
 <section id="index-numbers-1" class="slide level2">
 <h2>Index Numbers</h2>
@@ -570,8 +575,8 @@ Paulo Fagandini
 <p>Also, an Index Number can have a fixed base or a moving base.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-7882c0fd2834cdc2fb51" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7882c0fd2834cdc2fb51">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-25567ebf77556623221c" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-25567ebf77556623221c">{"x":{"diagram":"\ndigraph TimeSeriesStructure {\n  graph [layout = dot, rankdir = TB]\n\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  Index [label = \"Index\"]\n  UnderlyingVariable [label = \"Underlying Variable\"]\n  Base [label = \"Base\"]\n  Dimension [label = \"Dimension\"]\n\n  Simple [label = \"Simple\"]\n  Composite [label = \"Composite\"]\n\n  Fixed [label = \"Fixed\"]\n  Rolling [label = \"Rolling\"]\n\n  Chronological [label = \"Chronological\"]\n  Geographical [label = \"Geographical\"]\n\n  Index -> UnderlyingVariable\n  Index -> Base\n  Index -> Dimension\n\n  UnderlyingVariable -> Simple\n  UnderlyingVariable -> Composite\n\n  Base -> Fixed\n  Base -> Rolling\n\n  Dimension -> Chronological\n  Dimension -> Geographical\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1036,8 +1041,8 @@ Table&nbsp;1: Changing Base
 <p>This is a great opportunity to introduce another classification for our index numbers:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-a6248077776a57c2f562" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-a6248077776a57c2f562">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-5c9e16936703c99203fb" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5c9e16936703c99203fb">{"x":{"diagram":"\ndigraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [shape = box, style = filled, fillcolor = lightgray, fontname = Helvetica]\n\n  A [label = \"Index\"]\n  B [label = <Price <i>P<\/i>>]\n  C [label = <Quantity <i>Q<\/i>>]\n  D [label = <Value <i>P<\/i> <i>&times;<\/i> <i>Q<\/i>>]\n\n  A -> B\n  A -> C\n  A -> D\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1727,72 +1732,64 @@ CPI<sub>link</sub>
 <table>
 <thead>
 <tr>
-<th>
-<p>
-</p>
+<th rowspan="2">
+Public Transportation
 </th>
-<th>
-<p>
+<th colspan="2">
 Year 1
-</p>
+</th>
+<th colspan="2">
+Year 2
+</th>
+</tr>
+<tr>
+<th>
+Trips
 </th>
 <th>
-<p>
-Year 2
-</p>
+Price per trip
+</th>
+<th>
+Trips
+</th>
+<th>
+Price Index (Base: year 1)
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
-<p>
-Public Transportation
-</p>
-</td>
-<td>
-<p>
-N Trips
-</p>
-</td>
-<td>
-<p>
-Ticket price
-</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>
 Bus
-</p>
 </td>
 <td>
-<p>
 1,763,521
-</p>
 </td>
 <td>
-<p>
 1.15
-</p>
+</td>
+<td>
+1,875,345
+</td>
+<td>
+108.70
 </td>
 </tr>
 <tr>
 <td>
-<p>
 Metro
-</p>
 </td>
 <td>
-<p>
 3,148,350
-</p>
 </td>
 <td>
-<p>
 1.2
-</p>
+</td>
+<td>
+3,396,138
+</td>
+<td>
+112.50
 </td>
 </tr>
 </tbody>
@@ -2129,7 +2126,7 @@ Metro
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2156,42 +2153,80 @@ Metro
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -2241,14 +2276,13 @@ Metro
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

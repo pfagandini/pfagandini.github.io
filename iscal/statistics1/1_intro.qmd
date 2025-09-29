@@ -1327,31 +1327,36 @@ None, not even Fisher's Index pass the circularity test.
 ## Example
 
 <table>
-<thead>
-<tr>
-<th><p></p></th>
-<th><p>Year 1</p></th>
-<th><p>Year 2</p></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p>Public Transportation</p></td>
-<td><p>N Trips</p></td>
-<td><p>Ticket price</p></td>
-</tr>
-<tr>
-<td><p>Bus</p></td>
-<td><p>1,763,521</p></td>
-<td><p>1.15</p></td>
-</tr>
-<tr>
-<td><p>Metro</p></td>
-<td><p>3,148,350</p></td>
-<td><p>1.2</p></td>
-</tr>
-</tbody>
-</table>
+  <thead>
+    <tr>
+      <th rowspan="2">Public Transportation</th>
+      <th colspan="2">Year 1</th>
+      <th colspan="2">Year 2</th>
+    </tr>
+    <tr>
+      <th>Trips</th>
+      <th>Price per trip</th>
+      <th>Trips</th>
+      <th>Price Index (Base: year 1)</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Bus</td>
+        <td>1,763,521</td>
+        <td>1.15</td>
+        <td>1,875,345</td>
+        <td>108.70</td>
+      </tr>
+      <tr>
+        <td>Metro</td>
+        <td>3,148,350</td>
+        <td>1.2</td>
+        <td>3,396,138</td>
+        <td>112.50</td>
+      </tr>
+    </tbody>
+  </table>
 
 ## Example
 
