@@ -27,9 +27,7 @@ engine: knitr
 
 ## Review
 
-* Matrix/vector SLR
-* MLR
-* $\beta_i=\frac{\sum \hat{r}y}{\sum \hat{r}^2}$ with $\hat{r}$ the residuals of $x_i=\gamma_0+\sum_{j\neq i} \gamma_j x_j+\varepsilon$
+* Moments and distribution for $\hat{\beta}$
 
 ## Exercises
 
@@ -84,9 +82,11 @@ $$
 2. Can you reject the hypothesis $H_0:\beta_{hsGPA}=0.4$ against the twosided alternative at the 5% significance level?
 3. Can you reject the hypothesis $H_0: \beta_{hsGPA}=1$ against the two-sided alternative at the 5% significance level?
 
+[t-student](#app-t-table)
+
 ::: {.notes}
 
-1.$0.412\pm 1.96\times 0.094\Rightarrow [0.228, 0.596]$
+1. $0.412\pm 1.96\times 0.094\Rightarrow [0.228, 0.596]$
 2. $H_0: \beta_1=0.4$ cannot be rejected at 5% significance as 0.4 is in the confidence interval.
 3. $H_0: \beta_1=1$ is rejected at 5% significance as 1 falls out of the CI.
 :::
@@ -117,8 +117,8 @@ where $\theta_3=\beta_2+\beta_3$
 2. Interpret the null hypothesis $H_0: \theta_3=0$.
 
 ::: {.notes}
-1. subtract and add $beta_2\log(employ)$ and then you get the result.
-2. $H_0: \theta_3=0$ can be written as $\beta_2+\beta_3=0$ or $\beta_2=-\beta_3$, that is under the null hypothesis the effects cancell out, or are symmetric.
+1. subtract and add $\beta_2\log(employ)$ and then you get the result.
+2. $H_0: \theta_3=0$ can be written as $\beta_2+\beta_3=0$ or $\beta_2=-\beta_3$, that is under the null hypothesis the effects cancel out, or are symmetric.
 
 :::
 
@@ -137,7 +137,7 @@ $$
 $$
 </div>
 With $R^2=0.310$ for both regressions.
-Test if the effect of annual firm sales (in dollars) on scrap rates is the symmetric of the effect of the number of firm employees on scrap rates.
+Test if the effect of annual firm sales (in USD) on scrap rates is the symmetric of the effect of the number of firm employees on scrap rates.
 
 [t-student](#app-t-table)
 
@@ -160,12 +160,12 @@ where $y$ is the number of animals and plants in extintion danger in each park, 
 
 1. Interpret the parameter estimates.
 2. Knowing that $R^2=0.984$, test the overall significance of the regression.
-3. The director of the Natural Parks association is worried about the number of vists to the parks: *"... if not for the nature, at least in financial terms we have to reduce the number of visits, because in order to compensate for an increase of one thousand visitors we have to spend 0.5 millin euros more in maintenance"*. Comment on this sentence.
+3. The director of the Natural Parks association is worried about the number of vists to the parks: *"... if not for the nature, at least in financial terms we have to reduce the number of visits, because in order to compensate for an increase of one thousand visitors we have to spend 0.5 million euros more in maintenance"*. Comment on this sentence.
 
 ::: {.notes}
 1. If visitors increase by 1000 the N of endangered species increases by 3.73 on average ceteris paribus. If maintenance increases by 1 million euros, the number of endangered species decreases by 9.614, on average, ceteris paribus.
 2. $F=\frac{R^2_{ur}/k}{(1-R^2_{ur})/(n-k-1)}\sim F_{k,n-k-1}$ here $F=\frac{0.984/2}{(1-0.984)/(28-2-1)}=768.75$ Since $F>F^c=F_{5\%,2.25}=3.39$ we reject $H_0$. The coefficients are jointly statistical significant, or the model is statistical significant.
-3. We want to test if 0.5 million euro compensate the impact on the number of endangered species for having 1000 more visits to the park: $H_0: -\beta_1=0.5\beta_2$ or $H_0=\beta_1+0.5\beta_2=0$. Test for $\hat{\rho}=\hat{\beta}_1+0.5\hat{\beta}_2$: $t=\frac{\hat{\rho}}{se(\hat{\rho})}=\frac{3.743-0.5(9.614)}{se(\hat{\rho})}$ $se(\hat{\rho})=\sqrt{V(\hat{\beta}_1+0.5\hat{\beta}_2)}$ and that is $\sqrt{V(\hat{\beta}_1)+0.5^2 V(\hat{\beta}_2+2\times 0.5Cov(\hat{\beta}_1, \hat{\beta}_2)}=2.024$, leading to $t=-0.526$. Thus, we fail to reject $H_0$ as $|t|<|t^c|$, and we have evidence that spending 0.5 million europ in maintenance compensates the impact on the number of endangered species of having 1000 more visitors.
+3. We want to test if 0.5 million euro compensate the impact on the number of endangered species for having 1000 more visits to the park: $H_0: -\beta_1=0.5\beta_2$ or $H_0=\beta_1+0.5\beta_2=0$. Test for $\hat{\rho}=\hat{\beta}_1+0.5\hat{\beta}_2$: $t=\frac{\hat{\rho}}{se(\hat{\rho})}=\frac{3.743-0.5(9.614)}{se(\hat{\rho})}$ $se(\hat{\rho})=\sqrt{V(\hat{\beta}_1+0.5\hat{\beta}_2)}$ and that is $\sqrt{V(\hat{\beta}_1)+0.5^2 V(\hat{\beta}_2)+2\times 0.5Cov(\hat{\beta}_1, \hat{\beta}_2)}=2.024$, leading to $t=-0.526$. Thus, we fail to reject $H_0$ as $|t|<|t^c|$, and we have evidence that spending 0.5 million eur in maintenance compensates the impact on the number of endangered species of having 1000 more visitors.
 :::
 
 # Appendix
@@ -178,4 +178,4 @@ where $y$ is the number of animals and plants in extintion danger in each park, 
 
 </div>
 
-[Back to the exercise 3.1](#ex-3.1-questions) [Back to the exercise 3.4](#ex-3.4-questions2)
+Back to [Exercise 3.1](#ex-3.1-questions) [Exercise 3.3](#ex-3.3-questions) [Exercise 3.4](#ex-3.4-questions2)
