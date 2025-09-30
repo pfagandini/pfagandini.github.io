@@ -117,7 +117,7 @@ where $\theta_3=\beta_2+\beta_3$
 2. Interpret the null hypothesis $H_0: \theta_3=0$.
 
 ::: {.notes}
-1. subtract and add $beta_2\log(employ)$ and then you get the result.
+1. subtract and add $\beta_2\log(employ)$ and then you get the result.
 2. $H_0: \theta_3=0$ can be written as $\beta_2+\beta_3=0$ or $\beta_2=-\beta_3$, that is under the null hypothesis the effects cancel out, or are symmetric.
 
 :::
