@@ -6,8 +6,8 @@
 <script src="03_Inference_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="03_Inference_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="03_Inference_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="03_Inference_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="03_Inference_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Paulo Fagandini">
   <title>Inference</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="03_Inference_files/libs/revealjs/dist/theme/quarto-ee9ab3830bbe7759b42dda8416faf5cd.css">
+  <link rel="stylesheet" href="03_Inference_files/libs/revealjs/dist/theme/quarto-5f66212b01f094180b8d10b5b9960144.css">
   <link href="03_Inference_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03_Inference_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03_Inference_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -149,9 +149,7 @@ Paulo Fagandini
 <section id="review-1" class="slide level2">
 <h2>Review</h2>
 <ul>
-<li class="fragment">Matrix/vector SLR</li>
-<li class="fragment">MLR</li>
-<li class="fragment"><span class="math inline">\(\beta_i=\frac{\sum \hat{r}y}{\sum \hat{r}^2}\)</span> with <span class="math inline">\(\hat{r}\)</span> the residuals of <span class="math inline">\(x_i=\gamma_0+\sum_{j\neq i} \gamma_j x_j+\varepsilon\)</span></li>
+<li class="fragment">Moments and distribution for <span class="math inline">\(\hat{\beta}\)</span></li>
 </ul>
 </section>
 <section id="exercises" class="slide level2">
@@ -220,6 +218,7 @@ Consider the estimated equation from a model explaining college GPA with the hig
 <li class="fragment">Can you reject the hypothesis <span class="math inline">\(H_0:\beta_{hsGPA}=0.4\)</span> against the twosided alternative at the 5% significance level?</li>
 <li class="fragment">Can you reject the hypothesis <span class="math inline">\(H_0: \beta_{hsGPA}=1\)</span> against the two-sided alternative at the 5% significance level?</li>
 </ol>
+<p><a href="#/app-t-table">t-student</a></p>
 <aside class="notes">
 <p>1.<span class="math inline">\(0.412\pm 1.96\times 0.094\Rightarrow [0.228, 0.596]\)</span> 2. <span class="math inline">\(H_0: \beta_1=0.4\)</span> cannot be rejected at 5% significance as 0.4 is in the confidence interval. 3. <span class="math inline">\(H_0: \beta_1=1\)</span> is rejected at 5% significance as 1 falls out of the CI.</p>
 <style type="text/css">
@@ -259,7 +258,7 @@ Consider the estimated equation from a model explaining college GPA with the hig
 <aside class="notes">
 <ol type="1">
 <li>subtract and add <span class="math inline">\(beta_2\log(employ)\)</span> and then you get the result.</li>
-<li><span class="math inline">\(H_0: \theta_3=0\)</span> can be written as <span class="math inline">\(\beta_2+\beta_3=0\)</span> or <span class="math inline">\(\beta_2=-\beta_3\)</span>, that is under the null hypothesis the effects cancell out, or are symmetric.</li>
+<li><span class="math inline">\(H_0: \theta_3=0\)</span> can be written as <span class="math inline">\(\beta_2+\beta_3=0\)</span> or <span class="math inline">\(\beta_2=-\beta_3\)</span>, that is under the null hypothesis the effects cancel out, or are symmetric.</li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -288,7 +287,7 @@ and when the second equation is estimated, we obtain:
 \widehat{\log(scrap)}=\underset{(4.57)}{11.74}+\underset{(0.019)}{0.043} hrsemp - \underset{(0.370)}{0.951}\log(sales/employ) + \underset{(0.205)}{0041}\log(employ)
 \]</span></p>
 </div>
-With <span class="math inline">\(R^2=0.310\)</span> for both regressions. Test if the effect of annual firm sales (in dollars) on scrap rates is the symmetric of the effect of the number of firm employees on scrap rates.</li>
+With <span class="math inline">\(R^2=0.310\)</span> for both regressions. Test if the effect of annual firm sales (in USD) on scrap rates is the symmetric of the effect of the number of firm employees on scrap rates.</li>
 </ol>
 <p><a href="#/app-t-table">t-student</a></p>
 <aside class="notes">
@@ -319,7 +318,7 @@ With <span class="math inline">\(R^2=0.310\)</span> for both regressions. Test i
 <ol type="1">
 <li class="fragment">Interpret the parameter estimates.</li>
 <li class="fragment">Knowing that <span class="math inline">\(R^2=0.984\)</span>, test the overall significance of the regression.</li>
-<li class="fragment">The director of the Natural Parks association is worried about the number of vists to the parks: <em>“… if not for the nature, at least in financial terms we have to reduce the number of visits, because in order to compensate for an increase of one thousand visitors we have to spend 0.5 millin euros more in maintenance”</em>. Comment on this sentence.</li>
+<li class="fragment">The director of the Natural Parks association is worried about the number of vists to the parks: <em>“… if not for the nature, at least in financial terms we have to reduce the number of visits, because in order to compensate for an increase of one thousand visitors we have to spend 0.5 million euros more in maintenance”</em>. Comment on this sentence.</li>
 </ol>
 <aside class="notes">
 <ol type="1">
@@ -886,7 +885,7 @@ With <span class="math inline">\(R^2=0.310\)</span> for both regressions. Test i
 </tbody>
 </table>
 </div>
-<p><a href="#/ex-3.1-questions">Back to the exercise 3.1</a> <a href="#/ex-3.4-questions2">Back to the exercise 3.4</a></p>
+<p>Back to <a href="#/ex-3.1-questions">Exercise 3.1</a> <a href="#/ex-3.3-questions">Exercise 3.3</a> <a href="#/ex-3.4-questions2">Exercise 3.4</a></p>
 
 
 </section></section>
@@ -1080,7 +1079,7 @@ With <span class="math inline">\(R^2=0.310\)</span> for both regressions. Test i
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1107,80 +1106,42 @@ With <span class="math inline">\(R^2=0.310\)</span> for both regressions. Test i
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1230,13 +1191,14 @@ With <span class="math inline">\(R^2=0.310\)</span> for both regressions. Test i
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
