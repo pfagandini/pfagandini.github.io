@@ -86,7 +86,7 @@ $$
 
 ::: {.notes}
 
-1.$0.412\pm 1.96\times 0.094\Rightarrow [0.228, 0.596]$
+1. $0.412\pm 1.96\times 0.094\Rightarrow [0.228, 0.596]$
 2. $H_0: \beta_1=0.4$ cannot be rejected at 5% significance as 0.4 is in the confidence interval.
 3. $H_0: \beta_1=1$ is rejected at 5% significance as 1 falls out of the CI.
 :::
