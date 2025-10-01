@@ -1,57 +1,65 @@
 ---
-title: "Formulae"
-author: "Econometrics"
-institute: "Nova School of Business and Economics"
+title: "Econometrics Midterm Formula Sheet"
 format: html
 ---
 
-::: {.columns}
+$$
+y = \beta_0 + \beta_1 x + u
+$$
 
-::: {.column}
-* $Y_i = \beta_0 + \beta_1 x_1^i + \dots + \beta_k X^k_i + u_i$
+$$
+\hat{\beta}_1 = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}, 
+\quad 
+\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}
+$$
 
-* $\hat{\beta}_j = \frac{\sum_{i=1}^n (x_i^j - \bar{x}^j)(y_i - \bar{y})}{\sum_{i=1}^n (x_i^j - \bar{x}^j)^2}$
+$$
+SST = SSE + SSR, 
+\quad R^2 = 1 - \frac{SSR}{SST}
+$$
 
-* $\hat{\beta}_0 = \bar{y}-\sum_j \beta_j\bar{x}^j$
+---
 
+$$
+y = X\beta + u, 
+\quad 
+\hat{\beta} = (X'X)^{-1} X'y
+$$
+
+$$
+Var(\hat{\beta}|X) = \sigma^2 (X'X)^{-1}, 
+\quad \hat{\sigma}^2 = \frac{SSR}{n-k-1}
+$$
+
+---
+
+$$
+t = \frac{\hat{\beta}_j - \beta_{j,0}}{se(\hat{\beta}_j)}
+$$
+
+:::{.columns}
+
+:::{.column}
+$$
+F = \frac{(SSR_{r} - SSR_{ur})/q}{SSR_{ur}/(n-k-1)}
+$$
 :::
 
-::: {.column}
+:::{.column}
 
-* $Y = X\beta + u$
-
-* $\hat{\beta} = \left(X'X\right)^{-1}X'y$
-
-* $V\left[\hat{\beta}\right]=\sigma^2 \left(X'X\right)^{-1}$
-
+$$
+F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
+$$
 :::
 
 :::
+---
 
-* $R^2 = 1 - \frac{\sum_{i=1}^n (Y_i - \hat{Y}_i)^2}{\sum_{i=1}^n (Y_i - \bar{Y})^2}$
- 
-$$SST=SSE+SSR$$
- 
-$$\hat{\sigma}^2 = \frac{SSR}{n-2}$$
- 
-$$SE(\hat{\beta}_1) = \sqrt{\frac{\hat{\sigma}^2}{\sum_{i=1}^n (X_i - \bar{X})^2}}$$
- 
-$$Y_i = \beta_0 + \beta_1 X_{i1} + \dots + \beta_k X_{ik} + u_i$$
- 
-$$Y = X \beta + u$$
- 
-$$\hat{\beta} = (X' X)^{-1} X' Y$$
- 
-$$\widehat{Var}(\hat{\beta}) = \hat{\sigma}^2 (X' X)^{-1}$$
- 
-$$\bar{R}^2 = 1 - (1 - R^2) \frac{n-1}{n-k-1}$$
- 
-$$t = \frac{\hat{\beta}_j - c}{SE(\hat{\beta}_j)}$$
- 
-$$\hat{\beta}_j \pm t_{\alpha/2, n-k-1} \cdot SE(\hat{\beta}_j)$$
- 
-$$F = \frac{R^2/k}{(1-R^2)/(n-k-1)}\sim F_{(k,n-k-1)}$$
- 
-$$F = \frac{(SSR_r - SSR_{ur})/q}{SSR_{ur}/(n-k-1)}=\frac{(R^2_{ur}-R^2_r)/q}{(1-R^2_{ur})/(n-k-1)}$$
- 
-$$\widehat{\text{Var}}_{\text{HR}}(\hat{\beta}) = (X' X)^{-1} \left( \sum_{i=1}^n \hat{u}_i^2 X_i X_i' \right) (X' X)^{-1}$$
+$$
+\hat{\beta}_1^{IV} = \frac{\sum z_i y_i}{\sum z_i x_i}
+$$
+
+$$
+\hat{\beta}^{2SLS} = (X'P_Z X)^{-1} X'P_Z y, 
+\quad P_Z = Z(Z'Z)^{-1}Z'
+$$
