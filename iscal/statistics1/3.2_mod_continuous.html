@@ -280,6 +280,189 @@ F_X(x)=\begin{cases}
 <h1>Normal Distribution</h1>
 
 </section>
+<section id="normal-distribution-1" class="slide level2">
+<h2>Normal Distribution</h2>
+<p>The <strong>Gaussian</strong> or <strong>Normal</strong> Distributions is one of the most used distributions, playing a key role in statistical inference.</p>
+<p>Rhe r.v. <span class="math inline">\(X\)</span> is normally distributed, <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>, if it’s density and cumulative probability distribution functions:</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{\sigma^2}}\\
+P(X\leq a)=F(a)=\int_{-\infty}^a f(t)dt
+\]</span></p>
+<p>Where <span class="math inline">\(E[X]=\mu\)</span> and <span class="math inline">\(Var[X]=\sigma^2\)</span></p>
+</section>
+<section id="normal-distribution-2" class="slide level2">
+<h2>Normal Distribution</h2>
+
+<img data-src="3.2_mod_continuous_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="standard-normal" class="slide level2">
+<h2>Standard Normal</h2>
+<p>If <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span> we call this the <em>standard</em> normal distribution, where <span class="math inline">\(Z\sim N(0,1)\)</span>.</p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>. Let <span class="math inline">\(Z=\frac{X-\mu}{\sigma}\)</span>, then <span class="math display">\[Z\sim N(0,1)\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="standard-normal-1" class="slide level2">
+<h2>Standard Normal</h2>
+<p>That is, we can <em>standardize</em> a r.v. distributed Normally. Its probability function is denoted <span class="math inline">\(\Phi\)</span>, and its density is <span class="math inline">\(\phi\)</span>.</p>
+<p><span class="math display">\[
+\phi(z)= \frac{1}{\sqrt{2\pi}}e^{-z^2} \\ \Phi(z)=P(Z\leq z) = \int_{-\infty}^z \frac{1}{\sqrt{2\pi}}e^{-t^2} dt
+\]</span></p>
+</section>
+<section id="standard-normal-2" class="slide level2">
+<h2>Standard Normal</h2>
+<p>How do we know if a r.v. follows a Normal distribution?</p>
+<ol type="1">
+<li class="fragment">There is no rule, you need to look at the data (histogram) and decide.</li>
+<li class="fragment">This distribution is popular because of the Law of Large Numbers and the Central Limit Theorem (covered in Statistics II)</li>
+<li class="fragment">Even though it is by far the most popular, not always it is used correctly.</li>
+</ol>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
+<p>Consider the r.v. <span class="math inline">\(Z\sim N(0,1)\)</span>. Find <span class="math inline">\(P(Z\leq 1.65)\)</span>.</p>
+<p><span class="math display">\[P(Z\leq 1.65) = F(1.65)=\Phi(1.65)=0.9505\]</span></p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li class="fragment">This cannot be solved using the classical integration. Other techniques (approximations) are necessary.</li>
+<li class="fragment">We will rely on Tables to find out the values for the Standard Normal distribution. Remember you can always <em>standardize</em> other Normal random variables.</li>
+<li class="fragment">If <span class="math inline">\(z&lt;0\)</span>, recall that the distribution is symmetric, then <span class="math inline">\(\Phi(-z)=1-\Phi(z)\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="example-1-1" class="slide level2">
+<h2>Example 1</h2>
+
+<img data-src="3.2_mod_continuous_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+<p>Consider the r.v. <span class="math inline">\(X\sim N(6,25)\)</span>. Find <span class="math inline">\(P(X\leq 12)\)</span>.</p>
+<div class="fragment">
+<p><span class="math display">\[P(X\leq 12)=P\left(\frac{X-6}{5}\leq \frac{12-6}{5}\right)\]</span></p>
+<p>Or</p>
+<p><span class="math display">\[P(Z\leq 1.2)=\Phi(1.2)=0.8849\]</span></p>
+</div>
+</section>
+<section id="example-2-1" class="slide level2">
+<h2>Example 2</h2>
+
+<img data-src="3.2_mod_continuous_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="example-3" class="slide level2">
+<h2>Example 3</h2>
+<p>If <span class="math inline">\(X\sim N(6,25)\)</span>, find <span class="math inline">\(P(X\leq 12)\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+P(6&lt;X\leq 12)=F(12)-F(6)=
+\]</span> <span class="math display">\[
+P\left(\frac{6-6}{5}&lt;\frac{X-6}{5}\leq \frac{12-6}{5}\right)
+\]</span></p>
+<p>Or</p>
+<p><span class="math display">\[
+P(0&lt;Z\leq 1.2)=\Phi(1.2)-\Phi(0)\\0.8849-0.5=0.3849
+\]</span></p>
+</div>
+</section>
+<section id="example-3-1" class="slide level2">
+<h2>Example 3</h2>
+
+<img data-src="3.2_mod_continuous_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="example-4" class="slide level2">
+<h2>Example 4</h2>
+<p>Let <span class="math inline">\(X\sim N(6,25)\)</span>. Find <span class="math inline">\(P(X\leq -4)\)</span> and <span class="math inline">\(P(X\geq 16)\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+P(X\leq -4)=P\left(\frac{X-6}{5}\leq \frac{-4-6}{5}\right)=\\
+P(Z\leq -2)=\Phi(-2)=1-\Phi(2)=0.0228
+\]</span></p>
+</div>
+</section>
+<section id="example-4-1" class="slide level2">
+<h2>Example 4</h2>
+
+<img data-src="3.2_mod_continuous_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="example-5" class="slide level2">
+<h2>Example 5</h2>
+<p>Check that <span class="math inline">\(P(X\leq -4)=P(X\geq 16)\)</span></p>
+<div class="fragment">
+<p>Because of symmetry: <span class="math inline">\(P(X\leq \mu-k)=P(X\geq \mu+k)\)</span> <span class="math inline">\(\forall k\in\mathbb{R}\)</span></p>
+<p><span class="math inline">\(P(X\leq -4)=P(X\leq 6-10)=\\=P(X\geq 6+10)=P(X\geq 16)\)</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Corollary</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\Phi(-k)=P(Z\leq -k)=P(Z\geq k)=1-P(Z\leq k)=1-\Phi(k)\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-6" class="slide level2">
+<h2>Example 6</h2>
+<p>Consider the distribution <span class="math inline">\(X\sim N(6,25)\)</span></p>
+<p>Find <span class="math inline">\(P(0\leq X\leq 8)\)</span></p>
+<div class="fragment">
+<p><span class="math inline">\(P(0\leq X \leq 8)=P(0&lt;X\leq 8)\)</span> which is equivalent to</p>
+<p><span class="math display">\[
+P(-1.2&lt;Z\leq 0.4)=\Phi(0.4)-\Phi(-1.2)=\\
+\Phi(0.4)-\left[1-\Phi(1.2)\right]=\\
+0.6554-[1-0.8849]=0.5403
+\]</span></p>
+</div>
+</section>
+<section id="example-7" class="slide level2">
+<h2>Example 7</h2>
+<p>Consider the r.v. <span class="math inline">\(X\sim N(6, 25)\)</span>. Find <span class="math inline">\(P(|X-6|&gt;10)\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[P(|X-6|&gt;10)=1-P(X-6|\leq 10)\]</span></p>
+<p><span class="math display">\[1-P(-10\leq X-6\leq 10)=1-P(-2&lt;Z\leq 2)\]</span></p>
+<p><span class="math display">\[1-[\Phi(2)-\Phi(-2)]=1-[\Phi(2)-1+\Phi(2)]\]</span></p>
+<p><span class="math display">\[2-2\Phi(2)=2-2\times 0.9772=0.0456\]</span></p>
+</div>
+</section>
+<section id="example-8" class="slide level2">
+<h2>Example 8</h2>
+<p>Cosnider the r.v. <span class="math inline">\(X\sim N(6,25)\)</span>, find <span class="math inline">\(k\)</span> such that <span class="math inline">\(P(X&gt;k)=0.9\)</span></p>
+<div class="fragment">
+<p><span class="math inline">\(P(X&gt;k)=0.9\Leftrightarrow 1-P(X\leq k)=0.9\)</span></p>
+<p>Or</p>
+<p><span class="math display">\[P(X\leq k)=0.10 \Leftrightarrow P\left(Z\leq \frac{k-6}{5}\right)=0.10\]</span></p>
+<p><span class="math display">\[P\left(Z\leq \frac{k-6}{5}\right)=0.10\Leftrightarrow \Phi\left(\frac{k-6}{5}\right)=0.10\]</span></p>
+<p>Because of symmetry we have <span class="math inline">\(P(Z\leq -z)=P(Z\geq z)\)</span></p>
+</div>
+</section>
+<section id="example-8-1" class="slide level2">
+<h2>Example 8</h2>
+<p>Using the table we find that <span class="math inline">\(P(Z\geq z)=0.1\)</span> implies <span class="math inline">\(\Phi^{-1}(z)=0.1\)</span> or <span class="math inline">\(z=\pm 1.282\)</span>. Substituting we get:</p>
+<p><span class="math display">\[\Phi(-1.282)=0.1\Leftrightarrow \frac{k-6}{5}=-1.282\]</span> <span class="math display">\[k=6-1.282\times 5 = -0.41\]</span></p>
+</section>
+<section id="example-8-2" class="slide level2">
+<h2>Example 8</h2>
+
+<img data-src="3.2_mod_continuous_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="references" class="slide level2">
 <h2>References</h2>
 <ul>
@@ -288,6 +471,81 @@ F_X(x)=\begin{cases}
 <li>Pimenta, F., Andrade e Silva, J.; Silva Ribeiro, C. &amp; Murteira, B., Introdução à Estatística – 3ª Edição, Escolar Editora, 2015</li>
 <li>Ferreira, T., Custódio, S.G., Modelos Probabilísticos – Síntese Teórica e Exercícios Resolvidos, Edições Sílabo (1ª Edição), 2023</li>
 </ul>
+</section>
+<section id="normal-distribution-3" class="slide level2">
+<h2>Normal Distribution</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem: Normal additivity</strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(X_1\sim N(\mu_1,\sigma_1^2)\)</span> and <span class="math inline">\(X_2\sim N(\mu_2,\sigma_2^2)\)</span>, then for any <span class="math inline">\(a,b\in\mathbb{R}\)</span> we have that <span class="math inline">\(T=aX_1+bX_2\)</span>, where <span class="math display">\[T\sim N(\mu_T,\sigma_T^2)\]</span></p>
+</div>
+</div>
+</div>
+<p>To find <span class="math inline">\(\mu_T\)</span> and <span class="math inline">\(\sigma_T^2\)</span> remember the properties of the mean and variance.</p>
+</section>
+<section id="example-9" class="slide level2">
+<h2>Example 9</h2>
+<p>Let the r.v.s <span class="math inline">\(X\sim N(6,4)\)</span> and <span class="math inline">\(Y\sim N(6,4)\)</span>, with <span class="math inline">\(T=0.5 X-Y\)</span> Find <span class="math inline">\(\mu_T\)</span> and <span class="math inline">\(\sigma_T^2\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[\mu_T=E[0.5X-Y]=0.5E[X]-E[Y]=\\ 0.5 \times 6 - 6 = -3\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\sigma_T^2=V[0.5 X- Y]=V[0.5 X]+V[-Y]=\\ 0.5^2 V[X]+V[Y]= 0.25 \times 4 + 4 = 5\]</span></p>
+</div>
+</section>
+<section id="example-9-1" class="slide level2">
+<h2>Example 9</h2>
+<p>Find <span class="math inline">\(P(T&gt;0)\)</span></p>
+<div class="fragment">
+<p><span class="math inline">\(T\sim N(-3, 5)\)</span></p>
+<p><span class="math display">\[P(T&gt;0)=P\left(Z&gt;\frac{0+3}{\sqrt{5}}\right)=1-P(Z\leq 1.34)=\\ 1-\Phi(1.34)=0.0901\]</span></p>
+</div>
+</section>
+<section id="example-9-2" class="slide level2">
+<h2>Example 9</h2>
+
+<img data-src="3.2_mod_continuous_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="normal-distribution-4" class="slide level2">
+<h2>Normal Distribution</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Corollaries</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><span class="math inline">\(X_i\sim N(\mu,\sigma^2)\)</span> for <span class="math inline">\(i=1,\dots,n\)</span>, i.i.d.</li>
+<li><span class="math inline">\(T=X_1+\dots+X_n\)</span> with <span class="math inline">\(\bar{X}=\frac{T}{n}\)</span></li>
+</ol>
+<p>Then:</p>
+<ol type="1">
+<li><span class="math inline">\(T\sim N(n\times \mu, n\sigma^2)\)</span></li>
+<li><span class="math inline">\(\bar{X}\sim N\left(\mu, \frac{\sigma^2}{n}\right)\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="example-10" class="slide level2">
+<h2>Example 10</h2>
+<p>Let <span class="math inline">\(X_i\sim N(120, 64)\)</span> be r.v.s representing the number of bank deposits made in a specific day. Then <span class="math inline">\(T=X_1+\dots+X_5\)</span> are the weekly deposits.</p>
+<p>Find the probability of the weekly deposits exceed 620.</p>
+<div class="fragment">
+<p><span class="math inline">\(T\sim N(600, 320)\)</span> because of the Normal additivity property.</p>
+</div>
+</section>
+<section id="example-10-1" class="slide level2">
+<h2>Example 10</h2>
+<p><span class="math display">\[P(T&gt;620)=P\left(Z&gt;\frac{620-5\times 120}{\sqrt{5}\times 8}\right)=\\1-P(Z\leq 1.12)=1-\Phi(1.12)=0.1314\]</span></p>
 </section></section>
 <section>
 <section id="appendix" class="title-slide slide level1 center">

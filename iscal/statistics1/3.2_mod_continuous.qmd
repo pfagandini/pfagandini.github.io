@@ -190,6 +190,378 @@ What is the probability that no consultation occurs before the first 10 minutes?
 
 # Normal Distribution
 
+## Normal Distribution
+
+The **Gaussian** or **Normal** Distributions is one of the most used distributions, playing a key role in statistical inference.
+
+Rhe r.v. $X$ is normally distributed, $X\sim N(\mu,\sigma^2)$, if it's density and cumulative probability distribution functions:
+
+$$
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{\sigma^2}}\\
+P(X\leq a)=F(a)=\int_{-\infty}^a f(t)dt
+$$
+
+Where $E[X]=\mu$ and $Var[X]=\sigma^2$
+
+## Normal Distribution
+
+```{r}
+# Parameters
+mu <- 0
+sigma <- 1
+
+# Create a sequence of x values
+x <- seq(mu - 4*sigma, mu + 4*sigma, length.out = 500)
+
+# Gaussian density
+y <- dnorm(x, mean = mu, sd = sigma)
+
+# Plot base curve
+plot(x, y, type = "l", lwd = 2, col = "blue",
+     main = "Gaussian Distribution",
+     ylab = "Density", xlab = "x")
+
+# Add vertical lines for mean and ±1 sigma
+abline(v = mu, col = "black", lwd = 2, lty = 2)
+
+
+# Annotate
+text(mu-0.2, max(y)*0.8, expression(mu), pos = 3, cex = 1.2)
+```
+
+## Standard Normal
+
+If $\mu=0$ and $\sigma^2=1$ we call this the *standard* normal distribution, where $Z\sim N(0,1)$.
+
+::: {.callout-important}
+## Theorem
+
+Let $X\sim N(\mu,\sigma^2)$. Let $Z=\frac{X-\mu}{\sigma}$, then $$Z\sim N(0,1)$$
+
+:::
+
+## Standard Normal
+
+That is, we can *standardize* a r.v. distributed Normally. Its probability function is denoted $\Phi$, and its density is $\phi$.
+
+$$
+\phi(z)= \frac{1}{\sqrt{2\pi}}e^{-z^2} \\ \Phi(z)=P(Z\leq z) = \int_{-\infty}^z \frac{1}{\sqrt{2\pi}}e^{-t^2} dt
+$$
+
+## Standard Normal
+
+How do we know if a r.v. follows a Normal distribution?
+
+1. There is no rule, you need to look at the data (histogram) and decide.
+2. This distribution is popular because of the Law of Large Numbers and the Central Limit Theorem (covered in Statistics II)
+3. Even though it is by far the most popular, not always it is used correctly.
+
+## Example 1
+
+Consider the r.v. $Z\sim N(0,1)$. Find $P(Z\leq 1.65)$.
+
+$$P(Z\leq 1.65) = F(1.65)=\Phi(1.65)=0.9505$$
+
+::: {.callout-warning}
+
+1. This cannot be solved using the classical integration. Other techniques (approximations) are necessary.
+2. We will rely on Tables to find out the values for the Standard Normal distribution. Remember you can always *standardize* other Normal random variables.
+3. If $z<0$, recall that the distribution is symmetric, then $\Phi(-z)=1-\Phi(z)$
+:::
+
+## Example 1
+
+```{r}
+# Parameters
+mu <- 0
+sigma <- 1
+t <- 1.65   # point up to which we shade the distribution
+
+# Create a sequence of x values
+x <- seq(mu - 4*sigma, mu + 4*sigma, length.out = 500)
+
+# Gaussian density
+y <- dnorm(x, mean = mu, sd = sigma)
+
+# Plot base curve
+plot(x, y, type = "l", lwd = 2, col = "blue",
+     main = "Gaussian Distribution",
+     ylab = "Density", xlab = "x")
+
+# Shade region from -Inf to t
+shade_x <- seq(mu - 4*sigma, t, length.out = 200)
+shade_y <- dnorm(shade_x, mean = mu, sd = sigma)
+
+polygon(c(min(shade_x), shade_x, t),
+        c(0, shade_y, 0),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# Draw vertical line at t
+abline(v = t, col = "red", lwd = 2, lty = 2)
+```
+
+## Example 2
+
+Consider the r.v. $X\sim N(6,25)$. Find $P(X\leq 12)$.
+
+. . .
+
+$$P(X\leq 12)=P\left(\frac{X-6}{5}\leq \frac{12-6}{5}\right)$$
+
+Or 
+
+$$P(Z\leq 1.2)=\Phi(1.2)=0.8849$$
+
+## Example 2
+
+```{r}
+# Parameters
+mu <- 6
+sigma <- 5
+t <- 12   # point up to which we shade the distribution
+
+# Create a sequence of x values
+x <- seq(mu - 4*sigma, mu + 4*sigma, length.out = 500)
+
+# Gaussian density
+y <- dnorm(x, mean = mu, sd = sigma)
+
+# Plot base curve
+plot(x, y, type = "l", lwd = 2, col = "blue",
+     main = "Gaussian Distribution",
+     ylab = "Density", xlab = "x")
+
+# Shade region from -Inf to t
+shade_x <- seq(mu - 4*sigma, t, length.out = 200)
+shade_y <- dnorm(shade_x, mean = mu, sd = sigma)
+
+polygon(c(min(shade_x), shade_x, t),
+        c(0, shade_y, 0),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# Draw vertical line at t
+abline(v = t, col = "red", lwd = 2, lty = 2)
+
+# (Optional) Compute probability P(X < t)
+prob <- pnorm(t, mean = mu, sd = sigma)
+mtext(paste0("P(X < ", t, ") = ", round(prob, 4)), side = 3)
+```
+
+## Example 3
+
+If $X\sim N(6,25)$, find $P(X\leq 12)$
+
+. . .
+
+$$
+P(6<X\leq 12)=F(12)-F(6)=
+$$
+$$
+P\left(\frac{6-6}{5}<\frac{X-6}{5}\leq \frac{12-6}{5}\right)
+$$
+
+Or
+
+$$
+P(0<Z\leq 1.2)=\Phi(1.2)-\Phi(0)\\0.8849-0.5=0.3849
+$$
+
+## Example 3
+
+```{r}
+# Parameters
+mu <- 6
+sigma <- 5
+s <- 6   # lower bound
+t <- 12    # upper bound
+
+# Create x values
+x <- seq(mu - 4*sigma, mu + 4*sigma, length.out = 500)
+
+# Gaussian density
+y <- dnorm(x, mean = mu, sd = sigma)
+
+# Plot base curve
+plot(x, y, type = "l", lwd = 2, col = "blue",
+     main = "Gaussian Distribution",
+     ylab = "Density", xlab = "x")
+
+# Shade region between s and t
+shade_x <- seq(s, t, length.out = 200)
+shade_y <- dnorm(shade_x, mean = mu, sd = sigma)
+
+polygon(c(s, shade_x, t),
+        c(0, shade_y, 0),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# Add vertical lines at s and t
+abline(v = s, col = "red", lwd = 2, lty = 2)
+abline(v = t, col = "red", lwd = 2, lty = 2)
+
+# (Optional) Compute probability P(s < X < t)
+prob <- pnorm(t, mean = mu, sd = sigma) - pnorm(s, mean = mu, sd = sigma)
+mtext(paste0("P(", s, " < X < ", t, ") = ", round(prob, 4)), side = 3)
+```
+
+## Example 4
+
+Let $X\sim N(6,25)$. Find $P(X\leq -4)$ and $P(X\geq 16)$
+
+. . .
+
+$$
+P(X\leq -4)=P\left(\frac{X-6}{5}\leq \frac{-4-6}{5}\right)=\\
+P(Z\leq -2)=\Phi(-2)=1-\Phi(2)=0.0228
+$$
+
+## Example 4
+
+```{r}
+# Parameters
+mu <- 6
+sigma <- 5
+s <- -4   # lower bound
+t <- 16    # upper bound
+
+# Create x values
+x <- seq(mu - 4*sigma, mu + 4*sigma, length.out = 500)
+
+# Gaussian density
+y <- dnorm(x, mean = mu, sd = sigma)
+
+# Plot base curve
+plot(x, y, type = "l", lwd = 2, col = "blue",
+     main = "Gaussian Distribution",
+     ylab = "Density", xlab = "x")
+
+# ---- Left tail shading (X < s) ----
+shade_x_left <- seq(mu - 4*sigma, s, length.out = 200)
+shade_y_left <- dnorm(shade_x_left, mean = mu, sd = sigma)
+polygon(c(min(shade_x_left), shade_x_left, s),
+        c(0, shade_y_left, 0),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# ---- Right tail shading (X > t) ----
+shade_x_right <- seq(t, mu + 4*sigma, length.out = 200)
+shade_y_right <- dnorm(shade_x_right, mean = mu, sd = sigma)
+polygon(c(t, shade_x_right, max(shade_x_right)),
+        c(0, shade_y_right, 0),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# Add vertical lines at s and t
+abline(v = s, col = "red", lwd = 2, lty = 2)
+abline(v = t, col = "red", lwd = 2, lty = 2)
+
+# (Optional) Compute probability P(X < s or X > t)
+prob <- pnorm(s, mean = mu, sd = sigma) + (1 - pnorm(t, mean = mu, sd = sigma))
+mtext(paste0("P(X < ", s, " or X > ", t, ") = ", round(prob, 4)), side = 3)
+```
+
+## Example 5
+
+Check that $P(X\leq -4)=P(X\geq 16)$
+
+. . .
+
+Because of symmetry:
+$P(X\leq \mu-k)=P(X\geq \mu+k)$ $\forall k\in\mathbb{R}$
+
+$P(X\leq -4)=P(X\leq 6-10)=\\=P(X\geq 6+10)=P(X\geq 16)$
+
+::: {.callout-tip}
+## Corollary
+
+$\Phi(-k)=P(Z\leq -k)=P(Z\geq k)=1-P(Z\leq k)=1-\Phi(k)$
+
+:::
+
+## Example 6
+
+Consider the distribution $X\sim N(6,25)$
+
+Find $P(0\leq X\leq 8)$
+
+. . .
+
+$P(0\leq X \leq 8)=P(0<X\leq 8)$ which is equivalent to
+
+$$
+P(-1.2<Z\leq 0.4)=\Phi(0.4)-\Phi(-1.2)=\\
+\Phi(0.4)-\left[1-\Phi(1.2)\right]=\\
+0.6554-[1-0.8849]=0.5403
+$$
+
+## Example 7
+
+Consider the r.v. $X\sim N(6, 25)$. Find $P(|X-6|>10)$
+
+. . .
+
+$$P(|X-6|>10)=1-P(X-6|\leq 10)$$
+
+$$1-P(-10\leq X-6\leq 10)=1-P(-2<Z\leq 2)$$
+
+$$1-[\Phi(2)-\Phi(-2)]=1-[\Phi(2)-1+\Phi(2)]$$
+
+$$2-2\Phi(2)=2-2\times 0.9772=0.0456$$
+
+## Example 8
+
+Cosnider the r.v. $X\sim N(6,25)$, find $k$ such that $P(X>k)=0.9$
+
+. . .
+
+$P(X>k)=0.9\Leftrightarrow 1-P(X\leq k)=0.9$
+
+Or
+
+$$P(X\leq k)=0.10 \Leftrightarrow P\left(Z\leq \frac{k-6}{5}\right)=0.10$$
+
+$$P\left(Z\leq \frac{k-6}{5}\right)=0.10\Leftrightarrow \Phi\left(\frac{k-6}{5}\right)=0.10$$
+
+Because of symmetry we have $P(Z\leq -z)=P(Z\geq z)$
+
+## Example 8
+
+Using the table we find that $P(Z\geq z)=0.1$ implies $\Phi^{-1}(z)=0.1$ or $z=\pm 1.282$. Substituting we get:
+
+$$\Phi(-1.282)=0.1\Leftrightarrow \frac{k-6}{5}=-1.282$$ $$k=6-1.282\times 5 = -0.41$$
+
+## Example 8
+
+```{r}
+# Parameters
+mu <- 0
+sigma <- 1
+t <- -1.28   # point up to which we shade the distribution
+
+# Create a sequence of x values
+x <- seq(mu - 4*sigma, mu + 4*sigma, length.out = 500)
+
+# Gaussian density
+y <- dnorm(x, mean = mu, sd = sigma)
+
+# Plot base curve
+plot(x, y, type = "l", lwd = 2, col = "blue",
+     main = "Gaussian Distribution",
+     ylab = "Density", xlab = "x")
+
+# Shade region from -Inf to t
+shade_x <- seq(mu - 4*sigma, t, length.out = 200)
+shade_y <- dnorm(shade_x, mean = mu, sd = sigma)
+
+polygon(c(min(shade_x), shade_x, t),
+        c(0, shade_y, 0),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# Draw vertical line at t
+abline(v = t, col = "red", lwd = 2, lty = 2)
+
+# (Optional) Compute probability P(X < t)
+prob <- pnorm(t, mean = mu, sd = sigma)
+mtext(paste0("P(X < ", t, ") = ", round(prob, 4)), side = 3)
+```
+
 ## References
 
 ::: {.nonincremental}
@@ -200,6 +572,113 @@ What is the probability that no consultation occurs before the first 10 minutes?
 * Ferreira, T., Custódio, S.G., Modelos Probabilísticos – Síntese Teórica e Exercícios Resolvidos, Edições Sílabo (1ª Edição), 2023 
 
 :::
+
+## Normal Distribution
+
+::: {.callout-important}
+
+## Theorem: Normal additivity
+
+If $X_1\sim N(\mu_1,\sigma_1^2)$ and $X_2\sim N(\mu_2,\sigma_2^2)$, then for any $a,b\in\mathbb{R}$ we have that $T=aX_1+bX_2$, where $$T\sim N(\mu_T,\sigma_T^2)$$
+
+:::
+
+To find $\mu_T$ and $\sigma_T^2$ remember the properties of the mean and variance.
+
+## Example 9
+
+Let the r.v.s $X\sim N(6,4)$ and $Y\sim N(6,4)$, with $T=0.5 X-Y$ Find $\mu_T$ and $\sigma_T^2$
+
+. . .
+
+$$\mu_T=E[0.5X-Y]=0.5E[X]-E[Y]=\\ 0.5 \times 6 - 6 = -3$$
+
+. . .
+
+$$\sigma_T^2=V[0.5 X- Y]=V[0.5 X]+V[-Y]=\\ 0.5^2 V[X]+V[Y]= 0.25 \times 4 + 4 = 5$$
+
+## Example 9
+
+Find $P(T>0)$
+
+. . .
+
+$T\sim N(-3, 5)$
+
+$$P(T>0)=P\left(Z>\frac{0+3}{\sqrt{5}}\right)=1-P(Z\leq 1.34)=\\ 1-\Phi(1.34)=0.0901$$
+
+## Example 9
+
+```{r}
+# Parameters
+mu <- -3
+sigma <- sqrt(5)
+t <- 0   # threshold above which we shade
+
+# Create x values
+x <- seq(mu - 4*sigma, mu + 4*sigma, length.out = 500)
+
+# Gaussian density
+y <- dnorm(x, mean = mu, sd = sigma)
+
+# Plot base curve
+plot(x, y, type = "l", lwd = 2, col = "blue",
+     main = "Gaussian Distribution",
+     ylab = "Density", xlab = "x")
+
+# Shade region from t to +Inf
+shade_x <- seq(t, mu + 4*sigma, length.out = 200)
+shade_y <- dnorm(shade_x, mean = mu, sd = sigma)
+
+polygon(c(t, shade_x, max(shade_x)),
+        c(0, shade_y, 0),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# Draw vertical line at t
+abline(v = t, col = "red", lwd = 2, lty = 2)
+
+# (Optional) Compute probability P(X > t)
+prob <- 1 - pnorm(t, mean = mu, sd = sigma)
+mtext(paste0("P(X > ", t, ") = ", round(prob, 4)), side = 3)
+```
+
+## Normal Distribution
+
+::: {.callout-important}
+
+## Corollaries
+
+:::{.nonincremental}
+
+1. $X_i\sim N(\mu,\sigma^2)$ for $i=1,\dots,n$, i.i.d.
+2. $T=X_1+\dots+X_n$ with $\bar{X}=\frac{T}{n}$
+
+:::
+
+Then:
+
+::: {.nonincremental}
+
+1. $T\sim N(n\times \mu, n\sigma^2)$
+2. $\bar{X}\sim N\left(\mu, \frac{\sigma^2}{n}\right)$
+
+:::
+
+:::
+
+## Example 10
+
+Let $X_i\sim N(120, 64)$ be r.v.s representing the number of bank deposits made in a specific day. Then $T=X_1+\dots+X_5$ are the weekly deposits.
+
+Find the probability of the weekly deposits exceed 620.
+
+. . .
+
+$T\sim N(600, 320)$ because of the Normal additivity property.
+
+## Example 10
+
+$$P(T>620)=P\left(Z>\frac{620-5\times 120}{\sqrt{5}\times 8}\right)=\\1-P(Z\leq 1.12)=1-\Phi(1.12)=0.1314$$
 
 # Appendix
 

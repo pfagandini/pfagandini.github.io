@@ -26,6 +26,9 @@ execute:
 engine: knitr
 ---
 
+<div style="font-size: 70%;">
+</div>
+
 ```{r}
 library(lubridate)
 library(webexercises)
@@ -666,6 +669,9 @@ Let's see why this last detail (replacing the :wrench:) is so relevant before go
 
 ## Example: With replacement
 
+
+<div style="font-size: 80%;">
+
 Initial set:
 
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
@@ -686,6 +692,8 @@ We observe, and *voilá* it was a fine wrench :wrench:. If we replace it though,
 
 That is in the exact same conditions we made our first choice, and therefore what happens with the first pick is irrelevant: These events are now independent!
 
+</div>
+
 ## Example: with replacement
 
 * With $A$, we know that when we pick the second wrench ($B$), in the box there are 2 :collision: and 8 :wrench:.
@@ -701,6 +709,8 @@ The probability of getting a :collision: is the same in each scenario! $P(B|A)= 
 $$P(B|A)=\frac{2}{10}=0.2\ \text{and}\ P(B|A^c)=\frac{2}{10}=0.2$$
 
 ## Example: no replacement
+
+<div style="font-size: 80%;">
 
 Initial set:
 
@@ -722,6 +732,8 @@ We observe, and *voilá* it was a broken wrench :collision: $A$ happened!
 | :wrench: |:wrench: |:collision: |:wrench: |:collision: |:wrench: | |:wrench: |:wrench: |:wrench: |
 
 We observe, and *voilá* it was a fine wrench :wrench: $A^c$ happened!
+
+</div>
 
 ## Example: no replacement
 
@@ -795,7 +807,7 @@ Let's define the events:
 
 $W=\{Woman\}$, $M=\{Man\}$, $U=\{Unemployed\}$
 
-1. Woman: $P(W)=\frac{525}{1000}=`r round(515/1000,3)`$
+1. Woman: $P(W)=\frac{525}{1000}=`r round(525/1000,3)`$
 2. Unemployed: $P(U)=\frac{100}{1000} = `r round(100/1000,3)`$
 3. Unemployed woman: $P(W\cap U)=\frac{55}{1000}=`r round(55/1000,3)`$
 
@@ -805,7 +817,7 @@ $W=\{Woman\}$, $M=\{Man\}$, $U=\{Unemployed\}$
 
 . . .
 
-$P(U|W)=P(U\cap W)P(W)=`r round(55/1000,3)`\times `r round(515/1000,3)`=`r round(55/525,3)`$
+$P(U|W)=P(U\cap W)P(W)=`r round(55/1000,3)`\times `r round(525/1000,3)`=`r round(55/525,3)`$
 
 3. A citizen is randomly chosen from the population, and it happens to be unemployed. What is the probability  is unemployed?
 
