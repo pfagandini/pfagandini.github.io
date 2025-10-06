@@ -107,15 +107,3 @@ library(AER)
 iv <- ivreg(sales ~ price | temp, data = data)
 summary(iv)
 ```
-
-# Appendix
-
-## t table {#app-t-table}
-
-<div style="overflow-x: auto; font-size: 0.7em; max-width:100%; max-height:50%">
-
-{{< include _t_table.qmd >}}
-
-</div>
-
-Back to [Exercise 3.1](#ex-3.1-questions) [Exercise 3.3](#ex-3.3-questions) [Exercise 3.4](#ex-3.4-questions2)
