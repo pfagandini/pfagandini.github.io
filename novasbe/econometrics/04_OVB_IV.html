@@ -281,18 +281,18 @@ lm(formula = sales ~ price, data = data)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--1.8554 -0.6354 -0.1046  0.5373  3.2454 
+-2.2422 -0.6196  0.0101  0.5171  2.9061 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 198.96876    0.38478   517.1   &lt;2e-16 ***
-price        -7.91207    0.03211  -246.4   &lt;2e-16 ***
+(Intercept) 198.83877    0.35918   553.6   &lt;2e-16 ***
+price        -7.90647    0.02968  -266.4   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.9475 on 198 degrees of freedom
-Multiple R-squared:  0.9968,    Adjusted R-squared:  0.9967 
-F-statistic: 6.073e+04 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.9398 on 198 degrees of freedom
+Multiple R-squared:  0.9972,    Adjusted R-squared:  0.9972 
+F-statistic: 7.096e+04 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -312,21 +312,37 @@ Call:
 ivreg(formula = sales ~ price | temp, data = data)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--2.1471 -0.6308 -0.1121  0.6010  3.2323 
+      Min        1Q    Median        3Q       Max 
+-2.642106 -0.622538  0.003097  0.609989  2.754196 
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 200.2285     0.4059   493.3   &lt;2e-16 ***
-price        -8.0188     0.0339  -236.5   &lt;2e-16 ***
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 199.92686    0.37612   531.6   &lt;2e-16 ***
+price        -7.99796    0.03111  -257.1   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.9736 on 198 degrees of freedom
-Multiple R-Squared: 0.9966, Adjusted R-squared: 0.9966 
-Wald test: 5.595e+04 on 1 and 198 DF,  p-value: &lt; 2.2e-16 </code></pre>
+Residual standard error: 0.962 on 198 degrees of freedom
+Multiple R-Squared: 0.9971, Adjusted R-squared: 0.9971 
+Wald test: 6.611e+04 on 1 and 198 DF,  p-value: &lt; 2.2e-16 </code></pre>
 </div>
 </div>
+</section>
+<section id="exercise-99.9-3" class="slide level2">
+<h2>Exercise 99.9</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Cov(price, U): 0.033</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cov(price, temp): 16.006</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cov(sales, temp): -128.015</code></pre>
+</div>
+</div>
+<p>So the instrument is exogenous and relevant!</p>
+<p><span class="math display">\[\hat{\beta}_{iv}=\frac{-128.015}{16.006}=-7.998\]</span></p>
 
 
 </section></section>
