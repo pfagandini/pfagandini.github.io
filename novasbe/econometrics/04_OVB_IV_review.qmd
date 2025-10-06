@@ -1,0 +1,68 @@
+---
+title: "Review for lecture SLR"
+format: html
+---
+
+## OVB
+
+Consider the true model
+$$
+Y=X\beta+Z\gamma+\epsilon
+$$
+
+Now suppose you ignore the variable $W$, is this a problem?
+
+If you ingore $W$ you estimate $Y=X\tilde{\beta}+u$. Is $\tilde{\beta}$ unbiased?
+
+$$
+E[\tilde{\beta}]=(X'X)^{-1}X'Y=(X'X)^{-1}X'(X\beta+\underbrace{W\gamma+\epsilon}_{u})=\beta+(X'X)^{-1}X'Z\gamma
+$$
+
+Note that $(X'X)^{-1}X'Z$ is the estimator for $\alpha$ of $Z=X\alpha+\epsilon$, and then
+
+$$
+E[\tilde{\beta}]=\beta+\alpha\gamma
+$$
+
+So $\tilde{\beta}$ is biased if: $\alpha\neq 0$ and $\gamma\neq 0$, which means that $W$ is uncorrelated with $X$ ($\alpha$) and $Y$ ($\gamma$). The sign of the bias $\alpha\gamma$ will depend, then, on if $\alpha$ and $\gamma$ share the same sign or not.
+
+If **bias** is positive, then $E[\tilde{\beta}]>\beta$ so the true $\beta$ is smaller than your estimate. This is particularly troublesome if you got a slightly positive $\beta$ (you cannot be sure if the true $\beta$ is zero or even negative!).
+
+If **bias** is negative, then $E[\tilde{\beta}]<\beta$ so the true $\beta$ is larger than your estimate. This is particularly troublesome if you got a slightly negative $\beta$ (you cannot be sure if the true $\beta$ is zero or even positive!).
+
+## IV Estimator
+
+We need an IV estimator when in the model
+
+$$
+Y=X\beta+u
+$$
+
+we believe that $X$ might be correlated with $u$. This will cause $\beta$ to be biased/inconsistent (remember that the OVB is a particular case, when $X$ is uncorrelated with $W$ there is no problem at all!).
+
+We could "solve" the problem above if we could find an "instrument," that is another variable $Z$ such that $E[ZX]\neq 0$ (the instrument is *relevant*) and $E[Zu]=0$ (the instrument is *exogenous*). $E[ZX]\neq 0$ can be tested, $E[Zu]=0$ cannot. You need to reason on why this is the case.
+
+If this holds true, then the estimator $ZX$ is unbiased.
+
+Note
+
+$$
+E[Z'u]=0 \quad \Leftrightarrow\quad E[Z'(y-X\beta)]=0 \quad \Leftrightarrow \quad E[Z'X]\beta=E[Z'y]
+$$
+
+Or simply $$Z'X\beta=Z'y$$ from where solving for $\beta$ we get:
+
+$$
+\hat{\beta}_{IV} = (\underbrace{Z'X}_{cov(Z,X)})^{-1}\underbrace{Z'y}_{cov(Z,Y)}
+$$
+
+Let's check this is unbiased/consistent:
+
+$$
+\begin{aligned}
+E[\hat{beta}_{IV}]&=E\left[(Z'X)^{-1}Z'y\right]=E\left[(Z'X)^{-1}Z'(X\beta+u)\right]\\
+&=\beta+E[(Z'X)^{-1}Z'u] = \beta
+\end{aligned}
+$$
+
+Because $E[Z'u]=0$ by assumption.

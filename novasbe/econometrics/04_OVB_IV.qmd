@@ -1,0 +1,121 @@
+---
+title: "OVB and IV"
+author: "Paulo Fagandini"
+institute: "Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures/NovaPrincipalV2.svg
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Review
+
+## Review
+
+* *Corrigendum*: Economics vs Statistical Significance
+* OVB
+* IV Estimator
+
+## Exercises
+
+https://moodle.novasbe.pt/mod/folder/view.php?id=4021
+
+![](pictures/qr_code.svg)
+
+<div style="font-size: 70%;">
+</div>
+
+## Exercise 2.6
+<div style="font-size: 70%;">
+For each of the following situations, determine the sign of the expected bias due to variable omission:
+
+
+1. In an equation for the demand for peanut butter, the impact on the coefficient of disposable income of omitting the price of peanut butter variable.
+2. In an earnings equation, the impact on the coefficient of experience of omitting the variable age.
+3. In a production function, the impact on the coefficient of labour of omitting the capital variable.
+4. In an annual equation for corn yields per acre (in year $t$), the impact on the coefficient of rainfall in year $t$ of omitting average temperature that year.
+5. In an equation for annual consumption of apples in the US, the impact on the coefficient of the price of bananas of omitting the price of oranges.
+6. In an equation for student grades ont he first midterm in this class, the impact on the coefficient of total hours studied (for the test) of omitting hours slept the night before the test.
+
+</div>
+
+::: {.notes}
+1. $Corr(Z,Y)<0$ $Corr(X,Z)>0$, bias $-$
+2. $Corr(Z,Y)>0$ $Corr(X,Z)>0$, bias $+$
+3. $Corr(Z,Y)>0$ $Corr(X,Z)>0$, bias $+$
+4. ? ? ?
+5. $Corr(Z,Y)>0$ $Corr(X,Z)>0$, bias $+$
+6. $Corr(Z,Y)>0$ $Corr(X,Z)<0$, bias $-$
+:::
+
+
+## Exercise 99.9
+
+Suppose you want to estimate the effect of Price on Ice Cream sales. You collect 200 datapoints.
+
+$$
+sales = \beta_0 + \beta_{price} price + u
+$$
+
+```{r}
+#| echo: false
+
+set.seed(123)
+n <- 200
+temp  <- runif(n, 10, 35)
+u     <- rnorm(n)
+price <- 5 + 0.3*temp + 0.5*u
+sales <- 200 - 8*price + u
+data  <- data.frame(sales, price, temp)
+```
+
+## Exercise 99.9
+
+```{r}
+#| echo: true
+
+ols <- lm(sales ~ price, data = data)
+summary(ols)
+```
+
+. . .
+
+Can you trust this estimate $\beta_1=-7.91$?
+
+## Exercise 99.9
+
+Let's use $temp$ as an instrument
+```{r}
+#| echo: true
+
+library(AER)
+iv <- ivreg(sales ~ price | temp, data = data)
+summary(iv)
+```
+
+# Appendix
+
+## t table {#app-t-table}
+
+<div style="overflow-x: auto; font-size: 0.7em; max-width:100%; max-height:50%">
+
+{{< include _t_table.qmd >}}
+
+</div>
+
+Back to [Exercise 3.1](#ex-3.1-questions) [Exercise 3.3](#ex-3.3-questions) [Exercise 3.4](#ex-3.4-questions2)
