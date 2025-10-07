@@ -14,24 +14,19 @@ $$
 $$
 
 $$
-SST = SSE + SSR, 
-\quad R^2 = 1 - \frac{SSR}{SST}
+SST = SSE + SSR
 $$
-
----
-
 $$
-y = X\beta + u, 
-\quad 
-\hat{\beta} = (X'X)^{-1} X'y
+R^2 = 1 - \frac{SSR}{SST} \qquad \overline{R}^2=1-\frac{SSR/(n-k-1)}{SST/(n-1)}
 $$
 
 $$
-Var(\hat{\beta}|X) = \sigma^2 (X'X)^{-1}, 
-\quad \hat{\sigma}^2 = \frac{SSR}{n-k-1}
+Var(\hat{\beta}|X) = \frac{\sigma^2}{\sum (x-\overline{x})^2}
+$$
+$$
+\hat{\sigma}^2 = \frac{SSR}{n-k-1}
 $$
 
----
 
 $$
 t = \frac{\hat{\beta}_j - \beta_{j,0}}{se(\hat{\beta}_j)}
@@ -53,13 +48,7 @@ $$
 :::
 
 :::
----
 
 $$
 \hat{\beta}_1^{IV} = \frac{\sum z_i y_i}{\sum z_i x_i}
-$$
-
-$$
-\hat{\beta}^{2SLS} = (X'P_Z X)^{-1} X'P_Z y, 
-\quad P_Z = Z(Z'Z)^{-1}Z'
 $$
