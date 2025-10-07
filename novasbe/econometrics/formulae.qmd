@@ -1,6 +1,6 @@
 ---
 title: "Econometrics Midterm Formula Sheet"
-format: pdf
+format: html
 ---
 
 $$
@@ -29,25 +29,14 @@ $$
 
 
 $$
-t = \frac{\hat{\beta}_j - \beta_{j,0}}{se(\hat{\beta}_j)}
+t = \frac{\hat{\beta}_j - \beta_{j}}{se(\hat{\beta}_j)}
 $$
 
-:::{.columns}
-
-:::{.column}
 $$
 F = \frac{(SSR_{r} - SSR_{ur})/q}{SSR_{ur}/(n-k-1)}
-$$
-:::
-
-:::{.column}
-
-$$
+\qquad
 F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
 $$
-:::
-
-:::
 
 $$
 \hat{\beta}_1^{IV} = \frac{\sum z_i y_i}{\sum z_i x_i}
