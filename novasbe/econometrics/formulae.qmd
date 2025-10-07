@@ -1,6 +1,6 @@
 ---
 title: "Econometrics Midterm Formula Sheet"
-format: html
+format: pdf
 ---
 
 $$
