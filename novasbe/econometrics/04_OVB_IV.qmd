@@ -115,7 +115,7 @@ cov_price_temp <- cov(temp,price)
 cov_u_temp <- cov(temp, u)
 cov_temp_sales <- cov(sales,temp)
 
-cat(sprintf("Cov(price, U): %.3f\n", cov_u_temp))
+cat(sprintf("Cov(temp, U): %.3f\n", cov_u_temp))
 cat(sprintf("Cov(price, temp): %.3f\n", cov_price_temp))
 cat(sprintf("Cov(sales, temp): %.3f\n", cov_temp_sales))
 ```

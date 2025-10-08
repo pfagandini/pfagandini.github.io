@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -26,14 +26,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="formulae_files/libs/clipboard/clipboard.min.js"></script>
 <script src="formulae_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="formulae_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="formulae_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="formulae_files/libs/quarto-html/popper.min.js"></script>
 <script src="formulae_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="formulae_files/libs/quarto-html/anchor.min.js"></script>
 <link href="formulae_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="formulae_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="formulae_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="formulae_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="formulae_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="formulae_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="formulae_files/libs/bootstrap/bootstrap-6635001bef3873650e3275c659f8ca27.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -49,7 +50,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -101,41 +102,25 @@ y = \beta_0 + \beta_1 x + u
 \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}
 \]</span></p>
 <p><span class="math display">\[
-SST = SSE + SSR,
-\quad R^2 = 1 - \frac{SSR}{SST}
-\]</span></p>
-<hr>
-<p><span class="math display">\[
-y = X\beta + u,
-\quad
-\hat{\beta} = (X'X)^{-1} X'y
+SST = SSE + SSR
+\]</span> <span class="math display">\[
+R^2 = 1 - \frac{SSR}{SST} \qquad \overline{R}^2=1-\frac{SSR/(n-k-1)}{SST/(n-1)}
 \]</span></p>
 <p><span class="math display">\[
-Var(\hat{\beta}|X) = \sigma^2 (X'X)^{-1},
-\quad \hat{\sigma}^2 = \frac{SSR}{n-k-1}
+Var(\hat{\beta}|X) = \frac{\sigma^2}{\sum (x-\overline{x})^2}
+\]</span> <span class="math display">\[
+\hat{\sigma}^2 = \frac{SSR}{n-k-1}
 \]</span></p>
-<hr>
 <p><span class="math display">\[
-t = \frac{\hat{\beta}_j - \beta_{j,0}}{se(\hat{\beta}_j)}
+t = \frac{\hat{\beta}_j - \beta_{j}}{se(\hat{\beta}_j)}
 \]</span></p>
-<div class="columns">
-<div class="column">
 <p><span class="math display">\[
 F = \frac{(SSR_{r} - SSR_{ur})/q}{SSR_{ur}/(n-k-1)}
-\]</span></p>
-</div><div class="column">
-<p><span class="math display">\[
+\qquad
 F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
 \]</span></p>
-</div>
-</div>
-<hr>
 <p><span class="math display">\[
 \hat{\beta}_1^{IV} = \frac{\sum z_i y_i}{\sum z_i x_i}
-\]</span></p>
-<p><span class="math display">\[
-\hat{\beta}^{2SLS} = (X'P_Z X)^{-1} X'P_Z y,
-\quad P_Z = Z(Z'Z)^{-1}Z'
 \]</span></p>
 
 </main>
@@ -191,13 +176,14 @@ F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

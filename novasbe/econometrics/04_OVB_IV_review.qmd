@@ -7,7 +7,7 @@ format: html
 
 Consider the true model
 $$
-Y=X\beta+Z\gamma+\epsilon
+Y=X\beta+W\gamma+\epsilon
 $$
 
 Now suppose you ignore the variable $W$, is this a problem?
@@ -15,10 +15,10 @@ Now suppose you ignore the variable $W$, is this a problem?
 If you ingore $W$ you estimate $Y=X\tilde{\beta}+u$. Is $\tilde{\beta}$ unbiased?
 
 $$
-E[\tilde{\beta}]=(X'X)^{-1}X'Y=(X'X)^{-1}X'(X\beta+\underbrace{W\gamma+\epsilon}_{u})=\beta+(X'X)^{-1}X'Z\gamma
+E[\tilde{\beta}]=(X'X)^{-1}X'Y=(X'X)^{-1}X'(X\beta+\underbrace{W\gamma+\epsilon}_{u})=\beta+(X'X)^{-1}X'W\gamma
 $$
 
-Note that $(X'X)^{-1}X'Z$ is the estimator for $\alpha$ of $Z=X\alpha+\epsilon$, and then
+Note that $(X'X)^{-1}X'W$ is the estimator for $\alpha$ of $W=X\alpha+\epsilon$, and then
 
 $$
 E[\tilde{\beta}]=\beta+\alpha\gamma
@@ -60,7 +60,7 @@ Let's check this is unbiased/consistent:
 
 $$
 \begin{aligned}
-E[\hat{beta}_{IV}]&=E\left[(Z'X)^{-1}Z'y\right]=E\left[(Z'X)^{-1}Z'(X\beta+u)\right]\\
+E[\hat{\beta}_{IV}]&=E\left[(Z'X)^{-1}Z'y\right]=E\left[(Z'X)^{-1}Z'(X\beta+u)\right]\\
 &=\beta+E[(Z'X)^{-1}Z'u] = \beta
 \end{aligned}
 $$
