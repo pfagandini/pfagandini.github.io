@@ -682,6 +682,15 @@ $$P(T>620)=P\left(Z>\frac{620-5\times 120}{\sqrt{5}\times 8}\right)=\\1-P(Z\leq 
 
 # Appendix
 
+## t-table {#normal_table}
+
+<div style="overflow-x: auto; font-size: 0.7em; max-width:100%; max-height:50%">
+
+{{< include _t_table.qmd >}}
+
+</div>
+
+
 ## Uniform Exercise {#unif-example-1-sol}
 
 ::: {.nonincremental}
