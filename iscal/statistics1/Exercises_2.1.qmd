@@ -170,7 +170,63 @@ b) `r torf(FALSE)` $1$ if $A$ and $B$ are complementary events.
 
 ### Question 8
 
+A financial institution offers two assets to invest ($A$ and $B$) with very attractive returns. It is known that from the pool of costumers, 10% invests a share of their capital in asset $A$, and the rest invests in $B$. From those who invest in $A$, 70% get above the market returns. From those who do not, only 55% get returns above the market. If you select, randomly, a client of this firm:
+
+a) `r torf(TRUE)` The probability of getting a return above the market is 0.565.
+b) `r torf(FALSE)` Knowing that a client got an above the market return, the probability this client invested in $B$ is equal to 0.495.
+c) `r torf(FALSE)` The events "investing in asset A" and "getting a return below the market" are independent.
+
 ### Question 9
+
+Assume that 5% of students will be excluded of continuous assessment, and from these, 98% will have final grade above 13. From those not excluded from the continuous assessment, 10% will have a final grade below 13. If you select randomly a student at the end of the semester:
+
+```{r}
+q9a <- c(
+  answer = '0.90',
+  '0.144',
+  '0.936',
+  'None of the above'
+)
+
+q9b <- c(
+  '0.02',
+  answer = '0.0542',
+  '0.1',
+  'None of the above'
+)
+```
+
+a) The probability of that student having a final grade above 13, given it was in continuous assessment is: `r mcq(q9a)`
+b) Knowing that a student got a final grade above 13, the probability that the student was excluded from the continuous assessment is equal to: `r mcq(q9b)`
 
 ### Question 10
 
+In the class for Management from some Higher Education institute, 70% of the students are male. From the male students, for 60% was their first choice. From the females, 75% chose this course as their first choice. Selecting randomly a student in this Management course, let $p$ be probability of being a student that chose this course as her/his first option.
+
+```{r}
+q10a <- c(
+  '0.225',
+  '0.42',
+  answer = '0.645',
+  'None of the above'
+)
+
+q10b <- c(
+  '0.75/p',
+  answer = '0.225/p',
+  '0.42/p',
+  'None of the above'
+)
+
+q10c <- c(
+  '0.7p',
+  answer = '0.28+p',
+  '0.7+p',
+  'None of the above'
+)
+```
+
+i) The value for $p$ is: `r mcq(q10a)`
+ii) The probability of being a female, knowing that for this student this course was her first choice. `r mcq(q10b)`
+iii) The probability of a student being a male, or that the student selected management as their first choice is `r mcq(q10c)`
+iv) `r torf(FALSE)` The events "being a male" and "not having selected management as her/his first choice" are independent.
