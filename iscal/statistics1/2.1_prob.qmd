@@ -907,6 +907,9 @@ Find $t$ such that $A$ and $B$ are:
 
 From probability theory, we have $$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$ and therefore we get: $$0.8 = 0.6+t\Rightarrow t=0.2$$
 
+
+## Example
+
 2. To make $A$ and $B$ independent, we need that $P(A\cap B)=P(A)P(B)=0.6t$:
 
 . . .

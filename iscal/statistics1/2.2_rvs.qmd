@@ -205,7 +205,7 @@ $$F(x)=P(X\leq x)=\left\{
 Let's revisit our previous example:
 
 $$P(X=2|X\leq 3)=
-  \frac{P(X=2)}{P(X=3)}=$$
+  \frac{P(X=2)}{P(X\leq 3)}=$$
 $$\frac{F(2)-F(2^-)}{F(3)}=
   \frac{0.7-0.35}{0.95}=0.368
 $$
@@ -271,7 +271,7 @@ $$
   F(x)=P(X\leq x) = \int_{-\infty}^x f(t)dt = \left\{
     \begin{array}{cc}
       0 & , x<0\\
-      x^2 & ,0\leq x<1 \\
+      x^3 & ,0\leq x<1 \\
       1& ,x\geq 1
     \end{array}
   \right.
