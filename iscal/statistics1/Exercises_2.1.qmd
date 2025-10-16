@@ -1,0 +1,176 @@
+---
+title: "Chapter II Part I - Statistics I - Exercises"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(lubridate)
+y <- year(Sys.Date())-1
+```
+
+```{r, echo = FALSE, results='asis'}
+# Uncomment to change widget colours:
+#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+</style>
+
+<!-- Style Block for nice tables -->
+
+
+This is a set of exercises created by the teaching Faculty for Statistics I, Chapter II - Random Variables, from the Lisbon Accounting and Business School.
+
+## Questions
+
+### Question 1
+
+Consider the following events:
+
+A.  "get a 7 when rolling a cubic die"
+B.  "Spain win the next World Cup"
+C.  "rain in London"
+
+```{r}
+q1 <- c(
+  'A is impossible, while C is unlikely',
+  'B is certain, and C is very likely',
+  answer='$P(B)$ and $P(C)$ are computed using the subjective notion of probability',
+  'A and C are impossible'
+)
+```
+
+The correct choice is: `r mcq(q1)`
+
+### Question 2
+
+```{r}
+q2 <- c(
+  'the frequentist definition of probability',
+  answer = 'the classic definition of probability',
+  'the subjective definition of probability',
+  'the axiomatic definition of probability'
+)
+
+```
+
+When computing a probability from the analysis of all possible outcomes (equally likely) it was used: `r mcq(q2)`
+
+### Question 3
+
+```{r}
+q3 <- c(
+  answer = '0',
+  'P(A)',
+  'P(B)',
+  '1'
+)
+```
+
+Let $\Omega$ be the outcome space associated to a random experiment. Let $A$ and $B$ two events ($A\subset\Omega$ and $B\subset \Omega$) such that $0<P(A)<1$ and $0<P(B)<1$. You know that $A\subset B$. What is $P[(A\cup B)\cap B^c]$?
+
+`r mcq(q3)`
+
+### Question 4
+
+Let $A,B,C$ events defined in $\Omega$ such that:
+
+1. $A\cup B\cup C=\Omega$
+2. $P(A)=0.3$
+3. $P(C)=0.5$
+4. $P(B^c)=0.7$
+5. $A\cap B=\emptyset$
+6. $B\cap C=\emptyset$
+
+`r torf(TRUE)` $P(A\cap C)=0.1$
+
+### Question 5
+
+Let $A$ and $B$ two independent events defined in the same $\Omega$, where $A$ has a probability twice as large as $B$. Knowing that $0.5$ is the probability that at least $A$ or $B$ happens, you have:
+a) $P(B)=\frac{3+\sqrt{5}}{4}$
+b) $P(B)=\frac{3-\sqrt{5}}{4}$
+c) $P(B)=\frac{3+\sqrt{5}}{4}$ or $P(B)=\frac{3-\sqrt{5}}{4}$
+d) None of the above
+
+```{r}
+q5 <- c(
+  'a',
+  answer = 'b',
+  'c',
+  'd'
+)
+```
+
+`r mcq(q5)`
+
+### Question 6
+
+Let $A$ and $B$ be two events in the same outcomes space $\Omega$ such that $P(A)=0.75$, $P(B)=0.5$ and $P(A\cup B)=1$. Then, $P(A|B)$ is equal to:
+
+```{r}
+q6 <- c(
+  '13',
+  '34',
+  answer = '12',
+  '14'
+)
+```
+`r mcq(q6)`
+
+### Question 7
+
+Let $A$ and $B$ two events in the same sample space $\Omega$. You know that $P(A)=a$ and $P(B)=b$, with $0<a<1$ and $0<b<1$. The probability that neither $A$ nor $B$ happen is:
+
+a) `r torf(TRUE)` $(1-a-b+ab)$ if $A$ and $B$ are independent events.
+b) `r torf(FALSE)` $1$ if $A$ and $B$ are complementary events.
+
+### Question 8
+
+### Question 9
+
+### Question 10
+

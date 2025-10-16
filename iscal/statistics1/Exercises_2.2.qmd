@@ -1,5 +1,5 @@
 ---
-title: "Chapter II - Statistics I - Exercises"
+title: "Chapter II Part I - Statistics I - Exercises"
 format: 
   html:
     css: [Exercises/webex.css]
@@ -63,7 +63,7 @@ y <- year(Sys.Date())-1
 <!-- Style Block for nice tables -->
 
 
-This is a set of exercises created by the teaching Faculty for Statistics I, Chapter II - Random Variables, from the Lisbon Accounting and Business School.
+This is a set of exercises created by the teaching Faculty for Statistics I, Chapter II - Introduction to Probability Theory, from the Lisbon Accounting and Business School.
 
 ## Questions
 
