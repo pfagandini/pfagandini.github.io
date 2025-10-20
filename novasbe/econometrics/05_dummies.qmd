@@ -1,0 +1,307 @@
+---
+title: "Binary Data"
+author: "Paulo Fagandini"
+institute: "Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures/NovaPrincipalV2.svg
+    slide-number: true
+    cross-ref: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Review
+
+## Review
+
+We will need this:
+
+$$
+F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
+$$
+
+## Exercises
+
+https://moodle.novasbe.pt/mod/folder/view.php?id=4021
+
+![](pictures/qr_code.svg)
+
+<div style="font-size: 70%;">
+</div>
+
+## Exercise 5.5
+<div style="font-size: 70%;">
+The players of a basketball team can play in three positions: guard, forward or center. The variable *exper* is the number of years as a professional player,  *points* is the number of points scored per game, *guard* is a binary variable equal to one if the player is a guard and 0 otherwise, and *forward* is a binary variable equal to one if the player is a forward and 0 otherwise. Standard errors are reported in parentheses. Consider the following estimated equation:
+
+$$
+\widehat{points}=
+  \underset{(1.18)}{4.76} +
+  \underset{(0.33)}{1.28} exper -
+  \underset{(0.024)}{0.072} exper^2 +
+  \underset{(1.00)}{2.31}guard +
+  \underset{(1.00)}{1.54}forward
+$$
+With $n=269$, $R^2=0.091$, $\bar{R}^2=0.077$
+</div>
+
+## Question 5.5 a
+
+Interpret the regression coefficients:
+
+<div style="font-size: 70%;">
+$$
+\widehat{points}=
+  \underset{(1.18)}{4.76} +
+  \underset{(0.33)}{1.28} exper -
+  \underset{(0.024)}{0.072} exper^2 +
+  \underset{(1.00)}{2.31}guard +
+  \underset{(1.00)}{1.54}forward
+$$
+
+1. $exper$
+2. $guard$, $forward$
+</div>
+
+
+::: {.notes}
+Note: When interpreting quadratic or any polynomial relationships between the dependent variable and the independent variables we need to take into consideration all the terms that are related to the independent variable. In this particular case, it is not possible to interpret $\hat{\beta}_1$ individually because it has no ceteris paribus interpretation: it is not possible to change experience holding squared experience fixed. To be in the safe side, to compute the marginal effects, you can take the partial derivative of the dependent variable with respect to the independent variables.
+
+The marginal impact of experience on the number of points scored per game is given by the expression $1.28 − 2 × 0.071 exper$. Therefore, each additional year of experience increases the number of points scored per game at a decreasing rate (up until approximately 9 years of
+experience). For example: the first year of experience increases the predicted number of points by 1.28, on average, ceteris paribus, whereas the fifth year increases the predicted number of points by $1.28 - 2\times0.072\times4=0.704$, on average, ceteris paribus.
+
+The players of a basketball team can play in three positions: guard, forward or center. Because center is not included in the model as a variable, it is the reference or comparison group.
+
+This way, the estimated coefficients of guard and f orward are interpreted in comparison with the reference group, center.
+A guard player scores on average 2.31 more points per game relatively to a center player, ceteris paribus. A forward player scores on average 1.54 more points per game relatively to a center player, ceteris paribus.
+:::
+
+
+##  Question 5.5 b
+
+Why can’t we include in the model a binary variable center equal to one if the player is a center and zero otherwise?
+
+Suppose you want to estimate the effect of Price on Ice Cream sales. You collect 200 datapoints.
+
+:::{.notes}
+Because of the dummy variables trap. It would introduce perfect collinearity in the model with intercept (each player plays in one of the three categories and the overall intercept ($\beta_0$) is for centers).
+Because each player can only play in one of these three positions, if we had forward, guard, and center in the model we could write one of these variables as an exact linear combination of the others: perhaps, $guard=1−forward−center$. An alternative would be to include the three dummies excluding the intercept but then it would not be as straightforward to test differences between groups.
+:::
+
+## Question 5.5 c
+
+Holding experience fixed, does a guard score more than a center? How much more? Is the difference statistically significant?
+
+::: {.notes}
+
+A guard player is estimated to score on average 2.31 more points per game relatively to a center player, ceteris paribus. Is the difference statistically significant?
+
+The null and alternative hypotheses are the following:
+$$
+H_0 : \beta_3 = 0\\
+H_a : \beta_3 > 0
+$$
+
+The $t$-ratio equals $2.31/1=2.31$ and the critical value for a one-tailed test with 5% significance level is $t \sim t(269 − 4 − 1) = 1.645$. Therefore, we reject the null hypothesis in favor of the alternative hypothesis and there is statistically significant evidence that guard players score on average more than centers.
+
+:::
+
+## Question 5.5 d
+
+Considering also the following estimated equation, test if experience influences points.
+<div style="font-size: 80%;">
+$$
+\widehat{points}=
+  \underset{(0.86)}{8.52} +
+  \underset{(1.03)}{2.40}guard +
+  \underset{(1.03)}{1.68}forward
+$$
+</div>
+
+with $n=269$ and $R^2=0.020$, $\bar{R}^2=0.012$
+
+:::{.notes}
+
+The null and alternative hypotheses are the following:
+
+$H_0: \beta_1=0, \beta_2=0$, $H_a: Not\ H_0$
+
+Then we can use an F-test:
+
+$F = [(0.091-0.020)/2]/[(1-0.091)/(269-4-1)]=10.31$
+
+The critical value $F \sim F (2, 264)$ for a 5% significance level equals 3.00 and therefore we reject the null hypothesis in favor of the alternative hypothesis. This means that there is statistically significant evidence that experience is important to explain the number of points scored per game.
+
+:::
+
+## Question 5.5 e
+
+Consider a new equation with marital status (*marr*) as an additional explanatory variable:
+<div style="font-size: 60%;">
+$$
+\widehat{points} =
+  \underset{(1.18)}{4.70} +
+  \underset{(0.33)}{1.23} exper -
+  \underset{(0.02)}{0.07} exper^2 +
+  \underset{(1.00)}{2.29} guard +
+  \underset{(1.00)}{1.54} forward +
+  \underset{(0.74)}{0.58} marr
+$$
+</div>
+
+Holding position and experience fixed, do married plyaers score more points?
+
+:::{.notes}
+To test this hypothesis, the null and alternative hypotheses are the following: $H_0:\beta_5=0$, $H_a: \beta_5>0$
+
+The t-ratio equals $0.58/0.74=0.789$ and therefore for such a small value we fail to reject the null hypothesis in favor of the alternative hypothesis and there is no statistically significant evidence that married players score on average more points.
+:::
+
+## Question 5.5 f
+
+Consider the estimation output given in the table below for a new model that includes interactions of marital status with both experience variables. Is there strong evidence that marital status affects points per game?
+
+<img src="pictures/06_regression_5.5f.png" alt="Alt text" width="1000" height="550">
+
+:::{.notes}
+Remember that we need to consider every variable that depends on the marital status variable.
+Then, the null and alternative hypotheses are as follows:
+$H_0 : \beta_5 = \beta_6 = \beta_7 = 0$, $H_a : Not\ H_0$
+
+To test this null hypothesis we compute an F-test:
+
+$F=[(0.1058−0.091)/(3)]/[(1−0.1058)/(269−7−1)]= 1.44$
+
+The $F \sim F (3, 261)$ and therefore we fail to reject the null hypothesis in favor of the alternative hypothesis and there is no statistically significant evidence that marital status is important to
+explain the number of points scored per game.
+:::
+
+## Question 5.5 g
+
+Given this last estimated equation, what is the optimal number of years as a professional player if that player (for both married and not married players)?
+
+:::{.notes}
+
+We are looking for $(\partial \widehat{points})/(\partial exper)=0$
+
+If $married=1$, $0.70-2\times 0.0295\times exper + 1.28 - 2 \times 0.09 \times exper = 0 \Leftrightarrow exper^*=9.25$
+
+If $married=0$, $0.70-2\times 0.0295\times exper = 0 \Leftrightarrow exper^*=11.67$
+:::
+
+## Question 5.9
+
+Consider the following estimated equation:
+<div style="font-size: 60%;">
+$$
+\widehat{sat}=
+  \underset{(6.29)}{1029.10} +
+  \underset{(3.83)}{19.30} hsize -
+  \underset{(0.53)}{2.19} hsize^2 -
+  \underset{(4.29)}{45.09} female -
+  \underset{(12.71)}{169.81} black +
+  \underset{(18.15)}{62.31} female\times black
+$$
+</div>
+
+With $n=4137$ and $R^2=0.0858$. The variable *sat* is the combined school average test (SAT) score, *hsize* is size of the student's high
+school graduating class, in hundreds, *female* is a gender dummy variable, and *black* is a race dummy variable equal to one for black students and zero otherwise.
+
+## Question 5.9 a
+
+Is there strong evidence that $hsize^2$ should be included in the model? From this equation, what is the optimal high school size?
+
+:::{.notes}
+To conclude whether there is strong evidence that $hsize^2$ should be in the model we perform a test of statistical significance. The null and alternative hypotheses are the following: $H_0:\beta_2=0$ and $H_a: \beta\neq 0$.
+
+The t-statistic equals $t = − 2.19/0.53=-4.13$. For a 5% significance level and $(4, 137 − 5 − 1)$ degrees of freedom, the critical value is $t_c = 1.96$. Because the $|t|>|tc|$ we reject the null hypothesis in favor of the alternative hypothesis and $\beta_2$ is individually statistically significant. Therefore, we find statistically significant evidence that $hsize^2$ should be in the model.
+
+What is the optimal high school size? This is a simple optimisation problem:$\partial \widehat{sat}/\partial size = 0$
+
+$19.3-2\times 2.19 \times hsize = 0 \Rightarrow hsize^*=4.41$
+
+Importantly, this means that the optimal school size is 4.41 hundreds of students, i.e., 441 students. [Remember that it is very important to look at the units of measurement of the variables]
+:::
+
+## Question 5.9 b
+
+Holding hsize fixed what is the estimated difference in SAT score between nonblack females and nonblack males? How statistically significant is this estimated difference?
+
+:::{.notes}
+
+Let's write the expected SAT score for the two groups holding $hsize$ (and therefore $hsize^2$ ) fixed:
+
+$E(sat|female = 1, black = 0) = \hat{\beta}_0 + \hat{\beta}_3$ (nonblack females)
+
+$E(sat|female = 0, black = 0) = \hat{\beta}_0$ (nonblack males)
+
+Therefore, the estimated difference is $\hat{beta}_3= −45.09$. Coefficient interpretation: The predicted SAT scores of nonblack females are on average 45.09 points lower than the SAT scores of nonblack males, on average, ceteris paribus.
+To test whether the difference between these two groups is statistically significant we consider the following null and alternative hypotheses:
+
+$H_0=\beta_3=0$ and $H_a: \beta_3\neq 0$
+
+The t-statistic equals $t=-45.09/4.29=-10.51$. For a 5% significance level ($\alpha=5%$) and (4,137-5-1) dof, the critical value is $t_c=1.96$. Because $|t|>|t_c|$ we reject the null, and $\hat{\beta}_3$ is statistically significant.
+:::
+
+## Question 5.9 c
+
+What is the estimated difference in SAT score between nonblack males and black males? Test the null hypothesis that there is no difference between their scores, against the alternative that there is a difference.
+
+::: {.notes}
+
+Let's write the expected SAT score for the two groups holding $hsize$ (and therefore $hsize^2$ ) fixed:
+$E(sat|female = 0, black = 1) = \hat{\beta}_0 + \hat{\beta}_4 (black males)$
+$E(sat|female = 0, black = 0) = \hat{\beta}_0 (nonblack males)$
+Coefficient interpretation: on average, the predicted SAT scores of black males males are 169.81 points lower than the SAT scores of nonblack males, ceteris paribus.
+The null and alternative hypotheses are the following:
+$H_0 : \beta_4 = 0$ and $H_a : \beta_4 \neq 0$ respetively
+The t-statistic equals $t = − 169.81/12.71=-13.36$. For a 5% significance level and (4, 137 − 12.715 − 1) degrees of freedom, the critical value is $t_c = 1.96$. Because the $|t| > |t_c|$ we reject the null hypothesis in favor of the alternative hypothesis and $\hat{\beta}_4$ is individually statistically significant.
+:::
+
+## Question 5.9 d
+
+What is the estimated difference in SAT score between black females and nonblack females? What would you need to do to test whether the difference is statistically significant?
+
+:::{.notes}
+$E(sat|female = 1, black = 1) = \hat{\beta}_0 + \hat{\beta}_3 + \hat{\beta}_4 + \hat{\beta}_5$ (black females)
+$E(sat|female = 1, black = 0) = \hat{\beta}_0 + \hat{\beta}_3$ (nonblack females)
+
+The difference between the groups is $\hat{\beta}_3+\hat{\beta}_4+\hat{\beta}_5−\hat{\beta}_3=\hat{\beta}_4+\hat{\beta}_5$. Then the null hypothesis can be written as $H_0 : \beta_4 + \beta_5 = 0$
+
+Coefficient interpretation: According to the estimates, on average, the predicted SAT scores of black females are 107.5 points lower than the SAT scores of nonblack females, ceteris paribus.
+
+The null and alternative hypotheses are the following: $H_0:\beta_4+\beta_5=0$ and $H_a:Not\ H_0$
+
+To test this null hypothesis using a t-statistic we would need the covariance between $\hat{\beta}_4$ and $\hat{\beta}_5$ :
+$t=(\hat{\beta}_4+\hat{\beta}_5)/\sqrt{V[\hat{\beta}_4]+V[\hat{\beta}_5]+2Cov(\hat{\beta}_4,\hat{\beta}_5)}$
+:::
+
+# Appendix
+
+## t table {#app-t-table}
+
+<div style="overflow-x: auto; font-size: 0.7em; max-width:100%; max-height:50%">
+
+{{< include _t_table.qmd >}}
+
+</div>
+
+## F table {#app-f-table}
+
+<div style="overflow-x: auto; font-size: 0.7em; max-width:100%; max-height:50%">
+
+{{< include _f_table.qmd >}}
+
+</div>
