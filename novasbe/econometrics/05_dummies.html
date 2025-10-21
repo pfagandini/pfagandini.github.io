@@ -6,8 +6,8 @@
 <script src="05_dummies_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="05_dummies_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="05_dummies_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="05_dummies_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="05_dummies_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Paulo Fagandini">
   <title>Binary Data</title>
@@ -193,10 +193,10 @@ F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
 </ol>
 </div>
 <aside class="notes">
-<p>Note: When interpreting quadratic or any polynomial relationships between the dependent variable and the independent variables we need to take into consideration all the terms that are related to the independent variable. In this particular case, it is not possible to interpret <span class="math inline">\(\hat{\beta}_1\)</span> individually because it has no ceteris paribus interpretation: it is not possible to change experience holding squared experience fixed. To be in the safe side, to compute the marginal effects, you can take the partial derivative of the dependent variable with respect to the independent variables.</p>
-<p>The marginal impact of experience on the number of points scored per game is given by the expression <span class="math inline">\(1.28 − 2 × 0.071 exper\)</span>. Therefore, each additional year of experience increases the number of points scored per game at a decreasing rate (up until approximately 9 years of experience). For example: the first year of experience increases the predicted number of points by 1.28, on average, ceteris paribus, whereas the fifth year increases the predicted number of points by <span class="math inline">\(1.28 - 2\times0.072\times4=0.704\)</span>, on average, ceteris paribus.</p>
+<p>Note: It is not possible to interpret <span class="math inline">\(\hat{\beta}_1\)</span> individually because it has no ceteris paribus interpretation: it is not possible to change experience holding squared experience fixed. Take the partial derivative of the dependent variable with respect to the independent variables.</p>
+<p>The marginal impact of experience is given by <span class="math inline">\(1.28 − 2 × 0.071 exper\)</span>. Therefore, each additional year of experience increases the number of points scored per game at a decreasing rate (up until approximately 9 years of experience). For example: the fifth year increases the predicted number of points by <span class="math inline">\(1.28 - 2\times0.072\times4=0.704\)</span>, on average, ceteris paribus.</p>
 <p>The players of a basketball team can play in three positions: guard, forward or center. Because center is not included in the model as a variable, it is the reference or comparison group.</p>
-<p>This way, the estimated coefficients of guard and f orward are interpreted in comparison with the reference group, center. A guard player scores on average 2.31 more points per game relatively to a center player, ceteris paribus. A forward player scores on average 1.54 more points per game relatively to a center player, ceteris paribus.</p>
+<p>Guard and forward are interpreted in comparison with the reference group, center. A guard player scores on average 2.31 more points per game relatively to a center player, ceteris paribus. A forward player scores on average 1.54 more points per game relatively to a center player, ceteris paribus.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -212,9 +212,22 @@ F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
 <section id="question-5.5-b" class="slide level2">
 <h2>Question 5.5 b</h2>
 <p>Why can’t we include in the model a binary variable center equal to one if the player is a center and zero otherwise?</p>
-<p>Suppose you want to estimate the effect of Price on Ice Cream sales. You collect 200 datapoints.</p>
+<div style="font-size: 70%;">
+<p><span class="math display">\[
+\widehat{points}=
+  \underset{(1.18)}{4.76} +
+  \underset{(0.33)}{1.28} exper -
+  \underset{(0.024)}{0.072} exper^2 +
+  \underset{(1.00)}{2.31}guard +
+  \underset{(1.00)}{1.54}forward
+\]</span></p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(exper\)</span></li>
+<li class="fragment"><span class="math inline">\(guard\)</span>, <span class="math inline">\(forward\)</span></li>
+</ol>
+</div>
 <aside class="notes">
-<p>Because of the dummy variables trap. It would introduce perfect collinearity in the model with intercept (each player plays in one of the three categories and the overall intercept (<span class="math inline">\(\beta_0\)</span>) is for centers). Because each player can only play in one of these three positions, if we had forward, guard, and center in the model we could write one of these variables as an exact linear combination of the others: perhaps, <span class="math inline">\(guard=1−forward−center\)</span>. An alternative would be to include the three dummies excluding the intercept but then it would not be as straightforward to test differences between groups.</p>
+<p>Because of the dummy variables trap. It would introduce perfect collinearity in the model with intercept (each player plays in one of the three categories and the overall intercept (<span class="math inline">\(\beta_0\)</span>) is for centers). <span class="math inline">\(guard=1−forward−center\)</span>. An alternative would be to include the three dummies excluding the intercept but then it would not be as straightforward to test differences between groups.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -230,13 +243,23 @@ F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
 <section id="question-5.5-c" class="slide level2">
 <h2>Question 5.5 c</h2>
 <p>Holding experience fixed, does a guard score more than a center? How much more? Is the difference statistically significant?</p>
+<div style="font-size: 70%;">
+<p><span class="math display">\[
+\widehat{points}=
+  \underset{(1.18)}{4.76} +
+  \underset{(0.33)}{1.28} exper -
+  \underset{(0.024)}{0.072} exper^2 +
+  \underset{(1.00)}{2.31}guard +
+  \underset{(1.00)}{1.54}forward
+\]</span> With <span class="math inline">\(n=269\)</span>, <span class="math inline">\(R^2=0.091\)</span>, <span class="math inline">\(\bar{R}^2=0.077\)</span></p>
+</div>
 <aside class="notes">
 <p>A guard player is estimated to score on average 2.31 more points per game relatively to a center player, ceteris paribus. Is the difference statistically significant?</p>
-<p>The null and alternative hypotheses are the following: <span class="math display">\[
+<p><span class="math display">\[
 H_0 : \beta_3 = 0\\
 H_a : \beta_3 &gt; 0
 \]</span></p>
-<p>The <span class="math inline">\(t\)</span>-ratio equals <span class="math inline">\(2.31/1=2.31\)</span> and the critical value for a one-tailed test with 5% significance level is <span class="math inline">\(t \sim t(269 − 4 − 1) = 1.645\)</span>. Therefore, we reject the null hypothesis in favor of the alternative hypothesis and there is statistically significant evidence that guard players score on average more than centers.</p>
+<p>The <span class="math inline">\(t\)</span>-ratio equals <span class="math inline">\(2.31/1=2.31\)</span> and the critical value for a one-tailed test with 5% significance level is <span class="math inline">\(t \sim t(269 − 4 − 1) = 1.645\)</span>. Therefore, we reject the null hypothesis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -251,7 +274,18 @@ H_a : \beta_3 &gt; 0
 </section>
 <section id="question-5.5-d" class="slide level2">
 <h2>Question 5.5 d</h2>
-Considering also the following estimated equation, test if experience influences points.
+<p>Considering also the following estimated equation, test if experience influences points.</p>
+<div style="font-size: 70%;">
+<p><span class="math display">\[
+\widehat{points}=
+  \underset{(1.18)}{4.76} +
+  \underset{(0.33)}{1.28} exper -
+  \underset{(0.024)}{0.072} exper^2 +
+  \underset{(1.00)}{2.31}guard +
+  \underset{(1.00)}{1.54}forward
+\]</span></p>
+<p>With <span class="math inline">\(n=269\)</span>, <span class="math inline">\(R^2=0.091\)</span>, <span class="math inline">\(\bar{R}^2=0.077\)</span></p>
+</div>
 <div style="font-size: 80%;">
 <p><span class="math display">\[
 \widehat{points}=
@@ -262,11 +296,10 @@ Considering also the following estimated equation, test if experience influences
 </div>
 <p>with <span class="math inline">\(n=269\)</span> and <span class="math inline">\(R^2=0.020\)</span>, <span class="math inline">\(\bar{R}^2=0.012\)</span></p>
 <aside class="notes">
-<p>The null and alternative hypotheses are the following:</p>
 <p><span class="math inline">\(H_0: \beta_1=0, \beta_2=0\)</span>, <span class="math inline">\(H_a: Not\ H_0\)</span></p>
 <p>Then we can use an F-test:</p>
 <p><span class="math inline">\(F = [(0.091-0.020)/2]/[(1-0.091)/(269-4-1)]=10.31\)</span></p>
-<p>The critical value <span class="math inline">\(F \sim F (2, 264)\)</span> for a 5% significance level equals 3.00 and therefore we reject the null hypothesis in favor of the alternative hypothesis. This means that there is statistically significant evidence that experience is important to explain the number of points scored per game.</p>
+<p>The critical value <span class="math inline">\(F \sim F (2, 264)\)</span> for a 5% significance level equals 3.00 and therefore we reject the null hypothesis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -295,8 +328,8 @@ Consider a new equation with marital status (<em>marr</em>) as an additional exp
 </div>
 <p>Holding position and experience fixed, do married plyaers score more points?</p>
 <aside class="notes">
-<p>To test this hypothesis, the null and alternative hypotheses are the following: <span class="math inline">\(H_0:\beta_5=0\)</span>, <span class="math inline">\(H_a: \beta_5&gt;0\)</span></p>
-<p>The t-ratio equals <span class="math inline">\(0.58/0.74=0.789\)</span> and therefore for such a small value we fail to reject the null hypothesis in favor of the alternative hypothesis and there is no statistically significant evidence that married players score on average more points.</p>
+<p><span class="math inline">\(H_0:\beta_5=0\)</span>, <span class="math inline">\(H_a: \beta_5&gt;0\)</span></p>
+<p>The t-ratio equals <span class="math inline">\(0.58/0.74=0.789\)</span> and therefore for such a small value we fail to reject the null hypothesis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -314,10 +347,11 @@ Consider a new equation with marital status (<em>marr</em>) as an additional exp
 <p>Consider the estimation output given in the table below for a new model that includes interactions of marital status with both experience variables. Is there strong evidence that marital status affects points per game?</p>
 <p><img src="pictures/06_regression_5.5f.png" alt="Alt text" width="1000" height="550"></p>
 <aside class="notes">
-<p>Remember that we need to consider every variable that depends on the marital status variable. Then, the null and alternative hypotheses are as follows: <span class="math inline">\(H_0 : \beta_5 = \beta_6 = \beta_7 = 0\)</span>, <span class="math inline">\(H_a : Not\ H_0\)</span></p>
+<p>Remember that we need to consider every variable that depends on the marital status variable.</p>
+<p><span class="math inline">\(H_0 : \beta_5 = \beta_6 = \beta_7 = 0\)</span>, <span class="math inline">\(H_a : Not\ H_0\)</span></p>
 <p>To test this null hypothesis we compute an F-test:</p>
 <p><span class="math inline">\(F=[(0.1058−0.091)/(3)]/[(1−0.1058)/(269−7−1)]= 1.44\)</span></p>
-<p>The <span class="math inline">\(F \sim F (3, 261)\)</span> and therefore we fail to reject the null hypothesis in favor of the alternative hypothesis and there is no statistically significant evidence that marital status is important to explain the number of points scored per game.</p>
+<p>The <span class="math inline">\(F \sim F (3, 261)\)</span> and therefore we fail to reject the null hypothesis in favor of the alternative hypothesis and there is no statistically significant evidence that marital status is important.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -361,16 +395,27 @@ Consider the following estimated equation:
   \underset{(4.29)}{45.09} female -
   \underset{(12.71)}{169.81} black +
   \underset{(18.15)}{62.31} female\times black
-\]</span></p>
+\]</span> With <span class="math inline">\(n=4137\)</span> and <span class="math inline">\(R^2=0.0858\)</span>.</p>
 </div>
-<p>With <span class="math inline">\(n=4137\)</span> and <span class="math inline">\(R^2=0.0858\)</span>. The variable <em>sat</em> is the combined school average test (SAT) score, <em>hsize</em> is size of the student’s high school graduating class, in hundreds, <em>female</em> is a gender dummy variable, and <em>black</em> is a race dummy variable equal to one for black students and zero otherwise.</p>
+<p>The variable <em>sat</em> is the combined school average test (SAT) score, <em>hsize</em> is size of the student’s high school graduating class, in hundreds, <em>female</em> is a gender dummy variable, and <em>black</em> is a race dummy variable equal to one for black students and zero otherwise.</p>
 </section>
 <section id="question-5.9-a" class="slide level2">
 <h2>Question 5.9 a</h2>
 <p>Is there strong evidence that <span class="math inline">\(hsize^2\)</span> should be included in the model? From this equation, what is the optimal high school size?</p>
+<div style="font-size: 60%;">
+<p><span class="math display">\[
+\widehat{sat}=
+  \underset{(6.29)}{1029.10} +
+  \underset{(3.83)}{19.30} hsize -
+  \underset{(0.53)}{2.19} hsize^2 -
+  \underset{(4.29)}{45.09} female -
+  \underset{(12.71)}{169.81} black +
+  \underset{(18.15)}{62.31} female\times black
+\]</span> With <span class="math inline">\(n=4137\)</span> and <span class="math inline">\(R^2=0.0858\)</span>.</p>
+</div>
 <aside class="notes">
-<p>To conclude whether there is strong evidence that <span class="math inline">\(hsize^2\)</span> should be in the model we perform a test of statistical significance. The null and alternative hypotheses are the following: <span class="math inline">\(H_0:\beta_2=0\)</span> and <span class="math inline">\(H_a: \beta\neq 0\)</span>.</p>
-<p>The t-statistic equals <span class="math inline">\(t = − 2.19/0.53=-4.13\)</span>. For a 5% significance level and <span class="math inline">\((4, 137 − 5 − 1)\)</span> degrees of freedom, the critical value is <span class="math inline">\(t_c = 1.96\)</span>. Because the <span class="math inline">\(|t|&gt;|tc|\)</span> we reject the null hypothesis in favor of the alternative hypothesis and <span class="math inline">\(\beta_2\)</span> is individually statistically significant. Therefore, we find statistically significant evidence that <span class="math inline">\(hsize^2\)</span> should be in the model.</p>
+<p><span class="math inline">\(H_0:\beta_2=0\)</span> and <span class="math inline">\(H_a: \beta\neq 0\)</span>.</p>
+<p>The t-statistic equals <span class="math inline">\(t = − 2.19/0.53=-4.13\)</span>. For a 5% significance level and <span class="math inline">\((4, 137 − 5 − 1)\)</span> degrees of freedom, the critical value is <span class="math inline">\(t_c = 1.96\)</span>. Because the <span class="math inline">\(|t|&gt;|tc|\)</span> we reject the null hypothesis.</p>
 <p>What is the optimal high school size? This is a simple optimisation problem:<span class="math inline">\(\partial \widehat{sat}/\partial size = 0\)</span></p>
 <p><span class="math inline">\(19.3-2\times 2.19 \times hsize = 0 \Rightarrow hsize^*=4.41\)</span></p>
 <p>Importantly, this means that the optimal school size is 4.41 hundreds of students, i.e., 441 students. [Remember that it is very important to look at the units of measurement of the variables]</p>
@@ -389,6 +434,17 @@ Consider the following estimated equation:
 <section id="question-5.9-b" class="slide level2">
 <h2>Question 5.9 b</h2>
 <p>Holding hsize fixed what is the estimated difference in SAT score between nonblack females and nonblack males? How statistically significant is this estimated difference?</p>
+<div style="font-size: 60%;">
+<p><span class="math display">\[
+\widehat{sat}=
+  \underset{(6.29)}{1029.10} +
+  \underset{(3.83)}{19.30} hsize -
+  \underset{(0.53)}{2.19} hsize^2 -
+  \underset{(4.29)}{45.09} female -
+  \underset{(12.71)}{169.81} black +
+  \underset{(18.15)}{62.31} female\times black
+\]</span> With <span class="math inline">\(n=4137\)</span> and <span class="math inline">\(R^2=0.0858\)</span>.</p>
+</div>
 <aside class="notes">
 <p>Let’s write the expected SAT score for the two groups holding <span class="math inline">\(hsize\)</span> (and therefore <span class="math inline">\(hsize^2\)</span> ) fixed:</p>
 <p><span class="math inline">\(E(sat|female = 1, black = 0) = \hat{\beta}_0 + \hat{\beta}_3\)</span> (nonblack females)</p>
@@ -411,6 +467,17 @@ Consider the following estimated equation:
 <section id="question-5.9-c" class="slide level2">
 <h2>Question 5.9 c</h2>
 <p>What is the estimated difference in SAT score between nonblack males and black males? Test the null hypothesis that there is no difference between their scores, against the alternative that there is a difference.</p>
+<div style="font-size: 60%;">
+<p><span class="math display">\[
+\widehat{sat}=
+  \underset{(6.29)}{1029.10} +
+  \underset{(3.83)}{19.30} hsize -
+  \underset{(0.53)}{2.19} hsize^2 -
+  \underset{(4.29)}{45.09} female -
+  \underset{(12.71)}{169.81} black +
+  \underset{(18.15)}{62.31} female\times black
+\]</span> With <span class="math inline">\(n=4137\)</span> and <span class="math inline">\(R^2=0.0858\)</span>.</p>
+</div>
 <aside class="notes">
 <p>Let’s write the expected SAT score for the two groups holding <span class="math inline">\(hsize\)</span> (and therefore <span class="math inline">\(hsize^2\)</span> ) fixed: <span class="math inline">\(E(sat|female = 0, black = 1) = \hat{\beta}_0 + \hat{\beta}_4 (black males)\)</span> <span class="math inline">\(E(sat|female = 0, black = 0) = \hat{\beta}_0 (nonblack males)\)</span> Coefficient interpretation: on average, the predicted SAT scores of black males males are 169.81 points lower than the SAT scores of nonblack males, ceteris paribus. The null and alternative hypotheses are the following: <span class="math inline">\(H_0 : \beta_4 = 0\)</span> and <span class="math inline">\(H_a : \beta_4 \neq 0\)</span> respetively The t-statistic equals <span class="math inline">\(t = − 169.81/12.71=-13.36\)</span>. For a 5% significance level and (4, 137 − 12.715 − 1) degrees of freedom, the critical value is <span class="math inline">\(t_c = 1.96\)</span>. Because the <span class="math inline">\(|t| &gt; |t_c|\)</span> we reject the null hypothesis in favor of the alternative hypothesis and <span class="math inline">\(\hat{\beta}_4\)</span> is individually statistically significant.</p>
 <style type="text/css">
@@ -428,6 +495,17 @@ Consider the following estimated equation:
 <section id="question-5.9-d" class="slide level2">
 <h2>Question 5.9 d</h2>
 <p>What is the estimated difference in SAT score between black females and nonblack females? What would you need to do to test whether the difference is statistically significant?</p>
+<div style="font-size: 60%;">
+<p><span class="math display">\[
+\widehat{sat}=
+  \underset{(6.29)}{1029.10} +
+  \underset{(3.83)}{19.30} hsize -
+  \underset{(0.53)}{2.19} hsize^2 -
+  \underset{(4.29)}{45.09} female -
+  \underset{(12.71)}{169.81} black +
+  \underset{(18.15)}{62.31} female\times black
+\]</span> With <span class="math inline">\(n=4137\)</span> and <span class="math inline">\(R^2=0.0858\)</span>.</p>
+</div>
 <aside class="notes">
 <p><span class="math inline">\(E(sat|female = 1, black = 1) = \hat{\beta}_0 + \hat{\beta}_3 + \hat{\beta}_4 + \hat{\beta}_5\)</span> (black females) <span class="math inline">\(E(sat|female = 1, black = 0) = \hat{\beta}_0 + \hat{\beta}_3\)</span> (nonblack females)</p>
 <p>The difference between the groups is <span class="math inline">\(\hat{\beta}_3+\hat{\beta}_4+\hat{\beta}_5−\hat{\beta}_3=\hat{\beta}_4+\hat{\beta}_5\)</span>. Then the null hypothesis can be written as <span class="math inline">\(H_0 : \beta_4 + \beta_5 = 0\)</span></p>
