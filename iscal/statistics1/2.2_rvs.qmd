@@ -243,6 +243,7 @@ ggplot(df, aes(x = x, y = y)) +
   geom_area(aes(y = shade), fill = "skyblue", alpha = 0.5) +
   annotate("text", x = -0.2, y = 0.02, label = "a", color = "black", size = 7) +
   annotate("text", x = 0.5, y = 0.02, label = "b", color = "black", size = 7) +
+
   annotate("text", x = 0.35, y = 0.1, label = "P(a < x ~ '\u2264' ~ b)", parse = TRUE, size = 5) +
   labs(title = "Standard Normal Distribution",
        x = "x", y = "Density") +
@@ -590,6 +591,7 @@ A random pair $(X,Y)$ is discrete when:
 
 Let $(X,Y)$ a discrete random pair, the joint density function $f_{X,Y}(x,y)$ is a function $f_{X,Y}:\mathbb{R}^2\rightarrow\mathbb{R}$ defined as:
 
+<div style="font-size: 70%;">
 $$
 f_{X,Y}(x,y)=\left\{
     \begin{array}{cl}
@@ -598,6 +600,7 @@ f_{X,Y}(x,y)=\left\{
     \end{array}
   \right.
 $$
+</div>
 
 ## Joint density function $f_{X,Y}$
 
@@ -612,6 +615,8 @@ $f_{X,Y}$ satisfies the following properties:
 
 ## Joint density function $f_{X,Y}$
 
+
+<div style="font-size: 70%;">
 | | $y_1$ | $y_2$ | $\dots$ | $y_j$ | $\dots$ | | 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $x_1$ | $p_{11}$ | $p_{12}$ | $\dots$ | $p_{1j}$ | $\dots$ |  $\sum_{j=1}^\infty p_{1j}$ |
@@ -620,6 +625,8 @@ $f_{X,Y}$ satisfies the following properties:
 | $x_i$ | $p_{i1}$ | $p_{i2}$ | $\dots$ | $p_{ij}$ | $\dots$ | $\sum_{j=1}^\infty p_{ij}$ |
 | $\vdots$ | $\vdots$ | $\vdots$ | $\ddots$ | $\vdots$ | $\ddots$ | $\vdots$ |
 | | $\sum_{i=1}^\infty p_{i1}$ | $\sum_{i=1}^\infty p_{i2}$ | $\dots$|  $\sum_{i=1}^\infty p_{ij}$ | $\dots$| 1 |
+
+</div>
 
 ## Marginal probability function
 
@@ -661,7 +668,7 @@ Consider the following table for the joint probability of $(X,Y)$
 1. If $P(X=1, Y=0)=0.02$, find $b$ and $c$
 
     * Directly we get $a=0.02$ as it is $P(X=1, Y=0)$
-    * Note that the top row is $f_Y(y)$ and the right column is $f_X(x)$
+    * Note that the top row is $f_Y(y)$ and the left column is $f_X(x)$
     * Fill directly $f_X(x)$ with $0.17$, $0.8$, and $0.03$.
     * Fill $f_Y(y)$ with the summation of each column
 
@@ -727,7 +734,7 @@ Given that $E[(X-\mu_X)(Y-\mu_Y)]$ exists.
 
 :::
 
-> Note that this is equivalent to $cov(X,y)=E[XY]-E[X]E[Y]$
+> Note that this is equivalent to $cov(X,Y)=E[XY]-E[X]E[Y]$
 
 ## Properties of the covariance
 
@@ -745,18 +752,19 @@ If $X$ and $Y$ are independent r.v. then $cov(X,Y)=0$. Note that the opposite is
 
 Another important identity with the covariance is the following:
 
-$$V[X\pm Y] =  V(X)+V[Y]\pm 2 cov(X,Y)$$
+$$V[X\pm Y] =  V[X]+V[Y]\pm 2 cov(X,Y)$$
 
 
 ## Example
 
 Knowing that $E[Y]=0.9$, $cov(X,Y)$ is equal to? ...
+<div style="font-size: 70%;">
 
 * From the first table: $E[X]=0.17\times 1 + 0.8 \times 2 + 0.03 \times 3 = 1.86$
 * $$E[XY]=\sum_{x}\sum_{y}xyP(X=x,Y=y)=$$ $$= 1 \times 0 \times 0.02 + 1\times 1 \times 0.1 + 1\times 2 \times 0.05 +$$ $$+ 3\times 0 \times 0.1 + 2 \times 1 \times 0.7 + 2\times 2 \times 0 + $$ $$+ 3 \times 0 \times 0.03 + 3 \times 1 \times 0 + 3 \times 2 \times 0 = 1.6$$
 
 * $cov(X,Y)=E[XY]-E[X]E[Y]=1.6-1.86\times 0.9=-0.074$
-
+</div>
 ## Correlation coefficient
 
 A caveat of the covariance is that its units depends directly on the units of $X$ and $Y$. The correlation coefficient allow us to express this relationship, between $X$ and $Y$ without being affected by the units in which these r.v. are measured.
@@ -771,9 +779,9 @@ Clearly $\rho\in[-1,1]$. Note also that $|\rho|=1$ if and only if $P(Y=a+bX)=1$ 
 | Correlation coefficient | Correlation |
 | :--: | :--:|
 |$|\rho| = 1$ | Perfect  |
-|$0.8 \geq |\rho| < 1$ | Strong  |
-|$0.5 \geq |\rho| < 0.8$ | Moderate  |
-|$0.1 \geq |\rho| < 0.5$ | Weak  |
+|$0.8 \leq |\rho| < 1$ | Strong  |
+|$0.5 \leq |\rho| < 0.8$ | Moderate  |
+|$0.1 \leq |\rho| < 0.5$ | Weak  |
 |$0 < |\rho| < 0.1$ | Very weak  |
 |$\rho= 0$ | None  |
 
@@ -783,7 +791,7 @@ Write *positive* or *negative* in front of correlation if $\rho>0$ or $\rho<0$ r
 
 5. Based on the previous question, find the correlation coefficient between $X$ and $Y$.
 
-* From the marginal probability function we obtain $V[X]$ and $V[Y]$: $$V[x]=0.1804\text{ and }V[Y]=0.19$$
+* From the marginal probability function we obtain $V[X]$ and $V[Y]$: $$V[X]=0.1804\text{ and }V[Y]=0.19$$
 
 * Therefore, $$\rho = \frac{cov(X,Y)}{\sigma_X\sigma_Y}=\frac{-0.074}{\sqrt{0.1804}\sqrt{0.19}}=-0.3997$$
 

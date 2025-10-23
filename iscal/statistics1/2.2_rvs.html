@@ -1712,6 +1712,7 @@ F(x)=P(X\leq x)=\left\{
 <section id="joint-density-function-f_xy" class="slide level2">
 <h2>Joint density function <span class="math inline">\(f_{X,Y}\)</span></h2>
 <p>Let <span class="math inline">\((X,Y)\)</span> a discrete random pair, the joint density function <span class="math inline">\(f_{X,Y}(x,y)\)</span> is a function <span class="math inline">\(f_{X,Y}:\mathbb{R}^2\rightarrow\mathbb{R}\)</span> defined as:</p>
+<div style="font-size: 70%;">
 <p><span class="math display">\[
 f_{X,Y}(x,y)=\left\{
     \begin{array}{cl}
@@ -1720,6 +1721,7 @@ f_{X,Y}(x,y)=\left\{
     \end{array}
   \right.
 \]</span></p>
+</div>
 </section>
 <section id="joint-density-function-f_xy-1" class="slide level2">
 <h2>Joint density function <span class="math inline">\(f_{X,Y}\)</span></h2>
@@ -1736,6 +1738,7 @@ f_{X,Y}(x,y)=\left\{
 </section>
 <section id="joint-density-function-f_xy-2" class="slide level2">
 <h2>Joint density function <span class="math inline">\(f_{X,Y}\)</span></h2>
+<div style="font-size: 70%;">
 <table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 14%">
@@ -1814,6 +1817,7 @@ f_{X,Y}(x,y)=\left\{
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="marginal-probability-function" class="slide level2">
 <h2>Marginal probability function</h2>
@@ -1903,7 +1907,7 @@ f_{X,Y}(x,y)=\left\{
 <li class="fragment"><p>If <span class="math inline">\(P(X=1, Y=0)=0.02\)</span>, find <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span></p>
 <ul>
 <li class="fragment">Directly we get <span class="math inline">\(a=0.02\)</span> as it is <span class="math inline">\(P(X=1, Y=0)\)</span></li>
-<li class="fragment">Note that the top row is <span class="math inline">\(f_Y(y)\)</span> and the right column is <span class="math inline">\(f_X(x)\)</span></li>
+<li class="fragment">Note that the top row is <span class="math inline">\(f_Y(y)\)</span> and the left column is <span class="math inline">\(f_X(x)\)</span></li>
 <li class="fragment">Fill directly <span class="math inline">\(f_X(x)\)</span> with <span class="math inline">\(0.17\)</span>, <span class="math inline">\(0.8\)</span>, and <span class="math inline">\(0.03\)</span>.</li>
 <li class="fragment">Fill <span class="math inline">\(f_Y(y)\)</span> with the summation of each column</li>
 </ul></li>
@@ -2026,7 +2030,7 @@ f_{X,Y}(x,y)=\left\{
 </div>
 </div>
 <blockquote>
-<p>Note that this is equivalent to <span class="math inline">\(cov(X,y)=E[XY]-E[X]E[Y]\)</span></p>
+<p>Note that this is equivalent to <span class="math inline">\(cov(X,Y)=E[XY]-E[X]E[Y]\)</span></p>
 </blockquote>
 </section>
 <section id="properties-of-the-covariance" class="slide level2">
@@ -2043,17 +2047,19 @@ f_{X,Y}(x,y)=\left\{
 <p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent r.v. then <span class="math inline">\(cov(X,Y)=0\)</span>. Note that the opposite is not necessarily true, i.e. <span class="math inline">\(cov(X,Y)=0\)</span> does not imply that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
 <div class="fragment">
 <p>Another important identity with the covariance is the following:</p>
-<p><span class="math display">\[V[X\pm Y] =  V(X)+V[Y]\pm 2 cov(X,Y)\]</span></p>
+<p><span class="math display">\[V[X\pm Y] =  V[X]+V[Y]\pm 2 cov(X,Y)\]</span></p>
 </div>
 </section>
 <section id="example-13" class="slide level2">
 <h2>Example</h2>
-<p>Knowing that <span class="math inline">\(E[Y]=0.9\)</span>, <span class="math inline">\(cov(X,Y)\)</span> is equal to? …</p>
+Knowing that <span class="math inline">\(E[Y]=0.9\)</span>, <span class="math inline">\(cov(X,Y)\)</span> is equal to? …
+<div style="font-size: 70%;">
 <ul>
 <li class="fragment"><p>From the first table: <span class="math inline">\(E[X]=0.17\times 1 + 0.8 \times 2 + 0.03 \times 3 = 1.86\)</span></p></li>
 <li class="fragment"><p><span class="math display">\[E[XY]=\sum_{x}\sum_{y}xyP(X=x,Y=y)=\]</span> <span class="math display">\[= 1 \times 0 \times 0.02 + 1\times 1 \times 0.1 + 1\times 2 \times 0.05 +\]</span> <span class="math display">\[+ 3\times 0 \times 0.1 + 2 \times 1 \times 0.7 + 2\times 2 \times 0 + \]</span> <span class="math display">\[+ 3 \times 0 \times 0.03 + 3 \times 1 \times 0 + 3 \times 2 \times 0 = 1.6\]</span></p></li>
 <li class="fragment"><p><span class="math inline">\(cov(X,Y)=E[XY]-E[X]E[Y]=1.6-1.86\times 0.9=-0.074\)</span></p></li>
 </ul>
+</div>
 </section>
 <section id="correlation-coefficient" class="slide level2">
 <h2>Correlation coefficient</h2>
@@ -2076,15 +2082,15 @@ f_{X,Y}(x,y)=\left\{
 <td style="text-align: center;">Perfect</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(0.8 \geq |\rho| &lt; 1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.8 \leq |\rho| &lt; 1\)</span></td>
 <td style="text-align: center;">Strong</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(0.5 \geq |\rho| &lt; 0.8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.5 \leq |\rho| &lt; 0.8\)</span></td>
 <td style="text-align: center;">Moderate</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(0.1 \geq |\rho| &lt; 0.5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.1 \leq |\rho| &lt; 0.5\)</span></td>
 <td style="text-align: center;">Weak</td>
 </tr>
 <tr class="odd">
@@ -2105,7 +2111,7 @@ f_{X,Y}(x,y)=\left\{
 <li class="fragment">Based on the previous question, find the correlation coefficient between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</li>
 </ol>
 <ul>
-<li class="fragment"><p>From the marginal probability function we obtain <span class="math inline">\(V[X]\)</span> and <span class="math inline">\(V[Y]\)</span>: <span class="math display">\[V[x]=0.1804\text{ and }V[Y]=0.19\]</span></p></li>
+<li class="fragment"><p>From the marginal probability function we obtain <span class="math inline">\(V[X]\)</span> and <span class="math inline">\(V[Y]\)</span>: <span class="math display">\[V[X]=0.1804\text{ and }V[Y]=0.19\]</span></p></li>
 <li class="fragment"><p>Therefore, <span class="math display">\[\rho = \frac{cov(X,Y)}{\sigma_X\sigma_Y}=\frac{-0.074}{\sqrt{0.1804}\sqrt{0.19}}=-0.3997\]</span></p></li>
 <li class="fragment"><p>We observe a weak negative linear correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p></li>
 </ul>
