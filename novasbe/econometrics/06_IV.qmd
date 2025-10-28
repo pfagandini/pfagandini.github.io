@@ -27,11 +27,7 @@ engine: knitr
 
 ## Review
 
-We will need this:
-
-$$
-F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
-$$
+2SLS estimator
 
 ## Exercises
 
@@ -46,9 +42,9 @@ https://moodle.novasbe.pt/mod/folder/view.php?id=4021
 <div style="font-size: 70%;">
 By how much taxes must be increased ot reach a certain reduction in cigarette consumption? Using the price elasticity for the demand, we are interested in estimating $\beta_1$ in:
 
-\[
+$$
   \ln\left(Q_i^{cigarettes}\right)=\beta_0+\beta_1\ln \left(P_i^{cigarettes}\right)+u_i
-\]
+$$
 
 where $\ln \left(Q_i^{cigarettes}\right)$ is the number of cigarette packs per capita sold and $\ln\left(P_i^{cigarettes}\right)$ is the after-tax average real price per pack of cigarettes in state $i$. We use the data set $CigarettesSW$ - data on cigarette consumption for the 48 continental US States in 1995.
 

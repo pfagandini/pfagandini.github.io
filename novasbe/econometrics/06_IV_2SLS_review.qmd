@@ -64,8 +64,8 @@ Why this helps?
 
 $$
 \begin{aligned}
-    E[\hat{\beta}_{2SLS}]=&E\left[\left(X'P_ZX\right)^{-1}X'P_Z'(X\beta+u)|X,Z\right]\\
-    =&E\left[\left(X'P_ZX\right)^{-1}X'P_Z'X\beta+\left(X'P_ZX\right)^{-1}X'P_Z'u|X,Z\right]\\
-    =&E\left[\beta+\left(X'P_ZX\right)^{-1}X'Z(Z'Z)^{-1}\underbrace{Z'u}_{=0}|X,Z\right]=\beta
+    E[\hat{\beta}_{2SLS}|Z]=&E\left[\left(X'P_ZX\right)^{-1}X'P_Z'(X\beta+u)|Z\right]\\
+    =&E\left[\left(X'P_ZX\right)^{-1}X'P_Z'X\beta+\left(X'P_ZX\right)^{-1}X'P_Z'u|Z\right]\\
+    =&E\left[\beta+\left(X'P_ZX\right)^{-1}X'Z(Z'Z)^{-1}\underbrace{Z'u}_{=0}|Z\right]=\beta
 \end{aligned}
 $$

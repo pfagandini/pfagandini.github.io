@@ -6,8 +6,8 @@
 <script src="06_IV_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="06_IV_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="06_IV_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="06_IV_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="06_IV_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Paulo Fagandini">
   <title>IV</title>
@@ -148,10 +148,7 @@ Paulo Fagandini
 </section>
 <section id="review-1" class="slide level2">
 <h2>Review</h2>
-<p>We will need this:</p>
-<p><span class="math display">\[
-F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
-\]</span></p>
+<p>2SLS estimator</p>
 </section>
 <section id="exercises" class="slide level2">
 <h2>Exercises</h2>
@@ -165,7 +162,9 @@ F = \frac{(R^2_{ur} - R^2_{r})/q}{(1 - R^2_{ur})/(n-k-1)}
 <h2>Exercise 6.1</h2>
 <div style="font-size: 70%;">
 <p>By how much taxes must be increased ot reach a certain reduction in cigarette consumption? Using the price elasticity for the demand, we are interested in estimating <span class="math inline">\(\beta_1\)</span> in:</p>
-<p>[ (Q_i^{cigarettes})=_0+_1(P_i^{cigarettes})+u_i ]</p>
+<p><span class="math display">\[
+  \ln\left(Q_i^{cigarettes}\right)=\beta_0+\beta_1\ln \left(P_i^{cigarettes}\right)+u_i
+\]</span></p>
 <p>where <span class="math inline">\(\ln \left(Q_i^{cigarettes}\right)\)</span> is the number of cigarette packs per capita sold and <span class="math inline">\(\ln\left(P_i^{cigarettes}\right)\)</span> is the after-tax average real price per pack of cigarettes in state <span class="math inline">\(i\)</span>. We use the data set <span class="math inline">\(CigarettesSW\)</span> - data on cigarette consumption for the 48 continental US States in 1995.</p>
 </div>
 </section>
