@@ -247,7 +247,7 @@ F(x)=\begin{cases}
 \end{cases}
 $$
 
-1. $P(X\geq 9.2 | 9.5 \leq X \leq 9.5)$ is equal to `r mcq(c("0.195","0.875",answer="0.26","None of the above"))`
+1. $P(X\geq 9.2 | 8.5 \leq X \leq 9.5)$ is equal to `r mcq(c("0.195","0.875",answer="0.26","None of the above"))`
 
 :::
 
@@ -310,7 +310,7 @@ For the following lines consider $a=0.02$ and $b=0.05$ and $c=0.7$
 
 Consider the following information about the random pair $(X,Y)$:
 
-- $X$ has support $\Omega_X=\{0,1\}$ and $Y$ has support $\Omega_Y=\{-1,1\}
+- $X$ has support $\Omega_X=\{0,1\}$ and $Y$ has support $\Omega_Y=\{-1,1\}$
 - $P(X=0)=0.5$ and $P(Y=1)=0.6$
 - $P(X=1,Y=1)=p$ with $0<p<1$
 
