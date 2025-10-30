@@ -93,7 +93,7 @@ Consider the following random variable $X$ with its $pdf$ given by:
 ::: {.table}
 | $x$ | 0 | 1 | 2 | 3 | 4 | 
 | ---  | :---:   | :---:   | :---:   | :---:   | :---:   |
-|$f(x)$ | 0.05 | $\alpha$ | 0.35 | .25 | .05 |
+|$f(x)$ | 0.05 | $\alpha$ | 0.35 | 0.25 | 0.05 |
 :::
 
 1. `r torf(TRUE)` $\alpha$ must equal 0.3.
@@ -138,7 +138,7 @@ The number of work absences, in days, of the workers of a company is a random va
 ::: {.table}
 | $x$ | 1 | 2 | 3 | 4 | 5  | $x\notin\{1,2,3,4,5\}$ |
 | ---  | :---:   | :---:   | :---:   | :---:   | :---:   | :---:  | 
-|$f(x)$ | **a** | 0.15 | 0.3 | .10 | **b** | 0 |
+|$f(x)$ | **a** | 0.15 | 0.3 | 0.10 | **b** | 0 |
 :::
 
 It is known further that 60% of the workers did not skip more than 3 days of work.
