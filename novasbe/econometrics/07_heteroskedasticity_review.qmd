@@ -1,5 +1,5 @@
 ---
-title: "Review for lecture 2SLS"
+title: "Review for lecture Heteroskedasticity"
 format: html
 ---
 
