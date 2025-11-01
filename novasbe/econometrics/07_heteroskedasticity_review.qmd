@@ -1,0 +1,12 @@
+---
+title: "Review for lecture 2SLS"
+format: html
+---
+
+1. Testing for Heteroskedasticity
+2. Breusch-Pagan test
+3. White test
+4. Lazy White test
+5. Weighted Least Squares (WLS)
+6. Robust Standard Errors
+7. Feasible Generalized Least Squares
