@@ -36,6 +36,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="07_heteroskedasticity_review_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="07_heteroskedasticity_review_files/libs/bootstrap/bootstrap-55aa396ea3e988129bcec43acf404917.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -73,6 +102,39 @@ ul.task-list li input[type="checkbox"] {
 <li>Robust Standard Errors</li>
 <li>Feasible Generalized Least Squares</li>
 </ol>
+<p>Consider the classical model:</p>
+<p><span class="math display">\[
+y = X\beta + u
+\]</span></p>
+<p>From where we estimate <span class="math inline">\(\hat{\beta}\)</span> as</p>
+<p><span class="math display">\[\hat{\beta}=(X'X)^{-1}X'y\]</span></p>
+<p>Now let’s compute the variance of <span class="math inline">\(\hat{\beta}\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+V[\hat{\beta}|X]&amp;=V\left[(X'X)^{-1}X'y|X\right]\\
+&amp;= V\left[(X'X)^{-1}X'(X\beta+u)|X\right]\\
+&amp;=V\left[(X'X)^{-1}X'X\beta+(X'X)^{-1}X'u|X\right]\\
+&amp;=V\left[\beta+(X'X)^{-1}X'u|X\right]=V\left[(X'X)^{-1}X'u|X\right]
+\end{aligned}
+\]</span></p>
+<p>And then</p>
+<p><span class="math display">\[
+V[\hat{\beta}|X]=E[(X'X)^{-1}X'uu'X(X'X)^{-1}|X]
+\]</span></p>
+<p>Note that if we are in the presence of homoskedasticity, then <span class="math inline">\(V[u_i|X]=\sigma^2\)</span>, in particular <span class="math inline">\(E[uu'|X]=\sigma^2 I_n\)</span>. With homoskedasticity:</p>
+<p><span class="math display">\[
+V[\hat{\beta}|X]=E[(X'X)^{-1}X'\sigma^2 I_n'X(X'X)^{-1}|X]=\sigma^2(X'X)^{-1}
+\]</span></p>
+<p>However, with heteroskedasticity:</p>
+<p><span class="math display">\[
+V[\hat{\beta}|X]=E[(X'X)^{-1}X'uu'X(X'X)^{-1}|X]
+\]</span></p>
+<p>where <span class="math inline">\(E[uu'|X]\)</span> is the variance-covariance matrix of the error, <span class="math inline">\(\Omega\)</span>. If errors are uncorrelated, the covariance is zero, however the diagonal has different <span class="math inline">\(\sigma_i^2\)</span>.</p>
+<p>Note that this does not create a bias, as still <span class="math inline">\(E[u|X]=0\)</span>, and we still have</p>
+<p><span class="math display">\[
+E[\hat{\beta}]=E\left[(X'X)^{-1}X'y|X\right]=E\left[\beta+(X'X)^{-1}X'u|X\right]=\beta+E\left[(X'X)^{-1}X'u|X\right]
+\]</span></p>
+<p>And the bias, <span class="math inline">\((X'X)^{-1}X'E[u|X]=0\)</span>.</p>
 
 </main>
 <!-- /main column -->
