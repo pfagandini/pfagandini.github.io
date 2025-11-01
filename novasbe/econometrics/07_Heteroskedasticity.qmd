@@ -1,0 +1,173 @@
+---
+title: "Heteroskedasticity"
+author: "Paulo Fagandini"
+institute: "Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures/NovaPrincipalV2.svg
+    slide-number: true
+    cross-ref: true
+    incremental: false
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Review
+
+## Review
+
+1. Testing for Heteroskedasticity
+2. Breusch-Pagan test
+3. White test
+4. Lazy White test
+5. Weighted Least Squares (WLS)
+6. Robust Standard Errors
+7. Feasible Generalized Least Squares
+
+## Exercises
+
+https://moodle.novasbe.pt/mod/folder/view.php?id=4021
+
+![](pictures/qr_code.svg)
+
+<div style="font-size: 70%;">
+</div>
+
+## Exercise 7.1
+
+Which of the following are consequences of heteroskedasticity?
+a) The OLS estimators, $\hat{\beta}_j$, are inconsistent.
+b) The usual F statistics no longer has an $F$ distribution.
+c) The OLS estimators are no longer BLUE.
+
+:::{.notes}
+a) MLR5 is not needed for consistency, only MLR1-MLR4
+b) If MLR5 fails, usual SEs are wrong and $t$ and $F$ statistics do not have $t$ and $F$ distributions, respetively, thus inference as usual is invalid.
+c) MLR1-MLR5 need to hold for OLS to be BLUE
+:::
+
+## Exercise 7.3
+
+Consider a linear model to explain omnthly beer consumption:
+<div style="font-size: 90%;">
+$$beer = \beta_0+\beta_1 inc + \beta_2 price + \beta_3 educ + \beta_4 female + u$$
+
+$E[u|X]=0$, $V[u|X]=\sigma^2 inc^2$.
+</div>
+
+Write the transformed equation that has a homoskedastic error term.
+
+:::{.notes}
+In this case we know the expression of the variance of the model. Therefore we can use $WLS$ where:
+$$V[u|X]=\sigma^2 inc^2=\sigma^2 h(x)$$
+The transformed equation is:
+$$beer/\sqrt{inc^2}=\beta_0/\sqrt{inc^2}+... + u/\sqrt{inc^2}$$
+The new error is homoskedastic: $V[u/inc|X]=\sigma^2 inc^2/inc^2=\sigma^2$
+:::
+
+## Exercise 7.7
+
+From a sample of 88 observations the following regression was obtained to explain the price of housing in a particular US state:
+
+$$
+\hat{p}_i = \underset{\underset{[37.14]}{(29.48)}}{-21.77}+\underset{\underset{[0.0013]}{0.0006}}{0.002}ls_i+\underset{\underset{[0.018]}{0.013}}{0.123}hs_i+\underset{\underset{[8.48]}{(9.01)}}{13.85} nr_i
+$$
+
+where, for house $i$, $p$ represents price (in thousands), $ls$ is the lot size (in $m^2$), $hs$ is the size of the house (in $m^2$) and $nr$ the number of rooms. The usual and heteroskedasticity-robust standard errors are in parenthesis and squared brackets, respetively.
+
+
+## Exercise 7.7
+
+a) Consider the following regression
+
+$$
+\hat{u}_i=-5,522.79+0.202 ls_i + 1.69 hs_i + 1,041.76 nr_i
+$$
+
+with $R^2=0.160$ and $F=5.339$
+
+How many degrees of freedom has the $F$ distribution from where you obtain the critical value? Given the output above, analyze whether the errors of the initial model are heteroskedastic. Use both $F$ and $LM$ versions of the test to derive your conclusion.
+
+:::{.notes}
+The output above is the Breush-Pagan test for heteroskedasticity: $H_0:V[u|X]=\sigma^2$, $H_a:V[u|X]=\sigma^2_i$.
+
+$F=[(R^2)/K]/[(1-R^2)/(N-K-1)]=[(0.16)/(3)]/[(1-0.16)/(88-3-1)]\approx 5.339>2.71=F^c_{3,88-3-1}$
+
+$LM=nR^2=88\cdot 0.16=14.88>7.815=\chi_3^2$
+Reject $H_0$! There is evidence of heteroskedasticity.
+:::
+
+## Exercise 7.7
+
+b) Explain why the model is estimated with heteroskedasticity-robust standard errors. Compare these results with those obtained with the usual standard errors.
+
+:::{.notes}
+We found evidence of heteroskedasticity. Therefore, usual standard errors are wrong. But the coefficients are still unbiased if MLR1-MLR4 hold. Thus, we can use estimated heteroskedasticity-robust standard errors to conduct inference.
+
+$ls$ - usual $t=3.33^*$ - robust $t=1.54$
+$hs$ - usual $t=9.46^*$ - robust $t=6.83^*$
+$nr$ - usual $t=1.54$ - robust $t=1.63$
+
+$ls$ turns out to be not statistically significant at the 5% level. $hs$ is the only statistically significant variable.
+:::
+
+## Exercise 7.7
+
+c) One of the econometricians in charge suggested that, given his knowledge of the market and the problem detected in (a), it would make sense to estiamte a model in which the elasticities price-lot size and price-house size were constant. The results of such model are:
+
+$$
+\widehat{ln(p_i)}=\underset{(0.65)}{-1.30}+\underset{(0.038)}{0.168}\ln (ls_i)+\underset{(0.093)}{0.70}\ln (hs_i) + \underset{(0.028)}{0.037}nr_i
+$$
+
+with $R^2=0.643$.
+
+Explain why these auxiliary regressions were estimated. What do you conclude?
+
+:::{.notes}
+Taking the log of the dependent variable usually reduces heteroskedasticity because the spread of the distribution is usually reduced and the influence of outliers is mitigated.
+:::
+
+## Exercise 7.7
+
+d) The following auxiliary regressions were also estimated, using the residuals of the last model:
+
+<div style="font-size: 70%;">
+
+$$
+\begin{aligned}
+\hat{u}_i^2 =& 12.21 - 1.27 \ln (ls_i) - 1.76 \ln (hs_i) + 0.29 nr_i + 0.02 \ln (ls_i)^2 +\\
++& 0.04 \ln (hs_i)^2-0.005 nr_i^2 + 0.12 [\ln (ls_i)\times \ln (hs_i)]\\
+-&0.03[\ln (ls_i)\times nr_i] - 0.001[\ln (hs_i)\times nr_i]
+\end{aligned}
+$$
+
+With $R^2=0.109$ and
+
+$$
+\hat{u}_i^2=5.05-1.71\ln \widehat{\ln (p_i)}+0.145\widehat{\ln (p_i)}^2
+$$
+With $R^2=0.039$.
+
+</div>
+
+Explain why these auxiliary regressions were estimated. What do you conclude?
+
+:::{.notes}
+These auxiliary regressions were estimated to perform a White test and a "Lazy"/Alternative White test.
+$H_0: V[u|X]=\sigma^2$, $H_a:V[u|X]=\sigma_i^2$
+
+$LM_1=n\cdot R^2=88\cdot 0.109 = 9.592<16.92=\chi_9^2$
+$LM_2=n\cdot R^2=88\cdot 0.0309 = 3.432<5.99=\chi_2^2$
+There is no evidence of heteroskedasticity anymore!
+:::
