@@ -60,3 +60,15 @@ E[\hat{\beta}]=E\left[(X'X)^{-1}X'y|X\right]=E\left[\beta+(X'X)^{-1}X'u|X\right]
 $$
 
 And the bias, $(X'X)^{-1}X'E[u|X]=0$.
+
+Going back to $V[\hat{\beta}|X]$
+
+$$
+V[\hat{\beta}|X]=(X'X)^{-1}X'\Omega X(X'X)^{-1}
+$$
+
+Try this estimator: $\hat{\beta}_{robust}=(X'\Omega^{-1} X)^{-1}X'\Omega^{-1} y$. I will ignore the subscript $robust$ from now on, but keep in mind that $\hat{\beta}=\hat{\beta}_{robust}$:
+
+$$
+V[\hat{\beta}|X]=(X'\Omega^{-1}X)^{-1}X'\Omega^{-1}\Omega\Omega^{-1} X(X'\Omega^{-1}X)^{-1}=(X'\Omega^{-1} X)^{-1}
+$$
