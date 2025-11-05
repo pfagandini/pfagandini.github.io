@@ -1,0 +1,299 @@
+---
+title: "R Class"
+author: "Paulo Fagandini, Marlon Francisco, Diogo Franquinho"
+institute: "Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures/NovaPrincipalV2.svg
+    slide-number: true
+    cross-ref: true
+    incremental: false
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+## Clean work environment
+
+```{r, echo=TRUE, eval=FALSE}
+rm(list = ls()) 
+```
+
+USE with CAUTION: this will delete everything in your environment
+
+## Load packages
+
+```{r, echo=TRUE}
+library(tidyverse)
+library(dplyr)
+library(stargazer)
+library(skimr)
+library(caret)
+library(xtable)
+library(GGally)
+library(ggthemes)
+library(car)
+```
+
+## Set working directory
+
+```{r, echo=TRUE, eval=FALSE}
+setwd("/your/path/to/the/files")
+```
+
+## Load data
+```{r, echo=TRUE}
+DM <- read.csv('datasets/DirectMarketing.csv')
+```
+
+## Data set overview
+```{r, echo=TRUE}
+#| attr-output: 'style="font-size: 0.7em;"'
+
+skim(DM) %>% yank("numeric")
+```
+
+## Deal with NAs
+
+Create a new category "No past purchases".
+```{r, echo=TRUE}
+DM$History[is.na(DM$History)] <- "No past purchases"
+```
+
+## Create new variable PastPurchases
+
+Make it equal to "Past purchases" if it is an old customer
+
+```{r, echo=TRUE}
+DM$PastPurchases <- ifelse(DM$History == "No past purchases", 
+                           "No past purchases", "Past purchases")
+```
+
+## Quick summary statistics table
+
+```{r, echo=TRUE}
+stargazer(as.data.frame(DM), type = "text", 
+    title="Descriptive stats")
+```
+
+## Quick summary statistics table
+
+```{r, echo=TRUE, eval=FALSE}
+stargazer(as.data.frame(DM), type = "html", 
+    title="Descriptive stats", out="DS.html")
+```
+
+This will create a new file *DS.html* that you can include in your final document.
+
+## New data frame all numeric
+
+```{r, echo=TRUE}
+DM_aux <- dummyVars(" ~ .", data = DM)
+DM_num <- data.frame(predict(DM_aux, newdata = DM))
+```
+
+## Summary statistics table with numeric
+
+```{r, echo=TRUE}
+stargazer(as.data.frame(DM_num), type = "text", 
+          title="Descriptive stats: all numeric data")
+```
+
+## Store the summary statistics in a file
+
+```{r, echo=TRUE, eval=FALSE}
+stargazer(as.data.frame(DM_num), type = "html", 
+          title="Descriptive stats: all numeric data",
+          out="DS2.html")
+```
+
+## Create correlation matrix
+
+```{r, echo=TRUE}
+corrDM = cor(
+    DM[
+        ,c("AmountSpent", "Salary", "Catalogs", "Children")
+        ]
+    )
+```
+
+## Display correlation matrix with title
+
+```{r, echo=TRUE}
+stargazer(corrDM, title="Correlation Matrix", 
+          digits = 2, type="text")
+```
+
+## Store the correlation matrix in a file
+
+```{r, echo=TRUE, eval=FALSE}
+stargazer(corrDM, title="Correlation Matrix", 
+          digits = 2, type="html",
+          out="corr.html")
+```
+
+## Histogram of AmountSpent
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = AmountSpent)) + geom_histogram()
+```
+
+## Histogram of Salary
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = Salary)) + geom_histogram()
+```
+
+## Histogram of Catalogs
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = Catalogs)) + geom_histogram()
+```
+
+## Histogram of Children
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = Children)) + geom_histogram()
+```
+
+## Amount spent by gender
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = factor(Gender), y = AmountSpent)) +
+  geom_boxplot() + 
+  theme(text = element_text(size = 25))
+```
+
+## Distribution of amount spent by location
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = factor(Location), y = AmountSpent)) + geom_boxplot() + 
+  theme(text = element_text(size = 25))
+```
+
+## Distribution of amount spent by age
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = factor(Age), y = AmountSpent)) +
+  geom_boxplot() +
+  theme(text = element_text(size = 25))
+```
+
+## Distribution of amount spent by history
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = factor(History), y = AmountSpent)) +
+  geom_boxplot() +
+  theme(text = element_text(size = 25))
+```
+
+## Scatterplot of amount spent and salary
+
+```{r, echo=TRUE}
+ggplot(data = DM, aes(x = Salary, y = AmountSpent)) +
+  geom_point() +
+  stat_smooth(method = lm) +
+  theme(text = element_text(size = 18))
+```
+
+## Impact of Salary on AmountSpent
+
+```{r, echo=TRUE}
+lm1 <- lm(AmountSpent ~ Salary, data = DM)
+```
+
+## Regression results
+
+```{r, echo=TRUE}
+stargazer(lm1, type = "text", no.space = TRUE, digits=3, 
+          title = "Impact of Salary on Amount Spent")
+```
+
+## Regression results
+
+```{r, echo=TRUE, eval=FALSE}
+stargazer(lm1, type = "html", no.space = TRUE, digits=3, 
+          title = "Impact of Salary on Amount Spent",
+          out="SLR.html")
+```
+## Extract and store model coefficients
+
+```{r, echo=TRUE}
+lm1.coeffs <- coefficients(lm1)
+lm1.coeffs
+```
+
+## Predict amount spent when profits = 100,000
+
+```{r, echo=TRUE}
+lm1.coeffs[1] + lm1.coeffs[2]*100000
+```
+
+## Add new column to data set with predicted salary and residuals
+
+```{r, echo=TRUE}
+DM$lm1_y = predict(lm1)
+DM$lm1_u = residuals(lm1)
+```
+
+## Define multiple regression models, incrementally
+
+```{r, echo=TRUE}
+m1 <- AmountSpent ~ Salary 
+m2 <- AmountSpent ~ Salary + Catalogs + Children 
+m3 <- AmountSpent ~ Salary + Catalogs + Children + Gender + History + Location
+```
+
+## Run models 1 to 3
+
+```{r, echo=TRUE}
+lm.spend1 <- lm(m1, data = DM)
+lm.spend2 <- lm(m2, data = DM)
+lm.spend3 <- lm(m3, data = DM)
+```
+
+## Output table with Models 1 to 3
+```{r, echo=TRUE}
+stargazer(lm.spend1, lm.spend2, lm.spend3, 
+          header = FALSE , type = "text", column.sep.width = "1pt", 
+          no.space = TRUE, df = FALSE, digits = 2, 
+          title = "Regression Analysis - Determinants of Amount Spent")
+```
+
+## Output table with Models 1 to 3
+
+```{r, echo=TRUE, eval=FALSE}
+stargazer(lm.spend1, lm.spend2, lm.spend3, 
+          header = FALSE , type = "html", column.sep.width = "1pt", 
+          no.space = TRUE, df = FALSE, digits = 2, 
+          title = "Regression Analysis - Determinants of Amount Spent",
+          out="MLR.html")
+```
+
+## Test in model 2 if the coefficient of Salary if statistically significant
+```{r, echo=TRUE}
+linearHypothesis(lm.spend2, c("Salary=0"))
+```
+
+## Test in model 2 if the effect of 4 catalogs is the symmetric of the effect of 1 child
+
+```{r, echo=TRUE}
+linearHypothesis(lm.spend2, c("4*Catalogs=-Children"))
+```
+
+## Test in model 2 if the coefficients associated with Catalogs and Children are jointly significant 
+
+```{r, echo=TRUE}
+linearHypothesis(lm.spend2, c("Catalogs=0","Children=0"))
+```
+
