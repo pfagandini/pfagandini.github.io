@@ -157,7 +157,7 @@ A given company presented their financial statements with the following informat
 sol.3.1 <- (1.2*1.15*1.2*1.1*1.25)^0.2 - 1
 ```
 
-1. Write the average growth rate of (nominal) sales for the whole period (rounded up, for example 11 if percentage, or 0.11 if decimal): `r fitb(round(sol.3.1,0), round(100*sol.3.1,0))`
+1. Write the average growth rate of (nominal) sales for the whole period (rounded up, for example 11 if percentage, or 0.11 if decimal): `r fitb(round(sol.3.1,2), round(100*sol.3.1,0))`
 
 2. Find the annual **real** growth rate for sales, when this was negative.
 
