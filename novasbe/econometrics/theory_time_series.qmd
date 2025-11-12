@@ -1,0 +1,250 @@
+---
+title: "Time Series 3"
+author: "Paulo Fagandini"
+institute: "Nova SBE"
+format: 
+  revealjs:
+    theme: default
+    logo: pictures/NovaPrincipalV2.svg
+    slide-number: true
+    cross-ref: true
+    incremental: false
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Econometrics"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+# Recap
+
+## Assumptions
+
+| | SLR | MLR | TS |
+| --- |--- | --- | --- |
+| Linearity in $\beta$ | SLR1 | MLR1 | TS1 |
+| Random sampling | SLR2 | MLR2 | |
+| Sample variation in $X$ | SLR3 | | |
+| No perfect collinearity | | MLR4 | TS2 |
+| $E[u|X]=0$ | SLR4 | MLR4 | TS3 |
+| $V[u|X]=\sigma^2$ | SLR5 | MLR5 | TS4 |
+| $Corr[u_su_t|X]=0$ for $t\neq s$ | | | TS5|
+ 
+# Stationarity and Weakly Dependent Time Series
+
+## The problem
+
+Large samples in time series (normal frequency time series) are hard to come by!
+
+:::{.notes}
+Why we need large samples? to use large sample approximations results (asymptotics for example).
+:::
+
+## Stationary Process
+
+:::{.callout-important}
+## Stationary process
+The stochastic process $\{x_t\}_{t\in\mathbb{N}}$ is stationray if for any monotonically increasing function $g:\mathbb{N}\mapsto\mathbb{N}$, the joint distribution of 
+$$(x_{g(1)},x_{g(2)},\dots,x_{g(m)})$$ is equal to the distribution of $$(x_{g(1)+h},x_{g(2)+h},\dots,x_{g(m)}+h)$$ for any $h\in\mathbb{N}$.
+:::
+
+:::{.notes}
+Maybe it helps the plot with a time series, take a subset, shift it with a different color and illustrate the consequence.
+A stationary process implies that the probability distributions of the data are stable over time. If we take some data points in our sample, and we shift it by $h$ the joint probability of the data remains unchanged.
+:::
+
+## Stationary Process
+
+A stochastic process that is not stationary is said to be **nonstationary**.:drum:
+
+It is difficult to identify a stationary process because you do not have all the data! However it can be very simple to identify a non-stationary process, for example a time series with a trend.
+
+. . .
+
+For some results, a weaker form of stationary is enough...
+
+:::{.notes}
+Another way to read a stationary stochastic process is to say that it is identically distributed, but it says even more, for example the joint distribution of $(x_1,x_2)$ is the same as for $(x_t,x_{t+1})$ $\forall t$.
+:::
+
+## Covariance Stationary Process
+
+:::{.callout-important}
+A stochastic process $\{x_t, t\in\mathbb{N}\}$ with a finite second moment $E[x_t^2]<\infty$, is **covariance stationary** if:
+
+1. $E[x_t]$ is constant
+2. $V[x_t]$ is constant
+3. $\forall t,h\in\mathbb{N}$ we have $Cov(x_t,x_{t+h})=\phi(h)$, i.e. it depends only on $h$, and not $t$.
+:::
+
+:::{.notes}
+Covariance stationarity focuses only on the first two moments of a stochastic process: the mean and variance, and the covariance is constant in the same distance between two terms of the sequence, not its location. Obviously this carries to the correlation as well.
+:::
+
+## Covariance Stationary Process
+If a stationary process has a finite second moment, then it is Covariance Stationary as well. Note that converse is not true, i.e. a Covariance Stationary Process needs not be Stationary.
+
+:::{.notes}
+The intuition on why we need these things to do econometrics in time series is that we need to learn from the data!, if what happened with the data in the past is no good to tell anything on how the data will behave in the future there is no point in trying to learn. We need to expect some kind of regularity or stability with the data.
+
+On a technical leve, we need these to use the asymptotic results, the law of large numbers and the central limit theorem.
+
+Note that TS4 (homoskedasticity) and TS5(no serial correlation) imply some kind of stationarity!
+
+:::
+
+## Weakly dependent Time Series
+
+:::{.callout-important}
+A stationary time series process $\{x_t, t\in\mathbb{N}\}$ is said to be **weakly dependent** if $x_t$ and $x_{t+h}$ are "almost independent" as $h\rightarrow\infty$.
+:::
+
+. . .
+
+We could say that intuitively a time series is weakly dependent if the correlation between $x_t$ and $x_{t+h}$ gets smaller and smaller as $h$ increases. 
+
+:::{.notes}
+The definition is vague, because no good and rigorous mathematical definition covers all the cases that can be of interest. There are many specific forms of weak dependence, but those are beyond the scope of this course.
+:::
+
+## Weakly dependent Time Series
+
+:::{.callout-important}
+A stochastic process $\{x_t, t\in\mathbb{N}\}$ is said to be **asymtotically uncorrelated** if
+
+$$Corr(x_t,x_{t+h})\underset{h\rightarrow\infty}{\rightarrow}0$$
+:::
+
+This is basically how we can characterize weakly dependnece.
+
+:::{.notes}
+Why is this important? Well, essentially it replaces the assumption of random sampling in implying that the law of large numbers LLN and hte central limit theorem CLT hold. Themost well-known CLT for time series data requires stationarity and some form of weak dependence.
+:::
+
+# Moving Averages
+
+## Moving average process
+
+The moving average process is an example of a weakly dependent process:
+
+$$x_t = e_t + \alpha_1 e_{t-1},\quad t\in\mathbb{N}$$
+
+where $\{e_t\}_{t\in\mathbb{N}}$ is an iid sequence with zero mean and variance $\sigma_e^2$. In particular, this process is called a **moving average proces of order one MA(1)**
+
+:::{.notes}
+We can see that $x_t$ is a weighted avreage of $e_t$ and $e_{t-1}$, in the next period we drop $x_{t-1}$ and incorporate $e_{t+1}$.
+
+Check that MA(1) is weakly dependent:
+
+1. $Cov(x_t,x_{t+1})=\alpha_1\sigma_2^2$ and then it does not depend on $t$.
+2. It follows that $Corr(x_t,x_{t+1})=\alpha_1/(1+\alpha_1^2)$.
+3. Check that $x_{t}$ and $x_{t+3}$ for example is zero.
+
+Conclude that given $e_t$ is identically distributed, this can be shown to be actually stationary. Then the LLN and CLT can be applied to this.
+:::
+
+## Autoregressive processes
+
+Consider now the following process
+
+:::{.callout-important}
+##Autoregressive procees of order one AR(1)
+$$y_t=\rho y_{t-1}+e_t,\quad t\in\mathbb{N}$$
+with $e_t$ and iid sequence with $E[e]=0$ and $V[e]=\sigma_e^2$. Let $e_t$ be independent of $y_0$ and $E[y_0]=0$. This is called an **autoregressive process of order one AR(1)**
+
+We need a crucial assumption for the weak dependence of the AR(1) process, which is $|\rho|<1$. In this case we say $\{y_t\}$ is a **stable AR(1) process**.
+:::
+
+:::{.notes}
+To see that a stable AR(1) is asymptotically uncorrelated, it is useful to assume that the process is covariance stationary. In fact it can generally be shown that $\{y_t\}$ is strictly stationary. Then $E[y_t]=E[y_{t-1}]$ and with $\rho\neq 1$ this happens only if $E[y_t]=0$.
+Take the variance of the AR(1) and show that $\sigma_y^2=\rho^2\sigma_y^2+\sigma_e^2, solving for $\sigma_y^2$ you get $\sigma_2^2/(1-\rho^2)$.
+
+Show before that $E[y_t]=0$ by taking expectation on the AR(1).
+:::
+
+## Autoregressive processes
+
+we can show easily that $$Corr(y_t,y_{t+h})=\frac{Cov(y_t,y_{t+h})}{\sigma_y^2}=\rho_1^h$$
+
+Note that a consequence of this is that for any $t$ $Corr(y_t,y_{t+1})=\rho$! and moreover, as $|\rho|<1$, $\rho^h\underset{h\rightarrow\infty}{\rightarrow}0$.
+
+We have that the AR(1) process is weakly dependent.
+
+:::{.notes}
+
+For that write $y_{t+h}=\rho y_{t+h-1}+e_{t+h}$. Replace $y_{t+h-1}$ recursively, $\rho(\rho y_{t+h-2}+e_{t+h-1})+e_{t+h}$ which equals $\rho^2 y_{t+h-2}+\rho e_{t+h-1} + e_{t+h}$ doing it again and again until we get $\rho^{h}y_t + \rho^{h-1}e_{t+1}+\dots+\rho e_{t+h-1}+e_{t+h}$
+
+Then multiply by $y_t$ and take expectation, because $E[y]=0$ this is the covariance, and $E[ye]=0$, so you end up with $\rho ^h \sigma^y^2$.
+
+:::
+
+# Highly persistent Time Series in Regression Analysis
+
+## Random Walk
+
+What happens if in the AR(1) model $|\rho|\geq 1$? We needed that for weakly dependence...
+
+Sadly, many economic series are characterized with a $\rho = 1$. Was it all for nothing then?
+
+. . .
+
+Let's see, the model would be something like
+
+$$ y_t = y_{t-1}+e_t$$ with a well behaved error term. This process is known as a **random walk**.
+
+## Random Walk
+
+Let's characterize this process, what is $E[y_t]$?
+
+$$y_t=y_{t-1}+e_t\quad \Rightarrow\quad E[y_t]=E[y_0],\ V[y_t]=\sigma_e^2 t$$
+
+Note the consequences of this! $y_0$ affects all the future values of $y$, and moreover, the best predition for the future is the current value, $E[y_{t+h}|y_t]=y_t$.
+
+Also, the variance explodes! It can be shown further that $$Corr(y_t,y_{t+h})=\sqrt{\frac{t}{(t+h)}}$$
+
+:::{.notes}
+
+For expected value, use substitution for $y_{t-1}$ and take expectation, that kills all the $e$
+
+For variance, the same thing, but take variance. Note that $V[y_0]=0$ as it is fixed.
+
+Contast with the prediction in the AR(1) $E[y_{t+h}|y_t]=\rho^h y_t$, so it goes to zero as $h$ increasese (the unconditional mean of $y$), and $y_t$ loses importance.
+
+Also it is clear that the correlation approaches 1 as $h\rightarrow\infty$.
+
+:::
+
+## Random Walk
+
+A random walk does not satisfy the requirement of an asymptotically uncorrelated sequence.
+
+Indeed, a random walk is a special case of what is known as **unit root process** (so $\rho=1$ in an AR(1) model).
+
+Remember that a trending and a highly persisten series are not the same, however many times time series have both features, they are highly persistent and they have a trend. let's see an exmaple of this.
+
+## Random walk with drift
+
+A **random walk with drift** is a time series process characterized by the following expression:
+
+$$ y_t = \alpha_0 + y_{t-1} + e_t,\quad t\in\mathbb{N}$$
+
+Let $\{e_t\}$ and $y_0$ satisfy the properties for the normal random walk process model. Now if we iterate as we did previously:
+
+$$y_t = \alpha_0 t + e_t + e_{t-1}+\dots+e_1+y_0$$ and if $y_0=0$, $E[y_t]=\alpha_0 t$. That is, the expected value of $y_t$ is growing with $t$ (or decreasing if $\alpha_0<1$)
+
+:::{.notes}
+
+Note that $E[y_{t+h|y_t}=\alpha_0 h + y_t]$ and so the best prediction for $y_{t+h}$ at $t$ is $y_t$ plus the drift $\alpha_0 h$. The variance suffers no change, as $\alpha$ is a constant.
+
+:::
+
+## References
+
+You can find these contents and examples in chapter 11, sections 1 and 3 of the book.
