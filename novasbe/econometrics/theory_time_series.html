@@ -440,7 +440,7 @@ Paulo Fagandini
 </div>
 </div>
 <aside class="notes">
-<p>To see that a stable AR(1) is asymptotically uncorrelated, it is useful to assume that the process is covariance stationary. In fact it can generally be shown that <span class="math inline">\(\{y_t\}\)</span> is strictly stationary. Then <span class="math inline">\(E[y_t]=E[y_{t-1}]\)</span> and with <span class="math inline">\(\rho\neq 1\)</span> this happens only if <span class="math inline">\(E[y_t]=0\)</span>. Take the variance of the AR(1) and show that $_y<sup>2=</sup>2_y^2+_e^2, solving for <span class="math inline">\(\sigma_y^2\)</span> you get <span class="math inline">\(\sigma_2^2/(1-\rho^2)\)</span>.</p>
+<p>To see that a stable AR(1) is asymptotically uncorrelated, it is useful to assume that the process is covariance stationary. In fact it can generally be shown that <span class="math inline">\(\{y_t\}\)</span> is strictly stationary. Then <span class="math inline">\(E[y_t]=E[y_{t-1}]\)</span> and with <span class="math inline">\(\rho\neq 1\)</span> this happens only if <span class="math inline">\(E[y_t]=0\)</span>. Take the variance of the AR(1) and show that <span class="math inline">\(\sigma_y^2=\rho^2\sigma_y^2+\sigma_e^2\)</span>, solving for <span class="math inline">\(\sigma_y^2\)</span> you get <span class="math inline">\(\sigma_2^2/(1-\rho^2)\)</span>.</p>
 <p>Show before that <span class="math inline">\(E[y_t]=0\)</span> by taking expectation on the AR(1).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -524,7 +524,7 @@ Paulo Fagandini
 <p>Let <span class="math inline">\(\{e_t\}\)</span> and <span class="math inline">\(y_0\)</span> satisfy the properties for the normal random walk process model. Now if we iterate as we did previously:</p>
 <p><span class="math display">\[y_t = \alpha_0 t + e_t + e_{t-1}+\dots+e_1+y_0\]</span> and if <span class="math inline">\(y_0=0\)</span>, <span class="math inline">\(E[y_t]=\alpha_0 t\)</span>. That is, the expected value of <span class="math inline">\(y_t\)</span> is growing with <span class="math inline">\(t\)</span> (or decreasing if <span class="math inline">\(\alpha_0&lt;1\)</span>)</p>
 <aside class="notes">
-<p>Note that <span class="math inline">\(E[y_{t+h|y_t}=\alpha_0 h + y_t]\)</span> and so the best prediction for <span class="math inline">\(y_{t+h}\)</span> at <span class="math inline">\(t\)</span> is <span class="math inline">\(y_t\)</span> plus the drift <span class="math inline">\(\alpha_0 h\)</span>.</p>
+<p>Note that <span class="math inline">\(E[y_{t+h|y_t}=\alpha_0 h + y_t]\)</span> and so the best prediction for <span class="math inline">\(y_{t+h}\)</span> at <span class="math inline">\(t\)</span> is <span class="math inline">\(y_t\)</span> plus the drift <span class="math inline">\(\alpha_0 h\)</span>. The variance suffers no change, as <span class="math inline">\(\alpha\)</span> is a constant.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -536,6 +536,10 @@ Paulo Fagandini
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<p>You can find these contents and examples in chapter 11, sections 1 and 3 of the book.</p>
 
 
 </section></section>

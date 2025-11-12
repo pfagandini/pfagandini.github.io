@@ -164,7 +164,7 @@ We need a crucial assumption for the weak dependence of the AR(1) process, which
 
 :::{.notes}
 To see that a stable AR(1) is asymptotically uncorrelated, it is useful to assume that the process is covariance stationary. In fact it can generally be shown that $\{y_t\}$ is strictly stationary. Then $E[y_t]=E[y_{t-1}]$ and with $\rho\neq 1$ this happens only if $E[y_t]=0$.
-Take the variance of the AR(1) and show that $\sigma_y^2=\rho^2\sigma_y^2+\sigma_e^2, solving for $\sigma_y^2$ you get $\sigma_2^2/(1-\rho^2)$.
+Take the variance of the AR(1) and show that $\sigma_y^2=\rho^2\sigma_y^2+\sigma_e^2$, solving for $\sigma_y^2$ you get $\sigma_2^2/(1-\rho^2)$.
 
 Show before that $E[y_t]=0$ by taking expectation on the AR(1).
 :::
