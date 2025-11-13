@@ -168,6 +168,8 @@ P(Y=2|X+Y=5)&=\frac{P(Y=2, X+Y=5)}{P(X+Y=5)}\\
 \end{aligned}
 $$
 
+## Example{.small}
+
 
 Using the [tables](#app-bin-tables) we have $P(Y=2)=0.1488$, $P(X=3)=0.0574$, $P(X+Y=5)=0.0218$, and therefore $P(Y=2|X+Y=5)=0.392$. :x: False
 
