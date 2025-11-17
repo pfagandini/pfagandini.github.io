@@ -91,7 +91,7 @@ In this case, it might be better to start from the summary to stress the differe
 
 A random variable $X$ follows a Binomial distribution, $X\sim Bin(n,p)$ if its probability function $P(X=x)$ is:
 $$
-f_X(x)=\begin{cases}\binom{n}{x}p^x(1-p)^{1-x} & x=0,1,...,n\\ 0 & otherwise\end{cases}
+f_X(x)=\begin{cases}\binom{n}{x}p^x(1-p)^{n-x} & x=0,1,...,n\\ 0 & otherwise\end{cases}
 $$
 
 Note that if we change $n$ or $p$ we would get another binomial distribution, i.e. $B(n,p)\neq B(m,r)$ if either $n\neq m$ or $p\neq r$.
