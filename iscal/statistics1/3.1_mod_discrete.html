@@ -141,6 +141,12 @@ Paulo Fagandini
 </div>
 
 </section>
+<section class="slide level2">
+
+<div style="font-size: 70%;">
+
+</div>
+</section>
 <section id="disclaimer" class="slide level2">
 <h2>Disclaimer</h2>
 <p>These slides are a free translation and adaptation from the slide deck for Estatística I by Prof.&nbsp;Sandra Custódio and Prof.&nbsp;Teresa Ferreira from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.</p>
@@ -217,7 +223,7 @@ Paulo Fagandini
 <section id="binomial_dist" class="slide level2">
 <h2>Binomial Distribution</h2>
 <p>A random variable <span class="math inline">\(X\)</span> follows a Binomial distribution, <span class="math inline">\(X\sim Bin(n,p)\)</span> if its probability function <span class="math inline">\(P(X=x)\)</span> is: <span class="math display">\[
-f_X(x)=\begin{cases}\binom{n}{x}p^x(1-p)^{1-x} &amp; x=0,1,...,n\\ 0 &amp; otherwise\end{cases}
+f_X(x)=\begin{cases}\binom{n}{x}p^x(1-p)^{n-x} &amp; x=0,1,...,n\\ 0 &amp; otherwise\end{cases}
 \]</span></p>
 <p>Note that if we change <span class="math inline">\(n\)</span> or <span class="math inline">\(p\)</span> we would get another binomial distribution, i.e.&nbsp;<span class="math inline">\(B(n,p)\neq B(m,r)\)</span> if either <span class="math inline">\(n\neq m\)</span> or <span class="math inline">\(p\neq r\)</span>.</p>
 <p>Bernoulli is a Binomial distribution with <span class="math inline">\(n=1\)</span>.</p>
@@ -349,9 +355,11 @@ f_X(x)=\frac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}}
 </section>
 <section id="hypergeometric-rightarrow-binomial" class="slide level2">
 <h2>Hypergeometric <span class="math inline">\(\rightarrow\)</span> Binomial</h2>
+<div style="font-size: 70%;">
 <p>Let <span class="math inline">\(X\sim Hypergeometric(N,M,n)\)</span>. If <span class="math inline">\(N&gt;&gt;n\)</span> then the change in the population is very small, and then the draws approximate independent draws (population is very similar after a draw). As a rule of thumb if <span class="math inline">\(\frac{n}{N}\leq 0.1\)</span> or if the sample size is less than 10% of the population, we can approximate the Hypergeometric with the Binomial.</p>
 <p><span class="math display">\[X\sim Hypergeom(N,M,n)\leftrightarrow X\approx Bin\left(n,p=\frac{M}{N}\right)\]</span></p>
 <p>The smaller <span class="math inline">\(\frac{n}{N}\)</span> the better the approximation.</p>
+</div>
 </section></section>
 <section>
 <section id="geometric-distribution" class="title-slide slide level1 center">
@@ -362,7 +370,7 @@ f_X(x)=\frac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}}
 <h2>Geometric Distribution (Pascal’s)</h2>
 <p>Consider a succession of Bernoulli trials, and let <span class="math inline">\(X\)</span> the r.v. how many trials you need until observing the first success. This is a r.v. because there might be situations when you get success at your first trial, or second, etc. You cannot anticipate this.</p>
 <p><span class="math inline">\(X\sim Geo(p)\)</span> if its probability distribution function <span class="math inline">\(P(X=x)\)</span> is given by:</p>
-<p><span class="math display">\[f_X(x)=p^x(1-p)^{1-x}\ ,\ x\in\{1,2,...\},\ p\in[0,1]\]</span></p>
+<p><span class="math display">\[f_X(x)=p(1-p)^{x-1}\ ,\ x\in\{1,2,...\},\ p\in[0,1]\]</span></p>
 </section>
 <section id="geometric-distribution-pascals-1" class="slide level2">
 <h2>Geometric Distribution (Pascal’s)</h2>

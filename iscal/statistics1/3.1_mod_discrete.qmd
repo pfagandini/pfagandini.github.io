@@ -23,6 +23,10 @@ execute:
 engine: knitr
 ---
 
+<div style="font-size: 70%;">
+</div>
+
+
 ## Disclaimer
 
 These slides are a free translation and adaptation from the slide deck for Estatística I by Prof. Sandra Custódio and Prof. Teresa Ferreira from the Lisbon Accounting and Business School - Polytechnical University of Lisbon.
@@ -227,11 +231,15 @@ The first two moments of the distribution are found as:
 
 ## Hypergeometric $\rightarrow$ Binomial
 
+<div style="font-size: 70%;">
+
 Let $X\sim Hypergeometric(N,M,n)$. If $N>>n$ then the change in the population is very small, and then the draws approximate independent draws (population is very similar after a draw). As a rule of thumb if $\frac{n}{N}\leq 0.1$ or if the sample size is less than 10% of the population, we can approximate the Hypergeometric with the Binomial. 
 
 $$X\sim Hypergeom(N,M,n)\leftrightarrow X\approx Bin\left(n,p=\frac{M}{N}\right)$$
 
 The smaller $\frac{n}{N}$ the better the approximation.
+
+</div>
 
 # Geometric Distribution
 
@@ -241,7 +249,7 @@ Consider a succession of Bernoulli trials, and let $X$ the r.v. how many trials 
 
 $X\sim Geo(p)$ if its probability distribution function $P(X=x)$ is given by:
 
-$$f_X(x)=p^x(1-p)^{1-x}\ ,\ x\in\{1,2,...\},\ p\in[0,1]$$
+$$f_X(x)=p(1-p)^{x-1}\ ,\ x\in\{1,2,...\},\ p\in[0,1]$$
 
 ## Geometric Distribution (Pascal's)
 
