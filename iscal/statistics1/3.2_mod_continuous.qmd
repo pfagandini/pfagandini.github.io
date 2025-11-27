@@ -168,7 +168,7 @@ with $x,h>0$
 
 :::
 
-Considering the survival application of this distribution, this property states that, the time left to leave is independent of what it already lived.
+Considering the survival application of this distribution, this property states that, the time left to live is independent of what it already lived.
 
 ## Exponential Distribution - Example {#exp-example-1}
 
