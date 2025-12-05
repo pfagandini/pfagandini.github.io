@@ -1,7 +1,19 @@
 ---
 title: "Econometrics Midterm Formula Sheet"
-format: html
+format: docx
 ---
+
+## Statistics
+
+* Normal Standard
+  * cumulative distribution function $\Phi(z)$
+  * probability density function $\phi(z)$
+
+* Correlation Coefficient
+
+$$\rho = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}$$
+
+## Econometrics
 
 $$
 y = \beta_0 + \beta_1 x + u
