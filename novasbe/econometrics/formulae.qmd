@@ -6,8 +6,8 @@ format: docx
 ## Statistics
 
 * Normal Standard
-  * cumulative distribution function $\Phi(z)$
-  * probability density function $\phi(z)$
+  * cumulative distribution function $$\Phi(z)=\int_{-\infty}^z \phi(x)dx$$
+  * probability density function $$\phi(z)=\frac{1}{\sqrt{2\pi}}e^{\frac{-z^2}{2}}$$
 
 * Correlation Coefficient
 
