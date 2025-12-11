@@ -119,7 +119,7 @@ This is the formulae for the course, that you will be given for the midterm and 
 ### Hypergeometric Distribution
 
 * $X\sim Hypergeometric(N,M,n)$ with $p=\frac{M}{N}$, $q=1-p$
-* $P(X=x)=\frac{\binom{n}{x}\binom{N-M}{n-x}}{\binom{N}{n}}$ with $max(0,M+n-N)\leq x \leq min(M,n)$
+* $P(X=x)=\frac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}}$ with $max(0,M+n-N)\leq x \leq min(M,n)$
 * $E[X]=np$
 * $V[X]=npq\frac{N-n}{N-1}$
 
