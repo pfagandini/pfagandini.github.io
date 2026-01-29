@@ -9,7 +9,6 @@ website:
   
   navbar:
     background: dark
-    # logo: imgs/logo.png
     logo-alt: "Paulo Fagandini"
     left:
       - text: "Home"
@@ -40,16 +39,11 @@ website:
 format:
   html:
     theme: 
-      light: cosmo
-      dark: cosmo
+      light: flatly
+      dark: darkly
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
     
 execute:
   freeze: auto
-
-    # theme: 
-    #   light: [cosmo, custom.scss]
-    #   dark: [cosmo, custom.scss]
-    # css: styles.css
