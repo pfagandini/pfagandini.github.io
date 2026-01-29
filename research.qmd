@@ -2,11 +2,11 @@
 title: "Research"
 ---
 
-## Publications {.section-header}
+## Publications
 
-### Articles {.subsection-header}
+### Articles
 
-::: {.publications-list}
+
 - **Computing Profit-Maximizing Bid Shading Factors in First-Price Sealed-Bid Auctions**  
   Fagandini, P. and Dierickx, I., *Computational Economics*, 61(3), (2023), p:1009-1035  
   [Link to article](https://doi.org/10.1007/s10614-022-10321-y) | [Code @ Github](https://github.com/pfagandi/Bidding-FPSB-Auctions) | [Preprint](/preprints/Bidding_Accepted.pdf)
@@ -14,27 +14,27 @@ title: "Research"
 - **Wealth and the principal–agent matching**  
   Fagandini, P., *Managerial and Decision Economics*, 43(2), (2022), p:555–568  
   [Link to article](https://doi.org/10.1002/mde.3402) | [Preprint](/preprints/P_A_Matching_Accepted.pdf)
-:::
 
-### Book Chapters {.subsection-header}
 
-::: {.publications-list}
+### Book Chapters
+
+
 - **Implementing the Agent ID Model**  
   Fagandini, P., *The Agent ID Model*, (2024)  
   [Link to article](https://link.springer.com/chapter/10.1007/978-3-031-75996-3_10) | [Code @ Github](https://github.com/pfagandini/ABM-Project-ISCAL)
-:::
 
-## Edited Books {.section-header}
 
-::: {.publications-list}
+## Edited Books
+
+
 - **The Agent ID Model: A Multidisciplinary Framework of Evolutionary Human Behavior**  
   Gomes, O., Lins de Moraes, M., and Fagandini P., Springer Nature (2024)  
   [Link to book](https://link.springer.com/book/9783031759956)
-:::
 
-## Working Papers {.section-header}
 
-::: {.publications-list}
+## Working Papers
+
+
 - **How Do Firms Respond to Demand Shocks? Evidence from the European Sovereign Debt Crisis.**  
   Adelino, Manuel and Fagandini, Paulo and Ferreira, Miguel Almeida and Queiro, Francisco (2019) CEPR Discussion Paper No. DP14640  
   [Available at SSRN](https://ssrn.com/abstract=3594271)
@@ -42,4 +42,4 @@ title: "Research"
 - **Hunting with Two Bullets: Moral Hazard with a Second Chance.**  
   Fagandini, Paulo (2018). FEUNL Working Paper Series No. 629  
   [Available at SSRN](https://ssrn.com/abstract=3236672)
-:::
+

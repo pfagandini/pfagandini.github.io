@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-01-29">
 
-<title>Teaching – Paulo Fagandini, PhD</title>
+<title>Paulo Fagandini, PhD</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,14 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-615d71e0d9710226dea6ed3d21672552.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-cc0bc8e7bdc398a8dfbce9d5182d76a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-615d71e0d9710226dea6ed3d21672552.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-615d71e0d9710226dea6ed3d21672552.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,171 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -271,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./fagandini_cv.html"> 
+    <a class="nav-link active" href="./fagandini_cv.html" aria-current="page"> 
 <span class="menu-text">Curriculum Vitae</span></a>
   </li>  
   <li class="nav-item">
@@ -298,7 +134,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -306,15 +141,56 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#areas-of-specialization" id="toc-areas-of-specialization" class="nav-link active" data-scroll-target="#areas-of-specialization">Areas of Specialization</a></li>
+  <li><a href="#appointments" id="toc-appointments" class="nav-link" data-scroll-target="#appointments">Appointments</a></li>
+  <li><a href="#academic-degrees" id="toc-academic-degrees" class="nav-link" data-scroll-target="#academic-degrees">Academic Degrees</a></li>
+  <li><a href="#grants-honors-awards" id="toc-grants-honors-awards" class="nav-link" data-scroll-target="#grants-honors-awards">Grants, Honors &amp; Awards</a>
+  <ul class="collapse">
+  <li><a href="#grants-and-scholarships" id="toc-grants-and-scholarships" class="nav-link" data-scroll-target="#grants-and-scholarships">Grants and Scholarships</a></li>
+  </ul></li>
+  <li><a href="#research" id="toc-research" class="nav-link" data-scroll-target="#research">Research</a>
+  <ul class="collapse">
+  <li><a href="#peer-reviewed-publications" id="toc-peer-reviewed-publications" class="nav-link" data-scroll-target="#peer-reviewed-publications">Peer Reviewed Publications</a></li>
+  <li><a href="#book-chapters" id="toc-book-chapters" class="nav-link" data-scroll-target="#book-chapters">Book Chapters</a></li>
+  <li><a href="#working-papers" id="toc-working-papers" class="nav-link" data-scroll-target="#working-papers">Working Papers</a></li>
+  <li><a href="#conferences-and-seminars" id="toc-conferences-and-seminars" class="nav-link" data-scroll-target="#conferences-and-seminars">Conferences and Seminars</a></li>
+  <li><a href="#other-communications" id="toc-other-communications" class="nav-link" data-scroll-target="#other-communications">Other Communications</a></li>
+  </ul></li>
+  <li><a href="#teaching-experience" id="toc-teaching-experience" class="nav-link" data-scroll-target="#teaching-experience">Teaching Experience</a>
+  <ul class="collapse">
+  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
+  <li><a href="#teaching-assistant" id="toc-teaching-assistant" class="nav-link" data-scroll-target="#teaching-assistant">Teaching Assistant</a></li>
+  <li><a href="#thesis-supervision" id="toc-thesis-supervision" class="nav-link" data-scroll-target="#thesis-supervision">Thesis Supervision</a></li>
+  </ul></li>
+  <li><a href="#other-education" id="toc-other-education" class="nav-link" data-scroll-target="#other-education">Other Education</a></li>
+  <li><a href="#other-professional-experience" id="toc-other-professional-experience" class="nav-link" data-scroll-target="#other-professional-experience">Other Professional Experience</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
+  <li><a href="#academic-service" id="toc-academic-service" class="nav-link" data-scroll-target="#academic-service">Academic Service</a>
+  <ul class="collapse">
+  <li><a href="#referee" id="toc-referee" class="nav-link" data-scroll-target="#referee">Referee</a></li>
+  <li><a href="#editor" id="toc-editor" class="nav-link" data-scroll-target="#editor">Editor</a></li>
+  <li><a href="#conference-chairs" id="toc-conference-chairs" class="nav-link" data-scroll-target="#conference-chairs">Conference Chairs</a></li>
+  <li><a href="#scientific-committee-member" id="toc-scientific-committee-member" class="nav-link" data-scroll-target="#scientific-committee-member">Scientific Committee Member</a></li>
+  <li><a href="#thesis-jury-participation" id="toc-thesis-jury-participation" class="nav-link" data-scroll-target="#thesis-jury-participation">Thesis Jury Participation</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="fagandini_cv.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching</h1>
+<h1 class="title">Paulo Fagandini, PhD</h1>
 </div>
 
 
@@ -325,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">today</p>
+      <p class="date">January 29, 2026</p>
     </div>
   </div>
   
@@ -337,37 +213,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>About this site</p>
-
-
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imgs/logo.png" class="img-fluid figure-img" alt="ISCAL Logo" width="300"></p>
-<figcaption>Lisbon Accounting and Business School Logo</figcaption>
-</figure>
-</div>
-<p><strong>Room 5.8</strong><br>
-Av. Miguel Bombarda 20<br>
-1069-035 Lisbon<br>
-Portugal</p>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imgs/NovaSecundárioV3.png" class="img-fluid figure-img" alt="Nova SBE Logo" width="300"></p>
-<figcaption>Nova School of Business and Economics Logo</figcaption>
-</figure>
-</div>
-<p><strong>Office D127</strong><br>
-Campus de Carcavelos<br>
-Rua da Holanda 1<br>
-2775-405 Carcavelos<br>
-Portugal</p>
-</div>
-</div>
 <div class="contact-info">
 <p><strong>Email:</strong> <a href="mailto:pfagandini@iscal.ipl.pt">pfagandini@iscal.ipl.pt</a> | <a href="mailto:paulo.fagandini@novasbe.pt">paulo.fagandini@novasbe.pt</a> | <a href="mailto:paulo.ruiz@uevora.pt">paulo.ruiz@uevora.pt</a></p>
 <p><strong>Website:</strong> <a href="https://pfagandini.github.io">pfagandini.github.io</a></p>
@@ -584,215 +429,14 @@ Session: Asymmetric Information I</p>
 <div class="download-section">
 <p><a href="fagandini_cv.pdf" class="btn btn-primary">Download PDF Version</a></p>
 </div>
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imgs/photo.jpg" class="profile-photo img-fluid figure-img" alt="Paulo Fagandini, PhD portrait"></p>
-<figcaption>Paulo Fagandini, PhD</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:10%;">
 
-</div><div class="column" style="width:45%;">
-<section id="about-me" class="level3">
-<h3 class="anchored" data-anchor-id="about-me">About Me</h3>
-<p>I am a Business Engineer, and I serve as Assistant Professor of Economics (Adjunct) at the Lisbon Accounting &amp; Business School. I am also Assistant Professor (Adjunct) at Nova School of Business and Economics and I am a member of the CEFAGE Research Center. I also teach Economics at the Faculty of Social Sciences and Technology at Universidade Europeia.</p>
-<p>My research focuses mostly on applied economics. Previously I worked on corporate finance and applied microeconomic theory, mainly on auctions, contract theory, and matching. I have published my research in peer reviewed journals like Computational Economics and Managerial and Decision Economics.</p>
-<p>I also have experience as economist and consultant and I am the author of an online LaTeX course.</p>
-</section>
-</div>
-</div>
-</section>
-<div class="columns">
-<div class="column" style="width:45%;">
-<section id="education" class="level3">
-<h3 class="anchored" data-anchor-id="education">Education</h3>
-<p><strong>2018</strong><br>
-<strong>PhD in Economics</strong><br>
-Nova School of Business and Economics<br>
-NOVA University Lisbon, Lisbon, Portugal</p>
-<p><strong>2014</strong><br>
-<strong>MRes in Economics</strong><br>
-Nova School of Business and Economics<br>
-NOVA University Lisbon, Lisbon, Portugal</p>
-<p><strong>2011</strong><br>
-<strong>BSc in Economics</strong><br>
-School of Economics and Business<br>
-University of Chile, Santiago, Chile</p>
-</section>
-</div><div class="column" style="width:10%;">
 
-</div><div class="column" style="width:45%;">
-<section id="appointments-1" class="level3">
-<h3 class="anchored" data-anchor-id="appointments-1">Appointments</h3>
-<p><strong>2021-present</strong><br>
-<strong>Assistant Professor (Adjunct) of Economics</strong><br>
-Lisbon Accounting and Business School<br>
-Polytechnic University of Lisbon, Lisbon, Portugal</p>
-<p><strong>2023-present</strong><br>
-<strong>Assistant Professor (Adjunct) of Economics</strong><br>
-Nova School of Business and Economics<br>
-NOVA University Lisbon, Lisbon, Portugal</p>
-<p><strong>2018-2020</strong><br>
-<strong>Postdoctoral Fellow - Corporate Finance</strong><br>
-Nova School of Business and Economics<br>
-NOVA University Lisbon, Lisbon, Portugal</p>
 </section>
-</div>
-</div>
-<details>
-<summary>
-Other Short Courses
-</summary>
-<div class="collapse-content">
-<ul>
-<li><strong>Jan 2025 | Udemy</strong> R Programming for Statistics and Data Science</li>
-<li><strong>Nov 2024 | Bank of Portugal</strong> Climate Change Economics</li>
-<li><strong>Jul 2024 | Bank of Portugal</strong> Data Analytics and Machine Learning in Economics and Finance</li>
-<li><strong>Feb 2024 | Udemy</strong> Machine Learning A-Z: AI, Python &amp; R</li>
-<li><strong>Feb 2024 | Udemy</strong> The Ultimate Pandas Bootcamp: Advanced Python Data Analysis</li>
-<li><strong>Jan 2024 | Udemy</strong> SQL - MySQL for Data Analytics and Business Intelligence</li>
-<li><strong>Dec 2023 | Udemy</strong> The Data Science Course: Complete Data Science Bootcamp</li>
-<li><strong>Jan 2019 | Timberlake-FEP</strong> STATA Econometrics Winter School</li>
-<li><strong>Feb 2015 | Nova Medical School</strong> Formação Pedagógica para Docentes do Ensino Superior</li>
-</ul>
-</div>
-</details>
-</section>
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<section id="articles" class="level3">
-<h3 class="anchored" data-anchor-id="articles">Articles</h3>
-<ul>
-<li><p><strong>Computing Profit-Maximizing Bid Shading Factors in First-Price Sealed-Bid Auctions</strong><br>
-Fagandini, P. and Dierickx, I., <em>Computational Economics</em>, 61(3), (2023), p:1009-1035<br>
-<a href="https://doi.org/10.1007/s10614-022-10321-y">Link to article</a> | <a href="https://github.com/pfagandi/Bidding-FPSB-Auctions">Code @ Github</a> | <a href="./preprints/Bidding_Accepted.pdf">Preprint</a></p></li>
-<li><p><strong>Wealth and the principal–agent matching</strong><br>
-Fagandini, P., <em>Managerial and Decision Economics</em>, 43(2), (2022), p:555–568<br>
-<a href="https://doi.org/10.1002/mde.3402">Link to article</a> | <a href="./preprints/P_A_Matching_Accepted.pdf">Preprint</a></p></li>
-</ul>
-</section>
-<section id="book-chapters-1" class="level3">
-<h3 class="anchored" data-anchor-id="book-chapters-1">Book Chapters</h3>
-<ul>
-<li><strong>Implementing the Agent ID Model</strong><br>
-Fagandini, P., <em>The Agent ID Model</em>, (2024)<br>
-<a href="https://link.springer.com/chapter/10.1007/978-3-031-75996-3_10">Link to article</a> | <a href="https://github.com/pfagandini/ABM-Project-ISCAL">Code @ Github</a></li>
-</ul>
-</section>
-</section>
-<section id="edited-books" class="level2">
-<h2 class="anchored" data-anchor-id="edited-books">Edited Books</h2>
-<ul>
-<li><strong>The Agent ID Model: A Multidisciplinary Framework of Evolutionary Human Behavior</strong><br>
-Gomes, O., Lins de Moraes, M., and Fagandini P., Springer Nature (2024)<br>
-<a href="https://link.springer.com/book/9783031759956">Link to book</a></li>
-</ul>
-</section>
-<section id="working-papers-1" class="level2">
-<h2 class="anchored" data-anchor-id="working-papers-1">Working Papers</h2>
-<ul>
-<li><p><strong>How Do Firms Respond to Demand Shocks? Evidence from the European Sovereign Debt Crisis.</strong><br>
-Adelino, Manuel and Fagandini, Paulo and Ferreira, Miguel Almeida and Queiro, Francisco (2019) CEPR Discussion Paper No.&nbsp;DP14640<br>
-<a href="https://ssrn.com/abstract=3594271">Available at SSRN</a></p></li>
-<li><p><strong>Hunting with Two Bullets: Moral Hazard with a Second Chance.</strong><br>
-Fagandini, Paulo (2018). FEUNL Working Paper Series No.&nbsp;629<br>
-<a href="https://ssrn.com/abstract=3236672">Available at SSRN</a></p></li>
-</ul>
-</section>
-<section id="currently" class="level2">
-<h2 class="anchored" data-anchor-id="currently">Currently</h2>
-<section id="instructor-1" class="level3">
-<h3 class="anchored" data-anchor-id="instructor-1">Instructor</h3>
-<p><strong>At Lisbon Accounting and Business School, Polytechnic University of Lisbon</strong></p>
-<ul>
-<li><strong>2021 - present</strong> 63202 Microeconomia (BSc in Management)</li>
-<li><strong>2026 - present</strong> 1111204 Economia (BSc in Accounting and Administration)</li>
-<li><strong>2025 - present</strong> 63301 Statistics I (BSc in Management)</li>
-<li><strong>2025 - present</strong> 63302 Statistics II (BSc in Management)</li>
-</ul>
-<p><strong>At Nova School of Business and Economics, NOVA University Lisbon</strong></p>
-<ul>
-<li><strong>2018 - present</strong> 4509 Bridging Mathematics (PhD in Economics and Finance)</li>
-<li><strong>2022 - present</strong> 4503 Math and Stats (MSc in Economics, Business Analytics, and International Development and Public Policy)</li>
-</ul>
-<p><strong>At Faculty of Social Sciences and Technology, Universidade Europeia</strong></p>
-<ul>
-<li><strong>2025 - present</strong> LASIA01D01 Economics (BSc in Management)</li>
-<li><strong>2025 - present</strong> LTUREN2D01 Economics of Tourism (BSc in Tourism)</li>
-</ul>
-<p><strong>At Faculty of Informatics and Statistics, Prague University of Economics and Business</strong></p>
-<ul>
-<li><strong>2026 Jan</strong> 5EN381 Economics of Incentives for Policy and Politics (International Week)</li>
-</ul>
-</section>
-<section id="teaching-assistant-1" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-assistant-1">Teaching Assistant</h3>
-<p><strong>At Nova School of Business and Economics, NOVA University Lisbon</strong></p>
-<ul>
-<li><strong>2025 - present</strong> 1314 Econometrics (BSc in Economics, and Management)</li>
-<li><strong>2026 - present</strong> 2761 Digital Experimentation &amp; Causal Analysis (MSc in Business Analytics)</li>
-</ul>
-</section>
-</section>
-<section id="online-courses" class="level2">
-<h2 class="anchored" data-anchor-id="online-courses">Online Courses</h2>
-<ul>
-<li><a href="https://www.udemy.com/course/writing-a-full-latex-document-from-scratch/?referralCode=4A4F3BA023326D36BD25">The Complete LaTeX Bootcamp</a> - With over a thousand students and a rating 4.6/5.</li>
-</ul>
-<details>
-<summary>
-Previously
-</summary>
-<div class="collapse-content">
-<section id="instructor-2" class="level3">
-<h3 class="anchored" data-anchor-id="instructor-2">Instructor</h3>
-<ul>
-<li><strong>2021 - 2024</strong> 113202 Microeconomia (BSc in Accounting and Administration)</li>
-<li><strong>2021 - 2022</strong> 83206 Principios de Macroeconomia (BSc in International Business - ISCAL-IPL)</li>
-</ul>
-</section>
-<section id="teaching-assistant-2" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-assistant-2">Teaching Assistant</h3>
-<ul>
-<li><strong>2025 - 2025</strong> 2790 Financial Management for Entrepreneurs (MSc in Impact Entrepreneurship and Innovation - Nova SBE, UNL)</li>
-<li><strong>2025 - 2025</strong> 2767 Machine Learning (MSc in Business Analytics - Nova SBE, UNL)</li>
-<li><strong>2021 - 2024</strong> 2581 Advanced Financial Management (MSc in Management - Nova SBE, UNL)</li>
-<li><strong>2019 - 2021</strong> 2414 Financial Management (MSc in Management - Nova SBE, UNL)</li>
-<li><strong>2019 - 2019</strong> 1203 Finance (BSc in Economics and Management - Nova SBE, UNL)</li>
-<li><strong>2019 - 2019</strong> 2179 Advanced Industrial Organization (MSc in Economics - Nova SBE, UNL)</li>
-<li><strong>2013 - 2018</strong> 1112 Industrial Organization (BSc in Economics - Nova SBE, UNL)</li>
-<li><strong>2014 - 2018</strong> 1111 Advanced Microeconomics (BSc in Economics - Nova SBE, UNL)</li>
-<li><strong>2014 - 2017</strong> 2400 Organization and Incentives (MSc in Management - Nova SBE, UNL)</li>
-<li><strong>2014 - 2014</strong> 2185 Game Theory (MSc in Economics - Nova SBE, UNL)</li>
-<li><strong>2014 - 2014</strong> 2132 Economic Regulation (MSc in Economics - Nova SBE, UNL)</li>
-<li><strong>2013 - 2014</strong> 1103 Macroeconomics (BSc in Economics - Nova SBE, UNL)</li>
-<li><strong>2009 - 2010</strong> ENECO360 Macroeconomía II (BSc in Economics - FEN, UCh)</li>
-<li><strong>2009 - 2009</strong> ENECO160 Introducción a Macroeconomía (BSc in Economics - FEN, UCh)</li>
-<li><strong>2008 - 2009</strong> ENECO260 Macroeconomía (BSc in Economics - FEN, UCh)</li>
-</ul>
-</section>
-</div>
-</details>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

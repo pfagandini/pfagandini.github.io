@@ -3,12 +3,19 @@ title: ""
 page-layout: full
 ---
 
-::: {.profile-container}
-::: {.profile-column}
+:::{.columns}
+
+::: {.column width="45%"}
+
 ![Paulo Fagandini, PhD](imgs/photo.jpg){.profile-photo fig-alt="Paulo Fagandini, PhD portrait"}
+
 :::
 
-::: {.content-column}
+::: {.column width="10%"}
+
+:::
+
+::: {.column width="45%"}
 ### About Me
 
 I am a Business Engineer, and I serve as Assistant Professor of Economics (Adjunct) at the Lisbon Accounting & Business School. I am also Assistant Professor (Adjunct) at Nova School of Business and Economics and I am a member of the CEFAGE Research Center. I also teach Economics at the Faculty of Social Sciences and Technology at Universidade Europeia.
@@ -16,87 +23,75 @@ I am a Business Engineer, and I serve as Assistant Professor of Economics (Adjun
 My research focuses mostly on applied economics. Previously I worked on corporate finance and applied microeconomic theory, mainly on auctions, contract theory, and matching. I have published my research in peer reviewed journals like Computational Economics and Managerial and Decision Economics.
 
 I also have experience as economist and consultant and I am the author of an online LaTeX course.
-:::
+
 :::
 
-::: {.two-column-section}
-::: {.education-column}
+:::
+
+
+:::{.columns}
+
+::: {.column width="45%"}
+
 ### Education
 
-::: {.timeline-item}
-<span class="badge">2023</span>
-**Prof. Title Business Engineering**
-
-School of Economics and Business  
-University of Chile, Santiago, Chile.
-:::
-
-::: {.timeline-item}
-<span class="badge">2018</span>
-**PhD in Economics**
-
+**2018**  
+**PhD in Economics**  
 Nova School of Business and Economics  
 NOVA University Lisbon, Lisbon, Portugal
-:::
 
-::: {.timeline-item}
-<span class="badge">2014</span>
-**MRes in Economics**
-
+**2014**  
+**MRes in Economics**  
 Nova School of Business and Economics  
 NOVA University Lisbon, Lisbon, Portugal
-:::
 
-::: {.timeline-item}
-<span class="badge">2011</span>
-**BSc in Economics**
-
+**2011**  
+**BSc in Economics**  
 School of Economics and Business  
 University of Chile, Santiago, Chile
-:::
+
 :::
 
-::: {.appointments-column}
+::: {.column width="10%"}
+
+:::
+
+::: {.column width="45%"}
+
 ### Appointments
 
-::: {.timeline-item}
-<span class="badge">2021-present</span>
-**Assistant Professor (Adjunct) of Economics**
-
+**2021-present**  
+**Assistant Professor (Adjunct) of Economics**  
 Lisbon Accounting and Business School  
 Polytechnic University of Lisbon, Lisbon, Portugal
-:::
 
-::: {.timeline-item}
-<span class="badge">2023-present</span>
-**Assistant Professor (Adjunct) of Economics**
-
+**2023-present**  
+**Assistant Professor (Adjunct) of Economics**  
 Nova School of Business and Economics  
-NOVA University Lisbon, Lisbon, Portugal
-:::
+NOVA University Lisbon, Lisbon, Portugal  
 
-::: {.timeline-item}
-<span class="badge">2018-2020</span>
-**Postdoctoral Fellow - Corporate Finance**
-
+**2018-2020**  
+**Postdoctoral Fellow - Corporate Finance**  
 Nova School of Business and Economics  
-NOVA University Lisbon, Lisbon, Portugal
+NOVA University Lisbon, Lisbon, Portugal  
+
 :::
+
 :::
-:::
+
 
 <details>
 <summary>Other Short Courses</summary>
 
 ::: {.collapse-content}
-- <span class="badge">Jan 2025 | Udemy</span> R Programming for Statistics and Data Science
-- <span class="badge">Nov 2024 | Bank of Portugal</span> Climate Change Economics
-- <span class="badge">Jul 2024 | Bank of Portugal</span> Data Analytics and Machine Learning in Economics and Finance
-- <span class="badge">Feb 2024 | Udemy</span> Machine Learning A-Z: AI, Python & R
-- <span class="badge">Feb 2024 | Udemy</span> The Ultimate Pandas Bootcamp: Advanced Python Data Analysis
-- <span class="badge">Jan 2024 | Udemy</span> SQL - MySQL for Data Analytics and Business Intelligence
-- <span class="badge">Dec 2023 | Udemy</span> The Data Science Course: Complete Data Science Bootcamp
-- <span class="badge">Jan 2019 | Timberlake-FEP</span> STATA Econometrics Winter School
-- <span class="badge">Feb 2015 | Nova Medical School</span> Formação Pedagógica para Docentes do Ensino Superior
+- **Jan 2025 | Udemy** R Programming for Statistics and Data Science
+- **Nov 2024 | Bank of Portugal** Climate Change Economics
+- **Jul 2024 | Bank of Portugal** Data Analytics and Machine Learning in Economics and Finance
+- **Feb 2024 | Udemy** Machine Learning A-Z: AI, Python & R
+- **Feb 2024 | Udemy** The Ultimate Pandas Bootcamp: Advanced Python Data Analysis
+- **Jan 2024 | Udemy** SQL - MySQL for Data Analytics and Business Intelligence
+- **Dec 2023 | Udemy** The Data Science Course: Complete Data Science Bootcamp
+- **Jan 2019 | Timberlake-FEP** STATA Econometrics Winter School
+- **Feb 2015 | Nova Medical School** Formação Pedagógica para Docentes do Ensino Superior
 :::
 </details>

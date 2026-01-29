@@ -9,7 +9,7 @@ website:
   
   navbar:
     background: dark
-    logo: imgs/logo.png
+    # logo: imgs/logo.png
     logo-alt: "Paulo Fagandini"
     left:
       - text: "Home"
@@ -19,7 +19,7 @@ website:
       - text: "Teaching"
         href: teaching.qmd
       - text: "Curriculum Vitae"
-        href: https://pfagandini.github.io/CV
+        href: fagandini_cv.qmd
       - text: "Contact"
         href: contact.qmd
     right:
@@ -40,12 +40,16 @@ website:
 format:
   html:
     theme: 
-      light: [cosmo, custom.scss]
-      dark: [cosmo, custom.scss]
-    css: styles.css
+      light: cosmo
+      dark: cosmo
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
     
 execute:
   freeze: auto
+
+    # theme: 
+    #   light: [cosmo, custom.scss]
+    #   dark: [cosmo, custom.scss]
+    # css: styles.css
