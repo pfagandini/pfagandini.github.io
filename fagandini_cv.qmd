@@ -6,7 +6,7 @@ format:
   html:
     toc: true
     toc-location: left
-    theme: cosmo
+    #theme: cosmo
     css: styles.css
   pdf:
     documentclass: article
