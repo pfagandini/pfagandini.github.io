@@ -17,8 +17,10 @@ website:
         href: research.qmd
       - text: "Teaching"
         href: teaching.qmd
-      - text: "Curriculum Vitae"
+      - text: "CV"
         href: fagandini_cv.qmd
+      - text: "Résumé"
+        href: fagandini_resume.qmd
       - text: "Contact"
         href: contact.qmd
     right:

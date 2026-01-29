@@ -1,0 +1,164 @@
+---
+title: "Paulo Fagandini"
+date: today
+date-format: "MMMM D, YYYY" 
+format:
+    pdf:
+        documentclass: article
+        geometry: 
+            - margin=1in
+            - a4paper
+        fontsize: 10pt
+        mainfont: roboto
+        include-in-header:
+            text: |
+                \usepackage{titling}
+                \pretitle{\vspace{-3cm}\begin{center}\LARGE\bfseries}
+                \posttitle{\end{center}\vspace{-1.5cm}}
+                \predate{}
+                \postdate{}
+                \date{}
+    html:
+        toc: false
+---
+
+::: {.content-visible when-format="pdf"}
+**Email:** fagandini@gmail.com | **Citizenship:** IT / CL  
+**LinkedIn:** [linkedin.com/in/paulo-fagandini](http://linkedin.com/in/paulo-fagandini)  
+**Website:** [pfagandini.github.io](https://pfagandini.github.io) | **GitHub:** [github.com/pfagandi](https://github.com/pfagandi)
+:::
+
+::: {.content-visible when-format="html"}
+**Email:** [fagandini@gmail.com](mailto:fagandini@gmail.com) | **Citizenship:** IT / CL  
+**LinkedIn:** [linkedin.com/in/paulo-fagandini](http://linkedin.com/in/paulo-fagandini)  
+**Website:** [pfagandini.github.io](https://pfagandini.github.io) | **GitHub:** [github.com/pfagandi](https://github.com/pfagandi)
+:::
+
+## Summary
+
+I am a Commercial Engineer with a PhD in Economics. I am eager to leverage my academic skills to drive value and innovation in the private sector. With teaching experience in mathematics, microeconomics, finance, and macroeconomics, I developed strong analytical skills and understand the broader economic context that informs business decisions. My research has led to publications in peer-reviewed journals. During my postdoc, I enhanced my data analysis and machine learning skills by working with large datasets. In industry roles at @Pro-Chile, @ID Consulting, and @TimeWe.Tech, I've applied these skills to develop software for optimizing bids, create economic reports on macroeconomic trends, and forecast time series using Machine Learning. Throughout my career, I've consistently sought to use my coding skills to solve problems and optimize processes and drive value from data -- a mindset that I believe would enable me to make a meaningful impact in any organization.
+
+## Work Experience
+
+
+::: {.columns}
+::: {.column width="48%"}
+### Academic Positions
+
+2025 - present **Assistant Professor (*adjunct*)**  
+**Economics**, *FSST, UEuropeia, PT*  
+
+2023 - present **Assistant Professor (*adjunct*)**   
+**Economics**, *Nova SBE, UNL, PT*  
+
+2021 - present **Assistant Professor (*adjunct*)**  
+**Economics**, *ISCAL, IPL, PT*  
+
+2013 - 23 **Teaching Assistant**  
+*Nova SBE, UNL, PT*  
+
+2018 - 20 **Postdoctoral Fellow**  
+**Corporate Finance**, *Nova SBE, UNL, PT*  
+
+2008 - 10 **Teaching Assistant**  
+*FEN, UChile, CL*  
+
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+### Professional Positions
+
+2023 **External Consultant**  
+*TimWe.Tech, PT*  
+
+2014 - 15 **Senior Consultant**  
+*I.D. Consulting Limited, NZ*  
+
+2011 **Trainee at Pro-Chile Milan**  
+*Ministry of Foreign Affairs of Chile, IT*  
+
+:::
+:::
+
+
+
+## Skills
+
+
+::: {.columns}
+::: {.column width="48%"}
+
+### Programming/Software
+
+- Python, R, SQL, Stata, Java, Matlab, LaTeX, Quarto/Markdown
+- Pandas, scikit-learn, TensorFlow
+
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+
+### Languages
+- Spanish (Native)
+- English (Fluent)
+- Portuguese (Fluent)
+- Italian (Conversational)
+
+:::
+:::
+
+## Education
+
+::: {.columns}
+::: {.column width="48%"}
+### Academic Degrees
+
+**Ph.D. in Economics**  
+*Nova SBE, PT*  
+2018
+
+**M.Res. in Economics**  
+*Nova SBE, PT*  
+2014
+
+**B.Sc. in Economics**  
+*UChile, CL*  
+2011
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+### Other Education
+
+**Commercial Engineer -- Professional Title**  
+*School of Economics & Business - UChile*  
+2023
+
+**Summer School: "Liquidity in Financial Markets and Institutions"**  
+*Finance Theory Group, Olin Business School, Washington University*  
+2017
+
+**Visiting Doctoral Researcher**  
+*ECARES - Solvay Business School, ULB*  
+2016
+:::
+:::
+
+## Short Courses
+
+- Feb 2025, "R Programming for Statistics and Data Science", 365 Careers@Udemy
+- Nov 2024, "Climate Change Economics", Bank of Portugal
+- Jul 2024, "Data Analytics and Machine Learning in Economics and Finance", Bank of Portugal
+- Feb 2024, "Machine Learning A-Z: AI, Python & R", SuperDataScience@Udemy
+- Feb 2024, "The Ultimate Pandas Bootcamp: Advanced Python Data Analysis", Andy Bek@Udemy
+- Jan 2024, "SQL-MySQL for Data Analytics and Business Intelligence", 365 Careers@Udemy
+- Dec 2023, "The Data Science Course: Complete Data Science Bootcamp 2023", 365 Careers@Udemy
+- Jan 2019, "STATA Econometrics Winter School 2019" Timberlake, FEP-UP
+- Feb 2015, "Pedagogical Training for College Teachers" NOVA Medical School, UNL
