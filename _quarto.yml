@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Paulo Fagandini, PhD"
+  site-url: https://pfagandini.github.io
+  description: "Academic website of Paulo Fagandini, Assistant Professor of Economics"
+  
+  navbar:
+    background: dark
+    logo: imgs/logo.png
+    logo-alt: "Paulo Fagandini"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Teaching"
+        href: teaching.qmd
+      - text: "Curriculum Vitae"
+        href: https://pfagandini.github.io/CV
+      - text: "Contact"
+        href: contact.qmd
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/paulo-fagandini
+        aria-label: LinkedIn
+      - icon: google
+        href: https://scholar.google.com/citations?user=wcwIxb4AAAAJ&hl=en
+        aria-label: Google Scholar
+      - icon: github
+        href: https://github.com/pfagandini
+        aria-label: GitHub
+  
+  page-footer:
+    background: dark
+    left: "© 2026 Paulo Fagandini, PhD"
+
+format:
+  html:
+    theme: 
+      light: [cosmo, custom.scss]
+      dark: [cosmo, custom.scss]
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    
+execute:
+  freeze: auto

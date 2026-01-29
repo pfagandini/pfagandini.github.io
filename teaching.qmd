@@ -1,0 +1,68 @@
+---
+title: "Teaching"
+---
+
+## Currently {.section-header}
+
+### Instructor
+
+**At Lisbon Accounting and Business School, Polytechnic University of Lisbon**
+
+- <span class="badge">2021 - present</span> 63202 Microeconomia (BSc in Management)
+- <span class="badge">2026 - present</span> 1111204 Economia (BSc in Accounting and Administration)
+- <span class="badge">2025 - present</span> 63301 Statistics I (BSc in Management)
+- <span class="badge">2025 - present</span> 63302 Statistics II (BSc in Management)
+
+**At Nova School of Business and Economics, NOVA University Lisbon**
+
+- <span class="badge">2018 - present</span> 4509 Bridging Mathematics (PhD in Economics and Finance)
+- <span class="badge">2022 - present</span> 4503 Math and Stats (MSc in Economics, Business Analytics, and International Development and Public Policy)
+
+**At Faculty of Social Sciences and Technology, Universidade Europeia**
+
+- <span class="badge">2025 - present</span> LASIA01D01 Economics (BSc in Management)
+- <span class="badge">2025 - present</span> LTUREN2D01 Economics of Tourism (BSc in Tourism)
+
+**At Faculty of Informatics and Statistics, Prague University of Economics and Business**
+
+- <span class="badge">2026 Jan</span> 5EN381 Economics of Incentives for Policy and Politics (International Week)
+
+### Teaching Assistant
+
+**At Nova School of Business and Economics, NOVA University Lisbon**
+
+- <span class="badge">2025 - present</span> 1314 Econometrics (BSc in Economics, and Management)
+- <span class="badge">2026 - present</span> 2761 Digital Experimentation & Causal Analysis (MSc in Business Analytics)
+
+## Online Courses {.section-header}
+
+- [The Complete LaTeX Bootcamp](https://www.udemy.com/course/writing-a-full-latex-document-from-scratch/?referralCode=4A4F3BA023326D36BD25) - With over a thousand students and a rating 4.6/5.
+
+<details>
+<summary>Previously</summary>
+
+::: {.collapse-content}
+### Instructor
+
+- <span class="badge">2021 - 2024</span> 113202 Microeconomia (BSc in Accounting and Administration)
+- <span class="badge">2021 - 2022</span> 83206 Principios de Macroeconomia (BSc in International Business - ISCAL-IPL)
+
+### Teaching Assistant
+
+- <span class="badge">2025 - 2025</span> 2790 Financial Management for Entrepreneurs (MSc in Impact Entrepreneurship and Innovation - Nova SBE, UNLK)
+- <span class="badge">2025 - 2025</span> 2767 Machine Learning (MSc in Business Analytics - Nova SBE, UNL)
+- <span class="badge">2021 - 2024</span> 2581 Advanced Financial Management (MSc in Management - Nova SBE, UNL)
+- <span class="badge">2019 - 2021</span> 2414 Financial Management (MSc in Management - Nova SBE, UNL)
+- <span class="badge">2019 - 2019</span> 1203 Finance (BSc in Economics and Management - Nova SBE, UNL)
+- <span class="badge">2019 - 2019</span> 2179 Advanced Industrial Organization (MSc in Economics - Nova SBE, UNL)
+- <span class="badge">2013 - 2018</span> 1112 Industrial Organization (BSc in Economics - Nova SBE, UNL)
+- <span class="badge">2014 - 2018</span> 1111 Advanced Microeconomics (BSc in Economics - Nova SBE, UNL)
+- <span class="badge">2014 - 2017</span> 2400 Organization and Incentives (MSc in Management - Nova SBE, UNL)
+- <span class="badge">2014 - 2014</span> 2185 Game Theory (MSc in Economics - Nova SBE, UNL)
+- <span class="badge">2014 - 2014</span> 2132 Economic Regulation (MSc in Economics - Nova SBE, UNL)
+- <span class="badge">2013 - 2014</span> 1103 Macroeconomics (BSc in Economics - Nova SBE, UNL)
+- <span class="badge">2009 - 2010</span> ENECO360 Macroeconomía II (BSc in Economics - FEN, UCh)
+- <span class="badge">2009 - 2009</span> ENECO160 Introducción a Macroeconomía (BSc in Economics - FEN, UCh)
+- <span class="badge">2008 - 2009</span> ENECO260 Macroeconomía (BSc in Economics - FEN, UCh)
+:::
+</details>

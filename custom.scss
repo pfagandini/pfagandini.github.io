@@ -1,0 +1,196 @@
+/*-- scss:defaults --*/
+
+// Import a refined font pairing
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+// Color palette - sophisticated and academic
+$primary: #2c3e50;
+$secondary: #34495e;
+$accent: #c0392b;
+$light-bg: #f8f9fa;
+$dark-bg: #1a252f;
+
+// Typography
+$font-family-sans-serif: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-serif: 'Crimson Pro', 'Georgia', serif;
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 600;
+
+// Spacing
+$spacer: 1rem;
+
+/*-- scss:rules --*/
+
+// Body styling
+body {
+  font-family: $font-family-sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+}
+
+// Headings with serif font
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-serif;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+// Navbar refinements
+.navbar {
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-family: $font-family-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+// Badge styling for dates
+.badge {
+  background-color: $secondary;
+  color: white;
+  padding: 0.3em 0.6em;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-weight: 500;
+  margin-right: 0.5em;
+  display: inline-block;
+  font-family: $font-family-sans-serif;
+}
+
+// Section styling
+.section-header {
+  background-color: $primary;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  border-left: 4px solid $accent;
+}
+
+.subsection-header {
+  background-color: $secondary;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+// Profile section
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+  margin: 3rem 0;
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+// Timeline items
+.timeline-item {
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+}
+
+.timeline-item h4 {
+  margin-bottom: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.timeline-item p {
+  margin-left: 2.5rem;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+// Link styling
+a {
+  color: $accent;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: darken($accent, 10%);
+    text-decoration: underline;
+  }
+}
+
+// Publication list styling
+.publications-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.publications-list li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.publications-list li:last-child {
+  border-bottom: none;
+}
+
+// Collapsible section button
+.collapse-btn {
+  background-color: $light-bg;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: darken($light-bg, 5%);
+  }
+}
+
+// Contact grid
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.contact-card {
+  text-align: center;
+  padding: 2rem;
+  background: $light-bg;
+  border-radius: 8px;
+}
+
+.contact-card img {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+// Footer
+.page-footer {
+  margin-top: 4rem;
+}

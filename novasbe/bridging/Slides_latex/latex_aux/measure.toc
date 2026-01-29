@@ -1,3 +1,0 @@
-\beamer@sectionintoc {1}{$\sigma $-Algebras}{2}{0}{1}
-\beamer@sectionintoc {2}{Measures}{14}{0}{2}
-\beamer@sectionintoc {3}{Lebesgue Integral}{15}{0}{3}

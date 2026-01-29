@@ -1,0 +1,24 @@
+---
+title: "Contact"
+---
+
+::: {.contact-grid}
+::: {.contact-card}
+![Lisbon Accounting and Business School Logo](imgs/logo.png){fig-alt="ISCAL Logo" width="300px"}
+
+**Room 5.8**  
+Av. Miguel Bombarda 20  
+1069-035 Lisbon  
+Portugal
+:::
+
+::: {.contact-card}
+![Nova School of Business and Economics Logo](imgs/NovaSecundárioV3.png){fig-alt="Nova SBE Logo" width="300px"}
+
+**Office D127**  
+Campus de Carcavelos  
+Rua da Holanda 1  
+2775-405 Carcavelos  
+Portugal
+:::
+:::
