@@ -9,7 +9,7 @@ title: "Teaching"
 **At Lisbon Accounting and Business School, Polytechnic University of Lisbon**
 
 - **2021 - present** 63202 Microeconomia (BSc in Management)
-- **2026 - present** 1111204 Economia (BSc in Accounting and Administration)
+- **2026 - present** 113202 Microeconomia - Plano Transição (BSc in Accounting and Administration)
 - **2025 - present** 63301 Statistics I (BSc in Management)
 - **2025 - present** 63302 Statistics II (BSc in Management)
 
@@ -33,6 +33,7 @@ title: "Teaching"
 
 - **2025 - present** 1314 Econometrics (BSc in Economics, and Management)
 - **2026 - present** 2761 Digital Experimentation & Causal Analysis (MSc in Business Analytics)
+- **2025 - 2025** 2790 Financial Management for Entrepreneurs (MSc in Impact Entrepreneurship and Innovation - Nova SBE, UNL)
 
 ## Online Courses 
 
