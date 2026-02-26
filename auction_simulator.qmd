@@ -6,6 +6,6 @@ I have created an auction simulator. In here, an instructor can run a First Pric
 
 If you are the instructor, you can access your dash to start a new class and auction [here](https://fpsb.duckdns.org/instructor/login)
 
-If you are a student looking to participate in an auction, please follow [this link](https://fpsb.dickdns.org), introduce your name and the code your instructor has given you.
+If you are a student looking to participate in an auction, please follow [this link](https://fpsb.duckdns.org), introduce your name and the code your instructor has given you.
 
 
