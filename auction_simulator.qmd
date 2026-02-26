@@ -1,0 +1,11 @@
+---
+title: "Auction Simulator"
+---
+
+I have created an auction simulator. In here, an instructor can run a First Price Sealed Bid auction for students to bid, and later show the analysis of the data to the class. This has proven a very useful tool to teach bidders to be careful when facing the Winner's Curse.
+
+If you are the instructor, you can access your dash to start a new class and auction [here](https://fpsb.duckdns.org/instructor/login)
+
+If you are a student looking to participate in an auction, please follow [this link](https://fpsb.dickdns.org), introduce your name and the code your instructor has given you.
+
+
