@@ -22,10 +22,18 @@
   </url>
   <url>
     <loc>https://pfagandini.github.io/fagandini_cv.html</loc>
+<<<<<<< HEAD
     <lastmod>2026-02-05T00:33:33.070Z</lastmod>
+=======
+    <lastmod>2026-01-29T19:13:12.666Z</lastmod>
+>>>>>>> cfa0f58 (add auction simulator page)
   </url>
   <url>
     <loc>https://pfagandini.github.io/fagandini_resume.html</loc>
     <lastmod>2026-02-05T00:23:31.814Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pfagandini.github.io/auction_simulator.html</loc>
+    <lastmod>2026-02-26T20:00:31.560Z</lastmod>
   </url>
 </urlset>
