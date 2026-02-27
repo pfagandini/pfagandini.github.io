@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pfagandini.github.io/index.html</loc>
-    <lastmod>2026-02-05T00:23:31.814Z</lastmod>
+    <lastmod>2026-01-29T19:07:58.953Z</lastmod>
   </url>
   <url>
     <loc>https://pfagandini.github.io/about.html</loc>
@@ -14,11 +14,11 @@
   </url>
   <url>
     <loc>https://pfagandini.github.io/teaching.html</loc>
-    <lastmod>2026-02-05T00:31:43.932Z</lastmod>
+    <lastmod>2026-02-26T20:01:15.950Z</lastmod>
   </url>
   <url>
     <loc>https://pfagandini.github.io/research.html</loc>
-    <lastmod>2026-02-05T00:23:31.814Z</lastmod>
+    <lastmod>2026-01-29T18:56:37.325Z</lastmod>
   </url>
   <url>
     <loc>https://pfagandini.github.io/auction_simulator.html</loc>
@@ -27,5 +27,9 @@
   <url>
     <loc>https://pfagandini.github.io/fagandini_cv.html</loc>
     <lastmod>2026-02-27T12:46:42.311Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pfagandini.github.io/fagandini_resume.html</loc>
+    <lastmod>2026-01-29T19:09:07.526Z</lastmod>
   </url>
 </urlset>
