@@ -66,6 +66,12 @@ Nova School of Business and Economics, NOVA University Lisbon
 
 ## Academic Degrees
 
+::::{.columns}
+
+:::{.column}
+
+#### Economics
+
 **2018** — Ph.D. in Economics  
 Nova School of Business and Economics, UNL
 
@@ -73,7 +79,20 @@ Nova School of Business and Economics, UNL
 Nova School of Business and Economics, UNL
 
 **2011** — B.Sc. in Economics  
-School of Economics and Business - UChile
+School of Economics and Business, UChile
+
+:::
+
+:::{.column}
+
+#### Applied Mathematics
+
+**2028 (Expected) ** — MSc. in Applied Computational Mathematics    
+Department of Science and Technology, UAb
+
+:::
+
+::::
 
 ---
 
