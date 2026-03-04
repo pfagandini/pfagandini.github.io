@@ -189,7 +189,7 @@ The language in which the name of the course appears, reveals the teaching langu
 **2025** — Prague University of Economics and Business, CZ (Visiting)
 
 - M.Sc./B.Sc.: Economics of Incentives for Policy and Politics (22-hour intensive course)
-- Ph.D.: Scientific Writing with LaTeX and Quarto, CZ (Visiting)
+- Ph.D.: Scientific Writing with LaTeX and Quarto Doctoral Workshop, CZ (Visiting)
 
 ### Teaching Assistant
 
