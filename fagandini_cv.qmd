@@ -170,6 +170,7 @@ The language in which the name of the course appears, reveals the teaching langu
 **2025** — Prague University of Economics and Business, CZ (Visiting)
 
 - M.Sc./B.Sc.: Economics of Incentives for Policy and Politics (22-hour intensive course)
+- Ph.D.: Scientific Writing with LaTeX and Quarto, CZ (Visiting)
 
 ### Teaching Assistant
 
@@ -276,8 +277,18 @@ Session: Asymmetric Information I
   * Discussant for Daniel Luzio Castelo, *Dynamic Peer Effects in the Workplace*, MSc. in Economics - Nova SBE
   * Discussant for Dario Raccagni, *The Cambridge Analytica Case: The Impact of Big Data on Political Advertising and The Implications on Political Communication Strategies and Regulations*, MSc. Business Analytics - Nova SBE
 
+## Other Activities
+
+**2026** Local co-coordinator for the Portuguese College Economics Olympiad, at ISCAL-IPL.
+
 ---
 
+## References
+
+| Name | Contact | Role |
+| :--: | :--: | :--: |
+| Prof. Steffen Hoernig | shoernig@novasbe.pt | Professor of Economics, Nova SBE |
+| Dr. Ingemar Dierickx | ingemar.dierickx@gmail.com | Managing Partner, ID Consulting |
 
 ::: {.content-visible when-format="html"}
 ::: {.download-section}
