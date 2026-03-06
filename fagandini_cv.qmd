@@ -247,9 +247,9 @@ Pro-Chile Milano (IT), Directorate of Economic Relations of the Ministry of Fore
 
 ## Skills
 
-**Software:** Windows, Office (Advanced MS Excel), Linux (Debian based), Git, Mathematica
+**Software:** Windows, Office (Advanced MS Excel), Linux (Fedora and Debian based), Git, Mathematica
 
-**Programming Languages:** Stata, Python, SQL, Java, LaTeX, MATLAB/Octave, R
+**Programming Languages:** R, Python, SQL, Java, LaTeX, Markdown/Quarto, MATLAB/Octave, Stata
 
 **Languages:** Spanish (native), English and Portuguese (fluent), Italian (intermediate)
 
