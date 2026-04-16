@@ -25,7 +25,7 @@ title: "Teaching"
 
 **At Faculty of Informatics and Statistics, Prague University of Economics and Business**
 
-- **2026 Jan** 5EN381 Economics of Incentives for Policy and Politics (International Week)
+- **2026 - present** 5EN381 Economics of Incentives for Policy and Politics (International Week)
 
 ### Teaching Assistant
 
@@ -33,7 +33,6 @@ title: "Teaching"
 
 - **2025 - present** [1314](https://pfagandini.github.io/novasbe_econometrics) Econometrics (BSc in Economics, and Management)
 - **2026 - present** 2761 Digital Experimentation & Causal Analysis (MSc in Business Analytics)
-- **2025 - 2025** 2790 Financial Management for Entrepreneurs (MSc in Impact Entrepreneurship and Innovation - Nova SBE, UNL)
 
 ## Online Courses 
 
@@ -50,6 +49,7 @@ title: "Teaching"
 
 ### Teaching Assistant
 
+- **2026 - 2026** 2761 Digital Experimentation & Causal Analysis (MSc in Business Analytics)
 - **2025 - 2025** 2790 Financial Management for Entrepreneurs (MSc in Impact Entrepreneurship and Innovation - Nova SBE, UNL)
 - **2025 - 2025** 2767 Machine Learning (MSc in Business Analytics - Nova SBE, UNL)
 - **2021 - 2024** 2581 Advanced Financial Management (MSc in Management - Nova SBE, UNL)
