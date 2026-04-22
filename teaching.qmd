@@ -50,7 +50,6 @@ title: "Teaching"
 
 - **2026 - 2026** 2761 Digital Experimentation & Causal Analysis (MSc in Business Analytics)
 - **2025 - 2025** 2790 Financial Management for Entrepreneurs (MSc in Impact Entrepreneurship and Innovation - Nova SBE, UNL)
-- **2025 - 2025** 2790 Financial Management for Entrepreneurs (MSc in Impact Entrepreneurship and Innovation - Nova SBE, UNL)
 - **2025 - 2025** 2767 Machine Learning (MSc in Business Analytics - Nova SBE, UNL)
 - **2021 - 2024** 2581 Advanced Financial Management (MSc in Management - Nova SBE, UNL)
 - **2019 - 2021** 2414 Financial Management (MSc in Management - Nova SBE, UNL)
