@@ -53,7 +53,7 @@ Lisbon Accounting and Business School, Polytechnic University of Lisbon
 **2023–present** — Assistant Professor (Adjunct – Part Time)  
 Nova School of Business and Economics, NOVA University Lisbon
 
-**2025–present** — Assistant Professor (Contract)  
+**2025–present** — Lecturer (Contractor)  
 Faculty of Social Sciences and Technology, Universidade Europeia
 
 **2021–present** — Research Member  
@@ -161,13 +161,13 @@ Lisbon Accounting and Business School - IPL (PT)
 \clearpage
 :::
 
-## Teaching Experience
+## Teaching Experience (currently *)
 
 ### Course Coordinator (Regências)
 
-  - **2018-present** Bridging Mathematics, PhD. in Economics and Finance, Nova SBE, UNL.
-  - **2022-present** Math & Stats, MSc. in Economics, Finance, Business Analytics, and International Development & Public Policy, Nova SBE, UNL.
-  - **2026-present** Microeconomia - Plano de Transição, BSc. in Accounting and Administration, ISCAL, IPL.
+  - **2018-present** Bridging Mathematics*, PhD. in Economics and Finance, Nova SBE, UNL.
+  - **2022-present** Math & Stats*, MSc. in Economics, Finance, Business Analytics, and International Development & Public Policy, Nova SBE, UNL.
+  - **2026-present** Microeconomia* - Plano de Transição, BSc. in Accounting and Administration, ISCAL, IPL.
 
 ### Instructor
 
@@ -175,16 +175,16 @@ The language in which the name of the course appears, reveals the teaching langu
 
 **2025-present** — Faculty of Social Sciences and Technology, UE
 
-- B.Sc.: Economics of Tourism, Economics
+- B.Sc.: Economics of Tourism*, Economics
 
 **2021–present** — Lisbon Accounting and Business School, IPL
 
-- B.Sc.: Microeconomia, Statistics I, Statistics II, Principios de Macroeconomia
+- B.Sc.: Microeconomia*, Statistics I, Statistics II*, Principios de Macroeconomia
 
 **2018–present** — Nova School of Business and Economics, UNL
 
-- Ph.D.: Bridging Mathematics
-- M.Sc.: Math and Stats
+- Ph.D.: Bridging Mathematics*
+- M.Sc.: Math and Stats*
 
 **2025** — Prague University of Economics and Business, CZ (Visiting)
 
