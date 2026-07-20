@@ -18,9 +18,9 @@ page-layout: full
 ::: {.column width="45%"}
 ### About Me
 
-I am a Business Engineer, and I serve as Assistant Professor of Economics (Adjunct) at the Lisbon Accounting & Business School. I am also Assistant Professor (Adjunct) at Nova School of Business and Economics and I am a member of the CEFAGE Research Center. I also teach Economics at the Faculty of Social Sciences and Technology at Universidade Europeia.
+I am a Business Engineer, and I serve as Assistant Professor of Economics (Adjunct) at the Lisbon Accounting & Business School. I am also Assistant Professor (Adjunct) at Nova School of Business and Economics and I am a member of the CEFAGE Research Center. Starting Fall 2026/2027, I will be teaching Economics in the Master of Applied Mathematics for Economics and Business, at the Department of Mathematics at the Faculty of Sciences of the University of Lisbon.
 
-My research focuses mostly on applied economics. Previously I worked on corporate finance and applied microeconomic theory, mainly on auctions, contract theory, and matching. I have published my research in peer reviewed journals like Computational Economics and Managerial and Decision Economics.
+My research focuses mostly on applied economics. Previously I worked on corporate finance and applied microeconomic theory, mainly on auctions, contract theory, and matching. I have published my research in peer reviewed journals like Computational Economics and Managerial and Decision Economics. Lately I decided to go back (as a student) to the classroom to take a Master in Statistics, Applied Mathematics and Computation, at UAb.
 
 I also have experience as economist and consultant and I am the author of an online LaTeX course.
 

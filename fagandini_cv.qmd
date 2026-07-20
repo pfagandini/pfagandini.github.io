@@ -53,9 +53,6 @@ Lisbon Accounting and Business School, Polytechnic University of Lisbon
 **2023–present** — Assistant Professor (Adjunct – Part Time)  
 Nova School of Business and Economics, NOVA University Lisbon
 
-**2025–present** — Lecturer (Contractor)  
-Faculty of Social Sciences and Technology, Universidade Europeia
-
 **2021–present** — Research Member  
 Center for Advanced Studies in Management and Economics
 
@@ -165,26 +162,39 @@ Lisbon Accounting and Business School - IPL (PT)
 
 ### Course Coordinator (Regências)
 
-  - **2018-present** Bridging Mathematics*, PhD. in Economics and Finance, Nova SBE, UNL.
-  - **2022-present** Math & Stats*, MSc. in Economics, Finance, Business Analytics, and International Development & Public Policy, Nova SBE, UNL.
-  - **2026-present** Microeconomia* - Plano de Transição, BSc. in Accounting and Administration, ISCAL, IPL.
+  **At Lisbon Accounting and Business School, Polytechnic University of Lisbon:**
+  - **2025-present** Microeconomia - Plano de Transição, BSc. in Accounting and Administration.
+  - **2026-present** Microeconomia, BSc. in Corporate Finance.
+  - **2026-present** Microeconomia, BSc. in Management.
+  - **2026-present** Microeconomia, BSc. in Informatics and Data Economy, (joint program with the Lisbon School of Engineering - ISEL).
+
+  **At Nova School of Business and Economics:**
+  - **2018-present** Bridging Mathematics*, PhD. in Economics and Finance.
+  - **2022-present** Math & Stats*, MSc. in Economics, Finance, Business Analytics, and International Development & Public Policy.
+
+  **At Faculty of Sciences of the University of Lisbon:**
+  - **2026-present**Princípios de Economia e Gestão, MSc. Mathematics Applied to Economics and Business.
 
 ### Instructor
 
 The language in which the name of the course appears, reveals the teaching languange.
 
-**2025-present** — Faculty of Social Sciences and Technology, UE
-
-- B.Sc.: Economics of Tourism*, Economics
-
 **2021–present** — Lisbon Accounting and Business School, IPL
 
-- B.Sc.: Microeconomia*, Statistics I, Statistics II*, Principios de Macroeconomia
+- B.Sc.: Microeconomia*, Statistics I*, Statistics II*, Economia*, Principios de Macroeconomia
 
 **2018–present** — Nova School of Business and Economics, UNL
 
 - Ph.D.: Bridging Mathematics*
-- M.Sc.: Math and Stats*
+- M.Sc.: Math and Stats*, Empirical Methods for Finance*
+
+**2026-present** — Mathematics Department, Faculty of Sciences, UL
+
+- M.Sc.: Princípios de Economia e Gestão I*
+
+**2025-2026** — Faculty of Social Sciences and Technology, UE
+
+- B.Sc.: Economics of Tourism, Economics
 
 **2025** — Prague University of Economics and Business, CZ (Visiting)
 
@@ -298,16 +308,8 @@ Session: Asymmetric Information I
 
 ## Other Activities
 
+**2026** Jury memeber (*vogal*) for admissions to the LIED program at ISCAL/ISEL: M23, MPIC, TOCS.
 **2026** Local co-coordinator for the Portuguese College Economics Olympiad, at ISCAL-IPL.
-
----
-
-## References
-
-| Name | Contact | Role |
-| :--: | :--: | :--: |
-| Prof. Steffen Hoernig | shoernig@novasbe.pt | Professor of Economics, Nova SBE |
-| Dr. Ingemar Dierickx | ingemar.dierickx@gmail.com | Managing Partner, ID Consulting |
 
 ::: {.content-visible when-format="html"}
 ::: {.download-section}
