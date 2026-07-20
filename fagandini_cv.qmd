@@ -158,35 +158,38 @@ Lisbon Accounting and Business School - IPL (PT)
 \clearpage
 :::
 
-## Teaching Experience (currently *)
+## Teaching Experience
 
 ### Course Coordinator (Regências)
 
   **At Lisbon Accounting and Business School, Polytechnic University of Lisbon:**
-  - **2025-present** Microeconomia - Plano de Transição, BSc. in Accounting and Administration.
-  - **2026-present** Microeconomia, BSc. in Corporate Finance.
-  - **2026-present** Microeconomia, BSc. in Management.
-  - **2026-present** Microeconomia, BSc. in Informatics and Data Economy, (joint program with the Lisbon School of Engineering - ISEL).
+
+  - **2025-present** Microeconomia - Plano de Transição (BSc. in Accounting and Administration)
+  - **2026-present** Microeconomia, (BSc. in Corporate Finance)
+  - **2026-present** Microeconomia, (BSc. in Management)
+  - **2026-present** Microeconomia, (BSc. in Informatics and Data Economy), (joint program with the Lisbon School of Engineering - ISEL).
 
   **At Nova School of Business and Economics:**
-  - **2018-present** Bridging Mathematics*, PhD. in Economics and Finance.
-  - **2022-present** Math & Stats*, MSc. in Economics, Finance, Business Analytics, and International Development & Public Policy.
+
+  - **2018-present** Bridging Mathematics (PhD. in Economics and Finance)
+  - **2022-present** Math & Stats (MSc. in Economics, Finance, Business Analytics, and International Development & Public Policy)
 
   **At Faculty of Sciences of the University of Lisbon:**
-  - **2026-present**Princípios de Economia e Gestão, MSc. Mathematics Applied to Economics and Business.
 
-### Instructor
+  - **2026-present** Princípios de Economia e Gestão (MSc. Mathematics Applied to Economics and Business)
+
+### Instructor (currently *)
 
 The language in which the name of the course appears, reveals the teaching languange.
 
 **2021–present** — Lisbon Accounting and Business School, IPL
 
-- B.Sc.: Microeconomia*, Statistics I*, Statistics II*, Economia*, Principios de Macroeconomia
+- B.Sc.: Microeconomia\*, Statistics I\*, Statistics II\*, Economia\*, Principios de Macroeconomia
 
 **2018–present** — Nova School of Business and Economics, UNL
 
 - Ph.D.: Bridging Mathematics*
-- M.Sc.: Math and Stats*, Empirical Methods for Finance*
+- M.Sc.: Math and Stats\*, Empirical Methods for Finance\*
 
 **2026-present** — Mathematics Department, Faculty of Sciences, UL
 
