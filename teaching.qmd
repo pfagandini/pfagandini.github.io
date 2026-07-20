@@ -10,8 +10,9 @@ title: "Teaching"
 
 - **2026 - present** 1111204 Economics (BSc Accounting and Administation)
 - **2021 - present** 63202 Microeconomia (BSc in Corporate Finance)
+- **2026 - present** 63202 Microeconomia (BSc in Computer Science and Data Economics)
 - **2025 - present** 63301 Statistics I (BSc in Management)
-- **2025 - present** [63302](https://pfagandini.github.io/iscal_statistics_2) Statistics II (BSc in Management)
+- **2025 - present** 63302 Statistics II (BSc in Management)
 
 **At Nova School of Business and Economics, NOVA University Lisbon**
 
